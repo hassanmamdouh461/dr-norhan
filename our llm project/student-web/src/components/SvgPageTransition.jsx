@@ -6,14 +6,14 @@ import './SvgPageTransition.css';
  * Brand color palettes matching Gravity for Physics (م. نوران الصناديقي) visual identity
  */
 export const BRAND_TRANSITION_PALETTES = [
-  { name: 'Gravity Lime Pulse', stroke1: '#101EC5', stroke2: '#BCD91E' },
-  { name: 'Deep Space Lime',   stroke1: '#0A1128', stroke2: '#BCD91E' },
-  { name: 'Quantum Energy',    stroke1: '#E61A24', stroke2: '#101EC5' },
-  { name: 'Electric Cyan',     stroke1: '#070C1D', stroke2: '#00E5FF' },
-  { name: 'Neon Dynamics',     stroke1: '#BCD91E', stroke2: '#E61A24' },
-  { name: 'Cosmic Violet',     stroke1: '#101EC5', stroke2: '#8B5CF6' },
-  { name: 'Pure Luminescence', stroke1: '#141D3D', stroke2: '#FFFFFF' },
-  { name: 'Electric Lime Cyan',stroke1: '#00D2FF', stroke2: '#BCD91E' }
+  { name: 'Deep Space & Gravity Blue', stroke1: '#0A1128', stroke2: '#101EC5' },
+  { name: 'Cosmic Indigo & Midnight',   stroke1: '#1E1B4B', stroke2: '#080D21' },
+  { name: 'Gravity Blue & Crimson Pulse', stroke1: '#101EC5', stroke2: '#991B1B' },
+  { name: 'Surface Navy & Deep Void',  stroke1: '#141D3D', stroke2: '#060A1A' },
+  { name: 'Deep Teal & Midnight Blue', stroke1: '#163134', stroke2: '#101EC5' },
+  { name: 'Cosmic Violet & Deep Space', stroke1: '#2E1065', stroke2: '#0A1128' },
+  { name: 'Deep Crimson & Surface Navy', stroke1: '#881337', stroke2: '#141D3D' },
+  { name: 'Dark Nebula & Gravity Blue', stroke1: '#0B1E48', stroke2: '#1E1B4B' }
 ];
 
 const SvgPageTransition = forwardRef(function SvgPageTransition(
