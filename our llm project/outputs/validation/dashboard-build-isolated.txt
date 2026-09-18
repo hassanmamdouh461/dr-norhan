@@ -1,0 +1,38 @@
+Isolated dashboard build validation
+Started: 2026-09-15T02:13:37.529Z
+Staging: C:\Users\kayf\Desktop\student project\.workbuddy-ai\build-checks\dashboard-20260915T021120914Z-ef2261ca
+Node: C:/Users/kayf/.workbuddy-ai/binaries/node/versions/22.22.2-2/node.exe
+Command: next build
+Source/config/package inputs copied; installed dependencies junctioned.
+Original production environment loaded only in child; values redacted.
+Inherited guard settings preserved; telemetry disabled.
+
+  ▲ Next.js 14.2.3
+
+   Creating an optimized production build ...
+ ✓ Compiled successfully
+   Linting and checking validity of types ...
+   Collecting page data ...
+   Generating static pages (0/15) ...
+   Generating static pages (3/15) 
+   Generating static pages (7/15) 
+   Generating static pages (11/15) 
+ ✓ Generating static pages (15/15)
+
+> Build error occurred
+Error: [safe-delete][SAFE_DELETE_BULK_CONFIRM_REQUIRED] {"count":51,"threshold":50,"scope":"turn","targets":["C:\\Users\\kayf\\Desktop\\student project\\.workbuddy-ai\\build-checks\\dashboard-20260915T021120914Z-ef2261ca\\.next\\export"],"targetCount":1}
+    at checkBulkDeleteGuard (C:\Users\kayf\AppData\Local\Programs\WorkBuddyAI\resources\app.asar.unpacked\cli\vendor\shim\node-safe-delete-shim.cjs:214:19)
+    at tryTrash (C:\Users\kayf\AppData\Local\Programs\WorkBuddyAI\resources\app.asar.unpacked\cli\vendor\shim\node-safe-delete-shim.cjs:566:5)
+    at tryRm (C:\Users\kayf\AppData\Local\Programs\WorkBuddyAI\resources\app.asar.unpacked\cli\vendor\shim\node-safe-delete-shim.cjs:747:5)
+    at Object.wrappedPromisesRm [as rm] (C:\Users\kayf\AppData\Local\Programs\WorkBuddyAI\resources\app.asar.unpacked\cli\vendor\shim\node-safe-delete-shim.cjs:791:15)
+    at C:\Users\kayf\Desktop\student project\dashboard\node_modules\next\dist\build\index.js:2025:40
+    at async Span.traceAsyncFn (C:\Users\kayf\Desktop\student project\dashboard\node_modules\next\dist\trace\trace.js:154:20)
+    at async C:\Users\kayf\Desktop\student project\dashboard\node_modules\next\dist\build\index.js:1543:17
+    at async Span.traceAsyncFn (C:\Users\kayf\Desktop\student project\dashboard\node_modules\next\dist\trace\trace.js:154:20)
+    at async build (C:\Users\kayf\Desktop\student project\dashboard\node_modules\next\dist\build\index.js:366:9)
+
+
+Exit status: 1
+Signal: null
+Static export verified: false
+Original inputs and artifacts unchanged: true

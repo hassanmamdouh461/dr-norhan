@@ -1,0 +1,2472 @@
+cwd: C:\Users\kayf\Desktop\student project\student_app
+command: C:/Users/kayf/flutter-sdk/flutter/bin/flutter.bat test --no-pub
+env: CI=true FLUTTER_SUPPRESS_ANALYTICS=true
+
+
+  ╔════════════════════════════════════════════════════════════════════════════╗
+  ║                 Welcome to Flutter! - https://flutter.dev                  ║
+  ║                                                                            ║
+  ║ The Flutter tool uses Google Analytics to anonymously report feature usage ║
+  ║ statistics and basic crash reports. This data is used to help improve      ║
+  ║ Flutter tools over time.                                                   ║
+  ║                                                                            ║
+  ║ Flutter tool analytics are not sent on the very first run. To disable      ║
+  ║ reporting, type 'flutter config --no-analytics'. To display the current    ║
+  ║ setting, type 'flutter config'. If you opt out of analytics, an opt-out    ║
+  ║ event will be sent, and then no further information will be sent by the    ║
+  ║ Flutter tool.                                                              ║
+  ║                                                                            ║
+  ║ By downloading the Flutter SDK, you agree to the Google Terms of Service.  ║
+  ║ The Google Privacy Policy describes how data is handled in this service.   ║
+  ║                                                                            ║
+  ║ Moreover, Flutter includes the Dart SDK, which may send usage metrics and  ║
+  ║ crash reports to Google.                                                   ║
+  ║                                                                            ║
+  ║ Read about data we send with crash reports:                                ║
+  ║ https://flutter.dev/docs/reference/crash-reporting                         ║
+  ║                                                                            ║
+  ║ See Google's privacy policy:                                               ║
+  ║ https://policies.google.com/privacy                                        ║
+  ║                                                                            ║
+  ║ To disable animations in this tool, use                                    ║
+  ║ 'flutter config --no-cli-animations'.                                      ║
+  ╚════════════════════════════════════════════════════════════════════════════╝
+
+00:00 +0: loading C:/Users/kayf/Desktop/student project/student_app/test/api_service_test.dart
+test/api_service_test.dart:8:8: Error: Error when reading '../../../AppData/Local/Pub/Cache/hosted/pub.dev/dio-5.9.2/lib/dio.dart': The system cannot find the path specified.
+
+import 'package:dio/dio.dart';
+       ^
+lib/services/api_service.dart:2:8: Error: Error when reading '../../../AppData/Local/Pub/Cache/hosted/pub.dev/dio-5.9.2/lib/dio.dart': The system cannot find the path specified.
+
+import 'package:dio/dio.dart';
+       ^
+test/api_service_test.dart:10:8: Error: Error when reading '../../../AppData/Local/Pub/Cache/hosted/pub.dev/supabase_flutter-2.14.2/lib/supabase_flutter.dart': The system cannot find the path specified.
+
+import 'package:supabase_flutter/supabase_flutter.dart';
+       ^
+lib/services/api_service.dart:3:8: Error: Error when reading '../../../AppData/Local/Pub/Cache/hosted/pub.dev/supabase_flutter-2.14.2/lib/supabase_flutter.dart': The system cannot find the path specified.
+
+import 'package:supabase_flutter/supabase_flutter.dart';
+       ^
+lib/services/device_service.dart:2:8: Error: Error when reading '../../../AppData/Local/Pub/Cache/hosted/pub.dev/device_info_plus-9.1.2/lib/device_info_plus.dart': The system cannot find the path specified.
+
+import 'package:device_info_plus/device_info_plus.dart';
+       ^
+lib/services/device_service.dart:3:8: Error: Error when reading '../../../AppData/Local/Pub/Cache/hosted/pub.dev/flutter_secure_storage-10.3.1/lib/flutter_secure_storage.dart': The system cannot find the path specified.
+
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
+       ^
+lib/services/api_service.dart:8:14: Error: Type 'Dio' not found.
+  late final Dio _dio;
+             ^^^
+lib/services/api_service.dart:380:5: Error: Type 'CancelToken' not found.
+    CancelToken? cancelToken,
+    ^^^^^^^^^^^
+lib/services/device_service.dart:7:9: Error: Type 'FlutterSecureStorage' not found.
+  final FlutterSecureStorage _storage = const FlutterSecureStorage();
+        ^^^^^^^^^^^^^^^^^^^^
+lib/services/device_service.dart:8:9: Error: Type 'DeviceInfoPlugin' not found.
+  final DeviceInfoPlugin _deviceInfo = DeviceInfoPlugin();
+        ^^^^^^^^^^^^^^^^
+test/api_service_test.dart:164:25: Error: Method not found: 'EmptyLocalStorage'.
+          localStorage: EmptyLocalStorage(),
+                        ^^^^^^^^^^^^^^^^^
+test/api_service_test.dart:161:28: Error: Couldn't find constructor 'FlutterAuthClientOptions'.
+        authOptions: const FlutterAuthClientOptions(
+                           ^^^^^^^^^^^^^^^^^^^^^^^^
+test/api_service_test.dart:157:13: Error: Undefined name 'Supabase'.
+      () => Supabase.initialize(
+            ^^^^^^^^
+test/api_service_test.dart:172:11: Error: Undefined name 'Supabase'.
+    await Supabase.instance.dispose();
+          ^^^^^^^^
+test/api_service_test.dart:277:13: Error: Undefined name 'Supabase'.
+      await Supabase.instance.client.auth.recoverSession(jsonEncode({
+            ^^^^^^^^
+test/api_service_test.dart:291:14: Error: Undefined name 'Supabase'.
+      expect(Supabase.instance.client.auth.currentSession?.accessToken, accessToken);
+             ^^^^^^^^
+test/api_service_test.dart:338:18: Error: Undefined name 'Supabase'.
+          expect(Supabase.instance.client.auth.currentSession?.accessToken,
+                 ^^^^^^^^
+test/api_service_test.dart:375:16: Error: Undefined name 'Supabase'.
+        expect(Supabase.instance.client.auth.currentSession?.accessToken,
+               ^^^^^^^^
+test/api_service_test.dart:399:23: Error: Method not found: 'CancelToken'.
+        final token = CancelToken();
+                      ^^^^^^^^^^^
+test/api_service_test.dart:406:23: Error: 'DioException' isn't a type.
+          throwsA(isA<DioException>().having(
+                      ^^^^^^^^^^^^
+test/api_service_test.dart:409:13: Error: Undefined name 'DioExceptionType'.
+            DioExceptionType.cancel,
+            ^^^^^^^^^^^^^^^^
+test/api_service_test.dart:407:30: Error: The getter 'type' isn't defined for the class 'Object?'.
+ - 'Object' is from 'dart:core'.
+Try correcting the name to the name of an existing getter, or defining a getter or field named 'type'.
+            (error) => error.type,
+                             ^^^^
+lib/services/api_service.dart:8:14: Error: 'Dio' isn't a type.
+  late final Dio _dio;
+             ^^^
+lib/services/api_service.dart:13:12: Error: The method 'Dio' isn't defined for the class 'ApiService'.
+ - 'ApiService' is from 'package:alhadaba_chemistry_app/services/api_service.dart' ('lib/services/api_service.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'Dio'.
+    _dio = Dio(BaseOptions(
+           ^^^
+lib/services/api_service.dart:13:16: Error: The method 'BaseOptions' isn't defined for the class 'ApiService'.
+ - 'ApiService' is from 'package:alhadaba_chemistry_app/services/api_service.dart' ('lib/services/api_service.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'BaseOptions'.
+    _dio = Dio(BaseOptions(
+               ^^^^^^^^^^^
+lib/services/api_service.dart:20:27: Error: The method 'InterceptorsWrapper' isn't defined for the class 'ApiService'.
+ - 'ApiService' is from 'package:alhadaba_chemistry_app/services/api_service.dart' ('lib/services/api_service.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'InterceptorsWrapper'.
+    _dio.interceptors.add(InterceptorsWrapper(
+                          ^^^^^^^^^^^^^^^^^^^
+lib/services/api_service.dart:32:27: Error: The getter 'Supabase' isn't defined for the class 'ApiService'.
+ - 'ApiService' is from 'package:alhadaba_chemistry_app/services/api_service.dart' ('lib/services/api_service.dart').
+Try correcting the name to the name of an existing getter, or defining a getter or field named 'Supabase'.
+          final session = Supabase.instance.client.auth.currentSession;
+                          ^^^^^^^^
+lib/services/api_service.dart:50:13: Error: The getter 'Supabase' isn't defined for the class 'ApiService'.
+ - 'ApiService' is from 'package:alhadaba_chemistry_app/services/api_service.dart' ('lib/services/api_service.dart').
+Try correcting the name to the name of an existing getter, or defining a getter or field named 'Supabase'.
+            Supabase.instance.client.auth.currentSession != null) {
+            ^^^^^^^^
+lib/services/api_service.dart:51:11: Error: The getter 'Supabase' isn't defined for the class 'ApiService'.
+ - 'ApiService' is from 'package:alhadaba_chemistry_app/services/api_service.dart' ('lib/services/api_service.dart').
+Try correcting the name to the name of an existing getter, or defining a getter or field named 'Supabase'.
+          Supabase.instance.client.auth.signOut();
+          ^^^^^^^^
+lib/services/api_service.dart:58:26: Error: The method 'DioException' isn't defined for the class 'ApiService'.
+ - 'ApiService' is from 'package:alhadaba_chemistry_app/services/api_service.dart' ('lib/services/api_service.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'DioException'.
+          handler.reject(DioException(
+                         ^^^^^^^^^^^^
+lib/services/api_service.dart:71:31: Error: The getter 'Supabase' isn't defined for the class 'ApiService'.
+ - 'ApiService' is from 'package:alhadaba_chemistry_app/services/api_service.dart' ('lib/services/api_service.dart').
+Try correcting the name to the name of an existing getter, or defining a getter or field named 'Supabase'.
+  bool get isAuthenticated => Supabase.instance.client.auth.currentSession != null;
+                              ^^^^^^^^
+lib/services/api_service.dart:83:18: Error: The method 'Options' isn't defined for the class 'ApiService'.
+ - 'ApiService' is from 'package:alhadaba_chemistry_app/services/api_service.dart' ('lib/services/api_service.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'Options'.
+        options: Options(
+                 ^^^^^^^
+lib/services/api_service.dart:102:16: Error: The method 'Options' isn't defined for the class 'ApiService'.
+ - 'ApiService' is from 'package:alhadaba_chemistry_app/services/api_service.dart' ('lib/services/api_service.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'Options'.
+      options: Options(
+               ^^^^^^^
+lib/services/api_service.dart:380:5: Error: 'CancelToken' isn't a type.
+    CancelToken? cancelToken,
+    ^^^^^^^^^^^
+lib/services/api_service.dart:385:16: Error: The method 'Options' isn't defined for the class 'ApiService'.
+ - 'ApiService' is from 'package:alhadaba_chemistry_app/services/api_service.dart' ('lib/services/api_service.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'Options'.
+      options: Options(
+               ^^^^^^^
+lib/services/api_service.dart:386:23: Error: The getter 'ResponseType' isn't defined for the class 'ApiService'.
+ - 'ApiService' is from 'package:alhadaba_chemistry_app/services/api_service.dart' ('lib/services/api_service.dart').
+Try correcting the name to the name of an existing getter, or defining a getter or field named 'ResponseType'.
+        responseType: ResponseType.bytes,
+                      ^^^^^^^^^^^^
+lib/services/api_service.dart:398:26: Error: The method 'Dio' isn't defined for the class 'ApiService'.
+ - 'ApiService' is from 'package:alhadaba_chemistry_app/services/api_service.dart' ('lib/services/api_service.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'Dio'.
+        final cleanDio = Dio();
+                         ^^^
+lib/services/api_service.dart:401:20: Error: The method 'Options' isn't defined for the class 'ApiService'.
+ - 'ApiService' is from 'package:alhadaba_chemistry_app/services/api_service.dart' ('lib/services/api_service.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'Options'.
+          options: Options(responseType: ResponseType.bytes),
+                   ^^^^^^^
+lib/services/api_service.dart:401:42: Error: The getter 'ResponseType' isn't defined for the class 'ApiService'.
+ - 'ApiService' is from 'package:alhadaba_chemistry_app/services/api_service.dart' ('lib/services/api_service.dart').
+Try correcting the name to the name of an existing getter, or defining a getter or field named 'ResponseType'.
+          options: Options(responseType: ResponseType.bytes),
+                                         ^^^^^^^^^^^^
+lib/services/device_service.dart:7:9: Error: 'FlutterSecureStorage' isn't a type.
+  final FlutterSecureStorage _storage = const FlutterSecureStorage();
+        ^^^^^^^^^^^^^^^^^^^^
+lib/services/device_service.dart:7:47: Error: Couldn't find constructor 'FlutterSecureStorage'.
+  final FlutterSecureStorage _storage = const FlutterSecureStorage();
+                                              ^^^^^^^^^^^^^^^^^^^^
+lib/services/device_service.dart:8:9: Error: 'DeviceInfoPlugin' isn't a type.
+  final DeviceInfoPlugin _deviceInfo = DeviceInfoPlugin();
+        ^^^^^^^^^^^^^^^^
+lib/services/device_service.dart:8:40: Error: Method not found: 'DeviceInfoPlugin'.
+  final DeviceInfoPlugin _deviceInfo = DeviceInfoPlugin();
+                                       ^^^^^^^^^^^^^^^^
+00:00 +0 -1: loading C:/Users/kayf/Desktop/student project/student_app/test/api_service_test.dart [E]
+  Failed to load "C:/Users/kayf/Desktop/student project/student_app/test/api_service_test.dart": Compilation failed for testPath=C:/Users/kayf/Desktop/student project/student_app/test/api_service_test.dart
+  Error: the Dart compiler exited unexpectedly.
+  package:flutter_tools/src/base/common.dart 10:3  throwToolExit
+  package:flutter_tools/src/compile.dart 898:9     DefaultResidentCompiler._compile.<fn>
+  dart:async/zone.dart 1407:47                     _rootRunUnary
+  dart:async/zone.dart 1308:19                     _CustomZone.runUnary
+  dart:async/future_impl.dart 847:45               Future._propagateToListeners.handleValueCallback
+  dart:async/future_impl.dart 876:13               Future._propagateToListeners
+  dart:async/future_impl.dart 772:9                Future._propagateToListeners
+  dart:async/future_impl.dart 652:5                Future._completeWithValue
+  dart:async/future_impl.dart 722:7                Future._asyncCompleteWithValue.<fn>
+  dart:async/zone.dart 1399:13                     _rootRun
+  dart:async/zone.dart 1301:19                     _CustomZone.run
+  dart:async/zone.dart 1209:7                      _CustomZone.runGuarded
+  dart:async/zone.dart 1249:23                     _CustomZone.bindCallbackGuarded.<fn>
+  dart:async/schedule_microtask.dart 40:21         _microtaskLoop
+  dart:async/schedule_microtask.dart 49:5          _startMicrotaskLoop
+  dart:isolate-patch/isolate_patch.dart 118:13     _runPendingImmediateCallback
+  dart:isolate-patch/isolate_patch.dart 185:5      _RawReceivePort._handleMessage
+  
+test/course_details_screen_test.dart:8:8: Error: Error when reading '../../../AppData/Local/Pub/Cache/hosted/pub.dev/flutter_bloc-8.1.6/lib/flutter_bloc.dart': The system cannot find the path specified.
+
+import 'package:flutter_bloc/flutter_bloc.dart';
+       ^
+lib/blocs/course/course_bloc.dart:1:8: Error: Error when reading '../../../AppData/Local/Pub/Cache/hosted/pub.dev/flutter_bloc-8.1.6/lib/flutter_bloc.dart': The system cannot find the path specified.
+
+import 'package:flutter_bloc/flutter_bloc.dart';
+       ^
+lib/screens/course_details_screen.dart:2:8: Error: Error when reading '../../../AppData/Local/Pub/Cache/hosted/pub.dev/flutter_bloc-8.1.6/lib/flutter_bloc.dart': The system cannot find the path specified.
+
+import 'package:flutter_bloc/flutter_bloc.dart';
+       ^
+lib/screens/course_details_screen.dart:3:8: Error: Error when reading '../../../AppData/Local/Pub/Cache/hosted/pub.dev/go_router-14.8.1/lib/go_router.dart': The system cannot find the path specified.
+
+import 'package:go_router/go_router.dart';
+       ^
+lib/screens/course_details_screen.dart:4:8: Error: Error when reading '../../../AppData/Local/Pub/Cache/hosted/pub.dev/cached_network_image-3.4.0/lib/cached_network_image.dart': The system cannot find the path specified.
+
+import 'package:cached_network_image/cached_network_image.dart';
+       ^
+lib/blocs/auth/auth_bloc.dart:1:8: Error: Error when reading '../../../AppData/Local/Pub/Cache/hosted/pub.dev/flutter_bloc-8.1.6/lib/flutter_bloc.dart': The system cannot find the path specified.
+
+import 'package:flutter_bloc/flutter_bloc.dart';
+       ^
+lib/screens/lesson_player_screen.dart:5:8: Error: Error when reading '../../../AppData/Local/Pub/Cache/hosted/pub.dev/flutter_bloc-8.1.6/lib/flutter_bloc.dart': The system cannot find the path specified.
+
+import 'package:flutter_bloc/flutter_bloc.dart';
+       ^
+lib/screens/lesson_player_screen.dart:13:8: Error: Error when reading '../../../AppData/Local/Pub/Cache/hosted/pub.dev/cached_network_image-3.4.0/lib/cached_network_image.dart': The system cannot find the path specified.
+
+import 'package:cached_network_image/cached_network_image.dart';
+       ^
+lib/screens/lesson_player_screen.dart:14:8: Error: Error when reading '../../../AppData/Local/Pub/Cache/hosted/pub.dev/go_router-14.8.1/lib/go_router.dart': The system cannot find the path specified.
+
+import 'package:go_router/go_router.dart';
+       ^
+lib/screens/pdf_viewer_screen.dart:6:8: Error: Error when reading '../../../AppData/Local/Pub/Cache/hosted/pub.dev/flutter_bloc-8.1.6/lib/flutter_bloc.dart': The system cannot find the path specified.
+
+import 'package:flutter_bloc/flutter_bloc.dart';
+       ^
+lib/services/api_service.dart:2:8: Error: Error when reading '../../../AppData/Local/Pub/Cache/hosted/pub.dev/dio-5.9.2/lib/dio.dart': The system cannot find the path specified.
+
+import 'package:dio/dio.dart';
+       ^
+lib/screens/lesson_player_screen.dart:9:8: Error: Error when reading '../../../AppData/Local/Pub/Cache/hosted/pub.dev/dio-5.9.2/lib/dio.dart': The system cannot find the path specified.
+
+import 'package:dio/dio.dart';
+       ^
+lib/screens/pdf_viewer_screen.dart:4:8: Error: Error when reading '../../../AppData/Local/Pub/Cache/hosted/pub.dev/dio-5.9.2/lib/dio.dart': The system cannot find the path specified.
+
+import 'package:dio/dio.dart';
+       ^
+lib/services/api_service.dart:3:8: Error: Error when reading '../../../AppData/Local/Pub/Cache/hosted/pub.dev/supabase_flutter-2.14.2/lib/supabase_flutter.dart': The system cannot find the path specified.
+
+import 'package:supabase_flutter/supabase_flutter.dart';
+       ^
+lib/blocs/auth/auth_bloc.dart:2:8: Error: Error when reading '../../../AppData/Local/Pub/Cache/hosted/pub.dev/supabase_flutter-2.14.2/lib/supabase_flutter.dart': The system cannot find the path specified.
+
+import 'package:supabase_flutter/supabase_flutter.dart' hide AuthState;
+       ^
+lib/screens/lesson_player_screen.dart:6:8: Error: Error when reading '../../../AppData/Local/Pub/Cache/hosted/pub.dev/video_player-2.9.5/lib/video_player.dart': The system cannot find the path specified.
+
+import 'package:video_player/video_player.dart';
+       ^
+lib/screens/lesson_player_screen.dart:7:8: Error: Error when reading '../../../AppData/Local/Pub/Cache/hosted/pub.dev/chewie-1.7.5/lib/chewie.dart': The system cannot find the path specified.
+
+import 'package:chewie/chewie.dart';
+       ^
+lib/screens/lesson_player_screen.dart:8:8: Error: Error when reading '../../../AppData/Local/Pub/Cache/hosted/pub.dev/flutter_windowmanager-0.2.0/lib/flutter_windowmanager.dart': The system cannot find the path specified.
+
+import 'package:flutter_windowmanager/flutter_windowmanager.dart';
+       ^
+lib/screens/pdf_viewer_screen.dart:8:8: Error: Error when reading '../../../AppData/Local/Pub/Cache/hosted/pub.dev/flutter_windowmanager-0.2.0/lib/flutter_windowmanager.dart': The system cannot find the path specified.
+
+import 'package:flutter_windowmanager/flutter_windowmanager.dart';
+       ^
+lib/screens/pdf_viewer_screen.dart:7:8: Error: Error when reading '../../../AppData/Local/Pub/Cache/hosted/pub.dev/syncfusion_flutter_pdfviewer-25.2.7/lib/pdfviewer.dart': The system cannot find the path specified.
+
+import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
+       ^
+lib/services/device_service.dart:2:8: Error: Error when reading '../../../AppData/Local/Pub/Cache/hosted/pub.dev/device_info_plus-9.1.2/lib/device_info_plus.dart': The system cannot find the path specified.
+
+import 'package:device_info_plus/device_info_plus.dart';
+       ^
+lib/services/device_service.dart:3:8: Error: Error when reading '../../../AppData/Local/Pub/Cache/hosted/pub.dev/flutter_secure_storage-10.3.1/lib/flutter_secure_storage.dart': The system cannot find the path specified.
+
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
+       ^
+lib/services/push_notification_service.dart:1:8: Error: Error when reading '../../../AppData/Local/Pub/Cache/hosted/pub.dev/firebase_messaging-16.2.0/lib/firebase_messaging.dart': The system cannot find the path specified.
+
+import 'package:firebase_messaging/firebase_messaging.dart';
+       ^
+lib/blocs/course/course_bloc.dart:6:26: Error: Type 'Bloc' not found.
+class CourseBloc extends Bloc<CourseEvent, CourseState> {
+                         ^^^^
+lib/blocs/course/course_bloc.dart:27:5: Error: Type 'Emitter' not found.
+    Emitter<CourseState> emit,
+    ^^^^^^^
+lib/blocs/course/course_bloc.dart:53:5: Error: Type 'Emitter' not found.
+    Emitter<CourseState> emit,
+    ^^^^^^^
+lib/blocs/course/course_bloc.dart:71:5: Error: Type 'Emitter' not found.
+    Emitter<CourseState> emit,
+    ^^^^^^^
+lib/blocs/course/course_bloc.dart:100:5: Error: Type 'Emitter' not found.
+    Emitter<CourseState> emit,
+    ^^^^^^^
+lib/services/api_service.dart:8:14: Error: Type 'Dio' not found.
+  late final Dio _dio;
+             ^^^
+lib/services/api_service.dart:380:5: Error: Type 'CancelToken' not found.
+    CancelToken? cancelToken,
+    ^^^^^^^^^^^
+lib/blocs/auth/auth_bloc.dart:8:24: Error: Type 'Bloc' not found.
+class AuthBloc extends Bloc<AuthEvent, AuthState> {
+                       ^^^^
+lib/blocs/auth/auth_bloc.dart:10:9: Error: Type 'SupabaseClient' not found.
+  final SupabaseClient _supabaseClient = Supabase.instance.client;
+        ^^^^^^^^^^^^^^
+lib/blocs/auth/auth_bloc.dart:45:5: Error: Type 'Emitter' not found.
+    Emitter<AuthState> emit,
+    ^^^^^^^
+lib/blocs/auth/auth_bloc.dart:93:5: Error: Type 'Emitter' not found.
+    Emitter<AuthState> emit,
+    ^^^^^^^
+lib/blocs/auth/auth_bloc.dart:145:5: Error: Type 'Emitter' not found.
+    Emitter<AuthState> emit,
+    ^^^^^^^
+lib/blocs/auth/auth_bloc.dart:193:5: Error: Type 'Emitter' not found.
+    Emitter<AuthState> emit,
+    ^^^^^^^
+lib/blocs/auth/auth_bloc.dart:220:5: Error: Type 'Emitter' not found.
+    Emitter<AuthState> emit,
+    ^^^^^^^
+lib/screens/lesson_player_screen.dart:37:3: Error: Type 'VideoPlayerController' not found.
+  VideoPlayerController? _videoPlayerController;
+  ^^^^^^^^^^^^^^^^^^^^^
+lib/screens/lesson_player_screen.dart:38:3: Error: Type 'ChewieController' not found.
+  ChewieController? _chewieController;
+  ^^^^^^^^^^^^^^^^
+lib/screens/pdf_viewer_screen.dart:36:3: Error: Type 'CancelToken' not found.
+  CancelToken? _downloadCancelToken;
+  ^^^^^^^^^^^
+lib/services/device_service.dart:7:9: Error: Type 'FlutterSecureStorage' not found.
+  final FlutterSecureStorage _storage = const FlutterSecureStorage();
+        ^^^^^^^^^^^^^^^^^^^^
+lib/services/device_service.dart:8:9: Error: Type 'DeviceInfoPlugin' not found.
+  final DeviceInfoPlugin _deviceInfo = DeviceInfoPlugin();
+        ^^^^^^^^^^^^^^^^
+lib/services/push_notification_service.dart:21:49: Error: Type 'RemoteMessage' not found.
+Future<void> firebaseMessagingBackgroundHandler(RemoteMessage message) async {
+                                                ^^^^^^^^^^^^^
+lib/services/push_notification_service.dart:97:30: Error: Type 'RemoteMessage' not found.
+  void _showForegroundBanner(RemoteMessage message) {
+                             ^^^^^^^^^^^^^
+test/course_details_screen_test.dart:67:29: Error: The getter 'BlocProvider' isn't defined for the class '_Harness'.
+ - '_Harness' is from 'test/course_details_screen_test.dart'.
+Try correcting the name to the name of an existing getter, or defining a getter or field named 'BlocProvider'.
+    await tester.pumpWidget(BlocProvider<CourseBloc>.value(
+                            ^^^^^^^^^^^^
+test/course_details_screen_test.dart:67:29: Error: The static type of the explicit instantiation operand must be a generic function type but is 'dynamic'.
+Try changing the operand or remove the type arguments.
+    await tester.pumpWidget(BlocProvider<CourseBloc>.value(
+                            ^
+lib/blocs/course/course_bloc.dart:12:49: Error: Too many positional arguments: 0 allowed, but 1 found.
+Try removing the extra positional arguments.
+  CourseBloc({required this.apiService}) : super(CourseInitial()) {
+                                                ^
+lib/blocs/course/course_bloc.dart:13:5: Error: The method 'on' isn't defined for the class 'CourseBloc'.
+ - 'CourseBloc' is from 'package:alhadaba_chemistry_app/blocs/course/course_bloc.dart' ('lib/blocs/course/course_bloc.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'on'.
+    on<FetchCoursesRequested>(_onFetchCoursesRequested);
+    ^^
+lib/blocs/course/course_bloc.dart:14:5: Error: The method 'on' isn't defined for the class 'CourseBloc'.
+ - 'CourseBloc' is from 'package:alhadaba_chemistry_app/blocs/course/course_bloc.dart' ('lib/blocs/course/course_bloc.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'on'.
+    on<FetchMyCoursesRequested>(_onFetchMyCoursesRequested);
+    ^^
+lib/blocs/course/course_bloc.dart:15:5: Error: The method 'on' isn't defined for the class 'CourseBloc'.
+ - 'CourseBloc' is from 'package:alhadaba_chemistry_app/blocs/course/course_bloc.dart' ('lib/blocs/course/course_bloc.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'on'.
+    on<FetchCourseDetailsRequested>(_onFetchCourseDetailsRequested);
+    ^^
+lib/blocs/course/course_bloc.dart:16:5: Error: The method 'on' isn't defined for the class 'CourseBloc'.
+ - 'CourseBloc' is from 'package:alhadaba_chemistry_app/blocs/course/course_bloc.dart' ('lib/blocs/course/course_bloc.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'on'.
+    on<RedeemCodeRequested>(_onRedeemCodeRequested);
+    ^^
+lib/blocs/course/course_bloc.dart:17:5: Error: The method 'on' isn't defined for the class 'CourseBloc'.
+ - 'CourseBloc' is from 'package:alhadaba_chemistry_app/blocs/course/course_bloc.dart' ('lib/blocs/course/course_bloc.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'on'.
+    on<RestoreCoursesLoaded>((event, emit) {
+    ^^
+lib/blocs/course/course_bloc.dart:27:5: Error: 'Emitter' isn't a type.
+    Emitter<CourseState> emit,
+    ^^^^^^^
+lib/blocs/course/course_bloc.dart:53:5: Error: 'Emitter' isn't a type.
+    Emitter<CourseState> emit,
+    ^^^^^^^
+lib/blocs/course/course_bloc.dart:71:5: Error: 'Emitter' isn't a type.
+    Emitter<CourseState> emit,
+    ^^^^^^^
+lib/blocs/course/course_bloc.dart:100:5: Error: 'Emitter' isn't a type.
+    Emitter<CourseState> emit,
+    ^^^^^^^
+lib/blocs/course/course_bloc.dart:114:7: Error: The method 'add' isn't defined for the class 'CourseBloc'.
+ - 'CourseBloc' is from 'package:alhadaba_chemistry_app/blocs/course/course_bloc.dart' ('lib/blocs/course/course_bloc.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'add'.
+      add(FetchCoursesRequested());
+      ^^^
+lib/screens/course_details_screen.dart:84:13: Error: The method 'read' isn't defined for the class 'BuildContext'.
+ - 'BuildContext' is from 'package:flutter/src/widgets/framework.dart' ('../../../flutter-sdk/flutter/packages/flutter/lib/src/widgets/framework.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'read'.
+    context.read<CourseBloc>().add(FetchCourseDetailsRequested(courseId: widget.courseId));
+            ^^^^
+lib/screens/course_details_screen.dart:89:12: Error: The method 'BlocListener' isn't defined for the class '_CourseDetailsScreenState'.
+ - '_CourseDetailsScreenState' is from 'package:alhadaba_chemistry_app/screens/course_details_screen.dart' ('lib/screens/course_details_screen.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'BlocListener'.
+    return BlocListener<CourseBloc, CourseState>(
+           ^^^^^^^^^^^^
+lib/screens/course_details_screen.dart:103:14: Error: The method 'BlocBuilder' isn't defined for the class '_CourseDetailsScreenState'.
+ - '_CourseDetailsScreenState' is from 'package:alhadaba_chemistry_app/screens/course_details_screen.dart' ('lib/screens/course_details_screen.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'BlocBuilder'.
+      child: BlocBuilder<CourseBloc, CourseState>(
+             ^^^^^^^^^^^
+lib/screens/course_details_screen.dart:141:33: Error: The method 'CachedNetworkImage' isn't defined for the class '_CourseDetailsScreenState'.
+ - '_CourseDetailsScreenState' is from 'package:alhadaba_chemistry_app/screens/course_details_screen.dart' ('lib/screens/course_details_screen.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'CachedNetworkImage'.
+                              ? CachedNetworkImage(
+                                ^^^^^^^^^^^^^^^^^^
+lib/screens/course_details_screen.dart:360:40: Error: The method 'read' isn't defined for the class 'BuildContext'.
+ - 'BuildContext' is from 'package:flutter/src/widgets/framework.dart' ('../../../flutter-sdk/flutter/packages/flutter/lib/src/widgets/framework.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'read'.
+          final bool isGuest = context.read<AuthBloc>().state is! AuthAuthenticated;
+                                       ^^^^
+lib/screens/course_details_screen.dart:641:31: Error: The method 'read' isn't defined for the class 'BuildContext'.
+ - 'BuildContext' is from 'package:flutter/src/widgets/framework.dart' ('../../../flutter-sdk/flutter/packages/flutter/lib/src/widgets/framework.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'read'.
+                      context.read<CourseBloc>().add(FetchCourseDetailsRequested(courseId: widget.courseId));
+                              ^^^^
+lib/screens/course_details_screen.dart:685:25: Error: The method 'go' isn't defined for the class 'BuildContext'.
+ - 'BuildContext' is from 'package:flutter/src/widgets/framework.dart' ('../../../flutter-sdk/flutter/packages/flutter/lib/src/widgets/framework.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'go'.
+                context.go('/login');
+                        ^^
+lib/screens/course_details_screen.dart:702:34: Error: The method 'read' isn't defined for the class 'BuildContext'.
+ - 'BuildContext' is from 'package:flutter/src/widgets/framework.dart' ('../../../flutter-sdk/flutter/packages/flutter/lib/src/widgets/framework.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'read'.
+    final bool isGuest = context.read<AuthBloc>().state is! AuthAuthenticated;
+                                 ^^^^
+lib/screens/course_details_screen.dart:720:52: Error: The method 'go' isn't defined for the class 'BuildContext'.
+ - 'BuildContext' is from 'package:flutter/src/widgets/framework.dart' ('../../../flutter-sdk/flutter/packages/flutter/lib/src/widgets/framework.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'go'.
+                onPressed: () => isGuest ? context.go('/login') : _showRedeemBottomSheet(course),
+                                                   ^^
+lib/screens/course_details_screen.dart:853:35: Error: The method 'read' isn't defined for the class 'BuildContext'.
+ - 'BuildContext' is from 'package:flutter/src/widgets/framework.dart' ('../../../flutter-sdk/flutter/packages/flutter/lib/src/widgets/framework.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'read'.
+                          context.read<CourseBloc>().add(
+                                  ^^^^
+lib/services/api_service.dart:8:14: Error: 'Dio' isn't a type.
+  late final Dio _dio;
+             ^^^
+lib/services/api_service.dart:13:12: Error: The method 'Dio' isn't defined for the class 'ApiService'.
+ - 'ApiService' is from 'package:alhadaba_chemistry_app/services/api_service.dart' ('lib/services/api_service.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'Dio'.
+    _dio = Dio(BaseOptions(
+           ^^^
+lib/services/api_service.dart:13:16: Error: The method 'BaseOptions' isn't defined for the class 'ApiService'.
+ - 'ApiService' is from 'package:alhadaba_chemistry_app/services/api_service.dart' ('lib/services/api_service.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'BaseOptions'.
+    _dio = Dio(BaseOptions(
+               ^^^^^^^^^^^
+lib/services/api_service.dart:20:27: Error: The method 'InterceptorsWrapper' isn't defined for the class 'ApiService'.
+ - 'ApiService' is from 'package:alhadaba_chemistry_app/services/api_service.dart' ('lib/services/api_service.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'InterceptorsWrapper'.
+    _dio.interceptors.add(InterceptorsWrapper(
+                          ^^^^^^^^^^^^^^^^^^^
+lib/services/api_service.dart:32:27: Error: The getter 'Supabase' isn't defined for the class 'ApiService'.
+ - 'ApiService' is from 'package:alhadaba_chemistry_app/services/api_service.dart' ('lib/services/api_service.dart').
+Try correcting the name to the name of an existing getter, or defining a getter or field named 'Supabase'.
+          final session = Supabase.instance.client.auth.currentSession;
+                          ^^^^^^^^
+lib/services/api_service.dart:50:13: Error: The getter 'Supabase' isn't defined for the class 'ApiService'.
+ - 'ApiService' is from 'package:alhadaba_chemistry_app/services/api_service.dart' ('lib/services/api_service.dart').
+Try correcting the name to the name of an existing getter, or defining a getter or field named 'Supabase'.
+            Supabase.instance.client.auth.currentSession != null) {
+            ^^^^^^^^
+lib/services/api_service.dart:51:11: Error: The getter 'Supabase' isn't defined for the class 'ApiService'.
+ - 'ApiService' is from 'package:alhadaba_chemistry_app/services/api_service.dart' ('lib/services/api_service.dart').
+Try correcting the name to the name of an existing getter, or defining a getter or field named 'Supabase'.
+          Supabase.instance.client.auth.signOut();
+          ^^^^^^^^
+lib/services/api_service.dart:58:26: Error: The method 'DioException' isn't defined for the class 'ApiService'.
+ - 'ApiService' is from 'package:alhadaba_chemistry_app/services/api_service.dart' ('lib/services/api_service.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'DioException'.
+          handler.reject(DioException(
+                         ^^^^^^^^^^^^
+lib/services/api_service.dart:71:31: Error: The getter 'Supabase' isn't defined for the class 'ApiService'.
+ - 'ApiService' is from 'package:alhadaba_chemistry_app/services/api_service.dart' ('lib/services/api_service.dart').
+Try correcting the name to the name of an existing getter, or defining a getter or field named 'Supabase'.
+  bool get isAuthenticated => Supabase.instance.client.auth.currentSession != null;
+                              ^^^^^^^^
+lib/services/api_service.dart:83:18: Error: The method 'Options' isn't defined for the class 'ApiService'.
+ - 'ApiService' is from 'package:alhadaba_chemistry_app/services/api_service.dart' ('lib/services/api_service.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'Options'.
+        options: Options(
+                 ^^^^^^^
+lib/services/api_service.dart:102:16: Error: The method 'Options' isn't defined for the class 'ApiService'.
+ - 'ApiService' is from 'package:alhadaba_chemistry_app/services/api_service.dart' ('lib/services/api_service.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'Options'.
+      options: Options(
+               ^^^^^^^
+lib/services/api_service.dart:380:5: Error: 'CancelToken' isn't a type.
+    CancelToken? cancelToken,
+    ^^^^^^^^^^^
+lib/services/api_service.dart:385:16: Error: The method 'Options' isn't defined for the class 'ApiService'.
+ - 'ApiService' is from 'package:alhadaba_chemistry_app/services/api_service.dart' ('lib/services/api_service.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'Options'.
+      options: Options(
+               ^^^^^^^
+lib/services/api_service.dart:386:23: Error: The getter 'ResponseType' isn't defined for the class 'ApiService'.
+ - 'ApiService' is from 'package:alhadaba_chemistry_app/services/api_service.dart' ('lib/services/api_service.dart').
+Try correcting the name to the name of an existing getter, or defining a getter or field named 'ResponseType'.
+        responseType: ResponseType.bytes,
+                      ^^^^^^^^^^^^
+lib/services/api_service.dart:398:26: Error: The method 'Dio' isn't defined for the class 'ApiService'.
+ - 'ApiService' is from 'package:alhadaba_chemistry_app/services/api_service.dart' ('lib/services/api_service.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'Dio'.
+        final cleanDio = Dio();
+                         ^^^
+lib/services/api_service.dart:401:20: Error: The method 'Options' isn't defined for the class 'ApiService'.
+ - 'ApiService' is from 'package:alhadaba_chemistry_app/services/api_service.dart' ('lib/services/api_service.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'Options'.
+          options: Options(responseType: ResponseType.bytes),
+                   ^^^^^^^
+lib/services/api_service.dart:401:42: Error: The getter 'ResponseType' isn't defined for the class 'ApiService'.
+ - 'ApiService' is from 'package:alhadaba_chemistry_app/services/api_service.dart' ('lib/services/api_service.dart').
+Try correcting the name to the name of an existing getter, or defining a getter or field named 'ResponseType'.
+          options: Options(responseType: ResponseType.bytes),
+                                         ^^^^^^^^^^^^
+lib/blocs/auth/auth_bloc.dart:10:9: Error: 'SupabaseClient' isn't a type.
+  final SupabaseClient _supabaseClient = Supabase.instance.client;
+        ^^^^^^^^^^^^^^
+lib/blocs/auth/auth_bloc.dart:10:42: Error: Undefined name 'Supabase'.
+  final SupabaseClient _supabaseClient = Supabase.instance.client;
+                                         ^^^^^^^^
+lib/blocs/auth/auth_bloc.dart:12:47: Error: Too many positional arguments: 0 allowed, but 1 found.
+Try removing the extra positional arguments.
+  AuthBloc({required this.apiService}) : super(AuthInitial()) {
+                                              ^
+lib/blocs/auth/auth_bloc.dart:13:5: Error: The method 'on' isn't defined for the class 'AuthBloc'.
+ - 'AuthBloc' is from 'package:alhadaba_chemistry_app/blocs/auth/auth_bloc.dart' ('lib/blocs/auth/auth_bloc.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'on'.
+    on<AuthCheckRequested>(_onAuthCheckRequested);
+    ^^
+lib/blocs/auth/auth_bloc.dart:14:5: Error: The method 'on' isn't defined for the class 'AuthBloc'.
+ - 'AuthBloc' is from 'package:alhadaba_chemistry_app/blocs/auth/auth_bloc.dart' ('lib/blocs/auth/auth_bloc.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'on'.
+    on<AuthLoggedIn>(_onAuthLoggedIn);
+    ^^
+lib/blocs/auth/auth_bloc.dart:15:5: Error: The method 'on' isn't defined for the class 'AuthBloc'.
+ - 'AuthBloc' is from 'package:alhadaba_chemistry_app/blocs/auth/auth_bloc.dart' ('lib/blocs/auth/auth_bloc.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'on'.
+    on<AuthRegistered>(_onAuthRegistered);
+    ^^
+lib/blocs/auth/auth_bloc.dart:16:5: Error: The method 'on' isn't defined for the class 'AuthBloc'.
+ - 'AuthBloc' is from 'package:alhadaba_chemistry_app/blocs/auth/auth_bloc.dart' ('lib/blocs/auth/auth_bloc.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'on'.
+    on<AuthProfileSyncRequested>(_onAuthProfileSyncRequested);
+    ^^
+lib/blocs/auth/auth_bloc.dart:17:5: Error: The method 'on' isn't defined for the class 'AuthBloc'.
+ - 'AuthBloc' is from 'package:alhadaba_chemistry_app/blocs/auth/auth_bloc.dart' ('lib/blocs/auth/auth_bloc.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'on'.
+    on<AuthLoggedOut>(_onAuthLoggedOut);
+    ^^
+lib/blocs/auth/auth_bloc.dart:45:5: Error: 'Emitter' isn't a type.
+    Emitter<AuthState> emit,
+    ^^^^^^^
+lib/blocs/auth/auth_bloc.dart:93:5: Error: 'Emitter' isn't a type.
+    Emitter<AuthState> emit,
+    ^^^^^^^
+lib/blocs/auth/auth_bloc.dart:145:5: Error: 'Emitter' isn't a type.
+    Emitter<AuthState> emit,
+    ^^^^^^^
+lib/blocs/auth/auth_bloc.dart:193:5: Error: 'Emitter' isn't a type.
+    Emitter<AuthState> emit,
+    ^^^^^^^
+lib/blocs/auth/auth_bloc.dart:220:5: Error: 'Emitter' isn't a type.
+    Emitter<AuthState> emit,
+    ^^^^^^^
+lib/screens/lesson_player_screen.dart:37:3: Error: 'VideoPlayerController' isn't a type.
+  VideoPlayerController? _videoPlayerController;
+  ^^^^^^^^^^^^^^^^^^^^^
+lib/screens/lesson_player_screen.dart:38:3: Error: 'ChewieController' isn't a type.
+  ChewieController? _chewieController;
+  ^^^^^^^^^^^^^^^^
+lib/screens/lesson_player_screen.dart:65:24: Error: The method 'read' isn't defined for the class 'BuildContext'.
+ - 'BuildContext' is from 'package:flutter/src/widgets/framework.dart' ('../../../flutter-sdk/flutter/packages/flutter/lib/src/widgets/framework.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'read'.
+    _isGuest = context.read<AuthBloc>().state is! AuthAuthenticated;
+                       ^^^^
+lib/screens/lesson_player_screen.dart:83:36: Error: The method 'read' isn't defined for the class 'BuildContext'.
+ - 'BuildContext' is from 'package:flutter/src/widgets/framework.dart' ('../../../flutter-sdk/flutter/packages/flutter/lib/src/widgets/framework.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'read'.
+        final apiService = context.read<AuthBloc>().apiService;
+                                   ^^^^
+lib/screens/lesson_player_screen.dart:93:36: Error: The method 'read' isn't defined for the class 'BuildContext'.
+ - 'BuildContext' is from 'package:flutter/src/widgets/framework.dart' ('../../../flutter-sdk/flutter/packages/flutter/lib/src/widgets/framework.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'read'.
+        final apiService = context.read<AuthBloc>().apiService;
+                                   ^^^^
+lib/screens/lesson_player_screen.dart:112:15: Error: The getter 'FlutterWindowManager' isn't defined for the class '_LessonPlayerScreenState'.
+ - '_LessonPlayerScreenState' is from 'package:alhadaba_chemistry_app/screens/lesson_player_screen.dart' ('lib/screens/lesson_player_screen.dart').
+Try correcting the name to the name of an existing getter, or defining a getter or field named 'FlutterWindowManager'.
+        await FlutterWindowManager.addFlags(FlutterWindowManager.FLAG_SECURE);
+              ^^^^^^^^^^^^^^^^^^^^
+lib/screens/lesson_player_screen.dart:112:45: Error: The getter 'FlutterWindowManager' isn't defined for the class '_LessonPlayerScreenState'.
+ - '_LessonPlayerScreenState' is from 'package:alhadaba_chemistry_app/screens/lesson_player_screen.dart' ('lib/screens/lesson_player_screen.dart').
+Try correcting the name to the name of an existing getter, or defining a getter or field named 'FlutterWindowManager'.
+        await FlutterWindowManager.addFlags(FlutterWindowManager.FLAG_SECURE);
+                                            ^^^^^^^^^^^^^^^^^^^^
+lib/screens/lesson_player_screen.dart:121:15: Error: The getter 'FlutterWindowManager' isn't defined for the class '_LessonPlayerScreenState'.
+ - '_LessonPlayerScreenState' is from 'package:alhadaba_chemistry_app/screens/lesson_player_screen.dart' ('lib/screens/lesson_player_screen.dart').
+Try correcting the name to the name of an existing getter, or defining a getter or field named 'FlutterWindowManager'.
+        await FlutterWindowManager.clearFlags(FlutterWindowManager.FLAG_SECURE);
+              ^^^^^^^^^^^^^^^^^^^^
+lib/screens/lesson_player_screen.dart:121:47: Error: The getter 'FlutterWindowManager' isn't defined for the class '_LessonPlayerScreenState'.
+ - '_LessonPlayerScreenState' is from 'package:alhadaba_chemistry_app/screens/lesson_player_screen.dart' ('lib/screens/lesson_player_screen.dart').
+Try correcting the name to the name of an existing getter, or defining a getter or field named 'FlutterWindowManager'.
+        await FlutterWindowManager.clearFlags(FlutterWindowManager.FLAG_SECURE);
+                                              ^^^^^^^^^^^^^^^^^^^^
+lib/screens/lesson_player_screen.dart:176:30: Error: The method 'read' isn't defined for the class 'BuildContext'.
+ - 'BuildContext' is from 'package:flutter/src/widgets/framework.dart' ('../../../flutter-sdk/flutter/packages/flutter/lib/src/widgets/framework.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'read'.
+    final authBloc = context.read<AuthBloc>();
+                             ^^^^
+lib/screens/lesson_player_screen.dart:267:34: Error: The getter 'VideoPlayerController' isn't defined for the class '_LessonPlayerScreenState'.
+ - '_LessonPlayerScreenState' is from 'package:alhadaba_chemistry_app/screens/lesson_player_screen.dart' ('lib/screens/lesson_player_screen.dart').
+Try correcting the name to the name of an existing getter, or defining a getter or field named 'VideoPlayerController'.
+        _videoPlayerController = VideoPlayerController.networkUrl(
+                                 ^^^^^^^^^^^^^^^^^^^^^
+lib/screens/lesson_player_screen.dart:269:23: Error: The getter 'VideoFormat' isn't defined for the class '_LessonPlayerScreenState'.
+ - '_LessonPlayerScreenState' is from 'package:alhadaba_chemistry_app/screens/lesson_player_screen.dart' ('lib/screens/lesson_player_screen.dart').
+Try correcting the name to the name of an existing getter, or defining a getter or field named 'VideoFormat'.
+          formatHint: VideoFormat.hls,
+                      ^^^^^^^^^^^
+lib/screens/lesson_player_screen.dart:272:34: Error: The getter 'VideoPlayerController' isn't defined for the class '_LessonPlayerScreenState'.
+ - '_LessonPlayerScreenState' is from 'package:alhadaba_chemistry_app/screens/lesson_player_screen.dart' ('lib/screens/lesson_player_screen.dart').
+Try correcting the name to the name of an existing getter, or defining a getter or field named 'VideoPlayerController'.
+        _videoPlayerController = VideoPlayerController.networkUrl(Uri.parse(playbackUrl));
+                                 ^^^^^^^^^^^^^^^^^^^^^
+lib/screens/lesson_player_screen.dart:307:27: Error: The method 'ChewieController' isn't defined for the class '_LessonPlayerScreenState'.
+ - '_LessonPlayerScreenState' is from 'package:alhadaba_chemistry_app/screens/lesson_player_screen.dart' ('lib/screens/lesson_player_screen.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'ChewieController'.
+      _chewieController = ChewieController(
+                          ^^^^^^^^^^^^^^^^
+lib/screens/lesson_player_screen.dart:315:33: Error: The method 'ChewieProgressColors' isn't defined for the class '_LessonPlayerScreenState'.
+ - '_LessonPlayerScreenState' is from 'package:alhadaba_chemistry_app/screens/lesson_player_screen.dart' ('lib/screens/lesson_player_screen.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'ChewieProgressColors'.
+        materialProgressColors: ChewieProgressColors(
+                                ^^^^^^^^^^^^^^^^^^^^
+lib/screens/lesson_player_screen.dart:396:20: Error: 'DioException' isn't a type.
+          if (e is DioException) {
+                   ^^^^^^^^^^^^
+lib/screens/lesson_player_screen.dart:368:32: Error: The method 'read' isn't defined for the class 'BuildContext'.
+ - 'BuildContext' is from 'package:flutter/src/widgets/framework.dart' ('../../../flutter-sdk/flutter/packages/flutter/lib/src/widgets/framework.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'read'.
+    final apiService = context.read<AuthBloc>().apiService;
+                               ^^^^
+lib/screens/lesson_player_screen.dart:434:34: Error: The method 'read' isn't defined for the class 'BuildContext'.
+ - 'BuildContext' is from 'package:flutter/src/widgets/framework.dart' ('../../../flutter-sdk/flutter/packages/flutter/lib/src/widgets/framework.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'read'.
+      final apiService = context.read<AuthBloc>().apiService;
+                                 ^^^^
+lib/screens/lesson_player_screen.dart:470:34: Error: The method 'read' isn't defined for the class 'BuildContext'.
+ - 'BuildContext' is from 'package:flutter/src/widgets/framework.dart' ('../../../flutter-sdk/flutter/packages/flutter/lib/src/widgets/framework.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'read'.
+      final apiService = context.read<AuthBloc>().apiService;
+                                 ^^^^
+lib/screens/lesson_player_screen.dart:499:34: Error: The method 'read' isn't defined for the class 'BuildContext'.
+ - 'BuildContext' is from 'package:flutter/src/widgets/framework.dart' ('../../../flutter-sdk/flutter/packages/flutter/lib/src/widgets/framework.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'read'.
+      final apiService = context.read<AuthBloc>().apiService;
+                                 ^^^^
+lib/screens/lesson_player_screen.dart:541:34: Error: The method 'read' isn't defined for the class 'BuildContext'.
+ - 'BuildContext' is from 'package:flutter/src/widgets/framework.dart' ('../../../flutter-sdk/flutter/packages/flutter/lib/src/widgets/framework.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'read'.
+      final apiService = context.read<AuthBloc>().apiService;
+                                 ^^^^
+lib/screens/lesson_player_screen.dart:606:34: Error: The method 'read' isn't defined for the class 'BuildContext'.
+ - 'BuildContext' is from 'package:flutter/src/widgets/framework.dart' ('../../../flutter-sdk/flutter/packages/flutter/lib/src/widgets/framework.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'read'.
+      final apiService = context.read<AuthBloc>().apiService;
+                                 ^^^^
+lib/screens/lesson_player_screen.dart:787:40: Error: The method 'go' isn't defined for the class 'BuildContext'.
+ - 'BuildContext' is from 'package:flutter/src/widgets/framework.dart' ('../../../flutter-sdk/flutter/packages/flutter/lib/src/widgets/framework.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'go'.
+              onPressed: () => context.go('/login'),
+                                       ^^
+lib/screens/lesson_player_screen.dart:910:48: Error: The method 'CachedNetworkImage' isn't defined for the class '_LessonPlayerScreenState'.
+ - '_LessonPlayerScreenState' is from 'package:alhadaba_chemistry_app/screens/lesson_player_screen.dart' ('lib/screens/lesson_player_screen.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'CachedNetworkImage'.
+                                        child: CachedNetworkImage(
+                                               ^^^^^^^^^^^^^^^^^^
+lib/screens/lesson_player_screen.dart:1060:34: Error: The method 'CachedNetworkImage' isn't defined for the class '_LessonPlayerScreenState'.
+ - '_LessonPlayerScreenState' is from 'package:alhadaba_chemistry_app/screens/lesson_player_screen.dart' ('lib/screens/lesson_player_screen.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'CachedNetworkImage'.
+                          child: CachedNetworkImage(
+                                 ^^^^^^^^^^^^^^^^^^
+lib/screens/lesson_player_screen.dart:1168:32: Error: The method 'CachedNetworkImage' isn't defined for the class '_LessonPlayerScreenState'.
+ - '_LessonPlayerScreenState' is from 'package:alhadaba_chemistry_app/screens/lesson_player_screen.dart' ('lib/screens/lesson_player_screen.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'CachedNetworkImage'.
+                        child: CachedNetworkImage(
+                               ^^^^^^^^^^^^^^^^^^
+lib/screens/lesson_player_screen.dart:1224:40: Error: The method 'go' isn't defined for the class 'BuildContext'.
+ - 'BuildContext' is from 'package:flutter/src/widgets/framework.dart' ('../../../flutter-sdk/flutter/packages/flutter/lib/src/widgets/framework.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'go'.
+              onPressed: () => context.go('/login'),
+                                       ^^
+lib/screens/lesson_player_screen.dart:1371:74: Error: The method 'read' isn't defined for the class 'BuildContext'.
+ - 'BuildContext' is from 'package:flutter/src/widgets/framework.dart' ('../../../flutter-sdk/flutter/packages/flutter/lib/src/widgets/framework.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'read'.
+                                              final apiService = context.read<AuthBloc>().apiService;
+                                                                         ^^^^
+lib/screens/lesson_player_screen.dart:1397:33: Error: The method 'Chewie' isn't defined for the class '_LessonPlayerScreenState'.
+ - '_LessonPlayerScreenState' is from 'package:alhadaba_chemistry_app/screens/lesson_player_screen.dart' ('lib/screens/lesson_player_screen.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'Chewie'.
+                              : Chewie(controller: _chewieController!),
+                                ^^^^^^
+lib/screens/pdf_viewer_screen.dart:36:3: Error: 'CancelToken' isn't a type.
+  CancelToken? _downloadCancelToken;
+  ^^^^^^^^^^^
+lib/screens/pdf_viewer_screen.dart:56:15: Error: The getter 'FlutterWindowManager' isn't defined for the class '_PdfViewerScreenState'.
+ - '_PdfViewerScreenState' is from 'package:alhadaba_chemistry_app/screens/pdf_viewer_screen.dart' ('lib/screens/pdf_viewer_screen.dart').
+Try correcting the name to the name of an existing getter, or defining a getter or field named 'FlutterWindowManager'.
+        await FlutterWindowManager.addFlags(FlutterWindowManager.FLAG_SECURE);
+              ^^^^^^^^^^^^^^^^^^^^
+lib/screens/pdf_viewer_screen.dart:56:45: Error: The getter 'FlutterWindowManager' isn't defined for the class '_PdfViewerScreenState'.
+ - '_PdfViewerScreenState' is from 'package:alhadaba_chemistry_app/screens/pdf_viewer_screen.dart' ('lib/screens/pdf_viewer_screen.dart').
+Try correcting the name to the name of an existing getter, or defining a getter or field named 'FlutterWindowManager'.
+        await FlutterWindowManager.addFlags(FlutterWindowManager.FLAG_SECURE);
+                                            ^^^^^^^^^^^^^^^^^^^^
+lib/screens/pdf_viewer_screen.dart:65:15: Error: The getter 'FlutterWindowManager' isn't defined for the class '_PdfViewerScreenState'.
+ - '_PdfViewerScreenState' is from 'package:alhadaba_chemistry_app/screens/pdf_viewer_screen.dart' ('lib/screens/pdf_viewer_screen.dart').
+Try correcting the name to the name of an existing getter, or defining a getter or field named 'FlutterWindowManager'.
+        await FlutterWindowManager.clearFlags(FlutterWindowManager.FLAG_SECURE);
+              ^^^^^^^^^^^^^^^^^^^^
+lib/screens/pdf_viewer_screen.dart:65:47: Error: The getter 'FlutterWindowManager' isn't defined for the class '_PdfViewerScreenState'.
+ - '_PdfViewerScreenState' is from 'package:alhadaba_chemistry_app/screens/pdf_viewer_screen.dart' ('lib/screens/pdf_viewer_screen.dart').
+Try correcting the name to the name of an existing getter, or defining a getter or field named 'FlutterWindowManager'.
+        await FlutterWindowManager.clearFlags(FlutterWindowManager.FLAG_SECURE);
+                                              ^^^^^^^^^^^^^^^^^^^^
+lib/screens/pdf_viewer_screen.dart:78:34: Error: The method 'read' isn't defined for the class 'BuildContext'.
+ - 'BuildContext' is from 'package:flutter/src/widgets/framework.dart' ('../../../flutter-sdk/flutter/packages/flutter/lib/src/widgets/framework.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'read'.
+      final apiService = context.read<AuthBloc>().apiService;
+                                 ^^^^
+lib/screens/pdf_viewer_screen.dart:115:30: Error: The method 'CancelToken' isn't defined for the class '_PdfViewerScreenState'.
+ - '_PdfViewerScreenState' is from 'package:alhadaba_chemistry_app/screens/pdf_viewer_screen.dart' ('lib/screens/pdf_viewer_screen.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'CancelToken'.
+      _downloadCancelToken = CancelToken();
+                             ^^^^^^^^^^^
+lib/screens/pdf_viewer_screen.dart:132:33: Error: The method 'read' isn't defined for the class 'BuildContext'.
+ - 'BuildContext' is from 'package:flutter/src/widgets/framework.dart' ('../../../flutter-sdk/flutter/packages/flutter/lib/src/widgets/framework.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'read'.
+      final authState = context.read<AuthBloc>().state;
+                                ^^^^
+lib/screens/pdf_viewer_screen.dart:230:48: Error: 'PdfDocumentLoadFailedDetails' isn't a type.
+                        onDocumentLoadFailed: (PdfDocumentLoadFailedDetails details) {
+                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+lib/screens/pdf_viewer_screen.dart:226:23: Error: The getter 'SfPdfViewer' isn't defined for the class '_PdfViewerScreenState'.
+ - '_PdfViewerScreenState' is from 'package:alhadaba_chemistry_app/screens/pdf_viewer_screen.dart' ('lib/screens/pdf_viewer_screen.dart').
+Try correcting the name to the name of an existing getter, or defining a getter or field named 'SfPdfViewer'.
+                    : SfPdfViewer.memory(
+                      ^^^^^^^^^^^
+lib/services/device_service.dart:7:9: Error: 'FlutterSecureStorage' isn't a type.
+  final FlutterSecureStorage _storage = const FlutterSecureStorage();
+        ^^^^^^^^^^^^^^^^^^^^
+lib/services/device_service.dart:7:47: Error: Couldn't find constructor 'FlutterSecureStorage'.
+  final FlutterSecureStorage _storage = const FlutterSecureStorage();
+                                              ^^^^^^^^^^^^^^^^^^^^
+lib/services/device_service.dart:8:9: Error: 'DeviceInfoPlugin' isn't a type.
+  final DeviceInfoPlugin _deviceInfo = DeviceInfoPlugin();
+        ^^^^^^^^^^^^^^^^
+lib/services/device_service.dart:8:40: Error: Method not found: 'DeviceInfoPlugin'.
+  final DeviceInfoPlugin _deviceInfo = DeviceInfoPlugin();
+                                       ^^^^^^^^^^^^^^^^
+lib/services/push_notification_service.dart:21:49: Error: 'RemoteMessage' isn't a type.
+Future<void> firebaseMessagingBackgroundHandler(RemoteMessage message) async {
+                                                ^^^^^^^^^^^^^
+lib/services/push_notification_service.dart:50:13: Error: The getter 'FirebaseMessaging' isn't defined for the class 'PushNotificationService'.
+ - 'PushNotificationService' is from 'package:alhadaba_chemistry_app/services/push_notification_service.dart' ('lib/services/push_notification_service.dart').
+Try correcting the name to the name of an existing getter, or defining a getter or field named 'FirebaseMessaging'.
+      await FirebaseMessaging.instance.requestPermission(
+            ^^^^^^^^^^^^^^^^^
+lib/services/push_notification_service.dart:58:20: Error: The getter 'FirebaseMessaging' isn't defined for the class 'PushNotificationService'.
+ - 'PushNotificationService' is from 'package:alhadaba_chemistry_app/services/push_notification_service.dart' ('lib/services/push_notification_service.dart').
+Try correcting the name to the name of an existing getter, or defining a getter or field named 'FirebaseMessaging'.
+      return await FirebaseMessaging.instance.getToken();
+                   ^^^^^^^^^^^^^^^^^
+lib/services/push_notification_service.dart:94:5: Error: The getter 'FirebaseMessaging' isn't defined for the class 'PushNotificationService'.
+ - 'PushNotificationService' is from 'package:alhadaba_chemistry_app/services/push_notification_service.dart' ('lib/services/push_notification_service.dart').
+Try correcting the name to the name of an existing getter, or defining a getter or field named 'FirebaseMessaging'.
+    FirebaseMessaging.onMessage.listen(_showForegroundBanner);
+    ^^^^^^^^^^^^^^^^^
+lib/services/push_notification_service.dart:97:30: Error: 'RemoteMessage' isn't a type.
+  void _showForegroundBanner(RemoteMessage message) {
+                             ^^^^^^^^^^^^^
+00:00 +0 -2: loading C:/Users/kayf/Desktop/student project/student_app/test/course_details_screen_test.dart [E]
+  Failed to load "C:/Users/kayf/Desktop/student project/student_app/test/course_details_screen_test.dart": Compilation failed for testPath=C:/Users/kayf/Desktop/student project/student_app/test/course_details_screen_test.dart
+00:00 +0 -2: loading C:/Users/kayf/Desktop/student project/student_app/test/api_service_test.dart [E]
+  Error: the Dart compiler exited unexpectedly.
+  package:flutter_tools/src/base/common.dart 10:3  throwToolExit
+  package:flutter_tools/src/compile.dart 898:9     DefaultResidentCompiler._compile.<fn>
+  dart:async/zone.dart 1407:47                     _rootRunUnary
+  dart:async/zone.dart 1308:19                     _CustomZone.runUnary
+  dart:async/future_impl.dart 847:45               Future._propagateToListeners.handleValueCallback
+  dart:async/future_impl.dart 876:13               Future._propagateToListeners
+  dart:async/future_impl.dart 772:9                Future._propagateToListeners
+  dart:async/future_impl.dart 652:5                Future._completeWithValue
+  dart:async/future_impl.dart 722:7                Future._asyncCompleteWithValue.<fn>
+  dart:async/zone.dart 1399:13                     _rootRun
+  dart:async/zone.dart 1301:19                     _CustomZone.run
+  dart:async/zone.dart 1209:7                      _CustomZone.runGuarded
+  dart:async/zone.dart 1249:23                     _CustomZone.bindCallbackGuarded.<fn>
+  dart:async/schedule_microtask.dart 40:21         _microtaskLoop
+  dart:async/schedule_microtask.dart 49:5          _startMicrotaskLoop
+  dart:isolate-patch/isolate_patch.dart 118:13     _runPendingImmediateCallback
+  dart:isolate-patch/isolate_patch.dart 185:5      _RawReceivePort._handleMessage
+  
+test/pdf_viewer_screen_test.dart:8:8: Error: Error when reading '../../../AppData/Local/Pub/Cache/hosted/pub.dev/dio-5.9.2/lib/dio.dart': The system cannot find the path specified.
+
+import 'package:dio/dio.dart';
+       ^
+lib/screens/pdf_viewer_screen.dart:4:8: Error: Error when reading '../../../AppData/Local/Pub/Cache/hosted/pub.dev/dio-5.9.2/lib/dio.dart': The system cannot find the path specified.
+
+import 'package:dio/dio.dart';
+       ^
+lib/services/api_service.dart:2:8: Error: Error when reading '../../../AppData/Local/Pub/Cache/hosted/pub.dev/dio-5.9.2/lib/dio.dart': The system cannot find the path specified.
+
+import 'package:dio/dio.dart';
+       ^
+test/pdf_viewer_screen_test.dart:10:8: Error: Error when reading '../../../AppData/Local/Pub/Cache/hosted/pub.dev/flutter_bloc-8.1.6/lib/flutter_bloc.dart': The system cannot find the path specified.
+
+import 'package:flutter_bloc/flutter_bloc.dart';
+       ^
+lib/blocs/auth/auth_bloc.dart:1:8: Error: Error when reading '../../../AppData/Local/Pub/Cache/hosted/pub.dev/flutter_bloc-8.1.6/lib/flutter_bloc.dart': The system cannot find the path specified.
+
+import 'package:flutter_bloc/flutter_bloc.dart';
+       ^
+lib/screens/pdf_viewer_screen.dart:6:8: Error: Error when reading '../../../AppData/Local/Pub/Cache/hosted/pub.dev/flutter_bloc-8.1.6/lib/flutter_bloc.dart': The system cannot find the path specified.
+
+import 'package:flutter_bloc/flutter_bloc.dart';
+       ^
+lib/blocs/auth/auth_bloc.dart:2:8: Error: Error when reading '../../../AppData/Local/Pub/Cache/hosted/pub.dev/supabase_flutter-2.14.2/lib/supabase_flutter.dart': The system cannot find the path specified.
+
+import 'package:supabase_flutter/supabase_flutter.dart' hide AuthState;
+       ^
+lib/services/api_service.dart:3:8: Error: Error when reading '../../../AppData/Local/Pub/Cache/hosted/pub.dev/supabase_flutter-2.14.2/lib/supabase_flutter.dart': The system cannot find the path specified.
+
+import 'package:supabase_flutter/supabase_flutter.dart';
+       ^
+lib/screens/pdf_viewer_screen.dart:7:8: Error: Error when reading '../../../AppData/Local/Pub/Cache/hosted/pub.dev/syncfusion_flutter_pdfviewer-25.2.7/lib/pdfviewer.dart': The system cannot find the path specified.
+
+import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
+       ^
+lib/screens/pdf_viewer_screen.dart:8:8: Error: Error when reading '../../../AppData/Local/Pub/Cache/hosted/pub.dev/flutter_windowmanager-0.2.0/lib/flutter_windowmanager.dart': The system cannot find the path specified.
+
+import 'package:flutter_windowmanager/flutter_windowmanager.dart';
+       ^
+lib/services/push_notification_service.dart:1:8: Error: Error when reading '../../../AppData/Local/Pub/Cache/hosted/pub.dev/firebase_messaging-16.2.0/lib/firebase_messaging.dart': The system cannot find the path specified.
+
+import 'package:firebase_messaging/firebase_messaging.dart';
+       ^
+lib/services/device_service.dart:2:8: Error: Error when reading '../../../AppData/Local/Pub/Cache/hosted/pub.dev/device_info_plus-9.1.2/lib/device_info_plus.dart': The system cannot find the path specified.
+
+import 'package:device_info_plus/device_info_plus.dart';
+       ^
+lib/services/device_service.dart:3:8: Error: Error when reading '../../../AppData/Local/Pub/Cache/hosted/pub.dev/flutter_secure_storage-10.3.1/lib/flutter_secure_storage.dart': The system cannot find the path specified.
+
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
+       ^
+test/pdf_viewer_screen_test.dart:17:3: Error: Type 'CancelToken' not found.
+  CancelToken? cancelToken;
+  ^^^^^^^^^^^
+test/pdf_viewer_screen_test.dart:30:5: Error: Type 'CancelToken' not found.
+    CancelToken? cancelToken,
+    ^^^^^^^^^^^
+lib/blocs/auth/auth_bloc.dart:8:24: Error: Type 'Bloc' not found.
+class AuthBloc extends Bloc<AuthEvent, AuthState> {
+                       ^^^^
+lib/blocs/auth/auth_bloc.dart:10:9: Error: Type 'SupabaseClient' not found.
+  final SupabaseClient _supabaseClient = Supabase.instance.client;
+        ^^^^^^^^^^^^^^
+lib/blocs/auth/auth_bloc.dart:45:5: Error: Type 'Emitter' not found.
+    Emitter<AuthState> emit,
+    ^^^^^^^
+lib/blocs/auth/auth_bloc.dart:93:5: Error: Type 'Emitter' not found.
+    Emitter<AuthState> emit,
+    ^^^^^^^
+lib/blocs/auth/auth_bloc.dart:145:5: Error: Type 'Emitter' not found.
+    Emitter<AuthState> emit,
+    ^^^^^^^
+lib/blocs/auth/auth_bloc.dart:193:5: Error: Type 'Emitter' not found.
+    Emitter<AuthState> emit,
+    ^^^^^^^
+lib/blocs/auth/auth_bloc.dart:220:5: Error: Type 'Emitter' not found.
+    Emitter<AuthState> emit,
+    ^^^^^^^
+lib/screens/pdf_viewer_screen.dart:36:3: Error: Type 'CancelToken' not found.
+  CancelToken? _downloadCancelToken;
+  ^^^^^^^^^^^
+lib/services/api_service.dart:8:14: Error: Type 'Dio' not found.
+  late final Dio _dio;
+             ^^^
+lib/services/api_service.dart:380:5: Error: Type 'CancelToken' not found.
+    CancelToken? cancelToken,
+    ^^^^^^^^^^^
+lib/services/push_notification_service.dart:21:49: Error: Type 'RemoteMessage' not found.
+Future<void> firebaseMessagingBackgroundHandler(RemoteMessage message) async {
+                                                ^^^^^^^^^^^^^
+lib/services/push_notification_service.dart:97:30: Error: Type 'RemoteMessage' not found.
+  void _showForegroundBanner(RemoteMessage message) {
+                             ^^^^^^^^^^^^^
+lib/services/device_service.dart:7:9: Error: Type 'FlutterSecureStorage' not found.
+  final FlutterSecureStorage _storage = const FlutterSecureStorage();
+        ^^^^^^^^^^^^^^^^^^^^
+lib/services/device_service.dart:8:9: Error: Type 'DeviceInfoPlugin' not found.
+  final DeviceInfoPlugin _deviceInfo = DeviceInfoPlugin();
+        ^^^^^^^^^^^^^^^^
+test/pdf_viewer_screen_test.dart:17:3: Error: 'CancelToken' isn't a type.
+  CancelToken? cancelToken;
+  ^^^^^^^^^^^
+test/pdf_viewer_screen_test.dart:30:5: Error: 'CancelToken' isn't a type.
+    CancelToken? cancelToken,
+    ^^^^^^^^^^^
+test/pdf_viewer_screen_test.dart:61:27: Error: Couldn't find constructor 'BlocProvider'.
+  await tester.pumpWidget(BlocProvider<AuthBloc>.value(
+                          ^^^^^^^^^^^^
+lib/blocs/auth/auth_bloc.dart:10:9: Error: 'SupabaseClient' isn't a type.
+  final SupabaseClient _supabaseClient = Supabase.instance.client;
+        ^^^^^^^^^^^^^^
+lib/blocs/auth/auth_bloc.dart:10:42: Error: Undefined name 'Supabase'.
+  final SupabaseClient _supabaseClient = Supabase.instance.client;
+                                         ^^^^^^^^
+lib/blocs/auth/auth_bloc.dart:12:47: Error: Too many positional arguments: 0 allowed, but 1 found.
+Try removing the extra positional arguments.
+  AuthBloc({required this.apiService}) : super(AuthInitial()) {
+                                              ^
+lib/blocs/auth/auth_bloc.dart:13:5: Error: The method 'on' isn't defined for the class 'AuthBloc'.
+ - 'AuthBloc' is from 'package:alhadaba_chemistry_app/blocs/auth/auth_bloc.dart' ('lib/blocs/auth/auth_bloc.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'on'.
+    on<AuthCheckRequested>(_onAuthCheckRequested);
+    ^^
+lib/blocs/auth/auth_bloc.dart:14:5: Error: The method 'on' isn't defined for the class 'AuthBloc'.
+ - 'AuthBloc' is from 'package:alhadaba_chemistry_app/blocs/auth/auth_bloc.dart' ('lib/blocs/auth/auth_bloc.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'on'.
+    on<AuthLoggedIn>(_onAuthLoggedIn);
+    ^^
+lib/blocs/auth/auth_bloc.dart:15:5: Error: The method 'on' isn't defined for the class 'AuthBloc'.
+ - 'AuthBloc' is from 'package:alhadaba_chemistry_app/blocs/auth/auth_bloc.dart' ('lib/blocs/auth/auth_bloc.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'on'.
+    on<AuthRegistered>(_onAuthRegistered);
+    ^^
+lib/blocs/auth/auth_bloc.dart:16:5: Error: The method 'on' isn't defined for the class 'AuthBloc'.
+ - 'AuthBloc' is from 'package:alhadaba_chemistry_app/blocs/auth/auth_bloc.dart' ('lib/blocs/auth/auth_bloc.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'on'.
+    on<AuthProfileSyncRequested>(_onAuthProfileSyncRequested);
+    ^^
+lib/blocs/auth/auth_bloc.dart:17:5: Error: The method 'on' isn't defined for the class 'AuthBloc'.
+ - 'AuthBloc' is from 'package:alhadaba_chemistry_app/blocs/auth/auth_bloc.dart' ('lib/blocs/auth/auth_bloc.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'on'.
+    on<AuthLoggedOut>(_onAuthLoggedOut);
+    ^^
+lib/blocs/auth/auth_bloc.dart:45:5: Error: 'Emitter' isn't a type.
+    Emitter<AuthState> emit,
+    ^^^^^^^
+lib/blocs/auth/auth_bloc.dart:93:5: Error: 'Emitter' isn't a type.
+    Emitter<AuthState> emit,
+    ^^^^^^^
+lib/blocs/auth/auth_bloc.dart:145:5: Error: 'Emitter' isn't a type.
+    Emitter<AuthState> emit,
+    ^^^^^^^
+lib/blocs/auth/auth_bloc.dart:193:5: Error: 'Emitter' isn't a type.
+    Emitter<AuthState> emit,
+    ^^^^^^^
+lib/blocs/auth/auth_bloc.dart:220:5: Error: 'Emitter' isn't a type.
+    Emitter<AuthState> emit,
+    ^^^^^^^
+lib/screens/pdf_viewer_screen.dart:36:3: Error: 'CancelToken' isn't a type.
+  CancelToken? _downloadCancelToken;
+  ^^^^^^^^^^^
+lib/screens/pdf_viewer_screen.dart:56:15: Error: The getter 'FlutterWindowManager' isn't defined for the class '_PdfViewerScreenState'.
+ - '_PdfViewerScreenState' is from 'package:alhadaba_chemistry_app/screens/pdf_viewer_screen.dart' ('lib/screens/pdf_viewer_screen.dart').
+Try correcting the name to the name of an existing getter, or defining a getter or field named 'FlutterWindowManager'.
+        await FlutterWindowManager.addFlags(FlutterWindowManager.FLAG_SECURE);
+              ^^^^^^^^^^^^^^^^^^^^
+lib/screens/pdf_viewer_screen.dart:56:45: Error: The getter 'FlutterWindowManager' isn't defined for the class '_PdfViewerScreenState'.
+ - '_PdfViewerScreenState' is from 'package:alhadaba_chemistry_app/screens/pdf_viewer_screen.dart' ('lib/screens/pdf_viewer_screen.dart').
+Try correcting the name to the name of an existing getter, or defining a getter or field named 'FlutterWindowManager'.
+        await FlutterWindowManager.addFlags(FlutterWindowManager.FLAG_SECURE);
+                                            ^^^^^^^^^^^^^^^^^^^^
+lib/screens/pdf_viewer_screen.dart:65:15: Error: The getter 'FlutterWindowManager' isn't defined for the class '_PdfViewerScreenState'.
+ - '_PdfViewerScreenState' is from 'package:alhadaba_chemistry_app/screens/pdf_viewer_screen.dart' ('lib/screens/pdf_viewer_screen.dart').
+Try correcting the name to the name of an existing getter, or defining a getter or field named 'FlutterWindowManager'.
+        await FlutterWindowManager.clearFlags(FlutterWindowManager.FLAG_SECURE);
+              ^^^^^^^^^^^^^^^^^^^^
+lib/screens/pdf_viewer_screen.dart:65:47: Error: The getter 'FlutterWindowManager' isn't defined for the class '_PdfViewerScreenState'.
+ - '_PdfViewerScreenState' is from 'package:alhadaba_chemistry_app/screens/pdf_viewer_screen.dart' ('lib/screens/pdf_viewer_screen.dart').
+Try correcting the name to the name of an existing getter, or defining a getter or field named 'FlutterWindowManager'.
+        await FlutterWindowManager.clearFlags(FlutterWindowManager.FLAG_SECURE);
+                                              ^^^^^^^^^^^^^^^^^^^^
+lib/screens/pdf_viewer_screen.dart:78:34: Error: The method 'read' isn't defined for the class 'BuildContext'.
+ - 'BuildContext' is from 'package:flutter/src/widgets/framework.dart' ('../../../flutter-sdk/flutter/packages/flutter/lib/src/widgets/framework.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'read'.
+      final apiService = context.read<AuthBloc>().apiService;
+                                 ^^^^
+lib/screens/pdf_viewer_screen.dart:115:30: Error: The method 'CancelToken' isn't defined for the class '_PdfViewerScreenState'.
+ - '_PdfViewerScreenState' is from 'package:alhadaba_chemistry_app/screens/pdf_viewer_screen.dart' ('lib/screens/pdf_viewer_screen.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'CancelToken'.
+      _downloadCancelToken = CancelToken();
+                             ^^^^^^^^^^^
+lib/screens/pdf_viewer_screen.dart:132:33: Error: The method 'read' isn't defined for the class 'BuildContext'.
+ - 'BuildContext' is from 'package:flutter/src/widgets/framework.dart' ('../../../flutter-sdk/flutter/packages/flutter/lib/src/widgets/framework.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'read'.
+      final authState = context.read<AuthBloc>().state;
+                                ^^^^
+lib/screens/pdf_viewer_screen.dart:230:48: Error: 'PdfDocumentLoadFailedDetails' isn't a type.
+                        onDocumentLoadFailed: (PdfDocumentLoadFailedDetails details) {
+                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+lib/screens/pdf_viewer_screen.dart:226:23: Error: The getter 'SfPdfViewer' isn't defined for the class '_PdfViewerScreenState'.
+ - '_PdfViewerScreenState' is from 'package:alhadaba_chemistry_app/screens/pdf_viewer_screen.dart' ('lib/screens/pdf_viewer_screen.dart').
+Try correcting the name to the name of an existing getter, or defining a getter or field named 'SfPdfViewer'.
+                    : SfPdfViewer.memory(
+                      ^^^^^^^^^^^
+lib/services/api_service.dart:8:14: Error: 'Dio' isn't a type.
+  late final Dio _dio;
+             ^^^
+lib/services/api_service.dart:13:12: Error: The method 'Dio' isn't defined for the class 'ApiService'.
+ - 'ApiService' is from 'package:alhadaba_chemistry_app/services/api_service.dart' ('lib/services/api_service.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'Dio'.
+    _dio = Dio(BaseOptions(
+           ^^^
+lib/services/api_service.dart:13:16: Error: The method 'BaseOptions' isn't defined for the class 'ApiService'.
+ - 'ApiService' is from 'package:alhadaba_chemistry_app/services/api_service.dart' ('lib/services/api_service.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'BaseOptions'.
+    _dio = Dio(BaseOptions(
+               ^^^^^^^^^^^
+lib/services/api_service.dart:20:27: Error: The method 'InterceptorsWrapper' isn't defined for the class 'ApiService'.
+ - 'ApiService' is from 'package:alhadaba_chemistry_app/services/api_service.dart' ('lib/services/api_service.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'InterceptorsWrapper'.
+    _dio.interceptors.add(InterceptorsWrapper(
+                          ^^^^^^^^^^^^^^^^^^^
+lib/services/api_service.dart:32:27: Error: The getter 'Supabase' isn't defined for the class 'ApiService'.
+ - 'ApiService' is from 'package:alhadaba_chemistry_app/services/api_service.dart' ('lib/services/api_service.dart').
+Try correcting the name to the name of an existing getter, or defining a getter or field named 'Supabase'.
+          final session = Supabase.instance.client.auth.currentSession;
+                          ^^^^^^^^
+lib/services/api_service.dart:50:13: Error: The getter 'Supabase' isn't defined for the class 'ApiService'.
+ - 'ApiService' is from 'package:alhadaba_chemistry_app/services/api_service.dart' ('lib/services/api_service.dart').
+Try correcting the name to the name of an existing getter, or defining a getter or field named 'Supabase'.
+            Supabase.instance.client.auth.currentSession != null) {
+            ^^^^^^^^
+lib/services/api_service.dart:51:11: Error: The getter 'Supabase' isn't defined for the class 'ApiService'.
+ - 'ApiService' is from 'package:alhadaba_chemistry_app/services/api_service.dart' ('lib/services/api_service.dart').
+Try correcting the name to the name of an existing getter, or defining a getter or field named 'Supabase'.
+          Supabase.instance.client.auth.signOut();
+          ^^^^^^^^
+lib/services/api_service.dart:58:26: Error: The method 'DioException' isn't defined for the class 'ApiService'.
+ - 'ApiService' is from 'package:alhadaba_chemistry_app/services/api_service.dart' ('lib/services/api_service.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'DioException'.
+          handler.reject(DioException(
+                         ^^^^^^^^^^^^
+lib/services/api_service.dart:71:31: Error: The getter 'Supabase' isn't defined for the class 'ApiService'.
+ - 'ApiService' is from 'package:alhadaba_chemistry_app/services/api_service.dart' ('lib/services/api_service.dart').
+Try correcting the name to the name of an existing getter, or defining a getter or field named 'Supabase'.
+  bool get isAuthenticated => Supabase.instance.client.auth.currentSession != null;
+                              ^^^^^^^^
+lib/services/api_service.dart:83:18: Error: The method 'Options' isn't defined for the class 'ApiService'.
+ - 'ApiService' is from 'package:alhadaba_chemistry_app/services/api_service.dart' ('lib/services/api_service.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'Options'.
+        options: Options(
+                 ^^^^^^^
+lib/services/api_service.dart:102:16: Error: The method 'Options' isn't defined for the class 'ApiService'.
+ - 'ApiService' is from 'package:alhadaba_chemistry_app/services/api_service.dart' ('lib/services/api_service.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'Options'.
+      options: Options(
+               ^^^^^^^
+lib/services/api_service.dart:380:5: Error: 'CancelToken' isn't a type.
+    CancelToken? cancelToken,
+    ^^^^^^^^^^^
+lib/services/api_service.dart:385:16: Error: The method 'Options' isn't defined for the class 'ApiService'.
+ - 'ApiService' is from 'package:alhadaba_chemistry_app/services/api_service.dart' ('lib/services/api_service.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'Options'.
+      options: Options(
+               ^^^^^^^
+lib/services/api_service.dart:386:23: Error: The getter 'ResponseType' isn't defined for the class 'ApiService'.
+ - 'ApiService' is from 'package:alhadaba_chemistry_app/services/api_service.dart' ('lib/services/api_service.dart').
+Try correcting the name to the name of an existing getter, or defining a getter or field named 'ResponseType'.
+        responseType: ResponseType.bytes,
+                      ^^^^^^^^^^^^
+lib/services/api_service.dart:398:26: Error: The method 'Dio' isn't defined for the class 'ApiService'.
+ - 'ApiService' is from 'package:alhadaba_chemistry_app/services/api_service.dart' ('lib/services/api_service.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'Dio'.
+        final cleanDio = Dio();
+                         ^^^
+lib/services/api_service.dart:401:20: Error: The method 'Options' isn't defined for the class 'ApiService'.
+ - 'ApiService' is from 'package:alhadaba_chemistry_app/services/api_service.dart' ('lib/services/api_service.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'Options'.
+          options: Options(responseType: ResponseType.bytes),
+                   ^^^^^^^
+lib/services/api_service.dart:401:42: Error: The getter 'ResponseType' isn't defined for the class 'ApiService'.
+ - 'ApiService' is from 'package:alhadaba_chemistry_app/services/api_service.dart' ('lib/services/api_service.dart').
+Try correcting the name to the name of an existing getter, or defining a getter or field named 'ResponseType'.
+          options: Options(responseType: ResponseType.bytes),
+                                         ^^^^^^^^^^^^
+lib/services/push_notification_service.dart:21:49: Error: 'RemoteMessage' isn't a type.
+Future<void> firebaseMessagingBackgroundHandler(RemoteMessage message) async {
+                                                ^^^^^^^^^^^^^
+lib/services/push_notification_service.dart:50:13: Error: The getter 'FirebaseMessaging' isn't defined for the class 'PushNotificationService'.
+ - 'PushNotificationService' is from 'package:alhadaba_chemistry_app/services/push_notification_service.dart' ('lib/services/push_notification_service.dart').
+Try correcting the name to the name of an existing getter, or defining a getter or field named 'FirebaseMessaging'.
+      await FirebaseMessaging.instance.requestPermission(
+            ^^^^^^^^^^^^^^^^^
+lib/services/push_notification_service.dart:58:20: Error: The getter 'FirebaseMessaging' isn't defined for the class 'PushNotificationService'.
+ - 'PushNotificationService' is from 'package:alhadaba_chemistry_app/services/push_notification_service.dart' ('lib/services/push_notification_service.dart').
+Try correcting the name to the name of an existing getter, or defining a getter or field named 'FirebaseMessaging'.
+      return await FirebaseMessaging.instance.getToken();
+                   ^^^^^^^^^^^^^^^^^
+lib/services/push_notification_service.dart:94:5: Error: The getter 'FirebaseMessaging' isn't defined for the class 'PushNotificationService'.
+ - 'PushNotificationService' is from 'package:alhadaba_chemistry_app/services/push_notification_service.dart' ('lib/services/push_notification_service.dart').
+Try correcting the name to the name of an existing getter, or defining a getter or field named 'FirebaseMessaging'.
+    FirebaseMessaging.onMessage.listen(_showForegroundBanner);
+    ^^^^^^^^^^^^^^^^^
+lib/services/push_notification_service.dart:97:30: Error: 'RemoteMessage' isn't a type.
+  void _showForegroundBanner(RemoteMessage message) {
+                             ^^^^^^^^^^^^^
+lib/services/device_service.dart:7:9: Error: 'FlutterSecureStorage' isn't a type.
+  final FlutterSecureStorage _storage = const FlutterSecureStorage();
+        ^^^^^^^^^^^^^^^^^^^^
+lib/services/device_service.dart:7:47: Error: Couldn't find constructor 'FlutterSecureStorage'.
+  final FlutterSecureStorage _storage = const FlutterSecureStorage();
+                                              ^^^^^^^^^^^^^^^^^^^^
+lib/services/device_service.dart:8:9: Error: 'DeviceInfoPlugin' isn't a type.
+  final DeviceInfoPlugin _deviceInfo = DeviceInfoPlugin();
+        ^^^^^^^^^^^^^^^^
+lib/services/device_service.dart:8:40: Error: Method not found: 'DeviceInfoPlugin'.
+  final DeviceInfoPlugin _deviceInfo = DeviceInfoPlugin();
+                                       ^^^^^^^^^^^^^^^^
+00:00 +0 -3: loading C:/Users/kayf/Desktop/student project/student_app/test/pdf_viewer_screen_test.dart [E]
+  Failed to load "C:/Users/kayf/Desktop/student project/student_app/test/pdf_viewer_screen_test.dart": Compilation failed for testPath=C:/Users/kayf/Desktop/student project/student_app/test/pdf_viewer_screen_test.dart
+00:00 +0 -3: loading C:/Users/kayf/Desktop/student project/student_app/test/api_service_test.dart [E]
+  Error: the Dart compiler exited unexpectedly.
+  package:flutter_tools/src/base/common.dart 10:3  throwToolExit
+  package:flutter_tools/src/compile.dart 898:9     DefaultResidentCompiler._compile.<fn>
+  dart:async/zone.dart 1407:47                     _rootRunUnary
+  dart:async/zone.dart 1308:19                     _CustomZone.runUnary
+  dart:async/future_impl.dart 847:45               Future._propagateToListeners.handleValueCallback
+  dart:async/future_impl.dart 876:13               Future._propagateToListeners
+  dart:async/future_impl.dart 772:9                Future._propagateToListeners
+  dart:async/future_impl.dart 652:5                Future._completeWithValue
+  dart:async/future_impl.dart 722:7                Future._asyncCompleteWithValue.<fn>
+  dart:async/zone.dart 1399:13                     _rootRun
+  dart:async/zone.dart 1301:19                     _CustomZone.run
+  dart:async/zone.dart 1209:7                      _CustomZone.runGuarded
+  dart:async/zone.dart 1249:23                     _CustomZone.bindCallbackGuarded.<fn>
+  dart:async/schedule_microtask.dart 40:21         _microtaskLoop
+  dart:async/schedule_microtask.dart 49:5          _startMicrotaskLoop
+  dart:isolate-patch/isolate_patch.dart 118:13     _runPendingImmediateCallback
+  dart:isolate-patch/isolate_patch.dart 185:5      _RawReceivePort._handleMessage
+  
+test/widget_test.dart:4:8: Error: Error when reading '../../../AppData/Local/Pub/Cache/hosted/pub.dev/firebase_core-4.7.0/lib/firebase_core.dart': The system cannot find the path specified.
+
+import 'package:firebase_core/firebase_core.dart';
+       ^
+lib/main.dart:8:8: Error: Error when reading '../../../AppData/Local/Pub/Cache/hosted/pub.dev/firebase_core-4.7.0/lib/firebase_core.dart': The system cannot find the path specified.
+
+import 'package:firebase_core/firebase_core.dart';
+       ^
+test/widget_test.dart:8:8: Error: Error when reading '../../../AppData/Local/Pub/Cache/hosted/pub.dev/supabase_flutter-2.14.2/lib/supabase_flutter.dart': The system cannot find the path specified.
+
+import 'package:supabase_flutter/supabase_flutter.dart';
+       ^
+lib/main.dart:5:8: Error: Error when reading '../../../AppData/Local/Pub/Cache/hosted/pub.dev/supabase_flutter-2.14.2/lib/supabase_flutter.dart': The system cannot find the path specified.
+
+import 'package:supabase_flutter/supabase_flutter.dart' hide AuthState;
+       ^
+lib/services/api_service.dart:3:8: Error: Error when reading '../../../AppData/Local/Pub/Cache/hosted/pub.dev/supabase_flutter-2.14.2/lib/supabase_flutter.dart': The system cannot find the path specified.
+
+import 'package:supabase_flutter/supabase_flutter.dart';
+       ^
+lib/main.dart:4:8: Error: Error when reading '../../../AppData/Local/Pub/Cache/hosted/pub.dev/flutter_bloc-8.1.6/lib/flutter_bloc.dart': The system cannot find the path specified.
+
+import 'package:flutter_bloc/flutter_bloc.dart';
+       ^
+lib/main.dart:6:8: Error: Error when reading '../../../AppData/Local/Pub/Cache/hosted/pub.dev/uni_links-0.5.1/lib/uni_links.dart': The system cannot find the path specified.
+
+import 'package:uni_links/uni_links.dart';
+       ^
+lib/main.dart:7:8: Error: Error when reading '../../../AppData/Local/Pub/Cache/hosted/pub.dev/go_router-14.8.1/lib/go_router.dart': The system cannot find the path specified.
+
+import 'package:go_router/go_router.dart';
+       ^
+lib/main.dart:9:8: Error: Error when reading '../../../AppData/Local/Pub/Cache/hosted/pub.dev/firebase_messaging-16.2.0/lib/firebase_messaging.dart': The system cannot find the path specified.
+
+import 'package:firebase_messaging/firebase_messaging.dart';
+       ^
+lib/config/router.dart:3:8: Error: Error when reading '../../../AppData/Local/Pub/Cache/hosted/pub.dev/go_router-14.8.1/lib/go_router.dart': The system cannot find the path specified.
+
+import 'package:go_router/go_router.dart';
+       ^
+lib/services/push_notification_service.dart:1:8: Error: Error when reading '../../../AppData/Local/Pub/Cache/hosted/pub.dev/firebase_messaging-16.2.0/lib/firebase_messaging.dart': The system cannot find the path specified.
+
+import 'package:firebase_messaging/firebase_messaging.dart';
+       ^
+lib/blocs/auth/auth_bloc.dart:1:8: Error: Error when reading '../../../AppData/Local/Pub/Cache/hosted/pub.dev/flutter_bloc-8.1.6/lib/flutter_bloc.dart': The system cannot find the path specified.
+
+import 'package:flutter_bloc/flutter_bloc.dart';
+       ^
+lib/blocs/auth/auth_bloc.dart:2:8: Error: Error when reading '../../../AppData/Local/Pub/Cache/hosted/pub.dev/supabase_flutter-2.14.2/lib/supabase_flutter.dart': The system cannot find the path specified.
+
+import 'package:supabase_flutter/supabase_flutter.dart' hide AuthState;
+       ^
+lib/blocs/course/course_bloc.dart:1:8: Error: Error when reading '../../../AppData/Local/Pub/Cache/hosted/pub.dev/flutter_bloc-8.1.6/lib/flutter_bloc.dart': The system cannot find the path specified.
+
+import 'package:flutter_bloc/flutter_bloc.dart';
+       ^
+lib/blocs/theme/theme_bloc.dart:2:8: Error: Error when reading '../../../AppData/Local/Pub/Cache/hosted/pub.dev/flutter_bloc-8.1.6/lib/flutter_bloc.dart': The system cannot find the path specified.
+
+import 'package:flutter_bloc/flutter_bloc.dart';
+       ^
+lib/services/api_service.dart:2:8: Error: Error when reading '../../../AppData/Local/Pub/Cache/hosted/pub.dev/dio-5.9.2/lib/dio.dart': The system cannot find the path specified.
+
+import 'package:dio/dio.dart';
+       ^
+lib/services/device_service.dart:2:8: Error: Error when reading '../../../AppData/Local/Pub/Cache/hosted/pub.dev/device_info_plus-9.1.2/lib/device_info_plus.dart': The system cannot find the path specified.
+
+import 'package:device_info_plus/device_info_plus.dart';
+       ^
+lib/services/device_service.dart:3:8: Error: Error when reading '../../../AppData/Local/Pub/Cache/hosted/pub.dev/flutter_secure_storage-10.3.1/lib/flutter_secure_storage.dart': The system cannot find the path specified.
+
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
+       ^
+lib/blocs/theme/theme_bloc.dart:3:8: Error: Error when reading '../../../AppData/Local/Pub/Cache/hosted/pub.dev/flutter_secure_storage-10.3.1/lib/flutter_secure_storage.dart': The system cannot find the path specified.
+
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
+       ^
+lib/services/biometric_service.dart:2:8: Error: Error when reading '../../../AppData/Local/Pub/Cache/hosted/pub.dev/flutter_secure_storage-10.3.1/lib/flutter_secure_storage.dart': The system cannot find the path specified.
+
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
+       ^
+lib/screens/login_screen.dart:2:8: Error: Error when reading '../../../AppData/Local/Pub/Cache/hosted/pub.dev/flutter_bloc-8.1.6/lib/flutter_bloc.dart': The system cannot find the path specified.
+
+import 'package:flutter_bloc/flutter_bloc.dart';
+       ^
+lib/screens/login_screen.dart:3:8: Error: Error when reading '../../../AppData/Local/Pub/Cache/hosted/pub.dev/go_router-14.8.1/lib/go_router.dart': The system cannot find the path specified.
+
+import 'package:go_router/go_router.dart';
+       ^
+lib/screens/login_screen.dart:4:8: Error: Error when reading '../../../AppData/Local/Pub/Cache/hosted/pub.dev/supabase_flutter-2.14.2/lib/supabase_flutter.dart': The system cannot find the path specified.
+
+import 'package:supabase_flutter/supabase_flutter.dart' hide AuthState;
+       ^
+lib/screens/home_screen.dart:2:8: Error: Error when reading '../../../AppData/Local/Pub/Cache/hosted/pub.dev/flutter_bloc-8.1.6/lib/flutter_bloc.dart': The system cannot find the path specified.
+
+import 'package:flutter_bloc/flutter_bloc.dart';
+       ^
+lib/screens/home_screen.dart:3:8: Error: Error when reading '../../../AppData/Local/Pub/Cache/hosted/pub.dev/go_router-14.8.1/lib/go_router.dart': The system cannot find the path specified.
+
+import 'package:go_router/go_router.dart';
+       ^
+lib/screens/course_details_screen.dart:2:8: Error: Error when reading '../../../AppData/Local/Pub/Cache/hosted/pub.dev/flutter_bloc-8.1.6/lib/flutter_bloc.dart': The system cannot find the path specified.
+
+import 'package:flutter_bloc/flutter_bloc.dart';
+       ^
+lib/screens/course_details_screen.dart:3:8: Error: Error when reading '../../../AppData/Local/Pub/Cache/hosted/pub.dev/go_router-14.8.1/lib/go_router.dart': The system cannot find the path specified.
+
+import 'package:go_router/go_router.dart';
+       ^
+lib/screens/lesson_player_screen.dart:5:8: Error: Error when reading '../../../AppData/Local/Pub/Cache/hosted/pub.dev/flutter_bloc-8.1.6/lib/flutter_bloc.dart': The system cannot find the path specified.
+
+import 'package:flutter_bloc/flutter_bloc.dart';
+       ^
+lib/screens/lesson_player_screen.dart:9:8: Error: Error when reading '../../../AppData/Local/Pub/Cache/hosted/pub.dev/dio-5.9.2/lib/dio.dart': The system cannot find the path specified.
+
+import 'package:dio/dio.dart';
+       ^
+lib/screens/lesson_player_screen.dart:14:8: Error: Error when reading '../../../AppData/Local/Pub/Cache/hosted/pub.dev/go_router-14.8.1/lib/go_router.dart': The system cannot find the path specified.
+
+import 'package:go_router/go_router.dart';
+       ^
+lib/screens/pdf_viewer_screen.dart:4:8: Error: Error when reading '../../../AppData/Local/Pub/Cache/hosted/pub.dev/dio-5.9.2/lib/dio.dart': The system cannot find the path specified.
+
+import 'package:dio/dio.dart';
+       ^
+lib/screens/pdf_viewer_screen.dart:6:8: Error: Error when reading '../../../AppData/Local/Pub/Cache/hosted/pub.dev/flutter_bloc-8.1.6/lib/flutter_bloc.dart': The system cannot find the path specified.
+
+import 'package:flutter_bloc/flutter_bloc.dart';
+       ^
+lib/screens/exam_screen.dart:3:8: Error: Error when reading '../../../AppData/Local/Pub/Cache/hosted/pub.dev/flutter_bloc-8.1.6/lib/flutter_bloc.dart': The system cannot find the path specified.
+
+import 'package:flutter_bloc/flutter_bloc.dart';
+       ^
+lib/screens/biometric_lock_screen.dart:2:8: Error: Error when reading '../../../AppData/Local/Pub/Cache/hosted/pub.dev/flutter_bloc-8.1.6/lib/flutter_bloc.dart': The system cannot find the path specified.
+
+import 'package:flutter_bloc/flutter_bloc.dart';
+       ^
+lib/services/biometric_service.dart:1:8: Error: Error when reading '../../../AppData/Local/Pub/Cache/hosted/pub.dev/local_auth-2.3.0/lib/local_auth.dart': The system cannot find the path specified.
+
+import 'package:local_auth/local_auth.dart';
+       ^
+lib/screens/home_tabs/home_tab.dart:2:8: Error: Error when reading '../../../AppData/Local/Pub/Cache/hosted/pub.dev/flutter_bloc-8.1.6/lib/flutter_bloc.dart': The system cannot find the path specified.
+
+import 'package:flutter_bloc/flutter_bloc.dart';
+       ^
+lib/screens/home_tabs/home_tab.dart:3:8: Error: Error when reading '../../../AppData/Local/Pub/Cache/hosted/pub.dev/go_router-14.8.1/lib/go_router.dart': The system cannot find the path specified.
+
+import 'package:go_router/go_router.dart';
+       ^
+lib/screens/home_tabs/courses_tab.dart:2:8: Error: Error when reading '../../../AppData/Local/Pub/Cache/hosted/pub.dev/flutter_bloc-8.1.6/lib/flutter_bloc.dart': The system cannot find the path specified.
+
+import 'package:flutter_bloc/flutter_bloc.dart';
+       ^
+lib/screens/home_tabs/courses_tab.dart:3:8: Error: Error when reading '../../../AppData/Local/Pub/Cache/hosted/pub.dev/go_router-14.8.1/lib/go_router.dart': The system cannot find the path specified.
+
+import 'package:go_router/go_router.dart';
+       ^
+lib/screens/home_tabs/exams_tab.dart:2:8: Error: Error when reading '../../../AppData/Local/Pub/Cache/hosted/pub.dev/flutter_bloc-8.1.6/lib/flutter_bloc.dart': The system cannot find the path specified.
+
+import 'package:flutter_bloc/flutter_bloc.dart';
+       ^
+lib/screens/home_tabs/questions_tab.dart:2:8: Error: Error when reading '../../../AppData/Local/Pub/Cache/hosted/pub.dev/flutter_bloc-8.1.6/lib/flutter_bloc.dart': The system cannot find the path specified.
+
+import 'package:flutter_bloc/flutter_bloc.dart';
+       ^
+lib/screens/home_tabs/profile_tab.dart:2:8: Error: Error when reading '../../../AppData/Local/Pub/Cache/hosted/pub.dev/flutter_bloc-8.1.6/lib/flutter_bloc.dart': The system cannot find the path specified.
+
+import 'package:flutter_bloc/flutter_bloc.dart';
+       ^
+lib/screens/course_details_screen.dart:4:8: Error: Error when reading '../../../AppData/Local/Pub/Cache/hosted/pub.dev/cached_network_image-3.4.0/lib/cached_network_image.dart': The system cannot find the path specified.
+
+import 'package:cached_network_image/cached_network_image.dart';
+       ^
+lib/screens/lesson_player_screen.dart:13:8: Error: Error when reading '../../../AppData/Local/Pub/Cache/hosted/pub.dev/cached_network_image-3.4.0/lib/cached_network_image.dart': The system cannot find the path specified.
+
+import 'package:cached_network_image/cached_network_image.dart';
+       ^
+lib/screens/exam_screen.dart:4:8: Error: Error when reading '../../../AppData/Local/Pub/Cache/hosted/pub.dev/cached_network_image-3.4.0/lib/cached_network_image.dart': The system cannot find the path specified.
+
+import 'package:cached_network_image/cached_network_image.dart';
+       ^
+lib/screens/home_tabs/exams_tab.dart:3:8: Error: Error when reading '../../../AppData/Local/Pub/Cache/hosted/pub.dev/cached_network_image-3.4.0/lib/cached_network_image.dart': The system cannot find the path specified.
+
+import 'package:cached_network_image/cached_network_image.dart';
+       ^
+lib/screens/home_tabs/questions_tab.dart:3:8: Error: Error when reading '../../../AppData/Local/Pub/Cache/hosted/pub.dev/cached_network_image-3.4.0/lib/cached_network_image.dart': The system cannot find the path specified.
+
+import 'package:cached_network_image/cached_network_image.dart';
+       ^
+lib/screens/home_tabs/profile_tab.dart:3:8: Error: Error when reading '../../../AppData/Local/Pub/Cache/hosted/pub.dev/cached_network_image-3.4.0/lib/cached_network_image.dart': The system cannot find the path specified.
+
+import 'package:cached_network_image/cached_network_image.dart';
+       ^
+lib/screens/lesson_player_screen.dart:6:8: Error: Error when reading '../../../AppData/Local/Pub/Cache/hosted/pub.dev/video_player-2.9.5/lib/video_player.dart': The system cannot find the path specified.
+
+import 'package:video_player/video_player.dart';
+       ^
+lib/screens/lesson_player_screen.dart:7:8: Error: Error when reading '../../../AppData/Local/Pub/Cache/hosted/pub.dev/chewie-1.7.5/lib/chewie.dart': The system cannot find the path specified.
+
+import 'package:chewie/chewie.dart';
+       ^
+lib/screens/lesson_player_screen.dart:8:8: Error: Error when reading '../../../AppData/Local/Pub/Cache/hosted/pub.dev/flutter_windowmanager-0.2.0/lib/flutter_windowmanager.dart': The system cannot find the path specified.
+
+import 'package:flutter_windowmanager/flutter_windowmanager.dart';
+       ^
+lib/screens/pdf_viewer_screen.dart:8:8: Error: Error when reading '../../../AppData/Local/Pub/Cache/hosted/pub.dev/flutter_windowmanager-0.2.0/lib/flutter_windowmanager.dart': The system cannot find the path specified.
+
+import 'package:flutter_windowmanager/flutter_windowmanager.dart';
+       ^
+lib/screens/pdf_viewer_screen.dart:7:8: Error: Error when reading '../../../AppData/Local/Pub/Cache/hosted/pub.dev/syncfusion_flutter_pdfviewer-25.2.7/lib/pdfviewer.dart': The system cannot find the path specified.
+
+import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
+       ^
+lib/widgets/course_card.dart:2:8: Error: Error when reading '../../../AppData/Local/Pub/Cache/hosted/pub.dev/cached_network_image-3.4.0/lib/cached_network_image.dart': The system cannot find the path specified.
+
+import 'package:cached_network_image/cached_network_image.dart';
+       ^
+lib/screens/home_tabs/home_widgets.dart:2:8: Error: Error when reading '../../../AppData/Local/Pub/Cache/hosted/pub.dev/flutter_bloc-8.1.6/lib/flutter_bloc.dart': The system cannot find the path specified.
+
+import 'package:flutter_bloc/flutter_bloc.dart';
+       ^
+lib/screens/home_tabs/home_widgets.dart:3:8: Error: Error when reading '../../../AppData/Local/Pub/Cache/hosted/pub.dev/go_router-14.8.1/lib/go_router.dart': The system cannot find the path specified.
+
+import 'package:go_router/go_router.dart';
+       ^
+lib/main.dart:107:14: Error: Type 'GoRouter' not found.
+  late final GoRouter _router;
+             ^^^^^^^^
+lib/services/api_service.dart:8:14: Error: Type 'Dio' not found.
+  late final Dio _dio;
+             ^^^
+lib/services/api_service.dart:380:5: Error: Type 'CancelToken' not found.
+    CancelToken? cancelToken,
+    ^^^^^^^^^^^
+lib/services/device_service.dart:7:9: Error: Type 'FlutterSecureStorage' not found.
+  final FlutterSecureStorage _storage = const FlutterSecureStorage();
+        ^^^^^^^^^^^^^^^^^^^^
+lib/services/device_service.dart:8:9: Error: Type 'DeviceInfoPlugin' not found.
+  final DeviceInfoPlugin _deviceInfo = DeviceInfoPlugin();
+        ^^^^^^^^^^^^^^^^
+lib/config/router.dart:15:37: Error: Type 'CustomTransitionPage' not found.
+class _CustomTransitionPage extends CustomTransitionPage<Widget> {
+                                    ^^^^^^^^^^^^^^^^^^^^
+lib/config/router.dart:65:10: Error: Type 'GoRouter' not found.
+  static GoRouter createRouter(AuthBloc authBloc, {String? initialLink}) {
+         ^^^^^^^^
+lib/services/push_notification_service.dart:21:49: Error: Type 'RemoteMessage' not found.
+Future<void> firebaseMessagingBackgroundHandler(RemoteMessage message) async {
+                                                ^^^^^^^^^^^^^
+lib/services/push_notification_service.dart:97:30: Error: Type 'RemoteMessage' not found.
+  void _showForegroundBanner(RemoteMessage message) {
+                             ^^^^^^^^^^^^^
+lib/blocs/auth/auth_bloc.dart:8:24: Error: Type 'Bloc' not found.
+class AuthBloc extends Bloc<AuthEvent, AuthState> {
+                       ^^^^
+lib/blocs/auth/auth_bloc.dart:10:9: Error: Type 'SupabaseClient' not found.
+  final SupabaseClient _supabaseClient = Supabase.instance.client;
+        ^^^^^^^^^^^^^^
+lib/blocs/auth/auth_bloc.dart:45:5: Error: Type 'Emitter' not found.
+    Emitter<AuthState> emit,
+    ^^^^^^^
+lib/blocs/auth/auth_bloc.dart:93:5: Error: Type 'Emitter' not found.
+    Emitter<AuthState> emit,
+    ^^^^^^^
+lib/blocs/auth/auth_bloc.dart:145:5: Error: Type 'Emitter' not found.
+    Emitter<AuthState> emit,
+    ^^^^^^^
+lib/blocs/auth/auth_bloc.dart:193:5: Error: Type 'Emitter' not found.
+    Emitter<AuthState> emit,
+    ^^^^^^^
+lib/blocs/auth/auth_bloc.dart:220:5: Error: Type 'Emitter' not found.
+    Emitter<AuthState> emit,
+    ^^^^^^^
+lib/blocs/course/course_bloc.dart:6:26: Error: Type 'Bloc' not found.
+class CourseBloc extends Bloc<CourseEvent, CourseState> {
+                         ^^^^
+lib/blocs/course/course_bloc.dart:27:5: Error: Type 'Emitter' not found.
+    Emitter<CourseState> emit,
+    ^^^^^^^
+lib/blocs/course/course_bloc.dart:53:5: Error: Type 'Emitter' not found.
+    Emitter<CourseState> emit,
+    ^^^^^^^
+lib/blocs/course/course_bloc.dart:71:5: Error: Type 'Emitter' not found.
+    Emitter<CourseState> emit,
+    ^^^^^^^
+lib/blocs/course/course_bloc.dart:100:5: Error: Type 'Emitter' not found.
+    Emitter<CourseState> emit,
+    ^^^^^^^
+lib/blocs/theme/theme_bloc.dart:9:25: Error: Type 'Bloc' not found.
+class ThemeBloc extends Bloc<ThemeEvent, ThemeMode> {
+                        ^^^^
+lib/blocs/theme/theme_bloc.dart:10:9: Error: Type 'FlutterSecureStorage' not found.
+  final FlutterSecureStorage _storage = const FlutterSecureStorage();
+        ^^^^^^^^^^^^^^^^^^^^
+lib/blocs/theme/theme_bloc.dart:17:51: Error: Type 'Emitter' not found.
+  Future<void> _onLoadTheme(LoadThemeEvent event, Emitter<ThemeMode> emit) async {
+                                                  ^^^^^^^
+lib/blocs/theme/theme_bloc.dart:26:55: Error: Type 'Emitter' not found.
+  Future<void> _onToggleTheme(ToggleThemeEvent event, Emitter<ThemeMode> emit) async {
+                                                      ^^^^^^^
+lib/services/biometric_service.dart:5:9: Error: Type 'LocalAuthentication' not found.
+  final LocalAuthentication _auth = LocalAuthentication();
+        ^^^^^^^^^^^^^^^^^^^
+lib/services/biometric_service.dart:6:9: Error: Type 'FlutterSecureStorage' not found.
+  final FlutterSecureStorage _storage = const FlutterSecureStorage();
+        ^^^^^^^^^^^^^^^^^^^^
+lib/screens/lesson_player_screen.dart:37:3: Error: Type 'VideoPlayerController' not found.
+  VideoPlayerController? _videoPlayerController;
+  ^^^^^^^^^^^^^^^^^^^^^
+lib/screens/lesson_player_screen.dart:38:3: Error: Type 'ChewieController' not found.
+  ChewieController? _chewieController;
+  ^^^^^^^^^^^^^^^^
+lib/screens/pdf_viewer_screen.dart:36:3: Error: Type 'CancelToken' not found.
+  CancelToken? _downloadCancelToken;
+  ^^^^^^^^^^^
+test/widget_test.dart:58:23: Error: Method not found: 'EmptyLocalStorage'.
+        localStorage: EmptyLocalStorage(),
+                      ^^^^^^^^^^^^^^^^^
+test/widget_test.dart:55:26: Error: Couldn't find constructor 'FlutterAuthClientOptions'.
+      authOptions: const FlutterAuthClientOptions(
+                         ^^^^^^^^^^^^^^^^^^^^^^^^
+test/widget_test.dart:51:11: Error: Undefined name 'Supabase'.
+    await Supabase.initialize(
+          ^^^^^^^^
+test/widget_test.dart:62:21: Error: Undefined name 'Supabase'.
+  tearDownAll(() => Supabase.instance.dispose());
+                    ^^^^^^^^
+test/widget_test.dart:105:16: Error: Undefined name 'Firebase'.
+        expect(Firebase.apps, isEmpty);
+               ^^^^^^^^
+lib/main.dart:48:9: Error: Undefined name 'Supabase'.
+  await Supabase.initialize(
+        ^^^^^^^^
+lib/main.dart:58:11: Error: Undefined name 'Firebase'.
+    await Firebase.initializeApp();
+          ^^^^^^^^
+lib/main.dart:61:5: Error: Undefined name 'FirebaseMessaging'.
+    FirebaseMessaging.onBackgroundMessage(firebaseMessagingBackgroundHandler);
+    ^^^^^^^^^^^^^^^^^
+lib/main.dart:107:14: Error: 'GoRouter' isn't a type.
+  late final GoRouter _router;
+             ^^^^^^^^
+lib/main.dart:117:58: Error: The method 'add' isn't defined for the class 'AuthBloc'.
+ - 'AuthBloc' is from 'package:alhadaba_chemistry_app/blocs/auth/auth_bloc.dart' ('lib/blocs/auth/auth_bloc.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'add'.
+    _authBloc = AuthBloc(apiService: widget.apiService)..add(AuthCheckRequested());
+                                                         ^^^
+lib/main.dart:119:17: Error: The method 'add' isn't defined for the class 'AuthBloc'.
+ - 'AuthBloc' is from 'package:alhadaba_chemistry_app/blocs/auth/auth_bloc.dart' ('lib/blocs/auth/auth_bloc.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'add'.
+      _authBloc.add(AuthLoggedOut());
+                ^^^
+lib/main.dart:122:31: Error: The method 'add' isn't defined for the class 'ThemeBloc'.
+ - 'ThemeBloc' is from 'package:alhadaba_chemistry_app/blocs/theme/theme_bloc.dart' ('lib/blocs/theme/theme_bloc.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'add'.
+    _themeBloc = ThemeBloc()..add(LoadThemeEvent());
+                              ^^^
+lib/main.dart:130:28: Error: The getter 'FirebaseMessaging' isn't defined for the class '_AlhadabaAppState'.
+ - '_AlhadabaAppState' is from 'package:alhadaba_chemistry_app/main.dart' ('lib/main.dart').
+Try correcting the name to the name of an existing getter, or defining a getter or field named 'FirebaseMessaging'.
+        _tokenRefreshSub = FirebaseMessaging.instance.onTokenRefresh.listen((newToken) {
+                           ^^^^^^^^^^^^^^^^^
+lib/main.dart:149:12: Error: The getter 'uriLinkStream' isn't defined for the class '_AlhadabaAppState'.
+ - '_AlhadabaAppState' is from 'package:alhadaba_chemistry_app/main.dart' ('lib/main.dart').
+Try correcting the name to the name of an existing getter, or defining a getter or field named 'uriLinkStream'.
+    _sub = uriLinkStream.listen((Uri? uri) {
+           ^^^^^^^^^^^^^
+lib/main.dart:165:33: Error: The method 'getInitialLink' isn't defined for the class '_AlhadabaAppState'.
+ - '_AlhadabaAppState' is from 'package:alhadaba_chemistry_app/main.dart' ('lib/main.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'getInitialLink'.
+      final initialLink = await getInitialLink();
+                                ^^^^^^^^^^^^^^
+lib/main.dart:204:15: Error: The method 'close' isn't defined for the class 'AuthBloc'.
+ - 'AuthBloc' is from 'package:alhadaba_chemistry_app/blocs/auth/auth_bloc.dart' ('lib/blocs/auth/auth_bloc.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'close'.
+    _authBloc.close();
+              ^^^^^
+lib/main.dart:205:17: Error: The method 'close' isn't defined for the class 'CourseBloc'.
+ - 'CourseBloc' is from 'package:alhadaba_chemistry_app/blocs/course/course_bloc.dart' ('lib/blocs/course/course_bloc.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'close'.
+    _courseBloc.close();
+                ^^^^^
+lib/main.dart:206:16: Error: The method 'close' isn't defined for the class 'ThemeBloc'.
+ - 'ThemeBloc' is from 'package:alhadaba_chemistry_app/blocs/theme/theme_bloc.dart' ('lib/blocs/theme/theme_bloc.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'close'.
+    _themeBloc.close();
+               ^^^^^
+lib/main.dart:246:12: Error: The method 'MultiBlocProvider' isn't defined for the class '_AlhadabaAppState'.
+ - '_AlhadabaAppState' is from 'package:alhadaba_chemistry_app/main.dart' ('lib/main.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'MultiBlocProvider'.
+    return MultiBlocProvider(
+           ^^^^^^^^^^^^^^^^^
+lib/main.dart:248:9: Error: The getter 'BlocProvider' isn't defined for the class '_AlhadabaAppState'.
+ - '_AlhadabaAppState' is from 'package:alhadaba_chemistry_app/main.dart' ('lib/main.dart').
+Try correcting the name to the name of an existing getter, or defining a getter or field named 'BlocProvider'.
+        BlocProvider.value(value: _authBloc),
+        ^^^^^^^^^^^^
+lib/main.dart:249:9: Error: The getter 'BlocProvider' isn't defined for the class '_AlhadabaAppState'.
+ - '_AlhadabaAppState' is from 'package:alhadaba_chemistry_app/main.dart' ('lib/main.dart').
+Try correcting the name to the name of an existing getter, or defining a getter or field named 'BlocProvider'.
+        BlocProvider.value(value: _courseBloc),
+        ^^^^^^^^^^^^
+lib/main.dart:250:9: Error: The getter 'BlocProvider' isn't defined for the class '_AlhadabaAppState'.
+ - '_AlhadabaAppState' is from 'package:alhadaba_chemistry_app/main.dart' ('lib/main.dart').
+Try correcting the name to the name of an existing getter, or defining a getter or field named 'BlocProvider'.
+        BlocProvider.value(value: _themeBloc),
+        ^^^^^^^^^^^^
+lib/main.dart:252:14: Error: The method 'BlocBuilder' isn't defined for the class '_AlhadabaAppState'.
+ - '_AlhadabaAppState' is from 'package:alhadaba_chemistry_app/main.dart' ('lib/main.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'BlocBuilder'.
+      child: BlocBuilder<ThemeBloc, ThemeMode>(
+             ^^^^^^^^^^^
+lib/services/api_service.dart:8:14: Error: 'Dio' isn't a type.
+  late final Dio _dio;
+             ^^^
+lib/services/api_service.dart:13:12: Error: The method 'Dio' isn't defined for the class 'ApiService'.
+ - 'ApiService' is from 'package:alhadaba_chemistry_app/services/api_service.dart' ('lib/services/api_service.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'Dio'.
+    _dio = Dio(BaseOptions(
+           ^^^
+lib/services/api_service.dart:13:16: Error: The method 'BaseOptions' isn't defined for the class 'ApiService'.
+ - 'ApiService' is from 'package:alhadaba_chemistry_app/services/api_service.dart' ('lib/services/api_service.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'BaseOptions'.
+    _dio = Dio(BaseOptions(
+               ^^^^^^^^^^^
+lib/services/api_service.dart:20:27: Error: The method 'InterceptorsWrapper' isn't defined for the class 'ApiService'.
+ - 'ApiService' is from 'package:alhadaba_chemistry_app/services/api_service.dart' ('lib/services/api_service.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'InterceptorsWrapper'.
+    _dio.interceptors.add(InterceptorsWrapper(
+                          ^^^^^^^^^^^^^^^^^^^
+lib/services/api_service.dart:32:27: Error: The getter 'Supabase' isn't defined for the class 'ApiService'.
+ - 'ApiService' is from 'package:alhadaba_chemistry_app/services/api_service.dart' ('lib/services/api_service.dart').
+Try correcting the name to the name of an existing getter, or defining a getter or field named 'Supabase'.
+          final session = Supabase.instance.client.auth.currentSession;
+                          ^^^^^^^^
+lib/services/api_service.dart:50:13: Error: The getter 'Supabase' isn't defined for the class 'ApiService'.
+ - 'ApiService' is from 'package:alhadaba_chemistry_app/services/api_service.dart' ('lib/services/api_service.dart').
+Try correcting the name to the name of an existing getter, or defining a getter or field named 'Supabase'.
+            Supabase.instance.client.auth.currentSession != null) {
+            ^^^^^^^^
+lib/services/api_service.dart:51:11: Error: The getter 'Supabase' isn't defined for the class 'ApiService'.
+ - 'ApiService' is from 'package:alhadaba_chemistry_app/services/api_service.dart' ('lib/services/api_service.dart').
+Try correcting the name to the name of an existing getter, or defining a getter or field named 'Supabase'.
+          Supabase.instance.client.auth.signOut();
+          ^^^^^^^^
+lib/services/api_service.dart:58:26: Error: The method 'DioException' isn't defined for the class 'ApiService'.
+ - 'ApiService' is from 'package:alhadaba_chemistry_app/services/api_service.dart' ('lib/services/api_service.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'DioException'.
+          handler.reject(DioException(
+                         ^^^^^^^^^^^^
+lib/services/api_service.dart:71:31: Error: The getter 'Supabase' isn't defined for the class 'ApiService'.
+ - 'ApiService' is from 'package:alhadaba_chemistry_app/services/api_service.dart' ('lib/services/api_service.dart').
+Try correcting the name to the name of an existing getter, or defining a getter or field named 'Supabase'.
+  bool get isAuthenticated => Supabase.instance.client.auth.currentSession != null;
+                              ^^^^^^^^
+lib/services/api_service.dart:83:18: Error: The method 'Options' isn't defined for the class 'ApiService'.
+ - 'ApiService' is from 'package:alhadaba_chemistry_app/services/api_service.dart' ('lib/services/api_service.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'Options'.
+        options: Options(
+                 ^^^^^^^
+lib/services/api_service.dart:102:16: Error: The method 'Options' isn't defined for the class 'ApiService'.
+ - 'ApiService' is from 'package:alhadaba_chemistry_app/services/api_service.dart' ('lib/services/api_service.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'Options'.
+      options: Options(
+               ^^^^^^^
+lib/services/api_service.dart:380:5: Error: 'CancelToken' isn't a type.
+    CancelToken? cancelToken,
+    ^^^^^^^^^^^
+lib/services/api_service.dart:385:16: Error: The method 'Options' isn't defined for the class 'ApiService'.
+ - 'ApiService' is from 'package:alhadaba_chemistry_app/services/api_service.dart' ('lib/services/api_service.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'Options'.
+      options: Options(
+               ^^^^^^^
+lib/services/api_service.dart:386:23: Error: The getter 'ResponseType' isn't defined for the class 'ApiService'.
+ - 'ApiService' is from 'package:alhadaba_chemistry_app/services/api_service.dart' ('lib/services/api_service.dart').
+Try correcting the name to the name of an existing getter, or defining a getter or field named 'ResponseType'.
+        responseType: ResponseType.bytes,
+                      ^^^^^^^^^^^^
+lib/services/api_service.dart:398:26: Error: The method 'Dio' isn't defined for the class 'ApiService'.
+ - 'ApiService' is from 'package:alhadaba_chemistry_app/services/api_service.dart' ('lib/services/api_service.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'Dio'.
+        final cleanDio = Dio();
+                         ^^^
+lib/services/api_service.dart:401:20: Error: The method 'Options' isn't defined for the class 'ApiService'.
+ - 'ApiService' is from 'package:alhadaba_chemistry_app/services/api_service.dart' ('lib/services/api_service.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'Options'.
+          options: Options(responseType: ResponseType.bytes),
+                   ^^^^^^^
+lib/services/api_service.dart:401:42: Error: The getter 'ResponseType' isn't defined for the class 'ApiService'.
+ - 'ApiService' is from 'package:alhadaba_chemistry_app/services/api_service.dart' ('lib/services/api_service.dart').
+Try correcting the name to the name of an existing getter, or defining a getter or field named 'ResponseType'.
+          options: Options(responseType: ResponseType.bytes),
+                                         ^^^^^^^^^^^^
+lib/services/device_service.dart:7:9: Error: 'FlutterSecureStorage' isn't a type.
+  final FlutterSecureStorage _storage = const FlutterSecureStorage();
+        ^^^^^^^^^^^^^^^^^^^^
+lib/services/device_service.dart:7:47: Error: Couldn't find constructor 'FlutterSecureStorage'.
+  final FlutterSecureStorage _storage = const FlutterSecureStorage();
+                                              ^^^^^^^^^^^^^^^^^^^^
+lib/services/device_service.dart:8:9: Error: 'DeviceInfoPlugin' isn't a type.
+  final DeviceInfoPlugin _deviceInfo = DeviceInfoPlugin();
+        ^^^^^^^^^^^^^^^^
+lib/services/device_service.dart:8:40: Error: Method not found: 'DeviceInfoPlugin'.
+  final DeviceInfoPlugin _deviceInfo = DeviceInfoPlugin();
+                                       ^^^^^^^^^^^^^^^^
+lib/config/router.dart:20:11: Error: No named parameter with the name 'transitionDuration'.
+          transitionDuration: const Duration(milliseconds: 300),
+          ^^^^^^^^^^^^^^^^^^
+lib/config/router.dart:132:9: Error: Method not found: 'GoRoute'.
+        GoRoute(
+        ^^^^^^^
+lib/config/router.dart:152:44: Error: Method not found: 'NoTransitionPage'.
+          pageBuilder: (context, state) => NoTransitionPage(
+                                           ^^^^^^^^^^^^^^^^
+lib/config/router.dart:149:9: Error: Method not found: 'GoRoute'.
+        GoRoute(
+        ^^^^^^^
+lib/config/router.dart:164:9: Error: Method not found: 'GoRoute'.
+        GoRoute(
+        ^^^^^^^
+lib/config/router.dart:181:48: Error: Method not found: 'NoTransitionPage'.
+              pageBuilder: (context, state) => NoTransitionPage(
+                                               ^^^^^^^^^^^^^^^^
+lib/config/router.dart:178:13: Error: Method not found: 'GoRoute'.
+            GoRoute(
+            ^^^^^^^
+lib/config/router.dart:191:48: Error: Method not found: 'NoTransitionPage'.
+              pageBuilder: (context, state) => NoTransitionPage(
+                                               ^^^^^^^^^^^^^^^^
+lib/config/router.dart:188:13: Error: Method not found: 'GoRoute'.
+            GoRoute(
+            ^^^^^^^
+lib/config/router.dart:201:48: Error: Method not found: 'NoTransitionPage'.
+              pageBuilder: (context, state) => NoTransitionPage(
+                                               ^^^^^^^^^^^^^^^^
+lib/config/router.dart:198:13: Error: Method not found: 'GoRoute'.
+            GoRoute(
+            ^^^^^^^
+lib/config/router.dart:211:48: Error: Method not found: 'NoTransitionPage'.
+              pageBuilder: (context, state) => NoTransitionPage(
+                                               ^^^^^^^^^^^^^^^^
+lib/config/router.dart:208:13: Error: Method not found: 'GoRoute'.
+            GoRoute(
+            ^^^^^^^
+lib/config/router.dart:221:48: Error: Method not found: 'NoTransitionPage'.
+              pageBuilder: (context, state) => NoTransitionPage(
+                                               ^^^^^^^^^^^^^^^^
+lib/config/router.dart:218:13: Error: Method not found: 'GoRoute'.
+            GoRoute(
+            ^^^^^^^
+lib/config/router.dart:231:48: Error: Method not found: 'NoTransitionPage'.
+              pageBuilder: (context, state) => NoTransitionPage(
+                                               ^^^^^^^^^^^^^^^^
+lib/config/router.dart:228:13: Error: Method not found: 'GoRoute'.
+            GoRoute(
+            ^^^^^^^
+lib/config/router.dart:238:13: Error: Method not found: 'GoRoute'.
+            GoRoute(
+            ^^^^^^^
+lib/config/router.dart:257:13: Error: Method not found: 'GoRoute'.
+            GoRoute(
+            ^^^^^^^
+lib/config/router.dart:277:13: Error: Method not found: 'GoRoute'.
+            GoRoute(
+            ^^^^^^^
+lib/config/router.dart:297:13: Error: Method not found: 'GoRoute'.
+            GoRoute(
+            ^^^^^^^
+lib/config/router.dart:174:9: Error: Method not found: 'ShellRoute'.
+        ShellRoute(
+        ^^^^^^^^^^
+lib/config/router.dart:66:12: Error: Method not found: 'GoRouter'.
+    return GoRouter(
+           ^^^^^^^^
+lib/config/router.dart:344:40: Error: The method 'go' isn't defined for the class 'BuildContext'.
+ - 'BuildContext' is from 'package:flutter/src/widgets/framework.dart' ('../../../flutter-sdk/flutter/packages/flutter/lib/src/widgets/framework.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'go'.
+              onPressed: () => context.go(AppRoutes.home),
+                                       ^^
+lib/config/router.dart:404:22: Error: The getter 'GoRouterState' isn't defined for the class '_MainShellState'.
+ - '_MainShellState' is from 'package:alhadaba_chemistry_app/config/router.dart' ('lib/config/router.dart').
+Try correcting the name to the name of an existing getter, or defining a getter or field named 'GoRouterState'.
+    final location = GoRouterState.of(context).matchedLocation;
+                     ^^^^^^^^^^^^^
+lib/config/router.dart:423:13: Error: The method 'go' isn't defined for the class 'BuildContext'.
+ - 'BuildContext' is from 'package:flutter/src/widgets/framework.dart' ('../../../flutter-sdk/flutter/packages/flutter/lib/src/widgets/framework.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'go'.
+    context.go(_tabs[index].route);
+            ^^
+lib/services/push_notification_service.dart:21:49: Error: 'RemoteMessage' isn't a type.
+Future<void> firebaseMessagingBackgroundHandler(RemoteMessage message) async {
+                                                ^^^^^^^^^^^^^
+lib/services/push_notification_service.dart:50:13: Error: The getter 'FirebaseMessaging' isn't defined for the class 'PushNotificationService'.
+ - 'PushNotificationService' is from 'package:alhadaba_chemistry_app/services/push_notification_service.dart' ('lib/services/push_notification_service.dart').
+Try correcting the name to the name of an existing getter, or defining a getter or field named 'FirebaseMessaging'.
+      await FirebaseMessaging.instance.requestPermission(
+            ^^^^^^^^^^^^^^^^^
+lib/services/push_notification_service.dart:58:20: Error: The getter 'FirebaseMessaging' isn't defined for the class 'PushNotificationService'.
+ - 'PushNotificationService' is from 'package:alhadaba_chemistry_app/services/push_notification_service.dart' ('lib/services/push_notification_service.dart').
+Try correcting the name to the name of an existing getter, or defining a getter or field named 'FirebaseMessaging'.
+      return await FirebaseMessaging.instance.getToken();
+                   ^^^^^^^^^^^^^^^^^
+lib/services/push_notification_service.dart:94:5: Error: The getter 'FirebaseMessaging' isn't defined for the class 'PushNotificationService'.
+ - 'PushNotificationService' is from 'package:alhadaba_chemistry_app/services/push_notification_service.dart' ('lib/services/push_notification_service.dart').
+Try correcting the name to the name of an existing getter, or defining a getter or field named 'FirebaseMessaging'.
+    FirebaseMessaging.onMessage.listen(_showForegroundBanner);
+    ^^^^^^^^^^^^^^^^^
+lib/services/push_notification_service.dart:97:30: Error: 'RemoteMessage' isn't a type.
+  void _showForegroundBanner(RemoteMessage message) {
+                             ^^^^^^^^^^^^^
+lib/blocs/auth/auth_bloc.dart:10:9: Error: 'SupabaseClient' isn't a type.
+  final SupabaseClient _supabaseClient = Supabase.instance.client;
+        ^^^^^^^^^^^^^^
+lib/blocs/auth/auth_bloc.dart:10:42: Error: Undefined name 'Supabase'.
+  final SupabaseClient _supabaseClient = Supabase.instance.client;
+                                         ^^^^^^^^
+lib/blocs/auth/auth_bloc.dart:12:47: Error: Too many positional arguments: 0 allowed, but 1 found.
+Try removing the extra positional arguments.
+  AuthBloc({required this.apiService}) : super(AuthInitial()) {
+                                              ^
+lib/blocs/auth/auth_bloc.dart:13:5: Error: The method 'on' isn't defined for the class 'AuthBloc'.
+ - 'AuthBloc' is from 'package:alhadaba_chemistry_app/blocs/auth/auth_bloc.dart' ('lib/blocs/auth/auth_bloc.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'on'.
+    on<AuthCheckRequested>(_onAuthCheckRequested);
+    ^^
+lib/blocs/auth/auth_bloc.dart:14:5: Error: The method 'on' isn't defined for the class 'AuthBloc'.
+ - 'AuthBloc' is from 'package:alhadaba_chemistry_app/blocs/auth/auth_bloc.dart' ('lib/blocs/auth/auth_bloc.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'on'.
+    on<AuthLoggedIn>(_onAuthLoggedIn);
+    ^^
+lib/blocs/auth/auth_bloc.dart:15:5: Error: The method 'on' isn't defined for the class 'AuthBloc'.
+ - 'AuthBloc' is from 'package:alhadaba_chemistry_app/blocs/auth/auth_bloc.dart' ('lib/blocs/auth/auth_bloc.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'on'.
+    on<AuthRegistered>(_onAuthRegistered);
+    ^^
+lib/blocs/auth/auth_bloc.dart:16:5: Error: The method 'on' isn't defined for the class 'AuthBloc'.
+ - 'AuthBloc' is from 'package:alhadaba_chemistry_app/blocs/auth/auth_bloc.dart' ('lib/blocs/auth/auth_bloc.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'on'.
+    on<AuthProfileSyncRequested>(_onAuthProfileSyncRequested);
+    ^^
+lib/blocs/auth/auth_bloc.dart:17:5: Error: The method 'on' isn't defined for the class 'AuthBloc'.
+ - 'AuthBloc' is from 'package:alhadaba_chemistry_app/blocs/auth/auth_bloc.dart' ('lib/blocs/auth/auth_bloc.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'on'.
+    on<AuthLoggedOut>(_onAuthLoggedOut);
+    ^^
+lib/blocs/auth/auth_bloc.dart:45:5: Error: 'Emitter' isn't a type.
+    Emitter<AuthState> emit,
+    ^^^^^^^
+lib/blocs/auth/auth_bloc.dart:93:5: Error: 'Emitter' isn't a type.
+    Emitter<AuthState> emit,
+    ^^^^^^^
+lib/blocs/auth/auth_bloc.dart:145:5: Error: 'Emitter' isn't a type.
+    Emitter<AuthState> emit,
+    ^^^^^^^
+lib/blocs/auth/auth_bloc.dart:193:5: Error: 'Emitter' isn't a type.
+    Emitter<AuthState> emit,
+    ^^^^^^^
+lib/blocs/auth/auth_bloc.dart:220:5: Error: 'Emitter' isn't a type.
+    Emitter<AuthState> emit,
+    ^^^^^^^
+lib/blocs/course/course_bloc.dart:12:49: Error: Too many positional arguments: 0 allowed, but 1 found.
+Try removing the extra positional arguments.
+  CourseBloc({required this.apiService}) : super(CourseInitial()) {
+                                                ^
+lib/blocs/course/course_bloc.dart:13:5: Error: The method 'on' isn't defined for the class 'CourseBloc'.
+ - 'CourseBloc' is from 'package:alhadaba_chemistry_app/blocs/course/course_bloc.dart' ('lib/blocs/course/course_bloc.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'on'.
+    on<FetchCoursesRequested>(_onFetchCoursesRequested);
+    ^^
+lib/blocs/course/course_bloc.dart:14:5: Error: The method 'on' isn't defined for the class 'CourseBloc'.
+ - 'CourseBloc' is from 'package:alhadaba_chemistry_app/blocs/course/course_bloc.dart' ('lib/blocs/course/course_bloc.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'on'.
+    on<FetchMyCoursesRequested>(_onFetchMyCoursesRequested);
+    ^^
+lib/blocs/course/course_bloc.dart:15:5: Error: The method 'on' isn't defined for the class 'CourseBloc'.
+ - 'CourseBloc' is from 'package:alhadaba_chemistry_app/blocs/course/course_bloc.dart' ('lib/blocs/course/course_bloc.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'on'.
+    on<FetchCourseDetailsRequested>(_onFetchCourseDetailsRequested);
+    ^^
+lib/blocs/course/course_bloc.dart:16:5: Error: The method 'on' isn't defined for the class 'CourseBloc'.
+ - 'CourseBloc' is from 'package:alhadaba_chemistry_app/blocs/course/course_bloc.dart' ('lib/blocs/course/course_bloc.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'on'.
+    on<RedeemCodeRequested>(_onRedeemCodeRequested);
+    ^^
+lib/blocs/course/course_bloc.dart:17:5: Error: The method 'on' isn't defined for the class 'CourseBloc'.
+ - 'CourseBloc' is from 'package:alhadaba_chemistry_app/blocs/course/course_bloc.dart' ('lib/blocs/course/course_bloc.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'on'.
+    on<RestoreCoursesLoaded>((event, emit) {
+    ^^
+lib/blocs/course/course_bloc.dart:27:5: Error: 'Emitter' isn't a type.
+    Emitter<CourseState> emit,
+    ^^^^^^^
+lib/blocs/course/course_bloc.dart:53:5: Error: 'Emitter' isn't a type.
+    Emitter<CourseState> emit,
+    ^^^^^^^
+lib/blocs/course/course_bloc.dart:71:5: Error: 'Emitter' isn't a type.
+    Emitter<CourseState> emit,
+    ^^^^^^^
+lib/blocs/course/course_bloc.dart:100:5: Error: 'Emitter' isn't a type.
+    Emitter<CourseState> emit,
+    ^^^^^^^
+lib/blocs/course/course_bloc.dart:114:7: Error: The method 'add' isn't defined for the class 'CourseBloc'.
+ - 'CourseBloc' is from 'package:alhadaba_chemistry_app/blocs/course/course_bloc.dart' ('lib/blocs/course/course_bloc.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'add'.
+      add(FetchCoursesRequested());
+      ^^^
+lib/blocs/theme/theme_bloc.dart:10:9: Error: 'FlutterSecureStorage' isn't a type.
+  final FlutterSecureStorage _storage = const FlutterSecureStorage();
+        ^^^^^^^^^^^^^^^^^^^^
+lib/blocs/theme/theme_bloc.dart:10:47: Error: Couldn't find constructor 'FlutterSecureStorage'.
+  final FlutterSecureStorage _storage = const FlutterSecureStorage();
+                                              ^^^^^^^^^^^^^^^^^^^^
+lib/blocs/theme/theme_bloc.dart:12:22: Error: Too many positional arguments: 0 allowed, but 1 found.
+Try removing the extra positional arguments.
+  ThemeBloc() : super(ThemeMode.light) {
+                     ^
+lib/blocs/theme/theme_bloc.dart:13:5: Error: The method 'on' isn't defined for the class 'ThemeBloc'.
+ - 'ThemeBloc' is from 'package:alhadaba_chemistry_app/blocs/theme/theme_bloc.dart' ('lib/blocs/theme/theme_bloc.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'on'.
+    on<LoadThemeEvent>(_onLoadTheme);
+    ^^
+lib/blocs/theme/theme_bloc.dart:14:5: Error: The method 'on' isn't defined for the class 'ThemeBloc'.
+ - 'ThemeBloc' is from 'package:alhadaba_chemistry_app/blocs/theme/theme_bloc.dart' ('lib/blocs/theme/theme_bloc.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'on'.
+    on<ToggleThemeEvent>(_onToggleTheme);
+    ^^
+lib/blocs/theme/theme_bloc.dart:17:51: Error: 'Emitter' isn't a type.
+  Future<void> _onLoadTheme(LoadThemeEvent event, Emitter<ThemeMode> emit) async {
+                                                  ^^^^^^^
+lib/blocs/theme/theme_bloc.dart:26:55: Error: 'Emitter' isn't a type.
+  Future<void> _onToggleTheme(ToggleThemeEvent event, Emitter<ThemeMode> emit) async {
+                                                      ^^^^^^^
+lib/blocs/theme/theme_bloc.dart:27:9: Error: The getter 'state' isn't defined for the class 'ThemeBloc'.
+ - 'ThemeBloc' is from 'package:alhadaba_chemistry_app/blocs/theme/theme_bloc.dart' ('lib/blocs/theme/theme_bloc.dart').
+Try correcting the name to the name of an existing getter, or defining a getter or field named 'state'.
+    if (state == ThemeMode.dark) {
+        ^^^^^
+lib/services/biometric_service.dart:5:9: Error: 'LocalAuthentication' isn't a type.
+  final LocalAuthentication _auth = LocalAuthentication();
+        ^^^^^^^^^^^^^^^^^^^
+lib/services/biometric_service.dart:5:37: Error: Method not found: 'LocalAuthentication'.
+  final LocalAuthentication _auth = LocalAuthentication();
+                                    ^^^^^^^^^^^^^^^^^^^
+lib/services/biometric_service.dart:6:9: Error: 'FlutterSecureStorage' isn't a type.
+  final FlutterSecureStorage _storage = const FlutterSecureStorage();
+        ^^^^^^^^^^^^^^^^^^^^
+lib/services/biometric_service.dart:6:47: Error: Couldn't find constructor 'FlutterSecureStorage'.
+  final FlutterSecureStorage _storage = const FlutterSecureStorage();
+                                              ^^^^^^^^^^^^^^^^^^^^
+lib/services/biometric_service.dart:18:24: Error: Couldn't find constructor 'AuthenticationOptions'.
+        options: const AuthenticationOptions(
+                       ^^^^^^^^^^^^^^^^^^^^^
+lib/screens/login_screen.dart:46:33: Error: The method 'read' isn't defined for the class 'BuildContext'.
+ - 'BuildContext' is from 'package:flutter/src/widgets/framework.dart' ('../../../flutter-sdk/flutter/packages/flutter/lib/src/widgets/framework.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'read'.
+      final res = await context.read<AuthBloc>().apiService.getPublicSettings();
+                                ^^^^
+lib/screens/login_screen.dart:157:15: Error: The method 'read' isn't defined for the class 'BuildContext'.
+ - 'BuildContext' is from 'package:flutter/src/widgets/framework.dart' ('../../../flutter-sdk/flutter/packages/flutter/lib/src/widgets/framework.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'read'.
+      context.read<AuthBloc>().add(AuthRegistered(
+              ^^^^
+lib/screens/login_screen.dart:173:15: Error: The method 'read' isn't defined for the class 'BuildContext'.
+ - 'BuildContext' is from 'package:flutter/src/widgets/framework.dart' ('../../../flutter-sdk/flutter/packages/flutter/lib/src/widgets/framework.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'read'.
+      context.read<AuthBloc>().add(AuthLoggedIn(
+              ^^^^
+lib/screens/login_screen.dart:187:13: Error: The getter 'Supabase' isn't defined for the class '_LoginScreenState'.
+ - '_LoginScreenState' is from 'package:alhadaba_chemistry_app/screens/login_screen.dart' ('lib/screens/login_screen.dart').
+Try correcting the name to the name of an existing getter, or defining a getter or field named 'Supabase'.
+      await Supabase.instance.client.auth.resetPasswordForEmail(email);
+            ^^^^^^^^
+lib/screens/login_screen.dart:305:56: Error: The method 'read' isn't defined for the class 'BuildContext'.
+ - 'BuildContext' is from 'package:flutter/src/widgets/framework.dart' ('../../../flutter-sdk/flutter/packages/flutter/lib/src/widgets/framework.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'read'.
+                            final apiService = context.read<AuthBloc>().apiService;
+                                                       ^^^^
+lib/screens/login_screen.dart:413:15: Error: The method 'BlocConsumer' isn't defined for the class '_LoginScreenState'.
+ - '_LoginScreenState' is from 'package:alhadaba_chemistry_app/screens/login_screen.dart' ('lib/screens/login_screen.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'BlocConsumer'.
+        body: BlocConsumer<AuthBloc, AuthState>(
+              ^^^^^^^^^^^^
+lib/screens/login_screen.dart:485:28: Error: The method 'BlocBuilder' isn't defined for the class '_LoginScreenState'.
+ - '_LoginScreenState' is from 'package:alhadaba_chemistry_app/screens/login_screen.dart' ('lib/screens/login_screen.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'BlocBuilder'.
+                    child: BlocBuilder<ThemeBloc, ThemeMode>(
+                           ^^^^^^^^^^^
+lib/screens/login_screen.dart:1125:37: Error: The method 'read' isn't defined for the class 'BuildContext'.
+ - 'BuildContext' is from 'package:flutter/src/widgets/framework.dart' ('../../../flutter-sdk/flutter/packages/flutter/lib/src/widgets/framework.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'read'.
+                            context.read<AuthBloc>().add(AuthProfileSyncRequested(
+                                    ^^^^
+lib/screens/home_screen.dart:37:31: Error: The method 'read' isn't defined for the class 'BuildContext'.
+ - 'BuildContext' is from 'package:flutter/src/widgets/framework.dart' ('../../../flutter-sdk/flutter/packages/flutter/lib/src/widgets/framework.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'read'.
+    final authState = context.read<AuthBloc>().state;
+                              ^^^^
+lib/screens/home_screen.dart:42:13: Error: The method 'read' isn't defined for the class 'BuildContext'.
+ - 'BuildContext' is from 'package:flutter/src/widgets/framework.dart' ('../../../flutter-sdk/flutter/packages/flutter/lib/src/widgets/framework.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'read'.
+    context.read<CourseBloc>().add(FetchCoursesRequested(grade: grade));
+            ^^^^
+lib/screens/home_screen.dart:47:12: Error: The method 'BlocBuilder' isn't defined for the class '_HomeScreenState'.
+ - '_HomeScreenState' is from 'package:alhadaba_chemistry_app/screens/home_screen.dart' ('lib/screens/home_screen.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'BlocBuilder'.
+    return BlocBuilder<AuthBloc, AuthState>(
+           ^^^^^^^^^^^
+lib/screens/home_screen.dart:206:25: Error: The method 'go' isn't defined for the class 'BuildContext'.
+ - 'BuildContext' is from 'package:flutter/src/widgets/framework.dart' ('../../../flutter-sdk/flutter/packages/flutter/lib/src/widgets/framework.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'go'.
+                context.go(AppRoutes.login);
+                        ^^
+lib/screens/home_screen.dart:270:19: Error: The method 'go' isn't defined for the class 'BuildContext'.
+ - 'BuildContext' is from 'package:flutter/src/widgets/framework.dart' ('../../../flutter-sdk/flutter/packages/flutter/lib/src/widgets/framework.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'go'.
+          context.go(locked ? AppRoutes.login : route);
+                  ^^
+lib/screens/home_screen.dart:324:25: Error: The method 'read' isn't defined for the class 'BuildContext'.
+ - 'BuildContext' is from 'package:flutter/src/widgets/framework.dart' ('../../../flutter-sdk/flutter/packages/flutter/lib/src/widgets/framework.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'read'.
+                context.read<AuthBloc>().add(AuthLoggedOut());
+                        ^^^^
+lib/screens/course_details_screen.dart:84:13: Error: The method 'read' isn't defined for the class 'BuildContext'.
+ - 'BuildContext' is from 'package:flutter/src/widgets/framework.dart' ('../../../flutter-sdk/flutter/packages/flutter/lib/src/widgets/framework.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'read'.
+    context.read<CourseBloc>().add(FetchCourseDetailsRequested(courseId: widget.courseId));
+            ^^^^
+lib/screens/course_details_screen.dart:89:12: Error: The method 'BlocListener' isn't defined for the class '_CourseDetailsScreenState'.
+ - '_CourseDetailsScreenState' is from 'package:alhadaba_chemistry_app/screens/course_details_screen.dart' ('lib/screens/course_details_screen.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'BlocListener'.
+    return BlocListener<CourseBloc, CourseState>(
+           ^^^^^^^^^^^^
+lib/screens/course_details_screen.dart:103:14: Error: The method 'BlocBuilder' isn't defined for the class '_CourseDetailsScreenState'.
+ - '_CourseDetailsScreenState' is from 'package:alhadaba_chemistry_app/screens/course_details_screen.dart' ('lib/screens/course_details_screen.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'BlocBuilder'.
+      child: BlocBuilder<CourseBloc, CourseState>(
+             ^^^^^^^^^^^
+lib/screens/course_details_screen.dart:141:33: Error: The method 'CachedNetworkImage' isn't defined for the class '_CourseDetailsScreenState'.
+ - '_CourseDetailsScreenState' is from 'package:alhadaba_chemistry_app/screens/course_details_screen.dart' ('lib/screens/course_details_screen.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'CachedNetworkImage'.
+                              ? CachedNetworkImage(
+                                ^^^^^^^^^^^^^^^^^^
+lib/screens/course_details_screen.dart:360:40: Error: The method 'read' isn't defined for the class 'BuildContext'.
+ - 'BuildContext' is from 'package:flutter/src/widgets/framework.dart' ('../../../flutter-sdk/flutter/packages/flutter/lib/src/widgets/framework.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'read'.
+          final bool isGuest = context.read<AuthBloc>().state is! AuthAuthenticated;
+                                       ^^^^
+lib/screens/course_details_screen.dart:641:31: Error: The method 'read' isn't defined for the class 'BuildContext'.
+ - 'BuildContext' is from 'package:flutter/src/widgets/framework.dart' ('../../../flutter-sdk/flutter/packages/flutter/lib/src/widgets/framework.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'read'.
+                      context.read<CourseBloc>().add(FetchCourseDetailsRequested(courseId: widget.courseId));
+                              ^^^^
+lib/screens/course_details_screen.dart:685:25: Error: The method 'go' isn't defined for the class 'BuildContext'.
+ - 'BuildContext' is from 'package:flutter/src/widgets/framework.dart' ('../../../flutter-sdk/flutter/packages/flutter/lib/src/widgets/framework.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'go'.
+                context.go('/login');
+                        ^^
+lib/screens/course_details_screen.dart:702:34: Error: The method 'read' isn't defined for the class 'BuildContext'.
+ - 'BuildContext' is from 'package:flutter/src/widgets/framework.dart' ('../../../flutter-sdk/flutter/packages/flutter/lib/src/widgets/framework.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'read'.
+    final bool isGuest = context.read<AuthBloc>().state is! AuthAuthenticated;
+                                 ^^^^
+lib/screens/course_details_screen.dart:720:52: Error: The method 'go' isn't defined for the class 'BuildContext'.
+ - 'BuildContext' is from 'package:flutter/src/widgets/framework.dart' ('../../../flutter-sdk/flutter/packages/flutter/lib/src/widgets/framework.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'go'.
+                onPressed: () => isGuest ? context.go('/login') : _showRedeemBottomSheet(course),
+                                                   ^^
+lib/screens/course_details_screen.dart:853:35: Error: The method 'read' isn't defined for the class 'BuildContext'.
+ - 'BuildContext' is from 'package:flutter/src/widgets/framework.dart' ('../../../flutter-sdk/flutter/packages/flutter/lib/src/widgets/framework.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'read'.
+                          context.read<CourseBloc>().add(
+                                  ^^^^
+lib/screens/lesson_player_screen.dart:37:3: Error: 'VideoPlayerController' isn't a type.
+  VideoPlayerController? _videoPlayerController;
+  ^^^^^^^^^^^^^^^^^^^^^
+lib/screens/lesson_player_screen.dart:38:3: Error: 'ChewieController' isn't a type.
+  ChewieController? _chewieController;
+  ^^^^^^^^^^^^^^^^
+lib/screens/lesson_player_screen.dart:65:24: Error: The method 'read' isn't defined for the class 'BuildContext'.
+ - 'BuildContext' is from 'package:flutter/src/widgets/framework.dart' ('../../../flutter-sdk/flutter/packages/flutter/lib/src/widgets/framework.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'read'.
+    _isGuest = context.read<AuthBloc>().state is! AuthAuthenticated;
+                       ^^^^
+lib/screens/lesson_player_screen.dart:83:36: Error: The method 'read' isn't defined for the class 'BuildContext'.
+ - 'BuildContext' is from 'package:flutter/src/widgets/framework.dart' ('../../../flutter-sdk/flutter/packages/flutter/lib/src/widgets/framework.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'read'.
+        final apiService = context.read<AuthBloc>().apiService;
+                                   ^^^^
+lib/screens/lesson_player_screen.dart:93:36: Error: The method 'read' isn't defined for the class 'BuildContext'.
+ - 'BuildContext' is from 'package:flutter/src/widgets/framework.dart' ('../../../flutter-sdk/flutter/packages/flutter/lib/src/widgets/framework.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'read'.
+        final apiService = context.read<AuthBloc>().apiService;
+                                   ^^^^
+lib/screens/lesson_player_screen.dart:112:15: Error: The getter 'FlutterWindowManager' isn't defined for the class '_LessonPlayerScreenState'.
+ - '_LessonPlayerScreenState' is from 'package:alhadaba_chemistry_app/screens/lesson_player_screen.dart' ('lib/screens/lesson_player_screen.dart').
+Try correcting the name to the name of an existing getter, or defining a getter or field named 'FlutterWindowManager'.
+        await FlutterWindowManager.addFlags(FlutterWindowManager.FLAG_SECURE);
+              ^^^^^^^^^^^^^^^^^^^^
+lib/screens/lesson_player_screen.dart:112:45: Error: The getter 'FlutterWindowManager' isn't defined for the class '_LessonPlayerScreenState'.
+ - '_LessonPlayerScreenState' is from 'package:alhadaba_chemistry_app/screens/lesson_player_screen.dart' ('lib/screens/lesson_player_screen.dart').
+Try correcting the name to the name of an existing getter, or defining a getter or field named 'FlutterWindowManager'.
+        await FlutterWindowManager.addFlags(FlutterWindowManager.FLAG_SECURE);
+                                            ^^^^^^^^^^^^^^^^^^^^
+lib/screens/lesson_player_screen.dart:121:15: Error: The getter 'FlutterWindowManager' isn't defined for the class '_LessonPlayerScreenState'.
+ - '_LessonPlayerScreenState' is from 'package:alhadaba_chemistry_app/screens/lesson_player_screen.dart' ('lib/screens/lesson_player_screen.dart').
+Try correcting the name to the name of an existing getter, or defining a getter or field named 'FlutterWindowManager'.
+        await FlutterWindowManager.clearFlags(FlutterWindowManager.FLAG_SECURE);
+              ^^^^^^^^^^^^^^^^^^^^
+lib/screens/lesson_player_screen.dart:121:47: Error: The getter 'FlutterWindowManager' isn't defined for the class '_LessonPlayerScreenState'.
+ - '_LessonPlayerScreenState' is from 'package:alhadaba_chemistry_app/screens/lesson_player_screen.dart' ('lib/screens/lesson_player_screen.dart').
+Try correcting the name to the name of an existing getter, or defining a getter or field named 'FlutterWindowManager'.
+        await FlutterWindowManager.clearFlags(FlutterWindowManager.FLAG_SECURE);
+                                              ^^^^^^^^^^^^^^^^^^^^
+lib/screens/lesson_player_screen.dart:176:30: Error: The method 'read' isn't defined for the class 'BuildContext'.
+ - 'BuildContext' is from 'package:flutter/src/widgets/framework.dart' ('../../../flutter-sdk/flutter/packages/flutter/lib/src/widgets/framework.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'read'.
+    final authBloc = context.read<AuthBloc>();
+                             ^^^^
+lib/screens/lesson_player_screen.dart:267:34: Error: The getter 'VideoPlayerController' isn't defined for the class '_LessonPlayerScreenState'.
+ - '_LessonPlayerScreenState' is from 'package:alhadaba_chemistry_app/screens/lesson_player_screen.dart' ('lib/screens/lesson_player_screen.dart').
+Try correcting the name to the name of an existing getter, or defining a getter or field named 'VideoPlayerController'.
+        _videoPlayerController = VideoPlayerController.networkUrl(
+                                 ^^^^^^^^^^^^^^^^^^^^^
+lib/screens/lesson_player_screen.dart:269:23: Error: The getter 'VideoFormat' isn't defined for the class '_LessonPlayerScreenState'.
+ - '_LessonPlayerScreenState' is from 'package:alhadaba_chemistry_app/screens/lesson_player_screen.dart' ('lib/screens/lesson_player_screen.dart').
+Try correcting the name to the name of an existing getter, or defining a getter or field named 'VideoFormat'.
+          formatHint: VideoFormat.hls,
+                      ^^^^^^^^^^^
+lib/screens/lesson_player_screen.dart:272:34: Error: The getter 'VideoPlayerController' isn't defined for the class '_LessonPlayerScreenState'.
+ - '_LessonPlayerScreenState' is from 'package:alhadaba_chemistry_app/screens/lesson_player_screen.dart' ('lib/screens/lesson_player_screen.dart').
+Try correcting the name to the name of an existing getter, or defining a getter or field named 'VideoPlayerController'.
+        _videoPlayerController = VideoPlayerController.networkUrl(Uri.parse(playbackUrl));
+                                 ^^^^^^^^^^^^^^^^^^^^^
+lib/screens/lesson_player_screen.dart:307:27: Error: The method 'ChewieController' isn't defined for the class '_LessonPlayerScreenState'.
+ - '_LessonPlayerScreenState' is from 'package:alhadaba_chemistry_app/screens/lesson_player_screen.dart' ('lib/screens/lesson_player_screen.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'ChewieController'.
+      _chewieController = ChewieController(
+                          ^^^^^^^^^^^^^^^^
+lib/screens/lesson_player_screen.dart:315:33: Error: The method 'ChewieProgressColors' isn't defined for the class '_LessonPlayerScreenState'.
+ - '_LessonPlayerScreenState' is from 'package:alhadaba_chemistry_app/screens/lesson_player_screen.dart' ('lib/screens/lesson_player_screen.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'ChewieProgressColors'.
+        materialProgressColors: ChewieProgressColors(
+                                ^^^^^^^^^^^^^^^^^^^^
+lib/screens/lesson_player_screen.dart:396:20: Error: 'DioException' isn't a type.
+          if (e is DioException) {
+                   ^^^^^^^^^^^^
+lib/screens/lesson_player_screen.dart:368:32: Error: The method 'read' isn't defined for the class 'BuildContext'.
+ - 'BuildContext' is from 'package:flutter/src/widgets/framework.dart' ('../../../flutter-sdk/flutter/packages/flutter/lib/src/widgets/framework.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'read'.
+    final apiService = context.read<AuthBloc>().apiService;
+                               ^^^^
+lib/screens/lesson_player_screen.dart:434:34: Error: The method 'read' isn't defined for the class 'BuildContext'.
+ - 'BuildContext' is from 'package:flutter/src/widgets/framework.dart' ('../../../flutter-sdk/flutter/packages/flutter/lib/src/widgets/framework.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'read'.
+      final apiService = context.read<AuthBloc>().apiService;
+                                 ^^^^
+lib/screens/lesson_player_screen.dart:470:34: Error: The method 'read' isn't defined for the class 'BuildContext'.
+ - 'BuildContext' is from 'package:flutter/src/widgets/framework.dart' ('../../../flutter-sdk/flutter/packages/flutter/lib/src/widgets/framework.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'read'.
+      final apiService = context.read<AuthBloc>().apiService;
+                                 ^^^^
+lib/screens/lesson_player_screen.dart:499:34: Error: The method 'read' isn't defined for the class 'BuildContext'.
+ - 'BuildContext' is from 'package:flutter/src/widgets/framework.dart' ('../../../flutter-sdk/flutter/packages/flutter/lib/src/widgets/framework.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'read'.
+      final apiService = context.read<AuthBloc>().apiService;
+                                 ^^^^
+lib/screens/lesson_player_screen.dart:541:34: Error: The method 'read' isn't defined for the class 'BuildContext'.
+ - 'BuildContext' is from 'package:flutter/src/widgets/framework.dart' ('../../../flutter-sdk/flutter/packages/flutter/lib/src/widgets/framework.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'read'.
+      final apiService = context.read<AuthBloc>().apiService;
+                                 ^^^^
+lib/screens/lesson_player_screen.dart:606:34: Error: The method 'read' isn't defined for the class 'BuildContext'.
+ - 'BuildContext' is from 'package:flutter/src/widgets/framework.dart' ('../../../flutter-sdk/flutter/packages/flutter/lib/src/widgets/framework.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'read'.
+      final apiService = context.read<AuthBloc>().apiService;
+                                 ^^^^
+lib/screens/lesson_player_screen.dart:787:40: Error: The method 'go' isn't defined for the class 'BuildContext'.
+ - 'BuildContext' is from 'package:flutter/src/widgets/framework.dart' ('../../../flutter-sdk/flutter/packages/flutter/lib/src/widgets/framework.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'go'.
+              onPressed: () => context.go('/login'),
+                                       ^^
+lib/screens/lesson_player_screen.dart:910:48: Error: The method 'CachedNetworkImage' isn't defined for the class '_LessonPlayerScreenState'.
+ - '_LessonPlayerScreenState' is from 'package:alhadaba_chemistry_app/screens/lesson_player_screen.dart' ('lib/screens/lesson_player_screen.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'CachedNetworkImage'.
+                                        child: CachedNetworkImage(
+                                               ^^^^^^^^^^^^^^^^^^
+lib/screens/lesson_player_screen.dart:1060:34: Error: The method 'CachedNetworkImage' isn't defined for the class '_LessonPlayerScreenState'.
+ - '_LessonPlayerScreenState' is from 'package:alhadaba_chemistry_app/screens/lesson_player_screen.dart' ('lib/screens/lesson_player_screen.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'CachedNetworkImage'.
+                          child: CachedNetworkImage(
+                                 ^^^^^^^^^^^^^^^^^^
+lib/screens/lesson_player_screen.dart:1168:32: Error: The method 'CachedNetworkImage' isn't defined for the class '_LessonPlayerScreenState'.
+ - '_LessonPlayerScreenState' is from 'package:alhadaba_chemistry_app/screens/lesson_player_screen.dart' ('lib/screens/lesson_player_screen.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'CachedNetworkImage'.
+                        child: CachedNetworkImage(
+                               ^^^^^^^^^^^^^^^^^^
+lib/screens/lesson_player_screen.dart:1224:40: Error: The method 'go' isn't defined for the class 'BuildContext'.
+ - 'BuildContext' is from 'package:flutter/src/widgets/framework.dart' ('../../../flutter-sdk/flutter/packages/flutter/lib/src/widgets/framework.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'go'.
+              onPressed: () => context.go('/login'),
+                                       ^^
+lib/screens/lesson_player_screen.dart:1371:74: Error: The method 'read' isn't defined for the class 'BuildContext'.
+ - 'BuildContext' is from 'package:flutter/src/widgets/framework.dart' ('../../../flutter-sdk/flutter/packages/flutter/lib/src/widgets/framework.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'read'.
+                                              final apiService = context.read<AuthBloc>().apiService;
+                                                                         ^^^^
+lib/screens/lesson_player_screen.dart:1397:33: Error: The method 'Chewie' isn't defined for the class '_LessonPlayerScreenState'.
+ - '_LessonPlayerScreenState' is from 'package:alhadaba_chemistry_app/screens/lesson_player_screen.dart' ('lib/screens/lesson_player_screen.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'Chewie'.
+                              : Chewie(controller: _chewieController!),
+                                ^^^^^^
+lib/screens/pdf_viewer_screen.dart:36:3: Error: 'CancelToken' isn't a type.
+  CancelToken? _downloadCancelToken;
+  ^^^^^^^^^^^
+lib/screens/pdf_viewer_screen.dart:56:15: Error: The getter 'FlutterWindowManager' isn't defined for the class '_PdfViewerScreenState'.
+ - '_PdfViewerScreenState' is from 'package:alhadaba_chemistry_app/screens/pdf_viewer_screen.dart' ('lib/screens/pdf_viewer_screen.dart').
+Try correcting the name to the name of an existing getter, or defining a getter or field named 'FlutterWindowManager'.
+        await FlutterWindowManager.addFlags(FlutterWindowManager.FLAG_SECURE);
+              ^^^^^^^^^^^^^^^^^^^^
+lib/screens/pdf_viewer_screen.dart:56:45: Error: The getter 'FlutterWindowManager' isn't defined for the class '_PdfViewerScreenState'.
+ - '_PdfViewerScreenState' is from 'package:alhadaba_chemistry_app/screens/pdf_viewer_screen.dart' ('lib/screens/pdf_viewer_screen.dart').
+Try correcting the name to the name of an existing getter, or defining a getter or field named 'FlutterWindowManager'.
+        await FlutterWindowManager.addFlags(FlutterWindowManager.FLAG_SECURE);
+                                            ^^^^^^^^^^^^^^^^^^^^
+lib/screens/pdf_viewer_screen.dart:65:15: Error: The getter 'FlutterWindowManager' isn't defined for the class '_PdfViewerScreenState'.
+ - '_PdfViewerScreenState' is from 'package:alhadaba_chemistry_app/screens/pdf_viewer_screen.dart' ('lib/screens/pdf_viewer_screen.dart').
+Try correcting the name to the name of an existing getter, or defining a getter or field named 'FlutterWindowManager'.
+        await FlutterWindowManager.clearFlags(FlutterWindowManager.FLAG_SECURE);
+              ^^^^^^^^^^^^^^^^^^^^
+lib/screens/pdf_viewer_screen.dart:65:47: Error: The getter 'FlutterWindowManager' isn't defined for the class '_PdfViewerScreenState'.
+ - '_PdfViewerScreenState' is from 'package:alhadaba_chemistry_app/screens/pdf_viewer_screen.dart' ('lib/screens/pdf_viewer_screen.dart').
+Try correcting the name to the name of an existing getter, or defining a getter or field named 'FlutterWindowManager'.
+        await FlutterWindowManager.clearFlags(FlutterWindowManager.FLAG_SECURE);
+                                              ^^^^^^^^^^^^^^^^^^^^
+lib/screens/pdf_viewer_screen.dart:78:34: Error: The method 'read' isn't defined for the class 'BuildContext'.
+ - 'BuildContext' is from 'package:flutter/src/widgets/framework.dart' ('../../../flutter-sdk/flutter/packages/flutter/lib/src/widgets/framework.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'read'.
+      final apiService = context.read<AuthBloc>().apiService;
+                                 ^^^^
+lib/screens/pdf_viewer_screen.dart:115:30: Error: The method 'CancelToken' isn't defined for the class '_PdfViewerScreenState'.
+ - '_PdfViewerScreenState' is from 'package:alhadaba_chemistry_app/screens/pdf_viewer_screen.dart' ('lib/screens/pdf_viewer_screen.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'CancelToken'.
+      _downloadCancelToken = CancelToken();
+                             ^^^^^^^^^^^
+lib/screens/pdf_viewer_screen.dart:132:33: Error: The method 'read' isn't defined for the class 'BuildContext'.
+ - 'BuildContext' is from 'package:flutter/src/widgets/framework.dart' ('../../../flutter-sdk/flutter/packages/flutter/lib/src/widgets/framework.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'read'.
+      final authState = context.read<AuthBloc>().state;
+                                ^^^^
+lib/screens/pdf_viewer_screen.dart:230:48: Error: 'PdfDocumentLoadFailedDetails' isn't a type.
+                        onDocumentLoadFailed: (PdfDocumentLoadFailedDetails details) {
+                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+lib/screens/pdf_viewer_screen.dart:226:23: Error: The getter 'SfPdfViewer' isn't defined for the class '_PdfViewerScreenState'.
+ - '_PdfViewerScreenState' is from 'package:alhadaba_chemistry_app/screens/pdf_viewer_screen.dart' ('lib/screens/pdf_viewer_screen.dart').
+Try correcting the name to the name of an existing getter, or defining a getter or field named 'SfPdfViewer'.
+                    : SfPdfViewer.memory(
+                      ^^^^^^^^^^^
+lib/screens/exam_screen.dart:67:34: Error: The method 'read' isn't defined for the class 'BuildContext'.
+ - 'BuildContext' is from 'package:flutter/src/widgets/framework.dart' ('../../../flutter-sdk/flutter/packages/flutter/lib/src/widgets/framework.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'read'.
+      final apiService = context.read<AuthBloc>().apiService;
+                                 ^^^^
+lib/screens/exam_screen.dart:128:34: Error: The method 'read' isn't defined for the class 'BuildContext'.
+ - 'BuildContext' is from 'package:flutter/src/widgets/framework.dart' ('../../../flutter-sdk/flutter/packages/flutter/lib/src/widgets/framework.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'read'.
+      final apiService = context.read<AuthBloc>().apiService;
+                                 ^^^^
+lib/screens/exam_screen.dart:323:22: Error: The method 'CachedNetworkImage' isn't defined for the class '_ExamScreenState'.
+ - '_ExamScreenState' is from 'package:alhadaba_chemistry_app/screens/exam_screen.dart' ('lib/screens/exam_screen.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'CachedNetworkImage'.
+              child: CachedNetworkImage(
+                     ^^^^^^^^^^^^^^^^^^
+lib/screens/exam_screen.dart:499:30: Error: The method 'CachedNetworkImage' isn't defined for the class '_ExamScreenState'.
+ - '_ExamScreenState' is from 'package:alhadaba_chemistry_app/screens/exam_screen.dart' ('lib/screens/exam_screen.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'CachedNetworkImage'.
+                      child: CachedNetworkImage(
+                             ^^^^^^^^^^^^^^^^^^
+lib/screens/biometric_lock_screen.dart:120:27: Error: The method 'read' isn't defined for the class 'BuildContext'.
+ - 'BuildContext' is from 'package:flutter/src/widgets/framework.dart' ('../../../flutter-sdk/flutter/packages/flutter/lib/src/widgets/framework.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'read'.
+                  context.read<AuthBloc>().add(AuthLoggedOut());
+                          ^^^^
+lib/screens/home_tabs/home_tab.dart:41:32: Error: The method 'read' isn't defined for the class 'BuildContext'.
+ - 'BuildContext' is from 'package:flutter/src/widgets/framework.dart' ('../../../flutter-sdk/flutter/packages/flutter/lib/src/widgets/framework.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'read'.
+    final apiService = context.read<AuthBloc>().apiService;
+                               ^^^^
+lib/screens/home_tabs/home_tab.dart:44:34: Error: The argument type 'List<dynamic>' can't be assigned to the parameter type 'Iterable<Future<dynamic>>'.
+ - 'List' is from 'dart:core'.
+ - 'Iterable' is from 'dart:core'.
+ - 'Future' is from 'dart:async'.
+      _statsFuture = Future.wait([
+                                 ^
+lib/screens/home_tabs/home_tab.dart:60:37: Error: The method 'read' isn't defined for the class 'BuildContext'.
+ - 'BuildContext' is from 'package:flutter/src/widgets/framework.dart' ('../../../flutter-sdk/flutter/packages/flutter/lib/src/widgets/framework.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'read'.
+      final logsRes = await context.read<AuthBloc>().apiService.getMyPlaybackLogs();
+                                    ^^^^
+lib/screens/home_tabs/home_tab.dart:71:13: Error: The method 'read' isn't defined for the class 'BuildContext'.
+ - 'BuildContext' is from 'package:flutter/src/widgets/framework.dart' ('../../../flutter-sdk/flutter/packages/flutter/lib/src/widgets/framework.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'read'.
+    context.read<CourseBloc>().add(FetchCoursesRequested(grade: grade));
+            ^^^^
+lib/screens/home_tabs/home_tab.dart:140:50: Error: The method 'read' isn't defined for the class 'BuildContext'.
+ - 'BuildContext' is from 'package:flutter/src/widgets/framework.dart' ('../../../flutter-sdk/flutter/packages/flutter/lib/src/widgets/framework.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'read'.
+                        onPressed: () => context.read<ThemeBloc>().add(ToggleThemeEvent()),
+                                                 ^^^^
+lib/screens/home_tabs/home_tab.dart:144:52: Error: The method 'go' isn't defined for the class 'BuildContext'.
+ - 'BuildContext' is from 'package:flutter/src/widgets/framework.dart' ('../../../flutter-sdk/flutter/packages/flutter/lib/src/widgets/framework.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'go'.
+                          onPressed: () => context.go('/login'),
+                                                   ^^
+lib/screens/home_tabs/home_tab.dart:188:22: Error: The method 'BlocBuilder' isn't defined for the class '_HomeTabState'.
+ - '_HomeTabState' is from 'package:alhadaba_chemistry_app/screens/home_tabs/home_tab.dart' ('lib/screens/home_tabs/home_tab.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'BlocBuilder'.
+              child: BlocBuilder<CourseBloc, CourseState>(
+                     ^^^^^^^^^^^
+lib/screens/home_tabs/home_tab.dart:322:42: Error: The method 'go' isn't defined for the class 'BuildContext'.
+ - 'BuildContext' is from 'package:flutter/src/widgets/framework.dart' ('../../../flutter-sdk/flutter/packages/flutter/lib/src/widgets/framework.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'go'.
+                onPressed: () => context.go('/login'),
+                                         ^^
+lib/screens/home_tabs/home_tab.dart:460:18: Error: The method 'BlocBuilder' isn't defined for the class '_HomeTabState'.
+ - '_HomeTabState' is from 'package:alhadaba_chemistry_app/screens/home_tabs/home_tab.dart' ('lib/screens/home_tabs/home_tab.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'BlocBuilder'.
+          return BlocBuilder<CourseBloc, CourseState>(
+                 ^^^^^^^^^^^
+lib/screens/home_tabs/home_tab.dart:573:28: Error: The method 'go' isn't defined for the class 'BuildContext'.
+ - 'BuildContext' is from 'package:flutter/src/widgets/framework.dart' ('../../../flutter-sdk/flutter/packages/flutter/lib/src/widgets/framework.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'go'.
+      onTap: () => context.go(route),
+                           ^^
+lib/screens/home_tabs/home_tab.dart:639:42: Error: The method 'go' isn't defined for the class 'BuildContext'.
+ - 'BuildContext' is from 'package:flutter/src/widgets/framework.dart' ('../../../flutter-sdk/flutter/packages/flutter/lib/src/widgets/framework.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'go'.
+                onPressed: () => context.go('/my-courses'),
+                                         ^^
+lib/screens/home_tabs/home_tab.dart:648:11: Error: The method 'BlocBuilder' isn't defined for the class '_HomeTabState'.
+ - '_HomeTabState' is from 'package:alhadaba_chemistry_app/screens/home_tabs/home_tab.dart' ('lib/screens/home_tabs/home_tab.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'BlocBuilder'.
+          BlocBuilder<CourseBloc, CourseState>(
+          ^^^^^^^^^^^
+lib/screens/home_tabs/home_tab.dart:712:28: Error: The method 'go' isn't defined for the class 'BuildContext'.
+ - 'BuildContext' is from 'package:flutter/src/widgets/framework.dart' ('../../../flutter-sdk/flutter/packages/flutter/lib/src/widgets/framework.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'go'.
+      onTap: () => context.go('/course/${course['id']}'),
+                           ^^
+lib/screens/home_tabs/home_tab.dart:795:11: Error: The method 'BlocBuilder' isn't defined for the class '_HomeTabState'.
+ - '_HomeTabState' is from 'package:alhadaba_chemistry_app/screens/home_tabs/home_tab.dart' ('lib/screens/home_tabs/home_tab.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'BlocBuilder'.
+          BlocBuilder<CourseBloc, CourseState>(
+          ^^^^^^^^^^^
+lib/screens/home_tabs/courses_tab.dart:44:13: Error: The method 'read' isn't defined for the class 'BuildContext'.
+ - 'BuildContext' is from 'package:flutter/src/widgets/framework.dart' ('../../../flutter-sdk/flutter/packages/flutter/lib/src/widgets/framework.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'read'.
+    context.read<CourseBloc>().add(FetchCoursesRequested(grade: widget.profile?['grade']));
+            ^^^^
+lib/screens/home_tabs/courses_tab.dart:112:26: Error: The method 'BlocBuilder' isn't defined for the class '_CoursesTabState'.
+ - '_CoursesTabState' is from 'package:alhadaba_chemistry_app/screens/home_tabs/courses_tab.dart' ('lib/screens/home_tabs/courses_tab.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'BlocBuilder'.
+                  child: BlocBuilder<CourseBloc, CourseState>(
+                         ^^^^^^^^^^^
+lib/screens/home_tabs/exams_tab.dart:35:32: Error: The method 'read' isn't defined for the class 'BuildContext'.
+ - 'BuildContext' is from 'package:flutter/src/widgets/framework.dart' ('../../../flutter-sdk/flutter/packages/flutter/lib/src/widgets/framework.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'read'.
+    final apiService = context.read<AuthBloc>().apiService;
+                               ^^^^
+lib/screens/home_tabs/exams_tab.dart:171:13: Error: The method 'CachedNetworkImage' isn't defined for the class '_ExamsTabState'.
+ - '_ExamsTabState' is from 'package:alhadaba_chemistry_app/screens/home_tabs/exams_tab.dart' ('lib/screens/home_tabs/exams_tab.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'CachedNetworkImage'.
+            CachedNetworkImage(
+            ^^^^^^^^^^^^^^^^^^
+lib/screens/home_tabs/questions_tab.dart:42:34: Error: The method 'read' isn't defined for the class 'BuildContext'.
+ - 'BuildContext' is from 'package:flutter/src/widgets/framework.dart' ('../../../flutter-sdk/flutter/packages/flutter/lib/src/widgets/framework.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'read'.
+      _questionsFuture = context.read<AuthBloc>().apiService.getQuestions();
+                                 ^^^^
+lib/screens/home_tabs/questions_tab.dart:370:42: Error: The method 'CachedNetworkImage' isn't defined for the class '_QuestionsTabState'.
+ - '_QuestionsTabState' is from 'package:alhadaba_chemistry_app/screens/home_tabs/questions_tab.dart' ('lib/screens/home_tabs/questions_tab.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'CachedNetworkImage'.
+                                  child: CachedNetworkImage(
+                                         ^^^^^^^^^^^^^^^^^^
+lib/screens/home_tabs/questions_tab.dart:452:45: Error: The method 'read' isn't defined for the class 'BuildContext'.
+ - 'BuildContext' is from 'package:flutter/src/widgets/framework.dart' ('../../../flutter-sdk/flutter/packages/flutter/lib/src/widgets/framework.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'read'.
+                              await context.read<AuthBloc>().apiService.askQuestion(body: controller.text.trim());
+                                            ^^^^
+lib/screens/home_tabs/profile_tab.dart:39:32: Error: The method 'read' isn't defined for the class 'BuildContext'.
+ - 'BuildContext' is from 'package:flutter/src/widgets/framework.dart' ('../../../flutter-sdk/flutter/packages/flutter/lib/src/widgets/framework.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'read'.
+    final apiService = context.read<AuthBloc>().apiService;
+                               ^^^^
+lib/screens/home_tabs/profile_tab.dart:50:13: Error: The method 'read' isn't defined for the class 'BuildContext'.
+ - 'BuildContext' is from 'package:flutter/src/widgets/framework.dart' ('../../../flutter-sdk/flutter/packages/flutter/lib/src/widgets/framework.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'read'.
+    context.read<AuthBloc>().add(AuthCheckRequested());
+            ^^^^
+lib/screens/home_tabs/profile_tab.dart:163:57: Error: The method 'CachedNetworkImageProvider' isn't defined for the class '_ProfileTabState'.
+ - '_ProfileTabState' is from 'package:alhadaba_chemistry_app/screens/home_tabs/profile_tab.dart' ('lib/screens/home_tabs/profile_tab.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'CachedNetworkImageProvider'.
+                backgroundImage: avatarUrl.isNotEmpty ? CachedNetworkImageProvider(avatarUrl) : null,
+                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+lib/screens/home_tabs/profile_tab.dart:319:32: Error: The method 'read' isn't defined for the class 'BuildContext'.
+ - 'BuildContext' is from 'package:flutter/src/widgets/framework.dart' ('../../../flutter-sdk/flutter/packages/flutter/lib/src/widgets/framework.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'read'.
+    final apiService = context.read<AuthBloc>().apiService;
+                               ^^^^
+lib/screens/home_tabs/profile_tab.dart:382:47: Error: The method 'read' isn't defined for the class 'BuildContext'.
+ - 'BuildContext' is from 'package:flutter/src/widgets/framework.dart' ('../../../flutter-sdk/flutter/packages/flutter/lib/src/widgets/framework.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'read'.
+              final currentDeviceId = context.read<AuthBloc>().apiService.deviceService.deviceId;
+                                              ^^^^
+lib/screens/home_tabs/profile_tab.dart:472:33: Error: The method 'read' isn't defined for the class 'BuildContext'.
+ - 'BuildContext' is from 'package:flutter/src/widgets/framework.dart' ('../../../flutter-sdk/flutter/packages/flutter/lib/src/widgets/framework.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'read'.
+                  await context.read<AuthBloc>().apiService.deleteDevice(device['id'].toString());
+                                ^^^^
+lib/screens/home_tabs/profile_tab.dart:806:38: Error: The method 'read' isn't defined for the class 'BuildContext'.
+ - 'BuildContext' is from 'package:flutter/src/widgets/framework.dart' ('../../../flutter-sdk/flutter/packages/flutter/lib/src/widgets/framework.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'read'.
+      final response = await context.read<AuthBloc>().apiService.uploadAvatar(bytes);
+                                     ^^^^
+lib/screens/home_tabs/profile_tab.dart:812:17: Error: The method 'read' isn't defined for the class 'BuildContext'.
+ - 'BuildContext' is from 'package:flutter/src/widgets/framework.dart' ('../../../flutter-sdk/flutter/packages/flutter/lib/src/widgets/framework.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'read'.
+        context.read<AuthBloc>().add(AuthCheckRequested());
+                ^^^^
+lib/screens/home_tabs/profile_tab.dart:845:21: Error: The method 'read' isn't defined for the class 'BuildContext'.
+ - 'BuildContext' is from 'package:flutter/src/widgets/framework.dart' ('../../../flutter-sdk/flutter/packages/flutter/lib/src/widgets/framework.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'read'.
+            context.read<AuthBloc>().add(AuthCheckRequested());
+                    ^^^^
+lib/screens/home_tabs/profile_tab.dart:869:25: Error: The method 'read' isn't defined for the class 'BuildContext'.
+ - 'BuildContext' is from 'package:flutter/src/widgets/framework.dart' ('../../../flutter-sdk/flutter/packages/flutter/lib/src/widgets/framework.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'read'.
+                context.read<AuthBloc>().add(AuthLoggedOut());
+                        ^^^^
+lib/screens/home_tabs/profile_tab.dart:941:33: Error: The method 'read' isn't defined for the class 'BuildContext'.
+ - 'BuildContext' is from 'package:flutter/src/widgets/framework.dart' ('../../../flutter-sdk/flutter/packages/flutter/lib/src/widgets/framework.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'read'.
+      final res = await context.read<AuthBloc>().apiService.getPublicSettings();
+                                ^^^^
+lib/screens/home_tabs/profile_tab.dart:985:21: Error: The method 'read' isn't defined for the class 'BuildContext'.
+ - 'BuildContext' is from 'package:flutter/src/widgets/framework.dart' ('../../../flutter-sdk/flutter/packages/flutter/lib/src/widgets/framework.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'read'.
+      await context.read<AuthBloc>().apiService.updateProfile({
+                    ^^^^
+lib/widgets/course_card.dart:73:25: Error: The method 'CachedNetworkImage' isn't defined for the class 'CourseCard'.
+ - 'CourseCard' is from 'package:alhadaba_chemistry_app/widgets/course_card.dart' ('lib/widgets/course_card.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'CachedNetworkImage'.
+                      ? CachedNetworkImage(
+                        ^^^^^^^^^^^^^^^^^^
+lib/screens/home_tabs/home_widgets.dart:96:25: Error: The method 'read' isn't defined for the class 'BuildContext'.
+ - 'BuildContext' is from 'package:flutter/src/widgets/framework.dart' ('../../../flutter-sdk/flutter/packages/flutter/lib/src/widgets/framework.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'read'.
+      _future = context.read<AuthBloc>().apiService.getNotifications();
+                        ^^^^
+lib/screens/home_tabs/home_widgets.dart:217:46: Error: The method 'read' isn't defined for the class 'BuildContext'.
+ - 'BuildContext' is from 'package:flutter/src/widgets/framework.dart' ('../../../flutter-sdk/flutter/packages/flutter/lib/src/widgets/framework.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'read'.
+                                            .read<AuthBloc>()
+                                             ^^^^
+lib/screens/home_tabs/home_widgets.dart:222:63: Error: The method 'read' isn't defined for the class 'BuildContext'.
+ - 'BuildContext' is from 'package:flutter/src/widgets/framework.dart' ('../../../flutter-sdk/flutter/packages/flutter/lib/src/widgets/framework.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'read'.
+                                            _future = context.read<AuthBloc>().apiService.getNotifications();
+                                                              ^^^^
+lib/screens/home_tabs/home_widgets.dart:314:40: Error: The method 'go' isn't defined for the class 'BuildContext'.
+ - 'BuildContext' is from 'package:flutter/src/widgets/framework.dart' ('../../../flutter-sdk/flutter/packages/flutter/lib/src/widgets/framework.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'go'.
+              onPressed: () => context.go('/login'),
+                                       ^^
+00:00 +0 -4: loading C:/Users/kayf/Desktop/student project/student_app/test/widget_test.dart [E]
+  Failed to load "C:/Users/kayf/Desktop/student project/student_app/test/widget_test.dart": Compilation failed for testPath=C:/Users/kayf/Desktop/student project/student_app/test/widget_test.dart
+00:00 +0 -4: Some tests failed.
+
+exit_code: 1

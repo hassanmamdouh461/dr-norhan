@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>إدارة الطلاب - PhysicMaster Pro</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&amp;family=Inter:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary-fixed-variant": "#003ea8",
+                    "on-primary-container": "#eeefff",
+                    "on-background": "#191b23",
+                    "surface-container-lowest": "#ffffff",
+                    "primary": "#004ac6",
+                    "tertiary-fixed": "#89f5e7",
+                    "inverse-on-surface": "#f0f0fb",
+                    "surface-container-highest": "#e1e2ed",
+                    "on-tertiary-fixed-variant": "#005049",
+                    "on-primary": "#ffffff",
+                    "tertiary": "#006058",
+                    "surface-variant": "#e1e2ed",
+                    "secondary": "#545f73",
+                    "secondary-fixed-dim": "#bcc7de",
+                    "on-primary-fixed": "#00174b",
+                    "tertiary-container": "#007b71",
+                    "primary-fixed-dim": "#b4c5ff",
+                    "error": "#ba1a1a",
+                    "surface": "#faf8ff",
+                    "inverse-primary": "#b4c5ff",
+                    "surface-dim": "#d9d9e5",
+                    "surface-container-high": "#e7e7f3",
+                    "on-secondary-container": "#586377",
+                    "on-error": "#ffffff",
+                    "on-secondary-fixed": "#111c2d",
+                    "on-error-container": "#93000a",
+                    "tertiary-fixed-dim": "#6bd8cb",
+                    "surface-container-low": "#f3f3fe",
+                    "on-tertiary-fixed": "#00201d",
+                    "on-surface": "#191b23",
+                    "on-surface-variant": "#434655",
+                    "on-secondary": "#ffffff",
+                    "on-tertiary-container": "#b3fff3",
+                    "surface-tint": "#0053db",
+                    "primary-fixed": "#dbe1ff",
+                    "primary-container": "#2563eb",
+                    "inverse-surface": "#2e3039",
+                    "outline": "#737686",
+                    "on-tertiary": "#ffffff",
+                    "background": "#faf8ff",
+                    "error-container": "#ffdad6",
+                    "on-secondary-fixed-variant": "#3c475a",
+                    "outline-variant": "#c3c6d7",
+                    "secondary-fixed": "#d8e3fb",
+                    "surface-container": "#ededf9",
+                    "secondary-container": "#d5e0f8",
+                    "surface-bright": "#faf8ff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "sm": "12px",
+                    "gutter": "24px",
+                    "lg": "48px",
+                    "xl": "80px",
+                    "xs": "4px",
+                    "md": "24px",
+                    "container-max": "1280px",
+                    "base": "8px"
+            },
+            "fontFamily": {
+                    "display-lg": [
+                            "Plus Jakarta Sans"
+                    ],
+                    "headline-sm": [
+                            "Plus Jakarta Sans"
+                    ],
+                    "body-md": [
+                            "Inter"
+                    ],
+                    "display-lg-mobile": [
+                            "Plus Jakarta Sans"
+                    ],
+                    "body-lg": [
+                            "Inter"
+                    ],
+                    "body-sm": [
+                            "Inter"
+                    ],
+                    "label-md": [
+                            "Inter"
+                    ],
+                    "headline-md": [
+                            "Plus Jakarta Sans"
+                    ]
+            },
+            "fontSize": {
+                    "display-lg": [
+                            "48px",
+                            {
+                                    "lineHeight": "56px",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "headline-sm": [
+                            "24px",
+                            {
+                                    "lineHeight": "32px",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "body-md": [
+                            "16px",
+                            {
+                                    "lineHeight": "24px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "display-lg-mobile": [
+                            "32px",
+                            {
+                                    "lineHeight": "40px",
+                                    "letterSpacing": "-0.01em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "body-lg": [
+                            "18px",
+                            {
+                                    "lineHeight": "28px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "body-sm": [
+                            "14px",
+                            {
+                                    "lineHeight": "20px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "label-md": [
+                            "12px",
+                            {
+                                    "lineHeight": "16px",
+                                    "letterSpacing": "0.05em",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "headline-md": [
+                            "30px",
+                            {
+                                    "lineHeight": "38px",
+                                    "fontWeight": "600"
+                            }
+                    ]
+            }
+    },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: theme('colors.background');
+            color: theme('colors.on-background');
+        }
+        
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        
+        .shadow-soft {
+            box-shadow: 0px 4px 20px rgba(30, 41, 59, 0.08);
+        }
+    </style>
+</head>
+<body class="flex min-h-screen font-body-md text-body-md bg-background text-on-background">
+<!-- SideNavBar (Web Only) -->
+<nav class="hidden md:flex flex-col h-screen w-64 fixed right-0 top-0 bg-surface-container-low border-l border-outline-variant py-lg z-40">
+<div class="px-md mb-8 flex items-center gap-sm">
+<img alt="Physics Department Logo" class="w-10 h-10 rounded-full bg-primary-container object-cover" data-alt="A clean, modern geometric logo representing physics, featuring a stylized atom or waveform in royal blue against a pristine white background. The design is minimalist, intellectual, and perfectly suited for an advanced academic platform." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCaAkhumKAA6_98QNgDjLj7rFqCm4TK4CN-4kT15dJGVjisQikfTNY2QShyL5yiDF6iNqL4qa7rL0G54NiPJV9Y37JJhDH56H8RR9R-JrPPS2PcKgCLF28xu8STQ5NGFvWHKAPxXH0Zmobcp0cm14tXg5_BlV_k1tJZ8iRXjb97E9_QUOsY5ChS6Er4cs7oyEAjcK9b0hVcFPAXEKuIpLa16TGLaPamIExD53CspF_wco9Q-KuckjCd99Z2t3bSEWrjLH8dgsKmUI8y"/>
+<div>
+<h1 class="font-headline-sm text-headline-sm text-on-surface font-bold text-base">إدارة الفيزياء</h1>
+<p class="font-label-md text-label-md text-on-surface-variant text-xs">الأستاذ المشرف</p>
+</div>
+</div>
+<div class="flex-1 flex flex-col gap-2 px-md">
+<a class="flex flex-row-reverse justify-end items-center gap-sm text-on-surface-variant px-4 py-3 hover:bg-surface-container-high transition-all duration-200 ease-in-out rounded-lg font-label-md text-label-md" href="#">
+<span>لوحة القيادة</span>
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+</a>
+<a class="flex flex-row-reverse justify-end items-center gap-sm text-on-surface-variant px-4 py-3 hover:bg-surface-container-high transition-all duration-200 ease-in-out rounded-lg font-label-md text-label-md" href="#">
+<span>إدارة الدورات</span>
+<span class="material-symbols-outlined" data-icon="menu_book">menu_book</span>
+</a>
+<a class="flex flex-row-reverse justify-end items-center gap-sm bg-secondary-container text-on-secondary-container rounded-lg px-4 py-3 font-label-md text-label-md transition-all duration-200 ease-in-out" href="#">
+<span>إدارة الطلاب</span>
+<span class="material-symbols-outlined" data-icon="group" data-weight="fill">group</span>
+</a>
+<a class="flex flex-row-reverse justify-end items-center gap-sm text-on-surface-variant px-4 py-3 hover:bg-surface-container-high transition-all duration-200 ease-in-out rounded-lg font-label-md text-label-md" href="#">
+<span>رموز التفعيل</span>
+<span class="material-symbols-outlined" data-icon="vpn_key">vpn_key</span>
+</a>
+<a class="flex flex-row-reverse justify-end items-center gap-sm text-on-surface-variant px-4 py-3 hover:bg-surface-container-high transition-all duration-200 ease-in-out rounded-lg font-label-md text-label-md" href="#">
+<span>صندوق الأسئلة</span>
+<span class="material-symbols-outlined" data-icon="inbox">inbox</span>
+</a>
+</div>
+<div class="mt-auto px-md flex flex-col gap-2">
+<a class="flex flex-row-reverse justify-end items-center gap-sm text-on-surface-variant px-4 py-3 hover:bg-surface-container-high transition-all duration-200 ease-in-out rounded-lg font-label-md text-label-md" href="#">
+<span>الإعدادات</span>
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</a>
+<a class="flex flex-row-reverse justify-end items-center gap-sm text-error px-4 py-3 hover:bg-error-container transition-all duration-200 ease-in-out rounded-lg font-label-md text-label-md" href="#">
+<span>تسجيل الخروج</span>
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+</a>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-1 w-full md:pr-64 flex flex-col relative">
+<!-- TopNavBar (Mobile Only Structure conceptually, but JSON asks for TopNavBar. Let's make it responsive for web content header) -->
+<header class="md:hidden flex flex-row-reverse items-center justify-between px-md w-full h-16 sticky top-0 z-50 backdrop-blur-md bg-surface border-b border-outline-variant font-body-md text-body-md text-primary">
+<div class="font-headline-sm text-headline-sm font-bold text-primary tracking-tight">PhysicMaster Pro</div>
+<div class="flex items-center gap-sm text-on-surface-variant cursor-pointer active:opacity-80">
+<span class="material-symbols-outlined hover:bg-surface-container-low transition-colors p-2 rounded-full" data-icon="notifications">notifications</span>
+<span class="material-symbols-outlined hover:bg-surface-container-low transition-colors p-2 rounded-full" data-icon="help_outline">help_outline</span>
+<img alt="Teacher Profile" class="w-8 h-8 rounded-full ml-2 object-cover border border-outline-variant" data-alt="A professional headshot of a physics teacher in a bright, modern classroom setting. The teacher has a friendly but intellectual demeanor, illuminated by soft natural light. High-key lighting, corporate education style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCdxSxrrPQgqMNpxaGQCWDUmgzpsQtw-VlJzFLr_W64BBeSlyJfDipSmY7J32-2WCfiuA8ckspykudoaP5ws52tzTH4tZEphuIr33O6Kq6SnYPtcOyetCUCvP7XuzvZLkyqaHFEP-lf1Be-mslxL3CcScni-m3rOn_oI0o1zRjk2T7pfyOtIlk78-9Vno2cgGzwlQ33_r6FgOrJdt4gXYtI3SkGAX9eHTXpWTDWZoG-8T6B7qX9gt4VQNjMn9cwot5_0uLcMfEUPCHs"/>
+</div>
+</header>
+<!-- Web Content Header (Simulating TopNavBar placement for desktop canvas) -->
+<div class="hidden md:flex flex-row-reverse items-center justify-between px-lg w-full h-20 sticky top-0 z-30 bg-background/90 backdrop-blur-sm border-b border-outline-variant/50">
+<div class="font-headline-md text-headline-md font-bold text-on-surface">إدارة الطلاب</div>
+<div class="flex items-center gap-sm text-on-surface-variant">
+<span class="material-symbols-outlined cursor-pointer hover:bg-surface-container-high transition-colors p-2 rounded-full" data-icon="notifications">notifications</span>
+<img alt="Teacher Profile" class="w-10 h-10 rounded-full mr-4 object-cover border border-outline-variant" data-alt="A professional headshot of a physics teacher in a bright, modern classroom setting. The teacher has a friendly but intellectual demeanor, illuminated by soft natural light. High-key lighting, corporate education style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBa0CM2ZqJrhr1IQCJe2Au9ZfsQtFNNXZiBSJo5J8GFNYc-sX0WNFe6XcnRnzuQyDPH74Py8JH60FJv62UZxJPqiMcrtEVBlYcjb0fYpDwQ1Oc4gg_00Tv9gg88Z7zHrU9D6RVfafJ33QZ61aM-y9grT6LZnQ-kHAFZ-H8O0jfDWrrtWFtc86O7_2A-0MzuuVPv_17YV0nGhcSbbFv2X5AwlbH4_xS0UGimKFgjz1IxToA0T9-kWiI6S4-4XJeu24imWisVVxeGwx3W"/>
+</div>
+</div>
+<!-- Content Padding Area -->
+<div class="p-md md:p-lg flex flex-col gap-gutter max-w-container-max mx-auto w-full">
+<!-- Page Title (Mobile) -->
+<div class="md:hidden mb-4">
+<h2 class="font-display-lg-mobile text-display-lg-mobile text-on-surface">إدارة الطلاب</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2">عرض وإدارة حسابات الطلاب المسجلين.</p>
+</div>
+<!-- Action Bar: Search & Filter -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-4 shadow-soft flex flex-col sm:flex-row gap-4 items-center justify-between w-full">
+<div class="relative w-full sm:w-96">
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="w-full bg-surface-container-low border-none rounded-lg py-3 pr-10 pl-4 font-body-md text-body-md text-on-surface placeholder:text-outline focus:ring-2 focus:ring-primary focus:outline-none transition-all" placeholder="البحث بالاسم أو البريد..." type="text"/>
+</div>
+<div class="flex gap-sm w-full sm:w-auto">
+<button class="flex items-center gap-2 bg-surface-container border border-outline-variant px-4 py-2 rounded-lg font-label-md text-label-md text-on-surface hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-sm">filter_list</span>
+                        تصفية
+                    </button>
+<button class="flex items-center gap-2 bg-primary text-on-primary px-4 py-2 rounded-lg font-label-md text-label-md hover:bg-primary-container transition-colors shadow-sm whitespace-nowrap">
+<span class="material-symbols-outlined text-sm">add</span>
+                        إضافة طالب
+                    </button>
+</div>
+</div>
+<!-- Data Table Card -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl shadow-soft overflow-hidden w-full">
+<div class="overflow-x-auto">
+<table class="w-full text-right font-body-md text-body-md border-collapse">
+<thead class="bg-surface-container-low border-b border-outline-variant font-label-md text-label-md text-on-surface-variant">
+<tr>
+<th class="p-4 font-semibold w-1/4">الطالب</th>
+<th class="p-4 font-semibold w-1/4">البريد الإلكتروني</th>
+<th class="p-4 font-semibold w-1/6">السنة الدراسية</th>
+<th class="p-4 font-semibold w-1/6 text-center">الأجهزة</th>
+<th class="p-4 font-semibold w-1/6 text-center">الحالة</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant text-on-surface">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container/50 transition-colors cursor-pointer group">
+<td class="p-4">
+<div class="flex items-center gap-3">
+<img alt="Student" class="w-10 h-10 rounded-full object-cover border border-outline-variant/30" data-alt="A bright, clear profile picture of an Arab male student with a subtle smile. High-quality corporate/academic style portrait against a light grey seamless background. Sharp focus, modern educational UI asset." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDipBmGzpRIbeWWeNTDzwP3WR4i84eGJ989S4V4lUbnZtv1RSdNb-T7ykE3v9z8bLx41o2H-ldqRfyDb8e_4TvkmexcpM73-PznT36HprjuR1yIzcE4P_ke6yxiQ81B1mBtt6pLzLKlYAtFXO61fvRnxiIfosCrhqXsIYYsz066Uc0d1jHv-ET8EUScaozH326LsY8RysXup17SLhgAYgQ0TSev2qy4V4WndRVlh3WixLscYvpaLVADw9sBxX-MtpvF8EQuzOoTf65A"/>
+<span class="font-semibold group-hover:text-primary transition-colors">أحمد محمود</span>
+</div>
+</td>
+<td class="p-4 text-on-surface-variant text-sm">ahmed.m@example.com</td>
+<td class="p-4">الصف الثالث الثانوي</td>
+<td class="p-4 text-center">
+<span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-surface-container-high text-on-surface text-xs font-semibold">2</span>
+</td>
+<td class="p-4 text-center">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-tertiary-container/10 text-tertiary-container border border-tertiary-container/20 font-label-md text-[11px]">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-container"></span>
+                                        نشط
+                                    </span>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container/50 transition-colors cursor-pointer group">
+<td class="p-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary-fixed text-on-primary-fixed flex items-center justify-center font-bold text-lg">س</div>
+<span class="font-semibold group-hover:text-primary transition-colors">سارة عبد الله</span>
+</div>
+</td>
+<td class="p-4 text-on-surface-variant text-sm">sara.a@example.com</td>
+<td class="p-4">الصف الثاني الثانوي</td>
+<td class="p-4 text-center">
+<span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-surface-container-high text-on-surface text-xs font-semibold">1</span>
+</td>
+<td class="p-4 text-center">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-tertiary-container/10 text-tertiary-container border border-tertiary-container/20 font-label-md text-[11px]">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-container"></span>
+                                        نشط
+                                    </span>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container/50 transition-colors cursor-pointer group">
+<td class="p-4">
+<div class="flex items-center gap-3">
+<img alt="Student" class="w-10 h-10 rounded-full object-cover border border-outline-variant/30" data-alt="A professional headshot of an Arab female student wearing a light hijab, looking engaged and attentive. Shot against a crisp white background with soft, studio-quality light mode illumination. Perfect for modern ed-tech UI." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTPkbT4HokWj39VVZNnxvBteHeS5eIZ9TRsbBceBF1R3Zzb6wdyUDPtEGzHGl7dRULDHGBj7CqUnCAFYY4Pra3VoBHF4n61027CC_k2cT04iQiyLDNyp5wZWnvfeeOIgbUdNiKRwLayqQL0LhgaUtndg3xqL-efMYE6WqdKwPFG04CxsZAWe0ZGzEkKZsjIKiccrs80tYrCEaU0Rdh6BiXF5R-rTpxWt6TMhZMel-EdU5I4EgaAAGQwn7BQLiYTKj38Tv2xnhYRABk"/>
+<span class="font-semibold group-hover:text-primary transition-colors">فاطمة علي</span>
+</div>
+</td>
+<td class="p-4 text-on-surface-variant text-sm">fatima.ali@example.com</td>
+<td class="p-4">الصف الثالث الثانوي</td>
+<td class="p-4 text-center">
+<span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-error-container/30 text-error text-xs font-semibold border border-error-container">3</span>
+</td>
+<td class="p-4 text-center">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-error-container/20 text-error border border-error-container/40 font-label-md text-[11px]">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span>
+                                        محظور
+                                    </span>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-surface-container/50 transition-colors cursor-pointer group">
+<td class="p-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center font-bold text-lg">ي</div>
+<span class="font-semibold group-hover:text-primary transition-colors">يوسف طارق</span>
+</div>
+</td>
+<td class="p-4 text-on-surface-variant text-sm">yousef.t@example.com</td>
+<td class="p-4">الصف الأول الثانوي</td>
+<td class="p-4 text-center">
+<span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-surface-container-high text-on-surface text-xs font-semibold">1</span>
+</td>
+<td class="p-4 text-center">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-tertiary-container/10 text-tertiary-container border border-tertiary-container/20 font-label-md text-[11px]">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-container"></span>
+                                        نشط
+                                    </span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination -->
+<div class="bg-surface-container-lowest border-t border-outline-variant p-4 flex items-center justify-between">
+<p class="font-body-sm text-body-sm text-on-surface-variant">عرض 1 إلى 4 من 120 طالب</p>
+<div class="flex items-center gap-2">
+<button class="w-8 h-8 rounded border border-outline-variant flex items-center justify-center text-on-surface-variant hover:bg-surface-container transition-colors disabled:opacity-50" disabled="">
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</button>
+<button class="w-8 h-8 rounded bg-primary text-on-primary font-label-md text-label-md flex items-center justify-center">1</button>
+<button class="w-8 h-8 rounded border border-outline-variant text-on-surface hover:bg-surface-container font-label-md text-label-md flex items-center justify-center transition-colors">2</button>
+<button class="w-8 h-8 rounded border border-outline-variant text-on-surface hover:bg-surface-container font-label-md text-label-md flex items-center justify-center transition-colors">3</button>
+<span class="text-on-surface-variant px-1">...</span>
+<button class="w-8 h-8 rounded border border-outline-variant flex items-center justify-center text-on-surface hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-sm">chevron_left</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

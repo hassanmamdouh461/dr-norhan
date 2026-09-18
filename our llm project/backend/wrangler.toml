@@ -1,0 +1,63 @@
+name = "alhadaba-chemistry-api"
+main = "src/index.ts"
+compatibility_date = "2024-06-01"
+compatibility_flags = ["nodejs_compat"]
+
+# ── Routes ──
+workers_dev = false
+routes = [
+  { pattern = "api.alhadaba-chemistry.synapticstudio.tech", custom_domain = true }
+]
+
+# ── Environment Variables ──
+[vars]
+SUPABASE_URL = "https://czivfxjhvepvpzrdyrli.supabase.co"
+JWT_AUDIENCE = "authenticated"
+ENVIRONMENT = "production"
+CORS_ORIGIN = "https://alhadaba-chemistry.synapticstudio.tech, https://alhadaba-chemistry.pages.dev, https://alhadaba-chemistry-student.synapticstudio.tech, https://synaptic-alhadaba-student.pages.dev, http://localhost:3000, http://localhost:5173"
+CF_ACCOUNT_ID = "780ddc00154813b98d142686dc31ecde"
+PLATFORM_KEY = "alhadaba-chemistry"
+R2_BUCKET_NAME = "alhadaba-chemistry-files"
+MAX_SUBREQUESTS = "1000"
+# Segments of videos in the demo-video-hls bucket are served directly from
+# this R2 custom domain (edge-cached, token-free URLs) instead of being
+# proxied per-request through the Worker. Videos still in the legacy
+# alhadaba-chemistry-files bucket automatically keep the tokenized Worker
+# path (see isFromVideoBucket in playback.ts).
+VIDEO_CDN_HOST = "videos.alhadaba-chemistry.synapticstudio.tech"
+
+# ── D1 Database ──
+[[d1_databases]]
+binding = "DB"
+database_name = "alhadaba_chemistry_prod_db"
+database_id = "dbcc7450-bd45-40fe-bc84-e91f98727e90"
+migrations_dir = "migrations"
+
+# ── KV Namespace ──
+[[kv_namespaces]]
+binding = "KV"
+id = "43603d16739b409da7134b0c649b1058"
+
+# ── R2 Bucket ──
+[[r2_buckets]]
+binding = "R2"
+bucket_name = "alhadaba-chemistry-files"
+
+# ── R2 Bucket (Video HLS) ──
+[[r2_buckets]]
+binding = "R2_VIDEO"
+bucket_name = "demo-video-hls"
+
+# ── Cloudflare Queues ──
+[[queues.producers]]
+queue = "alhadaba-chemistry-video-transfer"
+binding = "VIDEO_QUEUE"
+
+[[queues.consumers]]
+queue = "alhadaba-chemistry-video-transfer"
+max_batch_size = 1
+max_concurrency = 15
+max_retries = 10
+retry_delay = 30
+
+

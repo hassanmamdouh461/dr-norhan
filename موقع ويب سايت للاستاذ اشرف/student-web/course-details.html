@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>تفاصيل الدورة والمنهج | منصة فُصْحَى — أ. أشرف سليم</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@400;600;700;800;900&family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="bg-fusha-stone text-slate-800 font-cairo antialiased min-h-screen flex flex-col selection:bg-fusha-khaki selection:text-fusha-forest">
+
+  <!-- Header -->
+  <!-- Unified Header -->
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-stone-200/80 shadow-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-18 sm:h-20 flex items-center justify-between gap-4">
+      <!-- Brand Logo & Title -->
+      <a href="dashboard.html" class="flex items-center gap-3 group shrink-0">
+        <img src="assets/fusha-brand-logo.png" alt="فصحى" class="h-10 sm:h-11 w-auto object-contain transition-transform group-hover:scale-[1.02]" />
+        <div class="hidden sm:flex flex-col border-r-2 border-stone-200/90 pr-3 py-0.5">
+          <span class="text-xs font-alexandria font-bold text-fusha-forest leading-tight">منصة فُصْحَى</span>
+          <span class="text-[10px] text-fusha-olive font-bold leading-tight">أ. أشرف سليم — لغة عربية</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav id="navbar-links" class="hidden lg:flex items-center gap-1.5 xl:gap-2 text-xs sm:text-sm font-bold text-fusha-forest">
+        <a href="dashboard.html" class="px-3.5 py-2 rounded-xl text-stone-600 hover:text-fusha-forest hover:bg-stone-100 font-bold text-xs sm:text-sm transition-all flex items-center gap-1.5">
+          <i data-lucide="home" class="w-4 h-4 opacity-70"></i>
+          <span>الرئيسية</span>
+        </a>
+        <a href="courses.html" class="px-3.5 py-2 rounded-xl bg-fusha-forest text-white font-bold text-xs sm:text-sm shadow-xs transition-all flex items-center gap-1.5">
+          <i data-lucide="book-open" class="w-4 h-4 opacity-90"></i>
+          <span>المناهج والمحاضرات</span>
+        </a>
+        <a href="bank.html" class="px-3.5 py-2 rounded-xl text-stone-600 hover:text-fusha-forest hover:bg-stone-100 font-bold text-xs sm:text-sm transition-all flex items-center gap-1.5">
+          <i data-lucide="layers" class="w-4 h-4 opacity-70"></i>
+          <span>بنك الأسئلة</span>
+        </a>
+        <a href="dictionary.html" class="px-3.5 py-2 rounded-xl text-stone-600 hover:text-fusha-forest hover:bg-stone-100 font-bold text-xs sm:text-sm transition-all flex items-center gap-1.5">
+          <i data-lucide="book-marked" class="w-4 h-4 opacity-70"></i>
+          <span>معجم فُصْحَى</span>
+        </a>
+        <a href="parent.html" class="px-3.5 py-2 rounded-xl text-stone-600 hover:text-fusha-forest hover:bg-stone-100 font-bold text-xs sm:text-sm transition-all flex items-center gap-1.5">
+          <i data-lucide="shield-check" class="w-4 h-4 opacity-70"></i>
+          <span>متابعة ولي الأمر</span>
+        </a>
+      </nav>
+
+      <!-- Auth Action Container & Mobile Toggle -->
+      <div class="flex items-center gap-2 sm:gap-3 shrink-0">
+        <div id="navbar-auth-actions" class="flex items-center gap-2 sm:gap-2.5"></div>
+        <button id="mobileMenuBtn" type="button" class="lg:hidden p-2.5 rounded-xl bg-stone-100 hover:bg-stone-200/80 text-fusha-forest transition cursor-pointer" aria-label="فتح القائمة">
+          <i data-lucide="menu" class="w-5 h-5"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
+    
+    <!-- Course Banner -->
+    <div class="bg-fusha-forest rounded-3xl p-6 sm:p-10 text-white shadow-xl relative overflow-hidden flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
+      <div class="space-y-3 max-w-2xl">
+        <div class="flex flex-wrap items-center gap-2">
+          <span id="courseGradeBadge" class="px-3 py-1 rounded-xl bg-white/10 text-fusha-khaki text-xs font-bold border border-white/10">
+            الصف الثالث الثانوي
+          </span>
+          <span class="px-3 py-1 rounded-xl bg-fusha-sun/20 text-fusha-sun text-xs font-bold border border-fusha-sun/30">
+            أ. أشرف سليم
+          </span>
+        </div>
+        <h1 id="courseTitle" class="text-2xl sm:text-3xl md:text-4xl font-alexandria font-extrabold text-white leading-tight">
+          جاري تحميل بيانات الدورة...
+        </h1>
+        <p id="courseDesc" class="text-xs sm:text-sm text-fusha-khaki leading-relaxed">
+          ...
+        </p>
+        <div class="flex flex-wrap items-center gap-4 text-xs text-stone-300 pt-2">
+          <span class="flex items-center gap-1.5 font-medium">
+            <i data-lucide="video" class="w-4 h-4 text-fusha-sun"></i>
+            <span id="courseLessonsCount">-- محاضرة</span>
+          </span>
+          <span class="flex items-center gap-1.5 font-medium">
+            <i data-lucide="award" class="w-4 h-4 text-fusha-sun"></i>
+            <span>اختبارات إلكترونية شاملة</span>
+          </span>
+          <span class="flex items-center gap-1.5 font-medium">
+            <i data-lucide="shield-check" class="w-4 h-4 text-fusha-sun"></i>
+            <span>متابعة أسبوعية مستمرة</span>
+          </span>
+        </div>
+      </div>
+
+      <!-- Action Card -->
+      <div class="bg-white/10 backdrop-blur-md border border-white/15 rounded-3xl p-6 w-full lg:w-80 shrink-0 text-center space-y-4">
+        <div>
+          <span class="text-xs text-fusha-khaki block">قيمة الدورة كاملة</span>
+          <span id="coursePrice" class="text-3xl font-alexandria font-extrabold text-white">-- ج.م</span>
+        </div>
+        <button id="enrollActionBtn" class="w-full py-3.5 rounded-2xl bg-fusha-sun hover:bg-fusha-sunHover text-fusha-forestDark font-alexandria font-bold text-sm shadow-lg shadow-fusha-sun/20 transition flex items-center justify-center gap-2">
+          <span>اشترك في الدورة الآن</span>
+          <i data-lucide="arrow-left" class="w-4 h-4"></i>
+        </button>
+        <p class="text-[11px] text-fusha-khaki/80">يمكنك الدفع عبر رصيد المحفظة أو شحن كروت السنتر فوراً</p>
+      </div>
+    </div>
+
+    <!-- Syllabus Section -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+      
+      <!-- Lessons List -->
+      <div class="lg:col-span-2 space-y-6">
+        <div class="flex items-center justify-between">
+          <h2 class="text-lg sm:text-xl font-alexandria font-bold text-fusha-forest flex items-center gap-2">
+            <i data-lucide="list-ordered" class="w-5 h-5 text-fusha-sun"></i>
+            <span>فهرس المحاضرات والدروس</span>
+          </h2>
+          <span class="text-xs text-stone-500 font-medium" id="lessonsBadgeCounter">-- دروس</span>
+        </div>
+
+        <div id="lessonsListContainer" class="space-y-3">
+          <!-- Skeletons -->
+          <div class="bg-white p-5 rounded-2xl border border-stone-200 shadow-sm animate-pulse h-20"></div>
+          <div class="bg-white p-5 rounded-2xl border border-stone-200 shadow-sm animate-pulse h-20"></div>
+          <div class="bg-white p-5 rounded-2xl border border-stone-200 shadow-sm animate-pulse h-20"></div>
+        </div>
+      </div>
+
+      <!-- Sidebar: Features & Guarantee -->
+      <div class="space-y-6">
+        <div class="bg-white rounded-3xl p-6 border border-stone-200/80 shadow-sm space-y-4">
+          <h3 class="font-alexandria font-bold text-base text-fusha-forest">ماذا تشمل هذه الدورة؟</h3>
+          <ul class="space-y-3 text-xs text-stone-600">
+            <li class="flex items-start gap-3">
+              <i data-lucide="check" class="w-4 h-4 text-fusha-sage shrink-0 mt-0.5"></i>
+              <span>فيديوهات شرح مسجلة بأعلى جودة وصوت نقي 4K في استوديو فُصحى.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <i data-lucide="check" class="w-4 h-4 text-fusha-sage shrink-0 mt-0.5"></i>
+              <span>مذكرات ونماذج إعراب ملونة بصيغة PDF قابلة للتحميل.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <i data-lucide="check" class="w-4 h-4 text-fusha-sage shrink-0 mt-0.5"></i>
+              <span>واجبات وتطبيقات بابل شيت بعد كل درس مع إظهار أسباب الحل.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <i data-lucide="check" class="w-4 h-4 text-fusha-sage shrink-0 mt-0.5"></i>
+              <span>إرسال تقرير بالدرجات أسبوعياً لولي الأمر عبر الواتساب.</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Support Card -->
+        <div class="bg-fusha-forest/5 rounded-3xl p-6 border border-fusha-forest/10 space-y-3 text-center">
+          <div class="w-10 h-10 rounded-xl bg-fusha-forest text-white flex items-center justify-center mx-auto">
+            <i data-lucide="headphones" class="w-5 h-5"></i>
+          </div>
+          <h4 class="font-alexandria font-bold text-sm text-fusha-forest">هل تواجه مشكلة في الاشتراك؟</h4>
+          <p class="text-xs text-stone-500">فريق الدعم الفني والمساعدين متاح على مدار الساعة عبر الواتساب للمساعدة في شحن الكروت وتفعيل الحساب.</p>
+          <a href="https://wa.me/201002818300" target="_blank" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-emerald-700 text-white text-xs font-bold hover:bg-emerald-800 transition">
+            <i data-lucide="message-circle" class="w-4 h-4"></i>
+            <span>تواصل مع الدعم الفني</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="mt-16 bg-white border-t border-stone-200 py-6 text-center text-xs text-stone-500">
+    منصة وتطبيق فُصْحَى للغة العربية — أ. أشرف سليم © <span id="year"></span>
+  </footer>
+
+  <script src="/assets/js/api.js?v=20260917_02"></script>
+  <script src="/assets/js/nav.js?v=20260917_03"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const courseId = urlParams.get('id') || 'thanaweya-general-2026';
+
+    let currentCourse = null;
+    let isEnrolled = false;
+
+    async function loadCourseDetails() {
+      try {
+        const res = await window.api.courses.get(courseId).catch(() => null);
+        currentCourse = res?.course || {
+          id: courseId,
+          title: 'كورس الصف الثالث الثانوي الشامل 2026 — اللغة العربية',
+          description: 'الشرح الكامل لمنهج النحو والبلاغة والأدب والنصوص مع أستاذ أشرف سليم، متضمناً أقوى تدريبات بابل شيت متحررة ونماذج امتحانات الوزارة السابقة.',
+          grade: 'الصف الثالث الثانوي',
+          price: 250,
+          lessons: [
+            { id: 'les-1', title: 'المحاضرة 1: همزة القطع وألف الوصل + همزات الأسماء والأفعال', duration_mins: 45, is_free: true, type: 'video' },
+            { id: 'les-2', title: 'المحاضرة 2: الفرق بين (ثمّ وثمّة) و (إلّا وإلّا) واللام الشمسية والقمرية', duration_mins: 40, is_free: false, type: 'video' },
+            { id: 'les-3', title: 'المحاضرة 3: رسم الهمزة المتطرفة والمتوسطة وتدريبات بابل شيت', duration_mins: 55, is_free: false, type: 'video' },
+            { id: 'les-4', title: 'امتحان إلكتروني شامل على الوحدة الأولى (نطق وإملاء)', duration_mins: 30, is_free: false, type: 'quiz' },
+            { id: 'les-5', title: 'المحاضرة 4: اسم الفاعل وأعماله وصيغ المبالغة القياسية', duration_mins: 60, is_free: false, type: 'video' },
+          ]
+        };
+
+        isEnrolled = !!res?.is_enrolled;
+
+        renderCourseInfo();
+        renderLessons();
+      } catch (err) {
+        console.error('Error loading course details:', err);
+      }
+    }
+
+    function renderCourseInfo() {
+      document.getElementById('courseTitle').textContent = currentCourse.title;
+      document.getElementById('courseDesc').textContent = currentCourse.description;
+      document.getElementById('courseGradeBadge').textContent = currentCourse.grade || 'الثانوية العامة';
+      document.getElementById('coursePrice').textContent = currentCourse.price ? `${currentCourse.price} ج.م` : 'مجاني';
+
+      const lessons = currentCourse.lessons || [];
+      document.getElementById('courseLessonsCount').textContent = `${lessons.length} محاضرة واختبار`;
+      document.getElementById('lessonsBadgeCounter').textContent = `${lessons.length} محتوى متاح`;
+
+      const enrollBtn = document.getElementById('enrollActionBtn');
+      if (isEnrolled) {
+        enrollBtn.innerHTML = `<span>أنت مشترك بالفعل — بدء المشاهدة</span> <i data-lucide="play" class="w-4 h-4"></i>`;
+        enrollBtn.onclick = () => {
+          if (lessons.length > 0) {
+            window.location.href = `lesson.html?courseId=${currentCourse.id}&lessonId=${lessons[0].id}`;
+          }
+        };
+      } else {
+        enrollBtn.onclick = handleEnroll;
+      }
+
+      if (window.lucide) window.lucide.createIcons();
+    }
+
+    function renderLessons() {
+      const container = document.getElementById('lessonsListContainer');
+      const lessons = currentCourse.lessons || [];
+
+      if (lessons.length === 0) {
+        container.innerHTML = `<p class="p-6 text-center text-xs text-stone-500 bg-white rounded-2xl">لا توجد محاضرات مدرجة حالياً.</p>`;
+        return;
+      }
+
+      container.innerHTML = lessons.map((les, idx) => {
+        const canOpen = isEnrolled || les.is_free;
+        const targetUrl = `lesson.html?courseId=${currentCourse.id}&lessonId=${les.id}`;
+
+        return `
+          <div class="bg-white rounded-2xl p-4 sm:p-5 border border-stone-200/80 shadow-sm hover:shadow-md transition-all flex items-center justify-between gap-4 group">
+            <div class="flex items-center gap-4">
+              <div class="w-10 h-10 rounded-xl flex items-center justify-center font-bold text-sm shrink-0 ${
+                canOpen ? 'bg-fusha-sage/10 text-fusha-sage' : 'bg-stone-100 text-stone-400'
+              }">
+                ${idx + 1}
+              </div>
+              <div class="space-y-1">
+                <div class="flex items-center gap-2">
+                  <h4 class="font-alexandria font-bold text-xs sm:text-sm text-fusha-forest group-hover:text-fusha-sun transition-colors">
+                    ${les.title}
+                  </h4>
+                  ${les.is_free ? '<span class="px-2 py-0.5 rounded-md bg-emerald-100 text-emerald-800 text-[10px] font-bold">معاينة مجانية</span>' : ''}
+                </div>
+                <div class="flex items-center gap-3 text-[11px] text-stone-400">
+                  <span class="flex items-center gap-1">
+                    <i data-lucide="${les.type === 'quiz' ? 'help-circle' : 'clock'}" class="w-3.5 h-3.5"></i>
+                    <span>${les.duration_mins || 45} دقيقة</span>
+                  </span>
+                  <span>•</span>
+                  <span>${les.type === 'quiz' ? 'اختبار إلكتروني' : 'شرح فيديو ومذكرة'}</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="shrink-0">
+              ${
+                canOpen
+                  ? `<a href="${targetUrl}" class="px-4 py-2 rounded-xl bg-fusha-forest hover:bg-fusha-forestLight text-white font-bold text-xs transition flex items-center gap-1.5 shadow-sm">
+                      <span>مشاهدة</span>
+                      <i data-lucide="play" class="w-3.5 h-3.5 fill-current text-fusha-sun"></i>
+                    </a>`
+                  : `<span class="px-3 py-1.5 rounded-xl bg-stone-100 text-stone-400 font-semibold text-xs flex items-center gap-1.5 cursor-not-allowed">
+                      <i data-lucide="lock" class="w-3.5 h-3.5"></i>
+                      <span>مقفل</span>
+                    </span>`
+              }
+            </div>
+          </div>
+        `;
+      }).join('');
+
+      if (window.lucide) window.lucide.createIcons();
+    }
+
+    async function handleEnroll() {
+      if (!window.api.isLoggedIn()) {
+        window.showToast('يرجى تسجيل الدخول أولاً للاشتراك في الدورة.', 'warning');
+        setTimeout(() => {
+          window.location.href = `login.html?redirect=${encodeURIComponent(window.location.href)}`;
+        }, 800);
+        return;
+      }
+
+      const btn = document.getElementById('enrollActionBtn');
+      btn.disabled = true;
+      btn.innerHTML = `<span>جاري معالجة الاشتراك...</span> <i data-lucide="loader" class="w-4 h-4 animate-spin"></i>`;
+      if (window.lucide) window.lucide.createIcons();
+
+      try {
+        await window.api.courses.enroll(currentCourse.id);
+        window.showToast('تهانينا! تم تفعيل الاشتراك في الدورة بنجاح.', 'success');
+        isEnrolled = true;
+        renderCourseInfo();
+        renderLessons();
+      } catch (err) {
+        window.showToast(err.message || 'رصيد المحفظة غير كافٍ. يرجى شحن كود سنتر أولاً.', 'error');
+        btn.disabled = false;
+        btn.innerHTML = `<span>اشترك في الدورة الآن</span> <i data-lucide="arrow-left" class="w-4 h-4"></i>`;
+        if (window.lucide) window.lucide.createIcons();
+      }
+    }
+
+    loadCourseDetails();
+  </script>
+</body>
+</html>
+

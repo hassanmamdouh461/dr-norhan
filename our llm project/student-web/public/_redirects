@@ -1,0 +1,6 @@
+# Exclude missing static assets from SPA redirect to prevent them from returning index.html with a 200 OK
+# If an asset is missing, it should return a 404 status code so the browser never caches it.
+/assets/* /404 404
+
+# Catch-all rule for SPA routes
+/* /index.html 200

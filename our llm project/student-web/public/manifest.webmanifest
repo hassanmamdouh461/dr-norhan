@@ -1,0 +1,22 @@
+{
+  "name": "كيميا | منصة الهضبة",
+  "short_name": "كيميا",
+  "description": "منصة كيميا التعليمية من الهضبة لشرح مادة الكيمياء للثانوية العامة: محاضرات فيديو، امتحانات دورية بتصحيح فوري، ومتابعة مستمرة.",
+  "id": "/",
+  "start_url": "/",
+  "scope": "/",
+  "dir": "rtl",
+  "lang": "ar",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "theme_color": "#7c3aed",
+  "background_color": "#0b0d17",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

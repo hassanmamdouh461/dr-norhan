@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>دراسة تكلفة التشغيل السنوية — منصة الأستاذ أشرف</title>
+<style>
+  *{box-sizing:border-box}
+  body{margin:0;background:#F8FAFC;color:#0F172A;font-family:"Segoe UI",Tahoma,"Cairo",sans-serif;line-height:1.7}
+  .wrap{max-width:1100px;margin:0 auto;padding:32px 24px 64px}
+  header{background:linear-gradient(135deg,#0F766E,#115E59);color:#fff;border-radius:18px;padding:32px;margin-bottom:28px}
+  header h1{margin:0 0 6px;font-size:26px}
+  header p{margin:0;opacity:.9;font-size:14px}
+  h2{font-size:19px;color:#0F766E;margin:38px 0 14px;padding-bottom:8px;border-bottom:2px solid #CCFBF1}
+  h3{font-size:15px;margin:20px 0 8px;color:#134E4A}
+  .kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin-bottom:8px}
+  .kpi{background:#fff;border:1px solid #E2E8F0;border-radius:14px;padding:16px 18px;box-shadow:0 1px 3px rgba(15,23,42,.05)}
+  .kpi .lbl{font-size:12px;color:#64748B}
+  .kpi .val{font-size:26px;font-weight:700;color:#0F766E}
+  .kpi .sub{font-size:12px;color:#94A3B8}
+  table{width:100%;border-collapse:collapse;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 1px 3px rgba(15,23,42,.06);font-size:14px}
+  th{background:#0F766E;color:#fff;padding:11px 12px;text-align:right;font-weight:600;font-size:13px}
+  td{padding:10px 12px;border-bottom:1px solid #F1F5F9}
+  tr:last-child td{border-bottom:none}
+  .num{text-align:left;font-variant-numeric:tabular-nums;direction:ltr}
+  .strong{font-weight:700}
+  .muted{color:#64748B;font-size:13px}
+  .zero{color:#94A3B8}
+  .cost{color:#B45309;font-weight:600}
+  .pct{text-align:left;color:#64748B;direction:ltr;font-size:13px}
+  .badge{display:inline-block;padding:2px 8px;border-radius:20px;font-size:11px}
+  .b-gray{background:#F1F5F9;color:#64748B}
+  .b-amber{background:#FEF3C7;color:#92400E}
+  tfoot td{background:#F0FDFA;font-weight:700;font-size:15px}
+  .chart{background:#fff;border:1px solid #E2E8F0;border-radius:14px;padding:20px;display:flex;gap:10px;align-items:flex-end;justify-content:space-between;height:240px;margin-top:12px}
+  .bar-col{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%}
+  .bar-wrap{height:170px;display:flex;align-items:flex-end}
+  .bar{width:70%;background:linear-gradient(180deg,#14B8A6,#0F766E);border-radius:6px 6px 0 0;min-height:3px}
+  .bar-lbl{font-size:11px;color:#64748B;margin-top:6px}
+  .bar-val{font-size:11px;color:#0F766E;font-weight:600;direction:ltr}
+  .note{background:#FFFBEB;border-right:4px solid #F59E0B;padding:14px 16px;border-radius:8px;margin:16px 0;font-size:14px}
+  .ok{background:#F0FDFA;border-right:4px solid #14B8A6;padding:14px 16px;border-radius:8px;margin:16px 0;font-size:14px}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .card{background:#fff;border:1px solid #E2E8F0;border-radius:12px;padding:16px}
+  .card ul{margin:8px 0 0;padding-inline-start:20px;font-size:14px}
+  .card li{margin-bottom:6px}
+  .cbar{height:10px;border-radius:5px}
+  footer{margin-top:40px;padding-top:16px;border-top:1px solid #E2E8F0;color:#94A3B8;font-size:12px}
+  @media print{body{background:#fff}.wrap{padding:0}header{-webkit-print-color-adjust:exact}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>دراسة تكلفة التشغيل السنوية — منصة الأستاذ أشرف</h1>
+  <p>الترميز: Bunny Stream (مجاني حتى 1080p) ← التخزين والبث: Cloudflare R2 &nbsp;|&nbsp; بدون Cloudflare Stream</p>
+  <p>معدّ إصدار: 16 سبتمبر 2026 &nbsp;•&nbsp; العملة: دولار أمريكي</p>
+</header>
+
+<div class="kpis">
+  <div class="kpi"><div class="lbl">التكلفة السنوية (السنة الأولى)</div><div class="val">$244</div><div class="sub">≈ 12,218 جنيه مصري*</div></div>
+  <div class="kpi"><div class="lbl">المتوسط الشهري</div><div class="val">$20.4</div><div class="sub">السنوات التالية: $18.3/شهر</div></div>
+  <div class="kpi"><div class="lbl">تكلفة الطالب / سنة</div><div class="val">$0.122</div><div class="sub">على أساس 2,000 طالب</div></div>
+  <div class="kpi"><div class="lbl">تكلفة ساعة محاضرة</div><div class="val">$0.64</div><div class="sub">384 ساعة محتوى/سنة</div></div>
+  <div class="kpi"><div class="lbl">حجم التوصيل السنوي</div><div class="val">324 TB</div><div class="sub">بـ $0 — الخارج من R2 مجاني</div></div>
+  <div class="kpi"><div class="lbl">ذروة التخزين</div><div class="val">1.44 TB</div><div class="sub">بنهاية السنة قبل الحذف</div></div>
+</div>
+<p class="muted" style="font-size:12px">* تحويل تقديري بسعر ~50 جنيه/دولار للإيضاح فقط.</p>
+
+<h2>1. ملخص تنفيذي</h2>
+<div class="ok">
+المنصة كما هي مصمّمة في الكود (Bunny Stream يرمّز ← Queues تنقل الشرائح مشفّرة AES-128 ← R2 يخزّن ويبثّ عبر نطاق مخصّص)
+تكلّف <strong>$244 في السنة الأولى</strong> و<strong>$219 في كل سنة تالية</strong>،
+أي حوالي <strong>$18 شهرياً</strong> فقط — بما فيها كل ميزة في المنصة
+(المصادقة، الكورسات، الفيديو المحمي، الكويزات، الأسئلة، الإشعارات، التحليلات، لوحة المدرس).
+<br><br>
+<strong>أهم نتيجة:</strong> 324 تيرابايت من الفيديو المُسلَّم للطلاب سنوياً بتكلفة توصيل <strong>صفر</strong>،
+لأن الخارج (egress) من R2 مجاني تماماً. التكلفة الحقيقية الوحيدة هي <strong>مساحة التخزين</strong>
+($127.80/سنة = 52% من الفاتورة) + باقة Workers ($60/سنة).
+<br><br>
+<strong>ولو استخدمت Cloudflare Stream بدل التصميم الحالي:</strong> نفس الحمل هيكلّف
+<strong>$18,129/سنة</strong> — يعني التصميم الحالي يوفّر <strong>98.7%</strong>.
+</div>
+
+<h2>2. الافتراضات التي بُنيت عليها الدراسة</h2>
+<table>
+<thead><tr><th>البيان</th><th class="num">القيمة</th><th>المصدر</th></tr></thead>
+<tbody>
+<tr><td>محاضرات في الأسبوع × ساعات</td><td class="num">4 × 2 ساعة</td><td>حسب طلبك</td></tr>
+<tr><td>أسابيع النشر في السنة</td><td class="num">48 أسبوع</td><td>حسب اختيارك (4 أسابيع إجازات)</td></tr>
+<tr><td>محاضرات / سنة</td><td class="num">192 محاضرة</td><td>192 × 2 = 384 ساعة</td></tr>
+<tr><td>دقائق محتوى / سنة</td><td class="num">23,040 دقيقة</td><td>—</td></tr>
+<tr><td>عدد الطلاب النشطين</td><td class="num">2,000 طالب</td><td>حسب اختيارك</td></tr>
+<tr><td>معدل المشاهدة</td><td class="num">12 ساعة/طالب/شهر</td><td>≈35% من المحتوى المنشور</td></tr>
+<tr><td>حجم المحاضرة (كل الجودات)</td><td class="num">7.5 GB</td><td>1080p≈4.5 + 720p≈2.5 + 480p≈1.2 + صوت Mbps</td></tr>
+<tr><td>حجم المحتوى السنوي</td><td class="num">1,440 GB (1.44 TB)</td><td>يتراكم ثم يُحذف بنهاية السنة</td></tr>
+<tr><td>سياسة الاحتفاظ</td><td class="num">تراكم سنة كاملة ثم حذف</td><td>حسب اختيارك</td></tr>
+<tr><td>الجودات المخزّنة</td><td class="num">480p + 720p + 1080p + صوت</td><td>من الكود: ALLOWED_VIDEO_QUALITIES</td></tr>
+</tbody>
+</table>
+
+<h2>3. تكلفة كل ميزة من مزايا المنصة</h2>
+<p class="muted">كل ميزة مذكورة في التوثيق والكود mapped للخدمة اللي بتستهلكها فعلاً:</p>
+<table>
+<thead><tr><th>الميزة</th><th>الخدمة</th><th class="num">التكلفة/سنة</th><th>ملاحظة</th></tr></thead>
+<tbody><tr><td>تسجيل الدخول / المصادقة / استرجاع كلمة المرور</td><td>Supabase Auth</td><td class="num zero">0 $</td><td class="muted">مجاني حتى 50 ألف مستخدم نشط</td></tr><tr><td>تصفّح الكورسات والوحدات والدروس</td><td>Workers + D1</td><td class="num zero">0 $</td><td class="muted">ضمن الباقة المدفوعة</td></tr><tr><td>البحث الداخلي (SQLite FTS5)</td><td>D1</td><td class="num zero">0 $</td><td class="muted">ضمن الباقة</td></tr><tr><td>أكواد التفعيل وإدارتها</td><td>D1</td><td class="num zero">0 $</td><td class="muted">ضمن الباقة</td></tr><tr><td>تتبّع التقدّم + نبضات المشاهدة (Heartbeat)</td><td>Workers + D1</td><td class="num zero">0 $</td><td class="muted">≈1.7M طلب/شهر — ضمن 10M</td></tr><tr><td>رفع الفيديو وترميزه (480p/720p/1080p)</td><td>Bunny Stream</td><td class="num zero">0 $</td><td class="muted">الترميز القياسي مجاني</td></tr><tr><td>نقل الشرائح وتشفيرها AES-128 إلى R2</td><td>Queues + Workers + KV</td><td class="num zero">0 $</td><td class="muted">ضمن المجاني</td></tr><tr><td>تخزين الفيديو وبثه HLS</td><td>R2 (+ كاش الحافة)</td><td class="num cost">$127.80</td><td class="muted">البند الوحيد المؤثر</td></tr><tr><td>حماية الفيديو (علامة مائية، ربط جهاز، توكنات)</td><td>Workers + KV + D1</td><td class="num zero">0 $</td><td class="muted">ضمن الباقة</td></tr><tr><td>ملفات PDF والمرفقات</td><td>R2</td><td class="num zero">0 $</td><td class="muted">≈2GB/سنة</td></tr><tr><td>الأسئلة والإجابات والتقييمات</td><td>D1</td><td class="num zero">0 $</td><td class="muted">ضمن الباقة</td></tr><tr><td>الكويزات ونتائجها</td><td>D1</td><td class="num zero">0 $</td><td class="muted">ضمن الباقة</td></tr><tr><td>إشعارات Push (FCM)</td><td>Queues + FCM</td><td class="num zero">0 $</td><td class="muted">FCM مجاني — الطابور غير مفعّل حالياً</td></tr><tr><td>لوحة تحكم المدرس (الويب)</td><td>Cloudflare Pages</td><td class="num zero">0 $</td><td class="muted">مجاني</td></tr><tr><td>موقع الطلاب (الويب)</td><td>Cloudflare Pages</td><td class="num zero">0 $</td><td class="muted">مجاني</td></tr><tr><td>تحليلات وإحصائيات</td><td>D1</td><td class="num zero">0 $</td><td class="muted">ضمن الباقة</td></tr><tr><td>البنية والـ API</td><td>Cloudflare Workers (Paid)</td><td class="num cost">$60.00</td><td class="muted">5$/شهر</td></tr><tr><td>سحب الشرائح من Bunny</td><td>Bunny Stream</td><td class="num cost">$16.56</td><td class="muted">≈1.5TB/سنة بـ 0.01$/GB</td></tr><tr><td>النطاق</td><td>Domain</td><td class="num cost">$15.00</td><td class="muted">تجديد سنوي</td></tr><tr><td>تطبيق أندرويد</td><td>Google Play</td><td class="num cost">$25.00</td><td class="muted">مرة واحدة</td></tr></tbody>
+<tfoot><tr><td>الإجمالي</td><td></td><td class="num">$244.36</td><td></td></tr></tfoot>
+</table>
+
+<h2>4. جدول التكاليف السنوي التفصيلي</h2>
+<table>
+<thead><tr><th>البند</th><th class="num">التكلفة السنوية ($)</th><th class="pct">من الإجمالي</th><th>ملاحظة</th></tr></thead>
+<tbody><tr><td>Cloudflare Workers (الباقة المدفوعة — 10M طلب + 30M CPU-ms شهرياً)</td><td class="num">$60.00</td><td class="pct">24.6%</td><td></td></tr><tr><td>Cloudflare R2 — تخزين شرائح الفيديو HLS</td><td class="num">$127.80</td><td class="pct">52.3%</td><td></td></tr><tr><td>Cloudflare R2 — عمليات Class A (كتابة الشرائح)</td><td class="num">$0.00</td><td class="pct">0.0%</td><td><span class="badge b-gray">ضمن المجاني</span></td></tr><tr><td>Cloudflare R2 — عمليات Class B (قراءة الشرائح)</td><td class="num">$0.00</td><td class="pct">0.0%</td><td><span class="badge b-gray">ضمن المجاني</span></td></tr><tr><td>Cloudflare D1 — قاعدة البيانات (ضمن الباقة المدفوعة)</td><td class="num">$0.00</td><td class="pct">0.0%</td><td><span class="badge b-gray">ضمن المجاني</span></td></tr><tr><td>Cloudflare KV — مفاتيح التشفير وتتبّع النقل</td><td class="num">$0.00</td><td class="pct">0.0%</td><td><span class="badge b-gray">ضمن المجاني</span></td></tr><tr><td>Cloudflare Queues — طابور نقل الفيديو</td><td class="num">$0.00</td><td class="pct">0.0%</td><td><span class="badge b-gray">ضمن المجاني</span></td></tr><tr><td>Cloudflare Pages — لوحة المدرس + ويب الطلاب</td><td class="num">$0.00</td><td class="pct">0.0%</td><td><span class="badge b-gray">ضمن المجاني</span></td></tr><tr><td>Cloudflare Images — تحويل صور الأغلفة</td><td class="num">$0.00</td><td class="pct">0.0%</td><td><span class="badge b-gray">ضمن المجاني</span></td></tr><tr><td>Bunny Stream — الترميز القياسي (مجاني حتى 1080p)</td><td class="num">$0.00</td><td class="pct">0.0%</td><td><span class="badge b-gray">ضمن المجاني</span></td></tr><tr><td>Bunny Stream — سحب الشرائح + تخزين مؤقت</td><td class="num">$16.56</td><td class="pct">6.8%</td><td></td></tr><tr><td>Supabase Auth — المصادقة (حتى 50 ألف مستخدم نشط)</td><td class="num">$0.00</td><td class="pct">0.0%</td><td><span class="badge b-gray">ضمن المجاني</span></td></tr><tr><td>Firebase Cloud Messaging — إشعارات Push</td><td class="num">$0.00</td><td class="pct">0.0%</td><td><span class="badge b-gray">ضمن المجاني</span></td></tr><tr><td>تجديد النطاق السنوي</td><td class="num">$15.00</td><td class="pct">6.1%</td><td></td></tr><tr><td>حساب Google Play للمطوّرين (مرة واحدة — السنة الأولى فقط)</td><td class="num">$25.00</td><td class="pct">10.2%</td><td><span class="badge b-amber">مرة واحدة</span></td></tr></tbody>
+<tfoot>
+<tr><td>الإجمالي — السنة الأولى</td><td class="num">$244.36</td><td class="pct">100%</td><td></td></tr>
+<tr><td>الإجمالي — السنوات التالية</td><td class="num">$219.36</td><td class="pct">—</td><td>بدون رسوم Google Play</td></tr>
+</tfoot>
+</table>
+
+<h2>5. التدفق الشهري (السنة الأولى)</h2>
+<p class="muted">الفاتورة بتزيد تدريجياً لأن التخزين بيتاكمّ شهر ورا شهر، وبتنزل للصفر تاني لما تمسح محتوى السنة.</p>
+<div class="chart"><div class="bar-col"><div class="bar-wrap"><div class="bar tot" style="height:52px" title="إجمالي الشهر"></div></div><div class="bar-lbl">ينا</div><div class="bar-val">7</div></div><div class="bar-col"><div class="bar-wrap"><div class="bar tot" style="height:65px" title="إجمالي الشهر"></div></div><div class="bar-lbl">فبر</div><div class="bar-val">9</div></div><div class="bar-col"><div class="bar-wrap"><div class="bar tot" style="height:78px" title="إجمالي الشهر"></div></div><div class="bar-lbl">مار</div><div class="bar-val">11</div></div><div class="bar-col"><div class="bar-wrap"><div class="bar tot" style="height:91px" title="إجمالي الشهر"></div></div><div class="bar-lbl">أبر</div><div class="bar-val">13</div></div><div class="bar-col"><div class="bar-wrap"><div class="bar tot" style="height:105px" title="إجمالي الشهر"></div></div><div class="bar-lbl">ماي</div><div class="bar-val">14</div></div><div class="bar-col"><div class="bar-wrap"><div class="bar tot" style="height:118px" title="إجمالي الشهر"></div></div><div class="bar-lbl">يون</div><div class="bar-val">16</div></div><div class="bar-col"><div class="bar-wrap"><div class="bar tot" style="height:131px" title="إجمالي الشهر"></div></div><div class="bar-lbl">يول</div><div class="bar-val">18</div></div><div class="bar-col"><div class="bar-wrap"><div class="bar tot" style="height:144px" title="إجمالي الشهر"></div></div><div class="bar-lbl">أغس</div><div class="bar-val">20</div></div><div class="bar-col"><div class="bar-wrap"><div class="bar tot" style="height:157px" title="إجمالي الشهر"></div></div><div class="bar-lbl">سبت</div><div class="bar-val">22</div></div><div class="bar-col"><div class="bar-wrap"><div class="bar tot" style="height:170px" title="إجمالي الشهر"></div></div><div class="bar-lbl">أكت</div><div class="bar-val">23</div></div><div class="bar-col"><div class="bar-wrap"><div class="bar tot" style="height:183px" title="إجمالي الشهر"></div></div><div class="bar-lbl">نوف</div><div class="bar-val">25</div></div><div class="bar-col"><div class="bar-wrap"><div class="bar tot" style="height:197px" title="إجمالي الشهر"></div></div><div class="bar-lbl">ديس</div><div class="bar-val">27</div></div></div>
+<table style="margin-top:14px">
+<thead><tr><th>الشهر</th><th class="num">التخزين التراكمي (GB)</th><th class="num">تخزين R2</th><th class="num">Workers</th><th class="num">Bunny</th><th class="num">إجمالي الشهر</th></tr></thead>
+<tbody>
+<tr><td>يناير</td><td class="num">60</td><td class="num">$0.75</td><td class="num">$5.00</td><td class="num">$1.38</td><td class="num strong">$7.13</td></tr><tr><td>فبراير</td><td class="num">180</td><td class="num">$2.55</td><td class="num">$5.00</td><td class="num">$1.38</td><td class="num strong">$8.93</td></tr><tr><td>مارس</td><td class="num">300</td><td class="num">$4.35</td><td class="num">$5.00</td><td class="num">$1.38</td><td class="num strong">$10.73</td></tr><tr><td>أبريل</td><td class="num">420</td><td class="num">$6.15</td><td class="num">$5.00</td><td class="num">$1.38</td><td class="num strong">$12.53</td></tr><tr><td>مايو</td><td class="num">540</td><td class="num">$7.95</td><td class="num">$5.00</td><td class="num">$1.38</td><td class="num strong">$14.33</td></tr><tr><td>يونيو</td><td class="num">660</td><td class="num">$9.75</td><td class="num">$5.00</td><td class="num">$1.38</td><td class="num strong">$16.13</td></tr><tr><td>يوليو</td><td class="num">780</td><td class="num">$11.55</td><td class="num">$5.00</td><td class="num">$1.38</td><td class="num strong">$17.93</td></tr><tr><td>أغسطس</td><td class="num">900</td><td class="num">$13.35</td><td class="num">$5.00</td><td class="num">$1.38</td><td class="num strong">$19.73</td></tr><tr><td>سبتمبر</td><td class="num">1,020</td><td class="num">$15.15</td><td class="num">$5.00</td><td class="num">$1.38</td><td class="num strong">$21.53</td></tr><tr><td>أكتوبر</td><td class="num">1,140</td><td class="num">$16.95</td><td class="num">$5.00</td><td class="num">$1.38</td><td class="num strong">$23.33</td></tr><tr><td>نوفمبر</td><td class="num">1,260</td><td class="num">$18.75</td><td class="num">$5.00</td><td class="num">$1.38</td><td class="num strong">$25.13</td></tr><tr><td>ديسمبر</td><td class="num">1,380</td><td class="num">$20.55</td><td class="num">$5.00</td><td class="num">$1.38</td><td class="num strong">$26.93</td></tr>
+</tbody>
+<tfoot><tr><td>الإجمالي</td><td class="num">—</td><td class="num">$127.80</td><td class="num">$60.00</td><td class="num">$16.56</td><td class="num">$204.36</td></tr></tfoot>
+</table>
+
+<h2>6. تحليل الحساسية والسيناريوهات</h2>
+<table>
+<thead><tr><th>السيناريو</th><th class="num">السنة الأولى ($)</th><th class="num">السنوات التالية ($)</th><th class="num">شهرياً ($)</th></tr></thead>
+<tbody><tr><td>الأساس: 2,000 طالب — تراكم سنة ثم حذف</td><td class="num strong">$244.36</td><td class="num">$219.36</td><td class="num">$20.36</td></tr><tr><td>500 طالب فقط (نطاق ضيق)</td><td class="num strong">$244.36</td><td class="num">$219.36</td><td class="num">$20.36</td></tr><tr><td>10,000 طالب (توسّع كبير)</td><td class="num strong">$257.15</td><td class="num">$232.15</td><td class="num">$21.43</td></tr><tr><td>احتفاظ متحرك 12 شهراً (حجم مستقر 1.44 TB)</td><td class="num strong">$398.96</td><td class="num">$373.96</td><td class="num">$33.25</td></tr><tr><td>أرشيف دائم بلا حذف (سنة 1 / 2 / 3)</td><td class="num strong">$244.36</td><td class="num">$503.56</td><td class="num">$20.36</td></tr>
+<tr><td>أرشيف دائم — السنة الثالثة</td><td class="num strong">$762.76</td><td class="num">—</td><td class="num">$63.56</td></tr>
+</tbody>
+</table>
+<div class="note">
+<strong>أهم استنتاجين:</strong><br>
+1) <strong>عدد الطلاب لا يكلّف شيئاً تقريباً:</strong> من 500 إلى 10,000 طالب الفاتورة بتزيد حوالي $13 في السنة فقط،
+لأن الخارج من R2 مجاني وطلبات الـ API لسه تحت الـ 10 ملايين المشمولة.<br>
+2) <strong>السياسة اللي بتتحكم في الفاتورة هي "الاحتفاظ":</strong> حذف محتوى السنة بنهايتها يثبّت التكلفة عند ~$219/سنة،
+لكن الأرشيف الدائم يرفعها لـ $504 في سنة 2 و$763 في سنة 3 وهكذا.
+</div>
+
+<h2>7. مقارنة: التصميم الحالي vs Cloudflare Stream</h2>
+<p class="muted">الجدول ده بيجاوب على سؤال "ليه إحنا مش بنستخدم Cloudflare Stream؟" — نفس الحمل بالظبط (2,000 طالب × 12 ساعة/شهر):</p>
+<table>
+<thead><tr><th>البديل</th><th class="num">تخزين</th><th class="num">توصيل</th><th class="num">ثابت</th><th class="num">الإجمالي/سنة</th><th>نسبي</th></tr></thead>
+<tbody><tr><td>الحالي: Bunny Stream (ترميز مجاني) + R2</td><td class="num">$127.80</td><td class="num">$0.00</td><td class="num">$116.56</td><td class="num strong">$244.36</td><td><div class="cbar" style="width:1.3%;background:#0F766E"></div></td></tr><tr><td>Cloudflare Stream (بدون R2)</td><td class="num">$748.80</td><td class="num">$17,280.00</td><td class="num">$100.00</td><td class="num strong">$18,128.80</td><td><div class="cbar" style="width:100.0%;background:#F97316"></div></td></tr><tr><td>CDN تقليدي بـ 0.05$/GB (مثل Bunny/Bunny CDN مباشر)</td><td class="num">$127.80</td><td class="num">$16,200.00</td><td class="num">$100.00</td><td class="num strong">$16,427.80</td><td><div class="cbar" style="width:90.6%;background:#F97316"></div></td></tr><tr><td>S3 + CloudFront بـ 0.09$/GB</td><td class="num">$190.00</td><td class="num">$29,160.00</td><td class="num">$100.00</td><td class="num strong">$29,450.00</td><td><div class="cbar" style="width:162.4%;background:#F97316"></div></td></tr></tbody>
+</table>
+<div class="note">
+<strong>ليه Cloudfare Stream غالي جداً في حالتنا؟</strong><br>
+• التخزين: $5 لكل 1,000 دقيقة شهرياً. محتوانا 23,040 دقيقة → بنهاية السنة تحتاج سعة $120/شهر.<br>
+• التوصيل: $1 لكل 1,000 دقيقة مُشاهَدة. طلابنا بيشاهدوا 17,280 ألف دقيقة/سنة → <strong>$17,280</strong>.<br>
+• R2 بيشفط النقطتين دول: التخزين $0.015/GB والخارج مجاني، فالتكلفة بتفضل ثابتة مهما زادت المشاهدة.
+</div>
+
+<h2>8. تكاليف مش سحابية لازم تتدخل في الميزانية</h2>
+<div class="grid2">
+  <div class="card">
+    <h3>مؤكّدة</h3>
+    <ul>
+      <li>حساب Google Play: <strong>$25 مرة واحدة</strong></li>
+      <li>تجديد النطاق: <strong>$15/سنة</strong></li>
+      <li>Apple Developer (لو في iOS): <strong>$99/سنة</strong></li>
+      <li>إنترنت رفع المحاضرات من عند المدرّس (≈7.5GB × 4 أسبوعياً ≈ 120GB/شهر)</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h3>اختيارية / حسب النمو</h3>
+    <ul>
+      <li>Supabase Pro: <strong>$25/شهر</strong> (لو احتجت SMTP مخصص أو ضمان عدم الإيقاف التلقائي للمشروع المجاني)</li>
+      <li>Bunny Premium Encoding: <strong>$0.05/دقيقة</strong> لو عايز 1440p/1080p بجودة أعلى (القياسي مجاني)</li>
+      <li>MediaCage DRM من Bunny: <strong>$99/شهر</strong> (غير ضروري — عندك تشفير AES-128)</li>
+      <li>Sentry / مراقبة: مجاني في الحدود الدنيا</li>
+      <li>نسخ احتياطي لـ D1 على R2: شبه مجاني</li>
+    </ul>
+  </div>
+</div>
+
+<h2>9. توصيات لتقليل التكلفة</h2>
+<div class="grid2">
+  <div class="card">
+    <h3>توفير مباشر</h3>
+    <ul>
+      <li><strong>امسح محتوى السنة القديمة فور انتهائها</strong> — يثبّت الفاتورة ويمنع التراكم (أكبر رافعة: $130 → $0 تراكمي).</li>
+      <li><strong>فعّل باقة Volume في Bunny</strong> أو تأكد إن السحب بيتم من منطقة أوروبا: $0.06 → $0.005/GB (توفير ~$75/سنة).</li>
+      <li><strong>اقفل MP4 Fallback و Keep original files في Bunny</strong> — بيضاعفوا التخزين المؤقت بلا فايدة (شرائح HLS هي اللي بتتنقل).</li>
+      <li><strong>سيب 480p/720p/1080p بس</strong> (معمول في الكود) — 240p/360p زيادة هتزوّد التخزين ~30%.</li>
+      <li>للمحتوى القديم اللي مش بيتشاف: انقله لـ <strong>R2 Infrequent Access</strong> ($0.01/GB بدل $0.015) — بس بلاش على فيديوهات لسه متشافة لأن الاسترجاع بـ $0.01/GB.</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h3>حماية من الفواتير المفاجئة</h3>
+    <ul>
+      <li>فعّل <strong>تنبيهات إنفاق</strong> في لوحة Cloudflare على R2 و Workers.</li>
+      <li>حدّد <strong>CPU limit</strong> لكل invocation في الـ Worker (افتراضي 30 ثانية) علشان الـ Queue consumer متفضلّش تلف.</li>
+      <li>راجع حد <code>max_retries</code> في الطابور (حالياً 10) — كل إعادة محاولة = قراءات + CPU + سحب من Bunny.</li>
+      <li>اتأكد إن <code>Cache-Control: immutable</code> موجود فعلاً على الشرائح (موجود في الكود) — ده اللي مخلي قراءات R2 مجانية.</li>
+      <li>راقب حجم D1: أول 5GB مجانية، وبعدها $0.75/GB-شهر.</li>
+    </ul>
+  </div>
+</div>
+
+<h2>10. الخلاصة</h2>
+<div class="ok">
+<strong>الميزانية السنوية المقترحة: $244 للسنة الأولى، و$219 لكل سنة تالية (≈ $18/شهر).</strong><br>
+التكلفة متأثرة بشكل شبه حصري بـ <em>حجم الفيديو المخزّن</em>، ومش متأثرة تقريباً بعدد الطلاب ولا ساعات المشاهدة.
+القرار الوحيد اللي يفرق فعلاً: <strong>تحذف محتوى السنة في نهايتها ولا لأ.</strong><br>
+(راجع قسم 11 لو بتفكّر في MongoDB بدل D1 أو تخزين الفيديو على Bunny بدل R2 — الاتنين بيضاعفوا الفاتورة بلا مبرّر.)
+</div>
+
+<h2>11. سيناريو بديل: MongoDB بدل D1 + تخزين Bunny بـ $0.055/GB</h2>
+<p class="muted">نفس الكود، بس قاعدة البيانات MongoDB، وتخزين Bunny بسعر $0.055/GB بافتراض <strong>100 جيجا تخزين كل شهر</strong>.</p>
+<table>
+<thead><tr><th>السيناريو</th><th>قاعدة البيانات</th><th>تخزين الفيديو</th><th>التوصيل/السحب</th><th class="num">الإجمالي/سنة</th><th class="num">الفرق</th></tr></thead>
+<tbody>
+<tr><td><strong>التصميم الحالي</strong> (D1 + R2)</td><td>D1 — $0</td><td>R2 — $127.8</td><td>سحب Bunny — $15.1</td><td class="num strong">$244.36</td><td class="num">المرجع</td></tr>
+<tr><td><strong>B1</strong> — Mongo Flex + نفس الكود (نقل لـ R2)</td><td>Flex — $144</td><td>Bunny $66 + R2 $127.8</td><td>$15.1</td><td class="num strong">$452.92</td><td class="num" style="color:#B45309">+209 (+85%)</td></tr>
+<tr><td><strong>B2</strong> — Mongo M10 + نفس الكود (نقل لـ R2)</td><td>M10 — $900</td><td>Bunny $66 + R2 $127.8</td><td>$15.1</td><td class="num strong">$1,208.92</td><td class="num" style="color:#B91C1C">+965 (+395%)</td></tr>
+<tr><td><strong>B3</strong> — Mongo Flex + كل الفيديو على Bunny (باقة Volume)</td><td>Flex — $144</td><td>Bunny كامل — $429</td><td>$1,620</td><td class="num strong">$2,293</td><td class="num" style="color:#B91C1C">+2,049</td></tr>
+<tr><td><strong>B4</strong> — Mongo M10 + كل الفيديو على Bunny (تسعير الشرق الأوسط)</td><td>M10 — $900</td><td>Bunny كامل — $429</td><td>$19,440</td><td class="num strong">$20,869</td><td class="num" style="color:#B91C1C">+20,625</td></tr>
+</tbody>
+</table>
+
+<h3>أسعار MongoDB Atlas (2026)</h3>
+<table>
+<thead><tr><th>الطبقة</th><th>السعر/شهر</th><th>التخزين</th><th>السقف</th><th>التقييم لحالتنا</th></tr></thead>
+<tbody>
+<tr><td>M0 (مجاني)</td><td>$0</td><td>512 MB</td><td>~100 عملية/ثانية</td><td class="muted">مش هتكفي — حجم البيانات هيعدّي 512MB بسرعة، وبدون نسخ احتياطي</td></tr>
+<tr><td>Flex</td><td>$8 → $30 (سقف صلب)</td><td>5 GB</td><td>~500 عملية/ثانية</td><td class="muted">تكفي الحمولة الحالية (متوسط ≈0.7 طلب/ثانية) — بس بدون PITR وبدون Atlas Search</td></tr>
+<tr><td>M10 (مخصّص)</td><td>$58.4 + تخزين/نسخ ≈ $75-85</td><td>10-128 GB</td><td>1,500 اتصال</td><td class="muted">إنتاج حقيقي + نقطة استرجاع زمنية + Atlas Search</td></tr>
+<tr><td>M20</td><td>≈ $146</td><td>20 GB+</td><td>—</td><td class="muted">مبالغة في حالتنا</td></tr>
+</tbody>
+</table>
+
+<div class="note">
+<strong>تحذير معماري مهم قبل ما تاخد القرار:</strong><br>
+• Cloudflare Workers <strong>تقدر</strong> تتصل بـ MongoDB بالدريفر الرسمي من 2025 (بعد دعم <code>node:net</code> و <code>node:tls</code>)، لكن <strong>Atlas Data API اتلغت</strong> فمش خيار.<br>
+• مفيش <strong>Hyperdrive</strong> لـ Mongo (ده لـ Postgres/MySQL بس) → يعني مفيش connection pooling على الحافة. لازم <code>maxPoolSize: 1</code> ومراقبة عدد الاتصالات (سقف M10 = 1,500).<br>
+• كل استعلام = رحلة من الـ Worker (edge) لـ Atlas (منطقة واحدة) → <strong>+50 إلى +150ms زمن استجابة</strong> لكل طلب API بدل D1 اللي شغالة جنب الكود.<br>
+• البحث: Flex فيه <strong>MongoDB Search</strong> فمش هتخسر ميزة البحث الداخلي (بديل FTS5)، بس بموارد مشاركة.<br>
+• هتحتاج <strong>إعادة كتابة كل الاستعلامات</strong> في <code>admin.ts</code> و <code>courses.ts</code> و <code>questions.ts</code> و <code>codes.ts</code> و <code>auth.ts</code> و <code>playback.ts</code> ومستهلكي الطوابير — أيام عمل مش ساعات.<br>
+• حجم حزمة الـ Worker هيزيد (دريفر mongodb) واستهلاك CPU أعلى بسبب ترميز BSON.
+</div>
+
+<div class="ok">
+<strong>الرأي:</strong> MongoDB هتكلّفك <strong>+$209 إلى +$965 في السنة</strong> في أفضل الحالات (B1/B2)، مقابل <strong>$0</strong> لـ D1،
+ومع تأخير أعلى ومخاطر معمارية. و"تخزين الفيديو كله على Bunny بدل R2" هو الكارثة الحقيقية:
+التوصيل لوحده <strong>$1,620 — $19,440/سنة</strong> لأنك بتدفع على كل جيجا بيشوفها الطالب،
+بينما R2 بيوصّل <strong>324 TB بصفر دولار</strong>.<br>
+<strong>الخلاصة:</strong> سيب D1 زي ما هي، وسيب الفيديو على R2. لو عايز تدي Bunny مساحة تخزين 100 جيجا مؤقتة بس → التكلفة $66/سنة بدل $16.5.
+</div>
+
+<h2>12. تفاصيل سيناريو B1 بالكامل — MongoDB Flex + نفس الكود (نقل لـ R2)</h2>
+<div class="kpis" style="margin-bottom:16px">
+  <div class="kpi"><div class="lbl">الإجمالي — السنة الأولى</div><div class="val">$452.92</div><div class="sub">السنوات التالية: $427.92</div></div>
+  <div class="kpi"><div class="lbl">المتوسط الشهري</div><div class="val">$37.7</div><div class="sub">يبدأ $25.8 وينتهي $45.6</div></div>
+  <div class="kpi"><div class="lbl">الزيادة عن التصميم الحالي</div><div class="val" style="color:#B45309">+$209</div><div class="sub">+85% — منها $144 مونجو و$65 تخزين Bunny</div></div>
+  <div class="kpi"><div class="lbl">تكلفة الطالب / سنة</div><div class="val">$0.226</div><div class="sub">مقابل $0.122 في التصميم الحالي</div></div>
+</div>
+
+<table>
+<thead><tr><th>البند</th><th>وحدة التسعير</th><th>الاستهلاك السنوي المتوقع</th><th class="num">التكلفة/سنة</th></tr></thead>
+<tbody>
+<tr><td>Cloudflare Workers — الباقة المدفوعة</td><td class="muted">5$/شهر (10M طلب + 30M CPU-ms)</td><td class="muted">1.74M طلب/شهر</td><td class="num strong">$60.00</td></tr><tr><td>MongoDB Atlas Flex — قاعدة البيانات بدل D1</td><td class="muted">8$ أساس (حتى 100 عملية/ثانية) — سقف صلب 30$</td><td class="muted">≈2-3 عملية/ثانية، ذروة في مواسم الامتحانات</td><td class="num strong">$144.00</td></tr><tr><td>Atlas Flex — التخزين</td><td class="muted">5 GB مشمولة</td><td class="muted">حجم البيانات المتوقع سنة 1 ≈ 0.5-1 GB</td><td class="num zero">$0.00</td></tr><tr><td>Atlas Flex — نقل البيانات (Egress)</td><td class="muted">غير محدود ومجاني على Flex</td><td class="muted">≈3 GB/شهر</td><td class="num zero">$0.00</td></tr><tr><td>Cloudflare R2 — تخزين شرائح الفيديو</td><td class="muted">0.015$/GB-شهر</td><td class="muted">8,640 GB-شهر − 120 GB مجانية</td><td class="num strong">$127.80</td></tr><tr><td>Cloudflare R2 — عمليات Class A (كتابة)</td><td class="muted">4.50$/مليون</td><td class="muted">1.1M كائن/سنة (~92k/شهر) — ضمن 1M مجاناً</td><td class="num zero">$0.00</td></tr><tr><td>Cloudflare R2 — عمليات Class B (قراءة)</td><td class="muted">0.36$/مليون</td><td class="muted">17.3M قراءة/شهر، 15% بيفوت الكاش — ضمن 10M</td><td class="num zero">$0.00</td></tr><tr><td>Cloudflare R2 — الخارج (توصيل الطلاب)</td><td class="muted">مجاني تماماً</td><td class="muted">324 TB/سنة</td><td class="num zero">$0.00</td></tr><tr><td>Bunny Stream — الترميز القياسي</td><td class="muted">مجاني حتى 1080p</td><td class="muted">23,040 دقيقة/سنة</td><td class="num zero">$0.00</td></tr><tr><td>Bunny Stream — التخزين</td><td class="muted">0.055$/GB-شهر</td><td class="muted">100 GB مقيم/شهر</td><td class="num strong">$66.00</td></tr><tr><td>Bunny Stream — سحب الشرائح للـ Worker</td><td class="muted">0.010$/GB (أوروبا/أمريكا)</td><td class="muted">1,512 GB/سنة</td><td class="num strong">$15.12</td></tr><tr><td>Cloudflare Queues</td><td class="muted">0.40$/مليون بعد 1M</td><td class="muted">≈1M عملية/سنة</td><td class="num zero">$0.00</td></tr><tr><td>Cloudflare KV</td><td class="muted">مفاتيح التشفير + تتبّع النقل</td><td class="muted">≈20k كتابة/سنة</td><td class="num zero">$0.00</td></tr><tr><td>Cloudflare Pages</td><td class="muted">لوحة المدرس + ويب الطلاب</td><td class="muted">طلبات غير محدودة</td><td class="num zero">$0.00</td></tr><tr><td>Cloudflare Images</td><td class="muted">5,000 تحويلة مجاناً/شهر</td><td class="muted"><1,000 تحويلة/شهر</td><td class="num zero">$0.00</td></tr><tr><td>Supabase Auth</td><td class="muted">مجاني حتى 50 ألف MAU</td><td class="muted">2,000 طالب</td><td class="num zero">$0.00</td></tr><tr><td>Firebase Cloud Messaging</td><td class="muted">مجاني</td><td class="muted">≈50 إشعار/طالب/سنة</td><td class="num zero">$0.00</td></tr><tr><td>تجديد النطاق</td><td class="muted">نطاق واحد + ساب دومينات</td><td class="muted">—</td><td class="num strong">$15.00</td></tr><tr><td>حساب Google Play</td><td class="muted">مرة واحدة — السنة الأولى</td><td class="muted">—</td><td class="num strong">$25.00</td></tr>
+</tbody>
+<tfoot>
+<tr><td colspan="3">الإجمالي — السنة الأولى</td><td class="num">$452.92</td></tr>
+<tr><td colspan="3">الإجمالي — السنوات التالية (بدون رسوم Play)</td><td class="num">$427.92</td></tr>
+</tfoot>
+</table>
+
+<h3>منين جاية الزيادة (+$209)؟</h3>
+<table>
+<thead><tr><th>السبب</th><th class="num">الزيادة السنوية</th><th>التفسير</th></tr></thead>
+<tbody>
+<tr><td>MongoDB Atlas Flex بدل D1</td><td class="num cost">+$144.00</td><td>D1 كانت بـ $0 جوه باقة Workers — دي تكلفة جديدة بالكامل</td></tr>
+<tr><td>تخزين Bunny بـ $0.055 بدل $0.01</td><td class="num cost">+$64.56</td><td>100 جيجا مقيم × السعر الجديد، بدل تخزين عابر يومين</td></tr>
+<tr><td>باقي البنود</td><td class="num">$0.00</td><td>Workers و R2 والطوابير و Pages و Supabase و FCM — كلها زي ما هي</td></tr>
+</tbody>
+</table>
+
+<h3>حساسية سعر Atlas Flex (السقف الصلب بيحميك)</h3>
+<table>
+<thead><tr><th>الحالة</th><th class="num">سعر Flex/شهر</th><th class="num">التكلفة/سنة</th><th class="num">إجمالي B1/سنة</th><th>ملاحظة</th></tr></thead>
+<tbody>
+<tr><td>متفائل — تحت 100 عملية/ثانية طول الوقت</td><td class="num">$8</td><td class="num">$96</td><td class="num strong">$404.92</td><td class="muted">الحد الأدنى الفعلي لـ Flex</td></tr>
+<tr><td><strong>الأساس</strong> — ذروات موسمية تدخل شريحة 100-200</td><td class="num">$12</td><td class="num">$144</td><td class="num strong">$452.92</td><td class="muted">الفرضية المعتمدة</td></tr>
+<tr><td>السقف — 400-500 عملية/ثانية</td><td class="num">$30</td><td class="num">$360</td><td class="num strong">$668.92</td><td class="muted">سقف صلب — Flex لا يمكن أن يتجاوز 30$/شهر أبداً</td></tr>
+</tbody>
+</table>
+<p class="muted" style="font-size:13px">تسعير Flex الرسمي: $8 أساس يشمل 5GB تخزين + 100 عملية/ثانية + <strong>نقل بيانات غير محدود مجاناً</strong>،
+ثم شرائح: 100-200 → $15 · 200-300 → $21 · 300-400 → $26 · 400-500 → $30 (سقف نهائي).</p>
+
+<h3>التدفق الشهري لسيناريو B1</h3>
+<table>
+<thead><tr><th>الشهر</th><th class="num">Workers</th><th class="num">MongoDB</th><th class="num">Bunny</th><th class="num">تخزين R2</th><th class="num">نطاق</th><th class="num">إجمالي الشهر</th></tr></thead>
+<tbody>
+<tr><td>يناير</td><td class="num">$5.00</td><td class="num">$12.00</td><td class="num">$6.76</td><td class="num">$0.75</td><td class="num">$1.25</td><td class="num strong">$25.76</td></tr><tr><td>فبراير</td><td class="num">$5.00</td><td class="num">$12.00</td><td class="num">$6.76</td><td class="num">$2.55</td><td class="num">$1.25</td><td class="num strong">$27.56</td></tr><tr><td>مارس</td><td class="num">$5.00</td><td class="num">$12.00</td><td class="num">$6.76</td><td class="num">$4.35</td><td class="num">$1.25</td><td class="num strong">$29.36</td></tr><tr><td>أبريل</td><td class="num">$5.00</td><td class="num">$12.00</td><td class="num">$6.76</td><td class="num">$6.15</td><td class="num">$1.25</td><td class="num strong">$31.16</td></tr><tr><td>مايو</td><td class="num">$5.00</td><td class="num">$12.00</td><td class="num">$6.76</td><td class="num">$7.95</td><td class="num">$1.25</td><td class="num strong">$32.96</td></tr><tr><td>يونيو</td><td class="num">$5.00</td><td class="num">$12.00</td><td class="num">$6.76</td><td class="num">$9.75</td><td class="num">$1.25</td><td class="num strong">$34.76</td></tr><tr><td>يوليو</td><td class="num">$5.00</td><td class="num">$12.00</td><td class="num">$6.76</td><td class="num">$11.55</td><td class="num">$1.25</td><td class="num strong">$36.56</td></tr><tr><td>أغسطس</td><td class="num">$5.00</td><td class="num">$12.00</td><td class="num">$6.76</td><td class="num">$13.35</td><td class="num">$1.25</td><td class="num strong">$38.36</td></tr><tr><td>سبتمبر</td><td class="num">$5.00</td><td class="num">$12.00</td><td class="num">$6.76</td><td class="num">$15.15</td><td class="num">$1.25</td><td class="num strong">$40.16</td></tr><tr><td>أكتوبر</td><td class="num">$5.00</td><td class="num">$12.00</td><td class="num">$6.76</td><td class="num">$16.95</td><td class="num">$1.25</td><td class="num strong">$41.96</td></tr><tr><td>نوفمبر</td><td class="num">$5.00</td><td class="num">$12.00</td><td class="num">$6.76</td><td class="num">$18.75</td><td class="num">$1.25</td><td class="num strong">$43.76</td></tr><tr><td>ديسمبر</td><td class="num">$5.00</td><td class="num">$12.00</td><td class="num">$6.76</td><td class="num">$20.55</td><td class="num">$1.25</td><td class="num strong">$45.56</td></tr>
+</tbody>
+<tfoot><tr><td>الإجمالي</td><td class="num">$60.00</td><td class="num">$144.00</td><td class="num">$81.12</td><td class="num">$127.80</td><td class="num">$15.00</td><td class="num">$427.92</td></tr></tfoot>
+</table>
+
+<div class="note">
+<strong>تكاليف غير مالية لازم تحطها في الحسبان في B1:</strong><br>
+• <strong>لا توجد نقطة استرجاع زمنية (PITR) على Flex</strong> — لازم تعمل نسخ احتياطي يدوي (<code>mongodump</code> → رفعه على R2) بكرون يومي، وده استهلاك CPU بسيط على Workers + مساحة R2.<br>
+• <strong>حد 5GB تخزين على Flex:</strong> بياناتنا المتوقعة ≈0.5-1GB في السنة الأولى، يعني هتكفي ~3-4 سنين لو بتنضّف البيانات القديمة. أول ما تتعدّى 5GB هتضطر تنتقل لـ M10 ($75-85/شهر) وده يقفز بالفاتورة لـ $1,208.92/سنة.<br>
+• <strong>زمن الاستجابة:</strong> كل استعلام = رحلة من الـ Edge إلى منطقة Atlas → +50 إلى +150ms لكل طلب API.<br>
+• <strong>حجم حزمة الـ Worker</strong> هيزيد بدريفر mongodb (ضمن حد الـ 10MB على الباقة المدفوعة) وبرد الـ cold start هيطول.<br>
+• <strong>إعادة كتابة الكود:</strong> كل ملفات <code>routes/</code> ومستهلكي الطوابير من SQL إلى Mongo — والترحيل نفسه.<br>
+• <strong>نقطة إيجابية:</strong> Flex بيوفّر <strong>MongoDB Search</strong> (بديل مقبول لـ FTS5 في البحث الداخلي) ونقل بيانات مجاني غير محدود، فمش هتخسر ميزة البحث.<br>
+• <strong>الـ connection pooling:</strong> مفيش Hyperdrive لـ Mongo → استخدم <code>maxPoolSize: 1</code> وراقب عدد الاتصالات.
+</div>
+
+<h2>13. إزاي نوصل للتكلفة قرابة 700$/سنة؟</h2>
+<p class="muted">نقطة البداية = <strong>$219.36/سنة</strong> (التصميم الحالي في السنوات التالية). عندك طريقين: <strong>ترقيات حقيقية</strong> تضيف موثوقية ودعماً، أو <strong>تغيير افتراضات</strong> يرفع الرقم طبيعياً.</p>
+
+<h3>أولاً: قائمة الرافعات (اختار منها)</h3>
+<table>
+<thead><tr><th>الرافعة</th><th class="num">التكلفة/سنة</th><th>إيه اللي بتضيفه</th><th>الأولوية</th></tr></thead>
+<tbody>
+<tr><td>Supabase Pro (بدل المجاني)</td><td class="num strong">$300.00</td><td class="muted">يلغي خطر إيقاف المشروع المجاني + SMTP مخصص + نسخ احتياطي يومي + دعم</td><td>عالية</td></tr><tr><td>Cloudflare Pro للنطاق ($20/شهر)</td><td class="num strong">$240.00</td><td class="muted">WAF مُدار + قواعد صفحات + تحسين صور + دعم 24/7</td><td>متوسطة</td></tr><tr><td>Apple Developer (تطبيق iOS)</td><td class="num strong">$99.00</td><td class="muted">لازم لو هتنزّل التطبيق على App Store</td><td>حسب الحاجة</td></tr><tr><td>مراقبة Uptime + Logs (Better Stack $10/شهر)</td><td class="num strong">$120.00</td><td class="muted">تنبيه قبل ما الطلاب يشتكوا — يراقب الـ API والـ Worker</td><td>متوسطة</td></tr><tr><td>Sentry Developer ($26/شهر)</td><td class="num strong">$312.00</td><td class="muted">تتبّع أخطاء التطبيق — المجاني (5k خطأ/شهر) يكفي غالباً</td><td>منخفضة</td></tr><tr><td>MongoDB Atlas Flex (بدل D1)</td><td class="num strong">$144.00</td><td class="muted">فقط لو فريقك أريح مع Mongo — D1 بـ $0 وأسرع</td><td>اختياري</td></tr><tr><td>تخزين Bunny 100GB ($0.055/GB)</td><td class="num strong">$66.00</td><td class="muted">نسخة احتياطية من الفيديو + إمكانية إعادة النقل</td><td>متوسطة</td></tr><tr><td>نسخ احتياطي D1 → R2 (كرون يومي)</td><td class="num strong">$2.00</td><td class="muted">أرخص وأهم بند أمان في القائمة</td><td>عالية</td></tr><tr><td>Resend / SMTP للإيميلات ($20/شهر)</td><td class="num strong">$240.00</td><td class="muted">إيميلات التفعيل واسترجاع كلمة المرور — المجاني 3k/شهر يكفي</td><td>منخفضة</td></tr><tr><td>هامش طوارئ 10%</td><td class="num strong">$22.00</td><td class="muted">لأي تجاوز غير متوقع</td><td>موصى به</td></tr>
+</tbody>
+</table>
+
+<h3>ثانياً: باقات جاهزة قريبة من 700$</h3>
+<div class="grid2" style="grid-template-columns:repeat(3,1fr)">
+<div class="card" style="border:2px solid #0F766E">
+<h3>باقة «إنتاج مستقر» — مُوصى بها ✅</h3>
+<ul><li>الأساس (سنوات تالية) — <strong>$219.36</strong></li><li>Supabase Pro — <strong>$300.00</strong></li><li>مراقبة Uptime + Logs — <strong>$120.00</strong></li><li>تخزين Bunny 100GB — <strong>$66.00</strong></li><li>نسخ احتياطي D1 → R2 — <strong>$2.00</strong></li></ul>
+<p style="margin:10px 0 0;font-size:20px;font-weight:700;color:#0F766E">$707.36/سنة</p>
+<p class="muted" style="margin:2px 0 0;font-size:12px">≈ $58.9/شهر · التكلفة على الطالب $0.35/سنة</p>
+</div><div class="card" style="">
+<h3>باقة «إنتاج + iOS»</h3>
+<ul><li>الأساس (سنوات تالية) — <strong>$219.36</strong></li><li>Supabase Pro — <strong>$300.00</strong></li><li>Apple Developer — <strong>$99.00</strong></li><li>تخزين Bunny 100GB — <strong>$66.00</strong></li><li>نسخ احتياطي D1 → R2 — <strong>$2.00</strong></li></ul>
+<p style="margin:10px 0 0;font-size:20px;font-weight:700;color:#0F766E">$686.36/سنة</p>
+<p class="muted" style="margin:2px 0 0;font-size:12px">≈ $57.2/شهر · التكلفة على الطالب $0.34/سنة</p>
+</div><div class="card" style="">
+<h3>باقة «أداء + حماية»</h3>
+<ul><li>الأساس (سنوات تالية) — <strong>$219.36</strong></li><li>Supabase Pro — <strong>$300.00</strong></li><li>Cloudflare Pro للنطاق — <strong>$240.00</strong></li><li>نسخ احتياطي D1 → R2 — <strong>$2.00</strong></li></ul>
+<p style="margin:10px 0 0;font-size:20px;font-weight:700;color:#0F766E">$761.36/سنة</p>
+<p class="muted" style="margin:2px 0 0;font-size:12px">≈ $63.4/شهر · التكلفة على الطالب $0.38/سنة</p>
+</div>
+</div>
+
+<h3>ثالثاً: نفس الرقم من تغيير الافتراضات فقط (بدون أي خدمة مدفوعة)</h3>
+<table>
+<thead><tr><th>التغيير في الافتراضات</th><th class="num">الزيادة/سنة</th><th class="num">الإجمالي التراكمي</th></tr></thead>
+<tbody>
+<tr><td>نقطة البداية (التصميم الحالي)</td><td class="num">—</td><td class="num">$219.36</td></tr>
+<tr><td>الاحتفاظ 12 شهر متحرك (بدل حذف بنهاية السنة)</td><td class="num">+$129.60</td><td class="num strong">$348.96</td></tr><tr><td>سحب Bunny بتسعير الشرق الأوسط (0.06$/GB)</td><td class="num">+$75.60</td><td class="num strong">$424.56</td></tr><tr><td>بدون كاش حافة (كل القراءات من R2)</td><td class="num">+$31.44</td><td class="num strong">$456.00</td></tr><tr><td>10,000 طالب بدل 2,000</td><td class="num">+$13.00</td><td class="num strong">$469.00</td></tr><tr><td>منصة ثانية على نفس الحساب (مدرس تاني)</td><td class="num">+$143.00</td><td class="num strong">$612.00</td></tr>
+</tbody>
+<tfoot><tr><td>أقصى رقم طبيعي بدون أي خدمة مدفوعة</td><td class="num">—</td><td class="num">$612.00</td></tr></tfoot>
+</table>
+
+<div class="ok">
+<strong>التوصية:</strong> لو الميزانية المستهدفة ~$700/سنة، خُد <strong>باقة «إنتاج مستقر» = $707.36</strong>:
+Supabase Pro (تشيل أكبر خطر إنتاجي: إيقاف المشروع المجاني وحد الإيميلات) + مراقبة Uptime (تعرف قبل الطلاب) +
+تخزين Bunny 100 جيجا كنسخة احتياطية للفيديو + نسخ احتياطي يومي لـ D1 على R2 بـ $2.
+ده يديك منصة بمستوى إنتاج حقيقي بـ <strong>$59/شهر</strong> — لسه أقل من <strong>4%</strong> من تكلفة نفس الحمل على Cloudflare Stream.
+<br><br>
+<strong>ملاحظة أمانة:</strong> الرقم الطبيعي (من تغيير الافتراضات بس) أقصاه <strong>$612.00</strong>،
+يعني عشان توصل 700 بثبات وتستفيد فعلاً، الطريق الصح هو الترقيات — مش تضخيم الافتراضات.
+</div>
+
+<footer>
+مصادر الأسعار (تم التحقق منها في 16 سبتمبر 2026):
+Cloudflare R2 / Workers / D1 / KV / Queues / Images / Stream — developers.cloudflare.com •
+Bunny Stream — bunny.net/docs/stream/pricing •
+Supabase — حتى 50,000 MAU مجاناً • Firebase Cloud Messaging — مجاني.<br>
+الأسعار بالدولار الأمريكي، والقيم المصرية تحويل تقديري. ملف Excel المرفق فيه معادلات حية — عدّل المدخلات الصفراء وتحدّث كل الجداول تلقائياً.
+</footer>
+
+</div>
+</body>
+</html>

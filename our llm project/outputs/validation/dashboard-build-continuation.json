@@ -1,0 +1,118 @@
+{
+  "startedAt": "2026-09-15T03:01:56.280Z",
+  "finishedAt": "2026-09-15T03:04:46.390Z",
+  "success": true,
+  "status": "static_export_and_zip_verified",
+  "sourcePath": "C:\\Users\\kayf\\Desktop\\student project\\dashboard",
+  "stagingPath": "C:\\Users\\kayf\\Desktop\\student project\\.workbuddy-ai\\build-checks\\dashboard-20260915T030156280Z-9fa93705-1095-4c2b-a282-dea83b0ae4f4",
+  "buildPath": "C:\\Users\\kayf\\Desktop\\student project\\.workbuddy-ai\\build-checks\\dashboard-20260915T030156280Z-9fa93705-1095-4c2b-a282-dea83b0ae4f4\\.next",
+  "exportPath": "C:\\Users\\kayf\\Desktop\\student project\\.workbuddy-ai\\build-checks\\dashboard-20260915T030156280Z-9fa93705-1095-4c2b-a282-dea83b0ae4f4\\out",
+  "logPath": "C:\\Users\\kayf\\Desktop\\student project\\outputs\\validation\\dashboard-build-continuation.txt",
+  "resultPath": "C:\\Users\\kayf\\Desktop\\student project\\outputs\\validation\\dashboard-build-continuation.json",
+  "nodePath": "C:/Users/kayf/.workbuddy-ai/binaries/node/versions/22.22.2-2/node.exe",
+  "nodeVersion": "v22.22.2",
+  "exitStatus": 0,
+  "signal": null,
+  "blocker": null,
+  "guardConfirmationRequired": false,
+  "compiledSuccessfully": true,
+  "staticPagesGenerated": 15,
+  "staticPagesTotal": 15,
+  "staticPagesCompleted": true,
+  "warnings": [],
+  "originalEnvironmentLoadedInChild": true,
+  "inheritedGuardConfigurationPreserved": true,
+  "buildSucceeded": true,
+  "finalOutDirectoryExists": true,
+  "staticExportVerified": true,
+  "exportDetail": {
+    "success": true,
+    "outDirectory": "C:\\Users\\kayf\\Desktop\\student project\\.workbuddy-ai\\build-checks\\dashboard-20260915T030156280Z-9fa93705-1095-4c2b-a282-dea83b0ae4f4\\out"
+  },
+  "intermediateExportOnly": false,
+  "exportedHtmlCount": 13,
+  "exportedHtml": [
+    "404.html",
+    "dashboard.html",
+    "dashboard/analytics.html",
+    "dashboard/assistants.html",
+    "dashboard/codes.html",
+    "dashboard/courses.html",
+    "dashboard/device-resets.html",
+    "dashboard/exams.html",
+    "dashboard/questions.html",
+    "dashboard/settings.html",
+    "dashboard/students.html",
+    "index.html",
+    "login.html"
+  ],
+  "exportedFileCount": 66,
+  "sourceFingerprint": {
+    "algorithm": "sha256",
+    "before": {
+      "sha256": "a0794574b653035fea4e6275f063c39ffaf8d994c5ba0f2932a1dff9f5d337bd",
+      "metadataSha256": "2fdfca8527cac35a2de47a2a0fd6f2f0adc59af76812261b406ec6d79d2a3d46",
+      "files": 49
+    },
+    "after": {
+      "sha256": "a0794574b653035fea4e6275f063c39ffaf8d994c5ba0f2932a1dff9f5d337bd",
+      "metadataSha256": "2fdfca8527cac35a2de47a2a0fd6f2f0adc59af76812261b406ec6d79d2a3d46",
+      "files": 49
+    },
+    "unchanged": true
+  },
+  "existingArtifactsFingerprint": {
+    "before": {
+      "sha256": "0806fbed234d442c021db516c27dd36f1b4cd2390d47482119c5335f998c8600",
+      "metadataSha256": "3dc6b617585474269626fc5ca5e219c311c6478bf76e1282893a9510bb0408e1",
+      "files": 254
+    },
+    "after": {
+      "sha256": "0806fbed234d442c021db516c27dd36f1b4cd2390d47482119c5335f998c8600",
+      "metadataSha256": "3dc6b617585474269626fc5ca5e219c311c6478bf76e1282893a9510bb0408e1",
+      "files": 254
+    },
+    "unchanged": true
+  },
+  "stagedInputsFingerprint": {
+    "sha256": "a0794574b653035fea4e6275f063c39ffaf8d994c5ba0f2932a1dff9f5d337bd",
+    "metadataSha256": "57439938aebe3f2f924f6ec2995dfeb652dc4b83dbb2d601fa44f52588d2ac88",
+    "files": 49
+  },
+  "originalEnvironmentFileMetadataUnchanged": true,
+  "originalInputsAndArtifactsUnchanged": true,
+  "copiedInputs": [
+    "src",
+    "public",
+    "package.json",
+    "package-lock.json",
+    "next.config.js",
+    "postcss.config.js",
+    "tailwind.config.js",
+    "tsconfig.json",
+    "next-env.d.ts"
+  ],
+  "dependencyJunctionTarget": "C:\\Users\\kayf\\Desktop\\student project\\dashboard\\node_modules",
+  "telemetryDisabled": true,
+  "guardBypassed": false,
+  "buildAttempts": 1,
+  "stagingRetained": true,
+  "previousSupervisorInterruption": {
+    "stagingPath": "C:\\Users\\kayf\\Desktop\\student project\\.workbuddy-ai\\build-checks\\dashboard-20260915T025027916Z-708875e3-a064-434f-a8b6-3f3eb4bef835",
+    "retained": true,
+    "nextBuildStarted": false,
+    "reason": "Background supervisor disappeared before dependency junction creation; no Next build artifacts were created."
+  },
+  "archive": {
+    "path": "C:\\Users\\kayf\\Desktop\\student project\\outputs\\dashboard-static.zip",
+    "created": true,
+    "verified": true,
+    "fileCount": 66,
+    "bytes": 4410159,
+    "sha256": "21583099178adeec13a9c6de67aca41c7bc8eada88087266498b23ba924823e7",
+    "onlyFinalStaticOut": true,
+    "rootContainsOutContents": true
+  },
+  "deploymentAttempted": false,
+  "browserUsed": false
+}

@@ -1,0 +1,77 @@
+# Codemagic configuration for Dr. Physics Student App
+workflows:
+  android-release:
+    name: Build Android APK
+    max_build_duration: 30
+    instance_type: mac_mini_co
+    environment:
+      groups:
+        - keystore_credentials
+      flutter: stable
+    triggering:
+      events:
+        - push
+      branch_patterns:
+        - pattern: main
+          value: true
+          include: true
+    scripts:
+      - name: Set up key.properties and keystore
+        script: |
+          echo $ANDROID_KEYSTORE_BASE64 | base64 --decode > student_app/android/app/dr-physics.jks
+          cat <<EOF > student_app/android/key.properties
+          storePassword=$ANDROID_KEYSTORE_PASSWORD
+          keyPassword=$ANDROID_KEY_PASSWORD
+          keyAlias=$ANDROID_KEY_ALIAS
+          storeFile=app/dr-physics.jks
+          EOF
+      - name: Install dependencies
+        script: |
+          cd student_app
+          flutter pub get
+      - name: Build Android Release APK
+        script: |
+          cd student_app
+          flutter build apk --release --obfuscate --split-debug-info=build/symbols
+    artifacts:
+      - student_app/build/app/outputs/flutter-apk/app-release.apk
+
+  ios-release:
+    name: Build iOS IPA
+    max_build_duration: 60
+    instance_type: mac_mini_co # Apple Silicon M1 VM
+    environment:
+      flutter: stable
+      xcode: latest
+      cocoapods: default
+    triggering:
+      events:
+        - push
+      branch_patterns:
+        - pattern: main
+          value: true
+          include: true
+    scripts:
+      - name: Set up code signing settings
+        script: |
+          # Disable automatic code signing if not configured
+          xcode-project use-profiles --none
+      - name: Install dependencies
+        script: |
+          cd student_app
+          flutter pub get
+      - name: Install CocoaPods
+        script: |
+          cd student_app/ios
+          pod install
+      - name: Build iOS Application (Unsigned Release)
+        script: |
+          cd student_app
+          flutter build ios --release --no-codesign
+      - name: Package App as IPA
+        script: |
+          mkdir -p Payload
+          mv student_app/build/ios/iphoneos/Runner.app Payload/
+          zip -r student_app/build/ios/iphoneos/Runner.ipa Payload
+    artifacts:
+      - student_app/build/ios/iphoneos/Runner.ipa

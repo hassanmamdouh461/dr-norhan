@@ -1,0 +1,162 @@
+[
+  {
+    "results": [
+      {
+        "kind": "TABLE",
+        "obj_name": "lesson_progress",
+        "ddl": "CREATE TABLE lesson_progress (\n  id                       TEXT PRIMARY KEY,\n  student_id               TEXT NOT NULL REFERENCES profiles(id),\n  lesson_id                TEXT NOT NULL REFERENCES \"lessons_old\"(id),\n  course_id                TEXT NOT NULL REFERENCES courses(id),\n  watched_seconds          INTEGER NOT NULL DEFAULT 0,\n  last_position            INTEGER NOT NULL DEFAULT 0,\n  is_completed             INTEGER NOT NULL DEFAULT 0,\n  highest_position_watched INTEGER NOT NULL DEFAULT 0,\n  completed_at             TEXT,\n  updated_at               TEXT NOT NULL DEFAULT (strftime('%Y-%m-%dT%H:%M:%SZ','now')), platform TEXT NOT NULL DEFAULT 'fusha',\n  UNIQUE(student_id, lesson_id)\n)"
+      },
+      {
+        "kind": "TABLE",
+        "obj_name": "lecture_playback_logs",
+        "ddl": "CREATE TABLE lecture_playback_logs (\n  id                  TEXT PRIMARY KEY,\n  student_id          TEXT NOT NULL REFERENCES profiles(id) ON DELETE CASCADE,\n  lesson_id           TEXT NOT NULL REFERENCES \"lessons_old\"(id) ON DELETE CASCADE,\n  action              TEXT NOT NULL CHECK(action IN ('open', 'close')),\n  position_seconds    INTEGER NOT NULL DEFAULT 0,\n  created_at          TEXT NOT NULL DEFAULT (strftime('%Y-%m-%dT%H:%M:%SZ','now'))\n)"
+      },
+      {
+        "kind": "TABLE",
+        "obj_name": "quizzes",
+        "ddl": "CREATE TABLE quizzes (\n  id                  TEXT PRIMARY KEY,\n  course_id           TEXT NOT NULL REFERENCES courses(id) ON DELETE CASCADE,\n  lesson_id           TEXT REFERENCES \"lessons_old\"(id) ON DELETE SET NULL,\n  title               TEXT NOT NULL,\n  max_score           INTEGER NOT NULL DEFAULT 100,\n  is_published        INTEGER NOT NULL DEFAULT 0 CHECK(is_published IN (0, 1)),\n  sort_order          INTEGER NOT NULL DEFAULT 0,\n  created_at          TEXT NOT NULL DEFAULT (strftime('%Y-%m-%dT%H:%M:%SZ','now')),\n  updated_at          TEXT NOT NULL DEFAULT (strftime('%Y-%m-%dT%H:%M:%SZ','now'))\n, randomize_questions INTEGER NOT NULL DEFAULT 0 CHECK(randomize_questions IN (0, 1)), start_time TEXT, end_time TEXT, time_limit_mins INTEGER, is_free INTEGER NOT NULL DEFAULT 0 CHECK(is_free IN (0, 1)), cover_image TEXT DEFAULT NULL, price INTEGER NOT NULL DEFAULT 0, is_custom INTEGER NOT NULL DEFAULT 0 CHECK(is_custom IN (0, 1)))"
+      }
+    ],
+    "success": true,
+    "meta": {
+      "duration": 2
+    }
+  },
+  {
+    "results": [
+      {
+        "kind": "INDEX",
+        "obj_name": "sqlite_autoindex_lesson_progress_1",
+        "ddl": "(implicit autoindex)"
+      },
+      {
+        "kind": "INDEX",
+        "obj_name": "sqlite_autoindex_lesson_progress_2",
+        "ddl": "(implicit autoindex)"
+      },
+      {
+        "kind": "INDEX",
+        "obj_name": "idx_progress_student",
+        "ddl": "CREATE INDEX idx_progress_student ON lesson_progress(student_id)"
+      },
+      {
+        "kind": "INDEX",
+        "obj_name": "idx_progress_course",
+        "ddl": "CREATE INDEX idx_progress_course ON lesson_progress(course_id)"
+      },
+      {
+        "kind": "INDEX",
+        "obj_name": "sqlite_autoindex_lecture_playback_logs_1",
+        "ddl": "(implicit autoindex)"
+      },
+      {
+        "kind": "INDEX",
+        "obj_name": "idx_playback_logs_student",
+        "ddl": "CREATE INDEX idx_playback_logs_student ON lecture_playback_logs(student_id)"
+      },
+      {
+        "kind": "INDEX",
+        "obj_name": "idx_playback_logs_lesson",
+        "ddl": "CREATE INDEX idx_playback_logs_lesson ON lecture_playback_logs(lesson_id)"
+      },
+      {
+        "kind": "INDEX",
+        "obj_name": "idx_playback_logs_created",
+        "ddl": "CREATE INDEX idx_playback_logs_created ON lecture_playback_logs(created_at)"
+      },
+      {
+        "kind": "INDEX",
+        "obj_name": "sqlite_autoindex_quizzes_1",
+        "ddl": "(implicit autoindex)"
+      },
+      {
+        "kind": "INDEX",
+        "obj_name": "idx_quizzes_course",
+        "ddl": "CREATE INDEX idx_quizzes_course ON quizzes(course_id)"
+      },
+      {
+        "kind": "INDEX",
+        "obj_name": "idx_quizzes_lesson",
+        "ddl": "CREATE INDEX idx_quizzes_lesson ON quizzes(lesson_id)"
+      },
+      {
+        "kind": "INDEX",
+        "obj_name": "idx_lesson_progress_platform",
+        "ddl": "CREATE INDEX idx_lesson_progress_platform ON lesson_progress(platform)"
+      }
+    ],
+    "success": true,
+    "meta": {
+      "duration": 0
+    }
+  },
+  {
+    "results": [
+      {
+        "kind": "REFERENCES_QUIZZES",
+        "obj_name": "quiz_attempts",
+        "ddl": "CREATE TABLE quiz_attempts (\n  id                  TEXT PRIMARY KEY,\n  student_id          TEXT NOT NULL REFERENCES profiles(id) ON DELETE CASCADE,\n  quiz_id             TEXT NOT NULL REFERENCES quizzes(id) ON DELETE CASCADE,\n  score               REAL NOT NULL DEFAULT 0.0,\n  submitted_at        TEXT NOT NULL DEFAULT (strftime('%Y-%m-%dT%H:%M:%SZ','now')),\n  created_at          TEXT NOT NULL DEFAULT (strftime('%Y-%m-%dT%H:%M:%SZ','now')), answers_json TEXT, started_at TEXT, is_submitted INTEGER NOT NULL DEFAULT 1 CHECK(is_submitted IN (0, 1)),\n  UNIQUE(student_id, quiz_id)\n)"
+      },
+      {
+        "kind": "REFERENCES_QUIZZES",
+        "obj_name": "quiz_questions",
+        "ddl": "CREATE TABLE quiz_questions (\n  id              TEXT PRIMARY KEY,\n  quiz_id         TEXT NOT NULL REFERENCES quizzes(id) ON DELETE CASCADE,\n  question_text   TEXT,\n  image_url       TEXT,\n  options_json    TEXT NOT NULL, \n  correct_option  TEXT NOT NULL, \n  score           INTEGER NOT NULL DEFAULT 1,\n  sort_order      INTEGER NOT NULL DEFAULT 0,\n  created_at      TEXT NOT NULL DEFAULT (strftime('%Y-%m-%dT%H:%M:%SZ','now')),\n  updated_at      TEXT NOT NULL DEFAULT (strftime('%Y-%m-%dT%H:%M:%SZ','now'))\n, explanation TEXT)"
+      },
+      {
+        "kind": "REFERENCES_QUIZZES",
+        "obj_name": "exam_questions",
+        "ddl": "CREATE TABLE exam_questions (\n  id               TEXT PRIMARY KEY,\n  quiz_id          TEXT NOT NULL REFERENCES quizzes(id) ON DELETE CASCADE,\n  question_id      TEXT NOT NULL REFERENCES question_bank(id) ON DELETE CASCADE,\n  sort_order       INTEGER NOT NULL DEFAULT 0,\n  points_override  INTEGER,\n  created_at       TEXT NOT NULL DEFAULT (strftime('%Y-%m-%dT%H:%M:%SZ','now')),\n  UNIQUE(quiz_id, question_id)\n)"
+      },
+      {
+        "kind": "REFERENCES_QUIZZES",
+        "obj_name": "purchase_requests",
+        "ddl": "CREATE TABLE purchase_requests (\n  id                  TEXT PRIMARY KEY,\n  platform            TEXT NOT NULL DEFAULT 'fusha',\n  student_id          TEXT NOT NULL REFERENCES profiles(id) ON DELETE CASCADE,\n  target_type         TEXT NOT NULL CHECK(target_type IN ('exam', 'course', 'bundle')),\n  exam_id             TEXT REFERENCES quizzes(id) ON DELETE SET NULL,\n  course_id           TEXT REFERENCES courses(id) ON DELETE SET NULL,\n  bundle_id           TEXT REFERENCES bundles(id) ON DELETE SET NULL,\n  amount              INTEGER NOT NULL DEFAULT 0,\n  transfer_image_url  TEXT,\n  status              TEXT NOT NULL DEFAULT 'pending' CHECK(status IN ('pending', 'approved', 'rejected')),\n  reviewed_by         TEXT REFERENCES profiles(id) ON DELETE SET NULL,\n  reviewed_at         TEXT,\n  rejection_reason    TEXT,\n  created_at          TEXT NOT NULL DEFAULT (strftime('%Y-%m-%dT%H:%M:%SZ','now')),\n  updated_at          TEXT\n)"
+      },
+      {
+        "kind": "REFERENCES_QUIZZES",
+        "obj_name": "exam_build_requests",
+        "ddl": "CREATE TABLE exam_build_requests (\n  id                TEXT PRIMARY KEY,\n  platform          TEXT NOT NULL DEFAULT 'fusha',\n  student_id        TEXT NOT NULL REFERENCES profiles(id) ON DELETE CASCADE,\n  title             TEXT NOT NULL,\n  description       TEXT,\n  duration_minutes  INTEGER NOT NULL,\n  question_count    INTEGER NOT NULL,\n  section_ids_json  TEXT,\n  chapter_ids_json  TEXT,\n  price             INTEGER NOT NULL DEFAULT 0,\n  transfer_image_url TEXT,\n  status            TEXT NOT NULL DEFAULT 'pending' CHECK(status IN ('pending', 'approved', 'rejected')),\n  admin_notes       TEXT,\n  generated_quiz_id TEXT REFERENCES quizzes(id) ON DELETE SET NULL,\n  reviewed_by       TEXT REFERENCES profiles(id) ON DELETE SET NULL,\n  reviewed_at       TEXT,\n  created_at        TEXT NOT NULL DEFAULT (strftime('%Y-%m-%dT%H:%M:%SZ','now')),\n  updated_at        TEXT\n)"
+      }
+    ],
+    "success": true,
+    "meta": {
+      "duration": 0
+    }
+  },
+  {
+    "results": [
+      {
+        "kind": "REFERENCES_LESSONS_OLD",
+        "obj_name": "lesson_progress",
+        "ddl": "CREATE TABLE lesson_progress (\n  id                       TEXT PRIMARY KEY,\n  student_id               TEXT NOT NULL REFERENCES profiles(id),\n  lesson_id                TEXT NOT NULL REFERENCES \"lessons_old\"(id),\n  course_id                TEXT NOT NULL REFERENCES courses(id),\n  watched_seconds          INTEGER NOT NULL DEFAULT 0,\n  last_position            INTEGER NOT NULL DEFAULT 0,\n  is_completed             INTEGER NOT NULL DEFAULT 0,\n  highest_position_watched INTEGER NOT NULL DEFAULT 0,\n  completed_at             TEXT,\n  updated_at               TEXT NOT NULL DEFAULT (strftime('%Y-%m-%dT%H:%M:%SZ','now')), platform TEXT NOT NULL DEFAULT 'fusha',\n  UNIQUE(student_id, lesson_id)\n)"
+      },
+      {
+        "kind": "REFERENCES_LESSONS_OLD",
+        "obj_name": "lecture_playback_logs",
+        "ddl": "CREATE TABLE lecture_playback_logs (\n  id                  TEXT PRIMARY KEY,\n  student_id          TEXT NOT NULL REFERENCES profiles(id) ON DELETE CASCADE,\n  lesson_id           TEXT NOT NULL REFERENCES \"lessons_old\"(id) ON DELETE CASCADE,\n  action              TEXT NOT NULL CHECK(action IN ('open', 'close')),\n  position_seconds    INTEGER NOT NULL DEFAULT 0,\n  created_at          TEXT NOT NULL DEFAULT (strftime('%Y-%m-%dT%H:%M:%SZ','now'))\n)"
+      },
+      {
+        "kind": "REFERENCES_LESSONS_OLD",
+        "obj_name": "quizzes",
+        "ddl": "CREATE TABLE quizzes (\n  id                  TEXT PRIMARY KEY,\n  course_id           TEXT NOT NULL REFERENCES courses(id) ON DELETE CASCADE,\n  lesson_id           TEXT REFERENCES \"lessons_old\"(id) ON DELETE SET NULL,\n  title               TEXT NOT NULL,\n  max_score           INTEGER NOT NULL DEFAULT 100,\n  is_published        INTEGER NOT NULL DEFAULT 0 CHECK(is_published IN (0, 1)),\n  sort_order          INTEGER NOT NULL DEFAULT 0,\n  created_at          TEXT NOT NULL DEFAULT (strftime('%Y-%m-%dT%H:%M:%SZ','now')),\n  updated_at          TEXT NOT NULL DEFAULT (strftime('%Y-%m-%dT%H:%M:%SZ','now'))\n, randomize_questions INTEGER NOT NULL DEFAULT 0 CHECK(randomize_questions IN (0, 1)), start_time TEXT, end_time TEXT, time_limit_mins INTEGER, is_free INTEGER NOT NULL DEFAULT 0 CHECK(is_free IN (0, 1)), cover_image TEXT DEFAULT NULL, price INTEGER NOT NULL DEFAULT 0, is_custom INTEGER NOT NULL DEFAULT 0 CHECK(is_custom IN (0, 1)))"
+      }
+    ],
+    "success": true,
+    "meta": {
+      "duration": 0
+    }
+  },
+  {
+    "results": [
+      {
+        "kind": "FK_CHECK",
+        "obj_name": "foreign_key_check",
+        "ddl": "(none)"
+      }
+    ],
+    "success": true,
+    "meta": {
+      "duration": 2
+    }
+  }
+]

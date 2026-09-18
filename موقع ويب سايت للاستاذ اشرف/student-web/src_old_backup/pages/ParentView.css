@@ -1,0 +1,315 @@
+/* عرض وليّ الأمر — هوية فُصْحَى
+   كل الألوان من متغيرات التوكنات (RGB triplets) — لا ألوان حرفية. */
+
+.pv-page {
+  min-height: 100vh;
+  background: rgb(var(--background));
+  color: rgb(var(--on-background));
+  padding-block: 32px;
+  padding-inline: 16px;
+}
+
+.pv-shell {
+  max-width: 1120px;
+  margin-inline: auto;
+}
+
+/* ── الترويسة ── */
+.pv-header {
+  margin-block-end: 32px;
+}
+
+.pv-title {
+  font-family: var(--font-body);
+  font-size: 32px;
+  font-weight: 800;
+  line-height: 42px;
+  color: rgb(var(--primary));
+  margin-block-end: 8px;
+}
+
+.pv-subtitle {
+  font-size: 16px;
+  line-height: 26px;
+  color: rgb(var(--on-surface-variant));
+}
+
+/* ── مُنتقي الأبناء ── */
+.pv-children {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-block-start: 24px;
+}
+
+.pv-chip {
+  min-height: 48px;
+  padding-inline: 24px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: var(--radius-full);
+  border: 2px solid rgb(var(--outline-variant));
+  background: rgb(var(--surface));
+  color: rgb(var(--on-surface));
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 200ms var(--motion-easing), border-color 200ms var(--motion-easing);
+}
+
+.pv-chip:hover {
+  border-color: rgb(var(--outline));
+  background: rgb(var(--surface-container-high));
+}
+
+.pv-chip[aria-pressed='true'] {
+  background: rgb(var(--primary));
+  border-color: rgb(var(--primary));
+  color: rgb(var(--on-primary));
+}
+
+/* ── البطاقات الإحصائية ── */
+.pv-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-block-end: 32px;
+}
+
+.pv-card {
+  background: rgb(var(--surface));
+  border: 1px solid rgb(var(--outline-variant));
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  box-shadow: var(--shadow-sm);
+}
+
+.pv-stat-label {
+  font-size: 14px;
+  line-height: 22px;
+  color: rgb(var(--on-surface-variant));
+  margin-block-end: 8px;
+}
+
+.pv-stat-value {
+  font-size: 32px;
+  font-weight: 800;
+  line-height: 42px;
+  color: rgb(var(--primary));
+}
+
+.pv-stat-unit {
+  font-size: 16px;
+  font-weight: 600;
+  color: rgb(var(--on-surface-variant));
+  margin-inline-start: 4px;
+}
+
+/* ── الأقسام ── */
+.pv-section {
+  margin-block-end: 32px;
+}
+
+.pv-section-title {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 28px;
+  color: rgb(var(--primary));
+  margin-block-end: 16px;
+}
+
+/* ── تقدّم الكورسات ── */
+.pv-course {
+  padding-block: 16px;
+  border-block-end: 1px solid rgb(var(--outline-variant));
+}
+
+.pv-course:last-child {
+  border-block-end: none;
+}
+
+.pv-course-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  margin-block-end: 8px;
+}
+
+.pv-course-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: rgb(var(--on-surface));
+}
+
+.pv-course-meta {
+  font-size: 14px;
+  color: rgb(var(--on-surface-variant));
+}
+
+.pv-track {
+  height: 8px;
+  border-radius: var(--radius-full);
+  background: rgb(var(--surface-container-high));
+  overflow: hidden;
+}
+
+.pv-fill {
+  height: 100%;
+  border-radius: var(--radius-full);
+  background: rgb(var(--secondary));
+  transition: width 300ms var(--motion-easing);
+}
+
+/* ── جدول الدرجات ── */
+.pv-table-wrap {
+  overflow-x: auto;
+  border: 1px solid rgb(var(--outline-variant));
+  border-radius: var(--radius-lg);
+  background: rgb(var(--surface));
+}
+
+.pv-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.pv-table th,
+.pv-table td {
+  padding: 16px;
+  text-align: start;
+  border-block-end: 1px solid rgb(var(--outline-variant));
+}
+
+.pv-table th {
+  font-size: 14px;
+  font-weight: 700;
+  color: rgb(var(--primary));
+  background: rgb(var(--surface-container-high));
+  white-space: nowrap;
+}
+
+.pv-table tr:last-child td {
+  border-block-end: none;
+}
+
+.pv-num {
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.pv-above {
+  color: rgb(var(--success));
+  font-weight: 700;
+}
+
+.pv-below {
+  color: rgb(var(--error));
+  font-weight: 700;
+}
+
+/* ── ملاحظات الأستاذ ── */
+.pv-note {
+  background: rgb(var(--surface));
+  border: 1px solid rgb(var(--outline-variant));
+  border-inline-start: 4px solid rgb(var(--accent));
+  border-radius: var(--radius-md);
+  padding: 16px;
+  margin-block-end: 16px;
+}
+
+.pv-note.unread {
+  background: rgb(var(--accent-container));
+}
+
+.pv-note-body {
+  font-size: 16px;
+  line-height: 26px;
+  color: rgb(var(--on-surface));
+  margin-block-end: 8px;
+}
+
+.pv-note-meta {
+  font-size: 12px;
+  line-height: 18px;
+  color: rgb(var(--on-surface-variant));
+}
+
+.pv-mark-read {
+  min-height: 48px;
+  padding-inline: 24px;
+  border-radius: var(--radius-md);
+  border: 2px solid rgb(var(--primary));
+  background: rgb(var(--primary));
+  color: rgb(var(--on-primary));
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 200ms var(--motion-easing), background 200ms var(--motion-easing);
+}
+
+.pv-mark-read:hover {
+  background: rgb(var(--primary-container));
+  color: rgb(var(--on-primary-container));
+}
+
+.pv-mark-read:active {
+  transform: scale(0.98);
+}
+
+/* ── حالات التحميل / الفراغ / الخطأ ── */
+.pv-skeleton {
+  height: 96px;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(
+    90deg,
+    rgb(var(--surface-container-high)) 25%,
+    rgb(var(--surface-container-highest)) 37%,
+    rgb(var(--surface-container-high)) 63%
+  );
+  background-size: 400% 100%;
+  animation: pv-shimmer 1.6s ease-in-out infinite;
+  margin-block-end: 16px;
+}
+
+@keyframes pv-shimmer {
+  0% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.pv-empty,
+.pv-error {
+  background: rgb(var(--surface));
+  border: 1px solid rgb(var(--outline-variant));
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  text-align: center;
+  color: rgb(var(--on-surface-variant));
+  font-size: 16px;
+  line-height: 26px;
+}
+
+.pv-error {
+  border-color: rgb(var(--error));
+  background: rgb(var(--error-container));
+  color: rgb(var(--on-error-container));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pv-skeleton {
+    animation: none;
+  }
+  .pv-fill,
+  .pv-chip,
+  .pv-mark-read {
+    transition: none;
+  }
+}

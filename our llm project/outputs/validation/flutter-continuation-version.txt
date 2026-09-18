@@ -1,0 +1,10 @@
+cwd: C:\Users\kayf\Desktop\student project\student_app
+command: C:/Users/kayf/flutter-sdk/flutter/bin/flutter.bat --version
+env: CI=true FLUTTER_SUPPRESS_ANALYTICS=true
+
+Flutter 3.22.2 • channel stable • https://github.com/flutter/flutter.git
+Framework • revision 761747bfc5 (2 years, 3 months ago) • 2024-06-05 22:15:13 +0200
+Engine • revision edd8546116
+Tools • Dart 3.4.3 • DevTools 2.34.3
+
+exit_code: 0

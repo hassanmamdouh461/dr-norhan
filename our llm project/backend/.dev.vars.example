@@ -1,0 +1,9 @@
+# Example local secrets configuration for Cloudflare Workers (Hono backend)
+# Copy this file to '.dev.vars' in the same folder and add your actual local values.
+# Do NOT commit '.dev.vars' to Git.
+
+SUPABASE_JWT_SECRET="your_supabase_jwt_secret"
+BUNNY_API_KEY="your_bunny_stream_library_api_key"
+R2_ACCESS_KEY_ID="your_r2_access_key_id"
+R2_SECRET_ACCESS_KEY="your_r2_secret_access_key"
+FIREBASE_SERVICE_ACCOUNT_JSON="{\"type\": \"service_account\", \"project_id\": \"your-project-id\", ...}"

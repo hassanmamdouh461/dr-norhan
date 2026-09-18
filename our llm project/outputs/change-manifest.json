@@ -1,0 +1,192 @@
+[
+  {
+    "path": "backend/src/routes/admin-regression.test.ts",
+    "change": "added",
+    "bytes": 17467
+  },
+  {
+    "path": "backend/src/routes/admin.ts",
+    "change": "modified",
+    "bytes": 88331
+  },
+  {
+    "path": "backend/src/routes/auth-devices.test.ts",
+    "change": "added",
+    "bytes": 7062
+  },
+  {
+    "path": "backend/src/routes/auth.ts",
+    "change": "modified",
+    "bytes": 19475
+  },
+  {
+    "path": "backend/src/routes/codes.test.ts",
+    "change": "modified",
+    "bytes": 13315
+  },
+  {
+    "path": "backend/src/routes/courses-regression.test.ts",
+    "change": "added",
+    "bytes": 13963
+  },
+  {
+    "path": "backend/src/routes/courses.ts",
+    "change": "modified",
+    "bytes": 41757
+  },
+  {
+    "path": "backend/src/routes/playback-token.test.ts",
+    "change": "added",
+    "bytes": 10671
+  },
+  {
+    "path": "backend/src/routes/playback.ts",
+    "change": "modified",
+    "bytes": 37265
+  },
+  {
+    "path": "backend/src/routes/security.test.ts",
+    "change": "modified",
+    "bytes": 10240
+  },
+  {
+    "path": "dashboard/src/app/dashboard/courses/components/CourseFormModal.tsx",
+    "change": "modified",
+    "bytes": 22546
+  },
+  {
+    "path": "dashboard/src/app/dashboard/courses/page.tsx",
+    "change": "modified",
+    "bytes": 20768
+  },
+  {
+    "path": "dashboard/src/app/dashboard/exams/dashboard-page-regression-harness.cjs",
+    "change": "added",
+    "bytes": 5200
+  },
+  {
+    "path": "dashboard/src/app/dashboard/exams/exam-metadata.ts",
+    "change": "added",
+    "bytes": 1591
+  },
+  {
+    "path": "dashboard/src/app/dashboard/exams/exam-selection-regression.test.cjs",
+    "change": "added",
+    "bytes": 22753
+  },
+  {
+    "path": "dashboard/src/app/dashboard/exams/page.tsx",
+    "change": "modified",
+    "bytes": 64888
+  },
+  {
+    "path": "dashboard/src/app/dashboard/layout.tsx",
+    "change": "modified",
+    "bytes": 26479
+  },
+  {
+    "path": "dashboard/src/app/dashboard/questions/page.tsx",
+    "change": "modified",
+    "bytes": 29779
+  },
+  {
+    "path": "dashboard/src/app/dashboard/questions/question-selection-regression.test.cjs",
+    "change": "added",
+    "bytes": 8233
+  },
+  {
+    "path": "student-web/src/components/ui/Modal.accessibility.regression.test.mjs",
+    "change": "added",
+    "bytes": 20808
+  },
+  {
+    "path": "student-web/src/components/ui/Modal.tsx",
+    "change": "modified",
+    "bytes": 8494
+  },
+  {
+    "path": "student-web/src/pages/home/assessmentContract.test.mjs",
+    "change": "added",
+    "bytes": 23213
+  },
+  {
+    "path": "student-web/src/pages/home/assessmentContract.ts",
+    "change": "added",
+    "bytes": 2511
+  },
+  {
+    "path": "student-web/src/pages/home/modals/ExamModal.tsx",
+    "change": "modified",
+    "bytes": 11238
+  },
+  {
+    "path": "student-web/src/pages/home/useExamFlow.ts",
+    "change": "modified",
+    "bytes": 5738
+  },
+  {
+    "path": "student-web/src/pages/Home.tsx",
+    "change": "modified",
+    "bytes": 17664
+  },
+  {
+    "path": "student-web/src/pages/LessonPlayer.tsx",
+    "change": "modified",
+    "bytes": 106097
+  },
+  {
+    "path": "student-web/src/pages/player/QuizPanel.tsx",
+    "change": "modified",
+    "bytes": 15245
+  },
+  {
+    "path": "student_app/lib/main.dart",
+    "change": "modified",
+    "bytes": 9079
+  },
+  {
+    "path": "student_app/lib/screens/course_details_screen.dart",
+    "change": "modified",
+    "bytes": 37959
+  },
+  {
+    "path": "student_app/lib/screens/pdf_viewer_screen.dart",
+    "change": "modified",
+    "bytes": 9425
+  },
+  {
+    "path": "student_app/lib/services/api_service.dart",
+    "change": "modified",
+    "bytes": 13440
+  },
+  {
+    "path": "student_app/test/api_service_test.dart",
+    "change": "added",
+    "bytes": 14389
+  },
+  {
+    "path": "student_app/test/course_details_screen_test.dart",
+    "change": "added",
+    "bytes": 9207
+  },
+  {
+    "path": "student_app/test/pdf_viewer_screen_test.dart",
+    "change": "added",
+    "bytes": 5025
+  },
+  {
+    "path": "student_app/test/widget_test.dart",
+    "change": "modified",
+    "bytes": 4075
+  },
+  {
+    "path": "student-web/lesson-player-generation.worker-regression.cjs",
+    "change": "added",
+    "bytes": 19429
+  },
+  {
+    "path": "scripts/validate_parallel_changes.cjs",
+    "change": "added",
+    "bytes": 5111
+  }
+]

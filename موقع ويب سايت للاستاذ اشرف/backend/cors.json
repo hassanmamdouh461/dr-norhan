@@ -1,0 +1,34 @@
+{
+  "rules": [
+    {
+      "id": "allow-dashboard-cors",
+      "allowed": {
+        "origins": [
+          "https://fusha.site",
+          "https://www.fusha.site",
+          "https://dashboard.fusha.site",
+          "https://fusha-student-web.pages.dev",
+          "https://fusha-dashboard.pages.dev",
+          "http://localhost:3000",
+          "http://localhost:5173"
+        ],
+        "methods": [
+          "GET",
+          "PUT",
+          "POST",
+          "DELETE",
+          "HEAD"
+        ],
+        "headers": [
+          "*"
+        ],
+        "exposeHeaders": [
+          "ETag",
+          "Content-Length",
+          "Content-Type"
+        ]
+      },
+      "maxAgeSeconds": 3000
+    }
+  ]
+}

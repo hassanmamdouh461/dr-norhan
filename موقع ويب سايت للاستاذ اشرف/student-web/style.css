@@ -1,0 +1,682 @@
+@import "tailwindcss";
+
+@theme {
+  --color-fusha-forest: #142B24;
+  --color-fusha-forestDark: #0D1D18;
+  --color-fusha-forestLight: #1E3E34;
+  --color-fusha-khaki: #B7B19B;
+  --color-fusha-khakiLight: #E8E4DA;
+  --color-fusha-sage: #5F7A61;
+  --color-fusha-sageLight: #F0F4F1;
+  --color-fusha-olive: #8B9565;
+  --color-fusha-sun: #EAA72E;
+  --color-fusha-sunHover: #D49420;
+  --color-fusha-cream: #FBFBFA;
+  --color-fusha-stone: #F4F5F0;
+
+  --font-amiri: 'Amiri', 'Noto Naskh Arabic', serif;
+  --font-cairo: 'Cairo', sans-serif;
+  --font-alexandria: 'Alexandria', sans-serif;
+}
+
+.font-amiri {
+  font-family: 'Amiri', 'Noto Naskh Arabic', serif !important;
+}
+
+.font-cairo {
+  font-family: 'Cairo', sans-serif !important;
+}
+
+/* =========================================================
+   FUSHA (فُصْحَى) BRAND IDENTITY & ANIMATIONS STYLESHEET
+   Brand Colors:
+   - Primary Deep Forest: #142B24
+   - Sand / Khaki Gold: #B7B19B & #C4BC9E
+   - Olive / Sage Green: #5F7A61 & #7D8D5A
+   - Warm Sun Accent: #EAA72E / #F6B033
+   - Cream / Off-White: #FBFBFA / #F4F5F0
+   ========================================================= */
+
+:root {
+  --brand-forest: #142B24;
+  --brand-forest-dark: #0D1D18;
+  --brand-khaki: #B7B19B;
+  --brand-khaki-light: #D4CDBC;
+  --brand-sage: #5F7A61;
+  --brand-sage-light: #EBF0EB;
+  --brand-sun: #EAA72E;
+  --brand-cream: #FBFBFA;
+  --brand-slate: #1C2E29;
+
+  /* SVG Transition colors from Animmaster */
+  --transition-stroke-1: #142B24;
+  --transition-stroke-2: #B7B19B;
+}
+
+/* Base resets & typography */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Cairo', sans-serif;
+  overflow-x: clip;
+}
+
+/* =========================================================
+   HERO STICKY CURTAIN OVERLAP (c4-gym.com style)
+   ========================================================= */
+#hero {
+  position: relative;
+  min-height: 100dvh;
+  height: auto;
+  width: 100%;
+  z-index: 0;
+}
+
+@media (min-width: 1024px) {
+  #hero {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    height: 100dvh;
+    overflow: hidden;
+  }
+}
+
+body.bg-fusha-forestDark,
+.bg-fusha-forestDark {
+  background-color: #0D1D18 !important;
+  color: #F1F5F9 !important;
+}
+
+body.bg-fusha-stone,
+.bg-fusha-stone {
+  background-color: #F4F5F0 !important;
+  color: #1E293B !important;
+}
+
+body.bg-fusha-cream,
+.bg-fusha-cream {
+  background-color: #FBFBFA !important;
+  color: #1C2E29 !important;
+}
+
+/* Hide scrollbars completely (no side scrollbar / vertical progress bar) */
+html, body {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE / Edge */
+}
+::-webkit-scrollbar {
+  display: none;
+  width: 0px;
+  height: 0px;
+}
+
+/* =========================================================
+   1. FULLSCREEN INTRO SCRIBBLER & PAGE TRANSITION (Truus / Animmaster)
+   ========================================================= */
+.transition-scribble {
+  position: fixed;
+  top: -50vh;
+  left: -50vw;
+  width: 200vw;
+  height: 200vh;
+  z-index: 99999;
+  pointer-events: none;
+  color: var(--initial-intro-color, var(--brand-forest));
+  transform: scale(0.7);
+  will-change: transform, opacity;
+}
+
+.transition-logo-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100000;
+  pointer-events: none;
+  opacity: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  will-change: opacity, transform;
+}
+
+.intro-center-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body.is-transitioning {
+  pointer-events: none !important;
+  user-select: none !important;
+}
+
+/* =========================================================
+   1.1 SECTION TRANSITION SVG (Animmaster/SVG-Page-transition)
+   ========================================================= */
+.section-transition-svg {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1.5);
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 100000;
+  display: none;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.section-transition-svg.is-active {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.section-transition-svg svg {
+  width: 100%;
+  height: 100%;
+}
+
+.section-transition-svg path {
+  stroke-dashoffset: 25000px;
+  stroke-dasharray: 25000px;
+}
+
+/* =========================================================
+   2. ANGLED / SKEWED SCROLL TRANSITIONS (Telegram 411 Style)
+   ========================================================= */
+
+
+/* Diagonal cut at top and bottom of feature banner */
+.diagonal-cut-both {
+  clip-path: polygon(0 4.5vw, 100% 0, 100% calc(100% - 4.5vw), 0 100%);
+  margin-top: -4.5vw;
+  margin-bottom: -4.5vw;
+}
+
+/* Diagonal cut at top of dark footer section */
+.diagonal-cut-top {
+  clip-path: polygon(0 4.5vw, 100% 0, 100% 100%, 0 100%);
+  margin-top: -4.5vw;
+}
+
+@media (max-width: 768px) {
+  .diagonal-cut-both {
+    clip-path: polygon(0 25px, 100% 0, 100% calc(100% - 25px), 0 100%);
+    margin-top: -25px;
+    margin-bottom: -25px;
+  }
+  .diagonal-cut-top {
+    clip-path: polygon(0 25px, 100% 0, 100% 100%, 0 100%);
+    margin-top: -25px;
+  }
+}
+
+/* Sticky scroll showcase — strictly scoped to desktop side-by-side grid */
+.sticky-column {
+  position: relative;
+  top: auto;
+}
+@media (min-width: 1024px) {
+  .sticky-column {
+    position: sticky;
+    top: 120px;
+  }
+}
+
+/* =========================================================
+   MOBILE NAVIGATION DRAWER & OVERLAY (Student Web)
+   Guarantees zero overlap on desktop and smooth slide on mobile
+   ========================================================= */
+#fushaMobileOverlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 9998;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.28s ease;
+}
+
+#fushaMobileOverlay.is-active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#fushaMobileDrawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 85%;
+  max-width: 360px;
+  background-color: #ffffff;
+  z-index: 9999;
+  box-shadow: -10px 0 35px rgba(0, 0, 0, 0.15);
+  border-left: 1px solid #e7e5e4;
+  transform: translateX(100%);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  visibility: hidden;
+}
+
+#fushaMobileDrawer.is-active {
+  transform: translateX(0);
+  visibility: visible;
+}
+
+/* STRICT: Never display mobile drawer or overlay on desktop viewports */
+@media (min-width: 1024px) {
+  #fushaMobileDrawer,
+  #fushaMobileOverlay {
+    display: none !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+  }
+}
+
+/* Subtle card float on hover */
+.fusha-card {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.35s ease;
+}
+.fusha-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 30px -10px rgba(20, 43, 36, 0.12);
+}
+
+/* Glowing play pulse */
+@keyframes ringPulse {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(234, 167, 46, 0.7);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 14px rgba(234, 167, 46, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(234, 167, 46, 0);
+  }
+}
+
+.play-pulse {
+  animation: ringPulse 2s infinite;
+}
+
+/* =========================================================
+   3. SYSTEM SECTION CARDS DISTINCT ENTRANCE STYLES (#system)
+   ========================================================= */
+#system {
+  position: relative;
+  z-index: 20;
+  overflow-x: clip;
+  overflow-y: visible;
+}
+
+.system-cards-stack {
+  position: relative;
+  z-index: 25;
+  perspective: 1200px;
+  transform-style: preserve-3d;
+}
+
+.system-card {
+  will-change: transform, opacity, filter;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+
+.system-card-icon {
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  will-change: transform, opacity;
+}
+
+/* Specific delightful hover tilts for each card's icon */
+.system-card-1:hover .system-card-icon {
+  transform: scale(1.12) rotate(6deg);
+}
+
+.system-card-2:hover .system-card-icon {
+  transform: scale(1.12) rotate(-6deg);
+}
+
+.system-card-3:hover .system-card-icon {
+  transform: scale(1.12) rotateY(18deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .system-card,
+  .system-card-icon {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+  }
+}
+
+/* =========================================================
+   4. HERO TYPEWRITER CURSOR & ANIMATION
+   ========================================================= */
+@keyframes typewriterBlink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+.typewriter-cursor {
+  animation: typewriterBlink 0.8s infinite steps(2, start);
+  will-change: opacity;
+}
+
+/* =========================================================
+   5. FLOATING BADGES & AUDIO VISUALIZER
+   ========================================================= */
+@keyframes floatBadge {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.animate-float {
+  animation: floatBadge 4s ease-in-out infinite;
+}
+
+/* =========================================================
+   6. ACCESSIBILITY & UX ENHANCEMENTS (تحسينات الوصول وتجربة المستخدم)
+   ========================================================= */
+
+/* Skip-to-content link: visible only on keyboard focus */
+.skip-link {
+  position: fixed;
+  top: -100px;
+  right: 16px;
+  z-index: 100001;
+  padding: 10px 20px;
+  background: var(--brand-forest);
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 14px;
+  border-radius: 12px;
+  text-decoration: none;
+  box-shadow: 0 10px 25px rgba(20, 43, 36, 0.35);
+  transition: top 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.skip-link:focus-visible {
+  top: 16px;
+  outline: 3px solid var(--brand-sun);
+  outline-offset: 2px;
+}
+
+/* Global visible focus ring for keyboard navigation */
+:focus-visible {
+  outline: 2.5px solid var(--brand-sun);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+/* Active navigation link state (scroll-spy) */
+.nav-link-active {
+  color: var(--color-fusha-olive, #8B9565) !important;
+  position: relative;
+}
+.nav-link-active::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  right: 0;
+  left: 0;
+  height: 3px;
+  border-radius: 99px;
+  background: linear-gradient(90deg, var(--brand-sun), var(--color-fusha-olive, #8B9565));
+  animation: navUnderlineGrow 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+@keyframes navUnderlineGrow {
+  from { transform: scaleX(0); opacity: 0; }
+  to   { transform: scaleX(1); opacity: 1; }
+}
+
+/* Back-to-top floating button */
+#backToTopBtn {
+  position: fixed;
+  bottom: 22px;
+  left: 22px;
+  z-index: 60;
+  width: 48px;
+  height: 48px;
+  border-radius: 16px;
+  background: var(--brand-forest);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 12px 28px rgba(20, 43, 36, 0.3);
+  opacity: 0;
+  transform: translateY(18px) scale(0.9);
+  pointer-events: none;
+  transition: opacity 0.35s ease, transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), background 0.25s ease;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+#backToTopBtn.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+#backToTopBtn:hover {
+  background: var(--brand-forest-dark);
+  transform: translateY(-3px) scale(1.04);
+}
+
+/* Toast notification (إشعار نجاح / خطأ) */
+#fushaToast {
+  position: fixed;
+  bottom: 24px;
+  right: 50%;
+  transform: translateX(50%) translateY(120%);
+  z-index: 100002;
+  max-width: min(92vw, 420px);
+  padding: 14px 22px;
+  border-radius: 16px;
+  background: var(--brand-forest);
+  color: #ffffff;
+  font-family: 'Cairo', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 18px 40px rgba(13, 29, 24, 0.45);
+  transition: transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.3s ease;
+  opacity: 0;
+  pointer-events: none;
+}
+#fushaToast.is-visible {
+  transform: translateX(50%) translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+#fushaToast.toast-error {
+  background: #8C2F2F;
+}
+#fushaToast.toast-success {
+  background: var(--brand-forest);
+  border: 1px solid rgba(234, 167, 46, 0.45);
+}
+
+/* Form inputs: smoother focus & validation feedback */
+.form-input-fusha {
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+.form-input-fusha:focus {
+  border-color: var(--color-fusha-olive, #8B9565) !important;
+  box-shadow: 0 0 0 4px rgba(139, 149, 101, 0.18);
+  background: #ffffff;
+}
+.form-input-fusha.input-error {
+  border-color: #C0392B !important;
+  box-shadow: 0 0 0 4px rgba(192, 57, 43, 0.14);
+  animation: inputShake 0.4s ease;
+}
+@keyframes inputShake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(5px); }
+  75% { transform: translateX(-5px); }
+}
+
+/* Submit button loading spinner */
+.btn-spinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2.5px solid rgba(255, 255, 255, 0.35);
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  animation: btnSpin 0.7s linear infinite;
+}
+@keyframes btnSpin {
+  to { transform: rotate(360deg); }
+}
+
+/* Reveal-on-scroll generic animation (for sections without GSAP) */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal-on-scroll.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Respect reduced motion globally for all decorative animations */
+@media (prefers-reduced-motion: reduce) {
+  .animate-float,
+  .play-pulse,
+  .typewriter-cursor,
+  .animate-ping,
+  .animate-pulse {
+    animation: none !important;
+  }
+  .reveal-on-scroll {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  html {
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Video modal: aria-open state prevents background scroll */
+body.modal-open {
+  overflow: hidden;
+}
+
+/* Lazy images fade-in to avoid harsh paint */
+img[loading="lazy"] {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+img[loading="lazy"].is-loaded,
+img[loading="lazy"][data-loaded="true"] {
+  opacity: 1;
+}
+
+/* Smoother hero scroll cue */
+@keyframes scrollCueBounce {
+  0%, 100% { transform: translateY(0); opacity: 0.9; }
+  50% { transform: translateY(8px); opacity: 0.5; }
+}
+.scroll-cue-animated {
+  animation: scrollCueBounce 1.8s ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .scroll-cue-animated { animation: none !important; }
+}
+
+
+/* =========================================================
+   7. DEEP UX PHASE 2: FAQ, STATS, STICKY CTA
+   ========================================================= */
+
+/* FAQ accordion: hide default marker, smooth height animation */
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+.faq-item summary::marker {
+  content: none;
+}
+.faq-item[open] {
+  border-color: rgba(139, 149, 101, 0.45);
+  box-shadow: 0 12px 30px -12px rgba(20, 43, 36, 0.15);
+}
+.faq-item summary:hover {
+  background: rgba(95, 122, 97, 0.05);
+}
+.faq-item .faq-chevron {
+  will-change: transform;
+}
+
+/* Animated stat numbers */
+.stat-number {
+  font-variant-numeric: tabular-nums;
+  will-change: contents;
+}
+
+/* Sticky mobile CTA visible state */
+#stickyMobileCta.is-visible {
+  transform: translateY(0);
+}
+/* Back-to-top stays low on mobile; JS lifts it above the sticky CTA
+   only when that bar is actually visible (see initStickyMobileCta). */
+@media (max-width: 1023px) {
+  #backToTopBtn {
+    bottom: 16px;
+    left: 14px;
+    width: 42px;
+    height: 42px;
+    border-radius: 14px;
+  }
+  /* When the sticky CTA bar is showing, raise the button just above it */
+  #stickyMobileCta.is-visible ~ #backToTopBtn,
+  body:has(#stickyMobileCta.is-visible) #backToTopBtn {
+    bottom: 92px;
+  }
+}
+
+/* Print styles: clean readable output */
+@media print {
+  #navbar,
+  #backToTopBtn,
+  #stickyMobileCta,
+  #fushaToast,
+  #videoModal,
+  #scribbleSvg,
+  #logoContainer,
+  .transition-scribble,
+  .section-transition-svg,
+  video {
+    display: none !important;
+  }
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+  section {
+    page-break-inside: avoid;
+  }
+}

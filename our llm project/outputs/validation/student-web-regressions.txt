@@ -1,0 +1,376 @@
+TAP version 13
+# Subtest: stale playback result cannot affect the new lesson
+ok 1 - stale playback result cannot affect the new lesson
+  ---
+  duration_ms: 62.4317
+  type: 'test'
+  ...
+# Subtest: stale playback authorization error cannot affect the new lesson
+ok 2 - stale playback authorization error cannot affect the new lesson
+  ---
+  duration_ms: 23.401
+  type: 'test'
+  ...
+# Subtest: current authorization failure still redirects; retry replaces an in-flight request
+ok 3 - current authorization failure still redirects; retry replaces an in-flight request
+  ---
+  duration_ms: 6.1437
+  type: 'test'
+  ...
+# Subtest: unmount suppresses completion at getLessonDetails
+ok 4 - unmount suppresses completion at getLessonDetails
+  ---
+  duration_ms: 1.6754
+  type: 'test'
+  ...
+# Subtest: unmount suppresses completion at getCourseDetails
+ok 5 - unmount suppresses completion at getCourseDetails
+  ---
+  duration_ms: 2.1851
+  type: 'test'
+  ...
+# Subtest: unmount suppresses completion at sendPlaybackLog
+ok 6 - unmount suppresses completion at sendPlaybackLog
+  ---
+  duration_ms: 1.4434
+  type: 'test'
+  ...
+# Subtest: unmount persists video position before HLS destruction resets it
+ok 7 - unmount persists video position before HLS destruction resets it
+  ---
+  duration_ms: 3.57
+  type: 'test'
+  ...
+# Subtest: unmount persists tracked position when the video ref is detached
+ok 8 - unmount persists tracked position when the video ref is detached
+  ---
+  duration_ms: 7.6817
+  type: 'test'
+  ...
+# Subtest: lesson layout cleanup and retry cancel pending setup, including already queued callbacks
+ok 9 - lesson layout cleanup and retry cancel pending setup, including already queued callbacks
+  ---
+  duration_ms: 16.9391
+  type: 'test'
+  ...
+# Subtest: stale lazy HLS import resolution cannot set up or fail the new player
+ok 10 - stale lazy HLS import resolution cannot set up or fail the new player
+  ---
+  duration_ms: 4.5585
+  type: 'test'
+  ...
+# Subtest: stale lazy HLS import rejection cannot set up or fail the new player
+ok 11 - stale lazy HLS import rejection cannot set up or fail the new player
+  ---
+  duration_ms: 1.6728
+  type: 'test'
+  ...
+# Subtest: current HLS import failure is handled by the retryable error state
+ok 12 - current HLS import failure is handled by the retryable error state
+  ---
+  duration_ms: 3.8838
+  type: 'test'
+  ...
+# Subtest: HLS callbacks work while current, then become inert and the instance is destroyed
+ok 13 - HLS callbacks work while current, then become inert and the instance is destroyed
+  ---
+  duration_ms: 3.0012
+  type: 'test'
+  ...
+# Subtest: direct metadata listeners are removed and stale callbacks cannot seek or play
+ok 14 - direct metadata listeners are removed and stale callbacks cannot seek or play
+  ---
+  duration_ms: 1.9401
+  type: 'test'
+  ...
+# Subtest: native HLS metadata listeners are removed and stale callbacks cannot seek or play
+ok 15 - native HLS metadata listeners are removed and stale callbacks cannot seek or play
+  ---
+  duration_ms: 1.7211
+  type: 'test'
+  ...
+# Subtest: stale modal PDF result/finally cannot overwrite current loading or create a blob URL
+ok 16 - stale modal PDF result/finally cannot overwrite current loading or create a blob URL
+  ---
+  duration_ms: 2.0185
+  type: 'test'
+  ...
+# Subtest: stale modal PDF error/finally cannot overwrite current loading or create a blob URL
+ok 17 - stale modal PDF error/finally cannot overwrite current loading or create a blob URL
+  ---
+  duration_ms: 1.845
+  type: 'test'
+  ...
+# Subtest: stale inline PDF result/finally cannot overwrite current loading or create a blob URL
+ok 18 - stale inline PDF result/finally cannot overwrite current loading or create a blob URL
+  ---
+  duration_ms: 1.852
+  type: 'test'
+  ...
+# Subtest: stale inline PDF error/finally cannot overwrite current loading or create a blob URL
+ok 19 - stale inline PDF error/finally cannot overwrite current loading or create a blob URL
+  ---
+  duration_ms: 3.3443
+  type: 'test'
+  ...
+# Subtest: YouTube deferred setup and callbacks cannot act after retry invalidation
+ok 20 - YouTube deferred setup and callbacks cannot act after retry invalidation
+  ---
+  duration_ms: 3.8613
+  type: 'test'
+  ...
+# Subtest: stale heartbeat result cannot alter the next lesson
+ok 21 - stale heartbeat result cannot alter the next lesson
+  ---
+  duration_ms: 2.2512
+  type: 'test'
+  ...
+# Subtest: stale heartbeat security error cannot alter the next lesson
+ok 22 - stale heartbeat security error cannot alter the next lesson
+  ---
+  duration_ms: 1.7642
+  type: 'test'
+  ...
+# Subtest: quiz stays lazy, retains its lesson-keyed subtree while hidden, and resets on lesson changes
+ok 23 - quiz stays lazy, retains its lesson-keyed subtree while hidden, and resets on lesson changes
+  ---
+  duration_ms: 16.2264
+  type: 'test'
+  ...
+# Subtest: one keyboard boundary closes only the painted topmost modal, honoring explicit z-index
+ok 24 - one keyboard boundary closes only the painted topmost modal, honoring explicit z-index
+  ---
+  duration_ms: 30.2257
+  type: 'test'
+  ...
+# Subtest: synchronous Escape teardown does not dismiss the newly exposed underlying modal
+ok 25 - synchronous Escape teardown does not dismiss the newly exposed underlying modal
+  ---
+  duration_ms: 3.3916
+  type: 'test'
+  ...
+# Subtest: Tab and Shift+Tab cycle both boundaries, recover outside focus, and handle empty dialogs
+ok 26 - Tab and Shift+Tab cycle both boundaries, recover outside focus, and handle empty dialogs
+  ---
+  duration_ms: 14.2318
+  type: 'test'
+  ...
+# Subtest: keyboard focus permits native scrolling while initial and return focus preserve positioning
+ok 27 - keyboard focus permits native scrolling while initial and return focus preserve positioning
+  ---
+  duration_ms: 1.9866
+  type: 'test'
+  ...
+# Subtest: tab order excludes unavailable controls and respects positive tabindex, editable content, and radios
+ok 28 - tab order excludes unavailable controls and respects positive tabindex, editable content, and radios
+  ---
+  duration_ms: 1.6602
+  type: 'test'
+  ...
+# Subtest: background, underlying overlays, and new body content stay inert with exact restoration
+ok 29 - background, underlying overlays, and new body content stay inert with exact restoration
+  ---
+  duration_ms: 9.9754
+  type: 'test'
+  ...
+# Subtest: nested confirmations restore their connected opener, then the external opener
+ok 30 - nested confirmations restore their connected opener, then the external opener
+  ---
+  duration_ms: 3.0461
+  type: 'test'
+  ...
+# Subtest: out-of-order parent teardown preserves the surviving child focus and external return path
+ok 31 - out-of-order parent teardown preserves the surviving child focus and external return path
+  ---
+  duration_ms: 5.9891
+  type: 'test'
+  ...
+# Subtest: whole nested stacks return to the external opener in either cleanup order
+ok 32 - whole nested stacks return to the external opener in either cleanup order
+  ---
+  duration_ms: 4.2698
+  type: 'test'
+  ...
+# Subtest: detached, hidden, disabled, and still-inert openers are never focused on return
+ok 33 - detached, hidden, disabled, and still-inert openers are never focused on return
+  ---
+  duration_ms: 9.7506
+  type: 'test'
+  ...
+# Subtest: a connected opener that loses its programmatic focusability is not focused
+ok 34 - a connected opener that loses its programmatic focusability is not focused
+  ---
+  duration_ms: 5.2785
+  type: 'test'
+  ...
+# Subtest: a missing confirmation opener falls back to its underlying dialog, not the background
+ok 35 - a missing confirmation opener falls back to its underlying dialog, not the background
+  ---
+  duration_ms: 1.2483
+  type: 'test'
+  ...
+# Subtest: child-first layout registration keeps nested equal-z-index portals above their parents
+ok 36 - child-first layout registration keeps nested equal-z-index portals above their parents
+  ---
+  duration_ms: 24.4952
+  type: 'test'
+  ...
+# Subtest: StrictMode-style replay of a lower sibling cannot change paint priority or steal focus
+ok 37 - StrictMode-style replay of a lower sibling cannot change paint priority or steal focus
+  ---
+  duration_ms: 1.2563
+  type: 'test'
+  ...
+# Subtest: stale queued focus restoration cannot steal focus from a newly opened modal
+ok 38 - stale queued focus restoration cannot steal focus from a newly opened modal
+  ---
+  duration_ms: 1.2103
+  type: 'test'
+  ...
+# Subtest: component portals preserve its API and latest close callback across effect replay
+ok 39 - component portals preserve its API and latest close callback across effect replay
+  ---
+  duration_ms: 5.2525
+  type: 'test'
+  ...
+# Subtest: only numeric is_submitted === 1 is final
+ok 40 - only numeric is_submitted === 1 is final
+  ---
+  duration_ms: 262.0999
+  type: 'test'
+  ...
+# Subtest: answer validation rejects arrays, malformed JSON, primitives, and non-string values
+ok 41 - answer validation rejects arrays, malformed JSON, primitives, and non-string values
+  ---
+  duration_ms: 143.8889
+  type: 'test'
+  ...
+# Subtest: draft restore merges server answers with newer local edits, including empty server answers
+ok 42 - draft restore merges server answers with newer local edits, including empty server answers
+  ---
+  duration_ms: 73.9807
+  type: 'test'
+  ...
+# Subtest: invalid saved answers and storage read/write/delete failures are safe
+ok 43 - invalid saved answers and storage read/write/delete failures are safe
+  ---
+  duration_ms: 35.219
+  type: 'test'
+  ...
+# Subtest: countdown uses server start, cleans up, and submits an already-expired attempt once
+ok 44 - countdown uses server start, cleans up, and submits an already-expired attempt once
+  ---
+  duration_ms: 128.5578
+  type: 'test'
+  ...
+# Subtest: exam draft restores, autosaves, warns before close, and survives reopen
+ok 45 - exam draft restores, autosaves, warns before close, and survives reopen
+  ---
+  duration_ms: 235.6942
+  type: 'test'
+  ...
+# Subtest: unanswered draft also warns on close and blocked storage does not claim answers are saved
+ok 46 - unanswered draft also warns on close and blocked storage does not claim answers are saved
+  ---
+  duration_ms: 384.9247
+  type: 'test'
+  ...
+# Subtest: submitted exam ignores local drafts, cannot submit, and closes without warning
+ok 47 - submitted exam ignores local drafts, cannot submit, and closes without warning
+  ---
+  duration_ms: 262.3939
+  type: 'test'
+  ...
+# Subtest: exam same-tick manual/timeout submissions lock immediately; failures retain answers and can retry
+ok 48 - exam same-tick manual/timeout submissions lock immediately; failures retain answers and can retry
+  ---
+  duration_ms: 379.2026
+  type: 'test'
+  ...
+# Subtest: exam timeout dismisses pending manual confirmation and ignores its stale callback after success
+ok 49 - exam timeout dismisses pending manual confirmation and ignores its stale callback after success
+  ---
+  duration_ms: 125.748
+  type: 'test'
+  ...
+# Subtest: ExamModal renders an editable draft and uses the latest timeout callback without restarting its timer
+ok 50 - ExamModal renders an editable draft and uses the latest timeout callback without restarting its timer
+  ---
+  duration_ms: 279.9243
+  type: 'test'
+  ...
+# Subtest: QuizPanel initial load failure retries successfully without duplicate in-flight requests
+ok 51 - QuizPanel initial load failure retries successfully without duplicate in-flight requests
+  ---
+  duration_ms: 567.9326
+  type: 'test'
+  ...
+# Subtest: QuizPanel releases the load guard after a failed retry and permits another retry
+ok 52 - QuizPanel releases the load guard after a failed retry and permits another retry
+  ---
+  duration_ms: 468.1911
+  type: 'test'
+  ...
+# Subtest: QuizPanel same-quiz reload preserves local draft edits but submitted answers remain authoritative
+ok 53 - QuizPanel same-quiz reload preserves local draft edits but submitted answers remain authoritative
+  ---
+  duration_ms: 192.2988
+  type: 'test'
+  ...
+# Subtest: QuizPanel restores draft answers, renders editable inputs, and keeps a live countdown
+ok 54 - QuizPanel restores draft answers, renders editable inputs, and keeps a live countdown
+  ---
+  duration_ms: 213.3733
+  type: 'test'
+  ...
+# Subtest: QuizPanel renders results and no timer only for submitted attempts
+ok 55 - QuizPanel renders results and no timer only for submitted attempts
+  ---
+  duration_ms: 238.0101
+  type: 'test'
+  ...
+# Subtest: quiz timeout/manual race sends latest answers once and failed submission remains editable for retry
+ok 56 - quiz timeout/manual race sends latest answers once and failed submission remains editable for retry
+  ---
+  duration_ms: 71.9927
+  type: 'test'
+  ...
+# Subtest: already-expired empty quiz submits once and permits manual retry after failure
+ok 57 - already-expired empty quiz submits once and permits manual retry after failure
+  ---
+  duration_ms: 378.8637
+  type: 'test'
+  ...
+# Subtest: exam manual-first timeout race stays locked and a successful submission clears the saved draft
+ok 58 - exam manual-first timeout race stays locked and a successful submission clears the saved draft
+  ---
+  duration_ms: 73.4411
+  type: 'test'
+  ...
+# Subtest: quiz manual-first timeout race stays locked through successful result refresh
+ok 59 - quiz manual-first timeout race stays locked through successful result refresh
+  ---
+  duration_ms: 45.3171
+  type: 'test'
+  ...
+# Subtest: ExamModal handles an already-expired draft without an interval initialization error
+ok 60 - ExamModal handles an already-expired draft without an interval initialization error
+  ---
+  duration_ms: 66.6908
+  type: 'test'
+  ...
+# Subtest: activation is wired to the existing forced exam refresh callback
+ok 61 - activation is wired to the existing forced exam refresh callback
+  ---
+  duration_ms: 0.5317
+  type: 'test'
+  ...
+1..61
+# tests 61
+# suites 0
+# pass 61
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 6496.5432

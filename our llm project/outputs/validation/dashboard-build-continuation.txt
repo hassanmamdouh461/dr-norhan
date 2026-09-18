@@ -1,0 +1,66 @@
+Dashboard build continuation
+Started: 2026-09-15T02:50:27.916Z
+Staging: C:\Users\kayf\Desktop\student project\.workbuddy-ai\build-checks\dashboard-20260915T025027916Z-708875e3-a064-434f-a8b6-3f3eb4bef835
+Node: C:/Users/kayf/.workbuddy-ai/binaries/node/versions/22.22.2-2/node.exe
+Command: installed Next.js build
+Fresh staging; source/config/package copied; installed dependencies junctioned.
+Original environment loaded only in child; credential values redacted.
+Guard configuration inherited unchanged; telemetry disabled; no retries or cleanup.
+
+
+Previous background supervisor ended before dependency junction or Next build creation; prior staging retained. Foreground supervisor follows.
+
+Dashboard build continuation
+Started: 2026-09-15T03:01:56.280Z
+Staging: C:\Users\kayf\Desktop\student project\.workbuddy-ai\build-checks\dashboard-20260915T030156280Z-9fa93705-1095-4c2b-a282-dea83b0ae4f4
+Node: C:/Users/kayf/.workbuddy-ai/binaries/node/versions/22.22.2-2/node.exe
+Command: installed Next.js build
+Fresh staging; source/config/package copied; installed dependencies junctioned.
+Original environment loaded only in child; credential values redacted.
+Guard configuration inherited unchanged; telemetry disabled; no retries or cleanup.
+
+  ▲ Next.js 14.2.3
+
+   Creating an optimized production build ...
+ ✓ Compiled successfully
+   Linting and checking validity of types ...
+   Collecting page data ...
+   Generating static pages (0/15) ...
+   Generating static pages (3/15) 
+   Generating static pages (7/15) 
+   Generating static pages (11/15) 
+ ✓ Generating static pages (15/15)
+   Finalizing page optimization ...
+   Collecting build traces ...
+
+Route (app)                              Size     First Load JS
+┌ ○ /                                    898 B           150 kB
+├ ○ /_not-found                          871 B            88 kB
+├ ○ /dashboard                           112 kB          267 kB
+├ ○ /dashboard/analytics                 4.43 kB         153 kB
+├ ○ /dashboard/assistants                4.67 kB         153 kB
+├ ○ /dashboard/codes                     7.33 kB         156 kB
+├ ○ /dashboard/courses                   82.9 kB         232 kB
+├ ○ /dashboard/device-resets             4.92 kB         154 kB
+├ ○ /dashboard/exams                     10 kB           159 kB
+├ ○ /dashboard/questions                 6.7 kB          155 kB
+├ ○ /dashboard/settings                  7.14 kB         156 kB
+├ ○ /dashboard/students                  8.69 kB         157 kB
+└ ○ /login                               4.75 kB         153 kB
++ First Load JS shared by all            87.2 kB
+  ├ chunks/160-bdb100bdba1a98b7.js       31.5 kB
+  ├ chunks/40f95eb4-17c37808e5af3258.js  53.6 kB
+  └ other shared chunks (total)          2.01 kB
+
+
+○  (Static)  prerendered as static content
+
+
+
+Exit status: 0
+Guard confirmation required: false
+Final out directory exists: true
+Exported HTML count: 13
+Static export verified: true
+ZIP verified: true
+Original inputs and artifacts unchanged: true

@@ -1,0 +1,579 @@
+/* =============================================================================
+   فُصْحَى — FUsha Design Tokens v2.1
+   Single Source of Truth for BOTH  student-web (Vite/CSS)  and  dashboard (Next/Tailwind)
+   -----------------------------------------------------------------------------
+   Generated from: brand/IDENTITY_AND_DESIGN_SYSTEM.md + brand/DESIGN_TOKENS.json
+   DO NOT add colors here that are not in the primitive palette below.
+   Rule: components consume L2 semantic tokens ONLY. Never L1 primitives, never hex.
+   ============================================================================= */
+
+/* =============================================================================
+   LAYER 1 — GLOBAL PRIMITIVES  (do not use directly in components)
+   Hex form   : --fx-*
+   Channel RGB: --fx-*-rgb   (required for Tailwind `rgb(var(--x) / <alpha-value>)`)
+   ============================================================================= */
+:root {
+  /* Deep Ink Teal */
+  --fx-teal-900:  #0B1A1B;   --fx-teal-900-rgb:  11  26  27;
+  --fx-teal-800:  #163134;   --fx-teal-800-rgb:  22  49  52;
+  --fx-teal-700:  #1E4347;   --fx-teal-700-rgb:  30  67  71;
+  --fx-teal-600:  #28565B;   --fx-teal-600-rgb:  40  86  91;
+  --fx-teal-500:  #37695C;   --fx-teal-500-rgb:  55  105 92;
+  --fx-teal-400:  #4E8777;   --fx-teal-400-rgb:  78  135 119;
+  --fx-teal-100:  #D8EBE7;   --fx-teal-100-rgb:  216 235 231;
+  --fx-teal-50:   #EEF7F5;   --fx-teal-50-rgb:   238 247 245;
+
+  /* Arabic Emerald / Sage / Olive */
+  --fx-sage-600:  #4D6B54;   --fx-sage-600-rgb:  77  107 84;
+  --fx-sage-500:  #62856A;   --fx-sage-500-rgb:  98  133 106;
+  --fx-sage-400:  #7AA482;   --fx-sage-400-rgb:  122 164 130;
+  --fx-sage-100:  #E5EFE7;   --fx-sage-100-rgb:  229 239 231;
+  --fx-olive-500: #798963;   --fx-olive-500-rgb: 121 137 99;
+  --fx-olive-400: #92A578;   --fx-olive-400-rgb: 146 165 120;
+  --fx-olive-100: #EDF1E8;   --fx-olive-100-rgb: 237 241 232;
+
+  /* Antique Saffron / Brass / Sand */
+  --fx-gold-700:  #B88422;   --fx-gold-700-rgb:  184 132 34;
+  --fx-gold-600:  #D69E32;   --fx-gold-600-rgb:  214 158 50;  /* spec §2.2 brand-accent-hover */
+  --fx-gold-500:  #E8B54A;   --fx-gold-500-rgb:  232 181 74;
+  --fx-gold-400:  #F0C76C;   --fx-gold-400-rgb:  240 199 108;
+  --fx-gold-100:  #FDF6E2;   --fx-gold-100-rgb:  253 246 226;
+  --fx-brass-700: #747043;   --fx-brass-700-rgb: 116 112 67;
+  --fx-brass-600: #918D58;   --fx-brass-600-rgb: 145 141 88;
+  --fx-brass-400: #B1AC6E;   --fx-brass-400-rgb: 177 172 110;
+  --fx-sand-500:  #99937E;   --fx-sand-500-rgb:  153 147 126;
+  --fx-sand-300:  #B7B19B;   --fx-sand-300-rgb:  183 177 155;
+  --fx-sand-100:  #E8E5DC;   --fx-sand-100-rgb:  232 229 220;
+  --fx-sand-50:   #F6F5F2;   --fx-sand-50-rgb:   246 245 242;
+
+  /* Canvas / neutrals */
+  --fx-canvas:    #F8F9F7;   --fx-canvas-rgb:    248 249 247;
+  --fx-white:     #FFFFFF;   --fx-white-rgb:     255 255 255;
+  --fx-gray-800:  #2A2F2E;   --fx-gray-800-rgb:  42  47  46;
+  --fx-gray-600:  #5B6361;   --fx-gray-600-rgb:  91  99  97;
+  --fx-gray-400:  #8E9795;   --fx-gray-400-rgb:  142 151 149;
+  --fx-gray-200:  #D8DDD9;   --fx-gray-200-rgb:  216 221 217;
+  --fx-gray-100:  #EFF2EF;   --fx-gray-100-rgb:  239 242 239;
+
+  /* Feedback primitives */
+  --fx-fb-success: #1E6B37;  --fx-fb-success-rgb: 30  107 55;
+  --fx-fb-warning: #8F5B00;  --fx-fb-warning-rgb: 143 91  0;
+  --fx-fb-error:   #A82315;  --fx-fb-error-rgb:   168 35  21;
+  --fx-fb-info:    #17546E;  --fx-fb-info-rgb:    23  84  110;
+
+  /* Shadow tint (never pure black) */
+  --fx-shadow-tint: 22 49 52;
+}
+
+/* =============================================================================
+   LAYER 2 — SEMANTIC TOKENS · LIGHT MODE (default)
+   ============================================================================= */
+:root {
+  color-scheme: light;
+
+  /* ---- Surfaces ---- */
+  --bg-canvas:            var(--fx-canvas);      /* #F8F9F7 app floor */
+  --bg-surface:           var(--fx-white);       /* #FFFFFF cards, sheets */
+  --bg-surface-raised:    var(--fx-white);       /* #FFFFFF floating cards w/ shadow */
+  --bg-surface-subtle:    var(--fx-gray-100);    /* #EFF2EF inputs, chip tracks, icon wells */
+  --bg-surface-sunken:    var(--fx-sand-100);    /* #E8E5DC progress track, inset wells */
+  --bg-inverse:           var(--fx-teal-800);    /* inverted blocks (hero, footer, sidebar) */
+  --bg-scrim:             rgb(11 26 27 / 0.48);  /* modal/backdrop */
+
+  /* ---- Text ---- */
+  --text-primary:         var(--fx-teal-800);    /* #163134 — 11.4:1 on canvas */
+  --text-secondary:       var(--fx-teal-500);    /* #37695C — 6.8:1  */
+  --text-muted:           var(--fx-gray-600);    /* #5B6361 — 5.9:1  */
+  --text-inverse:         var(--fx-white);       /* text on teal/gold fills */
+  --text-on-accent:       var(--fx-teal-800);    /* text on gold fill — 6.1:1 */
+  --text-on-dark:         var(--fx-white);       /* text on --bg-inverse */
+  --text-placeholder:     var(--fx-gray-400);    /* #8E9795 — non-essential only */
+  --text-disabled:        var(--fx-gray-400);
+
+  /* ---- Brand ---- */
+  --brand-primary:          var(--fx-teal-800);
+  --brand-primary-hover:    var(--fx-teal-700);
+  --brand-primary-active:   var(--fx-teal-900);
+  --brand-primary-subtle:   var(--fx-teal-50);
+  --brand-secondary:        var(--fx-teal-500);
+  --brand-secondary-subtle: var(--fx-teal-100);
+  --brand-accent:           var(--fx-gold-500);
+  --brand-accent-hover:     var(--fx-gold-600);
+  --brand-accent-active:    var(--fx-gold-700);
+  --brand-accent-subtle:    var(--fx-gold-100);
+  --brand-sage:             var(--fx-sage-500);
+  --brand-sage-subtle:      var(--fx-sage-100);
+  --brand-olive:            var(--fx-olive-500);
+  --brand-olive-subtle:     var(--fx-olive-100);
+  --brand-brass:            var(--fx-brass-600);
+
+  /* ---- Borders ---- */
+  --border-subtle:        var(--fx-gray-200);    /* #D8DDD9 hairlines, dividers */
+  --border-strong:        var(--fx-sand-300);    /* #B7B19B inputs, active cards */
+  --border-brand:         var(--fx-teal-800);
+  --border-accent:        var(--fx-gold-500);
+  --border-disabled:      var(--fx-gray-200);
+
+  /* ---- Feedback: success ---- */
+  --status-success-fg:    var(--fx-fb-success);  /* #1E6B37 */
+  --status-success-bg:    #EAF6EE;
+  --status-success-bd:    #A3D9B5;
+  /* ---- Feedback: warning ---- */
+  --status-warning-fg:    var(--fx-fb-warning);  /* #8F5B00 */
+  --status-warning-bg:    #FEF7E6;
+  --status-warning-bd:    #F7D788;
+  /* ---- Feedback: error ---- */
+  --status-error-fg:      var(--fx-fb-error);    /* #A82315 */
+  --status-error-bg:      #FDF0EE;
+  --status-error-bd:      #F5A9A0;
+  /* ---- Feedback: info ---- */
+  --status-info-fg:       var(--fx-fb-info);     /* #17546E */
+  --status-info-bg:       #EEF5F8;
+  --status-info-bd:       #A5CBE0;
+
+  /* ---- Semantic channel triplets (Tailwind `rgb(var(--x) / <alpha-value>)`) ----
+     These exist ONLY so Tailwind can do opacity modifiers (bg-canvas/60).
+     Always reference a primitive triplet — never retype numbers here. */
+  --bg-canvas-rgb:            var(--fx-canvas-rgb);
+  --bg-surface-rgb:           var(--fx-white-rgb);
+  --bg-surface-raised-rgb:    var(--fx-white-rgb);
+  --bg-surface-subtle-rgb:    var(--fx-gray-100-rgb);
+  --bg-surface-sunken-rgb:    var(--fx-sand-100-rgb);
+  --bg-inverse-rgb:           var(--fx-teal-800-rgb);
+  --text-primary-rgb:         var(--fx-teal-800-rgb);
+  --text-secondary-rgb:       var(--fx-teal-500-rgb);
+  --text-muted-rgb:           var(--fx-gray-600-rgb);
+  --text-inverse-rgb:         var(--fx-white-rgb);
+  --brand-primary-rgb:        var(--fx-teal-800-rgb);
+  --brand-primary-hover-rgb:  var(--fx-teal-700-rgb);
+  --brand-primary-active-rgb: var(--fx-teal-900-rgb);
+  --brand-primary-subtle-rgb: var(--fx-teal-50-rgb);
+  --brand-secondary-rgb:      var(--fx-teal-500-rgb);
+  --brand-secondary-subtle-rgb: var(--fx-teal-100-rgb);
+  --brand-accent-rgb:         var(--fx-gold-500-rgb);
+  --brand-accent-hover-rgb:   var(--fx-gold-600-rgb);
+  --brand-accent-subtle-rgb:  var(--fx-gold-100-rgb);
+  --brand-sage-rgb:           var(--fx-sage-500-rgb);
+  --brand-sage-subtle-rgb:    var(--fx-sage-100-rgb);
+  --brand-olive-rgb:          var(--fx-olive-500-rgb);
+  --brand-olive-subtle-rgb:   var(--fx-olive-100-rgb);
+  --brand-brass-rgb:          var(--fx-brass-600-rgb);
+  --text-on-accent-rgb:       var(--fx-teal-800-rgb);
+  --border-subtle-rgb:        var(--fx-gray-200-rgb);
+  --border-strong-rgb:        var(--fx-sand-300-rgb);
+  --status-success-fg-rgb:    var(--fx-fb-success-rgb);
+  --status-warning-fg-rgb:    var(--fx-fb-warning-rgb);
+  --status-error-fg-rgb:      var(--fx-fb-error-rgb);
+  --status-info-fg-rgb:       var(--fx-fb-info-rgb);
+  --status-success-bg-rgb:    234 246 238;  /* #EAF6EE */
+  --status-success-bd-rgb:    163 217 181;  /* #A3D9B5 */
+  --status-warning-bg-rgb:    254 247 230;  /* #FEF7E6 */
+  --status-warning-bd-rgb:    247 215 136;  /* #F7D788 */
+  --status-error-bg-rgb:      253 240 238;  /* #FDF0EE */
+  --status-error-bd-rgb:      245 169 160;  /* #F5A9A0 */
+  --status-info-bg-rgb:       238 245 248;  /* #EEF5F8 */
+  --status-info-bd-rgb:       165 203 224;  /* #A5CBE0 */
+
+  /* ---- Sidebar (dark teal rail, >1024px) ---- */
+  --bg-sidebar:           var(--fx-teal-800);
+  --bg-sidebar-hover:     var(--fx-teal-700);
+  --bg-sidebar-active:    var(--fx-teal-900);
+  --text-sidebar:         #D8EBE7;               /* teal-100 */
+  --text-sidebar-muted:   #8FAEA9;
+  --sidebar-active-indicator: var(--fx-gold-500);
+
+  /* ---- Focus rings (double ring: 2px offset gap + 2px ring) ---- */
+  --ring-on-light: 0 0 0 2px var(--bg-surface), 0 0 0 4px var(--fx-teal-800);
+  --ring-on-canvas: 0 0 0 2px var(--bg-canvas),  0 0 0 4px var(--fx-teal-800);
+  --ring-on-brand:  0 0 0 2px var(--bg-canvas),  0 0 0 4px var(--fx-gold-500);
+  --ring-on-accent: 0 0 0 2px var(--bg-canvas),  0 0 0 4px var(--fx-teal-800);
+  --ring-on-dark:   0 0 0 2px var(--bg-canvas),  0 0 0 4px var(--fx-gold-500);
+  --ring-error:     0 0 0 2px var(--bg-surface), 0 0 0 4px var(--fx-fb-error);
+
+  /* ===========================================================================
+     SCALES — theme-independent (declared once, not re-declared in .dark)
+     =========================================================================== */
+
+  /* ---- Radius ---- */
+  --radius-sm:   6px;    /* buttons, status chips */
+  --radius-md:   12px;   /* inputs, inner lesson cards, letter badge */
+  --radius-lg:   20px;   /* PRIMARY card radius — course cards, quiz options, dialogs */
+  --radius-xl:   32px;   /* bottom sheets, promo banners */
+  --radius-full: 9999px; /* pills, avatars, FABs, progress */
+
+  /* ---- Spacing (8pt grid; 4px only for micro-gaps) ---- */
+  --spacing-xs:   4px;
+  --spacing-sm:   8px;
+  --spacing-md:   16px;
+  --spacing-lg:   24px;
+  --spacing-xl:   32px;
+  --spacing-xxl:  48px;
+  --spacing-3xl:  64px;
+  --spacing-4xl:  96px;
+
+  /* ---- Elevation (tinted #163134, never pure black) ---- */
+  --shadow-sm:       0 1px 3px rgba(22, 49, 52, 0.06), 0 1px 2px rgba(22, 49, 52, 0.04);
+  --shadow-md:       0 4px 12px rgba(22, 49, 52, 0.08), 0 2px 4px rgba(22, 49, 52, 0.04);
+  --shadow-lg:       0 12px 24px -4px rgba(22, 49, 52, 0.12), 0 4px 8px -2px rgba(22, 49, 52, 0.04);
+  --shadow-floating: 0 20px 32px -6px rgba(22, 49, 52, 0.16), 0 8px 16px -4px rgba(22, 49, 52, 0.08);
+  --shadow-inset-hairline: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  --shadow-glow-accent: 0 0 24px rgba(232, 181, 74, 0.28);
+
+  /* ---- Motion ---- */
+  --ease-standard: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-exit:     cubic-bezier(0.7, 0, 0.84, 0);
+  --ease-linear:   linear;
+  --dur-micro:     150ms;   /* hover, tap, toggle */
+  --dur-micro-max: 200ms;
+  --dur-expand:    250ms;   /* card expansion, dropdown */
+  --dur-expand-max:300ms;
+  --dur-modal:     350ms;   /* modal, bottom sheet, screen transition */
+  --dur-modal-max: 400ms;
+
+  /* ---- Typography ---- */
+  --font-ui:     'Cairo', 'IBM Plex Sans Arabic', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-poetry: 'Amiri', 'Noto Naskh Arabic', serif;
+  --font-latin:  'Cairo', system-ui, sans-serif;   /* NO Inter / NO Plus Jakarta Sans */
+
+  --text-display:   40px;  --lh-display:   52px;  --fw-display:   800;
+  --text-h1:        32px;  --lh-h1:        42px;  --fw-h1:        800;
+  --text-h2:        24px;  --lh-h2:        32px;  --fw-h2:        800;
+  --text-h3:        20px;  --lh-h3:        28px;  --fw-h3:        700;
+  --text-h4:        18px;  --lh-h4:        26px;  --fw-h4:        600;
+  --text-body-lg:   16px;  --lh-body-lg:   26px;  --fw-body-lg:   500;
+  --text-body:      14px;  --lh-body:      22px;  --fw-body:      400;
+  --text-caption:   12px;  --lh-caption:   18px;  --fw-caption:   400;
+  --text-poetry:    18px;  --lh-poetry:    34px;  --fw-poetry:    400;  /* Amiri, 1.88 */
+
+  /* ---- Layout ---- */
+  --container-max:  1280px;
+  --content-pad:    16px;   /* < 640px   (overridden in media queries below) */
+  --sidebar-w:      264px;  /* 8pt ✓ */
+  --sidebar-w-collapsed: 88px;
+  --header-h:       72px;
+  --bottom-nav-h:   64px;
+  --touch-min:      48px;
+  --control-h:      48px;   /* buttons, inputs */
+  --control-h-lg:   52px;
+
+  /* ---- Z-index ---- */
+  --z-base: 0; --z-sticky: 10; --z-header: 20; --z-sidebar: 30;
+  --z-overlay: 40; --z-modal: 50; --z-toast: 60; --z-tooltip: 70;
+}
+
+/* ---- Breakpoint-driven padding (student-web reads these; dashboard uses Tailwind) ---- */
+@media (min-width: 640px)  { :root { --content-pad: 24px; } }
+@media (min-width: 1025px) { :root { --content-pad: 32px; } }
+
+/* Responsive type step-down (single place; never set font-size per component) */
+@media (max-width: 639px) {
+  :root {
+    --text-display: 32px; --lh-display: 42px;
+    --text-h1:      26px; --lh-h1:      36px;
+    --text-h2:      20px; --lh-h2:      28px;
+    --text-h3:      18px; --lh-h3:      26px;
+  }
+}
+
+/* =============================================================================
+   LAYER 2 — SEMANTIC TOKENS · DARK MODE  (.dark on <html>)
+   ============================================================================= */
+.dark {
+  color-scheme: dark;
+
+  --bg-canvas:            #0B1A1B;
+  --bg-surface:           #112628;
+  --bg-surface-raised:    #183538;
+  --bg-surface-subtle:    #1D3F43;
+  --bg-surface-sunken:    #0E1F21;
+  --bg-inverse:           #F4F6F5;
+  --bg-scrim:             rgb(0 0 0 / 0.64);
+
+  --text-primary:         #F4F6F5;
+  --text-secondary:       #B9C7C5;
+  --text-muted:           #829896;
+  --text-inverse:         #0B1A1B;
+  --text-on-accent:       #0B1A1B;
+  --text-on-dark:         #F4F6F5;
+  --text-placeholder:     #6E807E;
+  --text-disabled:        #4C5B5A;
+
+  --brand-primary:          #4FA895;
+  --brand-primary-hover:    #5FB8A4;
+  --brand-primary-active:   #3D8B79;
+  --brand-primary-subtle:   #1E4347;
+  --brand-secondary:        #798963;
+  --brand-secondary-subtle: #2A3323;
+  --brand-accent:           #F0C76C;   /* gold-400 (palette-pure; see doc §F J-5) */
+  --brand-accent-hover:     #E8B54A;
+  --brand-accent-active:    #B88422;
+  --brand-accent-subtle:    #2E2A16;
+  --brand-sage:             #7AA482;
+  --brand-sage-subtle:      #1F2E23;
+  --brand-olive:            #92A578;
+  --brand-olive-subtle:     #262C1E;
+  --brand-brass:            #B1AC6E;
+
+  --border-subtle:        #1C3B3E;
+  --border-strong:        #3D6265;
+  --border-brand:         #4FA895;
+  --border-accent:        #F0C76C;
+  --border-disabled:      #1C3B3E;
+
+  /* Dark feedback — fg = light-mode border tint; bg/bd = light fg multiplied
+     over canvas at 22% / 45%. See doc §F J-6. */
+  --status-success-fg:    #A3D9B5;  --status-success-bg: #0F2C21;  --status-success-bd: #143E28;
+  --status-warning-fg:    #F7D788;  --status-warning-bg: #282815;  --status-warning-bd: #46370F;
+  --status-error-fg:      #F5A9A0;  --status-error-bg: #2E1C1A;  --status-error-bd: #521E18;
+  --status-info-fg:       #A5CBE0;  --status-info-bg: #0E272D;  --status-info-bd: #103440;
+
+  --bg-sidebar:           #0E1F21;
+  --bg-sidebar-hover:     #163134;
+  --bg-sidebar-active:    #1E4347;
+  --text-sidebar:         #D8EBE7;
+  --text-sidebar-muted:   #829896;
+  --sidebar-active-indicator: #F0C76C;
+
+  /* ---- Semantic channel triplets (dark) ---- */
+  --bg-canvas-rgb:            11  26  27;   /* #0B1A1B */
+  --bg-surface-rgb:           17  38  40;   /* #112628 */
+  --bg-surface-raised-rgb:    24  53  56;   /* #183538 */
+  --bg-surface-subtle-rgb:    29  63  67;   /* #1D3F43 */
+  --bg-surface-sunken-rgb:    14  31  33;   /* #0E1F21 */
+  --bg-inverse-rgb:           244 246 245;  /* #F4F6F5 */
+  --text-primary-rgb:         244 246 245;
+  --text-secondary-rgb:       185 199 197;
+  --text-muted-rgb:           130 152 150;
+  --text-inverse-rgb:         11  26  27;
+  --brand-primary-rgb:        79  168 149;  /* #4FA895 */
+  --brand-primary-hover-rgb:  95  184 164;  /* #5FB8A4 */
+  --brand-primary-active-rgb: 61  139 121;  /* #3D8B79 */
+  --brand-primary-subtle-rgb: 30  67  71;   /* #1E4347 */
+  --brand-secondary-rgb:      121 137 99;   /* #798963 */
+  --brand-secondary-subtle-rgb: 42 51 35;   /* #2A3323 */
+  --brand-accent-rgb:         240 199 108;  /* #F0C76C */
+  --brand-accent-hover-rgb:   232 181 74;   /* #E8B54A */
+  --brand-accent-subtle-rgb:  46  42  22;   /* #2E2A16 */
+  --brand-sage-rgb:           122 164 130;  /* #7AA482 */
+  --brand-sage-subtle-rgb:    31  46  35;   /* #1F2E23 */
+  --brand-olive-rgb:          146 165 120;  /* #92A578 */
+  --brand-olive-subtle-rgb:   38  44  30;   /* #262C1E */
+  --brand-brass-rgb:          177 172 110;  /* #B1AC6E */
+  --text-on-accent-rgb:       11  26  27;   /* #0B1A1B */
+  --border-subtle-rgb:        28  59  62;   /* #1C3B3E */
+  --border-strong-rgb:        61  98  101;  /* #3D6265 */
+  --status-success-fg-rgb:    163 217 181;  /* #A3D9B5 */
+  --status-success-bg-rgb:    15  44  33;   /* #0F2C21 */
+  --status-success-bd-rgb:    20  62  40;   /* #143E28 */
+  --status-warning-fg-rgb:    247 215 136;  /* #F7D788 */
+  --status-warning-bg-rgb:    40  40  21;   /* #282815 */
+  --status-warning-bd-rgb:    70  55  15;   /* #46370F */
+  --status-error-fg-rgb:      245 169 160;  /* #F5A9A0 */
+  --status-error-bg-rgb:      46  28  26;   /* #2E1C1A */
+  --status-error-bd-rgb:      82  30  24;   /* #521E18 */
+  --status-info-fg-rgb:       165 203 224;  /* #A5CBE0 */
+  --status-info-bg-rgb:       14  39  45;   /* #0E272D */
+  --status-info-bd-rgb:       16  52  64;   /* #103440 */
+
+  --ring-on-light:  0 0 0 2px var(--bg-surface), 0 0 0 4px #F4F6F5;
+  --ring-on-canvas: 0 0 0 2px var(--bg-canvas),  0 0 0 4px #F4F6F5;
+  --ring-on-brand:  0 0 0 2px var(--bg-canvas),  0 0 0 4px var(--fx-gold-400);
+  --ring-on-accent: 0 0 0 2px var(--bg-canvas),  0 0 0 4px #F4F6F5;
+  --ring-on-dark:   0 0 0 2px var(--bg-canvas),  0 0 0 4px var(--fx-gold-400);
+  --ring-error:     0 0 0 2px var(--bg-surface), 0 0 0 4px #F5A9A0;
+
+  /* Shadows need more presence on dark; keep the teal tint, raise alpha. */
+  --shadow-sm:       0 1px 3px rgba(0, 0, 0, 0.40), 0 1px 2px rgba(0, 0, 0, 0.30);
+  --shadow-md:       0 4px 12px rgba(0, 0, 0, 0.48), 0 2px 4px rgba(0, 0, 0, 0.32);
+  --shadow-lg:       0 12px 24px -4px rgba(0, 0, 0, 0.56), 0 4px 8px -2px rgba(0, 0, 0, 0.32);
+  --shadow-floating: 0 20px 32px -6px rgba(0, 0, 0, 0.64), 0 8px 16px -4px rgba(0, 0, 0, 0.40);
+  --shadow-inset-hairline: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  --shadow-glow-accent: 0 0 24px rgba(240, 199, 108, 0.22);
+}
+
+/* =============================================================================
+   LEGACY BRIDGE — maps the old Material-3 / chemistry-era variable names onto
+   Fusha semantics so existing code renders correctly on day one.
+
+   ⚠️⚠️ THESE ALIASES MUST BE SPACE-SEPARATED RGB CHANNEL TRIPLETS — NOT HEX. ⚠️⚠️
+
+   WHY: every legacy consumer wraps them in a colour function. There are 313
+   `rgb(var(--x))` and 36 `rgba(var(--x), α)` call sites across student-web, plus
+   the whole Tailwind `rgb(var(--x) / <alpha-value>)` layer in the dashboard.
+   If an alias resolved to a hex value, `rgb(var(--primary))` would expand to
+   `rgb(#163134)`, which is INVALID CSS — the declaration is silently dropped and
+   the element renders transparent/unstyled, with no console error.
+
+   So every alias below points at a `*-rgb` triplet.
+
+   They point at the SEMANTIC triplets (`--brand-primary-rgb`), not the raw
+   primitives (`--fx-teal-800-rgb`), because the semantic triplets are
+   re-declared inside `.dark`. That keeps the bridge dark-mode reactive: it is a
+   var() reference resolved against whichever value wins on <html>.
+
+   DEPRECATED: delete each alias as you migrate its consumers. Do NOT write new
+   code against `--primary` / `--surface`.
+   ============================================================================= */
+:root {
+  --primary:                var(--brand-primary-rgb);
+  --on-primary:             var(--text-inverse-rgb);
+  --primary-container:      var(--brand-primary-subtle-rgb);
+  --on-primary-container:   var(--text-primary-rgb);
+
+  --secondary:              var(--brand-secondary-rgb);
+  --on-secondary:           var(--text-inverse-rgb);
+  --secondary-container:    var(--brand-secondary-subtle-rgb);
+  --on-secondary-container: var(--text-primary-rgb);
+
+  --tertiary:               var(--brand-sage-rgb);
+  --on-tertiary:            var(--text-inverse-rgb);
+  --tertiary-container:     var(--brand-sage-subtle-rgb);
+  --on-tertiary-container:  var(--text-primary-rgb);
+
+  --accent:                 var(--brand-accent-rgb);
+  --on-accent:              var(--text-on-accent-rgb);
+  --accent-container:       var(--brand-accent-subtle-rgb);
+  --on-accent-container:    var(--text-primary-rgb);
+
+  --background:             var(--bg-canvas-rgb);
+  --on-background:          var(--text-primary-rgb);
+  --surface:                var(--bg-surface-rgb);
+  --surface-bright:         var(--bg-surface-raised-rgb);
+  --surface-dim:            var(--bg-surface-sunken-rgb);
+  --surface-container-lowest: var(--bg-canvas-rgb);
+  --surface-container-low:  var(--bg-surface-subtle-rgb);
+  --surface-container:      var(--bg-surface-subtle-rgb);
+  --surface-container-high: var(--bg-surface-subtle-rgb);
+  --surface-container-highest: var(--border-subtle-rgb);
+  --surface-variant:        var(--bg-surface-subtle-rgb);
+  --on-surface:             var(--text-primary-rgb);
+  --on-surface-variant:     var(--text-secondary-rgb);
+
+  --outline:                var(--border-strong-rgb);
+  --outline-variant:        var(--border-subtle-rgb);
+  --inverse-surface:        var(--bg-inverse-rgb);
+  --inverse-on-surface:     var(--text-inverse-rgb);
+  --inverse-primary:        var(--brand-secondary-rgb);
+  --surface-tint:           var(--brand-primary-rgb);
+
+  --error:                  var(--status-error-fg-rgb);
+  --on-error:               var(--text-inverse-rgb);
+  --error-container:        var(--status-error-bg-rgb);
+  --on-error-container:     var(--status-error-fg-rgb);
+
+  --success:                var(--status-success-fg-rgb);
+  --on-success:             var(--text-inverse-rgb);
+  --success-container:      var(--status-success-bg-rgb);
+  --on-success-container:   var(--status-success-fg-rgb);
+
+  --warning:                var(--status-warning-fg-rgb);
+  --on-warning:             var(--text-inverse-rgb);
+  --warning-container:      var(--status-warning-bg-rgb);
+  --on-warning-container:   var(--status-warning-fg-rgb);
+
+  /* M3 "fixed" tints → Fusha subtle containers (triplets) */
+  --primary-fixed:               var(--brand-primary-subtle-rgb);
+  --primary-fixed-dim:           var(--brand-secondary-subtle-rgb);
+  --on-primary-fixed:            var(--text-primary-rgb);
+  --on-primary-fixed-variant:    var(--brand-secondary-rgb);
+
+  --secondary-fixed:             var(--brand-secondary-subtle-rgb);
+  --secondary-fixed-dim:         var(--border-subtle-rgb);
+  --on-secondary-fixed:          var(--text-primary-rgb);
+  --on-secondary-fixed-variant:  var(--brand-secondary-rgb);
+
+  --tertiary-fixed:              var(--brand-sage-subtle-rgb);
+  --tertiary-fixed-dim:          var(--brand-olive-subtle-rgb);
+  --on-tertiary-fixed:           var(--text-primary-rgb);
+  --on-tertiary-fixed-variant:   var(--brand-sage-rgb);
+
+  --accent-fixed:                var(--brand-accent-subtle-rgb);
+  --accent-fixed-dim:            var(--brand-olive-subtle-rgb);
+  --on-accent-fixed:             var(--text-primary-rgb);
+  --on-accent-fixed-variant:     var(--text-on-accent-rgb);
+
+  /* Non-colour aliases — left as-is */
+  --shadow-color:           var(--fx-shadow-tint);   /* already a triplet: 22 49 52 */
+  --motion-easing:          var(--ease-standard);
+  --transition-speed:       250ms;
+  --font-body:              var(--font-ui);
+  --font-display:           var(--font-ui);   /* Amiri is --font-poetry ONLY */
+  --font-arabic:            var(--font-ui);
+  --font-english:           var(--font-latin);
+  --manuscript-gold:        var(--brand-accent);
+}
+
+/* =============================================================================
+   BASE APPLICATION (shared baseline — dashboard may re-apply via @layer base)
+   ============================================================================= */
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background-color: var(--bg-canvas);
+  color: var(--text-primary);
+  font-family: var(--font-ui);
+  font-size: var(--text-body);
+  line-height: var(--lh-body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Arabic glyphs need a touch more line-height than Latin at the same size. */
+:lang(ar) { line-height: 1.7; }
+
+/* Material Symbols must stay LTR inside RTL text flow. */
+.material-symbols-outlined,
+.material-symbols-rounded {
+  direction: ltr;
+  display: inline-block;
+  line-height: 1;
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+/* Scrollbar — brass thumb per spec §2.1 */
+* { scrollbar-width: thin; scrollbar-color: var(--fx-brass-600) transparent; }
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--fx-brass-600); border-radius: var(--radius-full); }
+::-webkit-scrollbar-thumb:hover { background: var(--fx-brass-700); }
+
+::selection { background: var(--brand-accent-subtle); color: var(--text-primary); }
+
+/* Native form controls inherit brand ink */
+input[type="checkbox"], input[type="radio"] { accent-color: var(--brand-primary); }
+
+/* =============================================================================
+   KEYFRAMES (shared; duration/easing always from tokens)
+   ============================================================================= */
+@keyframes fusha-shimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+@keyframes fusha-shake {
+  0%, 100%       { transform: translateX(0); }
+  20%, 60%       { transform: translateX(-4px); }
+  40%, 80%       { transform: translateX(4px); }
+}
+@keyframes fusha-fade-in  { from { opacity: 0; } to { opacity: 1; } }
+@keyframes fusha-slide-up { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes fusha-slide-in-start { from { opacity: 0; transform: translateX(-16px); } to { opacity: 1; transform: translateX(0); } }
+@keyframes fusha-zoom-in  { from { opacity: 0; transform: scale(0.96); } to { opacity: 1; transform: scale(1); } }
+@keyframes fusha-spin     { to { transform: rotate(360deg); } }
+@keyframes fusha-pulse-soft { 0%, 100% { opacity: 1; } 50% { opacity: 0.55; } }
+@keyframes fusha-check-pop { 0% { transform: scale(0.6); opacity: 0; } 100% { transform: scale(1); opacity: 1; } }
+
+/* =============================================================================
+   REDUCED MOTION — kill transform/loop animation, keep opacity fades ≤150ms
+   ============================================================================= */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

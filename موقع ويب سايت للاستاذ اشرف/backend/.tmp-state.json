@@ -1,0 +1,20 @@
+[
+  {
+    "results": [
+      {
+        "courses": 0,
+        "units": 0,
+        "profiles": 0,
+        "lessons": 0,
+        "quiz_null_lesson": 0,
+        "quiz_with_lesson": 0,
+        "lesson_progress": 0,
+        "playback_logs": 0
+      }
+    ],
+    "success": true,
+    "meta": {
+      "duration": 1
+    }
+  }
+]

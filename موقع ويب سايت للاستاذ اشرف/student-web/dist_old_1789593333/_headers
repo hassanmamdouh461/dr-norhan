@@ -1,0 +1,31 @@
+# Prevents browsers and Cloudflare CDN from caching the HTML entry point.
+# This ensures that users always get the latest version of index.html (which contains the latest JS/CSS hashes).
+/
+  Cache-Control: no-cache, no-store, must-revalidate
+  CDN-Cache-Control: no-store
+  Cloudflare-CDN-Cache-Control: no-store
+
+/index.html
+  Cache-Control: no-cache, no-store, must-revalidate
+  CDN-Cache-Control: no-store
+  Cloudflare-CDN-Cache-Control: no-store
+
+# Browsers still cache content-hashed assets forever (safe — a new build
+# always gets a new filename). The CDN's OWN cache window is kept short:
+# two deploys in a row hit a race where an edge node cached the wrong body
+# (SPA-fallback HTML) under a brand-new asset URL moments after a deploy,
+# and a 24h CDN TTL meant that specific PoP stayed broken for a full day
+# with no way to self-heal. A short TTL bounds how long any future
+# poisoning can last without giving up the CDN cache-hit benefit entirely.
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+  CDN-Cache-Control: max-age=300
+
+/sw.js
+  Cache-Control: no-cache
+
+/sw-v4.js
+  Cache-Control: no-cache
+
+/manifest.webmanifest
+  Cache-Control: no-cache

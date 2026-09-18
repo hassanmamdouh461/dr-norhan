@@ -1,0 +1,34 @@
+[33mThe CJS build of Vite's Node API is deprecated. See https://vite.dev/guide/troubleshooting.html#vite-cjs-node-api-deprecated for more details.[39m
+
+ RUN  v1.6.1 C:/Users/kayf/Desktop/student project/backend
+
+(node:18984) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+ ✓ src/routes/admin-regression.test.ts  (57 tests) 663ms
+(node:23064) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+ ✓ src/routes/courses-regression.test.ts  (36 tests) 1175ms
+stderr | src/routes/codes.test.ts > Activation Codes Redeem Integration Tests > should rollback code consumption if enrollment batch insertion fails
+{"timestamp":"2026-09-15T02:22:48.484Z","level":"error","event":"code.enrollment_failed","message":"D1_ERROR: Forced failure for testing rollback: SQLITE_CONSTRAINT","stack":"Error: D1_ERROR: Forced failure for testing rollback: SQLITE_CONSTRAINT\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at C:\\Users\\kayf\\Desktop\\student project\\backend\\src\\routes\\codes.ts:186:9\n    at dispatch (file:///C:/Users/kayf/Desktop/student%20project/backend/node_modules/hono/dist/compose.js:22:17)\n    at C:\\Users\\kayf\\Desktop\\student project\\backend\\src\\middleware\\auth.ts:366:5\n    at dispatch (file:///C:/Users/kayf/Desktop/student%20project/backend/node_modules/hono/dist/compose.js:22:17)\n    at C:\\Users\\kayf\\Desktop\\student project\\backend\\src\\middleware\\auth.ts:357:5\n    at dispatch (file:///C:/Users/kayf/Desktop/student%20project/backend/node_modules/hono/dist/compose.js:22:17)\n    at C:\\Users\\kayf\\Desktop\\student project\\backend\\src\\middleware\\auth.ts:288:3\n    at dispatch (file:///C:/Users/kayf/Desktop/student%20project/backend/node_modules/hono/dist/compose.js:22:17)\n    at C:\\Users\\kayf\\Desktop\\student project\\backend\\src\\middleware\\auth.ts:148:3","student_id":"student-1","code_id":"code-rollback"}
+
+ ✓ src/routes/codes.test.ts  (5 tests) 2861ms
+ ✓ src/routes/playback-token.test.ts  (38 tests) 298ms
+stderr | src/routes/security.test.ts > Local JWT validation > checks a expired JWT with the real verifier
+[JWT Secret] Token expired. exp: 1789438911 now: 1789438971
+
+stderr | src/routes/security.test.ts > Batch 4 Security Features Integration Tests > should reject a JWT with expired despite legacy signature headers
+[JWT Secret] Token expired. exp: 1789438912 now: 1789438972
+
+stderr | src/routes/security.test.ts > Batch 4 Security Features Integration Tests > should reject a JWT with expired despite legacy signature headers
+[JWT Secret] Token expired. exp: 1789438912 now: 1789438972
+
+ ✓ src/routes/security.test.ts  (9 tests) 1881ms
+(node:9960) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+ ✓ src/routes/auth-devices.test.ts  (18 tests) 56ms
+
+ Test Files  6 passed (6)
+      Tests  163 passed (163)
+   Start at  05:22:36
+   Duration  17.58s (transform 2.42s, setup 0ms, collect 4.83s, tests 6.93s, environment 1ms, prepare 1.96s)
+

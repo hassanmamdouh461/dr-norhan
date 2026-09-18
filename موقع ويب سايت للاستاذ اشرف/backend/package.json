@@ -1,0 +1,24 @@
+{
+  "name": "fusha-api",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "db:migrate:local": "wrangler d1 migrations apply fusha_ashraf_db --local",
+    "db:migrate:remote": "wrangler d1 migrations apply fusha_ashraf_db --remote",
+    "test": "vitest"
+  },
+  "dependencies": {
+    "hono": "^4.4.0",
+    "zod": "^3.23.0"
+  },
+  "devDependencies": {
+    "@aws-sdk/client-s3": "^3.1081.0",
+    "@cloudflare/workers-types": "^4.20240620.0",
+    "@types/node": "^26.0.0",
+    "typescript": "^5.4.5",
+    "vitest": "^1.6.0",
+    "wrangler": "^3.60.0"
+  }
+}

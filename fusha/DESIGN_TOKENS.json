@@ -1,0 +1,156 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "name": "Fusha Design Tokens",
+  "version": "2.0.0",
+  "description": "Design Tokens for Fusha Educational Platform (Mr. Ashraf Selim)",
+  "color": {
+    "global": {
+      "teal": {
+        "900": { "value": "#0B1A1B", "type": "color" },
+        "800": { "value": "#163134", "type": "color", "description": "Brand Primary Hero" },
+        "700": { "value": "#1E4347", "type": "color" },
+        "600": { "value": "#28565B", "type": "color" },
+        "500": { "value": "#37695C", "type": "color", "description": "Arabic Forest Emerald" },
+        "400": { "value": "#4E8777", "type": "color" },
+        "100": { "value": "#D8EBE7", "type": "color" },
+        "50":  { "value": "#EEF7F5", "type": "color" }
+      },
+      "sage": {
+        "600": { "value": "#4D6B54", "type": "color" },
+        "500": { "value": "#62856A", "type": "color", "description": "Course Progress & Cards" },
+        "400": { "value": "#7AA482", "type": "color" },
+        "100": { "value": "#E5EFE7", "type": "color" }
+      },
+      "olive": {
+        "500": { "value": "#798963", "type": "color" },
+        "400": { "value": "#92A578", "type": "color" },
+        "100": { "value": "#EDF1E8", "type": "color" }
+      },
+      "gold": {
+        "700": { "value": "#B88422", "type": "color" },
+        "500": { "value": "#E8B54A", "type": "color", "description": "Accent Interactive Gold" },
+        "400": { "value": "#F0C76C", "type": "color" },
+        "100": { "value": "#FDF6E2", "type": "color" }
+      },
+      "brass": {
+        "700": { "value": "#747043", "type": "color" },
+        "600": { "value": "#918D58", "type": "color", "description": "Antique Brass / Accent Slate" },
+        "400": { "value": "#B1AC6E", "type": "color" }
+      },
+      "sand": {
+        "500": { "value": "#99937E", "type": "color" },
+        "300": { "value": "#B7B19B", "type": "color", "description": "Logo Square Accent" },
+        "100": { "value": "#E8E5DC", "type": "color" },
+        "50":  { "value": "#F6F5F2", "type": "color" }
+      },
+      "neutral": {
+        "canvas": { "value": "#F8F9F7", "type": "color" },
+        "white":  { "value": "#FFFFFF", "type": "color" },
+        "dark":   { "value": "#0B1A1B", "type": "color" },
+        "gray": {
+          "800": { "value": "#2A2F2E", "type": "color" },
+          "600": { "value": "#5B6361", "type": "color" },
+          "400": { "value": "#8E9795", "type": "color" },
+          "200": { "value": "#D8DDD9", "type": "color" },
+          "100": { "value": "#EFF2EF", "type": "color" }
+        }
+      },
+      "feedback": {
+        "success": { "value": "#1E6B37", "type": "color" },
+        "warning": { "value": "#8F5B00", "type": "color" },
+        "error":   { "value": "#A82315", "type": "color" },
+        "info":    { "value": "#17546E", "type": "color" }
+      }
+    },
+    "semantic": {
+      "light": {
+        "background": {
+          "canvas": { "value": "{color.global.neutral.canvas.value}" },
+          "surface": { "value": "{color.global.neutral.white.value}" },
+          "surfaceRaised": { "value": "{color.global.neutral.white.value}" },
+          "surfaceSubtle": { "value": "{color.global.neutral.gray.100.value}" }
+        },
+        "text": {
+          "primary": { "value": "{color.global.teal.800.value}" },
+          "secondary": { "value": "{color.global.teal.500.value}" },
+          "muted": { "value": "{color.global.neutral.gray.600.value}" },
+          "inverse": { "value": "{color.global.neutral.white.value}" }
+        },
+        "brand": {
+          "primary": { "value": "{color.global.teal.800.value}" },
+          "secondary": { "value": "{color.global.teal.500.value}" },
+          "accent": { "value": "{color.global.gold.500.value}" },
+          "accentKhaki": { "value": "{color.global.sand.300.value}" }
+        },
+        "border": {
+          "subtle": { "value": "{color.global.neutral.gray.200.value}" },
+          "strong": { "value": "{color.global.sand.300.value}" },
+          "focus": { "value": "{color.global.gold.500.value}" }
+        }
+      },
+      "dark": {
+        "background": {
+          "canvas": { "value": "{color.global.teal.900.value}" },
+          "surface": { "value": "#112628" },
+          "surfaceRaised": { "value": "{color.global.teal.800.value}" },
+          "surfaceSubtle": { "value": "{color.global.teal.700.value}" }
+        },
+        "text": {
+          "primary": { "value": "#F4F6F5" },
+          "secondary": { "value": "#B9C7C5" },
+          "muted": { "value": "#829896" },
+          "inverse": { "value": "{color.global.teal.900.value}" }
+        },
+        "brand": {
+          "primary": { "value": "#4FA895" },
+          "secondary": { "value": "{color.global.olive.500.value}" },
+          "accent": { "value": "{color.global.gold.400.value}" },
+          "accentKhaki": { "value": "{color.global.sand.300.value}" }
+        }
+      }
+    }
+  },
+  "spacing": {
+    "micro": { "value": "4px", "type": "dimension" },
+    "xs":    { "value": "8px", "type": "dimension" },
+    "sm":    { "value": "16px", "type": "dimension" },
+    "md":    { "value": "24px", "type": "dimension" },
+    "lg":    { "value": "32px", "type": "dimension" },
+    "xl":    { "value": "48px", "type": "dimension" },
+    "2xl":   { "value": "64px", "type": "dimension" }
+  },
+  "borderRadius": {
+    "sm":   { "value": "6px", "type": "dimension" },
+    "md":   { "value": "12px", "type": "dimension" },
+    "lg":   { "value": "20px", "type": "dimension" },
+    "xl":   { "value": "32px", "type": "dimension" },
+    "full": { "value": "9999px", "type": "dimension" }
+  },
+  "typography": {
+    "fontFamily": {
+      "primary": { "value": "'Avenir Arabic', 'Cairo', 'IBM Plex Sans Arabic', sans-serif" },
+      "classical": { "value": "'Amiri', 'Noto Naskh Arabic', serif" }
+    },
+    "fontSize": {
+      "display": { "value": "40px" },
+      "headingXl": { "value": "32px" },
+      "headingLg": { "value": "24px" },
+      "headingMd": { "value": "20px" },
+      "headingSm": { "value": "18px" },
+      "bodyLg": { "value": "16px" },
+      "bodyMd": { "value": "14px" },
+      "caption": { "value": "12px" }
+    }
+  },
+  "motion": {
+    "easing": {
+      "standard": { "value": "cubic-bezier(0.16, 1, 0.3, 1)" },
+      "exit": { "value": "cubic-bezier(0.7, 0, 0.84, 0)" }
+    },
+    "duration": {
+      "micro": { "value": "150ms" },
+      "medium": { "value": "250ms" },
+      "expanded": { "value": "350ms" }
+    }
+  }
+}

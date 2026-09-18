@@ -1,0 +1,14 @@
+.wrangler/
+node_modules/
+.next/
+out/
+backend/.env
+dashboard/.env
+student_app/android/key.properties
+student_app/android/app/release.jks
+student_app/android/app/debug.keystore
+*.jks
+*.keystore
+*.properties
+backend/.dev.vars
+backend/.backups/

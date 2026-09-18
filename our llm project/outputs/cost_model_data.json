@@ -1,0 +1,202 @@
+{
+  "assumptions": {
+    "weeks": 48,
+    "lec_per_week": 4,
+    "hours_per_lec": 2,
+    "students": 2000,
+    "watch_h": 12,
+    "avg_hold_months": 6,
+    "gb_per_hour": 3.75,
+    "bitrate_720": 2.5,
+    "seg_seconds": 5,
+    "cache_hit": 0.85
+  },
+  "prices": {
+    "workers_paid": 5.0,
+    "workers_req_over": 0.3,
+    "r2_storage": 0.015,
+    "r2_ia_storage": 0.01,
+    "r2_classA": 4.5,
+    "r2_classB": 0.36,
+    "r2_free_gb": 10,
+    "r2_free_A": 1000000,
+    "r2_free_B": 10000000,
+    "d1_storage": 0.75,
+    "d1_free_gb": 5,
+    "kv_reads": 0.5,
+    "kv_writes": 5.0,
+    "queues": 0.4,
+    "images_uniq": 0.5,
+    "bunny_storage": 0.01,
+    "bunny_deliv_eu": 0.01,
+    "bunny_deliv_mea": 0.06,
+    "bunny_deliv_vol": 0.005,
+    "bunny_min_month": 1.0,
+    "stream_storage": 5.0,
+    "stream_deliv": 1.0,
+    "domain": 15.0,
+    "play_fee": 25.0,
+    "apple_fee": 99.0,
+    "supabase_pro": 25.0
+  },
+  "results": {
+    "lectures_year": 192,
+    "hours_year": 384,
+    "minutes_year": 23040,
+    "gb_per_lec": 7.5,
+    "gb_year": 1440.0,
+    "tb_year": 1.44,
+    "gb_month_added": 120.0,
+    "peak_tb": 1.44,
+    "segs_per_lec": 5760.0,
+    "objects_year": 1107456.0,
+    "monthly_storage": [
+      0.75,
+      2.55,
+      4.35,
+      6.15,
+      7.95,
+      9.75,
+      11.55,
+      13.35,
+      15.15,
+      16.95,
+      18.75,
+      20.55
+    ],
+    "r2_storage_year": 127.8,
+    "r2_classA_year": 0.0,
+    "r2_reads_month": 17280000,
+    "r2_classB_year": 0.0,
+    "gb_delivered_month": 27000.0,
+    "tb_delivered_year": 324.0,
+    "workers_req_month": 1740000,
+    "workers_over_year": 0.0,
+    "workers_year": 60.0,
+    "bunny_deliv_gb": 1512.0,
+    "bunny_deliv_eu": 15.12,
+    "bunny_deliv_mea": 90.72,
+    "bunny_deliv_vol": 7.56,
+    "bunny_storage_year": 1.44,
+    "bunny_year": 16.56,
+    "items": [
+      [
+        "Cloudflare Workers (الباقة المدفوعة — 10M طلب + 30M CPU-ms شهرياً)",
+        60.0,
+        "أساسي"
+      ],
+      [
+        "Cloudflare R2 — تخزين شرائح الفيديو HLS",
+        127.8,
+        "أساسي"
+      ],
+      [
+        "Cloudflare R2 — عمليات Class A (كتابة الشرائح)",
+        0.0,
+        "أساسي"
+      ],
+      [
+        "Cloudflare R2 — عمليات Class B (قراءة الشرائح)",
+        0.0,
+        "أساسي"
+      ],
+      [
+        "Cloudflare D1 — قاعدة البيانات (ضمن الباقة المدفوعة)",
+        0.0,
+        "أساسي"
+      ],
+      [
+        "Cloudflare KV — مفاتيح التشفير وتتبّع النقل",
+        0.0,
+        "أساسي"
+      ],
+      [
+        "Cloudflare Queues — طابور نقل الفيديو",
+        0.0,
+        "أساسي"
+      ],
+      [
+        "Cloudflare Pages — لوحة المدرس + ويب الطلاب",
+        0.0,
+        "أساسي"
+      ],
+      [
+        "Cloudflare Images — تحويل صور الأغلفة",
+        0.0,
+        "أساسي"
+      ],
+      [
+        "Bunny Stream — الترميز القياسي (مجاني حتى 1080p)",
+        0.0,
+        "أساسي"
+      ],
+      [
+        "Bunny Stream — سحب الشرائح + تخزين مؤقت",
+        16.56,
+        "أساسي"
+      ],
+      [
+        "Supabase Auth — المصادقة (حتى 50 ألف مستخدم نشط)",
+        0.0,
+        "أساسي"
+      ],
+      [
+        "Firebase Cloud Messaging — إشعارات Push",
+        0.0,
+        "أساسي"
+      ],
+      [
+        "تجديد النطاق السنوي",
+        15.0,
+        "أساسي"
+      ],
+      [
+        "حساب Google Play للمطوّرين (مرة واحدة — السنة الأولى فقط)",
+        25.0,
+        "لسنة أولى"
+      ]
+    ],
+    "total_year1": 244.36,
+    "total_year2": 219.36,
+    "monthly_avg_y1": 20.36,
+    "monthly_avg_y2": 18.28,
+    "cost_per_student": 0.122,
+    "cost_per_lecture_hour": 0.64,
+    "cost_per_tb": 0.75,
+    "perm_y3": 762.76,
+    "scenarios": [
+      [
+        "الأساس: 2,000 طالب — تراكم سنة ثم حذف",
+        244.36,
+        219.36
+      ],
+      [
+        "500 طالب فقط (نطاق ضيق)",
+        244.36,
+        219.36
+      ],
+      [
+        "10,000 طالب (توسّع كبير)",
+        257.15,
+        232.15
+      ],
+      [
+        "احتفاظ متحرك 12 شهراً (حجم مستقر 1.44 TB)",
+        398.96,
+        373.96
+      ],
+      [
+        "أرشيف دائم بلا حذف (سنة 1 / 2 / 3)",
+        244.36,
+        503.56
+      ]
+    ],
+    "bunny_premium_1080": 1152.0,
+    "bunny_premium_4k": 3456.0,
+    "stream_storage_year": 748.8,
+    "stream_deliv_year": 17280.0,
+    "stream_total": 18112.24,
+    "traditional_cdn": 16200.0,
+    "s3_like": 29160.0
+  }
+}

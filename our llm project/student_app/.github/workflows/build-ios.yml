@@ -1,0 +1,50 @@
+name: Build iOS IPA (Unsigned)
+
+on:
+  push:
+    branches: [ main, master ]
+  workflow_dispatch: # Allows manual trigger from GitHub UI
+
+jobs:
+  build-ios:
+    name: Build iOS IPA
+    runs-on: macos-14 # Uses fast Apple Silicon M-series runners
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'zulu'
+          java-version: '17'
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: 'stable'
+          cache: true
+
+      - name: Get Flutter Packages
+        run: |
+          cd student_app
+          flutter pub get
+
+      - name: Build iOS Application (Unsigned)
+        run: |
+          cd student_app
+          flutter build ios --release --no-codesign
+
+      - name: Package app into IPA
+        run: |
+          mkdir -p Payload
+          mv student_app/build/ios/iphoneos/Runner.app Payload/
+          zip -r student_app/build/ios/iphoneos/Runner.ipa Payload
+
+      - name: Upload IPA Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: student-app-ios-release
+          path: student_app/build/ios/iphoneos/Runner.ipa
+          if-no-files-found: error

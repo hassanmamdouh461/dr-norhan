@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>أكبر بنك أسئلة وتدريبات تفاعلية | منصة فُصْحَى — أ. أشرف سليم</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@400;600;700;800;900&family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Custom ergonomic micro-interactions & animations */
+    .option-card {
+      transition: all 180ms cubic-bezier(0.2, 0.0, 0.0, 1.0);
+    }
+    .option-card:hover {
+      transform: translateY(-1px);
+    }
+    .option-card.selected {
+      border-color: #142B24;
+      background-color: #EBF0EB;
+      box-shadow: 0 0 0 1.5px #142B24;
+    }
+    .option-card.correct-highlight {
+      border-color: #10B981 !important;
+      background-color: #ECFDF5 !important;
+      color: #065F46 !important;
+    }
+    .option-card.wrong-highlight {
+      border-color: #EF4444 !important;
+      background-color: #FEF2F2 !important;
+      color: #991B1B !important;
+    }
+    .badge-glow {
+      box-shadow: 0 0 15px rgba(234, 167, 46, 0.25);
+    }
+    @keyframes pulseSoft {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.6; }
+    }
+    .pulse-soft {
+      animation: pulseSoft 2s ease-in-out infinite;
+    }
+  </style>
+</head>
+<body class="bg-fusha-stone text-slate-800 font-cairo antialiased min-h-screen flex flex-col selection:bg-fusha-khaki selection:text-fusha-forest">
+
+  <!-- ================= 1. UNIFIED HEADER ================= -->
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-stone-200/80 shadow-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-18 sm:h-20 flex items-center justify-between gap-4">
+      <!-- Brand Logo & Context -->
+      <a href="dashboard.html" class="flex items-center gap-3 group shrink-0">
+        <img src="assets/fusha-brand-logo.png" alt="فصحى" class="h-10 sm:h-11 w-auto object-contain transition-transform group-hover:scale-[1.02]" />
+        <div class="hidden sm:flex flex-col border-r-2 border-stone-200/90 pr-3 py-0.5">
+          <span class="text-xs font-alexandria font-bold text-fusha-forest leading-tight">منصة فُصْحَى</span>
+          <span class="text-[10px] text-fusha-olive font-bold leading-tight">أ. أشرف سليم — لغة عربية</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav id="navbar-links" class="hidden lg:flex items-center gap-1.5 xl:gap-2 text-xs sm:text-sm font-bold text-fusha-forest">
+        <a href="dashboard.html" class="px-3.5 py-2 rounded-xl text-stone-600 hover:text-fusha-forest hover:bg-stone-100 font-bold text-xs sm:text-sm transition-all flex items-center gap-1.5">
+          <i data-lucide="home" class="w-4 h-4 opacity-70"></i>
+          <span>الرئيسية</span>
+        </a>
+        <a href="courses.html" class="px-3.5 py-2 rounded-xl text-stone-600 hover:text-fusha-forest hover:bg-stone-100 font-bold text-xs sm:text-sm transition-all flex items-center gap-1.5">
+          <i data-lucide="book-open" class="w-4 h-4 opacity-70"></i>
+          <span>المناهج والمحاضرات</span>
+        </a>
+        <a href="bank.html" class="px-3.5 py-2 rounded-xl bg-fusha-forest text-white font-bold text-xs sm:text-sm shadow-xs transition-all flex items-center gap-1.5">
+          <i data-lucide="layers" class="w-4 h-4 opacity-90"></i>
+          <span>أكبر بنك أسئلة</span>
+        </a>
+        <a href="dictionary.html" class="px-3.5 py-2 rounded-xl text-stone-600 hover:text-fusha-forest hover:bg-stone-100 font-bold text-xs sm:text-sm transition-all flex items-center gap-1.5">
+          <i data-lucide="book-marked" class="w-4 h-4 opacity-70"></i>
+          <span>معجم فُصْحَى</span>
+        </a>
+        <a href="parent.html" class="px-3.5 py-2 rounded-xl text-stone-600 hover:text-fusha-forest hover:bg-stone-100 font-bold text-xs sm:text-sm transition-all flex items-center gap-1.5">
+          <i data-lucide="shield-check" class="w-4 h-4 opacity-70"></i>
+          <span>متابعة ولي الأمر</span>
+        </a>
+      </nav>
+
+      <!-- Auth Action Container & Mobile Toggle -->
+      <div class="flex items-center gap-2 sm:gap-3 shrink-0">
+        <div id="navbar-auth-actions" class="flex items-center gap-2 sm:gap-2.5"></div>
+        <button id="mobileMenuBtn" type="button" class="lg:hidden p-2.5 rounded-xl bg-stone-100 hover:bg-stone-200/80 text-fusha-forest transition cursor-pointer" aria-label="فتح القائمة">
+          <i data-lucide="menu" class="w-5 h-5"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= 2. MAIN CONTAINER ================= -->
+  <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 space-y-6 sm:space-y-8">
+    
+    <!-- Intent-Driven Hero Banner: Proactive Status & Action -->
+    <section class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-fusha-forestDark via-fusha-forest to-fusha-forestLight text-white p-6 sm:p-10 shadow-xl border border-white/10">
+      <div class="absolute -end-12 -top-12 w-80 h-80 bg-fusha-sun/15 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="absolute -start-8 -bottom-8 w-64 h-64 bg-fusha-sage/20 rounded-full blur-2xl pointer-events-none"></div>
+
+      <div class="relative z-10 flex flex-col lg:flex-row lg:items-center justify-between gap-8">
+        <div class="space-y-3.5 max-w-2xl">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-fusha-khakiLight text-xs font-bold border border-white/10 backdrop-blur-sm">
+            <span class="w-2 h-2 rounded-full bg-fusha-sun animate-ping"></span>
+            <span>أكبر بنك أسئلة متواجد للثانوية العامة 2026</span>
+          </div>
+
+          <h1 class="font-alexandria font-extrabold text-2xl sm:text-4xl text-white leading-tight">
+            تدرّب بذكاء.. وتعلّم من كل خطأ
+          </h1>
+
+          <p class="text-xs sm:text-sm text-fusha-khaki leading-relaxed">
+            آلاف الأسئلة والتدريبات التفاعلية الشاملة لكافة فروع اللغة العربية (نحو، بلاغة، أدب، نصوص، قراءة) مقسمة بدقة حسب نواتج التعلم ومستويات الصعوبة مع التفسير الفوري لسبب كل اختيار لضمان الـ 80/80.
+          </p>
+
+          <!-- Real-Time Metrics Strip (Habit Reinforcement) -->
+          <div class="pt-2 flex flex-wrap items-center gap-4 text-xs font-bold text-stone-200">
+            <div class="flex items-center gap-2 bg-white/10 px-3.5 py-1.5 rounded-xl border border-white/10">
+              <i data-lucide="flame" class="w-4 h-4 text-amber-400"></i>
+              <span>تدريب اليوم: <strong id="metricSolvedToday" class="text-white">0</strong> تم حلها</span>
+            </div>
+            <div class="flex items-center gap-2 bg-white/10 px-3.5 py-1.5 rounded-xl border border-white/10">
+              <i data-lucide="target" class="w-4 h-4 text-emerald-400"></i>
+              <span>نسبة الدقة: <strong id="metricAccuracy" class="text-white">--%</strong></span>
+            </div>
+            <div class="flex items-center gap-2 bg-white/10 px-3.5 py-1.5 rounded-xl border border-white/10 cursor-pointer hover:bg-white/15 transition" onclick="filterByMistakesNotebook()">
+              <i data-lucide="bookmark" class="w-4 h-4 text-fusha-sun"></i>
+              <span>كشكول الأخطاء: <strong id="metricNotebookCount" class="text-fusha-sun">0</strong> أسئلة</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Quick Actions -->
+        <div class="flex flex-col sm:flex-row lg:flex-col items-stretch gap-3 shrink-0">
+          <button id="randomQuizBtn" class="px-6 py-4 rounded-2xl bg-fusha-sun hover:bg-fusha-sunHover text-fusha-forestDark font-alexandria font-black text-xs sm:text-sm shadow-lg shadow-fusha-sun/25 transition flex items-center justify-center gap-2.5 cursor-pointer transform hover:-translate-y-0.5">
+            <i data-lucide="shuffle" class="w-4 h-4 text-fusha-forestDark"></i>
+            <span>توليد كويز عشوائي سريع (10 أسئلة)</span>
+          </button>
+
+          <button id="resetSessionBtn" class="px-4 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-stone-200 font-bold text-xs border border-white/15 transition flex items-center justify-center gap-2 cursor-pointer">
+            <i data-lucide="rotate-ccw" class="w-3.5 h-3.5"></i>
+            <span>إعادة تعيين إجابات الجلسة</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 3. HABIT-ALIGNED FILTERS & SEARCH ================= -->
+    <div class="bg-white p-4 sm:p-6 rounded-3xl border border-stone-200/90 shadow-sm space-y-4">
+      
+      <!-- Top Row: Primary Branch Tabs (Fitts's Law Target Size) -->
+      <div class="flex flex-wrap items-center gap-2" id="branchFilters">
+        <button data-topic="" class="branch-btn px-4 py-2.5 rounded-xl text-xs font-bold bg-fusha-forest text-white transition flex items-center gap-1.5 shadow-xs cursor-pointer">
+          <i data-lucide="layout-grid" class="w-3.5 h-3.5"></i>
+          <span>جميع الفروع</span>
+        </button>
+        <button data-topic="نحو" class="branch-btn px-4 py-2.5 rounded-xl text-xs font-bold bg-stone-100 text-stone-700 hover:bg-stone-200/80 transition flex items-center gap-1.5 cursor-pointer">
+          <i data-lucide="check-check" class="w-3.5 h-3.5 text-emerald-600"></i>
+          <span>النحو والصرف</span>
+        </button>
+        <button data-topic="بلاغة" class="branch-btn px-4 py-2.5 rounded-xl text-xs font-bold bg-stone-100 text-stone-700 hover:bg-stone-200/80 transition flex items-center gap-1.5 cursor-pointer">
+          <i data-lucide="sparkles" class="w-3.5 h-3.5 text-amber-500"></i>
+          <span>علم البلاغة</span>
+        </button>
+        <button data-topic="أدب" class="branch-btn px-4 py-2.5 rounded-xl text-xs font-bold bg-stone-100 text-stone-700 hover:bg-stone-200/80 transition flex items-center gap-1.5 cursor-pointer">
+          <i data-lucide="feather" class="w-3.5 h-3.5 text-stone-500"></i>
+          <span>تاريخ الأدب</span>
+        </button>
+        <button data-topic="نصوص" class="branch-btn px-4 py-2.5 rounded-xl text-xs font-bold bg-stone-100 text-stone-700 hover:bg-stone-200/80 transition flex items-center gap-1.5 cursor-pointer">
+          <i data-lucide="file-text" class="w-3.5 h-3.5 text-blue-500"></i>
+          <span>نصوص متحررة</span>
+        </button>
+        <button data-topic="قراءة" class="branch-btn px-4 py-2.5 rounded-xl text-xs font-bold bg-stone-100 text-stone-700 hover:bg-stone-200/80 transition flex items-center gap-1.5 cursor-pointer">
+          <i data-lucide="book-open" class="w-3.5 h-3.5 text-teal-600"></i>
+          <span>قراءة ونقد</span>
+        </button>
+      </div>
+
+      <!-- Secondary Filter Row: Search & Difficulty & Status Filters -->
+      <div class="pt-3 border-t border-stone-100 flex flex-col md:flex-row items-stretch md:items-center justify-between gap-3">
+        
+        <!-- Search Input with Keyboard Shortcut Indicator -->
+        <div class="relative flex-1 max-w-md">
+          <input 
+            type="text" 
+            id="bankSearch" 
+            placeholder="ابحث في نص السؤال، القاعدة النحوية، أو الكلمة..." 
+            class="w-full px-4 py-2.5 pe-20 ps-10 rounded-2xl bg-stone-50 border border-stone-200/90 text-xs focus:outline-hidden focus:border-fusha-forest focus:bg-white transition"
+          />
+          <i data-lucide="search" class="w-4 h-4 absolute start-3.5 top-3 text-stone-400"></i>
+          <span class="hidden sm:inline-flex items-center absolute end-2.5 top-2 px-1.5 py-0.5 rounded bg-stone-200/60 font-mono text-[10px] text-stone-500">
+            ⌘K
+          </span>
+        </div>
+
+        <!-- Filter Dropdowns / Status Pills -->
+        <div class="flex flex-wrap items-center gap-2 text-xs">
+          <!-- Difficulty Filter -->
+          <div class="flex items-center gap-1 bg-stone-50 p-1 rounded-xl border border-stone-200/80">
+            <span class="text-[11px] text-stone-400 font-bold px-2">المستوى:</span>
+            <button class="difficulty-btn px-2.5 py-1 rounded-lg font-bold bg-white text-fusha-forest shadow-2xs" data-difficulty="">الكل</button>
+            <button class="difficulty-btn px-2.5 py-1 rounded-lg font-medium text-stone-600 hover:bg-white" data-difficulty="سهل">أساسي</button>
+            <button class="difficulty-btn px-2.5 py-1 rounded-lg font-medium text-stone-600 hover:bg-white" data-difficulty="متوسط">متوسط</button>
+            <button class="difficulty-btn px-2.5 py-1 rounded-lg font-medium text-stone-600 hover:bg-white" data-difficulty="مستويات عليا">مستويات عليا</button>
+          </div>
+
+          <!-- Notebook Only Toggle -->
+          <button id="toggleNotebookOnlyBtn" class="px-3 py-2 rounded-xl border border-stone-200 text-stone-600 hover:text-amber-700 hover:bg-amber-50 font-bold transition flex items-center gap-1.5 cursor-pointer">
+            <i data-lucide="bookmark" class="w-3.5 h-3.5 text-amber-500"></i>
+            <span>كشكول الأخطاء فقط</span>
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Active Feed Count & Sorting Info -->
+    <div class="flex items-center justify-between px-2 text-xs font-semibold text-stone-500">
+      <div class="flex items-center gap-2">
+        <span>عرض الأسئلة:</span>
+        <strong id="visibleCount" class="text-fusha-forest font-bold font-alexandria">0</strong>
+        <span>سؤال متوفر</span>
+      </div>
+      <span class="text-[11px] text-stone-400">يتم التقييم والشرح وفق أحدث معايير المركز القومي للامتحانات</span>
+    </div>
+
+    <!-- ================= 4. QUESTIONS FEED CONTAINER ================= -->
+    <div id="questionsContainer" class="space-y-6">
+      <!-- Skeletons loading state (Zero Layout Shift) -->
+      <div class="bg-white rounded-3xl p-6 sm:p-8 border border-stone-200 shadow-sm animate-pulse space-y-4">
+        <div class="h-4 bg-stone-200 rounded-md w-1/4"></div>
+        <div class="h-6 bg-stone-200 rounded-md w-3/4"></div>
+        <div class="space-y-2.5 pt-2">
+          <div class="h-12 bg-stone-100 rounded-2xl"></div>
+          <div class="h-12 bg-stone-100 rounded-2xl"></div>
+          <div class="h-12 bg-stone-100 rounded-2xl"></div>
+          <div class="h-12 bg-stone-100 rounded-2xl"></div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ================= 5. FOOTER ================= -->
+  <footer class="mt-16 bg-white border-t border-stone-200 py-8 text-center text-xs text-stone-500 space-y-2">
+    <p class="font-bold text-fusha-forest">منصة وتطبيق فُصْحَى للغة العربية — الأستاذ أشرف سليم © <span id="year"></span></p>
+    <p class="text-[11px] text-stone-400">جميع حقوق بنك الأسئلة والتدريبات التفاعلية محفوظة ومسجلة</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="/assets/js/api.js?v=20260917_02"></script>
+  <script src="/assets/js/nav.js?v=20260917_03"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // ================= MASTER QUESTION BANK DATASET =================
+    const masterBank = [
+      {
+        id: 'bank-1',
+        topic: 'نحو',
+        difficulty: 'متوسط',
+        bloom: 'تطبيق',
+        examYear: 'تجريبي 2024',
+        text: '«لَا يَرْفَعُ قَدْرَ الأَوْطَانِ إِلَّا أَبْنَاؤُهَا المُخْلِصُونَ».. حُكْمُ إِعْرَابِ كلمة «أَبْنَاؤُهَا» في الجملة السابقة:',
+        options: [
+          'فاعل مرفوع وعلامة رفعه الضمة الظاهرة',
+          'مستثنى منصوب وعلامة نصبه الفتحة الظاهرة',
+          'بدل مرفوع وعلامة رفعه الضمة الظاهرة',
+          'مفعول به منصوب وعلامة نصبه الفتحة'
+        ],
+        correctAnswer: 0,
+        hint: 'احذف أداة النفي (لا) وأداة الاستثناء (إلا) ورتب أركان الجملة الأصلية لمعرفة الموقع الإعرابي.',
+        explanation: 'الأسلوب هنا ناقص منفي، فتحذف (لا) و(إلا) وتُعرب الكلمة حسب موقعها في الجملة: (يرفعُ قدرَ الأوطانِ أبناؤها)، فـ (أبناؤها) فاعل مؤخر مرفوع وعلامة رفعه الضمة، و(قدرَ) مفعول به مقدم منصوب.'
+      },
+      {
+        id: 'bank-2',
+        topic: 'نحو',
+        difficulty: 'مستويات عليا',
+        bloom: 'تحليل',
+        examYear: 'دور أول 2023',
+        text: '«المُعَلِّمُ مُعْطٍ الطَّالِبَ جَائِزَةً» — عند تحويل الجملة إلى جمع المذكر السالم تصبح صياغتها الصحيحة:',
+        options: [
+          'المعلمون معطين الطلاب جوائز',
+          'المعلمون معطون الطلابَ جوائزَ',
+          'المعلمون معطيين الطلاب جوائز',
+          'المعلمون معطو الطلاب جوائز'
+        ],
+        correctAnswer: 1,
+        hint: 'انتبه لقاعدة جمع الاسم المنقوص وإعمال اسم الفاعل المنون المنصوب لمفعولين.',
+        explanation: 'عند جمع الاسم المنقوص (معطٍ) جمع مذكر سالم تُحذف ياؤه ويُضم ما قبل الواو رفعاً، فيقال: (معطُونَ)، ويبقى عاملاً فينصب مفعولين (الطلابَ مفعول أول، وجوائزَ مفعول ثانٍ).'
+      },
+      {
+        id: 'bank-3',
+        topic: 'بلاغة',
+        difficulty: 'سهل',
+        bloom: 'فهم',
+        examYear: 'حصص مصر',
+        text: '«وَسَلَا مِصْرَ هَلْ سَلَا القَلْبُ عَنْهَا؟».. المحسن البديعي اللفظي بين الكلمتين (سَلَا الأولى وسَلَا الثانية) هو:',
+        options: [
+          'جناس تام يعطي جرساً موسيقياً يطرب الأذن',
+          'طباق إيجاب يوضح المعنى ويؤكده',
+          'حسن تقسيم يطرب الآذان بتوازن الجمل',
+          'تصريع في صدر البيت وعجزه'
+        ],
+        correctAnswer: 0,
+        hint: 'الكلمتان متفقتان تماماً في الحروف والترتيب والضبط واختلفتا في المعنى الجوهري.',
+        explanation: 'سلا الأولى بمعنى (اسألا) مشتقة من السؤال، وسلا الثانية من (السلوّ والنسيان)، اتفاق تام في عدد الحروف وترتيبها وضبطها مع اختلاف المعنى = جناس تام يُعطي جرساً موسيقياً.'
+      },
+      {
+        id: 'bank-4',
+        topic: 'أدب',
+        difficulty: 'متوسط',
+        bloom: 'تذكر',
+        examYear: 'وزاري سابق',
+        text: 'من رواد مدرسة الإحياء والبعث الذين أخذوا الشعر من الضعف والركاكة في العصر العثماني إلى القوة والأصالة:',
+        options: [
+          'محمود سامي البارودي',
+          'أحمد شوقي (أمير الشعراء)',
+          'إبراهيم ناجي',
+          'خليل مطران'
+        ],
+        correctAnswer: 0,
+        hint: 'هو الشاعر الملقب بـ «رب السيف والقلم» وقائد حركة إحياء الشعر العربي.',
+        explanation: 'محمود سامي البارودي هو الرائد الأول لحركة الإحياء والبعث، عارض فحول الشعراء القدامى واستعاد للشعر ديباجته وقوته الموروثة من العصور العباسية والأندلسية الزاهية.'
+      },
+      {
+        id: 'bank-5',
+        topic: 'نحو',
+        difficulty: 'مستويات عليا',
+        bloom: 'إبداع ونقد',
+        examYear: 'دور أول 2024',
+        text: '«إِنَّمَا يَخْشَى اللهَ مِنْ عِبَادِهِ العُلَمَاءُ».. نوع (ما) وإعراب كلمة «العُلَمَاءُ» في الآية الكريمة:',
+        options: [
+          'ما كافة، و(العلماءُ) فاعل مؤخر مرفوع بالضمة',
+          'ما موصولة، و(العلماءُ) خبر إن مرفوع بالضمة',
+          'ما نافية، و(العلماءُ) فاعل مؤخر مرفوع بالضمة',
+          'ما مصدرية، و(العلماءُ) اسم إن مؤخر منصوب بالفتحة'
+        ],
+        correctAnswer: 0,
+        hint: 'دخول (ما) على (إنّ) يكفها عن العمل، وانتبه لمن يقع منه الخشية ولمن تُوجّه.',
+        explanation: '(ما) هنا كافة كفت (إنّ) عن نصب اسمها، والترتيب الدلالي: يخشى العلماءُ اللهَ، فاسم الجلالة (اللهَ) مفعول به مقدم للتعظيم، و(العلماءُ) فاعل مؤخر مرفوع وعلامة رفعه الضمة.'
+      },
+      {
+        id: 'bank-6',
+        topic: 'بلاغة',
+        difficulty: 'متوسط',
+        bloom: 'تحليل',
+        examYear: 'نماذج الوزارة 2025',
+        text: 'قال الشاعر: «إِذَا رَأَيْتَ نُيُوبَ اللَّيْثِ بَارِزَةً.. فَلَا تَظُنَّنَّ أَنَّ اللَّيْثَ يَبْتَسِمُ».. نوع الصورة البيانية في الشطر الثاني:',
+        options: [
+          'استعارة مكنية حيث صوّر الليث بإنسان يبتسم',
+          'تشبيه بليغ مبني على المبتدأ والخبر',
+          'استعارة تصريحية صرّح فيها بالمشبه به',
+          'مجاز مرسل علاقته الجزئية'
+        ],
+        correctAnswer: 0,
+        hint: 'الابتسام صفة من صفات البشر وُضعت للأسد على سبيل التخييل.',
+        explanation: 'استعارة مكنية؛ حيث شبّه الليث (الأسد) بإنسان يبتسم، وحذف المشبه به (الإنسان) وأتى بلازمة من لوازمه وهي (يبتسم) وسر جمالها التشخيص.'
+      },
+      {
+        id: 'bank-7',
+        topic: 'نصوص',
+        difficulty: 'متوسط',
+        bloom: 'فهم وتحليل',
+        examYear: 'امتحان تجريبي',
+        text: '«وطني لو شغلت بالخلد عنه.. نازعتني إليه في الخلد نفسي».. ما الذي عابه بعض النقاد على أمير الشعراء شوقي في هذا البيت؟',
+        options: [
+          'المبالغة غير المقبولة عقلياً ودينياً في تفضيل الوطن على الخلد',
+          'ضعف الوزن العروضي واستخدام ألفاظ ركيكة',
+          'تناقض المعنى مع النزعة الوطنية الصادقة',
+          'تكرار كلمة الخلد دون فائدة بلاغية'
+        ],
+        correctAnswer: 0,
+        hint: 'النقاد رأوا أن النزاع في دخول الجنة والانشغال عنها بالوطن مبالغة تتجاوز المعقول.',
+        explanation: 'عاب النقاد على شوقي مبالغته التي اعتبروها فاسدة دينياً؛ إذ كيف ينشغل إنسان في جنة الخلد عن نعيمها بوطنه الدنيوي، بينما رد المدافعون بأنها مبالغة مقبولة في التعبير عن فرط التعلق بالوطن.'
+      },
+      {
+        id: 'bank-8',
+        topic: 'قراءة',
+        difficulty: 'سهل',
+        bloom: 'فهم',
+        examYear: 'تدريبات فصحى',
+        text: 'في موضوع «إرادة التغيير» للدكتور زكي نجيب محمود، ما الشرط الأساسي الذي قرره الكاتب حتى تكون الإرادة هي الفعل نفسه؟',
+        options: [
+          'أن تكون الإرادة محركة للعمل والتغيير، فإذا لم يتغير شيء فلا إرادة',
+          'أن تكون الإرادة مصحوبة بالقول والخطابة فقط',
+          'أن ترتبط الإرادة بنيل الشهرة والمكانة الاجتماعية',
+          'أن تنفصل الإرادة عن الممارسة الواقعية'
+        ],
+        correctAnswer: 0,
+        hint: 'الإرادة والفعل وجهان لعملة واحدة؛ لا توجد إرادة بغير حركة وتغيير.',
+        explanation: 'قرر الدكتور زكي نجيب محمود أن الإرادة هي نفسها الفعل، فلا يمكن أن توجد إرادة بغير فعل يغير الواقع، كما لا يكون الوالد والداً بغير ولد.'
+      }
+    ];
+
+    // ================= STATE PERSISTENCE ENGINE =================
+    const STORAGE_KEY_NOTEBOOK = 'fusha_mistakes_notebook_v1';
+    const STORAGE_KEY_HISTORY = 'fusha_quiz_history_v1';
+
+    let userAnswers = {}; // { qId: selectedOptionIndex }
+    let checkedState = {}; // { qId: true/false }
+    let notebook = JSON.parse(localStorage.getItem(STORAGE_KEY_NOTEBOOK) || '[]');
+    let currentTopic = '';
+    let currentDifficulty = '';
+    let searchQuery = '';
+    let onlyNotebook = false;
+
+    // Save notebook helper
+    function saveNotebookToStorage() {
+      localStorage.setItem(STORAGE_KEY_NOTEBOOK, JSON.stringify(notebook));
+      updateMetrics();
+    }
+
+    // Toggle bookmark / notebook
+    window.toggleNotebook = function(qId) {
+      const idx = notebook.indexOf(qId);
+      if (idx > -1) {
+        notebook.splice(idx, 1);
+        if (window.showToast) window.showToast('تمت إزالة السؤال من كشكول الأخطاء', 'info');
+      } else {
+        notebook.push(qId);
+        if (window.showToast) window.showToast('تم حفظ السؤال في كشكول الأخطاء للمراجعة ⭐', 'success');
+      }
+      saveNotebookToStorage();
+      renderQuestions();
+    };
+
+    // Toggle hint
+    window.toggleHint = function(qId) {
+      const hintEl = document.getElementById(`hint-${qId}`);
+      if (hintEl) {
+        hintEl.classList.toggle('hidden');
+      }
+    };
+
+    // Filter by notebook quick pill
+    window.filterByMistakesNotebook = function() {
+      onlyNotebook = !onlyNotebook;
+      const btn = document.getElementById('toggleNotebookOnlyBtn');
+      if (onlyNotebook) {
+        btn.className = 'px-3 py-2 rounded-xl border border-amber-400 bg-amber-100 text-amber-900 font-bold transition flex items-center gap-1.5 cursor-pointer';
+      } else {
+        btn.className = 'px-3 py-2 rounded-xl border border-stone-200 text-stone-600 hover:text-amber-700 hover:bg-amber-50 font-bold transition flex items-center gap-1.5 cursor-pointer';
+      }
+      renderQuestions();
+    };
+
+    // Global shortcut ⌘K / Ctrl+K
+    window.addEventListener('keydown', (e) => {
+      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
+        e.preventDefault();
+        const search = document.getElementById('bankSearch');
+        if (search) {
+          search.focus();
+          search.select();
+        }
+      }
+    });
+
+    // ================= METRICS ENGINE =================
+    function updateMetrics() {
+      const totalSolved = Object.keys(checkedState).length;
+      let correctCount = 0;
+      Object.entries(checkedState).forEach(([qId, isChecked]) => {
+        if (isChecked) {
+          const q = masterBank.find(x => x.id === qId);
+          if (q && userAnswers[qId] === q.correctAnswer) {
+            correctCount++;
+          }
+        }
+      });
+
+      const accuracy = totalSolved > 0 ? Math.round((correctCount / totalSolved) * 100) : '--';
+      
+      const solvedEl = document.getElementById('metricSolvedToday');
+      const accEl = document.getElementById('metricAccuracy');
+      const nbEl = document.getElementById('metricNotebookCount');
+
+      if (solvedEl) solvedEl.textContent = totalSolved;
+      if (accEl) accEl.textContent = `${accuracy}%`;
+      if (nbEl) nbEl.textContent = notebook.length;
+    }
+
+    // ================= EVENT BINDINGS =================
+    const branchButtons = document.querySelectorAll('.branch-btn');
+    branchButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        branchButtons.forEach(b => {
+          b.className = 'branch-btn px-4 py-2.5 rounded-xl text-xs font-bold bg-stone-100 text-stone-700 hover:bg-stone-200/80 transition flex items-center gap-1.5 cursor-pointer';
+        });
+        btn.className = 'branch-btn px-4 py-2.5 rounded-xl text-xs font-bold bg-fusha-forest text-white transition flex items-center gap-1.5 shadow-xs cursor-pointer';
+        currentTopic = btn.dataset.topic;
+        renderQuestions();
+      });
+    });
+
+    const diffButtons = document.querySelectorAll('.difficulty-btn');
+    diffButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        diffButtons.forEach(b => {
+          b.className = 'difficulty-btn px-2.5 py-1 rounded-lg font-medium text-stone-600 hover:bg-white';
+        });
+        btn.className = 'difficulty-btn px-2.5 py-1 rounded-lg font-bold bg-white text-fusha-forest shadow-2xs';
+        currentDifficulty = btn.dataset.difficulty;
+        renderQuestions();
+      });
+    });
+
+    document.getElementById('toggleNotebookOnlyBtn').addEventListener('click', () => {
+      window.filterByMistakesNotebook();
+    });
+
+    document.getElementById('bankSearch').addEventListener('input', (e) => {
+      searchQuery = e.target.value.trim().toLowerCase();
+      renderQuestions();
+    });
+
+    document.getElementById('randomQuizBtn').onclick = () => {
+      window.location.href = 'exam.html?mode=random&count=10';
+    };
+
+    document.getElementById('resetSessionBtn').onclick = () => {
+      if (confirm('هل تريد مسح إجاباتك الحالية والبدء من جديد؟')) {
+        userAnswers = {};
+        checkedState = {};
+        updateMetrics();
+        renderQuestions();
+        if (window.showToast) window.showToast('تمت إعادة تعيين إجابات الجلسة بنجاح', 'info');
+      }
+    };
+
+    // ================= QUESTION SELECTION & SUBMISSION =================
+    window.selectOption = function(qId, optIdx) {
+      if (checkedState[qId]) return; // locked after check
+      userAnswers[qId] = optIdx;
+
+      // Update styling
+      const q = masterBank.find(x => x.id === qId);
+      if (!q) return;
+
+      q.options.forEach((_, i) => {
+        const optEl = document.getElementById(`opt-${qId}-${i}`);
+        if (optEl) {
+          if (i === optIdx) {
+            optEl.className = 'option-card selected flex items-center justify-between p-4 rounded-2xl border cursor-pointer';
+          } else {
+            optEl.className = 'option-card flex items-center justify-between p-4 rounded-2xl border border-stone-200/90 bg-stone-50/60 hover:bg-stone-50 text-stone-700 cursor-pointer';
+          }
+        }
+      });
+    };
+
+    window.checkAnswer = function(qId) {
+      const q = masterBank.find(x => x.id === qId);
+      if (!q) return;
+
+      if (userAnswers[qId] === undefined) {
+        if (window.showToast) {
+          window.showToast('يرجى اختيار إجابة أولاً قبل التحقق.', 'warning');
+        } else {
+          alert('يرجى اختيار إجابة أولاً قبل التحقق.');
+        }
+        return;
+      }
+
+      checkedState[qId] = true;
+      const userChoice = userAnswers[qId];
+      const isCorrect = userChoice === q.correctAnswer;
+      const feedbackEl = document.getElementById(`feedback-${qId}`);
+      const actionRowEl = document.getElementById(`actions-${qId}`);
+
+      // Highlight options
+      q.options.forEach((_, i) => {
+        const optEl = document.getElementById(`opt-${qId}-${i}`);
+        if (!optEl) return;
+        if (i === q.correctAnswer) {
+          optEl.className = 'option-card correct-highlight flex items-center justify-between p-4 rounded-2xl border font-bold';
+        } else if (i === userChoice && !isCorrect) {
+          optEl.className = 'option-card wrong-highlight flex items-center justify-between p-4 rounded-2xl border line-through opacity-80';
+        } else {
+          optEl.className = 'option-card flex items-center justify-between p-4 rounded-2xl border border-stone-100 bg-stone-50/30 text-stone-400 opacity-60 pointer-events-none';
+        }
+      });
+
+      // Show Feedback
+      feedbackEl.classList.remove('hidden');
+      if (isCorrect) {
+        feedbackEl.className = 'p-5 rounded-2xl border border-emerald-300 bg-emerald-50/90 text-emerald-950 text-xs leading-relaxed space-y-2 animate-in fade-in duration-200';
+        feedbackEl.innerHTML = `
+          <div class="flex items-center gap-2 font-black text-sm text-emerald-800">
+            <i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-600"></i>
+            <span>إجابة صحيحة وممتازة! أحسنت يا بطل 🎉</span>
+          </div>
+          <div class="p-3 bg-white/70 rounded-xl border border-emerald-200 text-stone-700 space-y-1">
+            <strong class="text-emerald-900 block font-alexandria">💡 تحليل الأستاذ أشرف سليم للإجابة:</strong>
+            <p>${q.explanation}</p>
+          </div>
+        `;
+      } else {
+        // Auto add to notebook if wrong
+        if (!notebook.includes(qId)) {
+          notebook.push(qId);
+          saveNotebookToStorage();
+        }
+
+        feedbackEl.className = 'p-5 rounded-2xl border border-rose-300 bg-rose-50/90 text-rose-950 text-xs leading-relaxed space-y-2 animate-in fade-in duration-200';
+        feedbackEl.innerHTML = `
+          <div class="flex items-center justify-between gap-2">
+            <div class="flex items-center gap-2 font-black text-sm text-rose-800">
+              <i data-lucide="alert-circle" class="w-5 h-5 text-rose-600"></i>
+              <span>إجابة غير دقيقة.. تم حفظ السؤال تلقائياً بكشكول الأخطاء!</span>
+            </div>
+            <span class="px-2.5 py-1 rounded-md bg-white border border-rose-200 text-rose-700 font-bold text-[11px]">
+              الإجابة النموذجية: (${q.options[q.correctAnswer]})
+            </span>
+          </div>
+          <div class="p-3 bg-white/80 rounded-xl border border-rose-200 text-stone-700 space-y-1">
+            <strong class="text-fusha-forest block font-alexandria">💡 الشرح والتوجيه لتفادي الخطأ في الامتحان:</strong>
+            <p>${q.explanation}</p>
+          </div>
+        `;
+      }
+
+      // Hide check button, show try again or next
+      if (actionRowEl) {
+        actionRowEl.innerHTML = `
+          <div class="flex items-center gap-2">
+            <span class="text-xs font-bold text-stone-500">تم تسجيل إجابتك ✅</span>
+          </div>
+          <button type="button" onclick="window.toggleNotebook('${q.id}')" class="text-xs font-bold flex items-center gap-1.5 ${notebook.includes(qId) ? 'text-amber-700 bg-amber-50 px-3 py-1.5 rounded-xl border border-amber-200' : 'text-stone-400 hover:text-amber-600'}">
+            <i data-lucide="bookmark" class="w-4 h-4 ${notebook.includes(qId) ? 'fill-amber-500 text-amber-500' : ''}"></i>
+            <span>${notebook.includes(qId) ? 'محفوظ في كشكول الأخطاء' : 'حفظ في الكشكول'}</span>
+          </button>
+        `;
+      }
+
+      updateMetrics();
+      if (window.lucide) window.lucide.createIcons();
+    };
+
+    // ================= RENDER ENGINE =================
+    function renderQuestions() {
+      const container = document.getElementById('questionsContainer');
+      const countEl = document.getElementById('visibleCount');
+
+      let filtered = masterBank;
+
+      if (currentTopic) {
+        filtered = filtered.filter(q => q.topic.includes(currentTopic));
+      }
+
+      if (currentDifficulty) {
+        filtered = filtered.filter(q => q.difficulty === currentDifficulty);
+      }
+
+      if (onlyNotebook) {
+        filtered = filtered.filter(q => notebook.includes(q.id));
+      }
+
+      if (searchQuery) {
+        filtered = filtered.filter(q => 
+          q.text.toLowerCase().includes(searchQuery) ||
+          q.explanation.toLowerCase().includes(searchQuery) ||
+          q.topic.toLowerCase().includes(searchQuery)
+        );
+      }
+
+      if (countEl) countEl.textContent = filtered.length;
+
+      if (filtered.length === 0) {
+        container.innerHTML = `
+          <div class="bg-white rounded-3xl p-12 text-center border border-stone-200/90 shadow-sm space-y-4">
+            <div class="w-16 h-16 rounded-2xl bg-stone-100 text-stone-400 flex items-center justify-center mx-auto">
+              <i data-lucide="search-x" class="w-8 h-8"></i>
+            </div>
+            <div class="space-y-1">
+              <h3 class="font-alexandria font-bold text-base text-fusha-forest">لا توجد أسئلة تطابق معايير الفلترة</h3>
+              <p class="text-xs text-stone-500">جرّب تغيير فرع المنهج أو مسح شريط البحث لعرض كافة أسئلة البنك.</p>
+            </div>
+            <button onclick="clearAllFilters()" class="px-5 py-2.5 rounded-xl bg-fusha-forest text-white font-bold text-xs shadow-sm hover:bg-fusha-forestLight transition cursor-pointer">
+              إعادة تعيين كافة الفلاتر
+            </button>
+          </div>
+        `;
+        if (window.lucide) window.lucide.createIcons();
+        return;
+      }
+
+      container.innerHTML = filtered.map((q, qIdx) => {
+        const isChecked = checkedState[q.id];
+        const isSaved = notebook.includes(q.id);
+        const selected = userAnswers[q.id];
+
+        return `
+          <article class="bg-white rounded-3xl p-6 sm:p-8 border border-stone-200/90 shadow-sm space-y-6 transition-all hover:shadow-md" id="card-${q.id}">
+            
+            <!-- Card Meta Header -->
+            <div class="flex flex-wrap items-center justify-between gap-3 border-b border-stone-100 pb-4">
+              <div class="flex flex-wrap items-center gap-2">
+                <span class="px-3 py-1 rounded-xl bg-fusha-forest text-white font-bold text-xs shadow-2xs">
+                  ${q.topic}
+                </span>
+                <span class="px-2.5 py-1 rounded-lg bg-stone-100 text-stone-600 font-semibold text-[11px] flex items-center gap-1">
+                  <span class="w-1.5 h-1.5 rounded-full ${q.difficulty === 'مستويات عليا' ? 'bg-amber-500' : q.difficulty === 'متوسط' ? 'bg-blue-500' : 'bg-emerald-500'}"></span>
+                  <span>${q.difficulty}</span>
+                </span>
+                <span class="text-stone-400 text-xs font-medium">• ${q.bloom}</span>
+                ${q.examYear ? `<span class="text-[11px] text-fusha-olive font-bold bg-fusha-olive/10 px-2 py-0.5 rounded-md">${q.examYear}</span>` : ''}
+              </div>
+
+              <div class="flex items-center gap-2">
+                <button 
+                  type="button" 
+                  onclick="toggleHint('${q.id}')"
+                  class="px-2.5 py-1 rounded-lg text-stone-400 hover:text-fusha-forest hover:bg-stone-100 text-xs font-medium transition flex items-center gap-1"
+                  title="إظهار تلميح"
+                >
+                  <i data-lucide="help-circle" class="w-3.5 h-3.5"></i>
+                  <span class="hidden sm:inline">تلميح</span>
+                </button>
+                <button 
+                  type="button" 
+                  onclick="toggleNotebook('${q.id}')"
+                  class="p-1.5 rounded-lg text-stone-400 hover:text-amber-600 hover:bg-amber-50 transition cursor-pointer"
+                  title="${isSaved ? 'إزالة من كشكول الأخطاء' : 'حفظ في كشكول الأخطاء'}"
+                >
+                  <i data-lucide="bookmark" class="w-4 h-4 ${isSaved ? 'fill-amber-500 text-amber-500' : ''}"></i>
+                </button>
+                <span class="text-xs text-stone-400 font-bold mr-1">#${qIdx + 1}</span>
+              </div>
+            </div>
+
+            <!-- Hint Box (Collapsible) -->
+            <div id="hint-${q.id}" class="hidden p-3.5 rounded-2xl bg-amber-50/80 border border-amber-200/80 text-xs text-amber-900 leading-relaxed flex items-start gap-2.5">
+              <i data-lucide="lightbulb" class="w-4 h-4 text-amber-600 shrink-0 mt-0.5"></i>
+              <div>
+                <strong>تلميح لمساعدتك:</strong> ${q.hint}
+              </div>
+            </div>
+
+            <!-- Question Stem -->
+            <div class="space-y-2">
+              <h2 class="font-alexandria font-bold text-base sm:text-lg text-fusha-forest leading-relaxed tracking-normal">
+                ${q.text}
+              </h2>
+            </div>
+
+            <!-- Interactive Options Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3" id="options-${q.id}">
+              ${q.options.map((opt, optIdx) => {
+                let optClass = 'option-card flex items-center justify-between p-4 rounded-2xl border border-stone-200/90 bg-stone-50/60 hover:bg-stone-50 text-stone-800 cursor-pointer';
+                if (isChecked) {
+                  if (optIdx === q.correctAnswer) {
+                    optClass = 'option-card correct-highlight flex items-center justify-between p-4 rounded-2xl border font-bold';
+                  } else if (optIdx === selected) {
+                    optClass = 'option-card wrong-highlight flex items-center justify-between p-4 rounded-2xl border line-through opacity-80';
+                  } else {
+                    optClass = 'option-card flex items-center justify-between p-4 rounded-2xl border border-stone-100 bg-stone-50/30 text-stone-400 opacity-60 pointer-events-none';
+                  }
+                } else if (selected === optIdx) {
+                  optClass = 'option-card selected flex items-center justify-between p-4 rounded-2xl border cursor-pointer font-bold';
+                }
+
+                const letter = ['أ', 'ب', 'ج', 'د'][optIdx] || (optIdx + 1);
+
+                return `
+                  <div 
+                    id="opt-${q.id}-${optIdx}" 
+                    class="${optClass}"
+                    onclick="selectOption('${q.id}', ${optIdx})"
+                  >
+                    <div class="flex items-center gap-3">
+                      <span class="w-7 h-7 rounded-xl bg-white border border-stone-200/90 flex items-center justify-center text-xs font-alexandria font-bold text-stone-600 shrink-0 shadow-2xs">
+                        ${letter}
+                      </span>
+                      <span class="text-xs sm:text-sm leading-relaxed">${opt}</span>
+                    </div>
+                    <div class="w-4 h-4 rounded-full border-2 ${selected === optIdx ? 'border-fusha-forest bg-fusha-forest' : 'border-stone-300'} flex items-center justify-center shrink-0">
+                      ${selected === optIdx ? '<span class="w-1.5 h-1.5 rounded-full bg-white"></span>' : ''}
+                    </div>
+                  </div>
+                `;
+              }).join('')}
+            </div>
+
+            <!-- Card Actions Footer -->
+            <div class="flex flex-wrap items-center justify-between gap-3 pt-3 border-t border-stone-100" id="actions-${q.id}">
+              ${isChecked ? `
+                <div class="flex items-center gap-2">
+                  <span class="text-xs font-bold text-stone-500">تم تسجيل إجابتك ✅</span>
+                </div>
+                <button type="button" onclick="toggleNotebook('${q.id}')" class="text-xs font-bold flex items-center gap-1.5 ${isSaved ? 'text-amber-700 bg-amber-50 px-3 py-1.5 rounded-xl border border-amber-200' : 'text-stone-400 hover:text-amber-600'}">
+                  <i data-lucide="bookmark" class="w-4 h-4 ${isSaved ? 'fill-amber-500 text-amber-500' : ''}"></i>
+                  <span>${isSaved ? 'محفوظ في كشكول الأخطاء' : 'حفظ في الكشكول'}</span>
+                </button>
+              ` : `
+                <button 
+                  type="button" 
+                  onclick="checkAnswer('${q.id}')" 
+                  class="px-6 py-3 rounded-xl bg-fusha-forest hover:bg-fusha-forestLight text-white font-alexandria font-bold text-xs shadow-sm transition flex items-center gap-2 cursor-pointer transform hover:-translate-y-0.5"
+                >
+                  <i data-lucide="check" class="w-4 h-4 text-fusha-sun"></i>
+                  <span>تحقق من الإجابة الفورية</span>
+                </button>
+
+                <div class="text-xs text-stone-400 font-medium hidden sm:block">
+                  اختر الإجابة ثم اضغط للتحقق ومعرفة التفسير
+                </div>
+              `}
+            </div>
+
+            <!-- Detailed Explanation Container -->
+            <div id="feedback-${q.id}" class="${isChecked ? '' : 'hidden'}"></div>
+
+          </article>
+        `;
+      }).join('');
+
+      if (window.lucide) window.lucide.createIcons();
+    }
+
+    window.clearAllFilters = function() {
+      currentTopic = '';
+      currentDifficulty = '';
+      searchQuery = '';
+      onlyNotebook = false;
+      document.getElementById('bankSearch').value = '';
+      
+      branchButtons.forEach(b => {
+        b.className = 'branch-btn px-4 py-2.5 rounded-xl text-xs font-bold bg-stone-100 text-stone-700 hover:bg-stone-200/80 transition flex items-center gap-1.5 cursor-pointer';
+      });
+      if (branchButtons[0]) {
+        branchButtons[0].className = 'branch-btn px-4 py-2.5 rounded-xl text-xs font-bold bg-fusha-forest text-white transition flex items-center gap-1.5 shadow-xs cursor-pointer';
+      }
+
+      diffButtons.forEach(b => {
+        b.className = 'difficulty-btn px-2.5 py-1 rounded-lg font-medium text-stone-600 hover:bg-white';
+      });
+      if (diffButtons[0]) {
+        diffButtons[0].className = 'difficulty-btn px-2.5 py-1 rounded-lg font-bold bg-white text-fusha-forest shadow-2xs';
+      }
+
+      const nbBtn = document.getElementById('toggleNotebookOnlyBtn');
+      if (nbBtn) {
+        nbBtn.className = 'px-3 py-2 rounded-xl border border-stone-200 text-stone-600 hover:text-amber-700 hover:bg-amber-50 font-bold transition flex items-center gap-1.5 cursor-pointer';
+      }
+
+      renderQuestions();
+    };
+
+    // Initial boot
+    updateMetrics();
+    renderQuestions();
+  </script>
+</body>
+</html>

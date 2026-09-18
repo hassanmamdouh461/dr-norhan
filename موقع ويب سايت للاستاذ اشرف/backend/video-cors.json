@@ -1,0 +1,15 @@
+{
+  "rules": [
+    {
+      "id": "allow-video-segment-reads",
+      "enabled": true,
+      "allowed": {
+        "origins": ["*"],
+        "methods": ["GET", "HEAD"],
+        "headers": ["*"],
+        "exposedHeaders": ["ETag", "Content-Length", "Content-Range", "Accept-Ranges"]
+      },
+      "maxAgeSeconds": 86400
+    }
+  ]
+}

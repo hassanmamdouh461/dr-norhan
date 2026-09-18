@@ -1,0 +1,9 @@
+cwd: C:\Users\kayf\Desktop\student project\student_app
+command: C:/Users/kayf/flutter-sdk/flutter/bin/flutter.bat pub get --offline --enforce-lockfile
+env: CI=true FLUTTER_SUPPRESS_ANALYTICS=true
+
+Resolving dependencies...
+Because no versions of firebase_messaging match 16.2.0 and no versions of firebase_messaging match >16.2.0 <17.0.0, firebase_messaging ^16.2.0 is forbidden.
+So, because alhadaba_chemistry_app depends on firebase_messaging ^16.2.0, version solving failed.
+
+exit_code: 1

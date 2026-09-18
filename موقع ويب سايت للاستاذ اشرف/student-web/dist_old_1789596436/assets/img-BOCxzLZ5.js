@@ -1,0 +1,1 @@
+function e(e,t){if(e)return e}function t(e){if(!e)return{};let t=e.match(/[?&]pos=([^&]+)/);if(t&&t[1]){let e=t[1].split(`,`),n=e[0],r=e[1],i=e[2],a={};if(n!==void 0&&r!==void 0&&(a.objectPosition=`${n}% ${r}%`),i!==void 0){let e=parseInt(i);e&&e!==100&&(a.transform=`scale(${e/100})`,a.transformOrigin=`center center`)}return a}return{}}export{t as n,e as t};

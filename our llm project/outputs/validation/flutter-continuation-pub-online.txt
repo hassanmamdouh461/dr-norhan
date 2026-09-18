@@ -1,0 +1,17 @@
+cwd: C:\Users\kayf\Desktop\student project\student_app
+command: C:/Users/kayf/flutter-sdk/flutter/bin/flutter.bat pub get --enforce-lockfile
+env: CI=true FLUTTER_SUPPRESS_ANALYTICS=true
+PUB_CACHE: C:\Users\kayf\Desktop\student project\.workbuddy-ai\pub-cache
+PUB_HOSTED_URL: https://pub.dev
+
+Resolving dependencies...
+Downloading packages...
+Cannot open file, path = 'C:\Users\kayf\Desktop\student project\.workbuddy-ai\pub-cache\_temp\dirf2ccd58f\lib\file_selector_platform_interface.dart' (OS Error: Access is denied.
+, errno = 5)
+
+exit_code: 66
+protected_or_source_files_changed: []
+
+=== Retry after sandbox extraction denial; identical command and environment ===
+Resolving dependencies...
+Downloading packages...

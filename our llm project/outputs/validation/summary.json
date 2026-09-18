@@ -1,0 +1,151 @@
+{
+  "generatedAt": "2026-09-15T02:22:55.920Z",
+  "nodeVersion": "v22.22.2",
+  "results": [
+    {
+      "id": "backend-types",
+      "cwd": "backend",
+      "exitCode": 0,
+      "signal": null,
+      "status": "passed",
+      "passedTests": 0,
+      "durationSeconds": 17.19,
+      "log": "outputs/validation/backend-types.txt",
+      "command": [
+        "C:\\Users\\kayf\\.workbuddy-ai\\binaries\\node\\versions\\22.22.2-2\\node.exe",
+        "C:\\Users\\kayf\\Desktop\\student project\\backend\\node_modules\\typescript\\bin\\tsc",
+        "--project",
+        "C:\\Users\\kayf\\Desktop\\student project\\backend\\tsconfig.json",
+        "--noEmit",
+        "--incremental",
+        "false"
+      ]
+    },
+    {
+      "id": "student-web-types",
+      "cwd": "student-web",
+      "exitCode": 0,
+      "signal": null,
+      "status": "passed",
+      "passedTests": 0,
+      "durationSeconds": 18.38,
+      "log": "outputs/validation/student-web-types.txt",
+      "command": [
+        "C:\\Users\\kayf\\.workbuddy-ai\\binaries\\node\\versions\\22.22.2-2\\node.exe",
+        "C:\\Users\\kayf\\Desktop\\student project\\student-web\\node_modules\\typescript\\bin\\tsc",
+        "--project",
+        "C:\\Users\\kayf\\Desktop\\student project\\student-web\\tsconfig.app.json",
+        "--noEmit",
+        "--incremental",
+        "false"
+      ]
+    },
+    {
+      "id": "dashboard-types",
+      "cwd": "dashboard",
+      "exitCode": 0,
+      "signal": null,
+      "status": "passed",
+      "passedTests": 0,
+      "durationSeconds": 20.69,
+      "log": "outputs/validation/dashboard-types.txt",
+      "command": [
+        "C:\\Users\\kayf\\.workbuddy-ai\\binaries\\node\\versions\\22.22.2-2\\node.exe",
+        "C:\\Users\\kayf\\Desktop\\student project\\dashboard\\node_modules\\typescript\\bin\\tsc",
+        "--project",
+        "C:\\Users\\kayf\\Desktop\\student project\\dashboard\\tsconfig.json",
+        "--noEmit",
+        "--incremental",
+        "false"
+      ]
+    },
+    {
+      "id": "student-web-regressions",
+      "cwd": "student-web",
+      "exitCode": 0,
+      "signal": null,
+      "status": "passed",
+      "passedTests": 61,
+      "durationSeconds": 6.67,
+      "log": "outputs/validation/student-web-regressions.txt",
+      "command": [
+        "C:\\Users\\kayf\\.workbuddy-ai\\binaries\\node\\versions\\22.22.2-2\\node.exe",
+        "--test",
+        "C:\\Users\\kayf\\Desktop\\student project\\student-web\\src\\pages\\home\\assessmentContract.test.mjs",
+        "C:\\Users\\kayf\\Desktop\\student project\\student-web\\src\\components\\ui\\Modal.accessibility.regression.test.mjs",
+        "C:\\Users\\kayf\\Desktop\\student project\\student-web\\lesson-player-generation.worker-regression.cjs"
+      ]
+    },
+    {
+      "id": "dashboard-regressions",
+      "cwd": "dashboard",
+      "exitCode": 0,
+      "signal": null,
+      "status": "passed",
+      "passedTests": 32,
+      "durationSeconds": 8.53,
+      "log": "outputs/validation/dashboard-regressions.txt",
+      "command": [
+        "C:\\Users\\kayf\\.workbuddy-ai\\binaries\\node\\versions\\22.22.2-2\\node.exe",
+        "--test",
+        "C:\\Users\\kayf\\Desktop\\student project\\dashboard\\src\\app\\dashboard\\exams\\exam-selection-regression.test.cjs",
+        "C:\\Users\\kayf\\Desktop\\student project\\dashboard\\src\\app\\dashboard\\questions\\question-selection-regression.test.cjs"
+      ]
+    },
+    {
+      "id": "backend-tests",
+      "cwd": "backend",
+      "exitCode": 0,
+      "signal": null,
+      "status": "passed",
+      "passedTests": 163,
+      "durationSeconds": 20.41,
+      "log": "outputs/validation/backend-tests.txt",
+      "command": [
+        "C:\\Users\\kayf\\.workbuddy-ai\\binaries\\node\\versions\\22.22.2-2\\node.exe",
+        "C:\\Users\\kayf\\Desktop\\student project\\backend\\node_modules\\vitest\\vitest.mjs",
+        "run",
+        "--root",
+        "C:\\Users\\kayf\\Desktop\\student project\\backend",
+        "--config",
+        "C:\\Users\\kayf\\Desktop\\student project\\backend\\vitest.config.ts",
+        "--pool=forks",
+        "--maxWorkers=1",
+        "--minWorkers=1",
+        "--no-cache"
+      ]
+    },
+    {
+      "id": "dashboard-build",
+      "status": "blocked-cleanup-confirmation",
+      "passedTests": 0,
+      "compiledSuccessfully": true,
+      "staticPagesGenerated": 15,
+      "log": "outputs/validation/dashboard-build-isolated.txt",
+      "detail": "[safe-delete][SAFE_DELETE_BULK_CONFIRM_REQUIRED]: Next.js attempted to remove the staging .next/export temporary directory after generating 15/15 static pages; count 51, threshold 50, scope turn. Guard preserved; final out export was not produced."
+    },
+    {
+      "id": "student-web-build",
+      "cwd": "student-web",
+      "exitCode": 0,
+      "signal": null,
+      "status": "passed",
+      "passedTests": 0,
+      "durationSeconds": 2.21,
+      "log": "outputs/validation/student-web-build.txt",
+      "command": [
+        "C:\\Users\\kayf\\.workbuddy-ai\\binaries\\node\\versions\\22.22.2-2\\node.exe",
+        "C:\\Users\\kayf\\Desktop\\student project\\student-web\\node_modules\\vite\\bin\\vite.js",
+        "build",
+        "--outDir",
+        "C:\\Users\\kayf\\Desktop\\student project\\outputs\\build\\student-web-1789438973710"
+      ]
+    }
+  ],
+  "passedTests": 256,
+  "limitations": [
+    "Flutter and Dart were not available: mobile compilation, analysis, and 38 authored tests were not run.",
+    "Web regression harnesses are offline simulations, not browser or screen-reader tests.",
+    "No deployment or production database mutation was performed."
+  ]
+}

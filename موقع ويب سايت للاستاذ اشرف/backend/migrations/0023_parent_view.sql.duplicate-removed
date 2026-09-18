@@ -1,0 +1,62 @@
+-- ============================================================
+-- فُصْحَى (Fusha) — D1 (SQLite) Database Schema Extension
+-- Migration: 0023_parent_view.sql
+-- عرض ولي الأمر — parent/guardian visibility into a learner's progress
+-- ============================================================
+--
+-- A guardian is NOT a new `profiles.role`: profiles.role has a CHECK
+-- constraint of ('admin','assistant','student') and changing it would mean
+-- rebuilding the table. Instead, guardianship is a RELATION expressed by a
+-- row in parent_links, created by staff. Any authenticated profile that owns
+-- a link row for a student is that student's guardian — ownership is checked
+-- against parent_links.parent_id on every request, so a caller can never
+-- reach a child by guessing an id.
+-- ============================================================
+
+
+-- 1) parent_links — which guardian may see which learner
+CREATE TABLE IF NOT EXISTS parent_links (
+  id           TEXT PRIMARY KEY,
+
+  -- Multi-tenant isolation. Always 'fusha' on this deployment.
+  platform     TEXT NOT NULL DEFAULT 'fusha',
+
+  parent_id    TEXT NOT NULL REFERENCES profiles(id) ON DELETE CASCADE,
+  student_id   TEXT NOT NULL REFERENCES profiles(id) ON DELETE CASCADE,
+
+  -- صلة القرابة: أب / أم / وصي / أخ ...
+  relation     TEXT,
+
+  created_by   TEXT REFERENCES profiles(id) ON DELETE SET NULL,
+  created_at   TEXT NOT NULL DEFAULT (strftime('%Y-%m-%dT%H:%M:%SZ','now')),
+
+  -- One link per (guardian, learner) pair. ON CONFLICT is used by the
+  -- admin link endpoint so re-linking is idempotent.
+  UNIQUE(parent_id, student_id)
+);
+
+CREATE INDEX IF NOT EXISTS idx_parent_links_platform_parent  ON parent_links(platform, parent_id);
+CREATE INDEX IF NOT EXISTS idx_parent_links_platform_student ON parent_links(platform, student_id);
+
+
+-- 2) parent_notes — the teacher's notes addressed to the guardian
+CREATE TABLE IF NOT EXISTS parent_notes (
+  id           TEXT PRIMARY KEY,
+
+  platform     TEXT NOT NULL DEFAULT 'fusha',
+
+  student_id   TEXT NOT NULL REFERENCES profiles(id) ON DELETE CASCADE,
+  author_id    TEXT REFERENCES profiles(id) ON DELETE SET NULL,
+
+  body         TEXT NOT NULL,
+
+  created_at   TEXT NOT NULL DEFAULT (strftime('%Y-%m-%dT%H:%M:%SZ','now')),
+
+  -- Set when the guardian opens the notes feed; NULL = لم تُقرأ بعد
+  read_at      TEXT
+);
+
+CREATE INDEX IF NOT EXISTS idx_parent_notes_platform_student ON parent_notes(platform, student_id, created_at);
+CREATE INDEX IF NOT EXISTS idx_parent_notes_unread           ON parent_notes(platform, student_id, read_at);
+
+-- No seed data: links and notes are created by staff at runtime.

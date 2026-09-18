@@ -1,0 +1,81 @@
+# Dependencies
+node_modules/
+**/node_modules/
+.pnp
+.pnp.js
+
+# Build outputs & caches
+.next/
+**/.next/
+.next_*/
+**/.next_*/
+dist/
+**/dist/
+build/
+**/build/
+out/
+**/out/
+.cache/
+**/.cache/
+
+# Cloudflare & Wrangler
+.wrangler/
+**/.wrangler/
+
+# Flutter / Dart
+.dart_tool/
+**/.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+
+# Environment variables & secrets
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+**/.env
+**/.env.local
+**/.env.development.local
+**/.env.test.local
+**/.env.production.local
+.dev.vars
+**/.dev.vars
+!*.example
+
+# Android & Keystores
+*.keystore
+*.jks
+*.properties
+student_app/android/key.properties
+student_app/android/app/release.jks
+student_app/android/app/debug.keystore
+
+# Backups & Large files
+*.bak
+*.tmp
+*.log
+.tmp-audit/
+.tmp-cleanup/
+**/.tmp-cleanup/
+
+# AI Agent Caches & Internal Tools
+.workbuddy-ai/
+**/.workbuddy-ai/
+.agents/
+**/.agents/
+.claude/
+**/.claude/
+_qb.json
+_qid.txt
+
+# OS metadata & reserved names
+nul
+.DS_Store
+Thumbs.db
+__MACOSX/
+**/__MACOSX/
+
+# Corrupted encoding duplicate folder
+┘à┘ê┘é╪╣ ┘ê┘è╪¿ ╪│╪º┘è╪¬ ┘ä┘ä╪º╪│╪¬╪º╪░ ╪º╪┤╪▒┘ü/

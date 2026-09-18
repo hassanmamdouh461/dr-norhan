@@ -1,0 +1,33 @@
+{
+  "rules": [
+    {
+      "id": "allow-dashboard-cors",
+      "allowed": {
+        "origins": [
+          "https://alhadaba-chemistry.synapticstudio.tech",
+          "https://alhadaba-chemistry.pages.dev",
+          "https://alhadaba-chemistry-student.synapticstudio.tech",
+          "https://synaptic-alhadaba-student.pages.dev",
+          "http://localhost:3000",
+          "http://localhost:5173"
+        ],
+        "methods": [
+          "GET",
+          "PUT",
+          "POST",
+          "DELETE",
+          "HEAD"
+        ],
+        "headers": [
+          "*"
+        ],
+        "exposeHeaders": [
+          "ETag",
+          "Content-Length",
+          "Content-Type"
+        ]
+      },
+      "maxAgeSeconds": 3000
+    }
+  ]
+}

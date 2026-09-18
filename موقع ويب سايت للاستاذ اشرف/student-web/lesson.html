@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>مشغل المحاضرات | منصة فُصْحَى — أ. أشرف سليم</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@400;600;700;800;900&family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="bg-fusha-forestDark text-slate-100 font-cairo antialiased min-h-screen flex flex-col selection:bg-fusha-khaki selection:text-fusha-forest" style="background-color: #0D1D18 !important; color: #F1F5F9 !important;">
+
+  <!-- Minimal Header for Player -->
+  <header class="bg-fusha-forest/95 border-b border-white/10 px-4 sm:px-6 h-16 flex items-center justify-between z-30">
+    <div class="flex items-center gap-3">
+      <a href="dashboard.html" class="p-2 rounded-xl bg-white/5 hover:bg-white/10 text-fusha-khaki hover:text-white transition" title="لوحة التحكم">
+        <i data-lucide="arrow-right" class="w-5 h-5"></i>
+      </a>
+      <a href="index.html" class="flex items-center gap-2">
+        <img src="assets/fusha-brand-logo-white.png" alt="فصحى" class="h-8 w-auto object-contain" />
+      </a>
+      <div class="hidden md:flex flex-col border-r border-white/15 pr-3">
+        <span id="headerCourseTitle" class="text-xs font-bold text-white truncate max-w-sm">كورس الثانوية العامة 2026</span>
+        <span id="headerLessonTitle" class="text-[11px] text-fusha-khaki truncate max-w-sm">المحاضرة 1</span>
+      </div>
+    </div>
+
+    <div class="flex items-center gap-3">
+      <a href="bank.html" class="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white/5 text-xs text-fusha-khaki hover:text-white transition">
+        <i data-lucide="layers" class="w-4 h-4 text-fusha-sun"></i>
+        <span>تدريبات الدرس</span>
+      </a>
+      <div id="navbar-auth-actions"></div>
+    </div>
+  </header>
+
+  <!-- Player Main Layout -->
+  <main class="flex-1 flex flex-col lg:flex-row w-full max-w-[1700px] mx-auto overflow-hidden">
+    
+    <!-- Video Player & Content Area -->
+    <div class="flex-1 p-4 sm:p-6 lg:p-8 space-y-6 overflow-y-auto">
+      
+      <!-- Video Container with Floating DRM Watermark -->
+      <div class="relative w-full aspect-video bg-black rounded-3xl overflow-hidden shadow-2xl border border-white/10 group" id="playerWrapper">
+        
+        <!-- HTML5 / Stream Video Player -->
+        <video id="fushaVideoPlayer" controls playsinline controlsList="nodownload" class="w-full h-full object-contain" poster="assets/hero-poster.jpg">
+          <source src="assets/hero-video.mp4" type="video/mp4" />
+          متصفحك لا يدعم تشغيل هذا الفيديو.
+        </video>
+
+        <!-- DRM Floating Dynamic Watermark (Anti-Piracy Overlay) -->
+        <div id="drmWatermark" class="absolute pointer-events-none select-none z-20 transition-all duration-1000 opacity-30 text-[11px] sm:text-xs font-mono font-bold text-white/80 bg-black/40 px-2 py-0.5 rounded-md backdrop-blur-[1px]" style="top: 15%; right: 20%;">
+          010XXXXXXXX • طالب فُصْحَى
+        </div>
+
+      </div>
+
+      <!-- Video Control Bar / Prev Next Navigation -->
+      <div class="flex items-center justify-between gap-4 bg-fusha-forest/60 p-4 rounded-2xl border border-white/5">
+        <button id="prevLessonBtn" class="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/5 hover:bg-white/10 text-xs font-bold text-white transition disabled:opacity-30 disabled:cursor-not-allowed">
+          <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          <span>المحاضرة السابقة</span>
+        </button>
+
+        <div class="flex items-center gap-2 text-xs text-fusha-khaki font-semibold">
+          <i data-lucide="shield-check" class="w-4 h-4 text-emerald-400"></i>
+          <span>حماية البث نشطة</span>
+        </div>
+
+        <button id="nextLessonBtn" class="flex items-center gap-2 px-4 py-2 rounded-xl bg-fusha-sun hover:bg-fusha-sunHover text-fusha-forestDark text-xs font-bold transition disabled:opacity-30 disabled:cursor-not-allowed">
+          <span>المحاضرة التالية</span>
+          <i data-lucide="arrow-left" class="w-4 h-4"></i>
+        </button>
+      </div>
+
+      <!-- Lesson Details & Tabs -->
+      <div class="bg-fusha-forest/40 border border-white/10 rounded-3xl p-6 space-y-6">
+        <div>
+          <div class="flex items-center gap-2 mb-2">
+            <span class="px-2.5 py-0.5 rounded-md bg-fusha-sun/20 text-fusha-sun text-[10px] font-bold">شرح وافٍ</span>
+            <span class="text-xs text-fusha-khaki" id="lessonDuration">45 دقيقة</span>
+          </div>
+          <h1 id="activeLessonTitle" class="text-xl sm:text-2xl font-alexandria font-bold text-white">همزة القطع وألف الوصل</h1>
+          <p id="activeLessonNotes" class="text-xs sm:text-sm text-stone-300 mt-2 leading-relaxed">
+            في هذه المحاضرة يستعرض الأستاذ أشرف سليم أسرار التفرقة بين همزة القطع وألف الوصل في الحروف والأسماء والأفعال والمصادر، مع مفاتيح الإعراب السريعة التي تمنع أي لبس في أسئلة الثانوية العامة.
+          </p>
+        </div>
+
+        <!-- Downloads & Quiz CTA -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4 border-t border-white/10">
+          <div class="p-4 rounded-2xl bg-white/5 border border-white/5 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-xl bg-fusha-sage/20 text-fusha-sage flex items-center justify-center">
+                <i data-lucide="file-down" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <h4 class="text-xs font-bold text-white">مذكرة الشرح والواجب (PDF)</h4>
+                <span class="text-[10px] text-fusha-khaki">ملخص الدرس + بنك تدريبات</span>
+              </div>
+            </div>
+            <a href="assets/hero-poster.jpg" download class="px-3 py-1.5 rounded-xl bg-white/10 hover:bg-white/20 text-xs font-bold text-white transition">
+              تحميل
+            </a>
+          </div>
+
+          <div class="p-4 rounded-2xl bg-white/5 border border-white/5 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-xl bg-fusha-sun/20 text-fusha-sun flex items-center justify-center">
+                <i data-lucide="award" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <h4 class="text-xs font-bold text-white">امتحان المحاضرة الإلكتروني</h4>
+                <span class="text-[10px] text-fusha-khaki">قياس فهمك للدرس فورياً</span>
+              </div>
+            </div>
+            <a href="exam.html?id=quiz-lesson-1" class="px-3 py-1.5 rounded-xl bg-fusha-sun text-fusha-forestDark text-xs font-bold hover:bg-fusha-sunHover transition">
+              بدء الحل
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Sidebar: Course Playlist -->
+    <aside class="w-full lg:w-96 bg-fusha-forest/90 border-t lg:border-t-0 lg:border-s border-white/10 p-4 sm:p-6 flex flex-col justify-between shrink-0">
+      <div class="space-y-4">
+        <div class="flex items-center justify-between pb-3 border-b border-white/10">
+          <h3 class="font-alexandria font-bold text-sm text-white flex items-center gap-2">
+            <i data-lucide="list-video" class="w-4 h-4 text-fusha-sun"></i>
+            <span>محاضرات هذا المنهج</span>
+          </h3>
+          <span class="text-xs text-fusha-khaki" id="playlistCounter">1 / 5</span>
+        </div>
+
+        <div class="space-y-2 max-h-[calc(100vh-280px)] overflow-y-auto pe-1" id="playlistContainer">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+
+      <!-- Quick Teacher Contact -->
+      <div class="mt-6 pt-4 border-t border-white/10 text-center">
+        <p class="text-[11px] text-fusha-khaki mb-2">عندك سؤال في نقطة مش واضحة في الفيديو؟</p>
+        <a href="https://wa.me/201002818300" target="_blank" class="inline-flex items-center gap-2 text-xs text-emerald-400 hover:text-emerald-300 font-bold transition">
+          <i data-lucide="message-circle" class="w-4 h-4"></i>
+          <span>اسأل مساعد الأستاذ أشرف عبر واتساب</span>
+        </a>
+      </div>
+    </aside>
+
+  </main>
+
+  <script src="/assets/js/api.js?v=20260917_02"></script>
+  <script src="/assets/js/nav.js?v=20260917_03"></script>
+  <script>
+    if (window.lucide) window.lucide.createIcons();
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const courseId = urlParams.get('courseId') || 'thanaweya-general-2026';
+    const lessonId = urlParams.get('lessonId') || 'les-1';
+
+    let currentCourse = null;
+    let currentLessonIndex = 0;
+    const lessonsList = [
+      { id: 'les-1', title: 'المحاضرة 1: همزة القطع وألف الوصل + همزات الأسماء والأفعال', duration: '45 دقيقة', clip: 'assets/clips/clip1_studio_intro.mp4' },
+      { id: 'les-2', title: 'المحاضرة 2: الفرق بين (ثمّ وثمّة) و (إلّا وإلّا) واللام الشمسية والقمرية', duration: '40 دقيقة', clip: 'assets/clips/clip2_classroom_lecture.mp4' },
+      { id: 'les-3', title: 'المحاضرة 3: رسم الهمزة المتطرفة والمتوسطة وتدريبات بابل شيت', duration: '55 دقيقة', clip: 'assets/clips/clip3_smartboard_questions.mp4' },
+      { id: 'les-4', title: 'المحاضرة 4: أسلوب الاستثناء وحالات إعراب المستثنى بـ (إلا وغير وسوى)', duration: '50 دقيقة', clip: 'assets/clips/clip4_classroom_energy.mp4' },
+      { id: 'les-5', title: 'المحاضرة 5: المشتقات العاملة وأسرار إعمال اسم الفاعل وصيغ المبالغة', duration: '60 دقيقة', clip: 'assets/clips/clip5_stylus_annotation.mp4' }
+    ];
+
+    // Initialize DRM Watermark animation
+    function initWatermark() {
+      const user = window.api ? window.api.getUser() : null;
+      const watermarkEl = document.getElementById('drmWatermark');
+      if (user) {
+        watermarkEl.textContent = `${user.phone || '010XXXXXXXX'} • ${user.full_name || 'طالب فصحى'}`;
+      }
+
+      const wrapper = document.getElementById('playerWrapper');
+      setInterval(() => {
+        const maxX = wrapper.clientWidth - watermarkEl.clientWidth - 20;
+        const maxY = wrapper.clientHeight - watermarkEl.clientHeight - 60;
+        const randX = Math.max(10, Math.floor(Math.random() * maxX));
+        const randY = Math.max(10, Math.floor(Math.random() * maxY));
+        
+        watermarkEl.style.left = `${randX}px`;
+        watermarkEl.style.top = `${randY}px`;
+        watermarkEl.style.right = 'auto';
+        watermarkEl.style.opacity = (Math.random() * 0.3 + 0.15).toFixed(2);
+      }, 5000);
+    }
+
+    async function loadLesson() {
+      initWatermark();
+      
+      const foundIdx = lessonsList.findIndex(l => l.id === lessonId);
+      currentLessonIndex = foundIdx !== -1 ? foundIdx : 0;
+      const lesson = lessonsList[currentLessonIndex];
+
+      document.getElementById('headerLessonTitle').textContent = lesson.title;
+      document.getElementById('activeLessonTitle').textContent = lesson.title;
+      document.getElementById('lessonDuration').textContent = lesson.duration;
+      document.getElementById('playlistCounter').textContent = `${currentLessonIndex + 1} / ${lessonsList.length}`;
+
+      // Set video source
+      const videoEl = document.getElementById('fushaVideoPlayer');
+      videoEl.src = lesson.clip;
+
+      // Update Next / Prev buttons
+      const prevBtn = document.getElementById('prevLessonBtn');
+      const nextBtn = document.getElementById('nextLessonBtn');
+
+      prevBtn.disabled = currentLessonIndex === 0;
+      nextBtn.disabled = currentLessonIndex === lessonsList.length - 1;
+
+      prevBtn.onclick = () => {
+        if (currentLessonIndex > 0) {
+          const prev = lessonsList[currentLessonIndex - 1];
+          window.location.href = `lesson.html?courseId=${courseId}&lessonId=${prev.id}`;
+        }
+      };
+
+      nextBtn.onclick = () => {
+        if (currentLessonIndex < lessonsList.length - 1) {
+          const next = lessonsList[currentLessonIndex + 1];
+          window.location.href = `lesson.html?courseId=${courseId}&lessonId=${next.id}`;
+        }
+      };
+
+      renderPlaylist();
+    }
+
+    function renderPlaylist() {
+      const container = document.getElementById('playlistContainer');
+      container.innerHTML = lessonsList.map((les, idx) => {
+        const isActive = idx === currentLessonIndex;
+        return `
+          <a href="lesson.html?courseId=${courseId}&lessonId=${les.id}" class="flex items-center gap-3 p-3 rounded-2xl transition-all ${
+            isActive ? 'bg-fusha-sun text-fusha-forestDark font-bold shadow-md' : 'bg-white/5 hover:bg-white/10 text-white/80'
+          }">
+            <div class="w-7 h-7 rounded-lg flex items-center justify-center text-xs shrink-0 ${
+              isActive ? 'bg-fusha-forestDark text-fusha-sun' : 'bg-white/10 text-fusha-khaki'
+            }">
+              ${idx + 1}
+            </div>
+            <div class="flex-1 min-w-0">
+              <h5 class="text-xs truncate ${isActive ? 'text-fusha-forestDark font-bold' : 'text-white'}">${les.title}</h5>
+              <span class="text-[10px] ${isActive ? 'text-fusha-forestDark/70' : 'text-fusha-khaki'}">${les.duration}</span>
+            </div>
+            <i data-lucide="${isActive ? 'play' : 'lock'}" class="w-4 h-4 shrink-0 ${isActive ? 'fill-current' : 'opacity-40'}"></i>
+          </a>
+        `;
+      }).join('');
+
+      if (window.lucide) window.lucide.createIcons();
+    }
+
+    loadLesson();
+  </script>
+</body>
+</html>
+

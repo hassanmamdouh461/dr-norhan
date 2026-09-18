@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+
+<html class="light" dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>إدارة رموز التفعيل - PhysicMaster Pro</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&amp;family=Inter:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-primary-fixed-variant": "#003ea8",
+                      "on-primary-container": "#eeefff",
+                      "on-background": "#191b23",
+                      "surface-container-lowest": "#ffffff",
+                      "primary": "#004ac6",
+                      "tertiary-fixed": "#89f5e7",
+                      "inverse-on-surface": "#f0f0fb",
+                      "surface-container-highest": "#e1e2ed",
+                      "on-tertiary-fixed-variant": "#005049",
+                      "on-primary": "#ffffff",
+                      "tertiary": "#006058",
+                      "surface-variant": "#e1e2ed",
+                      "secondary": "#545f73",
+                      "secondary-fixed-dim": "#bcc7de",
+                      "on-primary-fixed": "#00174b",
+                      "tertiary-container": "#007b71",
+                      "primary-fixed-dim": "#b4c5ff",
+                      "error": "#ba1a1a",
+                      "surface": "#faf8ff",
+                      "inverse-primary": "#b4c5ff",
+                      "surface-dim": "#d9d9e5",
+                      "surface-container-high": "#e7e7f3",
+                      "on-secondary-container": "#586377",
+                      "on-error": "#ffffff",
+                      "on-secondary-fixed": "#111c2d",
+                      "on-error-container": "#93000a",
+                      "tertiary-fixed-dim": "#6bd8cb",
+                      "surface-container-low": "#f3f3fe",
+                      "on-tertiary-fixed": "#00201d",
+                      "on-surface": "#191b23",
+                      "on-surface-variant": "#434655",
+                      "on-secondary": "#ffffff",
+                      "on-tertiary-container": "#b3fff3",
+                      "surface-tint": "#0053db",
+                      "primary-fixed": "#dbe1ff",
+                      "primary-container": "#2563eb",
+                      "inverse-surface": "#2e3039",
+                      "outline": "#737686",
+                      "on-tertiary": "#ffffff",
+                      "background": "#faf8ff",
+                      "error-container": "#ffdad6",
+                      "on-secondary-fixed-variant": "#3c475a",
+                      "outline-variant": "#c3c6d7",
+                      "secondary-fixed": "#d8e3fb",
+                      "surface-container": "#ededf9",
+                      "secondary-container": "#d5e0f8",
+                      "surface-bright": "#faf8ff"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "sm": "12px",
+                      "gutter": "24px",
+                      "lg": "48px",
+                      "xl": "80px",
+                      "xs": "4px",
+                      "md": "24px",
+                      "container-max": "1280px",
+                      "base": "8px"
+              },
+              "fontFamily": {
+                      "display-lg": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "headline-sm": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "display-lg-mobile": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "body-sm": [
+                              "Inter"
+                      ],
+                      "label-md": [
+                              "Inter"
+                      ],
+                      "headline-md": [
+                              "Plus Jakarta Sans"
+                      ]
+              },
+              "fontSize": {
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-sm": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "display-lg-mobile": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-sm": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-md": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-md": [
+                              "30px",
+                              {
+                                      "lineHeight": "38px",
+                                      "fontWeight": "600"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        .material-symbols-outlined {
+          font-family: 'Material Symbols Outlined';
+          font-weight: normal;
+          font-style: normal;
+          font-size: 24px;
+          line-height: 1;
+          letter-spacing: normal;
+          text-transform: none;
+          display: inline-block;
+          white-space: nowrap;
+          word-wrap: normal;
+          direction: ltr;
+          -webkit-font-feature-settings: 'liga';
+          -webkit-font-smoothing: antialiased;
+        }
+        
+        .shadow-ambient {
+            box-shadow: 0px 4px 20px rgba(30, 41, 59, 0.08);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex font-body-md">
+<!-- SideNavBar -->
+<nav class="hidden md:flex flex-col h-screen w-64 fixed right-0 top-0 py-lg bg-surface-container-low border-l border-outline-variant z-40">
+<div class="px-md mb-8 flex flex-col items-center text-center">
+<div class="w-20 h-20 rounded-full bg-surface-container-high mb-4 flex items-center justify-center overflow-hidden border border-outline-variant">
+<img alt="Physics Department Logo" class="w-full h-full object-cover" data-alt="A minimalist logo for a physics department featuring an abstract geometric representation of an atom or waves, utilizing a refined color palette of deep navy blues and clean whites against a light, modern background. The style is strictly academic and professional, avoiding any cartoonish elements." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA44tBJp7-53ZjW6l_roewXRA3aCOqOaZLesPoSB705HDt1yIE_xmYaQY1fr1H_PptSCUiNHqQ6siy6qPr5JKB1gp4Lmg2vUXqSeRIHqDugZYTmUH2Wkpy_Twcg2_X2ptUqGHc6lU5TuNs74Gp5K9Zm_i9owYo7RZ2UNcFwb_q49N-JYmBFBG1eovQ0K8hh9tRIztisWFsCL6vuW1Y5rmDKNm7QK71tfCYPfDb0bCQGKl11SGd_LjpowIU7H8i6sfw_cmFTsM_YI_rf"/>
+</div>
+<h1 class="font-headline-sm text-headline-sm text-on-surface">إدارة الفيزياء</h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">الأستاذ المشرف</p>
+</div>
+<div class="flex-1 px-4 space-y-2 overflow-y-auto">
+<a class="flex flex-row-reverse items-center gap-sm text-on-surface-variant px-4 py-3 rounded-lg hover:bg-surface-container-high transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-label-md text-label-md">لوحة القيادة</span>
+</a>
+<a class="flex flex-row-reverse items-center gap-sm text-on-surface-variant px-4 py-3 rounded-lg hover:bg-surface-container-high transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="menu_book">menu_book</span>
+<span class="font-label-md text-label-md">إدارة الدورات</span>
+</a>
+<a class="flex flex-row-reverse items-center gap-sm text-on-surface-variant px-4 py-3 rounded-lg hover:bg-surface-container-high transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="font-label-md text-label-md">إدارة الطلاب</span>
+</a>
+<a class="flex flex-row-reverse items-center gap-sm bg-secondary-container text-on-secondary-container rounded-lg px-4 py-3 hover:bg-surface-container-high transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="vpn_key" style="font-variation-settings: 'FILL' 1;">vpn_key</span>
+<span class="font-label-md text-label-md">رموز التفعيل</span>
+</a>
+<a class="flex flex-row-reverse items-center gap-sm text-on-surface-variant px-4 py-3 rounded-lg hover:bg-surface-container-high transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="inbox">inbox</span>
+<span class="font-label-md text-label-md">صندوق الأسئلة</span>
+</a>
+</div>
+<div class="px-4 mt-auto space-y-2">
+<a class="flex flex-row-reverse items-center gap-sm text-on-surface-variant px-4 py-3 rounded-lg hover:bg-surface-container-high transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-label-md text-label-md">الإعدادات</span>
+</a>
+<a class="flex flex-row-reverse items-center gap-sm text-on-surface-variant px-4 py-3 rounded-lg hover:bg-surface-container-high transition-all duration-200 ease-in-out text-error hover:text-error" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span class="font-label-md text-label-md">تسجيل الخروج</span>
+</a>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-1 md:mr-64 flex flex-col min-h-screen">
+<!-- TopNavBar (Mobile Only) -->
+<header class="md:hidden flex flex-row-reverse items-center justify-between px-md w-full h-16 sticky top-0 z-50 backdrop-blur-md bg-surface border-b border-outline-variant">
+<div class="font-headline-sm text-headline-sm font-bold text-primary">PhysicMaster Pro</div>
+<div class="flex items-center gap-4">
+<button class="text-on-surface-variant hover:bg-surface-container-low transition-colors rounded-full p-2 cursor-pointer active:opacity-80">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="text-on-surface-variant hover:bg-surface-container-low transition-colors rounded-full p-2 cursor-pointer active:opacity-80">
+<span class="material-symbols-outlined" data-icon="help_outline">help_outline</span>
+</button>
+</div>
+</header>
+<div class="flex-1 p-gutter md:p-lg max-w-container-max mx-auto w-full space-y-8">
+<!-- Page Header -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div>
+<h2 class="font-headline-md text-headline-md text-on-background">إدارة رموز التفعيل</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2">إنشاء وتتبع وإدارة الدفعات الخاصة برموز الوصول للطلاب.</p>
+</div>
+<div class="flex flex-wrap gap-3">
+<button class="flex items-center gap-2 px-6 h-12 rounded-lg border border-outline text-on-surface hover:bg-surface-container-low transition-colors font-label-md text-label-md">
+<span class="material-symbols-outlined" data-icon="download">download</span>
+                        تصدير التقرير (CSV)
+                    </button>
+<button class="flex items-center gap-2 px-6 h-12 rounded-lg bg-primary text-on-primary hover:bg-primary-container transition-colors font-label-md text-label-md shadow-ambient">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+                        توليد دفعة جديدة
+                    </button>
+</div>
+</div>
+<!-- Summary Cards -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Total Active -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-6 hover:shadow-ambient transition-shadow">
+<div class="flex justify-between items-start mb-4">
+<div class="w-12 h-12 rounded-full bg-tertiary-container/10 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined" data-icon="check_circle">check_circle</span>
+</div>
+<span class="px-2 py-1 bg-surface-container-high rounded text-on-surface-variant font-label-md text-label-md">هذا الشهر</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-1">إجمالي الرموز النشطة</p>
+<p class="font-display-lg text-display-lg md:font-display-lg-mobile md:text-display-lg-mobile text-on-background">1,248</p>
+</div>
+<!-- Pending / Unused -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-6 hover:shadow-ambient transition-shadow">
+<div class="flex justify-between items-start mb-4">
+<div class="w-12 h-12 rounded-full bg-primary-container/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="pending">pending</span>
+</div>
+<span class="px-2 py-1 bg-surface-container-high rounded text-on-surface-variant font-label-md text-label-md">متاح للاستخدام</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-1">رموز غير مستخدمة</p>
+<p class="font-display-lg text-display-lg md:font-display-lg-mobile md:text-display-lg-mobile text-on-background">352</p>
+</div>
+<!-- Expired -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-6 hover:shadow-ambient transition-shadow">
+<div class="flex justify-between items-start mb-4">
+<div class="w-12 h-12 rounded-full bg-error-container/20 flex items-center justify-center text-error">
+<span class="material-symbols-outlined" data-icon="block">block</span>
+</div>
+<span class="px-2 py-1 bg-surface-container-high rounded text-on-surface-variant font-label-md text-label-md">تاريخي</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-1">رموز منتهية الصلاحية</p>
+<p class="font-display-lg text-display-lg md:font-display-lg-mobile md:text-display-lg-mobile text-on-background">89</p>
+</div>
+</div>
+<!-- Batches Section -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden">
+<div class="p-6 border-b border-outline-variant flex justify-between items-center bg-surface-container-low">
+<h3 class="font-headline-sm text-headline-sm text-on-background">دفعات التفعيل الأخيرة</h3>
+<div class="relative">
+<input class="pl-4 pr-10 py-2 bg-surface border border-outline-variant rounded-lg font-body-sm text-body-sm focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all w-64 text-right" placeholder="البحث في الدفعات..." type="text"/>
+<span class="material-symbols-outlined absolute right-3 top-2.5 text-on-surface-variant" data-icon="search">search</span>
+</div>
+</div>
+<!-- Bento-style Card List instead of standard table -->
+<div class="p-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Batch Card 1 -->
+<div class="border border-outline-variant rounded-lg p-5 hover:shadow-ambient transition-shadow bg-surface relative overflow-hidden group">
+<!-- Decorator line -->
+<div class="absolute right-0 top-0 bottom-0 w-1 bg-tertiary"></div>
+<div class="flex justify-between items-start mb-4">
+<div>
+<h4 class="font-label-md text-label-md text-on-surface-variant">الدفعة #B-2023-11</h4>
+<p class="font-headline-sm text-headline-sm text-on-background mt-1">دورة ميكانيكا الكم</p>
+</div>
+<span class="px-2 py-1 bg-tertiary-container/10 text-tertiary rounded text-xs font-bold">نشط</span>
+</div>
+<div class="mb-4">
+<div class="flex justify-between font-body-sm text-body-sm mb-2">
+<span class="text-on-surface-variant">الاستخدام</span>
+<span class="text-on-background font-bold">45 / 80</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-l from-primary to-tertiary rounded-full" style="width: 56%"></div>
+</div>
+</div>
+<div class="flex justify-between items-center pt-4 border-t border-outline-variant">
+<span class="font-body-sm text-body-sm text-on-surface-variant">تم الإنشاء: ١٢ نوفمبر ٢٠٢٣</span>
+<button class="text-primary hover:text-primary-container p-1 rounded transition-colors opacity-0 group-hover:opacity-100 focus:opacity-100">
+<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+</div>
+<!-- Batch Card 2 -->
+<div class="border border-outline-variant rounded-lg p-5 hover:shadow-ambient transition-shadow bg-surface relative overflow-hidden group">
+<div class="absolute right-0 top-0 bottom-0 w-1 bg-primary"></div>
+<div class="flex justify-between items-start mb-4">
+<div>
+<h4 class="font-label-md text-label-md text-on-surface-variant">الدفعة #B-2023-10</h4>
+<p class="font-headline-sm text-headline-sm text-on-background mt-1">الديناميكا الحرارية</p>
+</div>
+<span class="px-2 py-1 bg-primary-container/10 text-primary rounded text-xs font-bold">قيد الاستخدام</span>
+</div>
+<div class="mb-4">
+<div class="flex justify-between font-body-sm text-body-sm mb-2">
+<span class="text-on-surface-variant">الاستخدام</span>
+<span class="text-on-background font-bold">120 / 150</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-l from-primary to-tertiary rounded-full" style="width: 80%"></div>
+</div>
+</div>
+<div class="flex justify-between items-center pt-4 border-t border-outline-variant">
+<span class="font-body-sm text-body-sm text-on-surface-variant">تم الإنشاء: ٠٥ أكتوبر ٢٠٢٣</span>
+<button class="text-primary hover:text-primary-container p-1 rounded transition-colors opacity-0 group-hover:opacity-100 focus:opacity-100">
+<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+</div>
+<!-- Batch Card 3 -->
+<div class="border border-outline-variant rounded-lg p-5 hover:shadow-ambient transition-shadow bg-surface relative overflow-hidden group">
+<div class="absolute right-0 top-0 bottom-0 w-1 bg-error"></div>
+<div class="flex justify-between items-start mb-4">
+<div>
+<h4 class="font-label-md text-label-md text-on-surface-variant">الدفعة #B-2023-09</h4>
+<p class="font-headline-sm text-headline-sm text-on-background mt-1">أساسيات الفيزياء</p>
+</div>
+<span class="px-2 py-1 bg-error-container/20 text-error rounded text-xs font-bold">منتهية</span>
+</div>
+<div class="mb-4">
+<div class="flex justify-between font-body-sm text-body-sm mb-2">
+<span class="text-on-surface-variant">الاستخدام</span>
+<span class="text-on-background font-bold">200 / 200</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-surface-variant rounded-full" style="width: 100%"></div>
+</div>
+</div>
+<div class="flex justify-between items-center pt-4 border-t border-outline-variant">
+<span class="font-body-sm text-body-sm text-on-surface-variant">تم الإنشاء: ٠١ سبتمبر ٢٠٢٣</span>
+<button class="text-primary hover:text-primary-container p-1 rounded transition-colors opacity-0 group-hover:opacity-100 focus:opacity-100">
+<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+</div>
+</div>
+<div class="p-4 border-t border-outline-variant text-center bg-surface">
+<button class="text-primary font-label-md text-label-md hover:underline">عرض جميع الدفعات</button>
+</div>
+</div>
+</div>
+</main>
+</body></html>

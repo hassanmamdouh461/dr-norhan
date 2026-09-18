@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>فُصْحَى | منصة وتطبيق اللغة العربية — أستاذ أشرف سليم</title>
+  <meta name="description" content="قُل وداعًا لصعوبة اللغة العربية؛ مرحبًا فُصحى.. التجربة الكاملة لرحلة التعلم عن بُعد متاحة الآن مع أستاذ أشرف سليم." />
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="فُصْحَى | أستاذ أشرف سليم — خبير تدريس اللغة العربية" />
+  <meta property="og:description" content="قُل وداعًا لصعوبة اللغة العربية؛ مرحبًا فُصحى.. التجربة الكاملة لرحلة التعلم عن بُعد." />
+  <meta property="og:image" content="assets/hero-poster.jpg" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="ar_EG" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="فُصْحَى | أستاذ أشرف سليم — خبير تدريس اللغة العربية" />
+  <meta name="twitter:description" content="قُل وداعًا لصعوبة اللغة العربية؛ مرحبًا فُصحى.. التجربة الكاملة لرحلة التعلم عن بُعد." />
+  <meta name="twitter:image" content="assets/hero-poster.jpg" />
+  <meta name="theme-color" content="#142B24" />
+  <meta name="robots" content="index, follow" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+
+  <!-- Structured Data (Schema.org) for SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "EducationalOrganization",
+    "name": "فُصْحَى — منصة وتطبيق اللغة العربية",
+    "description": "منصة وتطبيق فُصْحَى لتدريس اللغة العربية للثانوية العامة مع الأستاذ أشرف سليم",
+    "founder": { "@type": "Person", "name": "أشرف سليم", "jobTitle": "خبير تدريس اللغة العربية" },
+    "areaServed": "EG",
+    "inLanguage": "ar"
+  }
+  </script>
+
+  <!-- Favicon / Tab Icons -->
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png?v=2026" />
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png?v=2026" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png?v=2026" />
+  <link rel="shortcut icon" href="favicon.ico?v=2026" />
+
+  <!-- Google Fonts: Cairo, Amiri & Alexandria -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@400;600;700;800;900&family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- High Performance Preload & DNS Prefetch (Instant Hero Paint) -->
+  <link rel="preload" as="image" href="assets/hero-poster.webp?v=20260917_hd" type="image/webp" fetchpriority="high" />
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+  <link rel="preconnect" href="https://unpkg.com" crossorigin />
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+
+  <!-- Ultra-light HLS.js for instantaneous video streaming -->
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@1.5.8/dist/hls.light.min.js" defer></script>
+
+  <!-- GSAP for SVG Wipe-Draw Page Transition -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="bg-fusha-cream text-slate-800 font-cairo antialiased selection:bg-fusha-khaki selection:text-fusha-forest overflow-x-clip is-transitioning">
+
+  <!-- Skip to main content (Accessibility) -->
+  <a href="#hero" class="skip-link">تخطي إلى المحتوى الرئيسي</a>
+
+  <!-- Instant Pre-paint Intro Initialization (Zero FOUC) -->
+  <script>
+    (function() {
+      try { sessionStorage.removeItem('fusha_intro_done'); } catch (e) {}
+      if (window.__INITIAL_INTRO_COLOR) return;
+      const colors = [
+        { name: 'forest', value: '#142B24', isLight: false },
+        { name: 'forestLight', value: '#1E3E34', isLight: false },
+        { name: 'sage', value: '#5F7A61', isLight: false },
+        { name: 'khaki', value: '#B7B19B', isLight: true },
+        { name: 'olive', value: '#8B9565', isLight: false }
+      ];
+      const selected = colors[Math.floor(Math.random() * colors.length)];
+      window.__INITIAL_INTRO_COLOR = selected;
+      document.documentElement.style.setProperty('--initial-intro-color', selected.value);
+    })();
+  </script>
+
+  <!-- ================= FULLSCREEN INTRO SCRIBBLER & TRANSITION (Truus / Animmaster) ================= -->
+  <svg id="scribbleSvg" class="transition-scribble" xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 3222 3114" fill="none" preserveAspectRatio="none" aria-hidden="true" style="color: var(--initial-intro-color, #142B24);">
+    <path id="scribblePath"
+      d="M299.654 453.865C505.574 319.225 711.494 184.585 836.054 109.945C960.614 35.3048 997.574 24.7448 944.014 110.385C890.454 196.025 745.254 378.185 571.454 634.385C397.654 890.585 199.654 1215.3 110.854 1382.58C22.0544 1549.86 48.4544 1549.86 77.8944 1540.62C107.334 1531.38 139.014 1512.9 367.854 1319.9C596.694 1126.9 1021.73 759.945 1255.21 555.065C1488.69 350.185 1517.73 318.505 1527.41 306.145C1537.09 293.785 1526.53 301.705 1346.85 618.625C1167.17 935.545 818.694 1561.22 635.214 1896.74C451.734 2232.26 443.814 2258.66 447.654 2268.3C451.494 2277.94 467.334 2270.02 511.134 2236.9C554.934 2203.78 626.214 2145.7 966.534 1817.46C1306.85 1489.22 1914.05 892.585 2263.81 557.505C2613.57 222.425 2687.49 166.985 2741.41 129.185C2795.33 91.3848 2827.01 72.9048 2843.33 67.3448C2859.65 61.7848 2859.65 69.7048 2849.09 96.2248C2838.53 122.745 2817.41 167.625 2584.77 544.505C2352.13 921.385 1370.37 2165.43 1139.25 2537.83C908.134 2910.23 902.854 2926.07 902.774 2939.51C902.694 2952.95 907.974 2963.51 1255.21 2613.87C1602.45 2264.23 2829.73 1017.54 2903.53 1071.46C2977.33 1125.38 2176.12 2817.04 2128 3037C2079.88 3256.96 2911.24 2018.56 3172 1793"
+      stroke="currentColor"
+      stroke-linecap="round"
+      style="stroke-width: 32%; stroke-dashoffset: 0; stroke-dasharray: 50000px 50000px;"
+    />
+  </svg>
+
+  <!-- Center Logo / Wiggle Container (Visible on load) -->
+  <div id="logoContainer" class="transition-logo-container" aria-hidden="true" style="opacity: 1;">
+    <div id="logoInner" class="flex flex-col items-center justify-center gap-3">
+      <img
+        id="introLogoImg"
+        src="assets/fusha-brand-logo-white.png"
+        alt="فُصْحَى"
+        class="w-48 sm:w-64 md:w-80 h-auto object-contain drop-shadow-2xl transition-all"
+      />
+      <span id="introSubText" class="font-alexandria font-bold text-sm sm:text-base text-white/90 tracking-widest">
+        أ. أشرف سليم — خبير تدريس اللغة العربية
+      </span>
+    </div>
+  </div>
+
+  <!-- ================= SECTION TRANSITION SVG OVERLAY (Animmaster/SVG-Page-transition) ================= -->
+  <div id="sectionTransitionOverlay" class="section-transition-svg" aria-hidden="true" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(1.5); width: 100vw; height: 100vh; pointer-events: none; z-index: 100000; visibility: hidden; opacity: 0;">
+    <svg
+      viewBox="0 0 2453 2535"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      preserveAspectRatio="none"
+    >
+      <path
+        id="secTransPath1"
+        d="M227.549 1818.76C227.549 1818.76 406.016 2207.75 569.049 2130.26C843.431 1999.85 -264.104 1002.3 227.549 876.262C552.918 792.849 773.647 2456.11 1342.05 2130.26C1885.43 1818.76 14.9644 455.772 760.548 137.262C1342.05 -111.152 1663.5 2266.35 2209.55 1972.76C2755.6 1679.18 1536.63 384.467 1826.55 137.262C2013.5 -22.1463 2209.55 381.262 2209.55 381.262"
+        stroke="var(--transition-stroke-1, #142B24)"
+        stroke-width="200"
+        stroke-linecap="round"
+        style="stroke-dasharray: 25000px; stroke-dashoffset: 25000px;"
+      />
+      <path
+        id="secTransPath2"
+        d="M1661.28 2255.51C1661.28 2255.51 2311.09 1960.37 2111.78 1817.01C1944.47 1696.67 718.456 2870.17 499.781 2255.51C308.969 1719.17 2457.51 1613.83 2111.78 963.512C1766.05 313.198 427.949 2195.17 132.281 1455.51C-155.219 736.292 2014.78 891.514 1708.78 252.012C1437.81 -314.29 369.471 909.169 132.281 566.512C18.1772 401.672 244.781 193.012 244.781 193.012"
+        stroke="var(--transition-stroke-2, #B7B19B)"
+        stroke-width="200"
+        stroke-linecap="round"
+        style="stroke-dasharray: 25000px; stroke-dashoffset: 25000px;"
+      />
+    </svg>
+  </div>
+
+  <header class="fixed top-2.5 sm:top-4 inset-x-2.5 sm:inset-x-6 lg:inset-x-8 max-w-7xl mx-auto z-50 transition-all duration-300 backdrop-blur-md bg-white/95 rounded-2xl sm:rounded-3xl border border-stone-200/80 shadow-lg shadow-fusha-forest/5 overflow-hidden" id="navbar">
+    <div class="px-3.5 sm:px-6 lg:px-8 h-14 sm:h-18 lg:h-20 flex items-center justify-between gap-3">
+      
+      <!-- Brand Logo (Official Fusha Identity) -->
+      <a href="#hero" data-transition="hero" class="flex items-center gap-2 sm:gap-3 group shrink-0">
+        <img
+          src="assets/fusha-brand-logo.png?v=2026"
+          alt="شعار فصحى"
+          class="h-7 sm:h-10 lg:h-12 w-auto object-contain mix-blend-multiply transition-transform group-hover:scale-105"
+        />
+        <div class="hidden sm:flex flex-col border-r border-stone-300 pr-2.5">
+          <span class="text-xs font-alexandria font-bold text-fusha-forest tracking-tight">أ. أشرف سليم</span>
+          <span class="text-[10px] text-fusha-olive font-semibold">ثانوية عامة</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links (with Animmaster transition) -->
+      <nav class="hidden lg:flex items-center gap-7 text-sm font-semibold text-fusha-forest" role="navigation" aria-label="التنقل الرئيسي">
+        <a href="#hero" data-transition="hero" data-navlink="hero" class="hover:text-fusha-olive transition-colors">الرئيسية</a>
+        <a href="#system" data-transition="system" data-navlink="system" class="hover:text-fusha-olive transition-colors">ليه تشترك معانا؟</a>
+        <a href="#courses" data-transition="courses" data-navlink="courses" class="hover:text-fusha-olive transition-colors">الكورسات الشاملة</a>
+        <a href="#app" data-transition="app" data-navlink="app" class="hover:text-fusha-olive transition-colors">تطبيق فُصْحَى</a>
+        <a href="#centers" data-transition="centers" data-navlink="centers" class="hover:text-fusha-olive transition-colors">السناتر</a>
+        <a href="#booking" data-transition="booking" data-navlink="booking" class="hover:text-fusha-olive transition-colors">حجز مقعد</a>
+      </nav>
+
+      <!-- App Store Badges & CTA Buttons -->
+      <div class="flex items-center gap-2 sm:gap-3 shrink-0">
+        
+        <!-- App Store Mini Badges (from the design) -->
+        <div class="hidden xl:flex items-center gap-2">
+          <a href="#app" data-transition="app" class="px-2.5 py-1.5 rounded-lg bg-black text-white text-[10px] font-medium flex items-center gap-1.5 hover:bg-stone-800 transition-colors">
+            <svg class="w-3 h-3 shrink-0" viewBox="0 0 512 512">
+              <path d="M48.2 24.1C37.8 35.3 32 51.5 32 70.8v370.4c0 19.3 5.8 35.5 16.2 46.7l2.4 2.4L256 284.9v-57.8L50.6 21.7l-2.4 2.4z" fill="#00D1FF"/>
+              <path d="M329.8 358.7l-73.8-73.8v-57.8l73.8-73.8 1.7 1 87.5 49.7c24.9 14.2 24.9 37.3 0 51.5l-87.5 49.7-1.7 3.5z" fill="#FFC400"/>
+              <path d="M256 227.1L50.6 21.7c7.9-8.5 20.3-13.7 34.6-5.6l244.6 139 74.4 72-98.2 0z" fill="#00E676"/>
+              <path d="M256 284.9L50.6 490.3c14.3 8.1 26.7 2.9 34.6-5.6l244.6-139-73.8-60.8z" fill="#FF3D00"/>
+            </svg>
+            <span>Google Play</span>
+          </a>
+          <a href="#app" data-transition="app" class="px-2.5 py-1.5 rounded-lg bg-black text-white text-[10px] font-medium flex items-center gap-1.5 hover:bg-stone-800 transition-colors">
+            <svg class="w-3 h-3 mb-[1px] shrink-0" viewBox="0 0 170 170" fill="currentColor">
+              <path d="M150.37 130.25c-2.45 5.66-5.35 10.87-8.71 15.66-4.58 6.53-8.33 11.05-11.22 13.56-4.48 4.12-9.28 6.23-14.42 6.35-3.69 0-8.14-1.05-13.32-3.18-5.19-2.12-9.97-3.17-14.34-3.17-4.58 0-9.49 1.05-14.75 3.17-5.26 2.13-9.5 3.24-12.74 3.35-4.35.13-9.16-1.9-14.42-6.08-3.69-3.04-7.67-7.81-11.96-14.34-6.3-9.59-11.2-20.73-14.7-33.43-3.5-12.7-5.25-24.62-5.25-35.75 0-14.16 3.39-25.79 10.18-34.91 6.78-9.12 15.34-13.84 25.68-14.16 4.93 0 10.43 1.34 16.5 4.02 6.07 2.68 9.94 4.08 11.61 4.19 1.45 0 5.44-1.39 11.96-4.19 6.53-2.79 12.35-4.04 17.47-3.75 13.51.65 24.38 5.67 32.61 15.07-11.75 7.11-17.47 16.89-17.16 29.35.31 9.8 4.14 17.92 11.48 24.36 7.34 6.44 16.03 10.05 26.07 10.83-2.18 6.74-4.8 13.39-7.84 19.96zM119.22 31.84c0-7.72 2.76-14.86 8.28-21.43 5.52-6.57 12.26-10.41 20.22-11.52.11.98.17 1.85.17 2.61 0 7.61-2.88 14.89-8.65 21.84-5.77 6.95-12.69 10.84-20.76 11.67-.11-.76-.17-1.42-.17-1.98z"/>
+            </svg>
+            <span>App Store</span>
+          </a>
+        </div>
+
+        <!-- Student Platform Action -->
+        <a href="/login.html" class="inline-flex items-center gap-1 sm:gap-1.5 px-2.5 sm:px-3.5 py-1.5 sm:py-2 rounded-xl bg-fusha-forest/8 hover:bg-fusha-forest/15 text-fusha-forest font-alexandria font-bold text-[11px] sm:text-xs border border-fusha-forest/15 transition-all whitespace-nowrap shrink-0">
+          <i data-lucide="graduation-cap" class="w-3.5 h-3.5 text-fusha-sun shrink-0"></i>
+          <span>منصة الطلاب</span>
+        </a>
+
+        <!-- Booking CTA Action -->
+        <a href="#booking" data-transition="booking" class="px-2.5 sm:px-4 py-1.5 sm:py-2 rounded-xl bg-fusha-forest hover:bg-fusha-forestLight text-white font-alexandria font-bold text-[11px] sm:text-xs shadow-sm shadow-fusha-forest/20 transition-all transform hover:-translate-y-0.5 whitespace-nowrap shrink-0">
+          <span>احجز مكانك</span>
+        </a>
+
+        <!-- Mobile Menu Toggle -->
+        <button id="mobileMenuBtn" class="lg:hidden p-1.5 sm:p-2 rounded-xl text-fusha-forest bg-stone-100 hover:bg-stone-200 focus:outline-none shrink-0 transition-colors" aria-label="فتح القائمة" aria-expanded="false" aria-controls="mobileMenu">
+          <i data-lucide="menu" class="w-4 h-4 sm:w-5 sm:h-5"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div id="mobileMenu" class="hidden lg:hidden bg-white/98 backdrop-blur-xl border-t border-stone-100 px-6 py-6 space-y-4 shadow-inner">
+      <a href="#hero" data-transition="hero" class="block text-fusha-forest hover:text-fusha-olive font-medium text-lg py-1.5 mobile-link">الرئيسية</a>
+      <a href="#system" data-transition="system" class="block text-fusha-forest hover:text-fusha-olive font-medium text-lg py-1.5 mobile-link">ليه تشترك معانا؟</a>
+      <a href="#courses" data-transition="courses" class="block text-fusha-forest hover:text-fusha-olive font-medium text-lg py-1.5 mobile-link">الكورسات الشاملة</a>
+      <a href="#app" data-transition="app" class="block text-fusha-forest hover:text-fusha-olive font-medium text-lg py-1.5 mobile-link">تطبيق فُصْحَى للموبايل</a>
+      <a href="#centers" data-transition="centers" class="block text-fusha-forest hover:text-fusha-olive font-medium text-lg py-1.5 mobile-link">السناتر والمواعيد</a>
+      <a href="/login.html" class="flex items-center justify-center gap-2 py-3 rounded-xl bg-fusha-forest/10 text-fusha-forest border border-fusha-forest/15 font-bold mobile-link">
+        <i data-lucide="graduation-cap" class="w-5 h-5 text-fusha-sun"></i>
+        <span>منصة الطلاب (تسجيل الدخول)</span>
+      </a>
+      <a href="#booking" data-transition="booking" class="block text-center py-3 rounded-xl bg-fusha-forest text-white font-bold mobile-link">احجز مكانك دلوقتي</a>
+    </div>
+
+    <!-- Embedded Reading / Scroll Progress Bar (شريط التقديم) -->
+    <div class="w-full h-[4px] bg-stone-200 overflow-hidden flex justify-end">
+      <div id="scrollProgressBar" class="h-full bg-gradient-to-l from-fusha-sun via-fusha-olive to-fusha-forest transition-[width] duration-75 ease-out shadow-sm" style="width: 0%;"></div>
+    </div>
+  </header>
+
+  <!-- ================= HERO SECTION (FRAMED CINEMA VIDEO CARD LAYOUT) ================= -->
+  <section id="hero" class="relative lg:sticky top-0 min-h-screen lg:h-screen lg:h-[100dvh] w-full bg-fusha-cream z-0 flex items-center justify-center pt-24 sm:pt-28 lg:pt-0 pb-12 sm:pb-16 select-none overflow-hidden">
+    
+    <!-- Hero Container: Clean, Edge-to-Edge on Mobile (px-4), Balanced 2-Cols on Desktop -->
+    <div id="heroContent" class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 xl:gap-12 items-center">
+        
+        <!-- Right Column: Editorial Text & Action -->
+        <div class="lg:col-span-6 xl:col-span-6 text-right flex flex-col items-start w-full">
+          
+          <!-- Eyebrow Pill Badge -->
+          <div class="mb-3 sm:mb-4 inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/95 backdrop-blur-md border border-fusha-forest/10 shadow-xs">
+            <span class="relative flex h-2 w-2">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-600"></span>
+            </span>
+            <span class="font-cairo font-bold text-[11px] sm:text-xs text-fusha-forest tracking-wide">
+              منظومة الثانوية العامة 2026/2027 • الأستاذ أشرف سليم
+            </span>
+          </div>
+
+          <!-- Main Headline with Real-time Typewriter Effect (Authentic Arabic Font: Amiri) -->
+          <h1 id="heroTypewriterTitle" class="font-amiri font-bold text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-[3.25rem] text-fusha-forest leading-[1.35] tracking-normal min-h-[75px] sm:min-h-[95px] lg:min-h-[125px] w-full" aria-label="من صعوبة العربية إلى سلاسة فُصْحَى">
+            <span class="sr-only">من صعوبة العربية إلى سلاسة فُصْحَى</span>
+            <span id="typewriterLine1" class="block text-fusha-forest"></span>
+            <span id="typewriterLine2" class="block mt-1 text-fusha-olive"></span>
+          </h1>
+
+          <!-- Short Punchy Subtitle -->
+          <p id="heroSubtitle" class="font-cairo text-stone-600 text-sm sm:text-base leading-relaxed mt-3 sm:mt-4 max-w-xl font-medium opacity-0 transform translate-y-2 transition-all duration-700">
+            استراتيجية شرح مبسطة وتدريبات بابل شيت متدرجة وفق أحدث مواصفات الوزارة، مع متابعة دورية تضمن لك قفل المادة والوصول للدرجة النهائية بثقة وسلاسة.
+          </p>
+
+          <!-- Primary CTA Button (Single button - No secondary audio button!) -->
+          <div id="heroCtaWrap" class="pt-5 sm:pt-6 opacity-0 transition-all duration-700 transform translate-y-2 w-full sm:w-auto">
+            <a
+              href="#booking"
+              data-transition="booking"
+              class="w-full sm:w-auto px-8 py-3.5 sm:py-4 rounded-xl bg-fusha-forest hover:bg-fusha-forestLight text-white font-cairo font-bold text-sm sm:text-base shadow-xl shadow-fusha-forest/20 transition-all transform hover:-translate-y-0.5 active:translate-y-0 inline-flex items-center justify-center gap-2.5 group"
+            >
+              <span>احجز مكانك دلوقتي</span>
+              <i data-lucide="arrow-left" class="w-4 h-4 transition-transform group-hover:-translate-x-1"></i>
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Left Column: Framed Cinema Video Card (Full Width on Mobile - NO empty side spaces!) -->
+        <div id="heroMediaCol" class="lg:col-span-6 xl:col-span-6 w-full mt-2 sm:mt-4 lg:mt-0">
+          <div id="heroMedia" class="relative w-full rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border-2 sm:border-4 border-white bg-black aspect-[16/10] group">
+            
+            <!-- Video Stream -->
+            <video
+              id="bgHeroVideo"
+              class="w-full h-full object-cover"
+              autoplay
+              loop
+              muted
+              playsinline
+              preload="auto"
+              poster="assets/hero-poster.webp?v=20260918_classroom"
+            >
+              <source src="/assets/hls/hero.m3u8?v=20260918_classroom" type="application/vnd.apple.mpegurl" />
+              <source src="assets/hero-video.webm?v=20260918_classroom" type="video/webm" />
+              <source src="assets/hero-video.mp4?v=20260918_classroom" type="video/mp4" />
+              متصفحك لا يدعم تشغيل الفيديو.
+            </video>
+
+            <!-- Subtle cinematic edge gradients inside video frame -->
+            <div class="absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-black/60 via-black/20 to-transparent pointer-events-none"></div>
+            <div class="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/80 via-black/40 to-transparent pointer-events-none"></div>
+
+            <!-- Top Left: Fullscreen Modal Button -->
+            <button
+              id="openVideoModalBtn"
+              class="absolute top-3 left-3 sm:top-4 sm:left-4 z-10 w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-black/60 backdrop-blur-md text-white hover:bg-white hover:text-fusha-forest flex items-center justify-center transition-all shadow-md border border-white/10 cursor-pointer"
+              aria-label="تكبير الفيديو"
+            >
+              <i data-lucide="maximize-2" class="w-4 h-4"></i>
+            </button>
+
+            <!-- Bottom Right: Teacher Credential Badge -->
+            <div class="absolute bottom-3 right-3 sm:bottom-4 sm:right-4 z-10 inline-flex items-center gap-2.5 px-3 sm:px-3.5 py-1.5 sm:py-2 rounded-2xl bg-black/70 backdrop-blur-md border border-white/15 shadow-lg text-white select-none">
+              <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-fusha-forest border border-white/30 flex items-center justify-center font-alexandria font-black text-xs sm:text-sm text-white shadow-xs shrink-0">
+                أ
+              </div>
+              <div class="text-right">
+                <span class="block font-alexandria font-bold text-xs sm:text-sm leading-tight text-white">أ. أشرف سليم</span>
+                <span class="block text-[10px] sm:text-[11px] text-stone-300 font-medium leading-tight">كبير معلمي اللغة العربية</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SECTION: ليه تشترك معانا (WHY JOIN US) ================= -->
+  <!-- Features the sticky / angled editorial layout from Telegram 411 -->
+  <section id="system" class="py-20 sm:py-24 lg:py-28 relative z-20 bg-fusha-cream rounded-t-[32px] sm:rounded-t-[48px] shadow-[0_-25px_60px_rgba(10,24,20,0.4)] overflow-x-clip -mt-6">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
+        
+        <!-- Sticky Headline & Overview Column (Telegram 411 Style) -->
+        <div class="lg:col-span-5 sticky-column pb-6 lg:pb-0">
+          <span class="inline-block px-3.5 py-1 rounded-full bg-fusha-sage/10 text-fusha-forest text-xs font-alexandria font-bold uppercase tracking-wider mb-4 border border-fusha-sage/20">
+            منظومة فُصْحَى المتكاملة
+          </span>
+          <h2 class="font-alexandria font-black text-3xl sm:text-4xl text-fusha-forest leading-tight mb-6">
+            ليه تشترك معانا؟
+          </h2>
+          <p class="text-stone-600 text-sm sm:text-base leading-relaxed mb-6 font-normal">
+            لأننا بنقدملك تجربة تعليمية متكاملة تضمن لك التفوق والدرجة النهائية في اللغة العربية مع أ. أشرف سليم. محاضرات شرح شاملة ومبسطة لكل أجزاء المنهج، وتدريبات بابل شيت متدرجة الصعوبة وفق أحدث مواصفات وزارة التربية والتعليم، مع اختبارات دورية ونماذج إجابة توضح لك سبب كل اختيار لتفادي الأخطاء.
+          </p>
+          <p class="text-stone-600 text-sm sm:text-base leading-relaxed mb-8">
+            متابعة مستمرة ودقيقة لمستواك الدراسي وترتيبك بين زملائك، وتقارير دورية وإشعارات تلقائية لولي الأمر، بالإضافة لإتاحة أهم مذكرات الشرح وصفحات الكتب الخارجية في ملفات جاهزة للتحميل في أي وقت.
+          </p>
+
+          <a href="#booking" data-transition="booking" class="inline-flex items-center gap-2.5 px-6 py-3 rounded-xl bg-fusha-forest hover:bg-fusha-forestLight text-white font-alexandria font-bold text-sm shadow-md transition-all">
+            <span>احجز مكانك دلوقتي</span>
+            <svg class="w-4 h-4 rtl:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14"></path>
+              <path d="m12 5 7 7-7 7"></path>
+            </svg>
+          </a>
+        </div>
+
+        <!-- Cards Stack: حساب ولي الأمر / أكبر بنك أسئلة متواجد / المعجم -->
+        <div id="systemCardsContainer" class="lg:col-span-7 space-y-6 sm:space-y-8 system-cards-stack">
+          
+          <!-- Card 1: حساب ولي الأمر (Dark Sage Green) — مسار السهم 1: هبوط عمودي من الأعلى واستقرار ناعم -->
+          <div id="systemCard1" class="p-8 sm:p-10 rounded-3xl bg-fusha-sage text-white shadow-xl fusha-card system-card system-card-1 relative overflow-hidden">
+            <div class="absolute -bottom-8 -left-8 w-44 h-44 bg-white/10 rounded-full blur-2xl pointer-events-none system-card-glow"></div>
+            <div class="flex items-center justify-between gap-4 mb-4">
+              <h3 class="font-alexandria font-black text-2xl sm:text-3xl text-white">حساب ولي الأمر</h3>
+              <div class="w-12 h-12 rounded-2xl bg-white/15 flex items-center justify-center text-white system-card-icon shadow-inner">
+                <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+              </div>
+            </div>
+            <p class="text-stone-100 text-sm sm:text-base leading-relaxed mb-8">
+              يصل لولي الأمر كافة تفاصيل تفاعل ابنه من ساعات مشاهدة المحاضرات، درجات كافة الاختبارات، وتفاصيل الواجبات، كما يصل إليه ترتيب ابنه بين كل الطلاب. ويمكن أيضًا دفع الاشتراكات إلكترونيًا عن طريق بوابة الدفع، ليكون ولي الأمر شريكًا فاعلاً ومطلعًا باستمرار على تقويم سلوك الطالب ومستواه الدراسي.
+            </p>
+            <a href="#booking" data-transition="booking" class="inline-block px-7 py-3 rounded-xl bg-fusha-forest hover:bg-fusha-forestDark text-white font-alexandria font-bold text-sm shadow-md transition-colors">
+              احجز مكانك دلوقتي
+            </a>
+          </div>
+
+          <!-- Card 2: أكبر بنك أسئلة متواجد (Warm Olive) — مسار السهم 2: انزلاق انسيابي من اليسار لليمين -->
+          <div id="systemCard2" class="p-8 sm:p-10 rounded-3xl bg-fusha-olive text-white shadow-xl fusha-card system-card system-card-2 relative overflow-hidden">
+            <div class="absolute -bottom-8 -right-8 w-44 h-44 bg-white/10 rounded-full blur-2xl pointer-events-none system-card-glow"></div>
+            <div class="flex items-center justify-between gap-4 mb-4">
+              <h3 class="font-alexandria font-black text-2xl sm:text-3xl text-white">أكبر بنك أسئلة متواجد</h3>
+              <div class="w-12 h-12 rounded-2xl bg-white/15 flex items-center justify-center text-white system-card-icon shadow-inner">
+                <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                  <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                </svg>
+              </div>
+            </div>
+            <p class="text-stone-100 text-sm sm:text-base leading-relaxed mb-8">
+              آلاف الأسئلة والتدريبات التفاعلية الشاملة لكافة فروع المنهج وفق أحدث مواصفات امتحانات الثانوية العامة، مع تصحيح فوري وتفسير تفصيلي لكل اختيار لضمان تثبيت المعلومة وتحقيق الدرجة النهائية.
+            </p>
+            <a href="#booking" data-transition="booking" class="inline-block px-7 py-3 rounded-xl bg-fusha-forest hover:bg-fusha-forestDark text-white font-alexandria font-bold text-sm shadow-md transition-colors">
+              احجز مكانك دلوقتي
+            </a>
+          </div>
+
+          <!-- Card 3: المعجم اللغوي (Warm Khaki) — مسار السهم 3: مسار مقوس من اليمين لليسار -->
+          <div id="systemCard3" class="p-8 sm:p-10 rounded-3xl bg-fusha-khaki text-fusha-forestDark shadow-xl fusha-card system-card system-card-3 relative overflow-hidden">
+            <div class="absolute -bottom-8 -left-8 w-44 h-44 bg-fusha-forest/10 rounded-full blur-2xl pointer-events-none system-card-glow"></div>
+            <div class="flex items-center justify-between gap-4 mb-4">
+              <h3 class="font-alexandria font-black text-2xl sm:text-3xl text-fusha-forestDark">المعجم اللغوي</h3>
+              <div class="w-12 h-12 rounded-2xl bg-fusha-forest/15 flex items-center justify-center text-fusha-forestDark system-card-icon shadow-inner">
+                <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"></path>
+                  <path d="M6 6h10"></path>
+                  <path d="M6 10h10"></path>
+                </svg>
+              </div>
+            </div>
+            <p class="text-fusha-forestDark/90 text-sm sm:text-base leading-relaxed mb-8 font-medium">
+              توفير معجم لغوي ثري لكل صف دراسي يحتوي على معاني المفردات والجماليات البلاغية التي يمكن أن يتعرض إليها الطالب أثناء رحلته الدراسية، مما يسهل عليه حفظها والتعرف الفوري على الكلمات الغريبة داخل امتحانات الثانوية العامة.
+            </p>
+            <a href="#booking" data-transition="booking" class="inline-block px-7 py-3 rounded-xl bg-fusha-forest hover:bg-fusha-forestDark text-white font-alexandria font-bold text-sm shadow-md transition-colors">
+              احجز مكانك دلوقتي
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= SECTION: ما هي الكورسات الشاملة؟! ================= -->
+  <section id="courses" class="z-20 py-24 bg-fusha-stone relative border-y border-stone-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-fusha-forest font-alexandria font-bold text-xs sm:text-sm uppercase tracking-wider px-3.5 py-1 rounded-full bg-fusha-khaki/20 border border-fusha-khaki/40">
+          نظام الموديولز التفاعلي
+        </span>
+        <h2 class="font-alexandria font-black text-3xl sm:text-4xl text-fusha-forest mt-4 mb-5">
+          ما هي الكورسات الشاملة؟!
+        </h2>
+        <p class="text-stone-600 text-sm sm:text-base leading-relaxed">
+          الكورسات الشاملة هي الخدمة الأولى من نوعها التي تسمح للطالب بإتقان الدروس التي يختارها من جزئيات المنهج، من خلال توفير محاضرات شرح لكامل الدروس، بالإضافة لمحاضرات التدريبات متدرجة المستوى وتدريبات الفائقين مع إتاحة صفحات من مذكرة فُصْحَى مجانًا قبل الاشتراك، مع عدد لا نهائي من المشاهدات طوال العام الدراسي.
+        </p>
+      </div>
+
+      <!-- Stages Cards Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- 1st Secondary -->
+        <div class="p-8 rounded-3xl bg-white border border-stone-200 shadow-md fusha-card flex flex-col justify-between">
+          <div>
+            <span class="inline-block px-3 py-1 rounded-full bg-stone-100 text-fusha-forest text-xs font-bold mb-4">كورس تأسيسي</span>
+            <h3 class="font-alexandria font-bold text-2xl text-fusha-forest mb-3">الصف الأول الثانوي</h3>
+            <p class="text-stone-600 text-sm mb-6 leading-relaxed">تأسيس شامل في البلاغة والنحو ووحدات المنهج الجديد مع حل نماذج متحررة.</p>
+            <ul class="space-y-3 text-xs sm:text-sm text-stone-700 mb-8">
+              <li class="flex items-center gap-2.5">
+                <i data-lucide="check" class="w-4 h-4 text-fusha-olive shrink-0"></i>
+                <span>محاضرات تأسيس البلاغة بالكامل</span>
+              </li>
+              <li class="flex items-center gap-2.5">
+                <i data-lucide="check" class="w-4 h-4 text-fusha-olive shrink-0"></i>
+                <span>إعراب النحو التراكمي خطوة بخطوة</span>
+              </li>
+              <li class="flex items-center gap-2.5">
+                <i data-lucide="check" class="w-4 h-4 text-fusha-olive shrink-0"></i>
+                <span>تدريبات متدرجة من بنك الأسئلة</span>
+              </li>
+            </ul>
+          </div>
+          <a href="#booking" data-transition="booking" class="w-full py-3 rounded-xl bg-stone-100 hover:bg-fusha-forest hover:text-white text-fusha-forest font-alexandria font-bold text-center text-sm transition-colors">
+            ابدأ الآن للصف الأول
+          </a>
+        </div>
+
+        <!-- 2nd Secondary -->
+        <div class="p-8 rounded-3xl bg-white border border-stone-200 shadow-md fusha-card flex flex-col justify-between">
+          <div>
+            <span class="inline-block px-3 py-1 rounded-full bg-fusha-khaki/20 text-fusha-forest text-xs font-bold mb-4">كورس تمهيدي</span>
+            <h3 class="font-alexandria font-bold text-2xl text-fusha-forest mb-3">الصف الثاني الثانوي</h3>
+            <p class="text-stone-600 text-sm mb-6 leading-relaxed">إتقان وحدات النحو المعقدة وتطبيقات البلاغة والأدب تمهيداً لسنة الشهادة.</p>
+            <ul class="space-y-3 text-xs sm:text-sm text-stone-700 mb-8">
+              <li class="flex items-center gap-2.5">
+                <i data-lucide="check" class="w-4 h-4 text-fusha-olive shrink-0"></i>
+                <span>تطبيقات نواتج التعلم لنظام التابلت</span>
+              </li>
+              <li class="flex items-center gap-2.5">
+                <i data-lucide="check" class="w-4 h-4 text-fusha-olive shrink-0"></i>
+                <span>اختبارات أسبوعية وتصحيح تفصيلي</span>
+              </li>
+              <li class="flex items-center gap-2.5">
+                <i data-lucide="check" class="w-4 h-4 text-fusha-olive shrink-0"></i>
+                <span>مراجعات شاملة قبل امتحانات الشهور</span>
+              </li>
+            </ul>
+          </div>
+          <a href="#booking" data-transition="booking" class="w-full py-3 rounded-xl bg-stone-100 hover:bg-fusha-forest hover:text-white text-fusha-forest font-alexandria font-bold text-center text-sm transition-colors">
+            ابدأ الآن للصف الثاني
+          </a>
+        </div>
+
+        <!-- 3rd Secondary (Hero Focus) -->
+        <div class="p-8 rounded-3xl bg-fusha-forest text-white shadow-2xl fusha-card flex flex-col justify-between relative transform lg:-translate-y-2 border-2 border-fusha-khaki">
+          <div class="absolute -top-3.5 right-6 px-3 py-1 rounded-full bg-fusha-sun text-fusha-forestDark text-[11px] font-black font-alexandria uppercase tracking-wider shadow">
+            ⭐ الدفعة الأقوى — ثانوية عامة
+          </div>
+          <div>
+            <span class="inline-block px-3 py-1 rounded-full bg-white/15 text-fusha-khaki text-xs font-bold mb-4">ماراثون الدرجة النهائية</span>
+            <h3 class="font-alexandria font-black text-2xl text-white mb-3">الصف الثالث الثانوي</h3>
+            <p class="text-stone-300 text-sm mb-6 leading-relaxed">المنهج الكامل مع تدريبات الطلاب الفائقين وبنك أسئلة البابل شيت الشامل.</p>
+            <ul class="space-y-3 text-xs sm:text-sm text-stone-200 mb-8">
+              <li class="flex items-center gap-2.5">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-fusha-sun shrink-0"></i>
+                <span>شرح الـ 7 وحدات نحو بخرائط ذهنية ذكية</span>
+              </li>
+              <li class="flex items-center gap-2.5">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-fusha-sun shrink-0"></i>
+                <span>حل أكثر من 6000 فكرة بابل شيت متوقعة</span>
+              </li>
+              <li class="flex items-center gap-2.5">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-fusha-sun shrink-0"></i>
+                <span>متابعة خاصة من فريق مساعدي أ. أشرف سليم</span>
+              </li>
+            </ul>
+          </div>
+          <a href="#booking" data-transition="booking" class="w-full py-3.5 rounded-xl bg-fusha-sun hover:bg-fusha-sunHover text-fusha-forestDark font-alexandria font-black text-center text-sm shadow-lg shadow-fusha-sun/30 transition-all">
+            احجز مقعدك في دفعة 3 ثانوي
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= SECTION: تطبيق فُصْحَى للموبايل (MOBILE APPLICATION BANNER) ================= -->
+  <!-- Uses .diagonal-cut-both from Telegram 411 -->
+  <section id="app" class="z-20 py-28 relative bg-fusha-forest text-white diagonal-cut-both overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Text & Download Links (From Screenshot 5) -->
+        <div class="lg:col-span-7 space-y-6 text-right">
+          <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-xs font-bold text-fusha-khaki">
+            <span>Fusha Mobile Application</span>
+          </div>
+          <h2 class="font-alexandria font-black text-3xl sm:text-5xl text-white leading-tight">
+            تطبيق فُصْحَى لتعلم اللغة العربية..
+          </h2>
+          <p class="font-alexandria font-bold text-xl sm:text-2xl text-fusha-khaki">
+            تعلم اللغة العربية في أقصر وقت ممكن!
+          </p>
+          <p class="text-stone-300 text-sm sm:text-base leading-relaxed max-w-xl">
+            حمّل التطبيق الآن وسجل حسابك لتصلك الحصص الأسبوعية، الامتحانات الدورية، وتنبيهات الواجبات أولاً بأول مباشرة على هاتفك.
+          </p>
+
+          <!-- Store Download Badges (Exact match with user screenshots) -->
+          <div class="flex flex-wrap items-center gap-4 pt-4">
+            <!-- Google Play Badge -->
+            <a href="https://play.google.com" target="_blank" class="px-5 py-3 rounded-2xl bg-black/90 hover:bg-black text-white flex items-center gap-3 border border-white/20 shadow-xl transition-transform hover:scale-105">
+              <svg class="w-7 h-7 shrink-0" viewBox="0 0 512 512">
+                <path d="M48.2 24.1C37.8 35.3 32 51.5 32 70.8v370.4c0 19.3 5.8 35.5 16.2 46.7l2.4 2.4L256 284.9v-57.8L50.6 21.7l-2.4 2.4z" fill="#00D1FF"/>
+                <path d="M329.8 358.7l-73.8-73.8v-57.8l73.8-73.8 1.7 1 87.5 49.7c24.9 14.2 24.9 37.3 0 51.5l-87.5 49.7-1.7 3.5z" fill="#FFC400"/>
+                <path d="M256 227.1L50.6 21.7c7.9-8.5 20.3-13.7 34.6-5.6l244.6 139 74.4 72-98.2 0z" fill="#00E676"/>
+                <path d="M256 284.9L50.6 490.3c14.3 8.1 26.7 2.9 34.6-5.6l244.6-139-73.8-60.8z" fill="#FF3D00"/>
+              </svg>
+              <div class="text-right">
+                <span class="text-[10px] text-stone-300 block uppercase leading-none">GET IT ON</span>
+                <span class="text-base font-bold font-alexandria leading-tight">Google Play</span>
+              </div>
+            </a>
+
+            <!-- App Store Badge -->
+            <a href="https://apple.com" target="_blank" class="px-5 py-3 rounded-2xl bg-black/90 hover:bg-black text-white flex items-center gap-3 border border-white/20 shadow-xl transition-transform hover:scale-105">
+              <svg class="w-7 h-7 mb-[2px] shrink-0" viewBox="0 0 170 170" fill="currentColor">
+                <path d="M150.37 130.25c-2.45 5.66-5.35 10.87-8.71 15.66-4.58 6.53-8.33 11.05-11.22 13.56-4.48 4.12-9.28 6.23-14.42 6.35-3.69 0-8.14-1.05-13.32-3.18-5.19-2.12-9.97-3.17-14.34-3.17-4.58 0-9.49 1.05-14.75 3.17-5.26 2.13-9.5 3.24-12.74 3.35-4.35.13-9.16-1.9-14.42-6.08-3.69-3.04-7.67-7.81-11.96-14.34-6.3-9.59-11.2-20.73-14.7-33.43-3.5-12.7-5.25-24.62-5.25-35.75 0-14.16 3.39-25.79 10.18-34.91 6.78-9.12 15.34-13.84 25.68-14.16 4.93 0 10.43 1.34 16.5 4.02 6.07 2.68 9.94 4.08 11.61 4.19 1.45 0 5.44-1.39 11.96-4.19 6.53-2.79 12.35-4.04 17.47-3.75 13.51.65 24.38 5.67 32.61 15.07-11.75 7.11-17.47 16.89-17.16 29.35.31 9.8 4.14 17.92 11.48 24.36 7.34 6.44 16.03 10.05 26.07 10.83-2.18 6.74-4.8 13.39-7.84 19.96zM119.22 31.84c0-7.72 2.76-14.86 8.28-21.43 5.52-6.57 12.26-10.41 20.22-11.52.11.98.17 1.85.17 2.61 0 7.61-2.88 14.89-8.65 21.84-5.77 6.95-12.69 10.84-20.76 11.67-.11-.76-.17-1.42-.17-1.98z"/>
+              </svg>
+              <div class="text-right">
+                <span class="text-[10px] text-stone-300 block uppercase leading-none">Download on the</span>
+                <span class="text-base font-bold font-alexandria leading-tight">App Store</span>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- App Features Mockup Card -->
+        <div class="lg:col-span-5">
+          <div class="p-8 rounded-3xl bg-white/10 backdrop-blur-md border border-white/20 shadow-2xl text-right">
+            <div class="w-14 h-14 rounded-2xl bg-fusha-sun text-fusha-forest flex items-center justify-center mb-6 shadow-lg">
+              <i data-lucide="smartphone" class="w-7 h-7"></i>
+            </div>
+            <h3 class="font-alexandria font-bold text-xl text-white mb-4">مميزات تطبيق فُصْحَى في جيبك</h3>
+            <ul class="space-y-3.5 text-sm text-stone-200">
+              <li class="flex items-center gap-3">
+                <i data-lucide="check-circle" class="w-5 h-5 text-fusha-sun shrink-0"></i>
+                <span>مشاهدة الحصص بجودة فائقة وإعادتها حتى ليلة الامتحان</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <i data-lucide="check-circle" class="w-5 h-5 text-fusha-sun shrink-0"></i>
+                <span>حل واجبات إلكترونية ومعرفة النتيجة لحظياً</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <i data-lucide="check-circle" class="w-5 h-5 text-fusha-sun shrink-0"></i>
+                <span>حساب مخصص لولي الأمر لمتابعة الدرجات والغياب</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <i data-lucide="check-circle" class="w-5 h-5 text-fusha-sun shrink-0"></i>
+                <span>المعجم اللغوي التفاعلي للبحث السريع في المفردات</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= SECTION: CENTERS & SCHEDULE ================= -->
+  <section id="centers" class="z-20 py-24 bg-fusha-cream relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-fusha-forest font-alexandria font-bold text-xs sm:text-sm uppercase tracking-wider px-3.5 py-1 rounded-full bg-stone-200">
+          التواجد الميداني والرقمي
+        </span>
+        <h2 class="font-alexandria font-black text-3xl sm:text-4xl text-fusha-forest mt-4 mb-4">
+          أماكن السناتر والمنصة الأونلاين
+        </h2>
+        <p class="text-stone-600 text-sm sm:text-base">
+          حصص حضورية في أشهر سناتر القاهرة والجيزة، أو اشتراك أونلاين مفتوح لجميع محافظات الجمهورية ولأبنائنا في الخارج.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="p-6 rounded-2xl bg-white border border-stone-200 shadow-sm fusha-card">
+          <div class="flex items-center gap-3 mb-3">
+            <i data-lucide="map-pin" class="w-5 h-5 text-fusha-olive"></i>
+            <h4 class="font-alexandria font-bold text-base text-fusha-forest">مدينة نصر — سنتر النخبة</h4>
+          </div>
+          <p class="text-xs text-stone-500">بجوار السراج مول — مجموعات متميزة لـ 1ث و 2ث و 3ث</p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-white border border-stone-200 shadow-sm fusha-card">
+          <div class="flex items-center gap-3 mb-3">
+            <i data-lucide="map-pin" class="w-5 h-5 text-fusha-olive"></i>
+            <h4 class="font-alexandria font-bold text-base text-fusha-forest">الدقي والمهندسين — سنتر الأوائل</h4>
+          </div>
+          <p class="text-xs text-stone-500">شارع التحرير الرئيسي — بالقرب من محطة المترو</p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-white border border-stone-200 shadow-sm fusha-card">
+          <div class="flex items-center gap-3 mb-3">
+            <i data-lucide="globe" class="w-5 h-5 text-fusha-sun"></i>
+            <h4 class="font-alexandria font-bold text-base text-fusha-forest">منصة فُصْحَى (أونلاين)</h4>
+          </div>
+          <p class="text-xs text-stone-500">متاحة لجميع المحافظات مع شحن الملازم ومتابعة المساعدين</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ================= SECTION: BOOKING FORM ================= -->
+  <section id="booking" class="z-20 py-24 bg-fusha-stone relative border-t border-stone-200">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center mb-12">
+        <span class="text-fusha-forest font-alexandria font-bold text-xs uppercase tracking-wider px-3.5 py-1 rounded-full bg-fusha-khaki/20">
+          سجل مقعدك الآن
+        </span>
+        <h2 class="font-alexandria font-black text-3xl sm:text-4xl text-fusha-forest mt-3 mb-3">
+          احجز مكانك مع أستاذ أشرف سليم
+        </h2>
+        <p class="text-stone-600 text-sm">
+          املأ بياناتك وسيقوم فريق المتابعة الأكاديمية بالتواصل معك عبر الواتساب لتأكيد الموعد وكود المنصة.
+        </p>
+      </div>
+
+      <div class="bg-white rounded-3xl p-8 sm:p-10 shadow-xl border border-stone-200">
+        <form id="bookingForm" class="space-y-5">
+          
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            <div>
+              <label for="studentName" class="block text-xs font-bold text-fusha-forest mb-2">اسم الطالب ثلاثي *</label>
+              <input
+                type="text"
+                id="studentName"
+                autocomplete="name"
+                required
+                placeholder="أحمد محمد علي"
+                class="w-full px-4 py-3 rounded-xl bg-stone-50 border border-stone-200 text-sm focus:outline-none focus:border-fusha-forest transition-colors"
+              />
+            </div>
+
+            <div>
+              <label for="studentPhone" class="block text-xs font-bold text-fusha-forest mb-2">هاتف الطالب (واتساب) *</label>
+              <input
+                type="tel"
+                id="studentPhone"
+                inputmode="tel"
+                autocomplete="tel"
+                maxlength="11"
+                required
+                placeholder="010XXXXXXXX"
+                dir="ltr"
+                class="w-full px-4 py-3 rounded-xl bg-stone-50 border border-stone-200 text-sm focus:outline-none focus:border-fusha-forest transition-colors text-left"
+              />
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            <div>
+              <label for="parentPhone" class="block text-xs font-bold text-fusha-forest mb-2">هاتف ولي الأمر *</label>
+              <input
+                type="tel"
+                id="parentPhone"
+                inputmode="tel"
+                autocomplete="tel"
+                maxlength="11"
+                required
+                placeholder="01XXXXXXXXX"
+                dir="ltr"
+                class="w-full px-4 py-3 rounded-xl bg-stone-50 border border-stone-200 text-sm focus:outline-none focus:border-fusha-forest transition-colors text-left"
+              />
+            </div>
+
+            <div>
+              <label for="gradeStage" class="block text-xs font-bold text-fusha-forest mb-2">المرحلة الدراسية *</label>
+              <select
+                id="gradeStage"
+                required
+                class="w-full px-4 py-3 rounded-xl bg-stone-50 border border-stone-200 text-sm focus:outline-none focus:border-fusha-forest transition-colors"
+              >
+                <option value="الصف الثالث الثانوي">الصف الثالث الثانوي (3 ثانوي)</option>
+                <option value="الصف الثاني الثانوي">الصف الثاني الثانوي (2 ثانوي)</option>
+                <option value="الصف الأول الثانوي">الصف الأول الثانوي (1 ثانوي)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            <div>
+              <label for="studyMode" class="block text-xs font-bold text-fusha-forest mb-2">طريقة الحضور *</label>
+              <select
+                id="studyMode"
+                required
+                class="w-full px-4 py-3 rounded-xl bg-stone-50 border border-stone-200 text-sm focus:outline-none focus:border-fusha-forest transition-colors"
+              >
+                <option value="سنتر (حضوري)">سنتر (حضوري في القاعة)</option>
+                <option value="أونلاين (تطبيق ومنصة فُصْحَى)">أونلاين (تطبيق ومنصة فُصْحَى)</option>
+                <option value="استشارة لاختيار الأنسب">استشارة لاختيار الأنسب</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="location" class="block text-xs font-bold text-fusha-forest mb-2">المحافظة والمنطقة *</label>
+              <input
+                type="text"
+                id="location"
+                required
+                placeholder="مثال: القاهرة — مدينة نصر"
+                class="w-full px-4 py-3 rounded-xl bg-stone-50 border border-stone-200 text-sm focus:outline-none focus:border-fusha-forest transition-colors"
+              />
+            </div>
+          </div>
+
+          <button
+            type="submit"
+            class="w-full py-4 rounded-xl bg-fusha-forest hover:bg-fusha-forestDark text-white font-alexandria font-bold text-base shadow-lg transition-all flex items-center justify-center gap-3 mt-4"
+          >
+            <i data-lucide="send" class="w-4 h-4"></i>
+            <span>تأكيد الحجز عبر واتساب فوراً</span>
+          </button>
+
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <!-- Uses .diagonal-cut-top from Telegram 411 -->
+  <footer class="relative z-20 bg-fusha-forestDark text-white diagonal-cut-top pt-24 pb-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col md:flex-row items-center justify-between gap-8 pb-12 border-b border-white/10">
+        
+        <!-- Logo & Title -->
+        <div class="flex items-center gap-4">
+          <img src="assets/fusha-brand-logo-white.png?v=2026" alt="فصحى" loading="lazy" decoding="async" class="h-12 w-auto object-contain" />
+          <div>
+            <h4 class="font-alexandria font-bold text-xl text-white">منصة وتطبيق فُصْحَى</h4>
+            <p class="text-xs text-fusha-khaki">أستاذ أشرف سليم — خبير تدريس اللغة العربية</p>
+          </div>
+        </div>
+
+        <!-- Social Links (Inline SVGs to prevent icon lookup errors) -->
+        <div class="flex items-center gap-3">
+          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-white/10 hover:bg-fusha-sun hover:text-fusha-forestDark text-white flex items-center justify-center transition-colors" aria-label="تويتر">
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-white/10 hover:bg-fusha-sun hover:text-fusha-forestDark text-white flex items-center justify-center transition-colors" aria-label="إنستغرام">
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-white/10 hover:bg-fusha-sun hover:text-fusha-forestDark text-white flex items-center justify-center transition-colors" aria-label="فيسبوك">
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-white/10 hover:bg-fusha-sun hover:text-fusha-forestDark text-white flex items-center justify-center transition-colors" aria-label="لينكد إن">
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+          </a>
+        </div>
+
+      </div>
+
+      <!-- Bottom Credits (Frontend by Engaz.tech & Backend by Synaptic Studio) -->
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-stone-400">
+        <div>
+          Fusha Mobile Application — جميع الحقوق محفوظة © <span id="currentYear">2026</span>
+        </div>
+        <div class="flex flex-wrap items-center justify-center gap-2.5 sm:gap-3.5 text-xs text-stone-400">
+          <span class="inline-flex items-center gap-1.5">
+            <span>فرونت اند باي</span>
+            <a href="https://engaz.tech/" target="_blank" rel="noopener noreferrer" class="font-bold text-white hover:text-fusha-sun transition-colors">
+              ⚡ Engaz.tech
+            </a>
+          </span>
+          <span class="text-stone-600 hidden sm:inline">•</span>
+          <span class="inline-flex items-center gap-1.5">
+            <span>باكند باي</span>
+            <a href="https://www.synapticstudio.tech/ar" target="_blank" rel="noopener noreferrer" class="font-bold text-white hover:text-fusha-sun transition-colors">
+              Synaptic Studio
+            </a>
+          </span>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ================= VIDEO LIGHTBOX MODAL ================= -->
+  <div id="videoModal" role="dialog" aria-modal="true" aria-labelledby="videoModalTitle" class="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/90 backdrop-blur-md opacity-0 pointer-events-none transition-opacity duration-300">
+    <div class="relative w-full max-w-2xl bg-fusha-forestDark rounded-3xl overflow-hidden border border-white/20 shadow-2xl transform scale-95 transition-transform duration-300" id="videoModalCard">
+      
+      <!-- Close Button -->
+      <button id="closeVideoModalBtn" class="absolute top-4 left-4 z-20 w-10 h-10 rounded-full bg-black/60 text-white hover:bg-white hover:text-black flex items-center justify-center transition-colors" aria-label="إغلاق">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+
+      <!-- Video Player -->
+      <div class="aspect-[9/16] sm:aspect-video w-full bg-black flex items-center justify-center">
+        <video id="modalVideoPlayer" controls playsinline preload="metadata" poster="assets/hero-poster.webp?v=20260917_hd" class="w-full h-full object-contain">
+          <source src="assets/hls/hero.m3u8" type="application/vnd.apple.mpegurl" />
+          <source src="assets/hero-video.mp4?v=20260917_hd" type="video/mp4" />
+          <source src="assets/hero-video.webm?v=20260917_hd" type="video/webm" />
+        </video>
+      </div>
+
+      <!-- Video Caption -->
+      <div class="p-5 bg-fusha-forest flex items-center justify-between gap-4">
+        <div>
+          <h4 id="videoModalTitle" class="font-alexandria font-bold text-white text-sm sm:text-base">لما الشرح يتحول لمتعة.. المعلم القدوة ❤️✨</h4>
+          <p class="text-xs text-fusha-khaki mt-0.5">أستاذ أشرف سليم — منصة وتطبيق فُصْحَى</p>
+        </div>
+        <a href="#booking" onclick="closeModal()" class="shrink-0 px-4 py-2 rounded-xl bg-fusha-sun text-fusha-forestDark font-bold text-xs hover:bg-fusha-sunHover transition-colors">
+          احجز مقعدك
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+
+
+  <!-- Sticky Mobile CTA Bar (يظهر فقط على الموبايل بعد تخطي الهيرو) -->
+  <div id="stickyMobileCta" class="fixed bottom-0 inset-x-0 z-40 lg:hidden translate-y-full transition-transform duration-300 ease-out" role="complementary" aria-label="إجراءات سريعة">
+    <div class="mx-3 mb-3 rounded-2xl bg-fusha-forest/97 backdrop-blur-xl border border-white/15 shadow-2xl shadow-black/30 p-2.5 flex items-center gap-2.5">
+      <a href="tel:+201000000000" class="w-11 h-11 rounded-xl bg-white/10 text-white flex items-center justify-center shrink-0 transition-colors hover:bg-white/20" aria-label="اتصل بنا">
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      </a>
+      <a href="#booking" data-transition="booking" class="flex-1 h-11 rounded-xl bg-fusha-sun text-fusha-forestDark font-alexandria font-black text-sm flex items-center justify-center gap-2 transition-transform active:scale-[0.98]">
+        <span>احجز مكانك دلوقتي</span>
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <!-- Back to Top Button (UX) -->
+  <button id="backToTopBtn" aria-label="العودة إلى الأعلى" title="العودة إلى الأعلى">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>
+  </button>
+
+  <!-- Toast Notification (UX Feedback) -->
+  <div id="fushaToast" role="status" aria-live="polite"></div>
+
+  <!-- Scripts -->
+  <script src="/script.js?v=2026ux" defer></script>
+</body>
+</html>
+

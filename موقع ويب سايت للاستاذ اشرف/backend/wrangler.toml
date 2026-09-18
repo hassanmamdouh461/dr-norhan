@@ -1,0 +1,56 @@
+name = "fusha-ashraf-api"
+main = "src/index.ts"
+compatibility_date = "2024-06-01"
+compatibility_flags = ["nodejs_compat"]
+workers_dev = true
+
+# موارد Cloudflare الحقيقية — أُنشئت عبر wrangler/API بتاريخ 2026-09-16.
+# الحساب: Synapticadmin@gmail.com's Account (c4db824a32386eeced69072e0ba22de5)
+[vars]
+# مفتاح HMAC لتوقيع رموز الوصول (HS256) ولرموز تشغيل الفيديو.
+# ⚠️ للإنتاج: انقله إلى سرّ عبر `wrangler secret put AUTH_SECRET` (السرّ يتقدّم على [vars]).
+#     تغيير هذا المفتاح يُبطل كل الجلسات القائمة فوراً.
+# يُضبط الآن كسرّ مشفّر: `npx wrangler secret put AUTH_SECRET`
+ENVIRONMENT = "production"
+# النطاقات المنشورة (fusha.site + pages.dev) + التطوير المحلي
+CORS_ORIGIN = "https://fusha.site, https://www.fusha.site, https://dashboard.fusha.site, https://fusha-student-web.pages.dev, https://fusha-dashboard.pages.dev, http://localhost:3000, http://localhost:5173"
+CF_ACCOUNT_ID = "c4db824a32386eeced69072e0ba22de5"
+PLATFORM_KEY = "fusha"
+R2_BUCKET_NAME = "fusha-ashraf-files"
+MAX_SUBREQUESTS = "1000"
+BUNNY_LIBRARY_ID = "755212"
+VIDEO_CDN_HOST = "vz-11cb0457-90e.b-cdn.net"
+BUNNY_CDN_HOST = "vz-11cb0457-90e.b-cdn.net"
+# النطاق العام للـ API — يُرسل كـ Referer عند جلب الفيديوهات من Bunny CDN.
+PUBLIC_API_ORIGIN = "https://api.fusha.site"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "fusha_ashraf_db"
+database_id = "53a97003-372c-4c1f-93e9-f4f92cc73c2b"
+migrations_dir = "migrations"
+
+[[kv_namespaces]]
+binding = "KV"
+id = "45af7e7c880148369552f44b6cae3703"
+
+[[r2_buckets]]
+binding = "R2"
+bucket_name = "fusha-ashraf-files"
+
+[[r2_buckets]]
+binding = "R2_VIDEO"
+bucket_name = "fusha-ashraf-video-hls"
+
+[[queues.producers]]
+queue = "fusha-ashraf-video-transfer"
+binding = "VIDEO_QUEUE"
+
+[[queues.consumers]]
+queue = "fusha-ashraf-video-transfer"
+max_batch_size = 1
+max_concurrency = 15
+max_retries = 10
+retry_delay = 30
+
+

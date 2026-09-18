@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>الملف الشخصي والإعدادات | منصة فُصْحَى — أ. أشرف سليم</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@400;600;700;800;900&family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="bg-fusha-stone text-slate-800 font-cairo antialiased min-h-screen flex flex-col selection:bg-fusha-khaki selection:text-fusha-forest">
+
+  <!-- Header -->
+  <!-- Unified Header -->
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-stone-200/80 shadow-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-18 sm:h-20 flex items-center justify-between gap-4">
+      <!-- Brand Logo & Title -->
+      <a href="dashboard.html" class="flex items-center gap-3 group shrink-0">
+        <img src="assets/fusha-brand-logo.png" alt="فصحى" class="h-10 sm:h-11 w-auto object-contain transition-transform group-hover:scale-[1.02]" />
+        <div class="hidden sm:flex flex-col border-r-2 border-stone-200/90 pr-3 py-0.5">
+          <span class="text-xs font-alexandria font-bold text-fusha-forest leading-tight">منصة فُصْحَى</span>
+          <span class="text-[10px] text-fusha-olive font-bold leading-tight">أ. أشرف سليم — لغة عربية</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav id="navbar-links" class="hidden lg:flex items-center gap-1.5 xl:gap-2 text-xs sm:text-sm font-bold text-fusha-forest">
+        <a href="dashboard.html" class="px-3.5 py-2 rounded-xl text-stone-600 hover:text-fusha-forest hover:bg-stone-100 font-bold text-xs sm:text-sm transition-all flex items-center gap-1.5">
+          <i data-lucide="home" class="w-4 h-4 opacity-70"></i>
+          <span>الرئيسية</span>
+        </a>
+        <a href="courses.html" class="px-3.5 py-2 rounded-xl text-stone-600 hover:text-fusha-forest hover:bg-stone-100 font-bold text-xs sm:text-sm transition-all flex items-center gap-1.5">
+          <i data-lucide="book-open" class="w-4 h-4 opacity-70"></i>
+          <span>المناهج والمحاضرات</span>
+        </a>
+        <a href="bank.html" class="px-3.5 py-2 rounded-xl text-stone-600 hover:text-fusha-forest hover:bg-stone-100 font-bold text-xs sm:text-sm transition-all flex items-center gap-1.5">
+          <i data-lucide="layers" class="w-4 h-4 opacity-70"></i>
+          <span>بنك الأسئلة</span>
+        </a>
+        <a href="dictionary.html" class="px-3.5 py-2 rounded-xl text-stone-600 hover:text-fusha-forest hover:bg-stone-100 font-bold text-xs sm:text-sm transition-all flex items-center gap-1.5">
+          <i data-lucide="book-marked" class="w-4 h-4 opacity-70"></i>
+          <span>معجم فُصْحَى</span>
+        </a>
+        <a href="parent.html" class="px-3.5 py-2 rounded-xl text-stone-600 hover:text-fusha-forest hover:bg-stone-100 font-bold text-xs sm:text-sm transition-all flex items-center gap-1.5">
+          <i data-lucide="shield-check" class="w-4 h-4 opacity-70"></i>
+          <span>متابعة ولي الأمر</span>
+        </a>
+      </nav>
+
+      <!-- Auth Action Container & Mobile Toggle -->
+      <div class="flex items-center gap-2 sm:gap-3 shrink-0">
+        <div id="navbar-auth-actions" class="flex items-center gap-2 sm:gap-2.5"></div>
+        <button id="mobileMenuBtn" type="button" class="lg:hidden p-2.5 rounded-xl bg-stone-100 hover:bg-stone-200/80 text-fusha-forest transition cursor-pointer" aria-label="فتح القائمة">
+          <i data-lucide="menu" class="w-5 h-5"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="flex-1 max-w-4xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
+    
+    <!-- Profile Header Card -->
+    <div class="bg-gradient-to-r from-fusha-forest to-fusha-forestLight text-white p-6 sm:p-8 rounded-3xl shadow-xl flex items-center gap-5">
+      <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-fusha-sun text-fusha-forestDark font-alexandria font-extrabold text-2xl sm:text-3xl flex items-center justify-center shadow-lg shrink-0" id="profileAvatar">
+        أ
+      </div>
+      <div class="space-y-1">
+        <h1 class="font-alexandria font-bold text-xl sm:text-2xl text-white" id="profileNameDisplay">طالب فصحى</h1>
+        <p class="text-xs text-fusha-khaki" id="profileCodeDisplay">كود الطالب: FUSHA-***</p>
+        <span class="inline-block px-2.5 py-0.5 rounded-lg bg-white/10 text-white text-[11px] font-semibold" id="profileGradeDisplay">الصف الثالث الثانوي</span>
+      </div>
+    </div>
+
+    <!-- Edit Profile Form -->
+    <div class="bg-white p-6 sm:p-8 rounded-3xl border border-stone-200/80 shadow-sm space-y-6">
+      <div class="flex items-center justify-between border-b border-stone-100 pb-3">
+        <h2 class="font-alexandria font-bold text-base text-fusha-forest flex items-center gap-2">
+          <i data-lucide="user-check" class="w-5 h-5 text-fusha-sun"></i>
+          <span>البيانات الأكاديمية والشخصية</span>
+        </h2>
+        <span class="text-xs text-stone-400">تحديث فوري</span>
+      </div>
+
+      <form id="profileForm" class="space-y-4">
+        <div>
+          <label class="block text-xs font-semibold text-stone-600 mb-1">الاسم الرباعي للطالب</label>
+          <input type="text" id="profFullName" required class="w-full px-4 py-3 rounded-2xl bg-stone-50 border border-stone-200 text-sm focus:outline-none focus:border-fusha-forest focus:bg-white transition" />
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs font-semibold text-stone-600 mb-1">هاتف الطالب (واتساب)</label>
+            <input type="tel" id="profPhone" required class="w-full px-4 py-3 rounded-2xl bg-stone-50 border border-stone-200 text-sm focus:outline-none focus:border-fusha-forest focus:bg-white transition" />
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-stone-600 mb-1">هاتف ولي الأمر</label>
+            <input type="tel" id="profParentPhone" class="w-full px-4 py-3 rounded-2xl bg-stone-50 border border-stone-200 text-sm focus:outline-none focus:border-fusha-forest focus:bg-white transition" />
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs font-semibold text-stone-600 mb-1">المرحلة الدراسية</label>
+            <select id="profGrade" class="w-full px-4 py-3 rounded-2xl bg-stone-50 border border-stone-200 text-sm focus:outline-none focus:border-fusha-forest focus:bg-white transition">
+              <option value="الصف الثالث الثانوي">الصف الثالث الثانوي</option>
+              <option value="الصف الثاني الثانوي">الصف الثاني الثانوي</option>
+              <option value="الصف الأول الثانوي">الصف الأول الثانوي</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-stone-600 mb-1">الشعبة</label>
+            <select id="profBranch" class="w-full px-4 py-3 rounded-2xl bg-stone-50 border border-stone-200 text-sm focus:outline-none focus:border-fusha-forest focus:bg-white transition">
+              <option value="عام">عام</option>
+              <option value="علمي علوم">علمي علوم</option>
+              <option value="علمي رياضة">علمي رياضة</option>
+              <option value="أدبي">أدبي</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="pt-4 flex justify-end">
+          <button type="submit" id="saveProfileBtn" class="px-8 py-3.5 rounded-2xl bg-fusha-forest hover:bg-fusha-forestLight text-white font-alexandria font-bold text-xs shadow-md transition flex items-center gap-2">
+            <span>حفظ التعديلات</span>
+            <i data-lucide="check" class="w-4 h-4 text-fusha-sun"></i>
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Devices & Security -->
+    <div class="bg-white p-6 sm:p-8 rounded-3xl border border-stone-200/80 shadow-sm space-y-4">
+      <div class="flex items-center justify-between border-b border-stone-100 pb-3">
+        <h3 class="font-alexandria font-bold text-base text-fusha-forest flex items-center gap-2">
+          <i data-lucide="shield" class="w-5 h-5 text-emerald-600"></i>
+          <span>حماية الحساب والأجهزة المسجلة</span>
+        </h3>
+        <span class="text-xs text-stone-400">الحد الأقصى: جهازين</span>
+      </div>
+      <p class="text-xs text-stone-500 leading-relaxed">
+        لضمان أمان حسابك وحماية اشتراكاتك، يسمح النظام بفتح الحساب من جهازين كحد أقصى (هاتف + حاسوب). في حال تغيير هاتفك يرجى التواصل مع الدعم الفني لإعادة ضبط الجهاز.
+      </p>
+      <div class="p-4 rounded-2xl bg-stone-50 border border-stone-200 flex items-center justify-between text-xs">
+        <div class="flex items-center gap-3">
+          <i data-lucide="laptop" class="w-5 h-5 text-fusha-forest"></i>
+          <div>
+            <strong class="text-fusha-forest block">الجهاز الحالي (Active)</strong>
+            <span class="text-stone-400">متصفح ويب — متصل الآن</span>
+          </div>
+        </div>
+        <span class="px-2.5 py-1 rounded-md bg-emerald-100 text-emerald-800 text-[10px] font-bold">جهاز موثق ✓</span>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="mt-16 bg-white border-t border-stone-200 py-6 text-center text-xs text-stone-500">
+    منصة وتطبيق فُصْحَى للغة العربية — أ. أشرف سليم © <span id="year"></span>
+  </footer>
+
+  <script src="/assets/js/api.js?v=20260917_02"></script>
+  <script src="/assets/js/nav.js?v=20260917_03"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    if (!window.api.isLoggedIn()) {
+      window.location.href = 'login.html?redirect=profile.html';
+    }
+
+    const user = window.api.getUser() || {};
+
+    function populateForm() {
+      document.getElementById('profFullName').value = user.full_name || '';
+      document.getElementById('profPhone').value = user.phone || '';
+      document.getElementById('profParentPhone').value = user.parent_phone || '';
+      if (user.grade) document.getElementById('profGrade').value = user.grade;
+      if (user.branch) document.getElementById('profBranch').value = user.branch;
+
+      const name = user.full_name || 'طالب فصحى';
+      document.getElementById('profileNameDisplay').textContent = name;
+      document.getElementById('profileAvatar').textContent = name.charAt(0);
+      document.getElementById('profileCodeDisplay').textContent = `كود الطالب: ${user.student_code || 'FUSHA-STD'}`;
+      document.getElementById('profileGradeDisplay').textContent = user.grade || 'طالب ثانوية عامة';
+    }
+
+    populateForm();
+
+    document.getElementById('profileForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const btn = document.getElementById('saveProfileBtn');
+      btn.disabled = true;
+      btn.innerHTML = `<span>جاري الحفظ...</span> <i data-lucide="loader" class="w-4 h-4 animate-spin"></i>`;
+      if (window.lucide) window.lucide.createIcons();
+
+      const updated = {
+        full_name: document.getElementById('profFullName').value.trim(),
+        phone: document.getElementById('profPhone').value.trim(),
+        parent_phone: document.getElementById('profParentPhone').value.trim(),
+        grade: document.getElementById('profGrade').value,
+        branch: document.getElementById('profBranch').value,
+      };
+
+      try {
+        await window.api.auth.updateProfile(updated);
+        const merged = { ...user, ...updated };
+        localStorage.setItem('fusha_user', JSON.stringify(merged));
+        window.showToast('تم حفظ بيانات الملف الشخصي بنجاح!', 'success');
+        populateForm();
+      } catch (err) {
+        window.showToast(err.message || 'تعذر تحديث البيانات حالياً.', 'error');
+      } finally {
+        btn.disabled = false;
+        btn.innerHTML = `<span>حفظ التعديلات</span> <i data-lucide="check" class="w-4 h-4 text-fusha-sun"></i>`;
+        if (window.lucide) window.lucide.createIcons();
+      }
+    });
+  </script>
+</body>
+</html>
+

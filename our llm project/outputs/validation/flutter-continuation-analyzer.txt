@@ -1,0 +1,325 @@
+cwd: C:\Users\kayf\Desktop\student project\student_app
+command: C:/Users/kayf/flutter-sdk/flutter/bin/flutter.bat analyze --no-pub
+env: CI=true FLUTTER_SUPPRESS_ANALYTICS=true
+
+Analyzing student_app...                                        
+
+  error - Target of URI doesn't exist: 'package:flutter_bloc/flutter_bloc.dart' - lib\blocs\auth\auth_bloc.dart:1:8 - uri_does_not_exist
+  error - Target of URI doesn't exist: 'package:supabase_flutter/supabase_flutter.dart' - lib\blocs\auth\auth_bloc.dart:2:8 - uri_does_not_exist
+  error - Classes can only extend other classes - lib\blocs\auth\auth_bloc.dart:8:24 - extends_non_class
+  error - Undefined class 'SupabaseClient' - lib\blocs\auth\auth_bloc.dart:10:9 - undefined_class
+  error - Undefined name 'Supabase' - lib\blocs\auth\auth_bloc.dart:10:42 - undefined_identifier
+  error - Too many positional arguments: 0 expected, but 1 found - lib\blocs\auth\auth_bloc.dart:12:48 - extra_positional_arguments
+  error - The method 'on' isn't defined for the type 'AuthBloc' - lib\blocs\auth\auth_bloc.dart:13:5 - undefined_method
+  error - The method 'on' isn't defined for the type 'AuthBloc' - lib\blocs\auth\auth_bloc.dart:14:5 - undefined_method
+  error - The method 'on' isn't defined for the type 'AuthBloc' - lib\blocs\auth\auth_bloc.dart:15:5 - undefined_method
+  error - The method 'on' isn't defined for the type 'AuthBloc' - lib\blocs\auth\auth_bloc.dart:16:5 - undefined_method
+  error - The method 'on' isn't defined for the type 'AuthBloc' - lib\blocs\auth\auth_bloc.dart:17:5 - undefined_method
+  error - Undefined class 'Emitter' - lib\blocs\auth\auth_bloc.dart:45:5 - undefined_class
+  error - Undefined class 'Emitter' - lib\blocs\auth\auth_bloc.dart:93:5 - undefined_class
+  error - Undefined class 'Emitter' - lib\blocs\auth\auth_bloc.dart:145:5 - undefined_class
+  error - Undefined class 'Emitter' - lib\blocs\auth\auth_bloc.dart:193:5 - undefined_class
+  error - Undefined class 'Emitter' - lib\blocs\auth\auth_bloc.dart:220:5 - undefined_class
+  error - Target of URI doesn't exist: 'package:flutter_bloc/flutter_bloc.dart' - lib\blocs\course\course_bloc.dart:1:8 - uri_does_not_exist
+  error - Classes can only extend other classes - lib\blocs\course\course_bloc.dart:6:26 - extends_non_class
+  error - Too many positional arguments: 0 expected, but 1 found - lib\blocs\course\course_bloc.dart:12:50 - extra_positional_arguments
+  error - The method 'on' isn't defined for the type 'CourseBloc' - lib\blocs\course\course_bloc.dart:13:5 - undefined_method
+  error - The method 'on' isn't defined for the type 'CourseBloc' - lib\blocs\course\course_bloc.dart:14:5 - undefined_method
+  error - The method 'on' isn't defined for the type 'CourseBloc' - lib\blocs\course\course_bloc.dart:15:5 - undefined_method
+  error - The method 'on' isn't defined for the type 'CourseBloc' - lib\blocs\course\course_bloc.dart:16:5 - undefined_method
+  error - The method 'on' isn't defined for the type 'CourseBloc' - lib\blocs\course\course_bloc.dart:17:5 - undefined_method
+  error - Undefined class 'Emitter' - lib\blocs\course\course_bloc.dart:27:5 - undefined_class
+  error - Undefined class 'Emitter' - lib\blocs\course\course_bloc.dart:53:5 - undefined_class
+  error - Undefined class 'Emitter' - lib\blocs\course\course_bloc.dart:71:5 - undefined_class
+  error - Undefined class 'Emitter' - lib\blocs\course\course_bloc.dart:100:5 - undefined_class
+  error - The method 'add' isn't defined for the type 'CourseBloc' - lib\blocs\course\course_bloc.dart:114:7 - undefined_method
+  error - Target of URI doesn't exist: 'package:flutter_bloc/flutter_bloc.dart' - lib\blocs\theme\theme_bloc.dart:2:8 - uri_does_not_exist
+  error - Target of URI doesn't exist: 'package:flutter_secure_storage/flutter_secure_storage.dart' - lib\blocs\theme\theme_bloc.dart:3:8 - uri_does_not_exist
+  error - Classes can only extend other classes - lib\blocs\theme\theme_bloc.dart:9:25 - extends_non_class
+  error - Undefined class 'FlutterSecureStorage' - lib\blocs\theme\theme_bloc.dart:10:9 - undefined_class
+  error - The name 'FlutterSecureStorage' isn't a class - lib\blocs\theme\theme_bloc.dart:10:47 - creation_with_non_type
+  error - Too many positional arguments: 0 expected, but 1 found - lib\blocs\theme\theme_bloc.dart:12:23 - extra_positional_arguments
+  error - The method 'on' isn't defined for the type 'ThemeBloc' - lib\blocs\theme\theme_bloc.dart:13:5 - undefined_method
+  error - The method 'on' isn't defined for the type 'ThemeBloc' - lib\blocs\theme\theme_bloc.dart:14:5 - undefined_method
+  error - Undefined class 'Emitter' - lib\blocs\theme\theme_bloc.dart:17:51 - undefined_class
+  error - Undefined class 'Emitter' - lib\blocs\theme\theme_bloc.dart:26:55 - undefined_class
+  error - Undefined name 'state' - lib\blocs\theme\theme_bloc.dart:27:9 - undefined_identifier
+  error - Target of URI doesn't exist: 'package:go_router/go_router.dart' - lib\config\router.dart:3:8 - uri_does_not_exist
+  error - Classes can only extend other classes - lib\config\router.dart:15:37 - extends_non_class
+  error - No associated named super constructor parameter - lib\config\router.dart:17:20 - super_formal_parameter_without_associated_named
+  error - No associated named super constructor parameter - lib\config\router.dart:18:11 - super_formal_parameter_without_associated_named
+  error - The named parameter 'transitionDuration' isn't defined - lib\config\router.dart:20:11 - undefined_named_parameter
+  error - The named parameter 'transitionsBuilder' isn't defined - lib\config\router.dart:21:11 - undefined_named_parameter
+  error - Undefined class 'GoRouter' - lib\config\router.dart:65:10 - undefined_class
+  error - The method 'GoRouter' isn't defined for the type 'AppRouter' - lib\config\router.dart:66:12 - undefined_method
+  error - The getter 'stream' isn't defined for the type 'AuthBloc' - lib\config\router.dart:68:57 - undefined_getter
+  error - The getter 'state' isn't defined for the type 'AuthBloc' - lib\config\router.dart:70:36 - undefined_getter
+  error - The method 'GoRoute' isn't defined for the type 'AppRouter' - lib\config\router.dart:132:9 - undefined_method
+  error - The method 'GoRoute' isn't defined for the type 'AppRouter' - lib\config\router.dart:149:9 - undefined_method
+  error - The method 'NoTransitionPage' isn't defined for the type 'AppRouter' - lib\config\router.dart:152:44 - undefined_method
+  error - The method 'GoRoute' isn't defined for the type 'AppRouter' - lib\config\router.dart:164:9 - undefined_method
+  error - The method 'ShellRoute' isn't defined for the type 'AppRouter' - lib\config\router.dart:174:9 - undefined_method
+  error - The method 'GoRoute' isn't defined for the type 'AppRouter' - lib\config\router.dart:178:13 - undefined_method
+  error - The method 'NoTransitionPage' isn't defined for the type 'AppRouter' - lib\config\router.dart:181:48 - undefined_method
+  error - The method 'GoRoute' isn't defined for the type 'AppRouter' - lib\config\router.dart:188:13 - undefined_method
+  error - The method 'NoTransitionPage' isn't defined for the type 'AppRouter' - lib\config\router.dart:191:48 - undefined_method
+  error - The method 'GoRoute' isn't defined for the type 'AppRouter' - lib\config\router.dart:198:13 - undefined_method
+  error - The method 'NoTransitionPage' isn't defined for the type 'AppRouter' - lib\config\router.dart:201:48 - undefined_method
+  error - The method 'GoRoute' isn't defined for the type 'AppRouter' - lib\config\router.dart:208:13 - undefined_method
+  error - The method 'NoTransitionPage' isn't defined for the type 'AppRouter' - lib\config\router.dart:211:48 - undefined_method
+  error - The method 'GoRoute' isn't defined for the type 'AppRouter' - lib\config\router.dart:218:13 - undefined_method
+  error - The method 'NoTransitionPage' isn't defined for the type 'AppRouter' - lib\config\router.dart:221:48 - undefined_method
+  error - The method 'GoRoute' isn't defined for the type 'AppRouter' - lib\config\router.dart:228:13 - undefined_method
+  error - The method 'NoTransitionPage' isn't defined for the type 'AppRouter' - lib\config\router.dart:231:48 - undefined_method
+  error - The method 'GoRoute' isn't defined for the type 'AppRouter' - lib\config\router.dart:238:13 - undefined_method
+  error - The method 'GoRoute' isn't defined for the type 'AppRouter' - lib\config\router.dart:257:13 - undefined_method
+  error - The method 'GoRoute' isn't defined for the type 'AppRouter' - lib\config\router.dart:277:13 - undefined_method
+  error - The method 'GoRoute' isn't defined for the type 'AppRouter' - lib\config\router.dart:297:13 - undefined_method
+  error - The method 'go' isn't defined for the type 'BuildContext' - lib\config\router.dart:344:40 - undefined_method
+  error - Undefined name 'GoRouterState' - lib\config\router.dart:404:22 - undefined_identifier
+  error - The method 'go' isn't defined for the type 'BuildContext' - lib\config\router.dart:423:13 - undefined_method
+   info - The import of 'package:flutter/services.dart' is unnecessary because all of the used elements are also provided by the import of 'package:flutter/material.dart' - lib\config\theme.dart:2:8 - unnecessary_import
+  error - Target of URI doesn't exist: 'package:flutter_bloc/flutter_bloc.dart' - lib\main.dart:4:8 - uri_does_not_exist
+  error - Target of URI doesn't exist: 'package:supabase_flutter/supabase_flutter.dart' - lib\main.dart:5:8 - uri_does_not_exist
+  error - Target of URI doesn't exist: 'package:uni_links/uni_links.dart' - lib\main.dart:6:8 - uri_does_not_exist
+  error - Target of URI doesn't exist: 'package:go_router/go_router.dart' - lib\main.dart:7:8 - uri_does_not_exist
+  error - Target of URI doesn't exist: 'package:firebase_core/firebase_core.dart' - lib\main.dart:8:8 - uri_does_not_exist
+  error - Target of URI doesn't exist: 'package:firebase_messaging/firebase_messaging.dart' - lib\main.dart:9:8 - uri_does_not_exist
+  error - Undefined name 'Supabase' - lib\main.dart:48:9 - undefined_identifier
+  error - Undefined name 'Firebase' - lib\main.dart:58:11 - undefined_identifier
+  error - Undefined name 'FirebaseMessaging' - lib\main.dart:61:5 - undefined_identifier
+  error - Undefined class 'GoRouter' - lib\main.dart:107:14 - undefined_class
+  error - The method 'add' isn't defined for the type 'AuthBloc' - lib\main.dart:117:58 - undefined_method
+  error - The method 'add' isn't defined for the type 'AuthBloc' - lib\main.dart:119:17 - undefined_method
+  error - The method 'add' isn't defined for the type 'ThemeBloc' - lib\main.dart:122:31 - undefined_method
+  error - Undefined name 'FirebaseMessaging' - lib\main.dart:130:28 - undefined_identifier
+  error - Undefined name 'uriLinkStream' - lib\main.dart:149:12 - undefined_identifier
+  error - The method 'getInitialLink' isn't defined for the type '_AlhadabaAppState' - lib\main.dart:165:33 - undefined_method
+  error - The method 'close' isn't defined for the type 'AuthBloc' - lib\main.dart:204:15 - undefined_method
+  error - The method 'close' isn't defined for the type 'CourseBloc' - lib\main.dart:205:17 - undefined_method
+  error - The method 'close' isn't defined for the type 'ThemeBloc' - lib\main.dart:206:16 - undefined_method
+  error - The method 'MultiBlocProvider' isn't defined for the type '_AlhadabaAppState' - lib\main.dart:246:12 - undefined_method
+  error - Undefined name 'BlocProvider' - lib\main.dart:248:9 - undefined_identifier
+  error - Undefined name 'BlocProvider' - lib\main.dart:249:9 - undefined_identifier
+  error - Undefined name 'BlocProvider' - lib\main.dart:250:9 - undefined_identifier
+  error - The method 'BlocBuilder' isn't defined for the type '_AlhadabaAppState' - lib\main.dart:252:14 - undefined_method
+  error - Target of URI doesn't exist: 'package:flutter_bloc/flutter_bloc.dart' - lib\screens\biometric_lock_screen.dart:2:8 - uri_does_not_exist
+  error - The method 'read' isn't defined for the type 'BuildContext' - lib\screens\biometric_lock_screen.dart:120:27 - undefined_method
+  error - Target of URI doesn't exist: 'package:flutter_bloc/flutter_bloc.dart' - lib\screens\course_details_screen.dart:2:8 - uri_does_not_exist
+  error - Target of URI doesn't exist: 'package:go_router/go_router.dart' - lib\screens\course_details_screen.dart:3:8 - uri_does_not_exist
+  error - Target of URI doesn't exist: 'package:cached_network_image/cached_network_image.dart' - lib\screens\course_details_screen.dart:4:8 - uri_does_not_exist
+  error - The method 'read' isn't defined for the type 'BuildContext' - lib\screens\course_details_screen.dart:84:13 - undefined_method
+  error - The method 'BlocListener' isn't defined for the type '_CourseDetailsScreenState' - lib\screens\course_details_screen.dart:89:12 - undefined_method
+  error - The method 'BlocBuilder' isn't defined for the type '_CourseDetailsScreenState' - lib\screens\course_details_screen.dart:103:14 - undefined_method
+  error - The method 'CachedNetworkImage' isn't defined for the type '_CourseDetailsScreenState' - lib\screens\course_details_screen.dart:141:33 - undefined_method
+  error - The method 'read' isn't defined for the type 'BuildContext' - lib\screens\course_details_screen.dart:360:40 - undefined_method
+   info - Use 'const' with the constructor to improve performance - lib\screens\course_details_screen.dart:597:24 - prefer_const_constructors
+  error - The method 'read' isn't defined for the type 'BuildContext' - lib\screens\course_details_screen.dart:641:31 - undefined_method
+  error - The method 'go' isn't defined for the type 'BuildContext' - lib\screens\course_details_screen.dart:685:25 - undefined_method
+  error - The method 'read' isn't defined for the type 'BuildContext' - lib\screens\course_details_screen.dart:702:34 - undefined_method
+  error - The method 'go' isn't defined for the type 'BuildContext' - lib\screens\course_details_screen.dart:720:52 - undefined_method
+  error - The method 'read' isn't defined for the type 'BuildContext' - lib\screens\course_details_screen.dart:853:35 - undefined_method
+  error - Target of URI doesn't exist: 'package:flutter_bloc/flutter_bloc.dart' - lib\screens\exam_screen.dart:3:8 - uri_does_not_exist
+  error - Target of URI doesn't exist: 'package:cached_network_image/cached_network_image.dart' - lib\screens\exam_screen.dart:4:8 - uri_does_not_exist
+  error - The method 'read' isn't defined for the type 'BuildContext' - lib\screens\exam_screen.dart:67:34 - undefined_method
+  error - The method 'read' isn't defined for the type 'BuildContext' - lib\screens\exam_screen.dart:128:34 - undefined_method
+  error - The method 'CachedNetworkImage' isn't defined for the type '_ExamScreenState' - lib\screens\exam_screen.dart:323:22 - undefined_method
+  error - The method 'CachedNetworkImage' isn't defined for the type '_ExamScreenState' - lib\screens\exam_screen.dart:499:30 - undefined_method
+  error - Target of URI doesn't exist: 'package:flutter_bloc/flutter_bloc.dart' - lib\screens\home_screen.dart:2:8 - uri_does_not_exist
+  error - Target of URI doesn't exist: 'package:go_router/go_router.dart' - lib\screens\home_screen.dart:3:8 - uri_does_not_exist
+  error - The method 'read' isn't defined for the type 'BuildContext' - lib\screens\home_screen.dart:37:31 - undefined_method
+  error - The method 'read' isn't defined for the type 'BuildContext' - lib\screens\home_screen.dart:42:13 - undefined_method
+  error - The method 'BlocBuilder' isn't defined for the type '_HomeScreenState' - lib\screens\home_screen.dart:47:12 - undefined_method
+  error - The method 'go' isn't defined for the type 'BuildContext' - lib\screens\home_screen.dart:206:25 - undefined_method
+  error - The method 'go' isn't defined for the type 'BuildContext' - lib\screens\home_screen.dart:270:19 - undefined_method
+  error - The method 'read' isn't defined for the type 'BuildContext' - lib\screens\home_screen.dart:324:25 - undefined_method
+  error - Target of URI doesn't exist: 'package:flutter_bloc/flutter_bloc.dart' - lib\screens\home_tabs\courses_tab.dart:2:8 - uri_does_not_exist
+  error - Target of URI doesn't exist: 'package:go_router/go_router.dart' - lib\screens\home_tabs\courses_tab.dart:3:8 - uri_does_not_exist
+  error - The method 'read' isn't defined for the type 'BuildContext' - lib\screens\home_tabs\courses_tab.dart:44:13 - undefined_method
+  error - The method 'BlocBuilder' isn't defined for the type '_CoursesTabState' - lib\screens\home_tabs\courses_tab.dart:112:26 - undefined_method
+  error - Target of URI doesn't exist: 'package:flutter_bloc/flutter_bloc.dart' - lib\screens\home_tabs\exams_tab.dart:2:8 - uri_does_not_exist
+  error - Target of URI doesn't exist: 'package:cached_network_image/cached_network_image.dart' - lib\screens\home_tabs\exams_tab.dart:3:8 - uri_does_not_exist
+  error - The method 'read' isn't defined for the type 'BuildContext' - lib\screens\home_tabs\exams_tab.dart:35:32 - undefined_method
+  error - The method 'CachedNetworkImage' isn't defined for the type '_ExamsTabState' - lib\screens\home_tabs\exams_tab.dart:171:13 - undefined_method
+  error - Target of URI doesn't exist: 'package:flutter_bloc/flutter_bloc.dart' - lib\screens\home_tabs\home_tab.dart:2:8 - uri_does_not_exist
+  error - Target of URI doesn't exist: 'package:go_router/go_router.dart' - lib\screens\home_tabs\home_tab.dart:3:8 - uri_does_not_exist
+  error - The method 'read' isn't defined for the type 'BuildContext' - lib\screens\home_tabs\home_tab.dart:41:32 - undefined_method
+  error - The method 'read' isn't defined for the type 'BuildContext' - lib\screens\home_tabs\home_tab.dart:60:37 - undefined_method
+  error - The method 'read' isn't defined for the type 'BuildContext' - lib\screens\home_tabs\home_tab.dart:71:13 - undefined_method
+  error - The method 'read' isn't defined for the type 'BuildContext' - lib\screens\home_tabs\home_tab.dart:140:50 - undefined_method
+  error - The method 'go' isn't defined for the type 'BuildContext' - lib\screens\home_tabs\home_tab.dart:144:52 - undefined_method
+  error - The method 'BlocBuilder' isn't defined for the type '_HomeTabState' - lib\screens\home_tabs\home_tab.dart:188:22 - undefined_method
+  error - The method 'go' isn't defined for the type 'BuildContext' - lib\screens\home_tabs\home_tab.dart:322:42 - undefined_method
+  error - The method 'BlocBuilder' isn't defined for the type '_HomeTabState' - lib\screens\home_tabs\home_tab.dart:460:18 - undefined_method
+  error - The method 'go' isn't defined for the type 'BuildContext' - lib\screens\home_tabs\home_tab.dart:573:28 - undefined_method
+  error - The method 'go' isn't defined for the type 'BuildContext' - lib\screens\home_tabs\home_tab.dart:639:42 - undefined_method
+  error - The method 'BlocBuilder' isn't defined for the type '_HomeTabState' - lib\screens\home_tabs\home_tab.dart:648:11 - undefined_method
+  error - The method 'go' isn't defined for the type 'BuildContext' - lib\screens\home_tabs\home_tab.dart:712:28 - undefined_method
+  error - The method 'BlocBuilder' isn't defined for the type '_HomeTabState' - lib\screens\home_tabs\home_tab.dart:795:11 - undefined_method
+  error - Target of URI doesn't exist: 'package:flutter_bloc/flutter_bloc.dart' - lib\screens\home_tabs\home_widgets.dart:2:8 - uri_does_not_exist
+  error - Target of URI doesn't exist: 'package:go_router/go_router.dart' - lib\screens\home_tabs\home_widgets.dart:3:8 - uri_does_not_exist
+  error - The method 'read' isn't defined for the type 'BuildContext' - lib\screens\home_tabs\home_widgets.dart:96:25 - undefined_method
+  error - The method 'read' isn't defined for the type 'BuildContext' - lib\screens\home_tabs\home_widgets.dart:217:46 - undefined_method
+  error - The method 'read' isn't defined for the type 'BuildContext' - lib\screens\home_tabs\home_widgets.dart:222:63 - undefined_method
+  error - The method 'go' isn't defined for the type 'BuildContext' - lib\screens\home_tabs\home_widgets.dart:314:40 - undefined_method
+  error - Target of URI doesn't exist: 'package:flutter_bloc/flutter_bloc.dart' - lib\screens\home_tabs\profile_tab.dart:2:8 - uri_does_not_exist
+  error - Target of URI doesn't exist: 'package:cached_network_image/cached_network_image.dart' - lib\screens\home_tabs\profile_tab.dart:3:8 - uri_does_not_exist
+  error - The method 'read' isn't defined for the type 'BuildContext' - lib\screens\home_tabs\profile_tab.dart:39:32 - undefined_method
+  error - The method 'read' isn't defined for the type 'BuildContext' - lib\screens\home_tabs\profile_tab.dart:50:13 - undefined_method
+  error - The method 'CachedNetworkImageProvider' isn't defined for the type '_ProfileTabState' - lib\screens\home_tabs\profile_tab.dart:163:57 - undefined_method
+  error - The method 'read' isn't defined for the type 'BuildContext' - lib\screens\home_tabs\profile_tab.dart:319:32 - undefined_method
+  error - The method 'read' isn't defined for the type 'BuildContext' - lib\screens\home_tabs\profile_tab.dart:382:47 - undefined_method
+  error - The method 'read' isn't defined for the type 'BuildContext' - lib\screens\home_tabs\profile_tab.dart:472:33 - undefined_method
+  error - The method 'read' isn't defined for the type 'BuildContext' - lib\screens\home_tabs\profile_tab.dart:806:38 - undefined_method
+  error - The method 'read' isn't defined for the type 'BuildContext' - lib\screens\home_tabs\profile_tab.dart:812:17 - undefined_method
+  error - The method 'read' isn't defined for the type 'BuildContext' - lib\screens\home_tabs\profile_tab.dart:845:21 - undefined_method
+  error - The method 'read' isn't defined for the type 'BuildContext' - lib\screens\home_tabs\profile_tab.dart:869:25 - undefined_method
+  error - The method 'read' isn't defined for the type 'BuildContext' - lib\screens\home_tabs\profile_tab.dart:941:33 - undefined_method
+  error - The method 'read' isn't defined for the type 'BuildContext' - lib\screens\home_tabs\profile_tab.dart:985:21 - undefined_method
+  error - Target of URI doesn't exist: 'package:flutter_bloc/flutter_bloc.dart' - lib\screens\home_tabs\questions_tab.dart:2:8 - uri_does_not_exist
+  error - Target of URI doesn't exist: 'package:cached_network_image/cached_network_image.dart' - lib\screens\home_tabs\questions_tab.dart:3:8 - uri_does_not_exist
+  error - The method 'read' isn't defined for the type 'BuildContext' - lib\screens\home_tabs\questions_tab.dart:42:34 - undefined_method
+  error - The method 'CachedNetworkImage' isn't defined for the type '_QuestionsTabState' - lib\screens\home_tabs\questions_tab.dart:370:42 - undefined_method
+  error - The method 'read' isn't defined for the type 'BuildContext' - lib\screens\home_tabs\questions_tab.dart:452:45 - undefined_method
+  error - Target of URI doesn't exist: 'package:flutter_bloc/flutter_bloc.dart' - lib\screens\lesson_player_screen.dart:5:8 - uri_does_not_exist
+  error - Target of URI doesn't exist: 'package:video_player/video_player.dart' - lib\screens\lesson_player_screen.dart:6:8 - uri_does_not_exist
+  error - Target of URI doesn't exist: 'package:chewie/chewie.dart' - lib\screens\lesson_player_screen.dart:7:8 - uri_does_not_exist
+  error - Target of URI doesn't exist: 'package:flutter_windowmanager/flutter_windowmanager.dart' - lib\screens\lesson_player_screen.dart:8:8 - uri_does_not_exist
+  error - Target of URI doesn't exist: 'package:dio/dio.dart' - lib\screens\lesson_player_screen.dart:9:8 - uri_does_not_exist
+  error - Target of URI doesn't exist: 'package:cached_network_image/cached_network_image.dart' - lib\screens\lesson_player_screen.dart:13:8 - uri_does_not_exist
+  error - Target of URI doesn't exist: 'package:go_router/go_router.dart' - lib\screens\lesson_player_screen.dart:14:8 - uri_does_not_exist
+  error - Undefined class 'VideoPlayerController' - lib\screens\lesson_player_screen.dart:37:3 - undefined_class
+  error - Undefined class 'ChewieController' - lib\screens\lesson_player_screen.dart:38:3 - undefined_class
+  error - The method 'read' isn't defined for the type 'BuildContext' - lib\screens\lesson_player_screen.dart:65:24 - undefined_method
+  error - The method 'read' isn't defined for the type 'BuildContext' - lib\screens\lesson_player_screen.dart:83:36 - undefined_method
+  error - The method 'read' isn't defined for the type 'BuildContext' - lib\screens\lesson_player_screen.dart:93:36 - undefined_method
+  error - Undefined name 'FlutterWindowManager' - lib\screens\lesson_player_screen.dart:112:15 - undefined_identifier
+  error - Undefined name 'FlutterWindowManager' - lib\screens\lesson_player_screen.dart:112:45 - undefined_identifier
+  error - Undefined name 'FlutterWindowManager' - lib\screens\lesson_player_screen.dart:121:15 - undefined_identifier
+  error - Undefined name 'FlutterWindowManager' - lib\screens\lesson_player_screen.dart:121:47 - undefined_identifier
+  error - The method 'read' isn't defined for the type 'BuildContext' - lib\screens\lesson_player_screen.dart:176:30 - undefined_method
+  error - Undefined name 'VideoPlayerController' - lib\screens\lesson_player_screen.dart:267:34 - undefined_identifier
+  error - Undefined name 'VideoFormat' - lib\screens\lesson_player_screen.dart:269:23 - undefined_identifier
+  error - Undefined name 'VideoPlayerController' - lib\screens\lesson_player_screen.dart:272:34 - undefined_identifier
+  error - The method 'ChewieController' isn't defined for the type '_LessonPlayerScreenState' - lib\screens\lesson_player_screen.dart:307:27 - undefined_method
+  error - The method 'ChewieProgressColors' isn't defined for the type '_LessonPlayerScreenState' - lib\screens\lesson_player_screen.dart:315:33 - undefined_method
+  error - The method 'read' isn't defined for the type 'BuildContext' - lib\screens\lesson_player_screen.dart:368:32 - undefined_method
+  error - The name 'DioException' isn't defined, so it can't be used in an 'is' expression - lib\screens\lesson_player_screen.dart:396:20 - type_test_with_undefined_name
+  error - The method 'read' isn't defined for the type 'BuildContext' - lib\screens\lesson_player_screen.dart:434:34 - undefined_method
+  error - The method 'read' isn't defined for the type 'BuildContext' - lib\screens\lesson_player_screen.dart:470:34 - undefined_method
+  error - The method 'read' isn't defined for the type 'BuildContext' - lib\screens\lesson_player_screen.dart:499:34 - undefined_method
+  error - The method 'read' isn't defined for the type 'BuildContext' - lib\screens\lesson_player_screen.dart:541:34 - undefined_method
+  error - The method 'read' isn't defined for the type 'BuildContext' - lib\screens\lesson_player_screen.dart:606:34 - undefined_method
+  error - The method 'go' isn't defined for the type 'BuildContext' - lib\screens\lesson_player_screen.dart:787:40 - undefined_method
+  error - The method 'CachedNetworkImage' isn't defined for the type '_LessonPlayerScreenState' - lib\screens\lesson_player_screen.dart:910:48 - undefined_method
+  error - The method 'CachedNetworkImage' isn't defined for the type '_LessonPlayerScreenState' - lib\screens\lesson_player_screen.dart:1060:34 - undefined_method
+  error - The method 'CachedNetworkImage' isn't defined for the type '_LessonPlayerScreenState' - lib\screens\lesson_player_screen.dart:1168:32 - undefined_method
+  error - The method 'go' isn't defined for the type 'BuildContext' - lib\screens\lesson_player_screen.dart:1224:40 - undefined_method
+  error - The method 'read' isn't defined for the type 'BuildContext' - lib\screens\lesson_player_screen.dart:1371:74 - undefined_method
+  error - The method 'Chewie' isn't defined for the type '_LessonPlayerScreenState' - lib\screens\lesson_player_screen.dart:1397:33 - undefined_method
+   info - Use 'const' with the constructor to improve performance - lib\screens\lesson_player_screen.dart:1444:23 - prefer_const_constructors
+  error - Target of URI doesn't exist: 'package:flutter_bloc/flutter_bloc.dart' - lib\screens\login_screen.dart:2:8 - uri_does_not_exist
+  error - Target of URI doesn't exist: 'package:go_router/go_router.dart' - lib\screens\login_screen.dart:3:8 - uri_does_not_exist
+  error - Target of URI doesn't exist: 'package:supabase_flutter/supabase_flutter.dart' - lib\screens\login_screen.dart:4:8 - uri_does_not_exist
+  error - The method 'read' isn't defined for the type 'BuildContext' - lib\screens\login_screen.dart:46:33 - undefined_method
+  error - The method 'read' isn't defined for the type 'BuildContext' - lib\screens\login_screen.dart:157:15 - undefined_method
+  error - The method 'read' isn't defined for the type 'BuildContext' - lib\screens\login_screen.dart:173:15 - undefined_method
+  error - Undefined name 'Supabase' - lib\screens\login_screen.dart:187:13 - undefined_identifier
+  error - The method 'read' isn't defined for the type 'BuildContext' - lib\screens\login_screen.dart:305:56 - undefined_method
+  error - The method 'BlocConsumer' isn't defined for the type '_LoginScreenState' - lib\screens\login_screen.dart:413:15 - undefined_method
+  error - The method 'BlocBuilder' isn't defined for the type '_LoginScreenState' - lib\screens\login_screen.dart:485:28 - undefined_method
+  error - The method 'read' isn't defined for the type 'BuildContext' - lib\screens\login_screen.dart:1125:37 - undefined_method
+  error - Target of URI doesn't exist: 'package:dio/dio.dart' - lib\screens\pdf_viewer_screen.dart:4:8 - uri_does_not_exist
+  error - Target of URI doesn't exist: 'package:flutter_bloc/flutter_bloc.dart' - lib\screens\pdf_viewer_screen.dart:6:8 - uri_does_not_exist
+  error - Target of URI doesn't exist: 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart' - lib\screens\pdf_viewer_screen.dart:7:8 - uri_does_not_exist
+  error - Target of URI doesn't exist: 'package:flutter_windowmanager/flutter_windowmanager.dart' - lib\screens\pdf_viewer_screen.dart:8:8 - uri_does_not_exist
+  error - Undefined class 'CancelToken' - lib\screens\pdf_viewer_screen.dart:36:3 - undefined_class
+  error - Undefined name 'FlutterWindowManager' - lib\screens\pdf_viewer_screen.dart:56:15 - undefined_identifier
+  error - Undefined name 'FlutterWindowManager' - lib\screens\pdf_viewer_screen.dart:56:45 - undefined_identifier
+  error - Undefined name 'FlutterWindowManager' - lib\screens\pdf_viewer_screen.dart:65:15 - undefined_identifier
+  error - Undefined name 'FlutterWindowManager' - lib\screens\pdf_viewer_screen.dart:65:47 - undefined_identifier
+  error - The method 'read' isn't defined for the type 'BuildContext' - lib\screens\pdf_viewer_screen.dart:78:34 - undefined_method
+  error - The method 'CancelToken' isn't defined for the type '_PdfViewerScreenState' - lib\screens\pdf_viewer_screen.dart:115:30 - undefined_method
+  error - The method 'read' isn't defined for the type 'BuildContext' - lib\screens\pdf_viewer_screen.dart:132:33 - undefined_method
+  error - Undefined name 'SfPdfViewer' - lib\screens\pdf_viewer_screen.dart:226:23 - undefined_identifier
+  error - Undefined class 'PdfDocumentLoadFailedDetails' - lib\screens\pdf_viewer_screen.dart:230:48 - undefined_class
+  error - Target of URI doesn't exist: 'package:dio/dio.dart' - lib\services\api_service.dart:2:8 - uri_does_not_exist
+  error - Target of URI doesn't exist: 'package:supabase_flutter/supabase_flutter.dart' - lib\services\api_service.dart:3:8 - uri_does_not_exist
+  error - Undefined class 'Dio' - lib\services\api_service.dart:8:14 - undefined_class
+  error - The method 'Dio' isn't defined for the type 'ApiService' - lib\services\api_service.dart:13:12 - undefined_method
+  error - The method 'BaseOptions' isn't defined for the type 'ApiService' - lib\services\api_service.dart:13:16 - undefined_method
+  error - The method 'InterceptorsWrapper' isn't defined for the type 'ApiService' - lib\services\api_service.dart:20:27 - undefined_method
+  error - Undefined name 'Supabase' - lib\services\api_service.dart:32:27 - undefined_identifier
+  error - Undefined name 'Supabase' - lib\services\api_service.dart:50:13 - undefined_identifier
+  error - Undefined name 'Supabase' - lib\services\api_service.dart:51:11 - undefined_identifier
+  error - The method 'DioException' isn't defined for the type 'ApiService' - lib\services\api_service.dart:58:26 - undefined_method
+  error - Undefined name 'Supabase' - lib\services\api_service.dart:71:31 - undefined_identifier
+  error - The method 'Options' isn't defined for the type 'ApiService' - lib\services\api_service.dart:83:18 - undefined_method
+  error - The method 'Options' isn't defined for the type 'ApiService' - lib\services\api_service.dart:102:16 - undefined_method
+  error - Undefined class 'CancelToken' - lib\services\api_service.dart:380:5 - undefined_class
+  error - The method 'Options' isn't defined for the type 'ApiService' - lib\services\api_service.dart:385:16 - undefined_method
+  error - Undefined name 'ResponseType' - lib\services\api_service.dart:386:23 - undefined_identifier
+  error - The method 'Dio' isn't defined for the type 'ApiService' - lib\services\api_service.dart:398:26 - undefined_method
+  error - The method 'Options' isn't defined for the type 'ApiService' - lib\services\api_service.dart:401:20 - undefined_method
+  error - Undefined name 'ResponseType' - lib\services\api_service.dart:401:42 - undefined_identifier
+  error - Target of URI doesn't exist: 'package:local_auth/local_auth.dart' - lib\services\biometric_service.dart:1:8 - uri_does_not_exist
+  error - Target of URI doesn't exist: 'package:flutter_secure_storage/flutter_secure_storage.dart' - lib\services\biometric_service.dart:2:8 - uri_does_not_exist
+  error - Undefined class 'LocalAuthentication' - lib\services\biometric_service.dart:5:9 - undefined_class
+  error - The method 'LocalAuthentication' isn't defined for the type 'BiometricService' - lib\services\biometric_service.dart:5:37 - undefined_method
+  error - Undefined class 'FlutterSecureStorage' - lib\services\biometric_service.dart:6:9 - undefined_class
+  error - The name 'FlutterSecureStorage' isn't a class - lib\services\biometric_service.dart:6:47 - creation_with_non_type
+  error - The name 'AuthenticationOptions' isn't a class - lib\services\biometric_service.dart:18:24 - creation_with_non_type
+  error - Target of URI doesn't exist: 'package:device_info_plus/device_info_plus.dart' - lib\services\device_service.dart:2:8 - uri_does_not_exist
+  error - Target of URI doesn't exist: 'package:flutter_secure_storage/flutter_secure_storage.dart' - lib\services\device_service.dart:3:8 - uri_does_not_exist
+  error - Undefined class 'FlutterSecureStorage' - lib\services\device_service.dart:7:9 - undefined_class
+  error - The name 'FlutterSecureStorage' isn't a class - lib\services\device_service.dart:7:47 - creation_with_non_type
+  error - Undefined class 'DeviceInfoPlugin' - lib\services\device_service.dart:8:9 - undefined_class
+  error - The method 'DeviceInfoPlugin' isn't defined for the type 'DeviceService' - lib\services\device_service.dart:8:40 - undefined_method
+  error - Target of URI doesn't exist: 'package:firebase_messaging/firebase_messaging.dart' - lib\services\push_notification_service.dart:1:8 - uri_does_not_exist
+  error - Undefined class 'RemoteMessage' - lib\services\push_notification_service.dart:21:49 - undefined_class
+  error - Undefined name 'FirebaseMessaging' - lib\services\push_notification_service.dart:50:13 - undefined_identifier
+  error - Undefined name 'FirebaseMessaging' - lib\services\push_notification_service.dart:58:20 - undefined_identifier
+  error - Undefined name 'FirebaseMessaging' - lib\services\push_notification_service.dart:94:5 - undefined_identifier
+  error - Undefined class 'RemoteMessage' - lib\services\push_notification_service.dart:97:30 - undefined_class
+  error - The getter 'isNotEmpty' isn't defined for the type 'Object' - lib\services\push_notification_service.dart:104:38 - undefined_getter
+  error - Target of URI doesn't exist: 'package:cached_network_image/cached_network_image.dart' - lib\widgets\course_card.dart:2:8 - uri_does_not_exist
+  error - The method 'CachedNetworkImage' isn't defined for the type 'CourseCard' - lib\widgets\course_card.dart:73:25 - undefined_method
+  error - Target of URI doesn't exist: 'package:dio/dio.dart' - test\api_service_test.dart:8:8 - uri_does_not_exist
+  error - Target of URI doesn't exist: 'package:supabase_flutter/supabase_flutter.dart' - test\api_service_test.dart:10:8 - uri_does_not_exist
+   info - The member 'method' overrides an inherited member but isn't annotated with '@override' - test\api_service_test.dart:64:16 - annotate_overrides
+  error - Undefined name 'Supabase' - test\api_service_test.dart:157:13 - undefined_identifier
+  error - The name 'FlutterAuthClientOptions' isn't a class - test\api_service_test.dart:161:28 - creation_with_non_type
+  error - The function 'EmptyLocalStorage' isn't defined - test\api_service_test.dart:164:25 - undefined_function
+  error - Undefined name 'Supabase' - test\api_service_test.dart:172:11 - undefined_identifier
+  error - Undefined name 'Supabase' - test\api_service_test.dart:277:13 - undefined_identifier
+  error - Undefined name 'Supabase' - test\api_service_test.dart:291:14 - undefined_identifier
+  error - Undefined name 'Supabase' - test\api_service_test.dart:338:18 - undefined_identifier
+  error - Undefined name 'Supabase' - test\api_service_test.dart:375:16 - undefined_identifier
+  error - The function 'CancelToken' isn't defined - test\api_service_test.dart:399:23 - undefined_function
+  error - The name 'DioException' isn't a type, so it can't be used as a type argument - test\api_service_test.dart:406:23 - non_type_as_type_argument
+  error - The property 'type' can't be unconditionally accessed because the receiver can be 'null' - test\api_service_test.dart:407:30 - unchecked_use_of_nullable_value
+  error - Undefined name 'DioExceptionType' - test\api_service_test.dart:409:13 - undefined_identifier
+  error - Target of URI doesn't exist: 'package:flutter_bloc/flutter_bloc.dart' - test\course_details_screen_test.dart:8:8 - uri_does_not_exist
+warning - The field doesn't override an inherited getter or setter - test\course_details_screen_test.dart:16:15 - override_on_non_overriding_member
+warning - The getter doesn't override an inherited getter - test\course_details_screen_test.dart:23:27 - override_on_non_overriding_member
+warning - The method doesn't override an inherited method - test\course_details_screen_test.dart:31:8 - override_on_non_overriding_member
+warning - The method doesn't override an inherited method - test\course_details_screen_test.dart:34:16 - override_on_non_overriding_member
+  error - The name 'BlocProvider' isn't a class - test\course_details_screen_test.dart:67:29 - creation_with_non_type
+  error - Target of URI doesn't exist: 'package:dio/dio.dart' - test\pdf_viewer_screen_test.dart:8:8 - uri_does_not_exist
+  error - Target of URI doesn't exist: 'package:flutter_bloc/flutter_bloc.dart' - test\pdf_viewer_screen_test.dart:10:8 - uri_does_not_exist
+  error - Undefined class 'CancelToken' - test\pdf_viewer_screen_test.dart:17:3 - undefined_class
+  error - Undefined class 'CancelToken' - test\pdf_viewer_screen_test.dart:30:5 - undefined_class
+warning - The getter doesn't override an inherited getter - test\pdf_viewer_screen_test.dart:46:17 - override_on_non_overriding_member
+warning - The getter doesn't override an inherited getter - test\pdf_viewer_screen_test.dart:49:25 - override_on_non_overriding_member
+  error - The name 'BlocProvider' isn't a class - test\pdf_viewer_screen_test.dart:61:27 - creation_with_non_type
+  error - Target of URI doesn't exist: 'package:firebase_core/firebase_core.dart' - test\widget_test.dart:4:8 - uri_does_not_exist
+  error - Target of URI doesn't exist: 'package:supabase_flutter/supabase_flutter.dart' - test\widget_test.dart:8:8 - uri_does_not_exist
+  error - Undefined name 'Supabase' - test\widget_test.dart:51:11 - undefined_identifier
+  error - The name 'FlutterAuthClientOptions' isn't a class - test\widget_test.dart:55:26 - creation_with_non_type
+  error - The function 'EmptyLocalStorage' isn't defined - test\widget_test.dart:58:23 - undefined_function
+  error - Undefined name 'Supabase' - test\widget_test.dart:62:21 - undefined_identifier
+  error - Undefined name 'Firebase' - test\widget_test.dart:105:16 - undefined_identifier
+
+315 issues found. (ran in 49.8s)
+
+exit_code: 1

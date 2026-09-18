@@ -1,0 +1,89 @@
+{
+  "status": "blocked_missing_cached_dependencies",
+  "project_root": "C:/Users/kayf/Desktop/student project",
+  "subprocess_cwd": "C:/Users/kayf/Desktop/student project/student_app",
+  "version": {
+    "sdk_present": true,
+    "executable": "C:/Users/kayf/flutter-sdk/flutter/bin/flutter.bat",
+    "command": "--version",
+    "exit_code": 0,
+    "flutter": "3.22.2",
+    "channel": "stable",
+    "framework_revision": "761747bfc5",
+    "engine_revision": "edd8546116",
+    "dart": "3.4.3",
+    "devtools": "2.34.3"
+  },
+  "environment_overrides": {
+    "CI": "true",
+    "FLUTTER_SUPPRESS_ANALYTICS": "true"
+  },
+  "tests": {
+    "command": "test --no-pub",
+    "exit_code": 1,
+    "status": "compilation_blocked_before_test_execution",
+    "expected_test_cases": 38,
+    "executed_test_cases": 0,
+    "passed": 0,
+    "not_run": 38,
+    "test_file_load_failures": 4,
+    "failed_to_load": [
+      "test/api_service_test.dart",
+      "test/course_details_screen_test.dart",
+      "test/pdf_viewer_screen_test.dart",
+      "test/widget_test.dart"
+    ],
+    "note": "The 38-case count describes the requested existing suite, not runtime test discovery. The runner ended at +0 -4: all four files failed to compile due to missing package files. These are load failures, not 38 failed assertions."
+  },
+  "analyzer": {
+    "command": "analyze --no-pub",
+    "exit_code": 1,
+    "status": "failed_with_unresolved_dependencies",
+    "errors": 305,
+    "warnings": 6,
+    "information": 4,
+    "total_issues": 315,
+    "note": "Actual emitted diagnostic counts. Missing package imports cause cascading unresolved symbols and override warnings; these counts are not a dependency-complete assessment of source correctness. No diagnostics or assertions were suppressed."
+  },
+  "dependencies": {
+    "package_config_present": true,
+    "configured_packages": 183,
+    "missing_configured_package_directories": 84,
+    "missing_examples": [
+      "dio-5.9.2",
+      "supabase_flutter-2.14.2",
+      "flutter_bloc-8.1.6",
+      "firebase_core-4.7.0",
+      "firebase_messaging-16.2.0",
+      "flutter_secure_storage-10.3.1",
+      "chewie-1.7.5"
+    ],
+    "offline_command": "pub get --offline --enforce-lockfile",
+    "offline_exit_code": 1,
+    "offline_status": "version_solving_failed",
+    "offline_blocker": "No cached firebase_messaging version satisfies ^16.2.0.",
+    "lockfile_enforcement_reason": "Prevent dependency-version changes while attempting the authorized offline recovery.",
+    "dependency_metadata_changed": false
+  },
+  "changed_files": [],
+  "change_scope": "No application source, tests, dependency declarations, lockfile, analysis configuration, or Android local.properties edits. Hashes of lib/test files and the checked configuration/dependency metadata were unchanged during validation. Validation artifacts are listed separately; Flutter-generated temporary build/cache activity is not an authored source change.",
+  "actions_not_performed": [
+    "Network dependency resolution",
+    "Dependency or SDK upgrades",
+    "SDK installation",
+    "Manual SDK or system edits",
+    "User-settings configuration commands",
+    "External service or real Firebase calls from tests",
+    "Assertion weakening",
+    "Architecture changes",
+    "Deployment or native application GUI launch"
+  ],
+  "next_required_condition": "Make the currently configured dependency versions available in the local Pub cache under an explicitly authorized follow-up, then rerun the same test and analyzer commands. No SDK absence is claimed.",
+  "artifacts": {
+    "version": "outputs/validation/flutter-continuation-version.txt",
+    "tests": "outputs/validation/flutter-continuation-tests.txt",
+    "analyzer": "outputs/validation/flutter-continuation-analyzer.txt",
+    "offline_resolution": "outputs/validation/flutter-continuation-pub-offline.txt",
+    "summary": "outputs/validation/flutter-continuation-summary.json"
+  }
+}

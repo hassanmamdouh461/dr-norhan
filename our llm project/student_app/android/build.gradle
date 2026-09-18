@@ -1,0 +1,50 @@
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+rootProject.buildDir = "../build"
+subprojects {
+    project.buildDir = "${rootProject.buildDir}/${project.name}"
+}
+// Fix for old plugins (e.g. flutter_inappwebview 5.x pulled in by youtube_player_flutter)
+// that declare the package only in AndroidManifest.xml and have no `namespace`,
+// which AGP 8+ requires. Inject the namespace from the plugin's group when missing.
+// Must be registered BEFORE evaluationDependsOn(":app") triggers early evaluation.
+subprojects {
+    afterEvaluate { project ->
+        if (project.hasProperty("android")) {
+            project.android {
+                if (namespace == null) {
+                    namespace project.group.toString()
+                }
+                // Don't let plugin library modules run their own R8 (e.g. flutter_inappwebview
+                // fails on missing android.window.BackEvent). The app module's R8 still shrinks
+                // the final APK using app/proguard-rules.pro.
+                if (project.plugins.hasPlugin("com.android.library")) {
+                    buildTypes.configureEach {
+                        it.minifyEnabled = false
+                    }
+                }
+            }
+        }
+    }
+}
+
+subprojects {
+    project.evaluationDependsOn(":app")
+}
+
+gradle.projectsEvaluated {
+    subprojects {
+        tasks.withType(JavaCompile).configureEach {
+            options.compilerArgs.removeAll(['-Werror'])
+        }
+    }
+}
+
+tasks.register("clean", Delete) {
+    delete rootProject.buildDir
+}

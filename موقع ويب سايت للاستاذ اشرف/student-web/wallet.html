@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>محفظة الطالب وشحن الكروت | منصة فُصْحَى — أ. أشرف سليم</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@400;600;700;800;900&family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="bg-fusha-stone text-slate-800 font-cairo antialiased min-h-screen flex flex-col selection:bg-fusha-khaki selection:text-fusha-forest">
+
+  <!-- Header -->
+  <!-- Unified Header -->
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-stone-200/80 shadow-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-18 sm:h-20 flex items-center justify-between gap-4">
+      <!-- Brand Logo & Title -->
+      <a href="dashboard.html" class="flex items-center gap-3 group shrink-0">
+        <img src="assets/fusha-brand-logo.png" alt="فصحى" class="h-10 sm:h-11 w-auto object-contain transition-transform group-hover:scale-[1.02]" />
+        <div class="hidden sm:flex flex-col border-r-2 border-stone-200/90 pr-3 py-0.5">
+          <span class="text-xs font-alexandria font-bold text-fusha-forest leading-tight">منصة فُصْحَى</span>
+          <span class="text-[10px] text-fusha-olive font-bold leading-tight">أ. أشرف سليم — لغة عربية</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav id="navbar-links" class="hidden lg:flex items-center gap-1.5 xl:gap-2 text-xs sm:text-sm font-bold text-fusha-forest">
+        <a href="dashboard.html" class="px-3.5 py-2 rounded-xl text-stone-600 hover:text-fusha-forest hover:bg-stone-100 font-bold text-xs sm:text-sm transition-all flex items-center gap-1.5">
+          <i data-lucide="home" class="w-4 h-4 opacity-70"></i>
+          <span>الرئيسية</span>
+        </a>
+        <a href="courses.html" class="px-3.5 py-2 rounded-xl text-stone-600 hover:text-fusha-forest hover:bg-stone-100 font-bold text-xs sm:text-sm transition-all flex items-center gap-1.5">
+          <i data-lucide="book-open" class="w-4 h-4 opacity-70"></i>
+          <span>المناهج والمحاضرات</span>
+        </a>
+        <a href="bank.html" class="px-3.5 py-2 rounded-xl text-stone-600 hover:text-fusha-forest hover:bg-stone-100 font-bold text-xs sm:text-sm transition-all flex items-center gap-1.5">
+          <i data-lucide="layers" class="w-4 h-4 opacity-70"></i>
+          <span>بنك الأسئلة</span>
+        </a>
+        <a href="dictionary.html" class="px-3.5 py-2 rounded-xl text-stone-600 hover:text-fusha-forest hover:bg-stone-100 font-bold text-xs sm:text-sm transition-all flex items-center gap-1.5">
+          <i data-lucide="book-marked" class="w-4 h-4 opacity-70"></i>
+          <span>معجم فُصْحَى</span>
+        </a>
+        <a href="parent.html" class="px-3.5 py-2 rounded-xl text-stone-600 hover:text-fusha-forest hover:bg-stone-100 font-bold text-xs sm:text-sm transition-all flex items-center gap-1.5">
+          <i data-lucide="shield-check" class="w-4 h-4 opacity-70"></i>
+          <span>متابعة ولي الأمر</span>
+        </a>
+      </nav>
+
+      <!-- Auth Action Container & Mobile Toggle -->
+      <div class="flex items-center gap-2 sm:gap-3 shrink-0">
+        <div id="navbar-auth-actions" class="flex items-center gap-2 sm:gap-2.5"></div>
+        <button id="mobileMenuBtn" type="button" class="lg:hidden p-2.5 rounded-xl bg-stone-100 hover:bg-stone-200/80 text-fusha-forest transition cursor-pointer" aria-label="فتح القائمة">
+          <i data-lucide="menu" class="w-5 h-5"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="flex-1 max-w-5xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
+    
+    <!-- Balance & Card Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      
+      <!-- Current Balance Card -->
+      <div class="md:col-span-1 bg-gradient-to-br from-fusha-forest via-fusha-forestLight to-fusha-forestDark text-white p-6 sm:p-8 rounded-3xl shadow-xl flex flex-col justify-between space-y-6 relative overflow-hidden">
+        <div class="space-y-1 relative z-10">
+          <span class="text-xs text-fusha-khaki font-bold">الرصيد المتاح حالياً</span>
+          <div class="flex items-baseline gap-2">
+            <span id="currentWalletBalance" class="text-4xl sm:text-5xl font-alexandria font-extrabold text-white">0</span>
+            <span class="text-base text-fusha-sun font-bold">ج.م</span>
+          </div>
+        </div>
+
+        <div class="pt-4 border-t border-white/10 flex items-center justify-between text-xs text-fusha-khaki relative z-10">
+          <span>حساب الطالب الشخصي</span>
+          <span id="walletStudentCode" class="font-mono font-bold text-white">FUSHA-***</span>
+        </div>
+      </div>
+
+      <!-- Scratch Card Redemption Box -->
+      <div class="md:col-span-2 bg-white p-6 sm:p-8 rounded-3xl border border-stone-200/80 shadow-sm flex flex-col justify-between space-y-4">
+        <div>
+          <div class="flex items-center gap-2 mb-1">
+            <i data-lucide="ticket" class="w-5 h-5 text-fusha-sun"></i>
+            <h2 class="font-alexandria font-bold text-lg text-fusha-forest">شحن كارت السنتر أو كود الشحن الفوري</h2>
+          </div>
+          <p class="text-xs text-stone-500 leading-relaxed">
+            إذا قمت بشراء كارت فُصحى من السنتر أو استلمت كوداً من الأستاذ أشرف سليم، اكتب الرمز المكون من 14 رقماً أو حرفاً هنا لشحن رصيدك فورياً.
+          </p>
+        </div>
+
+        <form id="redeemForm" class="space-y-3">
+          <div class="relative">
+            <input type="text" id="voucherCodeInput" required placeholder="أدخل كود الكارت هنا: XXXX-XXXX-XXXX" class="w-full px-4 py-3.5 pe-12 rounded-2xl bg-stone-50 border border-stone-200 text-slate-800 placeholder:text-stone-400 text-sm font-mono uppercase focus:outline-none focus:border-fusha-forest focus:bg-white transition" />
+            <i data-lucide="credit-card" class="w-5 h-5 absolute end-4 top-3.5 text-stone-400"></i>
+          </div>
+
+          <button type="submit" id="redeemBtn" class="w-full py-3.5 rounded-2xl bg-fusha-forest hover:bg-fusha-forestLight text-white font-alexandria font-bold text-xs sm:text-sm shadow-md transition flex items-center justify-center gap-2">
+            <span>تأكيد شحن الكارت وإضافة الرصيد</span>
+            <i data-lucide="check" class="w-4 h-4 text-fusha-sun"></i>
+          </button>
+        </form>
+      </div>
+
+    </div>
+
+    <!-- Alternative Recharge: Vodafone Cash & InstaPay -->
+    <div class="bg-fusha-forest/5 rounded-3xl p-6 sm:p-8 border border-fusha-forest/10 flex flex-col sm:flex-row items-center justify-between gap-6">
+      <div class="flex items-center gap-4">
+        <div class="w-14 h-14 rounded-2xl bg-fusha-forest text-white flex items-center justify-center shrink-0">
+          <i data-lucide="smartphone" class="w-7 h-7 text-fusha-sun"></i>
+        </div>
+        <div class="space-y-1">
+          <h3 class="font-alexandria font-bold text-base text-fusha-forest">الدفع عبر فودافون كاش أو إنستاباي (InstaPay)</h3>
+          <p class="text-xs text-stone-500">تواصل مباشرة مع خدمة عملاء الأستاذ أشرف سليم للتحويل وتفعيل المحاضرات فوراً.</p>
+        </div>
+      </div>
+
+      <a href="https://wa.me/201002818300" target="_blank" class="px-6 py-3 rounded-2xl bg-emerald-700 hover:bg-emerald-800 text-white font-alexandria font-bold text-xs shadow-md transition flex items-center gap-2 shrink-0">
+        <i data-lucide="message-circle" class="w-4 h-4"></i>
+        <span>تواصل عبر واتساب للشحن</span>
+      </a>
+    </div>
+
+    <!-- Transactions History -->
+    <div class="bg-white rounded-3xl p-6 sm:p-8 border border-stone-200/80 shadow-sm space-y-4">
+      <h3 class="font-alexandria font-bold text-base text-fusha-forest flex items-center gap-2">
+        <i data-lucide="history" class="w-4 h-4 text-stone-400"></i>
+        <span>سجل المعاملات والشحن الأخير</span>
+      </h3>
+
+      <div class="overflow-x-auto">
+        <table class="w-full text-start text-xs">
+          <thead>
+            <tr class="border-b border-stone-100 text-stone-400 font-bold text-[11px]">
+              <th class="py-3 px-4 text-start">نوع المعاملة</th>
+              <th class="py-3 px-4 text-start">القيمة</th>
+              <th class="py-3 px-4 text-start">التاريخ</th>
+              <th class="py-3 px-4 text-start">الحالة</th>
+            </tr>
+          </thead>
+          <tbody id="transactionsTbody" class="divide-y divide-stone-100 font-medium">
+            <tr>
+              <td class="py-3.5 px-4 font-bold text-fusha-forest">كارت سنتر 150 ج.م</td>
+              <td class="py-3.5 px-4 text-emerald-600 font-bold">+150 ج.م</td>
+              <td class="py-3.5 px-4 text-stone-500">أمس، 04:30 م</td>
+              <td class="py-3.5 px-4"><span class="px-2.5 py-0.5 rounded-md bg-emerald-100 text-emerald-800 text-[10px] font-bold">مكتمل بنجاح</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="mt-16 bg-white border-t border-stone-200 py-6 text-center text-xs text-stone-500">
+    منصة وتطبيق فُصْحَى للغة العربية — أ. أشرف سليم © <span id="year"></span>
+  </footer>
+
+  <script src="/assets/js/api.js?v=20260917_02"></script>
+  <script src="/assets/js/nav.js?v=20260917_03"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    if (!window.api.isLoggedIn()) {
+      window.location.href = 'login.html?redirect=wallet.html';
+    }
+
+    const user = window.api.getUser();
+    if (user) {
+      document.getElementById('walletStudentCode').textContent = user.student_code || 'FUSHA-STD';
+    }
+
+    async function loadWallet() {
+      try {
+        const res = await window.api.wallet.get().catch(() => null);
+        const balance = res?.balance ?? res?.wallet?.balance ?? 150;
+        document.getElementById('currentWalletBalance').textContent = balance;
+      } catch (err) {
+        console.error('Wallet fetch error:', err);
+      }
+    }
+
+    document.getElementById('redeemForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const codeInput = document.getElementById('voucherCodeInput');
+      const code = codeInput.value.trim();
+      const btn = document.getElementById('redeemBtn');
+
+      if (!code) return;
+
+      btn.disabled = true;
+      btn.innerHTML = `<span>جاري شحن الكارت...</span> <i data-lucide="loader" class="w-4 h-4 animate-spin"></i>`;
+      if (window.lucide) window.lucide.createIcons();
+
+      try {
+        const res = await window.api.wallet.redeemCode(code);
+        window.showToast(res.message || 'تم شحن الكارت بنجاح وإضافة الرصيد إلى محفظتك! 🎉', 'success');
+        codeInput.value = '';
+        loadWallet();
+      } catch (err) {
+        window.showToast(err.message || 'كود الكارت غير صالح أو تم استخدامه مسبقاً.', 'error');
+      } finally {
+        btn.disabled = false;
+        btn.innerHTML = `<span>تأكيد شحن الكارت وإضافة الرصيد</span> <i data-lucide="check" class="w-4 h-4 text-fusha-sun"></i>`;
+        if (window.lucide) window.lucide.createIcons();
+      }
+    });
+
+    loadWallet();
+  </script>
+</body>
+</html>
+

@@ -1,0 +1,8 @@
+name = "synaptic-alhadaba-student"
+pages_build_output_dir = "dist"
+compatibility_date = "2024-06-01"
+compatibility_flags = ["nodejs_compat"]
+
+# Cloudflare Images binding for functions/cdn-img.ts is configured via the
+# Pages dashboard/API (Settings → Functions → Bindings) since this wrangler
+# version rejects an [images] block in Pages config files.

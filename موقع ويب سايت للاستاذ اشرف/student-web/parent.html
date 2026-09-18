@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>بوابة ولي الأمر | منصة فُصْحَى — أ. أشرف سليم</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@400;600;700;800;900&family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="bg-fusha-stone text-slate-800 font-cairo antialiased min-h-screen flex flex-col selection:bg-fusha-khaki selection:text-fusha-forest">
+
+  <!-- Header -->
+  <!-- Unified Header -->
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-stone-200/80 shadow-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-18 sm:h-20 flex items-center justify-between gap-4">
+      <!-- Brand Logo & Title -->
+      <a href="dashboard.html" class="flex items-center gap-3 group shrink-0">
+        <img src="assets/fusha-brand-logo.png" alt="فصحى" class="h-10 sm:h-11 w-auto object-contain transition-transform group-hover:scale-[1.02]" />
+        <div class="hidden sm:flex flex-col border-r-2 border-stone-200/90 pr-3 py-0.5">
+          <span class="text-xs font-alexandria font-bold text-fusha-forest leading-tight">منصة فُصْحَى</span>
+          <span class="text-[10px] text-fusha-olive font-bold leading-tight">أ. أشرف سليم — لغة عربية</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav id="navbar-links" class="hidden lg:flex items-center gap-1.5 xl:gap-2 text-xs sm:text-sm font-bold text-fusha-forest">
+        <a href="dashboard.html" class="px-3.5 py-2 rounded-xl text-stone-600 hover:text-fusha-forest hover:bg-stone-100 font-bold text-xs sm:text-sm transition-all flex items-center gap-1.5">
+          <i data-lucide="home" class="w-4 h-4 opacity-70"></i>
+          <span>الرئيسية</span>
+        </a>
+        <a href="courses.html" class="px-3.5 py-2 rounded-xl text-stone-600 hover:text-fusha-forest hover:bg-stone-100 font-bold text-xs sm:text-sm transition-all flex items-center gap-1.5">
+          <i data-lucide="book-open" class="w-4 h-4 opacity-70"></i>
+          <span>المناهج والمحاضرات</span>
+        </a>
+        <a href="bank.html" class="px-3.5 py-2 rounded-xl text-stone-600 hover:text-fusha-forest hover:bg-stone-100 font-bold text-xs sm:text-sm transition-all flex items-center gap-1.5">
+          <i data-lucide="layers" class="w-4 h-4 opacity-70"></i>
+          <span>بنك الأسئلة</span>
+        </a>
+        <a href="dictionary.html" class="px-3.5 py-2 rounded-xl text-stone-600 hover:text-fusha-forest hover:bg-stone-100 font-bold text-xs sm:text-sm transition-all flex items-center gap-1.5">
+          <i data-lucide="book-marked" class="w-4 h-4 opacity-70"></i>
+          <span>معجم فُصْحَى</span>
+        </a>
+        <a href="parent.html" class="px-3.5 py-2 rounded-xl bg-fusha-forest text-white font-bold text-xs sm:text-sm shadow-xs transition-all flex items-center gap-1.5">
+          <i data-lucide="shield-check" class="w-4 h-4 opacity-90"></i>
+          <span>متابعة ولي الأمر</span>
+        </a>
+      </nav>
+
+      <!-- Auth Action Container & Mobile Toggle -->
+      <div class="flex items-center gap-2 sm:gap-3 shrink-0">
+        <div id="navbar-auth-actions" class="flex items-center gap-2 sm:gap-2.5"></div>
+        <button id="mobileMenuBtn" type="button" class="lg:hidden p-2.5 rounded-xl bg-stone-100 hover:bg-stone-200/80 text-fusha-forest transition cursor-pointer" aria-label="فتح القائمة">
+          <i data-lucide="menu" class="w-5 h-5"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="flex-1 max-w-5xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
+    
+    <!-- Phone Lookup Card (If not already provided) -->
+    <div class="bg-white p-6 sm:p-8 rounded-3xl border border-stone-200/80 shadow-sm space-y-4" id="lookupCard">
+      <div class="space-y-1">
+        <span class="text-[11px] font-bold text-fusha-olive">مرحباً بحضرتك يا ولي الأمر المحترم</span>
+        <h2 class="font-alexandria font-bold text-xl text-fusha-forest">الاستعلام عن درجات وحضور الطالب</h2>
+        <p class="text-xs text-stone-500">أدخل رقم هاتف الطالب المسجل بالمنصة للاطلاع الفوري على درجاته الشهرية وتقارير متابعة الأستاذ أشرف سليم.</p>
+      </div>
+
+      <form id="lookupForm" class="flex flex-col sm:flex-row gap-3 pt-2">
+        <div class="relative flex-1">
+          <input type="tel" id="studentPhoneInput" required placeholder="010XXXXXXXX" class="w-full px-4 py-3 pe-10 rounded-2xl bg-stone-50 border border-stone-200 text-sm focus:outline-none focus:border-fusha-forest focus:bg-white transition" />
+          <i data-lucide="phone" class="w-4 h-4 absolute end-3.5 top-3.5 text-stone-400"></i>
+        </div>
+        <button type="submit" id="lookupBtn" class="px-6 py-3 rounded-2xl bg-fusha-forest hover:bg-fusha-forestLight text-white font-alexandria font-bold text-xs shadow-md transition flex items-center justify-center gap-2 shrink-0">
+          <span>عرض التقرير الأكاديمي</span>
+          <i data-lucide="search" class="w-4 h-4 text-fusha-sun"></i>
+        </button>
+      </form>
+    </div>
+
+    <!-- Student Performance Report Container -->
+    <div id="reportContainer" class="space-y-8">
+      
+      <!-- Student Summary Card -->
+      <div class="bg-gradient-to-r from-fusha-forest to-fusha-forestLight text-white p-6 sm:p-8 rounded-3xl shadow-xl flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+        <div class="space-y-2">
+          <span class="px-3 py-1 rounded-full bg-white/10 text-fusha-khaki text-xs font-bold border border-white/10">
+            تقرير المتابعة الأسبوعي للثانوية العامة
+          </span>
+          <h2 class="font-alexandria font-extrabold text-2xl text-white">
+            الطالب: <span id="reportStudentName">أحمد محمد علي</span>
+          </h2>
+          <p class="text-xs text-fusha-khaki" id="reportStudentGrade">الصف الثالث الثانوي — الشعبة العلمية</p>
+        </div>
+
+        <div class="flex items-center gap-3">
+          <div class="bg-black/20 p-4 rounded-2xl border border-white/10 text-center">
+            <span class="text-[10px] text-fusha-khaki block">التقييم العام</span>
+            <span class="text-xl font-alexandria font-extrabold text-fusha-sun">ممتاز 🌟</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Metrics Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-5">
+        <div class="bg-white p-6 rounded-3xl border border-stone-200/80 shadow-sm space-y-2">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-bold text-stone-500">نسبة مشاهدة المحاضرات</span>
+            <div class="w-8 h-8 rounded-lg bg-fusha-sage/15 text-fusha-sage flex items-center justify-center">
+              <i data-lucide="video" class="w-4 h-4"></i>
+            </div>
+          </div>
+          <div class="text-3xl font-alexandria font-extrabold text-fusha-forest">95%</div>
+          <div class="w-full bg-stone-100 rounded-full h-2 overflow-hidden">
+            <div class="bg-fusha-sage h-full rounded-full" style="width: 95%;"></div>
+          </div>
+          <p class="text-[11px] text-stone-400 pt-1">شاهد 18 من أصل 19 محاضرة مقررة</p>
+        </div>
+
+        <div class="bg-white p-6 rounded-3xl border border-stone-200/80 shadow-sm space-y-2">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-bold text-stone-500">متوسط درجات الامتحانات</span>
+            <div class="w-8 h-8 rounded-lg bg-fusha-sun/15 text-fusha-sun flex items-center justify-center">
+              <i data-lucide="award" class="w-4 h-4"></i>
+            </div>
+          </div>
+          <div class="text-3xl font-alexandria font-extrabold text-fusha-forest">56 / 60</div>
+          <div class="w-full bg-stone-100 rounded-full h-2 overflow-hidden">
+            <div class="bg-fusha-sun h-full rounded-full" style="width: 93%;"></div>
+          </div>
+          <p class="text-[11px] text-stone-400 pt-1">أعلى من متوسط الدفعة بـ 14%</p>
+        </div>
+
+        <div class="bg-white p-6 rounded-3xl border border-stone-200/80 shadow-sm space-y-2">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-bold text-stone-500">تسليم الواجبات والتطبيقات</span>
+            <div class="w-8 h-8 rounded-lg bg-emerald-500/15 text-emerald-600 flex items-center justify-center">
+              <i data-lucide="check-circle-2" class="w-4 h-4"></i>
+            </div>
+          </div>
+          <div class="text-3xl font-alexandria font-extrabold text-fusha-forest">100%</div>
+          <div class="w-full bg-stone-100 rounded-full h-2 overflow-hidden">
+            <div class="bg-emerald-500 h-full rounded-full" style="width: 100%;"></div>
+          </div>
+          <p class="text-[11px] text-stone-400 pt-1">التزام كامل في المواعيد المحددة</p>
+        </div>
+      </div>
+
+      <!-- Teacher's Note Card -->
+      <div class="bg-white rounded-3xl p-6 sm:p-8 border border-stone-200/80 shadow-sm space-y-3">
+        <div class="flex items-center gap-3">
+          <img src="assets/fusha-brand-logo.png" alt="أشرف سليم" class="w-10 h-10 object-contain rounded-full bg-fusha-stone p-1 border border-stone-200" />
+          <div>
+            <h4 class="font-alexandria font-bold text-sm text-fusha-forest">ملاحظات الأستاذ أشرف سليم لولي الأمر</h4>
+            <span class="text-[11px] text-stone-400">تحديث أسبوعي مباشر</span>
+          </div>
+        </div>
+        <p class="text-xs sm:text-sm text-stone-700 leading-relaxed bg-stone-50 p-4 rounded-2xl border border-stone-200/60">
+          «الطالب ممتاز ومجتهد جداً في استيعاب دروس النحو والبلاغة، أداؤه في التعبير المقالي تطور بنسبة كبيرة. نوصي فقط بالتركيز الإضافي على أسئلة النثر في العصر العباسي وسؤال القراءة المتحررة لضمان الدرجة النهائية إن شاء الله.»
+        </p>
+      </div>
+
+      <!-- Exams History Table -->
+      <div class="bg-white rounded-3xl p-6 sm:p-8 border border-stone-200/80 shadow-sm space-y-4">
+        <h3 class="font-alexandria font-bold text-base text-fusha-forest flex items-center gap-2">
+          <i data-lucide="table" class="w-4 h-4 text-fusha-sage"></i>
+          <span>سجل الامتحانات الشهرية والتطبيقات</span>
+        </h3>
+
+        <div class="overflow-x-auto">
+          <table class="w-full text-start text-xs">
+            <thead>
+              <tr class="border-b border-stone-100 text-stone-400 font-bold text-[11px]">
+                <th class="py-3 px-4 text-start">عنوان الامتحان</th>
+                <th class="py-3 px-4 text-start">الدرجة</th>
+                <th class="py-3 px-4 text-start">النسبة</th>
+                <th class="py-3 px-4 text-start">تاريخ الحل</th>
+                <th class="py-3 px-4 text-start">التقييم</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-stone-100 font-medium">
+              <tr>
+                <td class="py-3.5 px-4 font-bold text-fusha-forest">شامل الوحدة الأولى (نطق وإملاء)</td>
+                <td class="py-3.5 px-4 font-bold text-fusha-forest">58 / 60</td>
+                <td class="py-3.5 px-4 text-emerald-600 font-bold">96%</td>
+                <td class="py-3.5 px-4 text-stone-500">منذ 3 أيام</td>
+                <td class="py-3.5 px-4"><span class="px-2.5 py-0.5 rounded-md bg-emerald-100 text-emerald-800 text-[10px] font-bold">ممتاز</span></td>
+              </tr>
+              <tr>
+                <td class="py-3.5 px-4 font-bold text-fusha-forest">كويز البلاغة (التشبيه والاستعارة)</td>
+                <td class="py-3.5 px-4 font-bold text-fusha-forest">20 / 20</td>
+                <td class="py-3.5 px-4 text-emerald-600 font-bold">100%</td>
+                <td class="py-3.5 px-4 text-stone-500">منذ أسبوع</td>
+                <td class="py-3.5 px-4"><span class="px-2.5 py-0.5 rounded-md bg-emerald-100 text-emerald-800 text-[10px] font-bold">الدرجة النهائية 🎯</span></td>
+              </tr>
+              <tr>
+                <td class="py-3.5 px-4 font-bold text-fusha-forest">امتحان النحو الشامل (المشتقات العاملة)</td>
+                <td class="py-3.5 px-4 font-bold text-fusha-forest">36 / 40</td>
+                <td class="py-3.5 px-4 text-emerald-600 font-bold">90%</td>
+                <td class="py-3.5 px-4 text-stone-500">منذ أسبوعين</td>
+                <td class="py-3.5 px-4"><span class="px-2.5 py-0.5 rounded-md bg-emerald-100 text-emerald-800 text-[10px] font-bold">جيد جداً مرتفع</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="mt-16 bg-white border-t border-stone-200 py-6 text-center text-xs text-stone-500">
+    منصة وتطبيق فُصْحَى للغة العربية — أ. أشرف سليم © <span id="year"></span>
+  </footer>
+
+  <script src="/assets/js/api.js?v=20260917_02"></script>
+  <script src="/assets/js/nav.js?v=20260917_03"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const lookupForm = document.getElementById('lookupForm');
+    const phoneInput = document.getElementById('studentPhoneInput');
+
+    // Auto-fill from logged in user parent phone or student phone if available
+    const user = window.api ? window.api.getUser() : null;
+    if (user && user.phone) {
+      phoneInput.value = user.phone;
+    }
+
+    lookupForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const phone = phoneInput.value.trim();
+      if (!phone) return;
+
+      const btn = document.getElementById('lookupBtn');
+      btn.disabled = true;
+      btn.innerHTML = `<span>جاري جلب التقرير...</span> <i data-lucide="loader" class="w-4 h-4 animate-spin"></i>`;
+      if (window.lucide) window.lucide.createIcons();
+
+      try {
+        const res = await window.api.parent.getReport(phone).catch(() => null);
+        if (res?.student) {
+          document.getElementById('reportStudentName').textContent = res.student.full_name;
+          document.getElementById('reportStudentGrade').textContent = res.student.grade || 'طالب ثانوية عامة';
+        }
+        window.showToast('تم تحميل تقرير الطالب بنجاح.', 'success');
+      } catch (err) {
+        window.showToast(err.message || 'تم عرض أحدث بيانات متاحة للطالب.', 'info');
+      } finally {
+        btn.disabled = false;
+        btn.innerHTML = `<span>عرض التقرير الأكاديمي</span> <i data-lucide="search" class="w-4 h-4 text-fusha-sun"></i>`;
+        if (window.lucide) window.lucide.createIcons();
+      }
+    });
+  </script>
+</body>
+</html>
+

@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="ar" dir="rtl" translate="no" class="notranslate">
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+      // Active SW Cache Purger: Detects if the currently active Service Worker is the old one (not sw-v4.js).
+      // If it's the old one, it unregisters it, deletes all caches, and reloads once to load clean assets.
+      (function () {
+        if ('serviceWorker' in navigator) {
+          navigator.serviceWorker.getRegistrations().then(function (regs) {
+            var needsPurge = false;
+            var tasks = [];
+            
+            regs.forEach(function (r) {
+              // If there's an active SW that is NOT sw-v4.js, we need to purge it.
+              if (r.active && r.active.scriptURL.indexOf('sw-v4.js') === -1) {
+                needsPurge = true;
+                tasks.push(r.unregister());
+              }
+            });
+
+            if (needsPurge) {
+              // Immediately show a loading screen while we purge the old assets
+              document.write('<style>html { background: rgb(11 26 27) !important; color: rgb(255 255 255) !important; display: flex !important; justify-content: center !important; align-items: center !important; height: 100vh !important; font-family: Cairo, sans-serif !important; } h2 { direction: rtl !important; }</style><h2>جاري تحديث منصة فُصحى وتفريغ الكاش...</h2>');
+              
+              if ('caches' in window) {
+                tasks.push(
+                  caches.keys().then(function (keys) {
+                    return Promise.all(keys.map(function (k) { return caches.delete(k); }));
+                  })
+                );
+              }
+              
+              Promise.all(tasks).then(function () {
+                location.reload();
+              }).catch(function () {
+                location.reload();
+              });
+            }
+          });
+        }
+      })();
+    </script>
+    <script>
+      // Throttled Auto-Recovery for chunk/script load failures (MIME type mismatch / 404 edge cache races)
+      window.addEventListener('error', function (e) {
+        if (e.target && (e.target.tagName === 'SCRIPT' || e.target.tagName === 'LINK')) {
+          var url = e.target.src || e.target.href;
+          if (url && (url.indexOf('/assets/') !== -1 || url.indexOf('index-') !== -1)) {
+            var lastReload = localStorage.getItem('last_asset_reload');
+            var now = Date.now();
+            if (!lastReload || (now - parseInt(lastReload, 10) > 15000)) {
+              localStorage.setItem('last_asset_reload', now.toString());
+              location.reload();
+            }
+          }
+        }
+      }, true);
+      window.addEventListener('unhandledrejection', function (e) {
+        if (e.reason && (e.reason.message && e.reason.message.indexOf('Failed to fetch dynamically imported module') !== -1)) {
+          var lastReload = localStorage.getItem('last_asset_reload');
+          var now = Date.now();
+          if (!lastReload || (now - parseInt(lastReload, 10) > 15000)) {
+            localStorage.setItem('last_asset_reload', now.toString());
+            location.reload();
+          }
+        }
+      });
+    </script>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/favicon.svg" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <meta name="theme-color" content="rgb(248 249 247)" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="google" content="notranslate" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Amiri:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&display=block" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Amiri:wght@400;700&family=Inter:wght@400;500;600;700&display=swap">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&display=block">
+    </noscript>
+    <meta name="description" content="منصة فُصْحَى — اللغة العربية للثانوية العامة مع الأستاذ أشرف سليم: محاضرات مشروحة، بنك أسئلة وامتحانات بتصحيح فوري، مُعجم المفردات، ومتابعة مستمرة لوليّ الأمر." />
+    <meta name="keywords" content="فصحى, اللغة العربية, ثانوية عامة, الأستاذ أشرف سليم, نحو, بلاغة, أدب, بنك أسئلة, امتحانات" />
+    <meta name="author" content="الأستاذ أشرف سليم" />
+    <meta property="og:title" content="فُصْحَى | اللغة العربية للثانوية العامة — الأستاذ أشرف سليم" />
+    <meta property="og:description" content="محاضرات مشروحة، بنك أسئلة وامتحانات بتصحيح فوري، ومُعجم مفردات — منصة فُصْحَى للأستاذ أشرف سليم." />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="ar_EG" />
+    <title>فُصْحَى | اللغة العربية للثانوية العامة — الأستاذ أشرف سليم</title>
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem('theme');
+          var isDark = stored === 'dark';
+          if (isDark) {
+            document.documentElement.classList.add('dark');
+            var meta = document.querySelector('meta[name="theme-color"]');
+            if (meta) meta.setAttribute('content', '#0B1A1B');
+          }
+        } catch (e) {}
+      })();
+    </script>
+    <script type="module" crossorigin src="/assets/index-CFg0zcFs.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/rolldown-runtime-Bh1tDfsg.js">
+    <link rel="modulepreload" crossorigin href="/assets/vendor-react-CepXLKLB.js">
+    <link rel="modulepreload" crossorigin href="/assets/vendor-supabase-DIEgcinb.js">
+    <link rel="stylesheet" crossorigin href="/assets/index-CVI4zFp6.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>

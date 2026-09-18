@@ -1,0 +1,14 @@
+name = "fusha-student-web"
+pages_build_output_dir = "dist"
+compatibility_date = "2024-06-01"
+compatibility_flags = ["nodejs_compat"]
+
+# Cloudflare Images binding for functions/cdn-img.ts is configured via the
+# Pages dashboard/API (Settings → Functions → Bindings) since this wrangler
+# version rejects an [images] block in Pages config files.
+
+[vars]
+# المضيف العام لحاوية R2 الذي يُسمح لدالة /cdn-img بتمرير صوره.
+# يُملأ بعد النشر، وعند تركه فارغاً لا يُسمح بأي مضيف.
+# يجب أن يطابق VITE_R2_PUBLIC_HOST في .env و src/utils/img.ts.
+R2_PUBLIC_HOST = ""

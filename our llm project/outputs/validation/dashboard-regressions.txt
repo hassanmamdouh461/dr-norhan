@@ -1,0 +1,202 @@
+TAP version 13
+# Subtest: local input uses the timestamp timezone offset and preserves fold instants verbatim
+ok 1 - local input uses the timestamp timezone offset and preserves fold instants verbatim
+  ---
+  duration_ms: 38.5168
+  type: 'test'
+  ...
+# Subtest: selection and reverted edits do not save; unrelated edits retain exact schedule
+ok 2 - selection and reverted edits do not save; unrelated edits retain exact schedule
+  ---
+  duration_ms: 1236.6538
+  type: 'test'
+  ...
+# Subtest: edits made during a save are serialized against the acknowledged baseline
+ok 3 - edits made during a save are serialized against the acknowledged baseline
+  ---
+  duration_ms: 586.2793
+  type: 'test'
+  ...
+# Subtest: failed saves do not retry forever without a new edit
+ok 4 - failed saves do not retry forever without a new edit
+  ---
+  duration_ms: 935.48
+  type: 'test'
+  ...
+# Subtest: newer edits queued during a failed save resume once, without retrying unchanged failures
+ok 5 - newer edits queued during a failed save resume once, without retrying unchanged failures
+  ---
+  duration_ms: 267.5213
+  type: 'test'
+  ...
+# Subtest: failed save does not retry when queued edits return to the same payload or clean baseline
+ok 6 - failed save does not retry when queued edits return to the same payload or clean baseline
+  ---
+  duration_ms: 816.2091
+  type: 'test'
+  ...
+# Subtest: navigation during save reconciles the shared list and reopened values, rejecting older list data
+ok 7 - navigation during save reconciles the shared list and reopened values, rejecting older list data
+  ---
+  duration_ms: 408.0892
+  type: 'test'
+  ...
+# Subtest: confirmed cache protects delayed snapshots and accepts fresh lists after acknowledgement
+ok 8 - confirmed cache protects delayed snapshots and accepts fresh lists after acknowledgement
+  ---
+  duration_ms: 213.0539
+  type: 'test'
+  ...
+# Subtest: reopening A before its title POST completes is blocked and a later score save retains the title
+ok 9 - reopening A before its title POST completes is blocked and a later score save retains the title
+  ---
+  duration_ms: 300.4589
+  type: 'test'
+  ...
+# Subtest: different exams can save concurrently and each completion releases only its own pending state
+ok 10 - different exams can save concurrently and each completion releases only its own pending state
+  ---
+  duration_ms: 553.4143
+  type: 'test'
+  ...
+# Subtest: a rejected POST releases the navigated-away exam without retrying or locking another exam
+ok 11 - a rejected POST releases the navigated-away exam without retrying or locking another exam
+  ---
+  duration_ms: 166.5297
+  type: 'test'
+  ...
+# Subtest: reopening is unlocked after POST reconciliation even while the optional list request is pending
+ok 12 - reopening is unlocked after POST reconciliation even while the optional list request is pending
+  ---
+  duration_ms: 139.9124
+  type: 'test'
+  ...
+# Subtest: newer work queued behind a failed save can succeed and becomes the clean baseline
+ok 13 - newer work queued behind a failed save can succeed and becomes the clean baseline
+  ---
+  duration_ms: 121.1103
+  type: 'test'
+  ...
+# Subtest: a successful save remains confirmed when the follow-up list request fails
+ok 14 - a successful save remains confirmed when the follow-up list request fails
+  ---
+  duration_ms: 113.7731
+  type: 'test'
+  ...
+# Subtest: create retains the POST identity before list failure so retries cannot create duplicates
+ok 15 - create retains the POST identity before list failure so retries cannot create duplicates
+  ---
+  duration_ms: 89.6612
+  type: 'test'
+  ...
+# Subtest: late exam question loads cannot overwrite a new selection or clear its draft
+ok 16 - late exam question loads cannot overwrite a new selection or clear its draft
+  ---
+  duration_ms: 111.5152
+  type: 'test'
+  ...
+# Subtest: late save success and error cannot affect a new exam or a reselection
+ok 17 - late save success and error cannot affect a new exam or a reselection
+  ---
+  duration_ms: 404.6603
+  type: 'test'
+  ...
+# Subtest: late list refresh and saved-status timer cannot alter a newly selected exam
+ok 18 - late list refresh and saved-status timer cannot alter a newly selected exam
+  ---
+  duration_ms: 160.3313
+  type: 'test'
+  ...
+# Subtest: an already scheduled saved-status reset cannot clear the next exam saving state
+ok 19 - an already scheduled saved-status reset cannot clear the next exam saving state
+  ---
+  duration_ms: 125.0582
+  type: 'test'
+  ...
+# Subtest: a pending post-save question reload cannot replace the new exam questions
+ok 20 - a pending post-save question reload cannot replace the new exam questions
+  ---
+  duration_ms: 116.7945
+  type: 'test'
+  ...
+# Subtest: late question saves and cover uploads do not modify another exam
+ok 21 - late question saves and cover uploads do not modify another exam
+  ---
+  duration_ms: 263.8272
+  type: 'test'
+  ...
+# Subtest: a pending create cannot select its new exam after the user opens another
+ok 22 - a pending create cannot select its new exam after the user opens another
+  ---
+  duration_ms: 116.2432
+  type: 'test'
+  ...
+# Subtest: stale history success, failure and finally do not alter another question
+ok 23 - stale history success, failure and finally do not alter another question
+  ---
+  duration_ms: 1177.1951
+  type: 'test'
+  ...
+# Subtest: history is guarded by generation even when the same question is reselected
+ok 24 - history is guarded by generation even when the same question is reselected
+  ---
+  duration_ms: 136.8148
+  type: 'test'
+  ...
+# Subtest: reply success stays with the submitted question while a new reply remains pending
+ok 25 - reply success stays with the submitted question while a new reply remains pending
+  ---
+  duration_ms: 144.2532
+  type: 'test'
+  ...
+# Subtest: same-selection reply is appended while edited text, attachment and reverted drafts are preserved
+ok 26 - same-selection reply is appended while edited text, attachment and reverted drafts are preserved
+  ---
+  duration_ms: 540.2909
+  type: 'test'
+  ...
+# Subtest: reply completion after A-B-A navigation cannot clear an identical new draft
+ok 27 - reply completion after A-B-A navigation cannot clear an identical new draft
+  ---
+  duration_ms: 330.1066
+  type: 'test'
+  ...
+# Subtest: unchanged image-only draft is appended and cleared after successful reply
+ok 28 - unchanged image-only draft is appended and cleared after successful reply
+  ---
+  duration_ms: 331.6251
+  type: 'test'
+  ...
+# Subtest: old reply failure cannot clear a new request indicator or display its error
+ok 29 - old reply failure cannot clear a new request indicator or display its error
+  ---
+  duration_ms: 285.0389
+  type: 'test'
+  ...
+# Subtest: history must finish before a reply can start and repeated submit is ignored
+ok 30 - history must finish before a reply can start and repeated submit is ignored
+  ---
+  duration_ms: 405.336
+  type: 'test'
+  ...
+# Subtest: late image upload does not attach to a new question or clear its upload indicator
+ok 31 - late image upload does not attach to a new question or clear its upload indicator
+  ---
+  duration_ms: 230.4169
+  type: 'test'
+  ...
+# Subtest: late hide and resolve completions cannot deselect a different question
+ok 32 - late hide and resolve completions cannot deselect a different question
+  ---
+  duration_ms: 508.3571
+  type: 'test'
+  ...
+1..32
+# tests 32
+# suites 0
+# pass 32
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 8362.7036

@@ -1,0 +1,14 @@
+{
+  "rules": [
+    {
+      "id": "allow-all-origins",
+      "enabled": true,
+      "allowed": {
+        "origins": ["*"],
+        "methods": ["GET", "PUT", "POST", "DELETE", "HEAD"],
+        "headers": ["*"],
+        "exposedHeaders": ["ETag"]
+      }
+    }
+  ]
+}

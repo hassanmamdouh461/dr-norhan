@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>صندوق الأسئلة - PhysicMaster Pro</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&amp;family=Inter:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed-variant": "#003ea8",
+                        "on-primary-container": "#eeefff",
+                        "on-background": "#191b23",
+                        "surface-container-lowest": "#ffffff",
+                        "primary": "#004ac6",
+                        "tertiary-fixed": "#89f5e7",
+                        "inverse-on-surface": "#f0f0fb",
+                        "surface-container-highest": "#e1e2ed",
+                        "on-tertiary-fixed-variant": "#005049",
+                        "on-primary": "#ffffff",
+                        "tertiary": "#006058",
+                        "surface-variant": "#e1e2ed",
+                        "secondary": "#545f73",
+                        "secondary-fixed-dim": "#bcc7de",
+                        "on-primary-fixed": "#00174b",
+                        "tertiary-container": "#007b71",
+                        "primary-fixed-dim": "#b4c5ff",
+                        "error": "#ba1a1a",
+                        "surface": "#faf8ff",
+                        "inverse-primary": "#b4c5ff",
+                        "surface-dim": "#d9d9e5",
+                        "surface-container-high": "#e7e7f3",
+                        "on-secondary-container": "#586377",
+                        "on-error": "#ffffff",
+                        "on-secondary-fixed": "#111c2d",
+                        "on-error-container": "#93000a",
+                        "tertiary-fixed-dim": "#6bd8cb",
+                        "surface-container-low": "#f3f3fe",
+                        "on-tertiary-fixed": "#00201d",
+                        "on-surface": "#191b23",
+                        "on-surface-variant": "#434655",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary-container": "#b3fff3",
+                        "surface-tint": "#0053db",
+                        "primary-fixed": "#dbe1ff",
+                        "primary-container": "#2563eb",
+                        "inverse-surface": "#2e3039",
+                        "outline": "#737686",
+                        "on-tertiary": "#ffffff",
+                        "background": "#faf8ff",
+                        "error-container": "#ffdad6",
+                        "on-secondary-fixed-variant": "#3c475a",
+                        "outline-variant": "#c3c6d7",
+                        "secondary-fixed": "#d8e3fb",
+                        "surface-container": "#ededf9",
+                        "secondary-container": "#d5e0f8",
+                        "surface-bright": "#faf8ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "sm": "12px",
+                        "gutter": "24px",
+                        "lg": "48px",
+                        "xl": "80px",
+                        "xs": "4px",
+                        "md": "24px",
+                        "container-max": "1280px",
+                        "base": "8px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Plus Jakarta Sans"],
+                        "headline-sm": ["Plus Jakarta Sans"],
+                        "body-md": ["Inter"],
+                        "display-lg-mobile": ["Plus Jakarta Sans"],
+                        "body-lg": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-md": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-sm": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "display-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "headline-md": ["30px", {"lineHeight": "38px", "fontWeight": "600"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .filled-icon {
+            font-variation-settings: 'FILL' 1;
+        }
+        
+        /* Custom Scrollbar for list */
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background-color: #c3c6d7;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background h-screen overflow-hidden flex flex-col font-body-md text-body-md">
+<!-- TopNavBar (Hidden on Mobile per rules, but included for Web) -->
+<header class="hidden md:flex flex-row-reverse items-center justify-between px-md w-full sticky top-0 z-50 backdrop-blur-md bg-surface border-b border-outline-variant h-16 shadow-none">
+<div class="flex items-center gap-4">
+<img alt="Teacher Profile" class="w-10 h-10 rounded-full object-cover border border-outline-variant" data-alt="A small, professional portrait photo of a physics professor with glasses, looking approachable yet academic. Clean white background. Minimalist lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDspNTPoxC_Fvjogz1k6lHxL1pYx-uDSJxuWyOuwFp2CgphuDQ5fxs0SgmPA7BXqbES_bH3eXq-vXT5uoYnpeJgi1diloD1QQR_uTiEPxV43VpA3cNE_haS0BhexMNR-ozk2KR0dNaalY5UfjopMGXCeQUqsad4CUKqGj355qYwzHqDZAwRZ2uhfP_N7LPc8h_pxhAkCc5moVb6DBG2FfPBgCjffIF0GIoDobcoLns4uDjOpV7UHnS5sq3WCxh7AIv0P3zPsWDbr-pT"/>
+<div class="flex items-center gap-2 text-on-surface-variant cursor-pointer hover:bg-surface-container-low transition-colors p-2 rounded-lg">
+<span class="material-symbols-outlined">help_outline</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant cursor-pointer hover:bg-surface-container-low transition-colors p-2 rounded-lg">
+<span class="material-symbols-outlined">notifications</span>
+</div>
+</div>
+<div class="flex-1 max-w-md mx-8 flex justify-end">
+<!-- Search bar on right logic -->
+<div class="relative w-full">
+<input class="w-full bg-surface-container-high border-none rounded-full py-2 pl-4 pr-10 focus:ring-2 focus:ring-primary text-body-md text-on-surface font-body-md" placeholder="البحث في الأسئلة..." type="text"/>
+<span class="material-symbols-outlined absolute right-3 top-2.5 text-on-surface-variant">search</span>
+</div>
+</div>
+<div class="font-headline-sm text-headline-sm font-bold text-primary">
+            PhysicMaster Pro
+        </div>
+</header>
+<div class="flex flex-1 h-[calc(100vh-64px)] overflow-hidden">
+<!-- SideNavBar (Web Only) -->
+<nav class="hidden md:flex flex-col h-full py-lg bg-surface-container-low w-64 flex-shrink-0 border-l border-outline-variant shadow-none">
+<div class="px-6 mb-8 text-center flex flex-col items-center">
+<div class="w-16 h-16 bg-primary-container text-on-primary-container rounded-xl flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-3xl filled-icon">school</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">إدارة الفيزياء</h2>
+<p class="text-on-surface-variant font-label-md text-label-md mt-1">الأستاذ المشرف</p>
+</div>
+<div class="flex-1 px-4 space-y-2">
+<a class="flex flex-row-reverse items-center gap-sm text-on-surface-variant px-4 py-3 rounded-lg hover:bg-surface-container-high transition-all duration-200 ease-in-out font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span>لوحة القيادة</span>
+</a>
+<a class="flex flex-row-reverse items-center gap-sm text-on-surface-variant px-4 py-3 rounded-lg hover:bg-surface-container-high transition-all duration-200 ease-in-out font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">menu_book</span>
+<span>إدارة الدورات</span>
+</a>
+<a class="flex flex-row-reverse items-center gap-sm text-on-surface-variant px-4 py-3 rounded-lg hover:bg-surface-container-high transition-all duration-200 ease-in-out font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">group</span>
+<span>إدارة الطلاب</span>
+</a>
+<a class="flex flex-row-reverse items-center gap-sm text-on-surface-variant px-4 py-3 rounded-lg hover:bg-surface-container-high transition-all duration-200 ease-in-out font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">vpn_key</span>
+<span>رموز التفعيل</span>
+</a>
+<a class="flex flex-row-reverse items-center gap-sm bg-secondary-container text-on-secondary-container rounded-lg px-4 py-3 transition-all duration-200 ease-in-out font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined filled-icon">inbox</span>
+<span>صندوق الأسئلة</span>
+</a>
+</div>
+<div class="px-4 mt-auto space-y-2">
+<a class="flex flex-row-reverse items-center gap-sm text-on-surface-variant px-4 py-3 rounded-lg hover:bg-surface-container-high transition-all duration-200 ease-in-out font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span>الإعدادات</span>
+</a>
+<a class="flex flex-row-reverse items-center gap-sm text-error px-4 py-3 rounded-lg hover:bg-error-container transition-all duration-200 ease-in-out font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">logout</span>
+<span>تسجيل الخروج</span>
+</a>
+</div>
+</nav>
+<!-- Main Content Area (Split Screen) -->
+<main class="flex-1 flex flex-col md:flex-row h-full overflow-hidden bg-background">
+<!-- Right Panel: Question List -->
+<div class="w-full md:w-1/3 flex flex-col h-full border-l border-outline-variant bg-surface-container-lowest">
+<!-- Filters -->
+<div class="p-4 border-b border-outline-variant bg-surface sticky top-0 z-10">
+<div class="flex gap-2">
+<button class="flex-1 py-2 px-3 bg-primary text-on-primary rounded-lg font-label-md text-label-md shadow-[0px_4px_20px_rgba(30,41,59,0.08)]">
+                            الكل (12)
+                        </button>
+<button class="flex-1 py-2 px-3 border border-outline-variant text-on-surface-variant hover:bg-surface-container-low rounded-lg font-label-md text-label-md transition-colors">
+                            عاجل (3)
+                        </button>
+<button class="flex-1 py-2 px-3 border border-outline-variant text-on-surface-variant hover:bg-surface-container-low rounded-lg font-label-md text-label-md transition-colors">
+                            غير محلول
+                        </button>
+</div>
+</div>
+<!-- List -->
+<div class="flex-1 overflow-y-auto custom-scrollbar p-4 space-y-4">
+<!-- Active Question Card -->
+<div class="p-4 rounded-xl border border-primary bg-primary-fixed-dim/20 cursor-pointer shadow-[0px_4px_20px_rgba(30,41,59,0.08)] relative overflow-hidden">
+<div class="absolute right-0 top-0 w-1 h-full bg-primary"></div>
+<div class="flex justify-between items-start mb-2">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-tertiary-container text-on-tertiary-container flex items-center justify-center font-bold text-sm">أحمد</div>
+<span class="font-body-sm text-body-sm text-on-surface font-semibold">أحمد محمود</span>
+</div>
+<span class="text-xs text-on-surface-variant">منذ ساعتين</span>
+</div>
+<h3 class="font-body-md text-body-md text-on-surface font-bold mb-1 truncate">معادلة شرودنغر في البعد الواحد</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">أواجه صعوبة في فهم كيفية تطبيق الشروط الحدية للجهد المربع غير المحدود...</p>
+<div class="mt-3 flex gap-2">
+<span class="px-2 py-1 rounded bg-tertiary/10 text-tertiary text-xs font-label-md">ميكانيكا الكم</span>
+<span class="px-2 py-1 rounded bg-error-container text-on-error-container text-xs font-label-md flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">priority_high</span> عاجل
+                            </span>
+</div>
+</div>
+<!-- Inactive Card 1 -->
+<div class="p-4 rounded-xl border border-outline-variant bg-surface hover:shadow-[0px_4px_20px_rgba(30,41,59,0.08)] hover:border-outline cursor-pointer transition-all">
+<div class="flex justify-between items-start mb-2">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center font-bold text-sm">س</div>
+<span class="font-body-sm text-body-sm text-on-surface font-semibold">سارة علي</span>
+</div>
+<span class="text-xs text-on-surface-variant">منذ 5 ساعات</span>
+</div>
+<h3 class="font-body-md text-body-md text-on-surface font-bold mb-1 truncate">قوانين الديناميكا الحرارية</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">هل يمكن تبسيط القانون الثاني بخصوص الإنتروبيا بمثال عملي؟</p>
+<div class="mt-3 flex gap-2">
+<span class="px-2 py-1 rounded bg-secondary/10 text-secondary text-xs font-label-md">ديناميكا حرارية</span>
+</div>
+</div>
+<!-- Inactive Card 2 -->
+<div class="p-4 rounded-xl border border-outline-variant bg-surface hover:shadow-[0px_4px_20px_rgba(30,41,59,0.08)] hover:border-outline cursor-pointer transition-all">
+<div class="flex justify-between items-start mb-2">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-surface-variant text-on-surface-variant flex items-center justify-center font-bold text-sm">م</div>
+<span class="font-body-sm text-body-sm text-on-surface font-semibold">محمد كمال</span>
+</div>
+<span class="text-xs text-on-surface-variant">أمس</span>
+</div>
+<h3 class="font-body-md text-body-md text-on-surface font-bold mb-1 truncate">حساب تسارع الجاذبية</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">في تجربة البندول البسيط، ما هو تأثير كتلة الكرة على النتيجة النهائية؟</p>
+<div class="mt-3 flex gap-2">
+<span class="px-2 py-1 rounded bg-primary/10 text-primary text-xs font-label-md">ميكانيكا كلاسيكية</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Left Panel: Chat / Response Area -->
+<div class="w-full md:w-2/3 flex flex-col h-full bg-surface-container-lowest">
+<!-- Chat Header -->
+<div class="h-16 border-b border-outline-variant bg-surface flex items-center justify-between px-6 shadow-sm z-10 flex-shrink-0">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-tertiary-container text-on-tertiary-container flex items-center justify-center font-bold text-lg">أحمد</div>
+<div>
+<h2 class="font-headline-sm text-[18px] font-bold text-on-surface leading-tight">أحمد محمود</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">طالب - السنة الثالثة فيزياء</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<button class="p-2 text-on-surface-variant hover:bg-surface-container-high rounded-lg transition-colors" title="إغلاق التذكرة">
+<span class="material-symbols-outlined">check_circle</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:bg-surface-container-high rounded-lg transition-colors" title="مزيد من الخيارات">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+</div>
+<!-- Chat Messages Area -->
+<div class="flex-1 overflow-y-auto p-6 space-y-6 bg-surface-bright custom-scrollbar">
+<!-- Student Question -->
+<div class="flex flex-col items-start max-w-[85%]">
+<div class="bg-surface-container border border-outline-variant rounded-2xl rounded-tr-none p-5 text-on-surface relative shadow-sm">
+<h3 class="font-bold mb-2">استفسار بخصوص معادلة شرودنغر في البعد الواحد</h3>
+<p class="mb-4 leading-relaxed">
+                                أستاذي الفاضل، أواجه صعوبة في فهم كيفية تطبيق الشروط الحدية للجهد المربع غير المحدود. 
+                                لقد وصلت إلى المعادلة العامة:
+                            </p>
+<!-- Fake Math Block -->
+<div class="bg-surface-container-lowest border-r-4 border-primary p-4 rounded mb-4 font-mono text-left rtl:text-right" dir="ltr">
+                                Ψ(x) = A sin(kx) + B cos(kx)
+                            </div>
+<p class="leading-relaxed">
+                                لكنني لا أفهم لماذا يتم استبعاد الحد الثاني (B cos(kx)) عندما يكون الجهد لانهائي عند الأطراف.
+                            </p>
+</div>
+<span class="text-xs text-on-surface-variant mt-2 mr-2">10:30 صباحاً</span>
+</div>
+<!-- System Info message -->
+<div class="flex justify-center my-4">
+<span class="bg-surface-variant text-on-surface-variant px-4 py-1 rounded-full text-xs">تم قراءة الرسالة</span>
+</div>
+</div>
+<!-- Response Input Area -->
+<div class="p-4 border-t border-outline-variant bg-surface flex-shrink-0">
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl shadow-sm focus-within:ring-2 focus-within:ring-primary focus-within:border-primary transition-all">
+<!-- Formatting Toolbar -->
+<div class="flex items-center gap-1 p-2 border-b border-outline-variant/50 bg-surface-container-low rounded-t-xl">
+<button class="p-1.5 text-on-surface-variant hover:bg-surface-variant rounded transition-colors" title="عريض">
+<span class="material-symbols-outlined text-[20px]">format_bold</span>
+</button>
+<button class="p-1.5 text-on-surface-variant hover:bg-surface-variant rounded transition-colors" title="مائل">
+<span class="material-symbols-outlined text-[20px]">format_italic</span>
+</button>
+<div class="w-px h-5 bg-outline-variant mx-1"></div>
+<button class="p-1.5 text-primary bg-primary/10 rounded transition-colors flex items-center gap-1 px-2" title="إدراج معادلة LaTeX">
+<span class="material-symbols-outlined text-[20px]">functions</span>
+<span class="text-xs font-bold">LaTeX</span>
+</button>
+<button class="p-1.5 text-on-surface-variant hover:bg-surface-variant rounded transition-colors" title="إرفاق ملف">
+<span class="material-symbols-outlined text-[20px]">attach_file</span>
+</button>
+</div>
+<!-- Text Area -->
+<textarea class="w-full h-24 p-3 bg-transparent border-none focus:ring-0 resize-none font-body-md text-on-surface placeholder-on-surface-variant/50" placeholder="اكتب ردك هنا... استخدم $$ لكتابة المعادلات الرياضية"></textarea>
+<!-- Footer actions -->
+<div class="flex justify-between items-center p-2 pt-0">
+<span class="text-xs text-on-surface-variant mr-2 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">info</span>
+                                يدعم تنسيق Markdown
+                            </span>
+<button class="bg-primary hover:bg-on-primary-fixed-variant text-on-primary px-6 py-2 rounded-lg font-bold flex items-center gap-2 transition-colors shadow-[0px_4px_20px_rgba(30,41,59,0.08)]">
+<span>إرسال الرد</span>
+<span class="material-symbols-outlined rtl:rotate-180">send</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

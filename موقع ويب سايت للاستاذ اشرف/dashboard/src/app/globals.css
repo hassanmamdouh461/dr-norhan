@@ -1,0 +1,174 @@
+/* =============================================================================
+   فُصْحَى — Dashboard global stylesheet
+   Token layer lives in brand/fusha-tokens.css and is imported, never duplicated.
+   If Next's css-loader ever refuses the ../../../ path, copy the token file to
+   dashboard/src/styles/fusha-tokens.css and change the import below.
+   ============================================================================= */
+@import '../../../brand/fusha-tokens.css';
+
+/* Cairo = UI (incl. Latin/numerals). Amiri = poetry & rhetorical quotations only.
+   Plus Jakarta Sans and Inter were removed: they are Latin-only, so Arabic text
+   fell through to Cairo anyway — two font payloads for zero Arabic glyphs. */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&family=Amiri:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=block');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    color-scheme: light;
+    scroll-behavior: smooth;
+  }
+  html.dark {
+    color-scheme: dark;
+  }
+
+  body {
+    @apply bg-background text-on-background antialiased min-h-screen overflow-x-hidden;
+    font-family: var(--font-ui);
+    background-color: var(--bg-canvas);
+    color: var(--text-primary);
+    font-size: var(--text-body);
+    line-height: var(--lh-body);
+  }
+
+  /* Arabic needs a slightly roomier line box than Latin at the same size. */
+  :lang(ar) { line-height: 1.7; }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-ui);
+    color: var(--text-primary);
+    font-weight: 800;
+  }
+
+  /* Material Symbols must stay LTR inside an RTL text flow. */
+  .material-symbols-outlined,
+  .material-symbols-rounded {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    display: inline-block;
+    line-height: 1;
+    direction: ltr;
+  }
+
+  /* Focus rings: gold on brand/dark surfaces, teal on light. Always a double
+     ring (2px surface gap + 2px brand) so it clears 3:1 on both edges. */
+  :focus-visible { outline: none; }
+
+  input:focus-visible,
+  select:focus-visible,
+  textarea:focus-visible,
+  button:focus-visible,
+  a:focus-visible,
+  [tabindex]:focus-visible {
+    outline: none;
+    box-shadow: var(--ring-on-light);
+  }
+
+  ::selection { background: var(--brand-accent-subtle); color: var(--text-primary); }
+
+  input[type="checkbox"],
+  input[type="radio"] { accent-color: var(--brand-primary); }
+}
+
+/* ── Scrollbars (brass thumb, per spec §2.1) ─────────────────────────────── */
+.custom-scrollbar { scrollbar-width: thin; scrollbar-color: var(--fx-brass-600) transparent; }
+.custom-scrollbar::-webkit-scrollbar { width: 8px; height: 8px; }
+.custom-scrollbar::-webkit-scrollbar-thumb { background: var(--fx-brass-600); border-radius: 9999px; }
+
+/* ── Skeletons ───────────────────────────────────────────────────────────── */
+.loading-skeleton {
+  background-color: var(--bg-surface-subtle);
+  background-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    color-mix(in srgb, var(--brand-accent) 12%, transparent) 50%,
+    transparent 100%
+  );
+  background-size: 400% 100%;
+  background-repeat: no-repeat;
+  border-radius: var(--radius-md);
+  animation: fusha-shimmer 1.6s linear infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .loading-skeleton { animation: none; background-image: none; opacity: 0.6; }
+}
+
+/* ── Elevation helpers ───────────────────────────────────────────────────── */
+.shadow-ambient,
+.shadow-card,
+.shadow-soft { box-shadow: var(--shadow-md); }
+.shadow-lift  { box-shadow: var(--shadow-lg); }
+
+/* ── Gradients ───────────────────────────────────────────────────────────── */
+.gradient-btn {
+  background: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-secondary) 100%);
+  color: var(--text-inverse);
+}
+.text-gradient {
+  background: linear-gradient(120deg, var(--brand-primary), var(--brand-secondary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ── Premium cards / table rows ──────────────────────────────────────────── */
+.premium-kpi-card {
+  transition: box-shadow var(--dur-expand) var(--ease-standard),
+              transform var(--dur-expand) var(--ease-standard),
+              border-color var(--dur-expand) var(--ease-standard);
+  border: 1px solid var(--border-subtle);
+}
+.premium-kpi-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--brand-sage);
+  box-shadow: var(--shadow-lg);
+}
+
+/* border-inline-start, NOT border-left — must flip with dir=rtl. */
+.premium-table-row {
+  transition: background-color var(--dur-micro) var(--ease-standard);
+  border-inline-start: 3px solid transparent;
+}
+.premium-table-row:hover {
+  background-color: var(--bg-surface-subtle);
+  border-inline-start-color: var(--brand-primary);
+}
+
+/* ── Native dialog ───────────────────────────────────────────────────────── */
+dialog::backdrop {
+  background: var(--bg-scrim);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+/* ── Lightweight entrance helpers ────────────────────────────────────────── */
+.anim-fade     { animation: fusha-fade-in var(--dur-expand) var(--ease-standard); }
+.anim-slide-up { animation: fusha-slide-up var(--dur-expand) var(--ease-standard); }
+.anim-zoom     { animation: fusha-zoom-in var(--dur-modal) var(--ease-standard); }
+
+.animate-error-shake { animation: fusha-shake var(--dur-expand) var(--ease-standard); }
+.animate-spin-slow   { animation: fusha-spin 10s linear infinite; }
+
+/* ── Theme-switcher micro-animations (dark-mode toggle) ──────────────────── */
+@keyframes moon-swing {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(-15deg); }
+  75% { transform: rotate(15deg); }
+  100% { transform: rotate(0deg); }
+}
+.animate-moon-swing {
+  animation: moon-swing 3s ease-in-out infinite;
+  transform-origin: 50% 0%;
+  display: inline-block;
+}
+@keyframes sun-beam {
+  0%, 100% { transform: scale(1); filter: drop-shadow(0 0 2px rgba(232, 181, 74, 0.4)); }
+  50%      { transform: scale(1.15); filter: drop-shadow(0 0 8px rgba(232, 181, 74, 0.8)); }
+}
+@keyframes sun-spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+.animate-sun-beam {
+  animation: sun-beam 2s ease-in-out infinite, sun-spin 10s linear infinite;
+  display: inline-block;
+}

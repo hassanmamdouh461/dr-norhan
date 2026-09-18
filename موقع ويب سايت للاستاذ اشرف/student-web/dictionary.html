@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>معجم فُصْحَى اللغوي | منصة فُصْحَى — أ. أشرف سليم</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@400;600;700;800;900&family=Cairo:wght@400;500;600;700;800&family=Amiri:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+  
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="bg-fusha-stone text-slate-800 font-cairo antialiased min-h-screen flex flex-col selection:bg-fusha-khaki selection:text-fusha-forest">
+
+  <!-- Header -->
+  <!-- Unified Header -->
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-stone-200/80 shadow-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-18 sm:h-20 flex items-center justify-between gap-4">
+      <!-- Brand Logo & Title -->
+      <a href="dashboard.html" class="flex items-center gap-3 group shrink-0">
+        <img src="assets/fusha-brand-logo.png" alt="فصحى" class="h-10 sm:h-11 w-auto object-contain transition-transform group-hover:scale-[1.02]" />
+        <div class="hidden sm:flex flex-col border-r-2 border-stone-200/90 pr-3 py-0.5">
+          <span class="text-xs font-alexandria font-bold text-fusha-forest leading-tight">منصة فُصْحَى</span>
+          <span class="text-[10px] text-fusha-olive font-bold leading-tight">أ. أشرف سليم — لغة عربية</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav id="navbar-links" class="hidden lg:flex items-center gap-1.5 xl:gap-2 text-xs sm:text-sm font-bold text-fusha-forest">
+        <a href="dashboard.html" class="px-3.5 py-2 rounded-xl text-stone-600 hover:text-fusha-forest hover:bg-stone-100 font-bold text-xs sm:text-sm transition-all flex items-center gap-1.5">
+          <i data-lucide="home" class="w-4 h-4 opacity-70"></i>
+          <span>الرئيسية</span>
+        </a>
+        <a href="courses.html" class="px-3.5 py-2 rounded-xl text-stone-600 hover:text-fusha-forest hover:bg-stone-100 font-bold text-xs sm:text-sm transition-all flex items-center gap-1.5">
+          <i data-lucide="book-open" class="w-4 h-4 opacity-70"></i>
+          <span>المناهج والمحاضرات</span>
+        </a>
+        <a href="bank.html" class="px-3.5 py-2 rounded-xl text-stone-600 hover:text-fusha-forest hover:bg-stone-100 font-bold text-xs sm:text-sm transition-all flex items-center gap-1.5">
+          <i data-lucide="layers" class="w-4 h-4 opacity-70"></i>
+          <span>بنك الأسئلة</span>
+        </a>
+        <a href="dictionary.html" class="px-3.5 py-2 rounded-xl bg-fusha-forest text-white font-bold text-xs sm:text-sm shadow-xs transition-all flex items-center gap-1.5">
+          <i data-lucide="book-marked" class="w-4 h-4 opacity-90"></i>
+          <span>معجم فُصْحَى</span>
+        </a>
+        <a href="parent.html" class="px-3.5 py-2 rounded-xl text-stone-600 hover:text-fusha-forest hover:bg-stone-100 font-bold text-xs sm:text-sm transition-all flex items-center gap-1.5">
+          <i data-lucide="shield-check" class="w-4 h-4 opacity-70"></i>
+          <span>متابعة ولي الأمر</span>
+        </a>
+      </nav>
+
+      <!-- Auth Action Container & Mobile Toggle -->
+      <div class="flex items-center gap-2 sm:gap-3 shrink-0">
+        <div id="navbar-auth-actions" class="flex items-center gap-2 sm:gap-2.5"></div>
+        <button id="mobileMenuBtn" type="button" class="lg:hidden p-2.5 rounded-xl bg-stone-100 hover:bg-stone-200/80 text-fusha-forest transition cursor-pointer" aria-label="فتح القائمة">
+          <i data-lucide="menu" class="w-5 h-5"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="flex-1 max-w-5xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
+    
+    <!-- Hero Search Section -->
+    <div class="bg-gradient-to-r from-fusha-forest via-fusha-forestLight to-fusha-forest text-white p-6 sm:p-10 rounded-3xl shadow-xl text-center space-y-4 relative overflow-hidden">
+      <div class="max-w-2xl mx-auto space-y-2 relative z-10">
+        <span class="px-3.5 py-1 rounded-full bg-white/10 text-fusha-khaki text-xs font-bold border border-white/10">
+          معجم لغوي شامل لطلاب الثانوية العامة
+        </span>
+        <h1 class="font-alexandria font-extrabold text-2xl sm:text-3xl text-white">
+          ابحث عن أي كلمة في منهجك
+        </h1>
+        <p class="text-xs sm:text-sm text-fusha-khaki leading-relaxed">
+          معاني الكلمات، المفرد والجمع، المضاد، الأصول المعجمية، وشواهد النصوص والقراءة المتحررة.
+        </p>
+
+        <!-- Big Search Bar -->
+        <div class="pt-4 max-w-xl mx-auto">
+          <div class="relative">
+            <input type="text" id="dictSearchInput" placeholder="اكتب الكلمة هنا (مثال: أريحيّة، الضيم، عسجد)..." class="w-full px-5 py-4 pe-12 rounded-2xl bg-white text-slate-800 placeholder:text-stone-400 text-sm sm:text-base font-medium shadow-2xl focus:outline-none focus:ring-2 focus:ring-fusha-sun transition" />
+            <button id="dictSearchBtn" class="absolute end-2 top-2 bottom-2 px-4 rounded-xl bg-fusha-forest text-white hover:bg-fusha-forestLight transition flex items-center justify-center">
+              <i data-lucide="search" class="w-5 h-5 text-fusha-sun"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Popular Words Pills -->
+        <div class="pt-3 flex flex-wrap items-center justify-center gap-2 text-xs">
+          <span class="text-fusha-khaki font-medium">كلمات متكررة في الامتحانات:</span>
+          <button onclick="quickSearch('أريحيّة')" class="px-2.5 py-1 rounded-lg bg-white/10 hover:bg-white/20 text-white font-bold transition">أريحيّة</button>
+          <button onclick="quickSearch('الضَّيْم')" class="px-2.5 py-1 rounded-lg bg-white/10 hover:bg-white/20 text-white font-bold transition">الضَّيْم</button>
+          <button onclick="quickSearch('عَسْجَد')" class="px-2.5 py-1 rounded-lg bg-white/10 hover:bg-white/20 text-white font-bold transition">عَسْجَد</button>
+          <button onclick="quickSearch('تَثْرِيب')" class="px-2.5 py-1 rounded-lg bg-white/10 hover:bg-white/20 text-white font-bold transition">تَثْرِيب</button>
+          <button onclick="quickSearch('سُؤْدَد')" class="px-2.5 py-1 rounded-lg bg-white/10 hover:bg-white/20 text-white font-bold transition">سُؤْدَد</button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Word Results Container -->
+    <div id="wordResultContainer" class="space-y-6">
+      <!-- Default state: Featured Word -->
+      <div class="bg-white rounded-3xl p-6 sm:p-8 border border-stone-200/80 shadow-sm space-y-6">
+        <div class="flex flex-wrap items-center justify-between gap-3 border-b border-stone-100 pb-4">
+          <div>
+            <div class="flex items-center gap-3">
+              <h2 class="font-alexandria font-extrabold text-2xl sm:text-3xl text-fusha-forest" id="resWord">
+                الأَرِيحِيَّةُ
+              </h2>
+              <span class="px-2.5 py-0.5 rounded-lg bg-fusha-sage/15 text-fusha-sage text-xs font-bold" id="resRoot">
+                الجذر: [ ر - و - ح ]
+              </span>
+            </div>
+            <p class="text-xs text-stone-400 mt-1">اسم مؤنث منسوب إلى الأريح</p>
+          </div>
+          <button onclick="window.showToast('تم نسخ المعنى بنجاح!', 'info')" class="p-2.5 rounded-xl border border-stone-200 text-stone-500 hover:text-fusha-forest hover:border-fusha-forest transition" title="مشاركة">
+            <i data-lucide="share-2" class="w-4 h-4"></i>
+          </button>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <div class="p-4 rounded-2xl bg-stone-50 border border-stone-200/70">
+            <span class="text-[11px] text-stone-400 font-bold block mb-1">المعنى والدلالة</span>
+            <p class="text-xs sm:text-sm font-semibold text-fusha-forest leading-relaxed" id="resMeaning">
+              النشاط والارتياح إلى فعل الخير والجود والكرم، وعزة النفس.
+            </p>
+          </div>
+
+          <div class="p-4 rounded-2xl bg-stone-50 border border-stone-200/70">
+            <span class="text-[11px] text-stone-400 font-bold block mb-1">المفرد والجمع</span>
+            <p class="text-xs sm:text-sm font-semibold text-fusha-forest" id="resPlural">
+              الجمع: أَرِيحِيَّات (ولا مفرد لها من لفظها).
+            </p>
+          </div>
+
+          <div class="p-4 rounded-2xl bg-stone-50 border border-stone-200/70">
+            <span class="text-[11px] text-stone-400 font-bold block mb-1">المضاد والعكس</span>
+            <p class="text-xs sm:text-sm font-semibold text-fusha-forest" id="resAntonym">
+              اللؤم، الشحّ، البخل، والجمود.
+            </p>
+          </div>
+        </div>
+
+        <!-- Poetic Verse Citation -->
+        <div class="bg-fusha-forest/5 rounded-2xl p-5 border border-fusha-forest/10 space-y-2">
+          <span class="text-[11px] font-bold text-fusha-olive block">شاهِدٌ شِعريٌّ من نصوص الثانوية العامة:</span>
+          <p class="font-amiri text-base sm:text-lg text-fusha-forest leading-loose" id="resPoem">
+            «إِنَّ الشَّبَابَ إِذَا سَمَا بِطُمُوحِهِ .. لَقِيَ الحَيَاةَ بِهِمَّةٍ وَأَرِيحِيَّةِ»
+          </p>
+          <span class="text-[11px] text-stone-500 block font-medium" id="resContext">
+            وردت في امتحان الثانوية العامة (الدور الأول 2022) في سؤال القراءة المتحررة.
+          </span>
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="mt-16 bg-white border-t border-stone-200 py-6 text-center text-xs text-stone-500">
+    منصة وتطبيق فُصْحَى للغة العربية — أ. أشرف سليم © <span id="year"></span>
+  </footer>
+
+  <script src="/assets/js/api.js?v=20260917_02"></script>
+  <script src="/assets/js/nav.js?v=20260917_03"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const localDictionary = {
+      'أريحية': {
+        word: 'الأَرِيحِيَّةُ',
+        root: 'الجذر: [ ر - و - ح ]',
+        meaning: 'النشاط والارتياح إلى فعل الخير والجود والكرم وعزة النفس.',
+        plural: 'الجمع: أَرِيحِيَّات',
+        antonym: 'المضاد: اللؤم، الشح، والبخل.',
+        poem: '«إِنَّ الشَّبَابَ إِذَا سَمَا بِطُمُوحِهِ .. لَقِيَ الحَيَاةَ بِهِمَّةٍ وَأَرِيحِيَّةِ»',
+        context: 'وردت في امتحان الثانوية العامة دور أول 2022.'
+      },
+      'الضيم': {
+        word: 'الضَّيْمُ',
+        root: 'الجذر: [ ض - ي - م ]',
+        meaning: 'الظلم والجور والاضطهاد وما لا يُطاق من المذلة.',
+        plural: 'الجمع: ضُيُوم',
+        antonym: 'المضاد: العدل، القسط، والإنصاف.',
+        poem: '«وَلَا يُقِيمُ عَلَى ضَيْمٍ يُرَادُ بِهِ .. إِلَّا الأَذَلَّانِ عَيْرُ الحَيِّ وَالوَتَدُ»',
+        context: 'شاهد نحوي وبلاغي مقرر في نصوص الفخر والحماسة.'
+      },
+      'عسجد': {
+        word: 'العَسْجَدُ',
+        root: 'الجذر: [ ع - س - ج - د ] (رباعي مجرد)',
+        meaning: 'الذهب الخالص والجوهر الثمين النفيس.',
+        plural: 'الجمع: عَسَاجِد',
+        antonym: 'المضاد: الخَسيس، التافه، المعدن الرخيص.',
+        poem: '«وَتَذْهَبُ قِطْعَةٌ سَوْدَاءُ لَيْلًا .. وَتُشْرِقُ صَفْحَةُ الصُّبْحِ العَسْجَدِيِّ»',
+        context: 'ورد في نص (المساء) لخليل مطران تشبيهاً للغروب وشعاع الشمس الذهبي.'
+      },
+      'تثريب': {
+        word: 'التَّثْرِيبُ',
+        root: 'الجذر: [ ث - ر - ب ]',
+        meaning: 'اللَّوْمُ والتوبيخ والتقريع وتعيير الشخص بذنبه.',
+        plural: 'المصدر من ثَرَّبَ يُثَرِّبُ',
+        antonym: 'المضاد: العفو، الصفح، التسامح، والمدح.',
+        poem: '«قَالَ لَا تَثْرِيبَ عَلَيْكُمُ اليَوْمَ يَغْفِرُ اللَّهُ لَكُمْ وَهُوَ أَرْحَمُ الرَّاحِمِينَ»',
+        context: 'سورة يوسف — الآية 92، ومقررة في البلاغة (أسلوب النفي والعفو).'
+      },
+      'سؤدد': {
+        word: 'السُّؤْدَدُ',
+        root: 'الجذر: [ س - و - د ]',
+        meaning: 'الشَّرَفُ والمَجْدُ والرِّيَاسَةُ والسيادة في القوم.',
+        plural: 'الجمع: أسواد وسُوَد',
+        antonym: 'المضاد: الضَّعَةُ، الخِسَّةُ، والمهانة.',
+        poem: '«وَإِنَّمَا المَرْءُ حَدِيثٌ بَعْدَهُ .. فَكُنْ حَدِيثًا حَسَنًا لِمَنْ وَعَى»',
+        context: 'شائع في نصوص الرثاء والمدح للثانوية العامة.'
+      }
+    };
+
+    const searchInput = document.getElementById('dictSearchInput');
+    const searchBtn = document.getElementById('dictSearchBtn');
+
+    searchBtn.addEventListener('click', () => performSearch(searchInput.value));
+    searchInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') performSearch(searchInput.value);
+    });
+
+    function quickSearch(word) {
+      searchInput.value = word;
+      performSearch(word);
+    }
+
+    async function performSearch(raw) {
+      const q = raw.trim().replace(/[\u064B-\u065F\u0670]/g, '').replace(/ال/g, '');
+      if (!q) return;
+
+      // Try API first, fallback to local
+      try {
+        const apiRes = await window.api.dictionary.search(raw).catch(() => null);
+        if (apiRes?.results && apiRes.results.length > 0) {
+          const entry = apiRes.results[0];
+          displayWord({
+            word: entry.word,
+            root: `الجذر: [ ${entry.root || '---'} ]`,
+            meaning: entry.meaning,
+            plural: `الجمع: ${entry.plural || 'غير محدد'}`,
+            antonym: `المضاد: ${entry.antonym || 'غير محدد'}`,
+            poem: entry.poem_citation || '«شاهد لغوي من منهج الثانوية العامة»',
+            context: entry.exam_context || 'مقرر في منهج اللغة العربية'
+          });
+          return;
+        }
+      } catch {
+        // Fallback below
+      }
+
+      // Check local entries
+      const matchedKey = Object.keys(localDictionary).find(k => k.includes(q) || q.includes(k));
+      if (matchedKey) {
+        displayWord(localDictionary[matchedKey]);
+      } else {
+        displayNotFound(raw);
+      }
+    }
+
+    function displayWord(data) {
+      const container = document.getElementById('wordResultContainer');
+      container.innerHTML = `
+        <div class="bg-white rounded-3xl p-6 sm:p-8 border border-stone-200/80 shadow-sm space-y-6">
+          <div class="flex flex-wrap items-center justify-between gap-3 border-b border-stone-100 pb-4">
+            <div>
+              <div class="flex items-center gap-3">
+                <h2 class="font-alexandria font-extrabold text-2xl sm:text-3xl text-fusha-forest">${data.word}</h2>
+                <span class="px-2.5 py-0.5 rounded-lg bg-fusha-sage/15 text-fusha-sage text-xs font-bold">${data.root}</span>
+              </div>
+              <p class="text-xs text-stone-400 mt-1">المعجم الوسيط ومفردات الثانوية العامة</p>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <div class="p-4 rounded-2xl bg-stone-50 border border-stone-200/70">
+              <span class="text-[11px] text-stone-400 font-bold block mb-1">المعنى والدلالة</span>
+              <p class="text-xs sm:text-sm font-semibold text-fusha-forest leading-relaxed">${data.meaning}</p>
+            </div>
+
+            <div class="p-4 rounded-2xl bg-stone-50 border border-stone-200/70">
+              <span class="text-[11px] text-stone-400 font-bold block mb-1">المفرد والجمع</span>
+              <p class="text-xs sm:text-sm font-semibold text-fusha-forest">${data.plural}</p>
+            </div>
+
+            <div class="p-4 rounded-2xl bg-stone-50 border border-stone-200/70">
+              <span class="text-[11px] text-stone-400 font-bold block mb-1">المضاد والعكس</span>
+              <p class="text-xs sm:text-sm font-semibold text-fusha-forest">${data.antonym}</p>
+            </div>
+          </div>
+
+          <div class="bg-fusha-forest/5 rounded-2xl p-5 border border-fusha-forest/10 space-y-2">
+            <span class="text-[11px] font-bold text-fusha-olive block">شاهِدٌ شِعريٌّ من نصوص الثانوية العامة:</span>
+            <p class="font-amiri text-base sm:text-lg text-fusha-forest leading-loose">${data.poem}</p>
+            <span class="text-[11px] text-stone-500 block font-medium">${data.context}</span>
+          </div>
+        </div>
+      `;
+      if (window.lucide) window.lucide.createIcons();
+    }
+
+    function displayNotFound(query) {
+      const container = document.getElementById('wordResultContainer');
+      container.innerHTML = `
+        <div class="bg-white rounded-3xl p-10 text-center border border-stone-200 space-y-3">
+          <div class="w-12 h-12 rounded-2xl bg-stone-100 text-stone-400 flex items-center justify-center mx-auto">
+            <i data-lucide="book-x" class="w-6 h-6"></i>
+          </div>
+          <h3 class="font-alexandria font-bold text-base text-fusha-forest">لم نجد الكلمة «${query}» في المعجم الحالي</h3>
+          <p class="text-xs text-stone-500 max-w-sm mx-auto">تأكد من كتابة الكلمة بصورة صحيحة بدون زيادة أحرف، أو جرب البحث بجذر الكلمة الأصلي.</p>
+        </div>
+      `;
+      if (window.lucide) window.lucide.createIcons();
+    }
+  </script>
+</body>
+</html>
+

@@ -1,0 +1,390 @@
+﻿<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>قاعة الاختبارات الإلكترونية | منصة فُصْحَى — أ. أشرف سليم</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@400;600;700;800;900&family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="bg-fusha-stone text-slate-800 font-cairo antialiased min-h-screen flex flex-col selection:bg-fusha-khaki selection:text-fusha-forest">
+
+  <!-- Exam Header with Timer -->
+  <header class="sticky top-0 z-40 bg-white border-b border-stone-200 px-4 sm:px-8 h-18 flex items-center justify-between shadow-sm">
+    <div class="flex items-center gap-3">
+      <img src="assets/fusha-brand-logo.png" alt="فصحى" class="h-9 w-auto object-contain" />
+      <div class="border-r border-stone-200 pr-3">
+        <h1 id="examTitle" class="text-xs sm:text-sm font-alexandria font-bold text-fusha-forest">امتحان شامل — لغة عربية</h1>
+        <span class="text-[11px] text-stone-500 font-medium">نظام بابل شيت متوافق مع مواصفات الوزارة</span>
+      </div>
+    </div>
+
+    <!-- Countdown Timer -->
+    <div id="timerBadge" class="flex items-center gap-2 px-4 py-2 rounded-2xl bg-fusha-forest text-white font-mono font-bold text-sm shadow-md">
+      <i data-lucide="timer" class="w-4 h-4 text-fusha-sun animate-pulse"></i>
+      <span id="timerDisplay">29:59</span>
+    </div>
+  </header>
+
+  <!-- Exam Body -->
+  <main class="flex-1 max-w-5xl w-full mx-auto px-4 sm:px-6 py-8 flex flex-col justify-between" id="examMainContainer">
+    
+    <!-- Question Progress Bar -->
+    <div class="space-y-2 mb-6">
+      <div class="flex items-center justify-between text-xs font-bold text-stone-600">
+        <span id="questionProgressText">سؤال 1 من 10</span>
+        <span id="answeredPercentage">10% مكتمل</span>
+      </div>
+      <div class="w-full bg-stone-200 h-2.5 rounded-full overflow-hidden">
+        <div id="progressBarFill" class="bg-fusha-sun h-full transition-all duration-300 rounded-full" style="width: 10%;"></div>
+      </div>
+    </div>
+
+    <!-- Active Question Card (Hick's Law: 1 per view) -->
+    <div class="bg-white rounded-3xl p-6 sm:p-10 border border-stone-200/80 shadow-md space-y-6 flex-1 flex flex-col justify-between" id="activeQuestionCard">
+      <div class="space-y-4">
+        <div class="flex items-center justify-between">
+          <span id="questionTopicBadge" class="px-3 py-1 rounded-xl bg-fusha-sage/10 text-fusha-sage font-bold text-xs">
+            النحو والصرف
+          </span>
+          <span class="text-xs text-stone-400 font-medium" id="questionDegree">درجة واحدة</span>
+        </div>
+
+        <h2 id="questionText" class="text-base sm:text-lg md:text-xl font-bold text-fusha-forest leading-relaxed">
+          جاري تحميل السؤال...
+        </h2>
+      </div>
+
+      <!-- Options Container -->
+      <div id="optionsContainer" class="space-y-3 pt-4">
+        <!-- Options rendered dynamically -->
+      </div>
+
+      <!-- Action Navigation -->
+      <div class="pt-6 border-t border-stone-100 flex items-center justify-between gap-4">
+        <button id="prevQuestionBtn" class="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-stone-100 hover:bg-stone-200 text-stone-700 text-xs font-bold transition disabled:opacity-30 disabled:cursor-not-allowed">
+          <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          <span>السؤال السابق</span>
+        </button>
+
+        <button id="flagQuestionBtn" class="flex items-center gap-1.5 px-3 py-2 rounded-xl text-stone-500 hover:text-amber-600 text-xs font-semibold transition">
+          <i data-lucide="flag" class="w-4 h-4"></i>
+          <span class="hidden sm:inline">تمييز للمراجعة</span>
+        </button>
+
+        <button id="nextQuestionBtn" class="flex items-center gap-2 px-6 py-2.5 rounded-xl bg-fusha-forest hover:bg-fusha-forestLight text-white text-xs font-bold shadow-md transition">
+          <span>السؤال التالي</span>
+          <i data-lucide="arrow-left" class="w-4 h-4"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Question Palette Dots -->
+    <div class="mt-6 p-4 bg-white rounded-2xl border border-stone-200 flex flex-wrap items-center justify-center gap-2" id="questionPalette">
+      <!-- Dots rendered dynamically -->
+    </div>
+
+  </main>
+
+  <!-- Submit Confirmation Modal -->
+  <div id="submitModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm hidden">
+    <div class="bg-white rounded-3xl p-6 sm:p-8 max-w-md w-full text-center space-y-4 shadow-2xl">
+      <div class="w-14 h-14 rounded-2xl bg-fusha-sun/20 text-fusha-sun flex items-center justify-center mx-auto">
+        <i data-lucide="help-circle" class="w-7 h-7"></i>
+      </div>
+      <h3 class="font-alexandria font-bold text-lg text-fusha-forest">هل أنت متأكد من تسليم الإجابات؟</h3>
+      <p class="text-xs text-stone-500" id="submitModalStats">لقد قمت بحل 10 من أصل 10 أسئلة. بمجرد التسليم ستظهر نتيجتك ونموذج الإجابة فورياً.</p>
+      <div class="grid grid-cols-2 gap-3 pt-2">
+        <button onclick="closeSubmitModal()" class="py-2.5 rounded-xl bg-stone-100 hover:bg-stone-200 text-stone-700 text-xs font-bold transition">
+          مراجعة الأسئلة
+        </button>
+        <button onclick="confirmSubmitExam()" class="py-2.5 rounded-xl bg-fusha-forest hover:bg-fusha-forestLight text-white text-xs font-bold transition shadow-md">
+          تأكيد التسليم
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Results Screen Container (Hidden until submission) -->
+  <div id="resultsScreen" class="hidden flex-1 max-w-4xl w-full mx-auto px-4 py-10 space-y-8">
+    <div class="bg-white rounded-3xl p-8 sm:p-10 border border-stone-200 text-center space-y-4 shadow-xl">
+      <div class="w-20 h-20 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto text-3xl font-bold">
+        🏆
+      </div>
+      <h2 class="font-alexandria font-extrabold text-2xl sm:text-3xl text-fusha-forest">اكتمل الاختبار بنجاح!</h2>
+      <p class="text-xs sm:text-sm text-stone-500">تم تسجيل درجاتك وحفظها في سجلك الأكاديمي لدى الأستاذ أشرف سليم.</p>
+      
+      <div class="inline-flex items-center gap-3 px-6 py-3 rounded-2xl bg-fusha-stone border border-stone-200">
+        <span class="text-xs text-stone-500 font-bold">درجتك النهائية:</span>
+        <span id="finalScoreDisplay" class="font-alexandria font-extrabold text-2xl text-fusha-forest">-- / --</span>
+        <span id="finalPercentageBadge" class="px-2.5 py-1 rounded-lg bg-emerald-100 text-emerald-800 text-xs font-bold">95%</span>
+      </div>
+
+      <div class="pt-4 flex flex-wrap items-center justify-center gap-3">
+        <a href="dashboard.html" class="px-5 py-2.5 rounded-xl bg-fusha-forest text-white text-xs font-bold hover:bg-fusha-forestLight transition">
+          العودة للوحة التحكم
+        </a>
+        <a href="bank.html" class="px-5 py-2.5 rounded-xl bg-stone-100 text-stone-700 text-xs font-bold hover:bg-stone-200 transition">
+          تدريبات أخرى من بنك الأسئلة
+        </a>
+      </div>
+    </div>
+
+    <!-- Answer Model Breakdown -->
+    <div class="space-y-4">
+      <h3 class="font-alexandria font-bold text-lg text-fusha-forest flex items-center gap-2">
+        <i data-lucide="check-check" class="w-5 h-5 text-emerald-600"></i>
+        <span>نموذج الإجابة وتفسير الأستاذ أشرف سليم</span>
+      </h3>
+      <div id="answersBreakdownList" class="space-y-4">
+        <!-- Answers rendered here -->
+      </div>
+    </div>
+  </div>
+
+  <script src="/assets/js/api.js?v=20260917_02"></script>
+  <script>
+    if (window.lucide) window.lucide.createIcons();
+
+    const questionsData = [
+      {
+        id: 'q1',
+        topic: 'الوحدة الأولى: همزة القطع والوصل',
+        text: '«أَصْبَحَ العُلَمَاءُ يَسْعَوْنَ لِرِفْعَةِ أُمَّتِهِمْ».. الكلمة التي بدأت بهمزة قطع لعلّة كونها حرفاً هي:',
+        options: [
+          { text: 'أَصْبَحَ', isCorrect: false },
+          { text: 'العُلَمَاءُ', isCorrect: false },
+          { text: 'أُمَّتِهِمْ', isCorrect: false },
+          { text: 'إِلَى (أو أُمَّتِهِمْ كاسم)', isCorrect: true, reason: 'لأن جميع الحروف همزتها قطع (إلى، أن، إن، أو) ما عدا «ال» التعريفية.' }
+        ]
+      },
+      {
+        id: 'q2',
+        topic: 'الوحدة الثانية: المشتقات العاملة',
+        text: '«أَمُمْنُوحٌ المُتَفَوِّقُ جَائِزَةً؟».. إعراب كلمة «جَائِزَةً» في الجملة السابقة هو:',
+        options: [
+          { text: 'مفعول به أول', isCorrect: false },
+          { text: 'مفعول به ثانٍ منصوب وعلامة نصبه الفتحة', isCorrect: true, reason: 'لأن الفعل «مَنَحَ» ينصب مفعولين، وعند البناء للمجهول أصبح المفعول به الأول نائباً للفاعل (المتفوق) وظل المفعول الثاني مفعولاً به ثانياً.' },
+          { text: 'نائب فاعل مرفوع', isCorrect: false },
+          { text: 'مضاف إليه مجرور', isCorrect: false }
+        ]
+      },
+      {
+        id: 'q3',
+        topic: 'الوحدة الثالثة: النواسخ',
+        text: '«عَسَى المَطَرُ أَنْ يَنْزِلَ».. حُكْمُ اقْتِرَانِ خَبَرِ «عَسَى» بِـ «أَنْ»:',
+        options: [
+          { text: 'يقلّ', isCorrect: false },
+          { text: 'يكثر', isCorrect: true, reason: 'أفعال الرجاء (عسى، وأوشك) يكثر اقتران خبرها بأن، بينما (كاد وكرب) يقل، و(حري واخلولق) يجب.' },
+          { text: 'يجب', isCorrect: false },
+          { text: 'يمتنع', isCorrect: false }
+        ]
+      },
+      {
+        id: 'q4',
+        topic: 'البلاغة والنصوص: علم المعاني',
+        text: 'قول الشاعر: «هَلْ يَسْتَوِي الذِينَ يَعْلَمُونَ وَالذِينَ لَا يَعْلَمُونَ؟».. الغرض البلاغي من الاستفهام هو:',
+        options: [
+          { text: 'النفي والإنكار', isCorrect: true, reason: 'لأنه يصح وضع أداة نفي مكان أداة الاستفهام (أي: لا يستوي الذين يعلمون والذين لا يعلمون).' },
+          { text: 'التقرير والتوكيد', isCorrect: false },
+          { text: 'التعجب والدهشة', isCorrect: false },
+          { text: 'التمني والرجاء', isCorrect: false }
+        ]
+      }
+    ];
+
+    let currentQuestionIdx = 0;
+    let studentAnswers = {};
+    let flaggedQuestions = new Set();
+    let timeLeft = 1800; // 30 minutes
+
+    // Timer Interval
+    const timerInterval = setInterval(() => {
+      timeLeft--;
+      const mins = Math.floor(timeLeft / 60).toString().padStart(2, '0');
+      const secs = (timeLeft % 60).toString().padStart(2, '0');
+      document.getElementById('timerDisplay').textContent = `${mins}:${secs}`;
+
+      if (timeLeft <= 0) {
+        clearInterval(timerInterval);
+        confirmSubmitExam();
+      }
+    }, 1000);
+
+    function renderQuestion() {
+      const q = questionsData[currentQuestionIdx];
+      document.getElementById('questionProgressText').textContent = `سؤال ${currentQuestionIdx + 1} من ${questionsData.length}`;
+      document.getElementById('questionTopicBadge').textContent = q.topic;
+      document.getElementById('questionText').textContent = q.text;
+
+      const progressPct = Math.round(((currentQuestionIdx + 1) / questionsData.length) * 100);
+      document.getElementById('progressBarFill').style.width = `${progressPct}%`;
+      document.getElementById('answeredPercentage').textContent = `${Object.keys(studentAnswers).length} من ${questionsData.length} محلول`;
+
+      // Render Options
+      const optionsContainer = document.getElementById('optionsContainer');
+      const currentSelected = studentAnswers[q.id];
+
+      optionsContainer.innerHTML = q.options.map((opt, optIdx) => {
+        const isSelected = currentSelected === optIdx;
+        return `
+          <button type="button" onclick="selectOption(${optIdx})" class="w-full p-4 sm:p-5 rounded-2xl border text-start transition-all duration-200 flex items-center justify-between gap-4 group ${
+            isSelected
+              ? 'bg-fusha-sage/10 border-fusha-forest ring-1 ring-fusha-forest text-fusha-forest font-bold'
+              : 'bg-stone-50/50 hover:bg-stone-100/80 border-stone-200 text-stone-800'
+          }">
+            <div class="flex items-center gap-3.5">
+              <span class="w-8 h-8 rounded-xl flex items-center justify-center text-xs font-bold shrink-0 transition-colors ${
+                isSelected ? 'bg-fusha-forest text-white' : 'bg-white border border-stone-300 text-stone-600 group-hover:border-fusha-khaki'
+              }">
+                ${['أ', 'ب', 'ج', 'د'][optIdx]}
+              </span>
+              <span class="text-xs sm:text-sm leading-relaxed">${opt.text}</span>
+            </div>
+            <div class="w-5 h-5 rounded-full border flex items-center justify-center ${
+              isSelected ? 'border-fusha-forest bg-fusha-forest text-white' : 'border-stone-300 bg-white'
+            }">
+              ${isSelected ? '<i data-lucide="check" class="w-3.5 h-3.5"></i>' : ''}
+            </div>
+          </button>
+        `;
+      }).join('');
+
+      // Update Navigation Buttons
+      document.getElementById('prevQuestionBtn').disabled = currentQuestionIdx === 0;
+      const nextBtn = document.getElementById('nextQuestionBtn');
+      if (currentQuestionIdx === questionsData.length - 1) {
+        nextBtn.innerHTML = `<span>تسليم الامتحان</span> <i data-lucide="check-circle" class="w-4 h-4"></i>`;
+        nextBtn.className = 'flex items-center gap-2 px-6 py-2.5 rounded-xl bg-emerald-700 hover:bg-emerald-800 text-white text-xs font-bold shadow-md transition';
+        nextBtn.onclick = openSubmitModal;
+      } else {
+        nextBtn.innerHTML = `<span>السؤال التالي</span> <i data-lucide="arrow-left" class="w-4 h-4"></i>`;
+        nextBtn.className = 'flex items-center gap-2 px-6 py-2.5 rounded-xl bg-fusha-forest hover:bg-fusha-forestLight text-white text-xs font-bold shadow-md transition';
+        nextBtn.onclick = () => {
+          currentQuestionIdx++;
+          renderQuestion();
+        };
+      }
+
+      // Update Palette
+      renderPalette();
+      if (window.lucide) window.lucide.createIcons();
+    }
+
+    function selectOption(optIdx) {
+      const q = questionsData[currentQuestionIdx];
+      studentAnswers[q.id] = optIdx;
+      renderQuestion();
+    }
+
+    document.getElementById('prevQuestionBtn').onclick = () => {
+      if (currentQuestionIdx > 0) {
+        currentQuestionIdx--;
+        renderQuestion();
+      }
+    };
+
+    document.getElementById('flagQuestionBtn').onclick = () => {
+      const qId = questionsData[currentQuestionIdx].id;
+      if (flaggedQuestions.has(qId)) {
+        flaggedQuestions.delete(qId);
+      } else {
+        flaggedQuestions.add(qId);
+      }
+      renderPalette();
+    };
+
+    function renderPalette() {
+      const palette = document.getElementById('questionPalette');
+      palette.innerHTML = questionsData.map((q, idx) => {
+        const isCurrent = idx === currentQuestionIdx;
+        const isAnswered = studentAnswers[q.id] !== undefined;
+        const isFlagged = flaggedQuestions.has(q.id);
+
+        let style = 'bg-stone-100 text-stone-600 border border-stone-200';
+        if (isAnswered) style = 'bg-fusha-sage text-white font-bold';
+        if (isFlagged) style = 'bg-amber-500 text-white font-bold ring-2 ring-amber-300';
+        if (isCurrent) style += ' ring-2 ring-fusha-forest scale-110';
+
+        return `
+          <button type="button" onclick="jumpToQuestion(${idx})" class="w-9 h-9 rounded-xl text-xs font-bold transition flex items-center justify-center ${style}">
+            ${idx + 1}
+          </button>
+        `;
+      }).join('');
+    }
+
+    function jumpToQuestion(idx) {
+      currentQuestionIdx = idx;
+      renderQuestion();
+    }
+
+    function openSubmitModal() {
+      const solved = Object.keys(studentAnswers).length;
+      document.getElementById('submitModalStats').textContent = `لقد قمت بحل ${solved} من أصل ${questionsData.length} أسئلة.`;
+      document.getElementById('submitModal').classList.remove('hidden');
+    }
+
+    function closeSubmitModal() {
+      document.getElementById('submitModal').classList.add('hidden');
+    }
+
+    function confirmSubmitExam() {
+      closeSubmitModal();
+      clearInterval(timerInterval);
+
+      // Grade Quiz
+      let score = 0;
+      questionsData.forEach(q => {
+        const userChoice = studentAnswers[q.id];
+        if (userChoice !== undefined && q.options[userChoice]?.isCorrect) {
+          score++;
+        }
+      });
+
+      // Show Results View
+      document.getElementById('examMainContainer').classList.add('hidden');
+      document.getElementById('timerBadge').classList.add('hidden');
+      document.getElementById('resultsScreen').classList.remove('hidden');
+
+      const pct = Math.round((score / questionsData.length) * 100);
+      document.getElementById('finalScoreDisplay').textContent = `${score} / ${questionsData.length}`;
+      document.getElementById('finalPercentageBadge').textContent = `${pct}%`;
+
+      // Render Answers Breakdown
+      const breakdown = document.getElementById('answersBreakdownList');
+      breakdown.innerHTML = questionsData.map((q, idx) => {
+        const userChoice = studentAnswers[q.id];
+        const isCorrect = userChoice !== undefined && q.options[userChoice]?.isCorrect;
+        const correctOpt = q.options.find(o => o.isCorrect);
+
+        return `
+          <div class="bg-white rounded-2xl p-6 border ${isCorrect ? 'border-emerald-200' : 'border-red-200'} shadow-sm space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-bold ${isCorrect ? 'text-emerald-700 bg-emerald-50' : 'text-red-700 bg-red-50'} px-3 py-1 rounded-lg">
+                ${isCorrect ? 'إجابة صحيحة ✓' : 'إجابة خاطئة ✗'}
+              </span>
+              <span class="text-xs text-stone-400">سؤال ${idx + 1}</span>
+            </div>
+            <h4 class="font-bold text-sm text-fusha-forest leading-relaxed">${q.text}</h4>
+            <div class="text-xs text-stone-600 bg-stone-50 p-3 rounded-xl border border-stone-200/60 space-y-1">
+              <div><strong class="text-fusha-forest">الإجابة الصحيحة:</strong> ${correctOpt?.text}</div>
+              ${userChoice !== undefined && !isCorrect ? `<div><strong class="text-red-600">إجابتك:</strong> ${q.options[userChoice]?.text}</div>` : ''}
+              ${correctOpt?.reason ? `<div class="text-fusha-olive pt-1">💡 <strong>تفسير الحل:</strong> ${correctOpt.reason}</div>` : ''}
+            </div>
+          </div>
+        `;
+      }).join('');
+
+      if (window.lucide) window.lucide.createIcons();
+    }
+
+    renderQuestion();
+  </script>
+</body>
+</html>
+

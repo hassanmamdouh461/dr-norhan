@@ -1,0 +1,16 @@
+  ▲ Next.js 14.2.3
+  - Environments: .env
+
+
+> Build error occurred
+Error: [safe-delete][SAFE_DELETE_BULK_CONFIRM_REQUIRED] {"count":50,"threshold":50,"scope":"turn","targets":["C:\\Users\\kayf\\Desktop\\student project\\dashboard\\.next\\server\\chunks\\411.js"],"targetCount":1}
+    at checkBulkDeleteGuard (C:\Users\kayf\AppData\Local\Programs\WorkBuddyAI\resources\app.asar.unpacked\cli\vendor\shim\node-safe-delete-shim.cjs:214:19)
+    at tryTrash (C:\Users\kayf\AppData\Local\Programs\WorkBuddyAI\resources\app.asar.unpacked\cli\vendor\shim\node-safe-delete-shim.cjs:566:5)
+    at Object.unlink (C:\Users\kayf\AppData\Local\Programs\WorkBuddyAI\resources\app.asar.unpacked\cli\vendor\shim\node-safe-delete-shim.cjs:707:9)
+    at unlinkPath (C:\Users\kayf\Desktop\student project\dashboard\node_modules\next\dist\lib\recursive-delete.js:25:32)
+    at C:\Users\kayf\Desktop\student project\dashboard\node_modules\next\dist\lib\recursive-delete.js:70:20
+    at Array.map (<anonymous>)
+    at recursiveDelete (C:\Users\kayf\Desktop\student project\dashboard\node_modules\next\dist\lib\recursive-delete.js:51:30)
+    at async C:\Users\kayf\Desktop\student project\dashboard\node_modules\next\dist\lib\recursive-delete.js:68:17
+    at async Promise.all (index 2)
+    at async recursiveDelete (C:\Users\kayf\Desktop\student project\dashboard\node_modules\next\dist\lib\recursive-delete.js:51:5)

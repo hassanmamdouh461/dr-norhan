@@ -1,0 +1,22 @@
+{
+  "name": "فُصْحَى | اللغة العربية للثانوية العامة",
+  "short_name": "فُصْحَى",
+  "description": "منصة فُصْحَى — اللغة العربية للثانوية العامة مع الأستاذ أشرف سليم: محاضرات مشروحة، بنك أسئلة وامتحانات بتصحيح فوري، مُعجم المفردات، ومتابعة مستمرة.",
+  "id": "/",
+  "start_url": "/",
+  "scope": "/",
+  "dir": "rtl",
+  "lang": "ar",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "theme_color": "#163134",
+  "background_color": "#F8F9F7",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
