@@ -136,25 +136,6 @@
       background: #101EC5;
     }
 
-    /* Curved TextLoop Styles */
-    .text-loop-container {
-      position: relative;
-      width: 100%;
-      overflow: hidden;
-    }
-    .text-loop-svg {
-      display: block;
-      width: 100%;
-      height: auto;
-      user-select: none;
-    }
-    .text-loop-measure {
-      position: absolute;
-      visibility: hidden;
-      opacity: 0;
-      pointer-events: none;
-    }
-
     /* ================= SVG PAGE TRANSITION STYLES ================= */
     .svg-page-transition {
       position: fixed;
@@ -436,79 +417,6 @@
         </div>
 
       </div>
-    </div>
-  </section>
-
-  <!-- ================= DYNAMIC CURVED TEXT LOOP (MARQUEE RIBBON) ================= -->
-  <section class="relative py-4 md:py-6 overflow-hidden z-30 bg-gravity-dark/80 border-y border-gravity-border/50">
-    <!-- Subtle Background Glow -->
-    <div class="absolute inset-0 bg-gradient-to-r from-gravity-blue/15 via-gravity-lime/10 to-gravity-blue/15 pointer-events-none"></div>
-
-    <div id="textLoopContainer" class="text-loop-container relative cursor-pointer" title="قف بالمؤشر للإيقاف المؤقت">
-      <svg
-        class="text-loop-svg min-w-[900px] md:min-w-full"
-        viewBox="0 0 1200 240"
-        preserveAspectRatio="xMidYMid meet"
-        role="img"
-        aria-label="Gravity for Physics — شريط الأهداف والمفاهيم المموج"
-      >
-        <defs>
-          <linearGradient id="gravityRibbonGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stop-color="#0c1692" />
-            <stop offset="35%" stop-color="#101EC5" />
-            <stop offset="50%" stop-color="#1f2ee8" />
-            <stop offset="65%" stop-color="#101EC5" />
-            <stop offset="100%" stop-color="#0c1692" />
-          </linearGradient>
-          <filter id="ribbonGlow" x="-10%" y="-20%" width="120%" height="150%">
-            <feDropShadow dx="0" dy="6" stdDeviation="12" flood-color="#101EC5" flood-opacity="0.6" />
-          </filter>
-        </defs>
-
-        <!-- Dynamic Curved Path -->
-        <path
-          id="textLoopPath"
-          d="M -320 120 Q -160 50 0 120 T 320 120 T 640 120 T 960 120 T 1280 120 T 1520 120"
-          fill="none"
-          stroke="url(#gravityRibbonGrad)"
-          stroke-width="72"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          filter="url(#ribbonGlow)"
-        />
-
-        <!-- Hidden measure text for dynamic path calculation -->
-        <text
-          id="textLoopMeasure"
-          class="text-loop-measure"
-          style="font-family: 'Cairo', 'Outfit', sans-serif; font-size: 26px; font-weight: 800; letter-spacing: 2px;"
-          aria-hidden="true"
-        >
-          GRAVITY FOR PHYSICS ✦ فِيزْيَاءٌ مَفْهُومَةٌ.. مِشْ مَحْفُوظَة ✦ م. نُورَان الصَّنَادِيقِي ✦ تَعَلَّمْ الفِيزْيَاءَ بِشَغَفْ ✦ حُلُولُ كِتَابِ الاِمْتِحَانِ وَنْيُوتِنْ ✦ رُؤْيَةٌ هَنْدَسِيَّةٌ فَرِيدَة ✦ 
-        </text>
-
-        <!-- Head Text Element -->
-        <text
-          style="font-family: 'Cairo', 'Outfit', sans-serif; font-size: 26px; font-weight: 800; letter-spacing: 2px;"
-          fill="#FFFFFF"
-          dominant-baseline="central"
-          aria-hidden="true"
-          lengthAdjust="spacing"
-        >
-          <textPath id="textLoopHead" href="#textLoopPath" startOffset="0"></textPath>
-        </text>
-
-        <!-- Tail Text Element (Ensures Seamless 100% Looping) -->
-        <text
-          style="font-family: 'Cairo', 'Outfit', sans-serif; font-size: 26px; font-weight: 800; letter-spacing: 2px;"
-          fill="#FFFFFF"
-          dominant-baseline="central"
-          aria-hidden="true"
-          lengthAdjust="spacing"
-        >
-          <textPath id="textLoopTail" href="#textLoopPath" startOffset="0"></textPath>
-        </text>
-      </svg>
     </div>
   </section>
 
@@ -1263,79 +1171,6 @@
         }
       }
     });
-
-    // ================= CURVED TEXT LOOP ANIMATION (GSAP) =================
-    (function initTextLoop() {
-      const pathEl = document.getElementById('textLoopPath');
-      const measureEl = document.getElementById('textLoopMeasure');
-      const head = document.getElementById('textLoopHead');
-      const tail = document.getElementById('textLoopTail');
-      const container = document.getElementById('textLoopContainer');
-
-      if (!pathEl || !measureEl || !head || !tail) return;
-
-      const baseText = "✦ GRAVITY FOR PHYSICS ✦ فِيزْيَاءٌ مَفْهُومَةٌ.. مِشْ مَحْفُوظَة ✦ م. نُورَان الصَّنَادِيقِي ✦ تَعَلَّمْ الفِيزْيَاءَ بِشَغَفْ ✦ حُلُولُ كِتَابِ الاِمْتِحَانِ وَنْيُوتِنْ ✦ رُؤْيَةٌ هَنْدَسِيَّةٌ فَرِيدَة ";
-
-      function setup() {
-        let length = 0;
-        let unitWidth = 0;
-        try {
-          length = pathEl.getTotalLength();
-          unitWidth = measureEl.getComputedTextLength();
-        } catch (e) {
-          return;
-        }
-
-        if (!length || !unitWidth) return;
-
-        // Number of repetitions required to smoothly fill the wave path
-        const reps = Math.max(1, Math.round(length / unitWidth));
-        const loopText = (baseText + "  ").repeat(reps);
-
-        head.textContent = loopText;
-        tail.textContent = loopText;
-
-        head.parentElement.setAttribute('textLength', String(length));
-        tail.parentElement.setAttribute('textLength', String(length));
-
-        const apply = (offset) => {
-          const partner = offset >= 0 ? offset - length : offset + length;
-          head.setAttribute('startOffset', String(offset));
-          tail.setAttribute('startOffset', String(partner));
-        };
-
-        apply(0);
-
-        if (typeof gsap === 'undefined') return;
-
-        const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-        if (prefersReduced) return;
-
-        // Smooth speed: 38 pixels per second
-        const speed = 38;
-        const duration = length / speed;
-        const state = { offset: 0 };
-
-        const tween = gsap.to(state, {
-          offset: -length,
-          duration: duration,
-          ease: 'none',
-          repeat: -1,
-          onUpdate: () => apply(state.offset)
-        });
-
-        if (container) {
-          container.addEventListener('pointerenter', () => tween.pause());
-          container.addEventListener('pointerleave', () => tween.resume());
-        }
-      }
-
-      if (document.fonts && document.fonts.ready) {
-        document.fonts.ready.then(setup).catch(setup);
-      } else {
-        window.addEventListener('load', setup);
-      }
-    })();
 
     // ================= SVG PAGE TRANSITION (Animmaster Effect) =================
     (function initSvgPageTransition() {
