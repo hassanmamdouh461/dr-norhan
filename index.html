@@ -160,6 +160,19 @@
       background: #BCD91E;
     }
 
+    /* Books Horizontal Slider & Scrollbar Suppression */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    .books-slider {
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+    }
+
     /* ================= SVG PAGE TRANSITION STYLES ================= */
     .svg-page-transition {
       position: fixed;
@@ -722,11 +735,27 @@
         </a>
       </div>
 
-      <!-- Books Cards Grid -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 items-stretch">
+      <!-- Mobile Horizontal Scroll Hint & Controls -->
+      <div class="flex sm:hidden items-center justify-between mb-3 text-xs text-slate-400 px-1">
+        <span class="flex items-center gap-1.5 text-gravity-lime font-medium">
+          <i class="fa-solid fa-arrows-left-right text-[11px] animate-pulse"></i>
+          اسحب أفقياً لتصفح باقي الفيديوهات
+        </span>
+        <div class="flex items-center gap-1.5" dir="ltr">
+          <button onclick="scrollBooksSlider('prev')" aria-label="السابق" class="w-8 h-8 rounded-lg bg-gravity-surface border border-gravity-border flex items-center justify-center text-white active:scale-90 hover:border-gravity-lime/40">
+            <i class="fa-solid fa-chevron-right text-[10px]"></i>
+          </button>
+          <button onclick="scrollBooksSlider('next')" aria-label="التالي" class="w-8 h-8 rounded-lg bg-gravity-surface border border-gravity-border flex items-center justify-center text-white active:scale-90 hover:border-gravity-lime/40">
+            <i class="fa-solid fa-chevron-left text-[10px]"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Books Cards Grid & Mobile Horizontal Carousel -->
+      <div id="booksSlider" class="flex sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8 items-stretch overflow-x-auto sm:overflow-visible snap-x snap-mandatory books-slider no-scrollbar -mx-4 px-4 sm:mx-0 sm:px-0 pb-3 sm:pb-0">
         
         <!-- Book 1 -->
-        <div class="glass-card rounded-2xl sm:rounded-3xl overflow-hidden border border-gravity-border hover:border-gravity-lime/40 transition-all duration-300 group flex flex-col justify-between">
+        <div class="glass-card rounded-2xl sm:rounded-3xl overflow-hidden border border-gravity-border hover:border-gravity-lime/40 transition-all duration-300 group flex flex-col justify-between w-[85vw] max-w-[325px] sm:w-auto shrink-0 sm:shrink snap-start">
           <div>
             <div class="relative overflow-hidden aspect-[16/10] bg-gravity-surface">
               <img src="assets/images/course_emtehan_part1.jpg" alt="حل كتاب الامتحان الفصل الأول" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
@@ -759,7 +788,7 @@
         </div>
 
         <!-- Book 2 -->
-        <div class="glass-card rounded-2xl sm:rounded-3xl overflow-hidden border border-gravity-border hover:border-gravity-lime/40 transition-all duration-300 group flex flex-col justify-between">
+        <div class="glass-card rounded-2xl sm:rounded-3xl overflow-hidden border border-gravity-border hover:border-gravity-lime/40 transition-all duration-300 group flex flex-col justify-between w-[85vw] max-w-[325px] sm:w-auto shrink-0 sm:shrink snap-start">
           <div>
             <div class="relative overflow-hidden aspect-[16/10] bg-gravity-surface">
               <img src="assets/images/course_emtehan_part2.jpg" alt="حل كتاب الامتحان الفصل الثاني" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
@@ -792,7 +821,7 @@
         </div>
 
         <!-- Book 3 / Lecture Preview -->
-        <div class="glass-card rounded-2xl sm:rounded-3xl overflow-hidden border border-gravity-border hover:border-gravity-lime/40 transition-all duration-300 group flex flex-col justify-between sm:col-span-2 lg:col-span-1 sm:max-w-md sm:mx-auto lg:max-w-none w-full">
+        <div class="glass-card rounded-2xl sm:rounded-3xl overflow-hidden border border-gravity-border hover:border-gravity-lime/40 transition-all duration-300 group flex flex-col justify-between w-[85vw] max-w-[325px] sm:w-auto shrink-0 sm:shrink snap-start sm:col-span-2 lg:col-span-1 sm:max-w-md sm:mx-auto lg:max-w-none">
           <div>
             <div class="relative overflow-hidden aspect-[16/10] bg-gravity-surface">
               <img src="assets/images/course_lecture_preview.jpg" alt="معاينة شرح المحاضرة" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
@@ -1289,6 +1318,20 @@
         closeVideoModal();
       }
     });
+
+    // Books Mobile Carousel Slider Controller
+    function scrollBooksSlider(dir) {
+      const slider = document.getElementById('booksSlider');
+      if (!slider) return;
+      const card = slider.querySelector('.glass-card');
+      const step = card ? (card.offsetWidth + 16) : 320;
+      // In RTL layout, moving to next item means scrolling towards the left (negative delta)
+      const amount = (dir === 'next') ? -step : step;
+      slider.scrollBy({
+        left: amount,
+        behavior: 'smooth'
+      });
+    }
 
     // Header Background Scroll & Progress Bar Effect
     const navbarProgressBar = document.getElementById('navbarProgressBar');
