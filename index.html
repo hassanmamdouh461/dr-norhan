@@ -5,6 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Gravity for Physics | م. نوران الصناديقي — فيزياء مفهومة مش محفوظة</title>
   <meta name="description" content="المنصة الرسمية لأكاديمية Gravity for Physics مع الباشمهندسة نوران الصناديقي. شرح وتبسيط الفيزياء لطلاب الثانوية العامة وأقوى حلول كتاب الامتحان ونيوتن." />
+
+  <!-- Open Graph / Facebook / WhatsApp -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Gravity for Physics | م. نوران الصناديقي — فيزياء مفهومة مش محفوظة" />
+  <meta property="og:description" content="المنصة الرسمية لأكاديمية Gravity for Physics. شرح وتبسيط الفيزياء لطلاب الثانوية العامة وأقوى حلول كتاب الامتحان ونيوتن." />
+  <meta property="og:image" content="assets/images/hero_banner.jpg" />
+  <meta property="og:locale" content="ar_EG" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Gravity for Physics | م. نوران الصناديقي" />
+  <meta name="twitter:description" content="فيزياء مفهومة مش محفوظة — شرح وتبسيط الفيزياء لطلاب الثانوية العامة" />
+  <meta name="twitter:image" content="assets/images/hero_banner.jpg" />
   
   <!-- Favicon -->
   <link rel="icon" type="image/jpeg" href="assets/images/logo.jpg" />
@@ -120,16 +133,23 @@
       border-color: rgba(188, 217, 30, 0.35);
     }
 
-    /* Hide native side scrollbar (transferred into navbar progress bar) */
-    html, body {
-      scrollbar-width: none; /* Firefox */
-      -ms-overflow-style: none; /* IE & Edge */
+    /* Custom Sleek Scrollbar */
+    html {
+      scrollbar-width: thin;
+      scrollbar-color: #1F2C5A #0A1128;
     }
-    html::-webkit-scrollbar,
-    body::-webkit-scrollbar {
-      display: none; /* Chrome, Safari, Opera */
-      width: 0px;
-      height: 0px;
+    ::-webkit-scrollbar {
+      width: 7px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #0A1128;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #1F2C5A;
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #BCD91E;
     }
 
     /* ================= SVG PAGE TRANSITION STYLES ================= */
@@ -275,7 +295,7 @@
         <i class="fa-solid fa-bolt text-[11px]"></i> دفعة 2026/2027
       </span>
       <span>باب الحجز مفتوح الآن لحصص السنتر (المنيا) والأونلاين لجميع المحافظات!</span>
-      <a href="https://wa.link/qk27ma" target="_blank" class="text-gravity-lime hover:underline font-bold inline-flex items-center gap-1">
+      <a href="https://wa.link/qk27ma" target="_blank" rel="noopener noreferrer" class="text-gravity-lime hover:underline font-bold inline-flex items-center gap-1">
         احجز مقعدك الآن <i class="fa-solid fa-arrow-left text-xs"></i>
       </a>
     </div>
@@ -310,18 +330,18 @@
 
       <!-- Action Buttons -->
       <div class="hidden sm:flex items-center gap-3">
-        <a href="https://wa.link/qk27ma" target="_blank" class="px-5 py-2.5 rounded-full bg-gravity-lime text-gravity-dark font-extrabold text-sm flex items-center gap-2 hover:bg-lime-400 hover:shadow-glow-lime transition-all duration-300 transform hover:-translate-y-0.5">
+        <a href="https://wa.link/qk27ma" target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 rounded-full bg-gravity-lime text-gravity-dark font-extrabold text-sm flex items-center gap-2 hover:bg-lime-400 hover:shadow-glow-lime transition-all duration-300 transform hover:-translate-y-0.5">
           <i class="fa-brands fa-whatsapp text-lg"></i>
           <span>حجز سريع واتساب</span>
         </a>
-        <a href="https://www.youtube.com/@gravity-nouranelsanadiki" target="_blank" class="px-4 py-2.5 rounded-full bg-gravity-red/15 border border-gravity-red/30 text-white font-bold text-sm flex items-center gap-2 hover:bg-gravity-red hover:shadow-glow-red transition-all duration-300">
+        <a href="https://www.youtube.com/@gravity-nouranelsanadiki" target="_blank" rel="noopener noreferrer" class="group px-4 py-2.5 rounded-full bg-gravity-red/15 border border-gravity-red/30 text-white font-bold text-sm flex items-center gap-2 hover:bg-gravity-red hover:shadow-glow-red transition-all duration-300">
           <i class="fa-brands fa-youtube text-gravity-red group-hover:text-white"></i>
           <span class="hidden md:inline">يوتيوب</span>
         </a>
       </div>
 
       <!-- Mobile Menu Button -->
-      <button id="mobileMenuBtn" class="lg:hidden w-11 h-11 rounded-full bg-gravity-surface border border-gravity-border flex items-center justify-center text-slate-200 hover:text-gravity-lime">
+      <button id="mobileMenuBtn" aria-label="فتح القائمة" class="lg:hidden w-11 h-11 rounded-full bg-gravity-surface border border-gravity-border flex items-center justify-center text-slate-200 hover:text-gravity-lime">
         <i class="fa-solid fa-bars-staggered text-lg"></i>
       </button>
 
@@ -342,13 +362,13 @@
         <a href="#app" data-nav-transition="true" class="mobile-nav-link text-slate-300 hover:text-gravity-lime py-2">تطبيق الطلاب</a>
         <a href="#faq" data-nav-transition="true" class="mobile-nav-link text-slate-300 hover:text-gravity-lime py-2">الأسئلة الشائعة</a>
         <div class="pt-4 border-t border-gravity-border flex flex-col gap-3">
-          <a href="https://wa.link/qk27ma" target="_blank" class="w-full py-3 rounded-full bg-gravity-lime text-gravity-dark font-extrabold text-center flex items-center justify-center gap-2">
+          <a href="https://wa.link/qk27ma" target="_blank" rel="noopener noreferrer" class="w-full py-3 rounded-full bg-gravity-lime text-gravity-dark font-extrabold text-center flex items-center justify-center gap-2">
             <i class="fa-brands fa-whatsapp text-lg"></i>
             حجز سريع واتساب
           </a>
           <a href="tel:01000776752" class="w-full py-3 rounded-full bg-gravity-surfaceLight border border-gravity-border text-center text-white font-bold flex items-center justify-center gap-2">
             <i class="fa-solid fa-phone"></i>
-            01000776752
+            <span dir="ltr">01000776752</span>
           </a>
         </div>
       </div>
@@ -390,9 +410,9 @@
           <!-- Social Proof / Followers preview -->
           <div class="pt-6 flex items-center gap-5 border-t border-gravity-border/70 w-full">
             <div class="flex -space-x-2 overflow-hidden rtl:space-x-reverse">
-              <span class="inline-block h-11 w-11 rounded-full ring-2 ring-gravity-dark bg-gravity-blue flex items-center justify-center text-sm font-bold font-outfit">G</span>
-              <span class="inline-block h-11 w-11 rounded-full ring-2 ring-gravity-dark bg-gravity-lime flex items-center justify-center text-sm font-bold text-gravity-dark font-outfit">⚡</span>
-              <span class="inline-block h-11 w-11 rounded-full ring-2 ring-gravity-dark bg-gravity-red flex items-center justify-center text-sm font-bold text-white font-outfit"><i class="fa-solid fa-play text-xs"></i></span>
+              <span class="h-11 w-11 rounded-full ring-2 ring-gravity-dark bg-gravity-blue flex items-center justify-center text-sm font-bold font-outfit">G</span>
+              <span class="h-11 w-11 rounded-full ring-2 ring-gravity-dark bg-gravity-lime flex items-center justify-center text-sm font-bold text-gravity-dark font-outfit">⚡</span>
+              <span class="h-11 w-11 rounded-full ring-2 ring-gravity-dark bg-gravity-red flex items-center justify-center text-sm font-bold text-white font-outfit"><i class="fa-solid fa-play text-xs"></i></span>
             </div>
             <div class="text-sm sm:text-base md:text-lg text-slate-200">
               <span class="text-white font-black text-base sm:text-lg md:text-xl font-outfit">+48,000</span> طالب ومتابع يثقون في شروحات م. نوران على يوتيوب
@@ -414,7 +434,7 @@
             <div class="relative rounded-3xl overflow-hidden p-1.5 bg-gradient-to-b from-gravity-lime/40 via-gravity-blue/30 to-transparent shadow-2xl">
               <div class="rounded-[22px] overflow-hidden bg-gravity-surface relative">
                 <!-- Teacher Portrait Image -->
-                <img src="assets/images/teacher_portrait.png" alt="م. نوران الصناديقي" class="w-full h-auto object-cover transform hover:scale-102 transition-transform duration-500" />
+                <img src="assets/images/teacher_portrait.png" alt="م. نوران الصناديقي" class="w-full h-auto object-cover transform hover:scale-[1.02] transition-transform duration-500" />
                 
                 <!-- Bottom Gradient Overlay -->
                 <div class="absolute inset-0 bg-gradient-to-t from-gravity-dark via-transparent to-transparent opacity-60"></div>
@@ -590,14 +610,14 @@
               </li>
             </ul>
           </div>
-          <a href="https://wa.link/qk27ma" target="_blank" class="w-full py-3.5 rounded-xl bg-gravity-surfaceLight hover:bg-blue-600 hover:text-white border border-blue-500/40 text-center font-bold text-sm text-white transition-all duration-300 flex items-center justify-center gap-2">
+          <a href="https://wa.link/qk27ma" target="_blank" rel="noopener noreferrer" class="w-full py-3.5 rounded-xl bg-gravity-surfaceLight hover:bg-blue-600 hover:text-white border border-blue-500/40 text-center font-bold text-sm text-white transition-all duration-300 flex items-center justify-center gap-2">
             <span>استفسر وسجل للصف الأول</span>
             <i class="fa-solid fa-arrow-left text-xs"></i>
           </a>
         </div>
 
         <!-- Grade 2 Card -->
-        <div class="glass-card rounded-3xl p-7 flex flex-col justify-between border-t-4 border-t-gravity-lime hover:shadow-glow-lime/10 transition-all">
+        <div class="glass-card rounded-3xl p-7 flex flex-col justify-between border-t-4 border-t-gravity-lime hover:shadow-glow-lime transition-all">
           <div>
             <div class="flex items-center justify-between mb-4">
               <span class="px-3 py-1 rounded-full bg-gravity-lime/10 border border-gravity-lime/30 text-gravity-lime text-xs font-bold">المرحلة المتقدمة</span>
@@ -619,7 +639,7 @@
               </li>
             </ul>
           </div>
-          <a href="https://wa.link/qk27ma" target="_blank" class="w-full py-3.5 rounded-xl bg-gravity-lime text-gravity-dark font-extrabold text-center text-sm hover:bg-lime-400 transition-all duration-300 flex items-center justify-center gap-2 shadow-glow-lime/20">
+          <a href="https://wa.link/qk27ma" target="_blank" rel="noopener noreferrer" class="w-full py-3.5 rounded-xl bg-gravity-lime text-gravity-dark font-extrabold text-center text-sm hover:bg-lime-400 transition-all duration-300 flex items-center justify-center gap-2 shadow-glow-lime">
             <span>استفسر وسجل للصف الثاني</span>
             <i class="fa-solid fa-arrow-left text-xs"></i>
           </a>
@@ -648,7 +668,7 @@
               </li>
             </ul>
           </div>
-          <a href="https://wa.link/qk27ma" target="_blank" class="w-full py-3.5 rounded-xl bg-gravity-surfaceLight hover:bg-red-600 hover:text-white border border-red-500/40 text-center font-bold text-sm text-white transition-all duration-300 flex items-center justify-center gap-2">
+          <a href="https://wa.link/qk27ma" target="_blank" rel="noopener noreferrer" class="w-full py-3.5 rounded-xl bg-gravity-surfaceLight hover:bg-red-600 hover:text-white border border-red-500/40 text-center font-bold text-sm text-white transition-all duration-300 flex items-center justify-center gap-2">
             <span>استفسر وسجل للثانوية العامة</span>
             <i class="fa-solid fa-arrow-left text-xs"></i>
           </a>
@@ -677,7 +697,7 @@
           </p>
         </div>
 
-        <a href="https://www.youtube.com/@gravity-nouranelsanadiki" target="_blank" class="self-start md:self-auto px-5 py-3 rounded-xl bg-gravity-surface hover:bg-gravity-surfaceLight border border-gravity-border text-white text-sm font-bold flex items-center gap-2 transition-colors">
+        <a href="https://www.youtube.com/@gravity-nouranelsanadiki" target="_blank" rel="noopener noreferrer" class="self-start md:self-auto px-5 py-3 rounded-xl bg-gravity-surface hover:bg-gravity-surfaceLight border border-gravity-border text-white text-sm font-bold flex items-center gap-2 transition-colors">
           <i class="fa-brands fa-youtube text-gravity-red text-base"></i>
           <span>زيارة القناة على YouTube (+48K)</span>
         </a>
@@ -689,7 +709,7 @@
         <!-- Book 1 -->
         <div class="glass-card rounded-3xl overflow-hidden border border-gravity-border hover:border-gravity-lime/40 transition-all duration-300 group">
           <div class="relative overflow-hidden aspect-[16/10] bg-gravity-surface">
-            <img src="assets/images/course_emtehan_part1.jpg" alt="حل كتاب الامتحان الفصل الأول" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            <img src="assets/images/course_emtehan_part1.jpg" alt="حل كتاب الامتحان الفصل الأول" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
             <div class="absolute inset-0 bg-gravity-dark/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
               <button onclick="openVideoModal('https://www.youtube.com/embed/videoseries?list=PLB2N_3Gq1e-demo')" class="w-14 h-14 rounded-full bg-gravity-lime text-gravity-dark flex items-center justify-center text-xl shadow-glow-lime transform scale-90 group-hover:scale-100 transition-all">
                 <i class="fa-solid fa-play mr-0.5"></i>
@@ -708,7 +728,7 @@
             </p>
             <div class="flex items-center justify-between pt-4 border-t border-gravity-border/50 text-xs">
               <span class="text-slate-400"><i class="fa-regular fa-clock ml-1"></i> تغطية كاملة</span>
-              <a href="https://www.youtube.com/@gravity-nouranelsanadiki" target="_blank" class="text-gravity-lime font-bold hover:underline">
+              <a href="https://www.youtube.com/@gravity-nouranelsanadiki" target="_blank" rel="noopener noreferrer" class="text-gravity-lime font-bold hover:underline">
                 شاهد على يوتيوب <i class="fa-solid fa-arrow-left text-[10px]"></i>
               </a>
             </div>
@@ -718,7 +738,7 @@
         <!-- Book 2 -->
         <div class="glass-card rounded-3xl overflow-hidden border border-gravity-border hover:border-gravity-lime/40 transition-all duration-300 group">
           <div class="relative overflow-hidden aspect-[16/10] bg-gravity-surface">
-            <img src="assets/images/course_emtehan_part2.jpg" alt="حل كتاب الامتحان الفصل الثاني" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            <img src="assets/images/course_emtehan_part2.jpg" alt="حل كتاب الامتحان الفصل الثاني" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
             <div class="absolute inset-0 bg-gravity-dark/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
               <button onclick="openVideoModal('https://www.youtube.com/embed/videoseries?list=PLB2N_3Gq1e-demo')" class="w-14 h-14 rounded-full bg-gravity-lime text-gravity-dark flex items-center justify-center text-xl shadow-glow-lime transform scale-90 group-hover:scale-100 transition-all">
                 <i class="fa-solid fa-play mr-0.5"></i>
@@ -737,7 +757,7 @@
             </p>
             <div class="flex items-center justify-between pt-4 border-t border-gravity-border/50 text-xs">
               <span class="text-slate-400"><i class="fa-regular fa-clock ml-1"></i> شامل المسائل العليا</span>
-              <a href="https://www.youtube.com/@gravity-nouranelsanadiki" target="_blank" class="text-gravity-lime font-bold hover:underline">
+              <a href="https://www.youtube.com/@gravity-nouranelsanadiki" target="_blank" rel="noopener noreferrer" class="text-gravity-lime font-bold hover:underline">
                 شاهد على يوتيوب <i class="fa-solid fa-arrow-left text-[10px]"></i>
               </a>
             </div>
@@ -747,7 +767,7 @@
         <!-- Book 3 / Lecture Preview -->
         <div class="glass-card rounded-3xl overflow-hidden border border-gravity-border hover:border-gravity-lime/40 transition-all duration-300 group">
           <div class="relative overflow-hidden aspect-[16/10] bg-gravity-surface">
-            <img src="assets/images/course_lecture_preview.jpg" alt="معاينة شرح المحاضرة" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            <img src="assets/images/course_lecture_preview.jpg" alt="معاينة شرح المحاضرة" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
             <div class="absolute inset-0 bg-gravity-dark/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
               <button onclick="openVideoModal('https://www.youtube.com/embed/videoseries?list=PLB2N_3Gq1e-demo')" class="w-14 h-14 rounded-full bg-gravity-red text-white flex items-center justify-center text-xl shadow-glow-red transform scale-90 group-hover:scale-100 transition-all">
                 <i class="fa-solid fa-play mr-0.5"></i>
@@ -846,7 +866,7 @@
 
           <!-- Download App Buttons -->
           <div class="pt-4 flex flex-wrap items-center gap-4">
-            <a href="https://play.google.com/store/apps/details?id=com.codebase.fosha" target="_blank" class="px-6 py-3.5 rounded-2xl bg-gravity-surfaceLight border border-gravity-border hover:border-gravity-lime/50 text-white flex items-center gap-3 transition-all hover:-translate-y-0.5">
+            <a href="https://play.google.com/store/apps/details?id=com.codebase.fosha" target="_blank" rel="noopener noreferrer" class="px-6 py-3.5 rounded-2xl bg-gravity-surfaceLight border border-gravity-border hover:border-gravity-lime/50 text-white flex items-center gap-3 transition-all hover:-translate-y-0.5">
               <i class="fa-brands fa-google-play text-2xl text-gravity-lime"></i>
               <div class="text-right">
                 <div class="text-[10px] text-slate-400 uppercase font-bold">تحميل للأندرويد</div>
@@ -854,7 +874,7 @@
               </div>
             </a>
 
-            <a href="https://apps.apple.com/eg/app/%D9%81%D8%B5%D8%AD%D9%89/id1618522062" target="_blank" class="px-6 py-3.5 rounded-2xl bg-gravity-surfaceLight border border-gravity-border hover:border-gravity-lime/50 text-white flex items-center gap-3 transition-all hover:-translate-y-0.5">
+            <a href="https://apps.apple.com/eg/app/%D9%81%D8%B5%D8%AD%D9%89/id1618522062" target="_blank" rel="noopener noreferrer" class="px-6 py-3.5 rounded-2xl bg-gravity-surfaceLight border border-gravity-border hover:border-gravity-lime/50 text-white flex items-center gap-3 transition-all hover:-translate-y-0.5">
               <i class="fa-brands fa-apple text-2xl text-white"></i>
               <div class="text-right">
                 <div class="text-[10px] text-slate-400 uppercase font-bold">تحميل للآيفون</div>
@@ -868,7 +888,7 @@
         <!-- Banner Visual Column -->
         <div class="lg:col-span-5 relative flex justify-center">
           <div class="relative w-full max-w-md rounded-3xl overflow-hidden border border-gravity-border shadow-2xl p-2 bg-gradient-to-b from-gravity-surfaceLight to-gravity-surface">
-            <img src="assets/images/hero_banner.jpg" alt="Gravity Banner" class="w-full h-auto rounded-2xl object-cover" />
+            <img src="assets/images/hero_banner.jpg" alt="Gravity Banner" loading="lazy" class="w-full h-auto rounded-2xl object-cover" />
             <div class="p-4 text-center">
               <div class="text-base font-bold text-white mb-1">أكاديمية Gravity للفيزياء</div>
               <div class="text-xs text-gravity-lime font-semibold">بوابة تفوقك في الفيزياء للثانوية العامة</div>
@@ -902,7 +922,7 @@
         
         <!-- Item 1 -->
         <div class="glass-card rounded-2xl border border-gravity-border overflow-hidden transition-all">
-          <button class="faq-btn w-full p-6 text-right flex items-center justify-between gap-4 font-bold text-white text-base hover:text-gravity-lime transition-colors">
+          <button aria-label="عرض إجابة السؤال" class="faq-btn w-full p-6 text-right flex items-center justify-between gap-4 font-bold text-white text-base hover:text-gravity-lime transition-colors">
             <span>كيف يمكنني الاشتراك والحجز في كورس الأونلاين؟</span>
             <i class="fa-solid fa-chevron-down text-sm text-gravity-lime transition-transform duration-300"></i>
           </button>
@@ -913,18 +933,18 @@
 
         <!-- Item 2 -->
         <div class="glass-card rounded-2xl border border-gravity-border overflow-hidden transition-all">
-          <button class="faq-btn w-full p-6 text-right flex items-center justify-between gap-4 font-bold text-white text-base hover:text-gravity-lime transition-colors">
+          <button aria-label="عرض إجابة السؤال" class="faq-btn w-full p-6 text-right flex items-center justify-between gap-4 font-bold text-white text-base hover:text-gravity-lime transition-colors">
             <span>أين توجد سناتر الحضور الميداني (Face to Face)؟</span>
             <i class="fa-solid fa-chevron-down text-sm text-gravity-lime transition-transform duration-300"></i>
           </button>
           <div class="faq-content hidden px-6 pb-6 text-sm text-slate-300 leading-relaxed border-t border-gravity-border/40 pt-4">
-            يتواجد فريق م. نوران الصناديقي في محافظة **المنيا** بأكبر السناتر والأكاديميات التعليمية. للمواعيد المحددة لكل مرحلة وأماكن القاعات، تواصل معنا عبر الواتساب لاختيار الميعاد المناسب لمجموعتك.
+            يتواجد فريق م. نوران الصناديقي في محافظة <strong class="text-white">المنيا</strong> بأكبر السناتر والأكاديميات التعليمية. للمواعيد المحددة لكل مرحلة وأماكن القاعات، تواصل معنا عبر الواتساب لاختيار الميعاد المناسب لمجموعتك.
           </div>
         </div>
 
         <!-- Item 3 -->
         <div class="glass-card rounded-2xl border border-gravity-border overflow-hidden transition-all">
-          <button class="faq-btn w-full p-6 text-right flex items-center justify-between gap-4 font-bold text-white text-base hover:text-gravity-lime transition-colors">
+          <button aria-label="عرض إجابة السؤال" class="faq-btn w-full p-6 text-right flex items-center justify-between gap-4 font-bold text-white text-base hover:text-gravity-lime transition-colors">
             <span>هل يتم حل كتاب الامتحان وكتاب نيوتن كاملاً؟</span>
             <i class="fa-solid fa-chevron-down text-sm text-gravity-lime transition-transform duration-300"></i>
           </button>
@@ -935,7 +955,7 @@
 
         <!-- Item 4 -->
         <div class="glass-card rounded-2xl border border-gravity-border overflow-hidden transition-all">
-          <button class="faq-btn w-full p-6 text-right flex items-center justify-between gap-4 font-bold text-white text-base hover:text-gravity-lime transition-colors">
+          <button aria-label="عرض إجابة السؤال" class="faq-btn w-full p-6 text-right flex items-center justify-between gap-4 font-bold text-white text-base hover:text-gravity-lime transition-colors">
             <span>كيف يطمئن ولي الأمر على مستوى واستيعاب الطالب؟</span>
             <i class="fa-solid fa-chevron-down text-sm text-gravity-lime transition-transform duration-300"></i>
           </button>
@@ -971,7 +991,7 @@
           </p>
 
           <div class="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a href="https://wa.link/qk27ma" target="_blank" class="w-full sm:w-auto px-9 py-4 rounded-2xl bg-gravity-lime text-gravity-dark font-black text-base flex items-center justify-center gap-3 hover:bg-lime-400 hover:shadow-glow-lime transition-all duration-300 transform hover:-translate-y-1">
+            <a href="https://wa.link/qk27ma" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-9 py-4 rounded-2xl bg-gravity-lime text-gravity-dark font-black text-base flex items-center justify-center gap-3 hover:bg-lime-400 hover:shadow-glow-lime transition-all duration-300 transform hover:-translate-y-1">
               <i class="fa-brands fa-whatsapp text-2xl"></i>
               <span>تواصل واتساب للحجز الفوري</span>
             </a>
@@ -1006,19 +1026,19 @@
             منصة وأكاديمية Gravity التعليمية المتخصصة في تدريس مادة الفيزياء لطلاب الثانوية العامة بأسلوب هندسي تحليلي مبسط. فيزياء مفهومة.. مش محفوظة.
           </p>
           <div class="pt-2 flex items-center gap-3">
-            <a href="https://www.facebook.com/Gravityforphysics" target="_blank" class="w-10 h-10 rounded-xl bg-gravity-surface border border-gravity-border flex items-center justify-center text-slate-300 hover:text-blue-500 hover:border-blue-500 transition-colors" title="Facebook">
+            <a href="https://www.facebook.com/Gravityforphysics" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-xl bg-gravity-surface border border-gravity-border flex items-center justify-center text-slate-300 hover:text-blue-500 hover:border-blue-500 transition-colors" title="Facebook">
               <i class="fa-brands fa-facebook-f"></i>
             </a>
-            <a href="https://www.youtube.com/@gravity-nouranelsanadiki" target="_blank" class="w-10 h-10 rounded-xl bg-gravity-surface border border-gravity-border flex items-center justify-center text-slate-300 hover:text-red-500 hover:border-red-500 transition-colors" title="YouTube">
+            <a href="https://www.youtube.com/@gravity-nouranelsanadiki" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-xl bg-gravity-surface border border-gravity-border flex items-center justify-center text-slate-300 hover:text-red-500 hover:border-red-500 transition-colors" title="YouTube">
               <i class="fa-brands fa-youtube"></i>
             </a>
-            <a href="https://www.instagram.com/gravityforphysics/" target="_blank" class="w-10 h-10 rounded-xl bg-gravity-surface border border-gravity-border flex items-center justify-center text-slate-300 hover:text-pink-500 hover:border-pink-500 transition-colors" title="Instagram">
+            <a href="https://www.instagram.com/gravityforphysics/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-xl bg-gravity-surface border border-gravity-border flex items-center justify-center text-slate-300 hover:text-pink-500 hover:border-pink-500 transition-colors" title="Instagram">
               <i class="fa-brands fa-instagram"></i>
             </a>
-            <a href="https://www.tiktok.com/@gravityforphysics" target="_blank" class="w-10 h-10 rounded-xl bg-gravity-surface border border-gravity-border flex items-center justify-center text-slate-300 hover:text-white hover:border-white transition-colors" title="TikTok">
+            <a href="https://www.tiktok.com/@gravityforphysics" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-xl bg-gravity-surface border border-gravity-border flex items-center justify-center text-slate-300 hover:text-white hover:border-white transition-colors" title="TikTok">
               <i class="fa-brands fa-tiktok"></i>
             </a>
-            <a href="https://wa.link/qk27ma" target="_blank" class="w-10 h-10 rounded-xl bg-gravity-surface border border-gravity-border flex items-center justify-center text-slate-300 hover:text-green-400 hover:border-green-400 transition-colors" title="WhatsApp">
+            <a href="https://wa.link/qk27ma" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-xl bg-gravity-surface border border-gravity-border flex items-center justify-center text-slate-300 hover:text-green-400 hover:border-green-400 transition-colors" title="WhatsApp">
               <i class="fa-brands fa-whatsapp"></i>
             </a>
           </div>
@@ -1050,7 +1070,7 @@
             </li>
             <li class="flex items-center gap-3">
               <i class="fa-brands fa-whatsapp text-gravity-lime text-base"></i>
-              <a href="https://wa.link/qk27ma" target="_blank" class="text-white hover:underline">
+              <a href="https://wa.link/qk27ma" target="_blank" rel="noopener noreferrer" class="text-white hover:underline">
                 رابط الحجز السريع المباشر (WhatsApp)
               </a>
             </li>
@@ -1081,7 +1101,7 @@
   </footer>
 
   <!-- ================= FLOATING WHATSAPP BUTTON ================= -->
-  <a href="https://wa.link/qk27ma" target="_blank" class="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-[#25D366] text-white flex items-center justify-center text-3xl shadow-[0_4px_25px_rgba(37,211,102,0.6)] hover:scale-110 hover:shadow-[0_4px_35px_rgba(37,211,102,0.8)] transition-all duration-300 group" title="تواصل واتساب مباشر">
+  <a href="https://wa.link/qk27ma" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-[#25D366] text-white flex items-center justify-center text-3xl shadow-[0_4px_25px_rgba(37,211,102,0.6)] hover:scale-110 hover:shadow-[0_4px_35px_rgba(37,211,102,0.8)] transition-all duration-300 group" title="تواصل واتساب مباشر">
     <i class="fa-brands fa-whatsapp"></i>
     <span class="absolute right-16 px-3 py-1.5 rounded-lg bg-gravity-surface text-white text-xs font-bold whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none border border-gravity-border shadow-xl">
       تواصل معنا للحجز فوراً 💬
@@ -1103,12 +1123,12 @@
       </div>
       <!-- Modal Body (Iframe) -->
       <div class="relative aspect-video bg-black">
-        <iframe id="videoIframe" class="w-full h-full" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <iframe id="videoIframe" class="w-full h-full" src="" title="YouTube video player" style="border:0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
       </div>
       <!-- Modal Footer -->
       <div class="p-4 bg-gravity-surface flex items-center justify-between text-xs text-slate-400">
         <span>للمزيد من المحاضرات المجانية وحلول الكتب، تابع القناة</span>
-        <a href="https://www.youtube.com/@gravity-nouranelsanadiki" target="_blank" class="text-gravity-lime font-bold hover:underline flex items-center gap-1">
+        <a href="https://www.youtube.com/@gravity-nouranelsanadiki" target="_blank" rel="noopener noreferrer" class="text-gravity-lime font-bold hover:underline flex items-center gap-1">
           فتح القناة على YouTube <i class="fa-solid fa-arrow-left text-[10px]"></i>
         </a>
       </div>
@@ -1159,7 +1179,7 @@
 
     function openVideoModal(url) {
       if (videoModal && videoIframe) {
-        videoIframe.src = url || 'https://www.youtube.com/embed?listType=user_uploads&list=gravity-nouranelsanadiki';
+        videoIframe.src = url || 'https://www.youtube.com/embed?list=UU' + 'gravity-nouranelsanadiki';
         videoModal.classList.remove('hidden');
         videoModal.classList.add('flex');
         document.body.style.overflow = 'hidden';
@@ -1406,6 +1426,13 @@
       const logoInner = document.getElementById('introLogoInner');
 
       if (!introOverlay || !svg || !path || !logoContainer) return;
+
+      // Fallback: if GSAP failed to load, remove overlay immediately
+      if (typeof gsap === 'undefined') {
+        introOverlay.style.display = 'none';
+        document.body.classList.remove('is-transitioning');
+        return;
+      }
 
       // Deep cosmic brand colors exclusively (No bright electric blue, no red, no bright neon green)
       const COSMIC_COLORS = [
