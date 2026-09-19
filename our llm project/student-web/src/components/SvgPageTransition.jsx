@@ -8,11 +8,11 @@ import './SvgPageTransition.css';
 export const BRAND_TRANSITION_PALETTES = [
   { name: 'Deep Space & Gravity Blue', stroke1: '#0A1128', stroke2: '#101EC5' },
   { name: 'Cosmic Indigo & Midnight',   stroke1: '#1E1B4B', stroke2: '#080D21' },
-  { name: 'Gravity Blue & Crimson Pulse', stroke1: '#101EC5', stroke2: '#991B1B' },
+  { name: 'Gravity Blue & Orbital Lime', stroke1: '#101EC5', stroke2: '#BCD91E' },
   { name: 'Surface Navy & Deep Void',  stroke1: '#141D3D', stroke2: '#060A1A' },
-  { name: 'Deep Teal & Midnight Blue', stroke1: '#163134', stroke2: '#101EC5' },
+  { name: 'Deep Teal & Gravity Blue',  stroke1: '#0F2937', stroke2: '#101EC5' },
   { name: 'Cosmic Violet & Deep Space', stroke1: '#2E1065', stroke2: '#0A1128' },
-  { name: 'Deep Crimson & Surface Navy', stroke1: '#881337', stroke2: '#141D3D' },
+  { name: 'Electric Cyan & Surface Navy', stroke1: '#0284C7', stroke2: '#141D3D' },
   { name: 'Dark Nebula & Gravity Blue', stroke1: '#0B1E48', stroke2: '#1E1B4B' }
 ];
 
