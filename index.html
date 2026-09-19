@@ -735,22 +735,6 @@
         </a>
       </div>
 
-      <!-- Mobile Horizontal Scroll Hint & Controls -->
-      <div class="flex sm:hidden items-center justify-between mb-3 text-xs text-slate-400 px-1">
-        <span class="flex items-center gap-1.5 text-gravity-lime font-medium">
-          <i class="fa-solid fa-arrows-left-right text-[11px] animate-pulse"></i>
-          اسحب أفقياً لتصفح باقي الفيديوهات
-        </span>
-        <div class="flex items-center gap-1.5" dir="ltr">
-          <button onclick="scrollBooksSlider('prev')" aria-label="السابق" class="w-8 h-8 rounded-lg bg-gravity-surface border border-gravity-border flex items-center justify-center text-white active:scale-90 hover:border-gravity-lime/40">
-            <i class="fa-solid fa-chevron-right text-[10px]"></i>
-          </button>
-          <button onclick="scrollBooksSlider('next')" aria-label="التالي" class="w-8 h-8 rounded-lg bg-gravity-surface border border-gravity-border flex items-center justify-center text-white active:scale-90 hover:border-gravity-lime/40">
-            <i class="fa-solid fa-chevron-left text-[10px]"></i>
-          </button>
-        </div>
-      </div>
-
       <!-- Books Cards Grid & Mobile Horizontal Carousel -->
       <div id="booksSlider" class="flex sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8 items-stretch overflow-x-auto sm:overflow-visible snap-x snap-mandatory books-slider no-scrollbar -mx-4 px-4 sm:mx-0 sm:px-0 pb-3 sm:pb-0">
         
@@ -853,6 +837,13 @@
           </div>
         </div>
 
+      </div>
+
+      <!-- Mobile Pagination / Indicator Dots -->
+      <div id="booksSliderDots" class="flex sm:hidden justify-center items-center gap-2 mt-5">
+        <button onclick="scrollBooksToCard(0)" aria-label="الفيديو الأول" class="books-dot w-6 h-2 rounded-full bg-gravity-lime transition-all duration-300"></button>
+        <button onclick="scrollBooksToCard(1)" aria-label="الفيديو الثاني" class="books-dot w-2 h-2 rounded-full bg-white/25 hover:bg-white/50 transition-all duration-300"></button>
+        <button onclick="scrollBooksToCard(2)" aria-label="الفيديو الثالث" class="books-dot w-2 h-2 rounded-full bg-white/25 hover:bg-white/50 transition-all duration-300"></button>
       </div>
 
     </div>
@@ -1319,18 +1310,54 @@
       }
     });
 
-    // Books Mobile Carousel Slider Controller
-    function scrollBooksSlider(dir) {
+    // Books Mobile Carousel Slider Controller & Pagination Dots
+    function scrollBooksToCard(index) {
       const slider = document.getElementById('booksSlider');
       if (!slider) return;
-      const card = slider.querySelector('.glass-card');
-      const step = card ? (card.offsetWidth + 16) : 320;
-      // In RTL layout, moving to next item means scrolling towards the left (negative delta)
-      const amount = (dir === 'next') ? -step : step;
-      slider.scrollBy({
-        left: amount,
-        behavior: 'smooth'
+      const cards = slider.querySelectorAll('.glass-card');
+      if (cards[index]) {
+        cards[index].scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+      }
+    }
+
+    function updateBooksSliderDots() {
+      const slider = document.getElementById('booksSlider');
+      const dots = document.querySelectorAll('#booksSliderDots .books-dot');
+      if (!slider || !dots.length) return;
+
+      const cards = slider.querySelectorAll('.glass-card');
+      const sliderRect = slider.getBoundingClientRect();
+      const sliderCenter = sliderRect.left + sliderRect.width / 2;
+
+      let closestIndex = 0;
+      let minDistance = Infinity;
+
+      cards.forEach((card, i) => {
+        const cardRect = card.getBoundingClientRect();
+        const cardCenter = cardRect.left + cardRect.width / 2;
+        const distance = Math.abs(sliderCenter - cardCenter);
+        if (distance < minDistance) {
+          minDistance = distance;
+          closestIndex = i;
+        }
       });
+
+      dots.forEach((dot, i) => {
+        if (i === closestIndex) {
+          dot.className = 'books-dot w-6 h-2 rounded-full bg-gravity-lime transition-all duration-300';
+        } else {
+          dot.className = 'books-dot w-2 h-2 rounded-full bg-white/25 hover:bg-white/50 transition-all duration-300';
+        }
+      });
+    }
+
+    const booksSliderEl = document.getElementById('booksSlider');
+    if (booksSliderEl) {
+      let scrollTimeout;
+      booksSliderEl.addEventListener('scroll', () => {
+        if (scrollTimeout) cancelAnimationFrame(scrollTimeout);
+        scrollTimeout = requestAnimationFrame(updateBooksSliderDots);
+      }, { passive: true });
     }
 
     // Header Background Scroll & Progress Bar Effect
