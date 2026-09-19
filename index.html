@@ -373,11 +373,18 @@
             <span class="gradient-text-lime">م. نــوران الـصـنـاديـقـي</span>
           </h1>
 
-          <!-- Subheading & Philosophy (Live Typewriter Effect) -->
-          <div class="text-lg sm:text-xl md:text-2xl text-slate-200 leading-relaxed max-w-3xl font-normal min-h-[95px] sm:min-h-[115px] flex flex-col justify-center" id="heroTypewriterWrapper">
-            <p id="heroTypewriterParagraph" class="inline leading-relaxed">
-              <span id="heroTypewriterPart1" class="text-white font-medium"></span><span id="heroTypewriterBreak"></span><span id="heroTypewriterPart2" class="text-gravity-lime font-bold"></span><span id="heroTypewriterCursor" class="inline-block w-[3px] h-[1.15em] bg-gravity-lime align-middle mr-1.5 rounded-full shadow-[0_0_10px_#BCD91E] transition-opacity duration-150"></span>
+          <!-- Subheading & Philosophy (Interactive Typewriter) -->
+          <div class="space-y-3 max-w-3xl" id="heroTypewriterWrapper">
+            <!-- 1. White Sentence: Types once on load and NEVER disappears -->
+            <p class="text-lg sm:text-xl md:text-2xl text-white font-medium leading-relaxed min-h-[58px] sm:min-h-[64px]">
+              <span id="heroWhiteSentence"></span><span id="heroWhiteCursor" class="inline-block w-[2.5px] h-[1.15em] bg-white align-middle mr-1.5 rounded-full transition-opacity duration-150"></span>
             </p>
+
+            <!-- 2. Rotating Lime Sentence: Types -> Pauses -> Deletes like a real user -> Next word -->
+            <div class="flex items-center gap-2 text-xl sm:text-2xl md:text-3xl font-bold min-h-[38px] sm:min-h-[44px]">
+              <span class="w-2.5 h-2.5 rounded-full bg-gravity-lime shadow-[0_0_8px_#BCD91E] animate-ping ml-1"></span>
+              <span id="heroLimeSentence" class="text-gravity-lime drop-shadow-[0_0_14px_rgba(188,217,30,0.55)]"></span><span id="heroLimeCursor" class="inline-block w-[3px] h-[1.15em] bg-gravity-lime align-middle mr-1 rounded-full shadow-[0_0_10px_#BCD91E] transition-opacity duration-150"></span>
+            </div>
           </div>
 
           <!-- Social Proof / Followers preview -->
@@ -1478,97 +1485,102 @@
       }, 0);
     })();
 
-    // ================= HERO LIVE TYPEWRITER EFFECT =================
-    (function initHeroTypewriter() {
-      const part1Elem = document.getElementById('heroTypewriterPart1');
-      const breakElem = document.getElementById('heroTypewriterBreak');
-      const part2Elem = document.getElementById('heroTypewriterPart2');
-      const cursorElem = document.getElementById('heroTypewriterCursor');
-      const wrapperElem = document.getElementById('heroTypewriterWrapper');
-      if (!part1Elem || !part2Elem || !cursorElem) return;
+    // ================= HERO DUAL TYPEWRITER EFFECT =================
+    (function initHeroDualTypewriter() {
+      const whiteElem = document.getElementById('heroWhiteSentence');
+      const whiteCursor = document.getElementById('heroWhiteCursor');
+      const limeElem = document.getElementById('heroLimeSentence');
+      const limeCursor = document.getElementById('heroLimeCursor');
 
-      const text1 = "مش هدفنا تحفظ القانون وخلاص؛ هدفنا إنك تفهمه وتعرف تستخدمه في أي مسألة.";
-      const text2 = "شرح واضح، تدريب مستمر، وتركيز على أفكار الامتحان.";
+      if (!whiteElem || !limeElem || !limeCursor) return;
 
-      let isTyping = false;
-
-      // Soft pulsating cursor blink
-      setInterval(() => {
-        if (cursorElem) {
-          cursorElem.style.opacity = cursorElem.style.opacity === '0' ? '1' : '0';
-        }
-      }, 480);
+      const permanentWhiteText = "مش هدفنا تحفظ القانون وخلاص؛ هدفنا إنك تفهمه وتعرف تستخدمه في أي مسألة.";
+      const rotatingLimePhrases = [
+        "شرح واضح",
+        "تدريب مستمر",
+        "بنعلي بمستوي فهمك"
+      ];
 
       function sleep(ms) {
         return new Promise(resolve => setTimeout(resolve, ms));
       }
 
-      async function typeSentence(elem, text, baseSpeed = 30) {
-        elem.textContent = '';
-        for (let i = 0; i < text.length; i++) {
-          const char = text[i];
-          elem.textContent += char;
+      // Cursor blinking for lime cursor
+      setInterval(() => {
+        if (limeCursor) {
+          limeCursor.style.opacity = limeCursor.style.opacity === '0' ? '1' : '0';
+        }
+      }, 450);
 
-          // Natural human typing cadence at punctuation
+      // 1. Type the permanent white text ONCE on page load and NEVER disappear
+      async function typePermanentWhite() {
+        if (whiteCursor) whiteCursor.style.opacity = '1';
+        whiteElem.textContent = '';
+
+        for (let i = 0; i < permanentWhiteText.length; i++) {
+          const char = permanentWhiteText[i];
+          whiteElem.textContent += char;
+
           if (char === '؛') {
-            await sleep(240);
-          } else if (char === '،') {
-            await sleep(190);
+            await sleep(220);
           } else if (char === '.') {
-            await sleep(340);
+            await sleep(280);
           } else {
-            await sleep(baseSpeed + Math.floor(Math.random() * 16));
+            await sleep(22 + Math.floor(Math.random() * 14));
           }
         }
+
+        // Hide white cursor after finishing typing
+        if (whiteCursor) {
+          whiteCursor.style.display = 'none';
+        }
       }
 
-      async function runTypewriter() {
-        if (isTyping) return;
-        isTyping = true;
+      // 2. Rotating lime typewriter: Types -> Pauses -> Deletes like a real human backspacing -> Next phrase
+      async function startRotatingLime() {
+        let phraseIndex = 0;
 
-        // Reset
-        part1Elem.textContent = '';
-        if (breakElem) breakElem.innerHTML = '';
-        part2Elem.textContent = '';
-        if (wrapperElem) wrapperElem.style.opacity = '1';
+        while (true) {
+          const currentPhrase = rotatingLimePhrases[phraseIndex];
 
-        // Brief natural start delay
+          // A. Type letter by letter
+          limeElem.textContent = '';
+          for (let i = 0; i < currentPhrase.length; i++) {
+            limeElem.textContent += currentPhrase[i];
+            await sleep(48 + Math.floor(Math.random() * 20));
+          }
+
+          // B. Pause to read comfortably (2.2 seconds)
+          await sleep(2200);
+
+          // C. Delete letter by letter (Human backspacing effect)
+          while (limeElem.textContent.length > 0) {
+            limeElem.textContent = limeElem.textContent.slice(0, -1);
+            await sleep(28 + Math.floor(Math.random() * 15));
+          }
+
+          // D. Brief natural pause before next phrase
+          await sleep(350);
+
+          // E. Move to next phrase in loop
+          phraseIndex = (phraseIndex + 1) % rotatingLimePhrases.length;
+        }
+      }
+
+      async function init() {
+        // Start typing white text first
         await sleep(300);
+        await typePermanentWhite();
 
-        // 1. Type Part 1
-        await typeSentence(part1Elem, text1, 28);
-
-        // Natural pause between sentences
-        await sleep(350);
-
-        // Add line break
-        if (breakElem) {
-          breakElem.innerHTML = '<br class="my-1.5 hidden sm:inline" /> ';
-        }
-
-        // 2. Type Part 2 (Highlighted in Lime)
-        await typeSentence(part2Elem, text2, 32);
-
-        // Keep displayed for 8.5 seconds so users read it comfortably
-        await sleep(8500);
-
-        // Gentle fade-out and repeat
-        if (wrapperElem) {
-          wrapperElem.style.transition = 'opacity 0.6s ease';
-          wrapperElem.style.opacity = '0';
-          await sleep(650);
-          wrapperElem.style.transition = 'none';
-        }
-
-        isTyping = false;
-        runTypewriter();
+        // Immediately start the rotating lime phrases
+        await sleep(200);
+        startRotatingLime();
       }
 
-      // Launch typewriter when ready
       if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', runTypewriter);
+        document.addEventListener('DOMContentLoaded', init);
       } else {
-        runTypewriter();
+        init();
       }
     })();
   </script>
