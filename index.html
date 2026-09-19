@@ -2,7 +2,7 @@
 <html lang="ar" dir="rtl" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>Gravity for Physics | م. نوران الصناديقي — فيزياء مفهومة مش محفوظة</title>
   <meta name="description" content="المنصة الرسمية لأكاديمية Gravity for Physics مع الباشمهندسة نوران الصناديقي. شرح وتبسيط الفيزياء لطلاب الثانوية العامة وأقوى حلول كتاب الامتحان ونيوتن." />
 
@@ -87,11 +87,19 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 
   <style>
+    html {
+      overflow-x: hidden;
+      max-width: 100vw;
+      -webkit-tap-highlight-color: transparent;
+    }
     body {
       font-family: 'Cairo', sans-serif;
       background-color: #0A1128;
       color: #F5F7FB;
       overflow-x: hidden;
+      max-width: 100vw;
+      -webkit-overflow-scrolling: touch;
+      padding-bottom: env(safe-area-inset-bottom, 0px);
     }
     
     /* Cosmic Grid Background */
@@ -289,37 +297,37 @@
   </div>
 
   <!-- ================= TOP ANNOUNCEMENT BAR ================= -->
-  <div class="bg-gradient-to-r from-gravity-blue via-gravity-surface to-gravity-blue py-2.5 px-4 text-center text-xs md:text-sm border-b border-gravity-border/50 relative z-50">
-    <div class="container mx-auto flex items-center justify-center gap-2 md:gap-4 flex-wrap">
-      <span class="inline-flex items-center gap-1.5 bg-gravity-lime text-gravity-dark font-bold px-2.5 py-0.5 rounded-full text-xs">
-        <i class="fa-solid fa-bolt text-[11px]"></i> دفعة 2026/2027
+  <div class="bg-gradient-to-r from-gravity-blue via-gravity-surface to-gravity-blue py-1.5 sm:py-2.5 px-3 sm:px-4 text-center text-[11px] sm:text-xs md:text-sm border-b border-gravity-border/50 relative z-50">
+    <div class="container mx-auto flex items-center justify-center gap-1.5 sm:gap-3 flex-wrap">
+      <span class="inline-flex items-center gap-1 bg-gravity-lime text-gravity-dark font-black px-2 py-0.5 rounded-full text-[10px] sm:text-xs shrink-0">
+        <i class="fa-solid fa-bolt text-[10px]"></i> دفعة 2026/2027
       </span>
-      <span>باب الحجز مفتوح الآن لحصص السنتر (المنيا) والأونلاين لجميع المحافظات!</span>
-      <a href="https://wa.link/qk27ma" target="_blank" rel="noopener noreferrer" class="text-gravity-lime hover:underline font-bold inline-flex items-center gap-1">
-        احجز مقعدك الآن <i class="fa-solid fa-arrow-left text-xs"></i>
+      <span class="text-slate-200">باب الحجز مفتوح لحصص السنتر (المنيا) والأونلاين لجميع المحافظات!</span>
+      <a href="https://wa.link/qk27ma" target="_blank" rel="noopener noreferrer" class="text-gravity-lime hover:underline font-bold inline-flex items-center gap-1 py-0.5 whitespace-nowrap">
+        احجز الآن <i class="fa-solid fa-arrow-left text-[10px] sm:text-xs"></i>
       </a>
     </div>
   </div>
 
   <!-- ================= NAVBAR (FLOATING ROUNDED ISLAND) ================= -->
-  <header class="sticky top-2 sm:top-4 z-40 px-3 sm:px-6 lg:px-8 transition-all duration-300" id="mainHeaderWrapper">
-    <div class="max-w-7xl mx-auto backdrop-blur-xl bg-gravity-dark/85 border border-gravity-border/70 rounded-2xl lg:rounded-full px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between shadow-2xl shadow-black/40 transition-all duration-300 hover:border-gravity-border relative overflow-hidden" id="mainHeader">
+  <header class="sticky top-2 sm:top-4 z-40 px-2.5 sm:px-6 lg:px-8 transition-all duration-300" id="mainHeaderWrapper">
+    <div class="max-w-7xl mx-auto backdrop-blur-xl bg-gravity-dark/85 border border-gravity-border/70 rounded-2xl lg:rounded-full px-3 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between shadow-2xl shadow-black/40 transition-all duration-300 hover:border-gravity-border relative overflow-hidden" id="mainHeader">
       
       <!-- Brand Logo -->
-      <a href="#hero" class="flex items-center gap-3 group">
-        <div class="relative w-12 h-12 flex items-center justify-center">
-          <img src="assets/images/logo_transparent.png" alt="Gravity Logo" class="w-12 h-12 object-contain filter drop-shadow-[0_0_12px_rgba(188,217,30,0.5)] transition-transform duration-300 group-hover:scale-105" />
+      <a href="#hero" class="flex items-center gap-2 sm:gap-3 group shrink-0">
+        <div class="relative w-9 h-9 sm:w-12 sm:h-12 flex items-center justify-center shrink-0">
+          <img src="assets/images/logo_transparent.png" alt="Gravity Logo" class="w-full h-full object-contain filter drop-shadow-[0_0_12px_rgba(188,217,30,0.5)] transition-transform duration-300 group-hover:scale-105" />
         </div>
         <div class="flex flex-col">
-          <span class="text-xl font-black tracking-tight font-outfit text-white flex items-center gap-1.5">
-            GRAVITY <span class="text-gravity-lime text-sm px-1.5 py-0.5 rounded bg-gravity-lime/10 border border-gravity-lime/30">PHYSICS</span>
+          <span class="text-base sm:text-xl font-black tracking-tight font-outfit text-white flex items-center gap-1 sm:gap-1.5">
+            GRAVITY <span class="text-gravity-lime text-[10px] sm:text-sm px-1 sm:px-1.5 py-0.5 rounded bg-gravity-lime/10 border border-gravity-lime/30">PHYSICS</span>
           </span>
-          <span class="text-xs text-slate-300 font-medium tracking-wide">م. نــوران الـصـنـاديـقـي</span>
+          <span class="text-[10px] sm:text-xs text-slate-300 font-medium tracking-wide">م. نــوران الـصـنـاديـقـي</span>
         </div>
       </a>
 
       <!-- Desktop Navigation Links -->
-      <nav class="hidden lg:flex items-center gap-8 text-sm font-semibold" id="desktopNav">
+      <nav class="hidden lg:flex items-center gap-6 xl:gap-8 text-sm font-semibold" id="desktopNav">
         <a href="#hero" data-nav-transition="true" class="nav-link-item active text-white hover:text-gravity-lime transition-colors">الرئيسية</a>
         <a href="#about" data-nav-transition="true" class="nav-link-item text-slate-300 hover:text-gravity-lime transition-colors">عن المنصة</a>
         <a href="#grades" data-nav-transition="true" class="nav-link-item text-slate-300 hover:text-gravity-lime transition-colors">الصفوف الدراسية</a>
@@ -329,20 +337,20 @@
       </nav>
 
       <!-- Action Buttons -->
-      <div class="hidden sm:flex items-center gap-3">
-        <a href="https://wa.link/qk27ma" target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 rounded-full bg-gravity-lime text-gravity-dark font-extrabold text-sm flex items-center gap-2 hover:bg-lime-400 hover:shadow-glow-lime transition-all duration-300 transform hover:-translate-y-0.5">
-          <i class="fa-brands fa-whatsapp text-lg"></i>
+      <div class="hidden sm:flex items-center gap-2.5 sm:gap-3">
+        <a href="https://wa.link/qk27ma" target="_blank" rel="noopener noreferrer" class="px-4 sm:px-5 py-2 sm:py-2.5 rounded-full bg-gravity-lime text-gravity-dark font-extrabold text-xs sm:text-sm flex items-center gap-2 hover:bg-lime-400 hover:shadow-glow-lime transition-all duration-300 transform hover:-translate-y-0.5">
+          <i class="fa-brands fa-whatsapp text-base sm:text-lg"></i>
           <span>حجز سريع واتساب</span>
         </a>
-        <a href="https://www.youtube.com/@gravity-nouranelsanadiki" target="_blank" rel="noopener noreferrer" class="group px-4 py-2.5 rounded-full bg-gravity-red/15 border border-gravity-red/30 text-white font-bold text-sm flex items-center gap-2 hover:bg-gravity-red hover:shadow-glow-red transition-all duration-300">
+        <a href="https://www.youtube.com/@gravity-nouranelsanadiki" target="_blank" rel="noopener noreferrer" class="group px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-full bg-gravity-red/15 border border-gravity-red/30 text-white font-bold text-xs sm:text-sm flex items-center gap-2 hover:bg-gravity-red hover:shadow-glow-red transition-all duration-300">
           <i class="fa-brands fa-youtube text-gravity-red group-hover:text-white"></i>
           <span class="hidden md:inline">يوتيوب</span>
         </a>
       </div>
 
       <!-- Mobile Menu Button -->
-      <button id="mobileMenuBtn" aria-label="فتح القائمة" class="lg:hidden w-11 h-11 rounded-full bg-gravity-surface border border-gravity-border flex items-center justify-center text-slate-200 hover:text-gravity-lime">
-        <i class="fa-solid fa-bars-staggered text-lg"></i>
+      <button id="mobileMenuBtn" aria-label="فتح القائمة" class="lg:hidden w-10 h-10 rounded-xl bg-gravity-surface border border-gravity-border flex items-center justify-center text-slate-200 hover:text-gravity-lime focus:outline-none focus:ring-2 focus:ring-gravity-lime/40 transition-colors">
+        <i id="mobileMenuIcon" class="fa-solid fa-bars-staggered text-base"></i>
       </button>
 
       <!-- Scroll Progress Bar inside Navbar (Flipped to grow from left to right) -->
@@ -352,22 +360,22 @@
 
     </div>
 
-    <!-- Mobile Nav Drawer -->
-    <div id="mobileMenu" class="hidden lg:hidden max-w-7xl mx-auto mt-2 bg-gravity-surface/95 backdrop-blur-xl border border-gravity-border rounded-2xl p-6 transition-all shadow-2xl">
-      <div class="flex flex-col gap-4 text-base font-semibold">
-        <a href="#hero" data-nav-transition="true" class="mobile-nav-link text-white hover:text-gravity-lime py-2 font-bold">الرئيسية</a>
-        <a href="#about" data-nav-transition="true" class="mobile-nav-link text-slate-300 hover:text-gravity-lime py-2">عن المنصة</a>
-        <a href="#grades" data-nav-transition="true" class="mobile-nav-link text-slate-300 hover:text-gravity-lime py-2">الصفوف الدراسية</a>
-        <a href="#books" data-nav-transition="true" class="mobile-nav-link text-slate-300 hover:text-gravity-lime py-2">حلول الكتب الخارجية</a>
-        <a href="#app" data-nav-transition="true" class="mobile-nav-link text-slate-300 hover:text-gravity-lime py-2">تطبيق الطلاب</a>
-        <a href="#faq" data-nav-transition="true" class="mobile-nav-link text-slate-300 hover:text-gravity-lime py-2">الأسئلة الشائعة</a>
-        <div class="pt-4 border-t border-gravity-border flex flex-col gap-3">
-          <a href="https://wa.link/qk27ma" target="_blank" rel="noopener noreferrer" class="w-full py-3 rounded-full bg-gravity-lime text-gravity-dark font-extrabold text-center flex items-center justify-center gap-2">
-            <i class="fa-brands fa-whatsapp text-lg"></i>
+    <!-- Mobile Nav Drawer (Enhanced Scroll & Touch targets) -->
+    <div id="mobileMenu" class="hidden lg:hidden max-w-7xl mx-auto mt-2 bg-gravity-surface/98 backdrop-blur-2xl border border-gravity-border rounded-2xl p-5 transition-all shadow-2xl max-h-[calc(100vh-5.5rem)] overflow-y-auto">
+      <div class="flex flex-col gap-1 text-base font-semibold">
+        <a href="#hero" data-nav-transition="true" class="mobile-nav-link text-white hover:text-gravity-lime py-3 px-3 rounded-xl hover:bg-white/5 font-bold transition-colors">الرئيسية</a>
+        <a href="#about" data-nav-transition="true" class="mobile-nav-link text-slate-300 hover:text-gravity-lime py-3 px-3 rounded-xl hover:bg-white/5 transition-colors">عن المنصة</a>
+        <a href="#grades" data-nav-transition="true" class="mobile-nav-link text-slate-300 hover:text-gravity-lime py-3 px-3 rounded-xl hover:bg-white/5 transition-colors">الصفوف الدراسية</a>
+        <a href="#books" data-nav-transition="true" class="mobile-nav-link text-slate-300 hover:text-gravity-lime py-3 px-3 rounded-xl hover:bg-white/5 transition-colors">حلول الكتب الخارجية</a>
+        <a href="#app" data-nav-transition="true" class="mobile-nav-link text-slate-300 hover:text-gravity-lime py-3 px-3 rounded-xl hover:bg-white/5 transition-colors">تطبيق الطلاب</a>
+        <a href="#faq" data-nav-transition="true" class="mobile-nav-link text-slate-300 hover:text-gravity-lime py-3 px-3 rounded-xl hover:bg-white/5 transition-colors">الأسئلة الشائعة</a>
+        <div class="pt-4 mt-2 border-t border-gravity-border/70 flex flex-col gap-3">
+          <a href="https://wa.link/qk27ma" target="_blank" rel="noopener noreferrer" class="w-full py-3.5 rounded-xl bg-gravity-lime text-gravity-dark font-black text-center flex items-center justify-center gap-2 shadow-glow-lime">
+            <i class="fa-brands fa-whatsapp text-xl"></i>
             حجز سريع واتساب
           </a>
-          <a href="tel:01000776752" class="w-full py-3 rounded-full bg-gravity-surfaceLight border border-gravity-border text-center text-white font-bold flex items-center justify-center gap-2">
-            <i class="fa-solid fa-phone"></i>
+          <a href="tel:01000776752" class="w-full py-3.5 rounded-xl bg-gravity-surfaceLight border border-gravity-border text-center text-white font-bold flex items-center justify-center gap-2">
+            <i class="fa-solid fa-phone text-gravity-lime"></i>
             <span dir="ltr">01000776752</span>
           </a>
         </div>
@@ -376,60 +384,72 @@
   </header>
 
   <!-- ================= HERO SECTION ================= -->
-  <section id="hero" class="relative pt-12 pb-24 md:pt-20 md:pb-36 lg:py-32 overflow-hidden flex items-center">
+  <section id="hero" class="relative pt-8 pb-16 sm:pt-14 sm:pb-24 md:pt-20 md:pb-36 lg:py-32 overflow-hidden flex items-center">
     <!-- Cosmic background glow shapes -->
-    <div class="absolute -top-24 right-1/4 w-[500px] h-[500px] bg-gravity-blue/30 rounded-full blur-[150px] pointer-events-none"></div>
-    <div class="absolute top-1/2 left-10 w-[450px] h-[450px] bg-gravity-lime/15 rounded-full blur-[140px] pointer-events-none"></div>
+    <div class="absolute -top-24 right-1/4 w-[320px] h-[320px] sm:w-[500px] sm:h-[500px] bg-gravity-blue/30 rounded-full blur-[120px] sm:blur-[150px] pointer-events-none"></div>
+    <div class="absolute top-1/2 left-10 w-[280px] h-[280px] sm:w-[450px] sm:h-[450px] bg-gravity-lime/15 rounded-full blur-[110px] sm:blur-[140px] pointer-events-none"></div>
 
     <div class="container mx-auto px-4 lg:px-8 xl:px-12 max-w-7xl 2xl:max-w-[1500px]">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 xl:gap-20 items-center">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 xl:gap-20 items-center">
         
         <!-- Right Column: Text & Content (RTL: appears on right) -->
-        <div class="lg:col-span-7 flex flex-col items-start text-right space-y-7 md:space-y-9">
+        <div class="lg:col-span-7 flex flex-col items-start text-right space-y-6 sm:space-y-8 md:space-y-9">
 
           <!-- Main Heading -->
-          <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[5.1rem] font-black leading-[1.18] tracking-tight text-white">
+          <h1 class="text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[4.8rem] font-black leading-[1.24] sm:leading-[1.18] tracking-tight text-white">
             تعلّم الفيزياء بشغف مع <br class="hidden sm:inline" />
             <span class="gradient-text-lime">م. نــوران الـصـنـاديـقـي</span>
           </h1>
 
           <!-- Subheading & Philosophy (Interactive Typewriter) -->
-          <div class="space-y-3 max-w-3xl" id="heroTypewriterWrapper">
+          <div class="space-y-2 sm:space-y-3 max-w-3xl w-full" id="heroTypewriterWrapper">
             <!-- 1. White Sentence: Types once on load and NEVER disappears -->
-            <p class="text-lg sm:text-xl md:text-2xl text-white font-medium leading-relaxed min-h-[58px] sm:min-h-[64px]">
+            <p class="text-sm sm:text-xl md:text-2xl text-white font-medium leading-relaxed min-h-[75px] xs:min-h-[62px] sm:min-h-[64px]">
               <span id="heroWhiteSentence"></span><span id="heroWhiteCursor" class="inline-block w-[2.5px] h-[1.15em] bg-white align-middle mr-1.5 rounded-full transition-opacity duration-150"></span>
             </p>
 
             <!-- 2. Rotating Lime Sentence: Types -> Pauses -> Deletes like a real user -> Next word -->
-            <div class="flex items-center gap-2 text-xl sm:text-2xl md:text-3xl font-bold min-h-[38px] sm:min-h-[44px]">
-              <span class="w-2.5 h-2.5 rounded-full bg-gravity-lime shadow-[0_0_8px_#BCD91E] animate-ping ml-1"></span>
+            <div class="flex items-center gap-2 text-lg sm:text-2xl md:text-3xl font-bold min-h-[34px] sm:min-h-[44px]">
+              <span class="w-2.5 h-2.5 rounded-full bg-gravity-lime shadow-[0_0_8px_#BCD91E] animate-ping ml-1 shrink-0"></span>
               <span id="heroLimeSentence" class="text-gravity-lime drop-shadow-[0_0_14px_rgba(188,217,30,0.55)]"></span><span id="heroLimeCursor" class="inline-block w-[3px] h-[1.15em] bg-gravity-lime align-middle mr-1 rounded-full shadow-[0_0_10px_#BCD91E] transition-opacity duration-150"></span>
             </div>
           </div>
 
+          <!-- Quick Action Buttons for Hero (Mobile & Desktop) -->
+          <div class="pt-1 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full sm:w-auto">
+            <a href="https://wa.link/qk27ma" target="_blank" rel="noopener noreferrer" class="px-6 sm:px-7 py-3.5 rounded-2xl bg-gravity-lime text-gravity-dark font-black text-sm sm:text-base flex items-center justify-center gap-2 hover:bg-lime-400 hover:shadow-glow-lime transition-all duration-300 transform hover:-translate-y-0.5">
+              <i class="fa-brands fa-whatsapp text-xl"></i>
+              <span>احجز مقعدك الآن عبر واتساب</span>
+            </a>
+            <a href="#grades" data-nav-transition="true" class="px-5 sm:px-6 py-3.5 rounded-2xl bg-gravity-surface border border-gravity-border hover:border-gravity-lime/40 text-white font-bold text-sm sm:text-base flex items-center justify-center gap-2 hover:bg-gravity-surfaceLight transition-all">
+              <i class="fa-solid fa-graduation-cap text-gravity-lime"></i>
+              <span>استكشف الصفوف الدراسية</span>
+            </a>
+          </div>
+
           <!-- Social Proof / Followers preview -->
-          <div class="pt-6 flex items-center gap-5 border-t border-gravity-border/70 w-full">
-            <div class="flex -space-x-2 overflow-hidden rtl:space-x-reverse">
-              <span class="h-11 w-11 rounded-full ring-2 ring-gravity-dark bg-gravity-blue flex items-center justify-center text-sm font-bold font-outfit">G</span>
-              <span class="h-11 w-11 rounded-full ring-2 ring-gravity-dark bg-gravity-red flex items-center justify-center text-sm font-bold text-white font-outfit"><i class="fa-solid fa-play text-xs"></i></span>
+          <div class="pt-4 sm:pt-6 flex items-center gap-3 sm:gap-5 border-t border-gravity-border/70 w-full">
+            <div class="flex -space-x-2 overflow-hidden rtl:space-x-reverse shrink-0">
+              <span class="h-9 w-9 sm:h-11 sm:w-11 rounded-full ring-2 ring-gravity-dark bg-gravity-blue flex items-center justify-center text-xs sm:text-sm font-bold font-outfit">G</span>
+              <span class="h-9 w-9 sm:h-11 sm:w-11 rounded-full ring-2 ring-gravity-dark bg-gravity-red flex items-center justify-center text-xs sm:text-sm font-bold text-white font-outfit"><i class="fa-solid fa-play text-[10px] sm:text-xs"></i></span>
             </div>
-            <div class="text-sm sm:text-base md:text-lg text-slate-200">
-              <span class="text-white font-black text-base sm:text-lg md:text-xl font-outfit">+48,000</span> طالب ومتابع يثقون في شروحات م. نوران على يوتيوب
+            <div class="text-xs sm:text-base md:text-lg text-slate-200">
+              <span class="text-white font-black text-sm sm:text-lg md:text-xl font-outfit">+48,000</span> طالب ومتابع يثقون في شروحات م. نوران على يوتيوب
             </div>
           </div>
 
         </div>
 
         <!-- Left Column: Visual Portrait & Interactive Badges -->
-        <div class="lg:col-span-5 relative flex items-center justify-center">
+        <div class="lg:col-span-5 relative flex items-center justify-center mt-6 lg:mt-0">
           
-          <!-- Orbital Circle Background Effect (Enlarged) -->
-          <div class="absolute w-[440px] h-[440px] sm:w-[560px] sm:h-[560px] xl:w-[660px] xl:h-[660px] orbital-ring animate-spin-slow"></div>
-          <div class="absolute w-[380px] h-[380px] sm:w-[480px] sm:h-[480px] xl:w-[580px] xl:h-[580px] rounded-full border border-gravity-blue/30"></div>
-          <div class="absolute w-[350px] h-[350px] sm:w-[480px] sm:h-[480px] rounded-full bg-gravity-blue/25 blur-3xl"></div>
+          <!-- Orbital Circle Background Effect (Responsive dimensions) -->
+          <div class="absolute w-[280px] h-[280px] sm:w-[440px] sm:h-[440px] xl:w-[620px] xl:h-[620px] orbital-ring animate-spin-slow"></div>
+          <div class="absolute w-[240px] h-[240px] sm:w-[380px] sm:h-[380px] xl:w-[540px] xl:h-[540px] rounded-full border border-gravity-blue/30"></div>
+          <div class="absolute w-[220px] h-[220px] sm:w-[350px] sm:h-[350px] rounded-full bg-gravity-blue/25 blur-3xl"></div>
 
           <!-- Main Portrait Container (Enlarged) -->
-          <div class="relative z-10 w-full max-w-md sm:max-w-lg lg:max-w-xl xl:max-w-2xl mx-auto">
+          <div class="relative z-10 w-full max-w-xs sm:max-w-md lg:max-w-xl xl:max-w-2xl mx-auto px-2 sm:px-0">
             <div class="relative rounded-3xl overflow-hidden p-1.5 bg-gradient-to-b from-gravity-lime/40 via-gravity-blue/30 to-transparent shadow-2xl">
               <div class="rounded-[22px] overflow-hidden bg-gravity-surface relative">
                 <!-- Teacher Portrait Image -->
@@ -441,24 +461,24 @@
             </div>
 
             <!-- Floating Badge 1: Top Right -->
-            <div class="absolute -top-4 -right-4 z-20 glass-card px-5 py-3.5 rounded-2xl shadow-2xl animate-float hidden sm:flex items-center gap-3.5">
-              <div class="w-12 h-12 rounded-xl bg-gravity-lime/20 text-gravity-lime flex items-center justify-center text-xl">
+            <div class="absolute -top-3 -right-2 sm:-top-4 sm:-right-4 z-20 glass-card px-3.5 py-2.5 sm:px-5 sm:py-3.5 rounded-xl sm:rounded-2xl shadow-2xl animate-float hidden sm:flex items-center gap-2.5 sm:gap-3.5">
+              <div class="w-9 h-9 sm:w-12 sm:h-12 rounded-xl bg-gravity-lime/20 text-gravity-lime flex items-center justify-center text-base sm:text-xl">
                 <i class="fa-solid fa-award"></i>
               </div>
               <div class="text-right">
-                <div class="text-xs text-slate-400 font-medium">الخبرة والأسلوب</div>
-                <div class="text-base font-bold text-white">تحليل هندسي مبسّط</div>
+                <div class="text-[10px] sm:text-xs text-slate-400 font-medium">الخبرة والأسلوب</div>
+                <div class="text-xs sm:text-base font-bold text-white">تحليل هندسي مبسّط</div>
               </div>
             </div>
 
             <!-- Floating Badge 2: Bottom Left -->
-            <div class="absolute -bottom-6 -left-4 z-20 glass-card px-5 py-3.5 rounded-2xl shadow-2xl animate-float-delayed flex items-center gap-3.5">
-              <div class="w-12 h-12 rounded-xl bg-gravity-red/20 text-gravity-red flex items-center justify-center text-xl">
+            <div class="absolute -bottom-4 left-1 sm:-bottom-6 sm:-left-4 z-20 glass-card px-3.5 py-2 sm:px-5 sm:py-3.5 rounded-xl sm:rounded-2xl shadow-2xl animate-float-delayed flex items-center gap-2.5 sm:gap-3.5">
+              <div class="w-9 h-9 sm:w-12 sm:h-12 rounded-xl bg-gravity-red/20 text-gravity-red flex items-center justify-center text-base sm:text-xl">
                 <i class="fa-solid fa-book-open"></i>
               </div>
               <div class="text-right">
-                <div class="text-xs text-slate-400 font-medium">حلول شاملة</div>
-                <div class="text-base font-bold text-white">كتاب الامتحان & نيوتن 💯</div>
+                <div class="text-[10px] sm:text-xs text-slate-400 font-medium">حلول شاملة</div>
+                <div class="text-xs sm:text-base font-bold text-white">كتاب الامتحان & نيوتن 💯</div>
               </div>
             </div>
 
@@ -471,28 +491,28 @@
   </section>
 
   <!-- ================= STATS BAR ================= -->
-  <section class="py-10 bg-gravity-surface/60 border-y border-gravity-border/70 relative">
+  <section class="py-8 sm:py-10 bg-gravity-surface/60 border-y border-gravity-border/70 relative">
     <div class="container mx-auto px-4 lg:px-8">
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-6 text-center">
         
-        <div class="space-y-1">
-          <div class="text-3xl sm:text-4xl md:text-5xl font-black font-outfit text-gravity-lime tracking-tight">+50,000</div>
-          <div class="text-xs sm:text-sm font-semibold text-slate-300">طالب ومتابع في مصر</div>
+        <div class="p-3.5 sm:p-4 rounded-2xl bg-white/[0.02] border border-white/5 space-y-1">
+          <div class="text-2xl sm:text-4xl md:text-5xl font-black font-outfit text-gravity-lime tracking-tight">+50,000</div>
+          <div class="text-[11px] sm:text-sm font-semibold text-slate-300">طالب ومتابع في مصر</div>
         </div>
 
-        <div class="space-y-1">
-          <div class="text-3xl sm:text-4xl md:text-5xl font-black font-outfit text-white tracking-tight">100%</div>
-          <div class="text-xs sm:text-sm font-semibold text-slate-300">حل كتب الامتحان ونيوتن</div>
+        <div class="p-3.5 sm:p-4 rounded-2xl bg-white/[0.02] border border-white/5 space-y-1">
+          <div class="text-2xl sm:text-4xl md:text-5xl font-black font-outfit text-white tracking-tight">100%</div>
+          <div class="text-[11px] sm:text-sm font-semibold text-slate-300">حل كتب الامتحان ونيوتن</div>
         </div>
 
-        <div class="space-y-1">
-          <div class="text-3xl sm:text-4xl md:text-5xl font-black font-outfit text-gravity-lime tracking-tight">+6</div>
-          <div class="text-xs sm:text-sm font-semibold text-slate-300">سنوات خبرة في تدريس وتبسيط الفيزياء</div>
+        <div class="p-3.5 sm:p-4 rounded-2xl bg-white/[0.02] border border-white/5 space-y-1">
+          <div class="text-2xl sm:text-4xl md:text-5xl font-black font-outfit text-gravity-lime tracking-tight">+6</div>
+          <div class="text-[11px] sm:text-sm font-semibold text-slate-300">سنوات خبرة في التدريس</div>
         </div>
 
-        <div class="space-y-1">
-          <div class="text-3xl sm:text-4xl md:text-5xl font-black font-outfit text-white tracking-tight">24/7</div>
-          <div class="text-xs sm:text-sm font-semibold text-slate-300">متابعة وإجابة استفسارات دورية</div>
+        <div class="p-3.5 sm:p-4 rounded-2xl bg-white/[0.02] border border-white/5 space-y-1">
+          <div class="text-2xl sm:text-4xl md:text-5xl font-black font-outfit text-white tracking-tight">24/7</div>
+          <div class="text-[11px] sm:text-sm font-semibold text-slate-300">متابعة واستفسارات دورية</div>
         </div>
 
       </div>
@@ -500,63 +520,63 @@
   </section>
 
   <!-- ================= ABOUT / TEACHING PHILOSOPHY ================= -->
-  <section id="about" class="py-20 relative">
+  <section id="about" class="py-14 sm:py-20 relative">
     <div class="container mx-auto px-4 lg:px-8">
       
       <!-- Section Header -->
-      <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+      <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-16 space-y-3">
         <span class="text-xs font-bold uppercase tracking-wider text-gravity-lime bg-gravity-lime/10 px-3.5 py-1 rounded-full border border-gravity-lime/30">
           طريقتنا في تدريس الفيزياء
         </span>
-        <h2 class="text-3xl sm:text-4xl font-black text-white">
+        <h2 class="text-2xl sm:text-4xl font-black text-white">
           إيه اللي بيخلّي دراسة الفيزياء مع <span class="text-gravity-lime">م. نــوران</span> مختلفة؟
         </h2>
-        <p class="text-slate-300 text-sm sm:text-base">
+        <p class="text-slate-300 text-xs sm:text-base leading-relaxed">
           الفيزياء مش مجرد حفظ قوانين ومعادلات، دي طريقة تفكير بتخليك تفهم اللي حواليك، وتحل أي مسألة حتى لو كانت جديدة ومش تقليدية.
         </p>
       </div>
 
       <!-- Feature Grid (Cards) -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-8">
         
         <!-- Card 1 -->
-        <div class="glass-card rounded-3xl p-8 transition-all duration-300 hover:-translate-y-2 relative overflow-hidden group">
-          <div class="w-14 h-14 rounded-2xl bg-gravity-blue/30 border border-gravity-blue/50 flex items-center justify-center text-2xl text-white mb-6 group-hover:bg-gravity-blue group-hover:shadow-glow-blue transition-all">
+        <div class="glass-card rounded-2xl sm:rounded-3xl p-6 sm:p-8 transition-all duration-300 hover:-translate-y-2 relative overflow-hidden group">
+          <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-gravity-blue/30 border border-gravity-blue/50 flex items-center justify-center text-xl sm:text-2xl text-white mb-5 sm:mb-6 group-hover:bg-gravity-blue group-hover:shadow-glow-blue transition-all">
             <i class="fa-solid fa-compass-drafting"></i>
           </div>
-          <h3 class="text-xl font-bold text-white mb-3">نفهم المسألة من منظور هندسي</h3>
-          <p class="text-slate-300 text-sm leading-relaxed">
+          <h3 class="text-lg sm:text-xl font-bold text-white mb-2.5">نفهم المسألة من منظور هندسي</h3>
+          <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
             هتتعلم إزاي تفكّك المسألة، وتحدد المعطيات، وترسم الرسومات والمخططات اللي تساعدك تفهمها، عشان تعرف القانون منين جه وإمتى تستخدمه بدل ما تحفظه وخلاص.
           </p>
-          <div class="mt-6 pt-4 border-t border-gravity-border/50 text-xs font-semibold text-gravity-lime flex items-center gap-1">
+          <div class="mt-5 sm:mt-6 pt-4 border-t border-gravity-border/50 text-xs font-semibold text-gravity-lime flex items-center gap-1">
             <span>ابدأ تفكيرك صح</span> <i class="fa-solid fa-arrow-left text-[10px]"></i>
           </div>
         </div>
 
         <!-- Card 2 -->
-        <div class="glass-card rounded-3xl p-8 transition-all duration-300 hover:-translate-y-2 relative overflow-hidden group border-gravity-lime/30">
-          <div class="w-14 h-14 rounded-2xl bg-gravity-lime/20 border border-gravity-lime/50 flex items-center justify-center text-2xl text-gravity-lime mb-6 group-hover:bg-gravity-lime group-hover:text-gravity-dark group-hover:shadow-glow-lime transition-all">
+        <div class="glass-card rounded-2xl sm:rounded-3xl p-6 sm:p-8 transition-all duration-300 hover:-translate-y-2 relative overflow-hidden group border-gravity-lime/30">
+          <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-gravity-lime/20 border border-gravity-lime/50 flex items-center justify-center text-xl sm:text-2xl text-gravity-lime mb-5 sm:mb-6 group-hover:bg-gravity-lime group-hover:text-gravity-dark group-hover:shadow-glow-lime transition-all">
             <i class="fa-solid fa-calculator"></i>
           </div>
-          <h3 class="text-xl font-bold text-white mb-3">نشرح ونتدرّب سؤال بسؤال</h3>
-          <p class="text-slate-300 text-sm leading-relaxed">
+          <h3 class="text-lg sm:text-xl font-bold text-white mb-2.5">نشرح ونتدرّب سؤال بسؤال</h3>
+          <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
             هنحل أهم مصادر الأسئلة مع بعض: كتاب الامتحان، بنك أسئلة نيوتن، وكمان امتحانات الثانوية العامة السابقة، مع التركيز على الأفكار المهمة في الـMCQ.
           </p>
-          <div class="mt-6 pt-4 border-t border-gravity-border/50 text-xs font-semibold text-gravity-lime flex items-center gap-1">
+          <div class="mt-5 sm:mt-6 pt-4 border-t border-gravity-border/50 text-xs font-semibold text-gravity-lime flex items-center gap-1">
             <span>اتدرّب على أسئلة حقيقية</span> <i class="fa-solid fa-arrow-left text-[10px]"></i>
           </div>
         </div>
 
         <!-- Card 3 -->
-        <div class="glass-card rounded-3xl p-8 transition-all duration-300 hover:-translate-y-2 relative overflow-hidden group">
-          <div class="w-14 h-14 rounded-2xl bg-gravity-red/20 border border-gravity-red/50 flex items-center justify-center text-2xl text-gravity-red mb-6 group-hover:bg-gravity-red group-hover:text-white group-hover:shadow-glow-red transition-all">
+        <div class="glass-card rounded-2xl sm:rounded-3xl p-6 sm:p-8 transition-all duration-300 hover:-translate-y-2 relative overflow-hidden group">
+          <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-gravity-red/20 border border-gravity-red/50 flex items-center justify-center text-xl sm:text-2xl text-gravity-red mb-5 sm:mb-6 group-hover:bg-gravity-red group-hover:text-white group-hover:shadow-glow-red transition-all">
             <i class="fa-solid fa-laptop-code"></i>
           </div>
-          <h3 class="text-xl font-bold text-white mb-3">كل حاجة تساعدك تتابع مستواك</h3>
-          <p class="text-slate-300 text-sm leading-relaxed">
+          <h3 class="text-lg sm:text-xl font-bold text-white mb-2.5">كل حاجة تساعدك تتابع مستواك</h3>
+          <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
             هتقدر تتابع معانا سواء من السنتر أو أونلاين من خلال التطبيق والمنصة، وكمان هتكون فيه متابعة أسبوعية لمستواك وتقارير تساعد ولي الأمر يعرف تقدمك.
           </p>
-          <div class="mt-6 pt-4 border-t border-gravity-border/50 text-xs font-semibold text-gravity-lime flex items-center gap-1">
+          <div class="mt-5 sm:mt-6 pt-4 border-t border-gravity-border/50 text-xs font-semibold text-gravity-lime flex items-center gap-1">
             <span>تابع مستواك باستمرار</span> <i class="fa-solid fa-arrow-left text-[10px]"></i>
           </div>
         </div>
@@ -567,107 +587,107 @@
   </section>
 
   <!-- ================= GRADES & COURSES SECTION ================= -->
-  <section id="grades" class="py-20 bg-gravity-surface/30 border-t border-gravity-border/70 relative">
+  <section id="grades" class="py-14 sm:py-20 bg-gravity-surface/30 border-t border-gravity-border/70 relative">
     <div class="container mx-auto px-4 lg:px-8">
       
       <!-- Section Header -->
-      <div class="text-center max-w-3xl mx-auto mb-14 space-y-3">
+      <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-14 space-y-3">
         <span class="text-xs font-bold uppercase tracking-wider text-gravity-lime bg-gravity-lime/10 px-3.5 py-1 rounded-full border border-gravity-lime/30">
           المراحل والمناهج
         </span>
-        <h2 class="text-3xl sm:text-4xl font-black text-white">
+        <h2 class="text-2xl sm:text-4xl font-black text-white">
           الكورسات المتاحة لكل صف دراسي
         </h2>
-        <p class="text-slate-300 text-sm sm:text-base">
+        <p class="text-slate-300 text-xs sm:text-base">
           اختر صفك الدراسي للاطلاع على تفاصيل المنهج والمحتوى التدريبي ومواعيد المحاضرات
         </p>
       </div>
 
-      <!-- Grade Cards Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Grade Cards Grid (Responsive 1-col on mobile, 2-col on tablet, 3-col on desktop) -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 items-stretch">
         
         <!-- Grade 1 Card -->
-        <div class="glass-card rounded-3xl p-7 flex flex-col justify-between border-t-4 border-t-blue-500 hover:shadow-2xl transition-all">
+        <div class="glass-card rounded-2xl sm:rounded-3xl p-6 sm:p-7 flex flex-col justify-between border-t-4 border-t-blue-500 hover:shadow-2xl transition-all">
           <div>
             <div class="flex items-center justify-between mb-4">
               <span class="px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/30 text-blue-400 text-xs font-bold">المرحلة التأسيسية</span>
               <span class="text-xs text-slate-400 font-medium">الترم الأول والثاني</span>
             </div>
-            <h3 class="text-2xl font-black text-white mb-2">الصف الأول الثانوي</h3>
-            <p class="text-slate-300 text-sm mb-6 leading-relaxed">
+            <h3 class="text-xl sm:text-2xl font-black text-white mb-2">الصف الأول الثانوي</h3>
+            <p class="text-slate-300 text-xs sm:text-sm mb-5 leading-relaxed">
               تأسيس شامل للفيزياء: القياس الفيزيائي، صيغ الأبعاد، الحركة الخطية وعجلة الجاذبية وقوانين نيوتن والطاقة.
             </p>
-            <ul class="space-y-3 text-xs sm:text-sm text-slate-200 mb-8">
+            <ul class="space-y-2.5 text-xs sm:text-sm text-slate-200 mb-6 sm:mb-8">
               <li class="flex items-center gap-2.5">
-                <i class="fa-solid fa-circle-check text-gravity-lime"></i> تأسيس قوي في الرياضيات الفيزيائية
+                <i class="fa-solid fa-circle-check text-gravity-lime shrink-0"></i> تأسيس قوي في الرياضيات الفيزيائية
               </li>
               <li class="flex items-center gap-2.5">
-                <i class="fa-solid fa-circle-check text-gravity-lime"></i> حل تفصيلي لكتاب الامتحان كاملاً
+                <i class="fa-solid fa-circle-check text-gravity-lime shrink-0"></i> حل تفصيلي لكتاب الامتحان كاملاً
               </li>
               <li class="flex items-center gap-2.5">
-                <i class="fa-solid fa-circle-check text-gravity-lime"></i> اختبارات أسبوعية إلكترونية MCQ
+                <i class="fa-solid fa-circle-check text-gravity-lime shrink-0"></i> اختبارات أسبوعية إلكترونية MCQ
               </li>
             </ul>
           </div>
-          <a href="https://wa.link/qk27ma" target="_blank" rel="noopener noreferrer" class="w-full py-3.5 rounded-xl bg-gravity-surfaceLight hover:bg-blue-600 hover:text-white border border-blue-500/40 text-center font-bold text-sm text-white transition-all duration-300 flex items-center justify-center gap-2">
+          <a href="https://wa.link/qk27ma" target="_blank" rel="noopener noreferrer" class="w-full py-3.5 rounded-xl bg-gravity-surfaceLight hover:bg-blue-600 hover:text-white border border-blue-500/40 text-center font-bold text-xs sm:text-sm text-white transition-all duration-300 flex items-center justify-center gap-2">
             <span>استفسر وسجل للصف الأول</span>
             <i class="fa-solid fa-arrow-left text-xs"></i>
           </a>
         </div>
 
         <!-- Grade 2 Card -->
-        <div class="glass-card rounded-3xl p-7 flex flex-col justify-between border-t-4 border-t-gravity-lime hover:shadow-glow-lime transition-all">
+        <div class="glass-card rounded-2xl sm:rounded-3xl p-6 sm:p-7 flex flex-col justify-between border-t-4 border-t-gravity-lime hover:shadow-glow-lime transition-all">
           <div>
             <div class="flex items-center justify-between mb-4">
               <span class="px-3 py-1 rounded-full bg-gravity-lime/10 border border-gravity-lime/30 text-gravity-lime text-xs font-bold">المرحلة المتقدمة</span>
               <span class="text-xs text-slate-400 font-medium">الترم الأول والثاني</span>
             </div>
-            <h3 class="text-2xl font-black text-white mb-2">الصف الثاني الثانوي</h3>
-            <p class="text-slate-300 text-sm mb-6 leading-relaxed">
+            <h3 class="text-xl sm:text-2xl font-black text-white mb-2">الصف الثاني الثانوي</h3>
+            <p class="text-slate-300 text-xs sm:text-sm mb-5 leading-relaxed">
               دراسة الحركة الموجية، ظواهر الضوء والانكسار والحيود، وخواص الموائع الساكنة والمتحركة والغازات.
             </p>
-            <ul class="space-y-3 text-xs sm:text-sm text-slate-200 mb-8">
+            <ul class="space-y-2.5 text-xs sm:text-sm text-slate-200 mb-6 sm:mb-8">
               <li class="flex items-center gap-2.5">
-                <i class="fa-solid fa-circle-check text-gravity-lime"></i> محاكاة بصرية لمسارات أشعة الضوء
+                <i class="fa-solid fa-circle-check text-gravity-lime shrink-0"></i> محاكاة بصرية لمسارات أشعة الضوء
               </li>
               <li class="flex items-center gap-2.5">
-                <i class="fa-solid fa-circle-check text-gravity-lime"></i> حل شامل لأسئلة المستويات العليا
+                <i class="fa-solid fa-circle-check text-gravity-lime shrink-0"></i> حل شامل لأسئلة المستويات العليا
               </li>
               <li class="flex items-center gap-2.5">
-                <i class="fa-solid fa-circle-check text-gravity-lime"></i> بنك أسئلة وتدريب على الأسئلة المقالية
+                <i class="fa-solid fa-circle-check text-gravity-lime shrink-0"></i> بنك أسئلة وتدريب على الأسئلة المقالية
               </li>
             </ul>
           </div>
-          <a href="https://wa.link/qk27ma" target="_blank" rel="noopener noreferrer" class="w-full py-3.5 rounded-xl bg-gravity-lime text-gravity-dark font-extrabold text-center text-sm hover:bg-lime-400 transition-all duration-300 flex items-center justify-center gap-2 shadow-glow-lime">
+          <a href="https://wa.link/qk27ma" target="_blank" rel="noopener noreferrer" class="w-full py-3.5 rounded-xl bg-gravity-lime text-gravity-dark font-black text-center text-xs sm:text-sm hover:bg-lime-400 transition-all duration-300 flex items-center justify-center gap-2 shadow-glow-lime">
             <span>استفسر وسجل للصف الثاني</span>
             <i class="fa-solid fa-arrow-left text-xs"></i>
           </a>
         </div>
 
         <!-- Grade 3 Card -->
-        <div class="glass-card rounded-3xl p-7 flex flex-col justify-between border-t-4 border-t-red-500 hover:shadow-2xl transition-all">
+        <div class="glass-card rounded-2xl sm:rounded-3xl p-6 sm:p-7 flex flex-col justify-between border-t-4 border-t-red-500 hover:shadow-2xl transition-all md:col-span-2 lg:col-span-1 md:max-w-md md:mx-auto lg:max-w-none w-full">
           <div>
             <div class="flex items-center justify-between mb-4">
               <span class="px-3 py-1 rounded-full bg-red-500/10 border border-red-500/30 text-red-400 text-xs font-bold">الشهادة الثانوية العامة</span>
               <span class="text-xs text-slate-400 font-medium">سنة كاملة</span>
             </div>
-            <h3 class="text-2xl font-black text-white mb-2">الصف الثالث الثانوي</h3>
-            <p class="text-slate-300 text-sm mb-6 leading-relaxed">
+            <h3 class="text-xl sm:text-2xl font-black text-white mb-2">الصف الثالث الثانوي</h3>
+            <p class="text-slate-300 text-xs sm:text-sm mb-5 leading-relaxed">
               كورس القمة: التيار الكهربي وقانون أوم وكيرشوف، التأثير المغناطيسي، الحث الكهرومغناطيسي، ومقدمة الفيزياء الحديثة والكم.
             </p>
-            <ul class="space-y-3 text-xs sm:text-sm text-slate-200 mb-8">
+            <ul class="space-y-2.5 text-xs sm:text-sm text-slate-200 mb-6 sm:mb-8">
               <li class="flex items-center gap-2.5">
-                <i class="fa-solid fa-circle-check text-gravity-lime"></i> تقفيل حلول كتاب الامتحان ونيوتن كاملاً
+                <i class="fa-solid fa-circle-check text-gravity-lime shrink-0"></i> تقفيل حلول كتاب الامتحان ونيوتن كاملاً
               </li>
               <li class="flex items-center gap-2.5">
-                <i class="fa-solid fa-circle-check text-gravity-lime"></i> ورش عمل حل نماذج امتحانات الثانوية
+                <i class="fa-solid fa-circle-check text-gravity-lime shrink-0"></i> ورش عمل حل نماذج امتحانات الثانوية
               </li>
               <li class="flex items-center gap-2.5">
-                <i class="fa-solid fa-circle-check text-gravity-lime"></i> مراجعات نهائية مكثفة وليالي الامتحان
+                <i class="fa-solid fa-circle-check text-gravity-lime shrink-0"></i> مراجعات نهائية مكثفة وليالي الامتحان
               </li>
             </ul>
           </div>
-          <a href="https://wa.link/qk27ma" target="_blank" rel="noopener noreferrer" class="w-full py-3.5 rounded-xl bg-gravity-surfaceLight hover:bg-red-600 hover:text-white border border-red-500/40 text-center font-bold text-sm text-white transition-all duration-300 flex items-center justify-center gap-2">
+          <a href="https://wa.link/qk27ma" target="_blank" rel="noopener noreferrer" class="w-full py-3.5 rounded-xl bg-gravity-surfaceLight hover:bg-red-600 hover:text-white border border-red-500/40 text-center font-bold text-xs sm:text-sm text-white transition-all duration-300 flex items-center justify-center gap-2">
             <span>استفسر وسجل للثانوية العامة</span>
             <i class="fa-solid fa-arrow-left text-xs"></i>
           </a>
@@ -679,53 +699,57 @@
   </section>
 
   <!-- ================= BOOKS & LECTURES SHOWCASE ================= -->
-  <section id="books" class="py-20 relative">
+  <section id="books" class="py-14 sm:py-20 relative">
     <div class="container mx-auto px-4 lg:px-8">
       
       <!-- Section Header -->
-      <div class="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 sm:mb-14 gap-6">
         <div class="space-y-3 text-right">
           <span class="text-xs font-bold uppercase tracking-wider text-gravity-lime bg-gravity-lime/10 px-3.5 py-1 rounded-full border border-gravity-lime/30">
             مكتبة الحلول والشروحات
           </span>
-          <h2 class="text-3xl sm:text-4xl font-black text-white">
+          <h2 class="text-2xl sm:text-4xl font-black text-white">
             حلول كتاب الامتحان وشروحات المحاضرات
           </h2>
-          <p class="text-slate-300 text-sm sm:text-base max-w-2xl">
+          <p class="text-slate-300 text-xs sm:text-base max-w-2xl">
             شاهد نماذج من حلول الكتب الخارجية وأسلوب الشرح التفاعلي لمـهندسة نوران الصناديقي
           </p>
         </div>
 
-        <a href="https://www.youtube.com/@gravity-nouranelsanadiki" target="_blank" rel="noopener noreferrer" class="self-start md:self-auto px-5 py-3 rounded-xl bg-gravity-surface hover:bg-gravity-surfaceLight border border-gravity-border text-white text-sm font-bold flex items-center gap-2 transition-colors">
+        <a href="https://www.youtube.com/@gravity-nouranelsanadiki" target="_blank" rel="noopener noreferrer" class="self-start md:self-auto px-4 sm:px-5 py-2.5 sm:py-3 rounded-xl bg-gravity-surface hover:bg-gravity-surfaceLight border border-gravity-border text-white text-xs sm:text-sm font-bold flex items-center gap-2 transition-colors">
           <i class="fa-brands fa-youtube text-gravity-red text-base"></i>
           <span>زيارة القناة على YouTube (+48K)</span>
         </a>
       </div>
 
       <!-- Books Cards Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 items-stretch">
         
         <!-- Book 1 -->
-        <div class="glass-card rounded-3xl overflow-hidden border border-gravity-border hover:border-gravity-lime/40 transition-all duration-300 group">
-          <div class="relative overflow-hidden aspect-[16/10] bg-gravity-surface">
-            <img src="assets/images/course_emtehan_part1.jpg" alt="حل كتاب الامتحان الفصل الأول" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-            <div class="absolute inset-0 bg-gravity-dark/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-              <button onclick="openVideoModal('https://www.youtube.com/embed/videoseries?list=PLB2N_3Gq1e-demo')" class="w-14 h-14 rounded-full bg-gravity-lime text-gravity-dark flex items-center justify-center text-xl shadow-glow-lime transform scale-90 group-hover:scale-100 transition-all">
-                <i class="fa-solid fa-play mr-0.5"></i>
-              </button>
+        <div class="glass-card rounded-2xl sm:rounded-3xl overflow-hidden border border-gravity-border hover:border-gravity-lime/40 transition-all duration-300 group flex flex-col justify-between">
+          <div>
+            <div class="relative overflow-hidden aspect-[16/10] bg-gravity-surface">
+              <img src="assets/images/course_emtehan_part1.jpg" alt="حل كتاب الامتحان الفصل الأول" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+              <div class="absolute inset-0 bg-gravity-dark/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                <button onclick="openVideoModal('https://www.youtube.com/embed/videoseries?list=PLB2N_3Gq1e-demo')" class="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-gravity-lime text-gravity-dark flex items-center justify-center text-lg sm:text-xl shadow-glow-lime transform scale-90 group-hover:scale-100 transition-all">
+                  <i class="fa-solid fa-play mr-0.5"></i>
+                </button>
+              </div>
+              <span class="absolute top-3 right-3 px-2.5 py-1 rounded-lg bg-gravity-dark/80 backdrop-blur-md text-[11px] sm:text-xs font-bold text-gravity-lime border border-gravity-lime/30">
+                كتاب الامتحان 2026
+              </span>
             </div>
-            <span class="absolute top-3 right-3 px-2.5 py-1 rounded-lg bg-gravity-dark/80 backdrop-blur-md text-xs font-bold text-gravity-lime border border-gravity-lime/30">
-              كتاب الامتحان 2026
-            </span>
+            <div class="p-5 sm:p-6">
+              <h3 class="text-base sm:text-lg font-bold text-white mb-2 group-hover:text-gravity-lime transition-colors">
+                حل أسئلة كتاب الامتحان — الفصل الأول (التيار وقانون أوم)
+              </h3>
+              <p class="text-xs sm:text-sm text-slate-300 mb-4 line-clamp-2 leading-relaxed">
+                شرح تفصيلي ومفاهيمي لكل نقطة في الاختيارات المتعددة مع التنبيه على الخدع الشائعة في رسم الدوائر وتوزيع التيارات.
+              </p>
+            </div>
           </div>
-          <div class="p-6">
-            <h3 class="text-lg font-bold text-white mb-2 group-hover:text-gravity-lime transition-colors">
-              حل أسئلة كتاب الامتحان — الفصل الأول (التيار وقانون أوم)
-            </h3>
-            <p class="text-xs sm:text-sm text-slate-300 mb-4 line-clamp-2 leading-relaxed">
-              شرح تفصيلي ومفاهيمي لكل نقطة في الاختيارات المتعددة مع التنبيه على الخدع الشائعة في رسم الدوائر وتوزيع التيارات.
-            </p>
-            <div class="flex items-center justify-between pt-4 border-t border-gravity-border/50 text-xs">
+          <div class="px-5 pb-5 sm:px-6 sm:pb-6">
+            <div class="flex items-center justify-between pt-3.5 border-t border-gravity-border/50 text-xs">
               <span class="text-slate-400"><i class="fa-regular fa-clock ml-1"></i> تغطية كاملة</span>
               <a href="https://www.youtube.com/@gravity-nouranelsanadiki" target="_blank" rel="noopener noreferrer" class="text-gravity-lime font-bold hover:underline">
                 شاهد على يوتيوب <i class="fa-solid fa-arrow-left text-[10px]"></i>
@@ -735,26 +759,30 @@
         </div>
 
         <!-- Book 2 -->
-        <div class="glass-card rounded-3xl overflow-hidden border border-gravity-border hover:border-gravity-lime/40 transition-all duration-300 group">
-          <div class="relative overflow-hidden aspect-[16/10] bg-gravity-surface">
-            <img src="assets/images/course_emtehan_part2.jpg" alt="حل كتاب الامتحان الفصل الثاني" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-            <div class="absolute inset-0 bg-gravity-dark/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-              <button onclick="openVideoModal('https://www.youtube.com/embed/videoseries?list=PLB2N_3Gq1e-demo')" class="w-14 h-14 rounded-full bg-gravity-lime text-gravity-dark flex items-center justify-center text-xl shadow-glow-lime transform scale-90 group-hover:scale-100 transition-all">
-                <i class="fa-solid fa-play mr-0.5"></i>
-              </button>
+        <div class="glass-card rounded-2xl sm:rounded-3xl overflow-hidden border border-gravity-border hover:border-gravity-lime/40 transition-all duration-300 group flex flex-col justify-between">
+          <div>
+            <div class="relative overflow-hidden aspect-[16/10] bg-gravity-surface">
+              <img src="assets/images/course_emtehan_part2.jpg" alt="حل كتاب الامتحان الفصل الثاني" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+              <div class="absolute inset-0 bg-gravity-dark/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                <button onclick="openVideoModal('https://www.youtube.com/embed/videoseries?list=PLB2N_3Gq1e-demo')" class="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-gravity-lime text-gravity-dark flex items-center justify-center text-lg sm:text-xl shadow-glow-lime transform scale-90 group-hover:scale-100 transition-all">
+                  <i class="fa-solid fa-play mr-0.5"></i>
+                </button>
+              </div>
+              <span class="absolute top-3 right-3 px-2.5 py-1 rounded-lg bg-gravity-dark/80 backdrop-blur-md text-[11px] sm:text-xs font-bold text-blue-400 border border-blue-400/30">
+                المغناطيسية والتأثير
+              </span>
             </div>
-            <span class="absolute top-3 right-3 px-2.5 py-1 rounded-lg bg-gravity-dark/80 backdrop-blur-md text-xs font-bold text-blue-400 border border-blue-400/30">
-              المغناطيسية والتأثير
-            </span>
+            <div class="p-5 sm:p-6">
+              <h3 class="text-base sm:text-lg font-bold text-white mb-2 group-hover:text-gravity-lime transition-colors">
+                حل أسئلة كتاب الامتحان — الفصل الثاني (المجال المغناطيسي)
+              </h3>
+              <p class="text-xs sm:text-sm text-slate-300 mb-4 line-clamp-2 leading-relaxed">
+                تطبيق قواعد اليد اليمنى وأمبير وفليمنج، وطريقة تحديد اتجاه القوة وعزم الازدواج المغناطيسي بأسهل الطرق المبتكرة.
+              </p>
+            </div>
           </div>
-          <div class="p-6">
-            <h3 class="text-lg font-bold text-white mb-2 group-hover:text-gravity-lime transition-colors">
-              حل أسئلة كتاب الامتحان — الفصل الثاني (المجال المغناطيسي)
-            </h3>
-            <p class="text-xs sm:text-sm text-slate-300 mb-4 line-clamp-2 leading-relaxed">
-              تطبيق قواعد اليد اليمنى وأمبير وفليمنج، وطريقة تحديد اتجاه القوة وعزم الازدواج المغناطيسي بأسهل الطرق المبتكرة.
-            </p>
-            <div class="flex items-center justify-between pt-4 border-t border-gravity-border/50 text-xs">
+          <div class="px-5 pb-5 sm:px-6 sm:pb-6">
+            <div class="flex items-center justify-between pt-3.5 border-t border-gravity-border/50 text-xs">
               <span class="text-slate-400"><i class="fa-regular fa-clock ml-1"></i> شامل المسائل العليا</span>
               <a href="https://www.youtube.com/@gravity-nouranelsanadiki" target="_blank" rel="noopener noreferrer" class="text-gravity-lime font-bold hover:underline">
                 شاهد على يوتيوب <i class="fa-solid fa-arrow-left text-[10px]"></i>
@@ -764,26 +792,30 @@
         </div>
 
         <!-- Book 3 / Lecture Preview -->
-        <div class="glass-card rounded-3xl overflow-hidden border border-gravity-border hover:border-gravity-lime/40 transition-all duration-300 group">
-          <div class="relative overflow-hidden aspect-[16/10] bg-gravity-surface">
-            <img src="assets/images/course_lecture_preview.jpg" alt="معاينة شرح المحاضرة" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-            <div class="absolute inset-0 bg-gravity-dark/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-              <button onclick="openVideoModal('https://www.youtube.com/embed/videoseries?list=PLB2N_3Gq1e-demo')" class="w-14 h-14 rounded-full bg-gravity-red text-white flex items-center justify-center text-xl shadow-glow-red transform scale-90 group-hover:scale-100 transition-all">
-                <i class="fa-solid fa-play mr-0.5"></i>
-              </button>
+        <div class="glass-card rounded-2xl sm:rounded-3xl overflow-hidden border border-gravity-border hover:border-gravity-lime/40 transition-all duration-300 group flex flex-col justify-between sm:col-span-2 lg:col-span-1 sm:max-w-md sm:mx-auto lg:max-w-none w-full">
+          <div>
+            <div class="relative overflow-hidden aspect-[16/10] bg-gravity-surface">
+              <img src="assets/images/course_lecture_preview.jpg" alt="معاينة شرح المحاضرة" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+              <div class="absolute inset-0 bg-gravity-dark/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                <button onclick="openVideoModal('https://www.youtube.com/embed/videoseries?list=PLB2N_3Gq1e-demo')" class="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-gravity-red text-white flex items-center justify-center text-lg sm:text-xl shadow-glow-red transform scale-90 group-hover:scale-100 transition-all">
+                  <i class="fa-solid fa-play mr-0.5"></i>
+                </button>
+              </div>
+              <span class="absolute top-3 right-3 px-2.5 py-1 rounded-lg bg-gravity-dark/80 backdrop-blur-md text-[11px] sm:text-xs font-bold text-gravity-red border border-gravity-red/30">
+                حصة تجريبية
+              </span>
             </div>
-            <span class="absolute top-3 right-3 px-2.5 py-1 rounded-lg bg-gravity-dark/80 backdrop-blur-md text-xs font-bold text-gravity-red border border-gravity-red/30">
-              حصة تجريبية
-            </span>
+            <div class="p-5 sm:p-6">
+              <h3 class="text-base sm:text-lg font-bold text-white mb-2 group-hover:text-gravity-lime transition-colors">
+                طريقة الشرح والسبورة التفاعلية لـ م. نوران
+              </h3>
+              <p class="text-xs sm:text-sm text-slate-300 mb-4 line-clamp-2 leading-relaxed">
+                شاهد كيف يتم تبسيط المفاهيم المعقدة خطوة بخطوة بالرسوم التوضيحية واستنتاج القوانين من الصفر لتصل لقمة الإتقان.
+              </p>
+            </div>
           </div>
-          <div class="p-6">
-            <h3 class="text-lg font-bold text-white mb-2 group-hover:text-gravity-lime transition-colors">
-              طريقة الشرح والسبورة التفاعلية لـ م. نوران
-            </h3>
-            <p class="text-xs sm:text-sm text-slate-300 mb-4 line-clamp-2 leading-relaxed">
-              شاهد كيف يتم تبسيط المفاهيم المعقدة خطوة بخطوة بالرسوم التوضيحية واستنتاج القوانين من الصفر لتصل لقمة الإتقان.
-            </p>
-            <div class="flex items-center justify-between pt-4 border-t border-gravity-border/50 text-xs">
+          <div class="px-5 pb-5 sm:px-6 sm:pb-6">
+            <div class="flex items-center justify-between pt-3.5 border-t border-gravity-border/50 text-xs">
               <span class="text-slate-400"><i class="fa-regular fa-eye ml-1"></i> مجاني للمعاينة</span>
               <button onclick="openVideoModal('https://www.youtube.com/embed/videoseries?list=PLB2N_3Gq1e-demo')" class="text-gravity-lime font-bold hover:underline">
                 تشغيل الفيديو <i class="fa-solid fa-circle-play text-[11px] mr-1"></i>
@@ -798,32 +830,32 @@
   </section>
 
   <!-- ================= STUDENT APP & ONLINE SYSTEM ================= -->
-  <section id="app" class="py-20 bg-gradient-to-b from-gravity-dark via-gravity-surface/80 to-gravity-dark border-y border-gravity-border relative overflow-hidden">
+  <section id="app" class="py-14 sm:py-20 bg-gradient-to-b from-gravity-dark via-gravity-surface/80 to-gravity-dark border-y border-gravity-border relative overflow-hidden">
     <!-- Decorative glow -->
     <div class="absolute -right-20 top-1/2 w-80 h-80 bg-gravity-lime/10 rounded-full blur-[130px] pointer-events-none"></div>
 
     <div class="container mx-auto px-4 lg:px-8">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
         
         <!-- App Details Column -->
         <div class="lg:col-span-7 space-y-6 text-right">
           <span class="text-xs font-bold uppercase tracking-wider text-gravity-lime bg-gravity-lime/10 px-3.5 py-1 rounded-full border border-gravity-lime/30">
             تطبيق المنصة الذكي
           </span>
-          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-snug sm:leading-normal">
+          <h2 class="text-2xl sm:text-4xl lg:text-5xl font-black text-white leading-snug sm:leading-normal">
             <span class="block">مدرستك في جيبك أينما كنت</span>
-            <span class="block mt-2 sm:mt-2.5 text-white">عبر <span class="text-gravity-lime">تطبيق الطلاب المتكامل</span></span>
+            <span class="block mt-1 sm:mt-2.5 text-white">عبر <span class="text-gravity-lime">تطبيق الطلاب المتكامل</span></span>
           </h2>
-          <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+          <p class="text-slate-300 text-xs sm:text-base leading-relaxed">
             لتوفير أعلى معايير الجودة والتركيز للطلاب في كافة محافظات مصر، ترتبط منصة Gravity بالتطبيق التعليمي الذي يوفر بيئة دراسية محمية وخالية من المشتتات:
           </p>
 
           <!-- App Features List -->
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 sm:gap-4 pt-2">
             
-            <div class="flex items-start gap-3 p-4 rounded-2xl bg-gravity-surface/70 border border-gravity-border">
+            <div class="flex items-start gap-3 p-3.5 sm:p-4 rounded-2xl bg-gravity-surface/70 border border-gravity-border">
               <div class="w-10 h-10 rounded-xl bg-gravity-blue/30 text-gravity-blue flex items-center justify-center shrink-0">
-                <i class="fa-solid fa-shield-halved text-lg text-white"></i>
+                <i class="fa-solid fa-shield-halved text-base sm:text-lg text-white"></i>
               </div>
               <div>
                 <h4 class="font-bold text-white text-sm">مشغل فيديوهات مشفّر</h4>
@@ -831,9 +863,9 @@
               </div>
             </div>
 
-            <div class="flex items-start gap-3 p-4 rounded-2xl bg-gravity-surface/70 border border-gravity-border">
+            <div class="flex items-start gap-3 p-3.5 sm:p-4 rounded-2xl bg-gravity-surface/70 border border-gravity-border">
               <div class="w-10 h-10 rounded-xl bg-gravity-lime/20 text-gravity-lime flex items-center justify-center shrink-0">
-                <i class="fa-solid fa-list-check text-lg"></i>
+                <i class="fa-solid fa-list-check text-base sm:text-lg"></i>
               </div>
               <div>
                 <h4 class="font-bold text-white text-sm">امتحانات وتصحيح تلقائي</h4>
@@ -841,9 +873,9 @@
               </div>
             </div>
 
-            <div class="flex items-start gap-3 p-4 rounded-2xl bg-gravity-surface/70 border border-gravity-border">
+            <div class="flex items-start gap-3 p-3.5 sm:p-4 rounded-2xl bg-gravity-surface/70 border border-gravity-border">
               <div class="w-10 h-10 rounded-xl bg-gravity-red/20 text-gravity-red flex items-center justify-center shrink-0">
-                <i class="fa-solid fa-bell text-lg"></i>
+                <i class="fa-solid fa-bell text-base sm:text-lg"></i>
               </div>
               <div>
                 <h4 class="font-bold text-white text-sm">إشعارات وتقارير لولي الأمر</h4>
@@ -851,9 +883,9 @@
               </div>
             </div>
 
-            <div class="flex items-start gap-3 p-4 rounded-2xl bg-gravity-surface/70 border border-gravity-border">
+            <div class="flex items-start gap-3 p-3.5 sm:p-4 rounded-2xl bg-gravity-surface/70 border border-gravity-border">
               <div class="w-10 h-10 rounded-xl bg-purple-500/20 text-purple-400 flex items-center justify-center shrink-0">
-                <i class="fa-solid fa-comments text-lg"></i>
+                <i class="fa-solid fa-comments text-base sm:text-lg"></i>
               </div>
               <div>
                 <h4 class="font-bold text-white text-sm">منتدى الأسئلة واستفساراتك</h4>
@@ -864,17 +896,17 @@
           </div>
 
           <!-- Download App Buttons -->
-          <div class="pt-4 flex flex-wrap items-center gap-4">
-            <a href="https://play.google.com/store/apps/details?id=com.codebase.fosha" target="_blank" rel="noopener noreferrer" class="px-6 py-3.5 rounded-2xl bg-gravity-surfaceLight border border-gravity-border hover:border-gravity-lime/50 text-white flex items-center gap-3 transition-all hover:-translate-y-0.5">
-              <i class="fa-brands fa-google-play text-2xl text-gravity-lime"></i>
+          <div class="pt-4 flex flex-col xs:flex-row items-stretch sm:items-center gap-3 sm:gap-4 w-full sm:w-auto">
+            <a href="https://play.google.com/store/apps/details?id=com.codebase.fosha" target="_blank" rel="noopener noreferrer" class="w-full xs:w-auto px-5 sm:px-6 py-3 sm:py-3.5 rounded-2xl bg-gravity-surfaceLight border border-gravity-border hover:border-gravity-lime/50 text-white flex items-center justify-center gap-3 transition-all hover:-translate-y-0.5">
+              <i class="fa-brands fa-google-play text-2xl text-gravity-lime shrink-0"></i>
               <div class="text-right">
                 <div class="text-[10px] text-slate-400 uppercase font-bold">تحميل للأندرويد</div>
                 <div class="text-xs font-bold">Google Play Store</div>
               </div>
             </a>
 
-            <a href="https://apps.apple.com/eg/app/%D9%81%D8%B5%D8%AD%D9%89/id1618522062" target="_blank" rel="noopener noreferrer" class="px-6 py-3.5 rounded-2xl bg-gravity-surfaceLight border border-gravity-border hover:border-gravity-lime/50 text-white flex items-center gap-3 transition-all hover:-translate-y-0.5">
-              <i class="fa-brands fa-apple text-2xl text-white"></i>
+            <a href="https://apps.apple.com/eg/app/%D9%81%D8%B5%D8%AD%D9%89/id1618522062" target="_blank" rel="noopener noreferrer" class="w-full xs:w-auto px-5 sm:px-6 py-3 sm:py-3.5 rounded-2xl bg-gravity-surfaceLight border border-gravity-border hover:border-gravity-lime/50 text-white flex items-center justify-center gap-3 transition-all hover:-translate-y-0.5">
+              <i class="fa-brands fa-apple text-2xl text-white shrink-0"></i>
               <div class="text-right">
                 <div class="text-[10px] text-slate-400 uppercase font-bold">تحميل للآيفون</div>
                 <div class="text-xs font-bold">Apple App Store</div>
@@ -885,11 +917,11 @@
         </div>
 
         <!-- Banner Visual Column -->
-        <div class="lg:col-span-5 relative flex justify-center">
-          <div class="relative w-full max-w-md rounded-3xl overflow-hidden border border-gravity-border shadow-2xl p-2 bg-gradient-to-b from-gravity-surfaceLight to-gravity-surface">
+        <div class="lg:col-span-5 relative flex justify-center mt-6 lg:mt-0">
+          <div class="relative w-full max-w-sm sm:max-w-md rounded-3xl overflow-hidden border border-gravity-border shadow-2xl p-2 bg-gradient-to-b from-gravity-surfaceLight to-gravity-surface">
             <img src="assets/images/hero_banner.jpg" alt="Gravity Banner" loading="lazy" class="w-full h-auto rounded-2xl object-cover" />
-            <div class="p-4 text-center">
-              <div class="text-base font-bold text-white mb-1">أكاديمية Gravity للفيزياء</div>
+            <div class="p-3.5 sm:p-4 text-center">
+              <div class="text-sm sm:text-base font-bold text-white mb-0.5">أكاديمية Gravity للفيزياء</div>
               <div class="text-xs text-gravity-lime font-semibold">بوابة تفوقك في الفيزياء للثانوية العامة</div>
             </div>
           </div>
@@ -900,65 +932,65 @@
   </section>
 
   <!-- ================= FAQ ACCORDION ================= -->
-  <section id="faq" class="py-20 relative">
+  <section id="faq" class="py-14 sm:py-20 relative">
     <div class="container mx-auto px-4 lg:px-8 max-w-4xl">
       
       <!-- Section Header -->
-      <div class="text-center mb-14 space-y-3">
+      <div class="text-center mb-10 sm:mb-14 space-y-3">
         <span class="text-xs font-bold uppercase tracking-wider text-gravity-lime bg-gravity-lime/10 px-3.5 py-1 rounded-full border border-gravity-lime/30">
           إجابات فورية
         </span>
-        <h2 class="text-3xl sm:text-4xl font-black text-white">
+        <h2 class="text-2xl sm:text-4xl font-black text-white">
           الأسئلة الشائعة وتفاصيل الاشتراك
         </h2>
-        <p class="text-slate-300 text-sm sm:text-base">
+        <p class="text-slate-300 text-xs sm:text-base">
           كل ما تحتاج معرفته عن طريقة الحجز والاشتراك ونظام المتابعة
         </p>
       </div>
 
       <!-- FAQ Items List -->
-      <div class="space-y-4" id="faqAccordion">
+      <div class="space-y-3.5 sm:space-y-4" id="faqAccordion">
         
         <!-- Item 1 -->
         <div class="glass-card rounded-2xl border border-gravity-border overflow-hidden transition-all">
-          <button aria-label="عرض إجابة السؤال" class="faq-btn w-full p-6 text-right flex items-center justify-between gap-4 font-bold text-white text-base hover:text-gravity-lime transition-colors">
+          <button aria-label="عرض إجابة السؤال" class="faq-btn w-full p-4 sm:p-6 text-right flex items-center justify-between gap-3 font-bold text-white text-sm sm:text-base hover:text-gravity-lime transition-colors">
             <span>كيف يمكنني الاشتراك والحجز في كورس الأونلاين؟</span>
-            <i class="fa-solid fa-chevron-down text-sm text-gravity-lime transition-transform duration-300"></i>
+            <i class="fa-solid fa-chevron-down text-xs sm:text-sm text-gravity-lime transition-transform duration-300 shrink-0"></i>
           </button>
-          <div class="faq-content hidden px-6 pb-6 text-sm text-slate-300 leading-relaxed border-t border-gravity-border/40 pt-4">
+          <div class="faq-content hidden px-4 pb-4 sm:px-6 sm:pb-6 text-xs sm:text-sm text-slate-300 leading-relaxed border-t border-gravity-border/40 pt-3 sm:pt-4">
             يمكنك الحجز بسهولة بالتواصل مباشرة مع فريق الدعم عبر الواتساب على الرقم <a href="https://wa.me/201000776752" class="text-gravity-lime underline font-bold">01000776752</a>، وسيتم إرسال كود تفعيل المحاضرات وروابط التطبيق وشرح خطوات التسجيل خطوة بخطوة.
           </div>
         </div>
 
         <!-- Item 2 -->
         <div class="glass-card rounded-2xl border border-gravity-border overflow-hidden transition-all">
-          <button aria-label="عرض إجابة السؤال" class="faq-btn w-full p-6 text-right flex items-center justify-between gap-4 font-bold text-white text-base hover:text-gravity-lime transition-colors">
+          <button aria-label="عرض إجابة السؤال" class="faq-btn w-full p-4 sm:p-6 text-right flex items-center justify-between gap-3 font-bold text-white text-sm sm:text-base hover:text-gravity-lime transition-colors">
             <span>أين توجد سناتر الحضور الميداني (Face to Face)؟</span>
-            <i class="fa-solid fa-chevron-down text-sm text-gravity-lime transition-transform duration-300"></i>
+            <i class="fa-solid fa-chevron-down text-xs sm:text-sm text-gravity-lime transition-transform duration-300 shrink-0"></i>
           </button>
-          <div class="faq-content hidden px-6 pb-6 text-sm text-slate-300 leading-relaxed border-t border-gravity-border/40 pt-4">
+          <div class="faq-content hidden px-4 pb-4 sm:px-6 sm:pb-6 text-xs sm:text-sm text-slate-300 leading-relaxed border-t border-gravity-border/40 pt-3 sm:pt-4">
             يتواجد فريق م. نوران الصناديقي في محافظة <strong class="text-white">المنيا</strong> بأكبر السناتر والأكاديميات التعليمية. للمواعيد المحددة لكل مرحلة وأماكن القاعات، تواصل معنا عبر الواتساب لاختيار الميعاد المناسب لمجموعتك.
           </div>
         </div>
 
         <!-- Item 3 -->
         <div class="glass-card rounded-2xl border border-gravity-border overflow-hidden transition-all">
-          <button aria-label="عرض إجابة السؤال" class="faq-btn w-full p-6 text-right flex items-center justify-between gap-4 font-bold text-white text-base hover:text-gravity-lime transition-colors">
+          <button aria-label="عرض إجابة السؤال" class="faq-btn w-full p-4 sm:p-6 text-right flex items-center justify-between gap-3 font-bold text-white text-sm sm:text-base hover:text-gravity-lime transition-colors">
             <span>هل يتم حل كتاب الامتحان وكتاب نيوتن كاملاً؟</span>
-            <i class="fa-solid fa-chevron-down text-sm text-gravity-lime transition-transform duration-300"></i>
+            <i class="fa-solid fa-chevron-down text-xs sm:text-sm text-gravity-lime transition-transform duration-300 shrink-0"></i>
           </button>
-          <div class="faq-content hidden px-6 pb-6 text-sm text-slate-300 leading-relaxed border-t border-gravity-border/40 pt-4">
+          <div class="faq-content hidden px-4 pb-4 sm:px-6 sm:pb-6 text-xs sm:text-sm text-slate-300 leading-relaxed border-t border-gravity-border/40 pt-3 sm:pt-4">
             نعم! شعارنا هو الإحاطة بكافة أفكار المنهج؛ حيث يتم تخصيص حصص وفيديوهات مخصصة لحل كل سؤال في كتاب الامتحان وكتاب نيوتن، مع التركيز على مسائل المستويات العليا والتطبيقات غير النمطية.
           </div>
         </div>
 
         <!-- Item 4 -->
         <div class="glass-card rounded-2xl border border-gravity-border overflow-hidden transition-all">
-          <button aria-label="عرض إجابة السؤال" class="faq-btn w-full p-6 text-right flex items-center justify-between gap-4 font-bold text-white text-base hover:text-gravity-lime transition-colors">
+          <button aria-label="عرض إجابة السؤال" class="faq-btn w-full p-4 sm:p-6 text-right flex items-center justify-between gap-3 font-bold text-white text-sm sm:text-base hover:text-gravity-lime transition-colors">
             <span>كيف يطمئن ولي الأمر على مستوى واستيعاب الطالب؟</span>
-            <i class="fa-solid fa-chevron-down text-sm text-gravity-lime transition-transform duration-300"></i>
+            <i class="fa-solid fa-chevron-down text-xs sm:text-sm text-gravity-lime transition-transform duration-300 shrink-0"></i>
           </button>
-          <div class="faq-content hidden px-6 pb-6 text-sm text-slate-300 leading-relaxed border-t border-gravity-border/40 pt-4">
+          <div class="faq-content hidden px-4 pb-4 sm:px-6 sm:pb-6 text-xs sm:text-sm text-slate-300 leading-relaxed border-t border-gravity-border/40 pt-3 sm:pt-4">
             نوفر نظام متابعة دوري يتضمن كشوف حضور، نتائج الامتحانات الأسبوعية والشهرية، وتقارير ترسل دورياً لولي الأمر لضمان انضباط الطالب وتحقيق أعلى استفادة ممكنة.
           </div>
         </div>
@@ -969,33 +1001,33 @@
   </section>
 
   <!-- ================= CONTACT & REGISTRATION CTA ================= -->
-  <section class="py-16 relative">
+  <section class="py-12 sm:py-16 relative">
     <div class="container mx-auto px-4 lg:px-8">
-      <div class="rounded-3xl p-8 sm:p-12 md:p-16 bg-gradient-to-br from-gravity-surfaceLight via-gravity-surface to-gravity-dark border border-gravity-lime/40 shadow-2xl relative overflow-hidden text-center">
+      <div class="rounded-2xl sm:rounded-3xl p-6 sm:p-12 md:p-16 bg-gradient-to-br from-gravity-surfaceLight via-gravity-surface to-gravity-dark border border-gravity-lime/40 shadow-2xl relative overflow-hidden text-center">
         
         <!-- Decorative Glow -->
         <div class="absolute -top-20 -right-20 w-80 h-80 bg-gravity-lime/20 rounded-full blur-[100px] pointer-events-none"></div>
 
-        <div class="max-w-3xl mx-auto space-y-6 relative z-10">
-          <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gravity-lime/10 border border-gravity-lime/30 text-gravity-lime text-xs font-bold">
+        <div class="max-w-3xl mx-auto space-y-5 sm:space-y-6 relative z-10">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1 sm:px-4 sm:py-1.5 rounded-full bg-gravity-lime/10 border border-gravity-lime/30 text-gravity-lime text-[11px] sm:text-xs font-bold">
             <i class="fa-solid fa-graduation-cap"></i> احجز مكانك الآن لدفعة 2026/2027
           </div>
 
-          <h2 class="text-3xl sm:text-4xl md:text-5xl font-black text-white leading-snug sm:leading-normal">
+          <h2 class="text-2xl sm:text-4xl md:text-5xl font-black text-white leading-snug sm:leading-normal">
             مستعد تبدأ رحلة التفوق في الفيزياء مع م. نوران؟
           </h2>
 
-          <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+          <p class="text-slate-300 text-xs sm:text-base leading-relaxed">
             انضم الآن لآلاف الطلاب وابدأ تأسيسك الصحيح من أول يوم. فريق الدعم متاح للرد على جميع استفساراتك فوراً وتحديد مواعيدك.
           </p>
 
-          <div class="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a href="https://wa.link/qk27ma" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-9 py-4 rounded-2xl bg-gravity-lime text-gravity-dark font-black text-base flex items-center justify-center gap-3 hover:bg-lime-400 hover:shadow-glow-lime transition-all duration-300 transform hover:-translate-y-1">
-              <i class="fa-brands fa-whatsapp text-2xl"></i>
+          <div class="pt-3 sm:pt-4 flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4">
+            <a href="https://wa.link/qk27ma" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-7 sm:px-9 py-3.5 sm:py-4 rounded-2xl bg-gravity-lime text-gravity-dark font-black text-sm sm:text-base flex items-center justify-center gap-2.5 sm:gap-3 hover:bg-lime-400 hover:shadow-glow-lime transition-all duration-300 transform hover:-translate-y-0.5 shadow-glow-lime">
+              <i class="fa-brands fa-whatsapp text-xl sm:text-2xl"></i>
               <span>تواصل واتساب للحجز الفوري</span>
             </a>
 
-            <a href="tel:01000776752" class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-gravity-surface border border-gravity-border hover:bg-gravity-surfaceLight text-white font-bold text-base flex items-center justify-center gap-3 transition-colors">
+            <a href="tel:01000776752" class="w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-4 rounded-2xl bg-gravity-surface border border-gravity-border hover:bg-gravity-surfaceLight text-white font-bold text-sm sm:text-base flex items-center justify-center gap-2.5 sm:gap-3 transition-colors">
               <i class="fa-solid fa-phone text-gravity-lime"></i>
               <span dir="ltr">01000776752</span>
             </a>
@@ -1008,47 +1040,47 @@
   </section>
 
   <!-- ================= FOOTER ================= -->
-  <footer class="bg-[#060B1A] border-t border-gravity-border/80 pt-16 pb-12 text-slate-300">
+  <footer class="bg-[#060B1A] border-t border-gravity-border/80 pt-12 sm:pt-16 pb-8 sm:pb-12 text-slate-300">
     <div class="container mx-auto px-4 lg:px-8">
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-gravity-border/50">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 sm:gap-10 pb-8 sm:pb-12 border-b border-gravity-border/50">
         
         <!-- Brand Info Column -->
         <div class="lg:col-span-5 space-y-4 text-right">
           <div class="flex items-center gap-3">
-            <img src="assets/images/logo_transparent.png" alt="Gravity Logo" class="w-12 h-12 object-contain" />
+            <img src="assets/images/logo_transparent.png" alt="Gravity Logo" class="w-10 h-10 sm:w-12 sm:h-12 object-contain" />
             <div>
-              <div class="text-xl font-black font-outfit text-white">GRAVITY FOR PHYSICS</div>
-              <div class="text-xs text-gravity-lime font-bold">م. نــوران الـصـنـاديـقـي</div>
+              <div class="text-lg sm:text-xl font-black font-outfit text-white">GRAVITY FOR PHYSICS</div>
+              <div class="text-[11px] sm:text-xs text-gravity-lime font-bold">م. نــوران الـصـنـاديـقـي</div>
             </div>
           </div>
           <p class="text-xs sm:text-sm text-slate-400 leading-relaxed max-w-md">
             منصة وأكاديمية Gravity التعليمية المتخصصة في تدريس مادة الفيزياء لطلاب الثانوية العامة بأسلوب هندسي تحليلي مبسط. فيزياء مفهومة.. مش محفوظة.
           </p>
-          <div class="pt-2 flex items-center gap-3">
-            <a href="https://www.facebook.com/Gravityforphysics" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-xl bg-gravity-surface border border-gravity-border flex items-center justify-center text-slate-300 hover:text-blue-500 hover:border-blue-500 transition-colors" title="Facebook">
-              <i class="fa-brands fa-facebook-f"></i>
+          <div class="pt-2 flex items-center gap-2.5 sm:gap-3 flex-wrap">
+            <a href="https://www.facebook.com/Gravityforphysics" target="_blank" rel="noopener noreferrer" class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gravity-surface border border-gravity-border flex items-center justify-center text-slate-300 hover:text-blue-500 hover:border-blue-500 transition-colors" title="Facebook">
+              <i class="fa-brands fa-facebook-f text-sm sm:text-base"></i>
             </a>
-            <a href="https://www.youtube.com/@gravity-nouranelsanadiki" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-xl bg-gravity-surface border border-gravity-border flex items-center justify-center text-slate-300 hover:text-red-500 hover:border-red-500 transition-colors" title="YouTube">
-              <i class="fa-brands fa-youtube"></i>
+            <a href="https://www.youtube.com/@gravity-nouranelsanadiki" target="_blank" rel="noopener noreferrer" class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gravity-surface border border-gravity-border flex items-center justify-center text-slate-300 hover:text-red-500 hover:border-red-500 transition-colors" title="YouTube">
+              <i class="fa-brands fa-youtube text-sm sm:text-base"></i>
             </a>
-            <a href="https://www.instagram.com/gravityforphysics/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-xl bg-gravity-surface border border-gravity-border flex items-center justify-center text-slate-300 hover:text-pink-500 hover:border-pink-500 transition-colors" title="Instagram">
-              <i class="fa-brands fa-instagram"></i>
+            <a href="https://www.instagram.com/gravityforphysics/" target="_blank" rel="noopener noreferrer" class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gravity-surface border border-gravity-border flex items-center justify-center text-slate-300 hover:text-pink-500 hover:border-pink-500 transition-colors" title="Instagram">
+              <i class="fa-brands fa-instagram text-sm sm:text-base"></i>
             </a>
-            <a href="https://www.tiktok.com/@gravityforphysics" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-xl bg-gravity-surface border border-gravity-border flex items-center justify-center text-slate-300 hover:text-white hover:border-white transition-colors" title="TikTok">
-              <i class="fa-brands fa-tiktok"></i>
+            <a href="https://www.tiktok.com/@gravityforphysics" target="_blank" rel="noopener noreferrer" class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gravity-surface border border-gravity-border flex items-center justify-center text-slate-300 hover:text-white hover:border-white transition-colors" title="TikTok">
+              <i class="fa-brands fa-tiktok text-sm sm:text-base"></i>
             </a>
-            <a href="https://wa.link/qk27ma" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-xl bg-gravity-surface border border-gravity-border flex items-center justify-center text-slate-300 hover:text-green-400 hover:border-green-400 transition-colors" title="WhatsApp">
-              <i class="fa-brands fa-whatsapp"></i>
+            <a href="https://wa.link/qk27ma" target="_blank" rel="noopener noreferrer" class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gravity-surface border border-gravity-border flex items-center justify-center text-slate-300 hover:text-green-400 hover:border-green-400 transition-colors" title="WhatsApp">
+              <i class="fa-brands fa-whatsapp text-sm sm:text-base"></i>
             </a>
           </div>
         </div>
 
         <!-- Quick Links Column -->
         <div class="lg:col-span-3 space-y-3 text-right">
-          <h4 class="text-sm font-bold text-white uppercase tracking-wider mb-4 border-r-2 border-gravity-lime pr-2.5">
+          <h4 class="text-sm font-bold text-white uppercase tracking-wider mb-3 sm:mb-4 border-r-2 border-gravity-lime pr-2.5">
             روابط سريعة
           </h4>
-          <ul class="space-y-2.5 text-xs sm:text-sm">
+          <ul class="space-y-2 text-xs sm:text-sm">
             <li><a href="#hero" class="hover:text-gravity-lime transition-colors">الصفحة الرئيسية</a></li>
             <li><a href="#about" class="hover:text-gravity-lime transition-colors">فلسفة التدريس والمنهج</a></li>
             <li><a href="#grades" class="hover:text-gravity-lime transition-colors">صفوف المرحلة الثانوية</a></li>
@@ -1059,26 +1091,26 @@
 
         <!-- Contact Column -->
         <div class="lg:col-span-4 space-y-3 text-right">
-          <h4 class="text-sm font-bold text-white uppercase tracking-wider mb-4 border-r-2 border-gravity-lime pr-2.5">
+          <h4 class="text-sm font-bold text-white uppercase tracking-wider mb-3 sm:mb-4 border-r-2 border-gravity-lime pr-2.5">
             بيانات التواصل والدعم
           </h4>
-          <ul class="space-y-3 text-xs sm:text-sm text-slate-400">
+          <ul class="space-y-2.5 text-xs sm:text-sm text-slate-400">
             <li class="flex items-center gap-3">
-              <i class="fa-solid fa-phone text-gravity-lime text-base"></i>
+              <i class="fa-solid fa-phone text-gravity-lime text-base shrink-0"></i>
               <span class="text-white font-bold font-outfit" dir="ltr">01000776752</span>
             </li>
             <li class="flex items-center gap-3">
-              <i class="fa-brands fa-whatsapp text-gravity-lime text-base"></i>
+              <i class="fa-brands fa-whatsapp text-gravity-lime text-base shrink-0"></i>
               <a href="https://wa.link/qk27ma" target="_blank" rel="noopener noreferrer" class="text-white hover:underline">
                 رابط الحجز السريع المباشر (WhatsApp)
               </a>
             </li>
-            <li class="flex items-center gap-3">
-              <i class="fa-solid fa-location-dot text-gravity-lime text-base"></i>
+            <li class="flex items-start gap-3">
+              <i class="fa-solid fa-location-dot text-gravity-lime text-base shrink-0 mt-0.5"></i>
               <span>محافظة المنيا (سناتر الحضور) + أونلاين لكافة المحافظات</span>
             </li>
             <li class="flex items-center gap-3">
-              <i class="fa-solid fa-headset text-gravity-lime text-base"></i>
+              <i class="fa-solid fa-headset text-gravity-lime text-base shrink-0"></i>
               <span>فريق الدعم الفني متواجد يومياً لمساعدتك</span>
             </li>
           </ul>
@@ -1087,11 +1119,11 @@
       </div>
 
       <!-- Copyright Bar -->
-      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
+      <div class="pt-6 sm:pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 text-center sm:text-right gap-3">
         <div>
           جميع الحقوق محفوظة © 2026 — <strong>منصة Gravity for Physics</strong> | م. نوران الصناديقي
         </div>
-        <div class="flex items-center gap-1 font-medium">
+        <div class="flex items-center gap-1 font-medium text-slate-500">
           <span>تصميم وتطوير هندسي بأعلى معايير الويب</span>
         </div>
       </div>
@@ -1100,32 +1132,32 @@
   </footer>
 
   <!-- ================= FLOATING WHATSAPP BUTTON ================= -->
-  <a href="https://wa.link/qk27ma" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-[#25D366] text-white flex items-center justify-center text-3xl shadow-[0_4px_25px_rgba(37,211,102,0.6)] hover:scale-110 hover:shadow-[0_4px_35px_rgba(37,211,102,0.8)] transition-all duration-300 group" title="تواصل واتساب مباشر">
+  <a href="https://wa.link/qk27ma" target="_blank" rel="noopener noreferrer" class="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[#25D366] text-white flex items-center justify-center text-2xl sm:text-3xl shadow-[0_4px_22px_rgba(37,211,102,0.65)] hover:scale-105 active:scale-95 transition-all duration-200 group" title="تواصل واتساب مباشر">
     <i class="fa-brands fa-whatsapp"></i>
-    <span class="absolute right-16 px-3 py-1.5 rounded-lg bg-gravity-surface text-white text-xs font-bold whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none border border-gravity-border shadow-xl">
+    <span class="hidden md:block absolute right-16 px-3 py-1.5 rounded-lg bg-gravity-surface text-white text-xs font-bold whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none border border-gravity-border shadow-xl">
       تواصل معنا للحجز فوراً 💬
     </span>
   </a>
 
   <!-- ================= VIDEO PREVIEW MODAL ================= -->
-  <div id="videoModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden items-center justify-center p-4 transition-all duration-300">
-    <div class="relative w-full max-w-3xl bg-gravity-surface rounded-3xl border border-gravity-border shadow-2xl overflow-hidden">
+  <div id="videoModal" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md hidden items-center justify-center p-3 sm:p-4 transition-all duration-300">
+    <div class="relative w-full max-w-3xl max-h-[92vh] flex flex-col bg-gravity-surface rounded-2xl sm:rounded-3xl border border-gravity-border shadow-2xl overflow-hidden">
       <!-- Modal Header -->
-      <div class="px-6 py-4 border-b border-gravity-border flex items-center justify-between">
-        <div class="flex items-center gap-2 text-white font-bold text-sm">
-          <i class="fa-solid fa-circle-play text-gravity-red"></i>
-          <span>معاينة شرح الحصة التجريبية — م. نوران الصناديقي</span>
+      <div class="px-4 sm:px-6 py-3.5 sm:py-4 border-b border-gravity-border flex items-center justify-between shrink-0">
+        <div class="flex items-center gap-2 text-white font-bold text-xs sm:text-sm truncate">
+          <i class="fa-solid fa-circle-play text-gravity-red shrink-0"></i>
+          <span class="truncate">معاينة شرح الحصة التجريبية — م. نوران الصناديقي</span>
         </div>
-        <button onclick="closeVideoModal()" class="w-8 h-8 rounded-full bg-gravity-surfaceLight text-slate-400 hover:text-white flex items-center justify-center text-base">
+        <button onclick="closeVideoModal()" aria-label="إغلاق الفيديو" class="w-8 h-8 rounded-full bg-gravity-surfaceLight text-slate-400 hover:text-white flex items-center justify-center text-base shrink-0 transition-colors">
           <i class="fa-solid fa-xmark"></i>
         </button>
       </div>
       <!-- Modal Body (Iframe) -->
-      <div class="relative aspect-video bg-black">
+      <div class="relative aspect-video bg-black w-full shrink-0">
         <iframe id="videoIframe" class="w-full h-full" src="" title="YouTube video player" style="border:0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
       </div>
       <!-- Modal Footer -->
-      <div class="p-4 bg-gravity-surface flex items-center justify-between text-xs text-slate-400">
+      <div class="p-3 sm:p-4 bg-gravity-surface flex flex-col sm:flex-row items-center justify-between text-[11px] sm:text-xs text-slate-400 gap-2 shrink-0">
         <span>للمزيد من المحاضرات المجانية وحلول الكتب، تابع القناة</span>
         <a href="https://www.youtube.com/@gravity-nouranelsanadiki" target="_blank" rel="noopener noreferrer" class="text-gravity-lime font-bold hover:underline flex items-center gap-1">
           فتح القناة على YouTube <i class="fa-solid fa-arrow-left text-[10px]"></i>
@@ -1136,20 +1168,68 @@
 
   <!-- ================= JAVASCRIPT LOGIC ================= -->
   <script>
-    // Mobile Menu Toggle
+    // Enhanced Mobile Menu Controller
     const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenuIcon = document.getElementById('mobileMenuIcon');
     const mobileMenu = document.getElementById('mobileMenu');
     const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+    const mainHeaderWrapper = document.getElementById('mainHeaderWrapper');
+
+    function closeMobileMenu() {
+      if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+        mobileMenu.classList.add('hidden');
+        if (mobileMenuIcon) {
+          mobileMenuIcon.classList.remove('fa-xmark');
+          mobileMenuIcon.classList.add('fa-bars-staggered');
+        }
+        if (mobileMenuBtn) {
+          mobileMenuBtn.setAttribute('aria-expanded', 'false');
+        }
+      }
+    }
+
+    function toggleMobileMenu() {
+      if (!mobileMenu) return;
+      const isHidden = mobileMenu.classList.toggle('hidden');
+      const isOpen = !isHidden;
+      if (mobileMenuIcon) {
+        if (isOpen) {
+          mobileMenuIcon.classList.remove('fa-bars-staggered');
+          mobileMenuIcon.classList.add('fa-xmark');
+        } else {
+          mobileMenuIcon.classList.remove('fa-xmark');
+          mobileMenuIcon.classList.add('fa-bars-staggered');
+        }
+      }
+      if (mobileMenuBtn) {
+        mobileMenuBtn.setAttribute('aria-expanded', String(isOpen));
+      }
+    }
 
     if (mobileMenuBtn && mobileMenu) {
-      mobileMenuBtn.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden');
+      mobileMenuBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        toggleMobileMenu();
       });
 
       mobileNavLinks.forEach(link => {
         link.addEventListener('click', () => {
-          mobileMenu.classList.add('hidden');
+          closeMobileMenu();
         });
+      });
+
+      // Close on click outside header
+      document.addEventListener('click', (e) => {
+        if (mainHeaderWrapper && !mainHeaderWrapper.contains(e.target)) {
+          closeMobileMenu();
+        }
+      });
+
+      // Close on Escape key
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          closeMobileMenu();
+        }
       });
     }
 
@@ -1381,9 +1461,13 @@
         }
 
         // Close mobile menu if open
-        const mobileMenu = document.getElementById('mobileMenu');
-        if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
-          mobileMenu.classList.add('hidden');
+        if (typeof closeMobileMenu === 'function') {
+          closeMobileMenu();
+        } else {
+          const mobileMenu = document.getElementById('mobileMenu');
+          if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+            mobileMenu.classList.add('hidden');
+          }
         }
 
         // Brief cinematic pause at apex (~20ms)
