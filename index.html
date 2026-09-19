@@ -187,9 +187,66 @@
       border-radius: 9999px;
       box-shadow: 0 0 10px rgba(188, 217, 30, 0.7);
     }
+
+    /* ─── Intro Scribble Overlay (Truus-Clone / Awwwards Effect) ─── */
+    .intro-scribble-svg {
+      position: fixed;
+      top: -50vh;
+      left: -50vw;
+      width: 200vw;
+      height: 200vh;
+      z-index: 99998;
+      pointer-events: none;
+      color: #101EC5;
+    }
+
+    .intro-logo-container {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 99999;
+      pointer-events: none;
+      opacity: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    body.is-transitioning {
+      overflow: hidden !important;
+      pointer-events: none !important;
+    }
   </style>
 </head>
 <body class="cosmic-grid min-h-screen selection:bg-gravity-lime selection:text-gravity-dark">
+
+  <!-- ================= FULLSCREEN INTRO SCRIBBLER (Start Covered) ================= -->
+  <div id="introOverlay" class="fixed inset-0 z-[99990] pointer-events-none" aria-hidden="true">
+    <svg id="scribbleSvg" class="intro-scribble-svg" xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 3222 3114" fill="none" preserveAspectRatio="none">
+      <path id="scribblePath"
+        d="M299.654 453.865C505.574 319.225 711.494 184.585 836.054 109.945C960.614 35.3048 997.574 24.7448 944.014 110.385C890.454 196.025 745.254 378.185 571.454 634.385C397.654 890.585 199.654 1215.3 110.854 1382.58C22.0544 1549.86 48.4544 1549.86 77.8944 1540.62C107.334 1531.38 139.014 1512.9 367.854 1319.9C596.694 1126.9 1021.73 759.945 1255.21 555.065C1488.69 350.185 1517.73 318.505 1527.41 306.145C1537.09 293.785 1526.53 301.705 1346.85 618.625C1167.17 935.545 818.694 1561.22 635.214 1896.74C451.734 2232.26 443.814 2258.66 447.654 2268.3C451.494 2277.94 467.334 2270.02 511.134 2236.9C554.934 2203.78 626.214 2145.7 966.534 1817.46C1306.85 1489.22 1914.05 892.585 2263.81 557.505C2613.57 222.425 2687.49 166.985 2741.41 129.185C2795.33 91.3848 2827.01 72.9048 2843.33 67.3448C2859.65 61.7848 2859.65 69.7048 2849.09 96.2248C2838.53 122.745 2817.41 167.625 2584.77 544.505C2352.13 921.385 1370.37 2165.43 1139.25 2537.83C908.134 2910.23 902.854 2926.07 902.774 2939.51C902.694 2952.95 907.974 2963.51 1255.21 2613.87C1602.45 2264.23 2829.73 1017.54 2903.53 1071.46C2977.33 1125.38 2176.12 2817.04 2128 3037C2079.88 3256.96 2911.24 2018.56 3172 1793"
+        stroke="currentColor"
+        stroke-linecap="round"
+        style="stroke-width: 32%; stroke-dashoffset: 0; stroke-dasharray: 999999px, 999999px;"
+      />
+    </svg>
+
+    <div id="introLogoContainer" class="intro-logo-container">
+      <div id="introLogoInner" class="flex flex-col items-center justify-center gap-3">
+        <div class="relative w-20 h-20 md:w-24 md:h-24 flex items-center justify-center">
+          <img src="assets/images/logo_transparent.png" alt="Gravity Logo" class="w-full h-full object-contain filter drop-shadow-[0_0_24px_rgba(188,217,30,0.65)]" />
+        </div>
+        <div class="flex flex-col items-center text-center">
+          <span class="text-2xl md:text-3xl font-black tracking-tight font-outfit text-white flex items-center gap-2">
+            GRAVITY <span class="text-gravity-lime text-xs md:text-sm px-2 py-0.5 rounded bg-gravity-lime/20 border border-gravity-lime/40">PHYSICS</span>
+          </span>
+          <span class="text-xs md:text-sm text-slate-200 font-bold tracking-wide mt-1">م. نــوران الـصـنـاديـقـي</span>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- ================= SVG CURVED PAGE TRANSITION OVERLAY (Animmaster Effect) ================= -->
   <div id="svgTransitionOverlay" class="svg-page-transition" aria-hidden="true">
@@ -1329,6 +1386,94 @@
           triggerPageTransition('#hero');
         });
       }
+    })();
+
+    // ================= FULLSCREEN INTRO ANIMATION (Truus-Clone / Awwwards Effect) =================
+    (function initFullscreenIntro() {
+      const introOverlay = document.getElementById('introOverlay');
+      const svg = document.getElementById('scribbleSvg');
+      const path = document.getElementById('scribblePath');
+      const logoContainer = document.getElementById('introLogoContainer');
+      const logoInner = document.getElementById('introLogoInner');
+
+      if (!introOverlay || !svg || !path || !logoContainer) return;
+
+      // Deep cosmic brand colors exclusively (No red, no bright neon green)
+      const COSMIC_COLORS = [
+        '#101EC5', // Gravity Blue
+        '#0A1128', // Deep Space Navy
+        '#141D3D', // Surface Navy
+        '#1E1B4B', // Cosmic Indigo
+        '#0B1E48', // Dark Nebula
+        '#1827E8'  // Royal Blue
+      ];
+
+      // Pick a random cosmic brand tone
+      const selectedColor = COSMIC_COLORS[Math.floor(Math.random() * COSMIC_COLORS.length)];
+      svg.style.color = selectedColor;
+
+      let l = 12000;
+      try {
+        l = path.getTotalLength() + 20;
+      } catch (e) {}
+
+      const coveredHold = 0.85; // Seconds to hold the covered brand screen
+      const durOut = 1.75;      // Seconds to wipe away the scribble
+
+      document.body.classList.add('is-transitioning');
+
+      // Initialize covered state in GSAP
+      gsap.set(svg, { scale: 0.72, opacity: 1 });
+      gsap.set(path, {
+        strokeDasharray: l,
+        strokeDashoffset: 0,
+        attr: { "stroke-width": "32%" },
+        opacity: 1
+      });
+      gsap.set(logoContainer, { opacity: 1 });
+
+      // Start the signature playful wiggle on the logo immediately
+      if (logoInner) {
+        gsap.to(logoInner, {
+          rotation: 4.5,
+          duration: 0.14,
+          repeat: -1,
+          yoyo: true,
+          ease: 'steps(1)'
+        });
+      }
+
+      // Build exit timeline
+      const tl = gsap.timeline({
+        delay: coveredHold,
+        onComplete: () => {
+          document.body.classList.remove('is-transitioning');
+          if (logoInner) gsap.killTweensOf(logoInner);
+          introOverlay.style.display = 'none';
+        }
+      });
+
+      // 1. Fade out center logo shortly before/as wipe starts
+      tl.to(logoContainer, {
+        opacity: 0,
+        scale: 0.95,
+        duration: 0.28,
+        ease: 'power2.in',
+        onComplete: () => {
+          if (logoInner) {
+            gsap.killTweensOf(logoInner);
+            gsap.set(logoInner, { rotation: 0 });
+          }
+        }
+      }, 0.05);
+
+      // 2. Smoothly undraw the scribble stroke away to reveal the site
+      tl.to(path, {
+        strokeDashoffset: -l,
+        attr: { "stroke-width": "8%" },
+        duration: durOut,
+        ease: 'power2.inOut'
+      }, 0);
     })();
   </script>
 </body>
