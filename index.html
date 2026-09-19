@@ -1551,11 +1551,17 @@
         }
       }
 
-      // 2. Rotating lime typewriter: Types -> Pauses -> Deletes like a real human backspacing -> Next phrase
+      // 2. Rotating lime typewriter: Types -> Pauses -> Deletes like a real human backspacing -> Random next phrase
       async function startRotatingLime() {
-        let phraseIndex = 0;
+        let lastIndex = -1;
 
         while (true) {
+          let phraseIndex;
+          do {
+            phraseIndex = Math.floor(Math.random() * rotatingLimePhrases.length);
+          } while (phraseIndex === lastIndex && rotatingLimePhrases.length > 1);
+          lastIndex = phraseIndex;
+
           const currentPhrase = rotatingLimePhrases[phraseIndex];
 
           // A. Type letter by letter
@@ -1576,9 +1582,6 @@
 
           // D. Brief natural pause before next phrase
           await sleep(350);
-
-          // E. Move to next phrase in loop
-          phraseIndex = (phraseIndex + 1) % rotatingLimePhrases.length;
         }
       }
 
