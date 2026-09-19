@@ -228,9 +228,9 @@
     </div>
   </div>
 
-  <!-- ================= NAVBAR ================= -->
-  <header class="sticky top-0 z-40 backdrop-blur-xl bg-gravity-dark/85 border-b border-gravity-border/60 transition-all duration-300" id="mainHeader">
-    <div class="container mx-auto px-4 lg:px-8 h-20 flex items-center justify-between">
+  <!-- ================= NAVBAR (FLOATING ROUNDED ISLAND) ================= -->
+  <header class="sticky top-2 sm:top-4 z-40 px-3 sm:px-6 lg:px-8 transition-all duration-300" id="mainHeaderWrapper">
+    <div class="max-w-7xl mx-auto backdrop-blur-xl bg-gravity-dark/85 border border-gravity-border/70 rounded-2xl lg:rounded-full px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between shadow-2xl shadow-black/40 transition-all duration-300 hover:border-gravity-border" id="mainHeader">
       
       <!-- Brand Logo -->
       <a href="#hero" class="flex items-center gap-3 group">
@@ -257,25 +257,25 @@
 
       <!-- Action Buttons -->
       <div class="hidden sm:flex items-center gap-3">
-        <a href="https://wa.link/qk27ma" target="_blank" class="px-5 py-2.5 rounded-xl bg-gravity-lime text-gravity-dark font-extrabold text-sm flex items-center gap-2 hover:bg-lime-400 hover:shadow-glow-lime transition-all duration-300 transform hover:-translate-y-0.5">
+        <a href="https://wa.link/qk27ma" target="_blank" class="px-5 py-2.5 rounded-full bg-gravity-lime text-gravity-dark font-extrabold text-sm flex items-center gap-2 hover:bg-lime-400 hover:shadow-glow-lime transition-all duration-300 transform hover:-translate-y-0.5">
           <i class="fa-brands fa-whatsapp text-lg"></i>
           <span>حجز سريع واتساب</span>
         </a>
-        <a href="https://www.youtube.com/@gravity-nouranelsanadiki" target="_blank" class="px-4 py-2.5 rounded-xl bg-gravity-red/15 border border-gravity-red/30 text-white font-bold text-sm flex items-center gap-2 hover:bg-gravity-red hover:shadow-glow-red transition-all duration-300">
+        <a href="https://www.youtube.com/@gravity-nouranelsanadiki" target="_blank" class="px-4 py-2.5 rounded-full bg-gravity-red/15 border border-gravity-red/30 text-white font-bold text-sm flex items-center gap-2 hover:bg-gravity-red hover:shadow-glow-red transition-all duration-300">
           <i class="fa-brands fa-youtube text-gravity-red group-hover:text-white"></i>
           <span class="hidden md:inline">يوتيوب</span>
         </a>
       </div>
 
       <!-- Mobile Menu Button -->
-      <button id="mobileMenuBtn" class="lg:hidden w-11 h-11 rounded-xl bg-gravity-surface border border-gravity-border flex items-center justify-center text-slate-200 hover:text-gravity-lime">
+      <button id="mobileMenuBtn" class="lg:hidden w-11 h-11 rounded-full bg-gravity-surface border border-gravity-border flex items-center justify-center text-slate-200 hover:text-gravity-lime">
         <i class="fa-solid fa-bars-staggered text-lg"></i>
       </button>
 
     </div>
 
     <!-- Mobile Nav Drawer -->
-    <div id="mobileMenu" class="hidden lg:hidden bg-gravity-surface/95 backdrop-blur-xl border-b border-gravity-border px-6 py-6 transition-all">
+    <div id="mobileMenu" class="hidden lg:hidden max-w-7xl mx-auto mt-2 bg-gravity-surface/95 backdrop-blur-xl border border-gravity-border rounded-2xl p-6 transition-all shadow-2xl">
       <div class="flex flex-col gap-4 text-base font-semibold">
         <a href="#hero" data-nav-transition="true" class="mobile-nav-link text-white hover:text-gravity-lime py-2 font-bold">الرئيسية</a>
         <a href="#about" data-nav-transition="true" class="mobile-nav-link text-slate-300 hover:text-gravity-lime py-2">عن المنصة</a>
@@ -284,11 +284,11 @@
         <a href="#app" data-nav-transition="true" class="mobile-nav-link text-slate-300 hover:text-gravity-lime py-2">تطبيق الطلاب</a>
         <a href="#faq" data-nav-transition="true" class="mobile-nav-link text-slate-300 hover:text-gravity-lime py-2">الأسئلة الشائعة</a>
         <div class="pt-4 border-t border-gravity-border flex flex-col gap-3">
-          <a href="https://wa.link/qk27ma" target="_blank" class="w-full py-3 rounded-xl bg-gravity-lime text-gravity-dark font-extrabold text-center flex items-center justify-center gap-2">
+          <a href="https://wa.link/qk27ma" target="_blank" class="w-full py-3 rounded-full bg-gravity-lime text-gravity-dark font-extrabold text-center flex items-center justify-center gap-2">
             <i class="fa-brands fa-whatsapp text-lg"></i>
             حجز سريع واتساب
           </a>
-          <a href="tel:01000776752" class="w-full py-3 rounded-xl bg-gravity-surfaceLight border border-gravity-border text-center text-white font-bold flex items-center justify-center gap-2">
+          <a href="tel:01000776752" class="w-full py-3 rounded-full bg-gravity-surfaceLight border border-gravity-border text-center text-white font-bold flex items-center justify-center gap-2">
             <i class="fa-solid fa-phone"></i>
             01000776752
           </a>
