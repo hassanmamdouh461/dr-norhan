@@ -208,7 +208,7 @@
       <path
         id="svgTransPath2"
         d="M1661.28 2255.51C1661.28 2255.51 2311.09 1960.37 2111.78 1817.01C1944.47 1696.67 718.456 2870.17 499.781 2255.51C308.969 1719.17 2457.51 1613.83 2111.78 963.512C1766.05 313.198 427.949 2195.17 132.281 1455.51C-155.219 736.292 2014.78 891.514 1708.78 252.012C1437.81 -314.29 369.471 909.169 132.281 566.512C18.1772 401.672 244.781 193.012 244.781 193.012"
-        stroke="#BCD91E"
+        stroke="#0A1128"
         stroke-width="200"
         stroke-linecap="round"
       />
@@ -1195,16 +1195,16 @@
       setupPaths();
       window.addEventListener('resize', setupPaths);
 
-      // Dark, rich cosmic color palettes (Exclusively brand blues, space navy, cyan & lime - NO RED)
+      // Deep Cosmic & Gravity Blue palettes only (NO RED, NO LIME GREEN)
       const BRAND_PALETTES = [
-        { name: 'Deep Space & Gravity Blue', stroke1: '#0A1128', stroke2: '#101EC5' },
-        { name: 'Cosmic Indigo & Midnight',   stroke1: '#1E1B4B', stroke2: '#080D21' },
-        { name: 'Gravity Blue & Orbital Lime', stroke1: '#101EC5', stroke2: '#BCD91E' },
-        { name: 'Surface Navy & Deep Void',  stroke1: '#141D3D', stroke2: '#060A1A' },
-        { name: 'Deep Teal & Gravity Blue',  stroke1: '#0F2937', stroke2: '#101EC5' },
-        { name: 'Cosmic Violet & Deep Space', stroke1: '#2E1065', stroke2: '#0A1128' },
-        { name: 'Electric Cyan & Surface Navy', stroke1: '#0284C7', stroke2: '#141D3D' },
-        { name: 'Dark Nebula & Gravity Blue', stroke1: '#0B1E48', stroke2: '#1E1B4B' }
+        { name: 'Deep Space & Gravity Blue',   stroke1: '#0A1128', stroke2: '#101EC5' },
+        { name: 'Cosmic Indigo & Midnight',     stroke1: '#1E1B4B', stroke2: '#080D21' },
+        { name: 'Gravity Blue & Midnight Void', stroke1: '#101EC5', stroke2: '#060A1A' },
+        { name: 'Surface Navy & Deep Void',    stroke1: '#141D3D', stroke2: '#060A1A' },
+        { name: 'Deep Slate & Gravity Blue',   stroke1: '#0F2937', stroke2: '#101EC5' },
+        { name: 'Cosmic Violet & Deep Space',   stroke1: '#2E1065', stroke2: '#0A1128' },
+        { name: 'Royal Blue & Surface Navy',   stroke1: '#1827E8', stroke2: '#141D3D' },
+        { name: 'Dark Nebula & Gravity Blue',   stroke1: '#0B1E48', stroke2: '#1E1B4B' }
       ];
 
       let lastPaletteIndex = -1;
@@ -1241,9 +1241,9 @@
             tween.to(path, {
               strokeDashoffset: 0,
               attr: { "stroke-width": 800 },
-              duration: 0.8,
+              duration: 0.45,
               ease: "power2.inOut"
-            }, i * 0.04);
+            }, i * 0.02);
           });
         });
       }
@@ -1269,7 +1269,7 @@
               tween.to(path, {
                 strokeDashoffset: -(length + 15),
                 attr: { "stroke-width": 200 },
-                duration: 0.75,
+                duration: 0.4,
                 ease: "power2.inOut"
               }, i * 0.04);
             } catch (e) {}
@@ -1325,8 +1325,8 @@
           mobileMenu.classList.add('hidden');
         }
 
-        // Brief cinematic pause at apex (~60ms)
-        await new Promise(r => setTimeout(r, 60));
+        // Brief cinematic pause at apex (~20ms)
+        await new Promise(r => setTimeout(r, 20));
 
         // 4. Animate wipe out (reveal the new section)
         await enter();

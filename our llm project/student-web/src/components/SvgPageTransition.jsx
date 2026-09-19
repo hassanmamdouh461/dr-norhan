@@ -8,7 +8,7 @@ import './SvgPageTransition.css';
 export const BRAND_TRANSITION_PALETTES = [
   { name: 'Deep Space & Gravity Blue', stroke1: '#0A1128', stroke2: '#101EC5' },
   { name: 'Cosmic Indigo & Midnight',   stroke1: '#1E1B4B', stroke2: '#080D21' },
-  { name: 'Gravity Blue & Orbital Lime', stroke1: '#101EC5', stroke2: '#BCD91E' },
+  { name: 'Gravity Blue & Midnight Void', stroke1: '#101EC5', stroke2: '#060A1A' },
   { name: 'Surface Navy & Deep Void',  stroke1: '#141D3D', stroke2: '#060A1A' },
   { name: 'Deep Teal & Gravity Blue',  stroke1: '#0F2937', stroke2: '#101EC5' },
   { name: 'Cosmic Violet & Deep Space', stroke1: '#2E1065', stroke2: '#0A1128' },
@@ -19,8 +19,8 @@ export const BRAND_TRANSITION_PALETTES = [
 const SvgPageTransition = forwardRef(function SvgPageTransition(
   {
     palettes = BRAND_TRANSITION_PALETTES,
-    durationIn = 0.8,
-    durationOut = 0.75,
+    durationIn = 0.45,
+    durationOut = 0.4,
     onBeforeNavigate,
     onAfterNavigate,
     className = ''
@@ -180,7 +180,7 @@ const SvgPageTransition = forwardRef(function SvgPageTransition(
         <path
           ref={path2Ref}
           d="M1661.28 2255.51C1661.28 2255.51 2311.09 1960.37 2111.78 1817.01C1944.47 1696.67 718.456 2870.17 499.781 2255.51C308.969 1719.17 2457.51 1613.83 2111.78 963.512C1766.05 313.198 427.949 2195.17 132.281 1455.51C-155.219 736.292 2014.78 891.514 1708.78 252.012C1437.81 -314.29 369.471 909.169 132.281 566.512C18.1772 401.672 244.781 193.012 244.781 193.012"
-          stroke="#BCD91E"
+          stroke="#0A1128"
           strokeWidth="200"
           strokeLinecap="round"
         />
