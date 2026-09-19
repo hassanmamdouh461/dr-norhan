@@ -373,10 +373,12 @@
             <span class="gradient-text-lime">م. نــوران الـصـنـاديـقـي</span>
           </h1>
 
-          <!-- Subheading & Philosophy -->
-          <p class="text-lg sm:text-xl md:text-2xl text-slate-200 leading-relaxed max-w-3xl font-normal">
-            رؤية هندسية تحليلية فريدة تُعيد صياغة مفاهيم الفيزياء لطلاب المرحلة الثانوية. نبني فهمك العميق للقوانين خطوة بخطوة، مع التدريب المكثف على حل أشهر الكتب الخارجية وأسئلة الامتحانات المطابقة للنظام الحديث.
-          </p>
+          <!-- Subheading & Philosophy (Live Typewriter Effect) -->
+          <div class="text-lg sm:text-xl md:text-2xl text-slate-200 leading-relaxed max-w-3xl font-normal min-h-[95px] sm:min-h-[115px] flex flex-col justify-center" id="heroTypewriterWrapper">
+            <p id="heroTypewriterParagraph" class="inline leading-relaxed">
+              <span id="heroTypewriterPart1" class="text-white font-medium"></span><span id="heroTypewriterBreak"></span><span id="heroTypewriterPart2" class="text-gravity-lime font-bold"></span><span id="heroTypewriterCursor" class="inline-block w-[3px] h-[1.15em] bg-gravity-lime align-middle mr-1.5 rounded-full shadow-[0_0_10px_#BCD91E] transition-opacity duration-150"></span>
+            </p>
+          </div>
 
           <!-- Social Proof / Followers preview -->
           <div class="pt-6 flex items-center gap-5 border-t border-gravity-border/70 w-full">
@@ -1474,6 +1476,100 @@
         duration: durOut,
         ease: 'power2.inOut'
       }, 0);
+    })();
+
+    // ================= HERO LIVE TYPEWRITER EFFECT =================
+    (function initHeroTypewriter() {
+      const part1Elem = document.getElementById('heroTypewriterPart1');
+      const breakElem = document.getElementById('heroTypewriterBreak');
+      const part2Elem = document.getElementById('heroTypewriterPart2');
+      const cursorElem = document.getElementById('heroTypewriterCursor');
+      const wrapperElem = document.getElementById('heroTypewriterWrapper');
+      if (!part1Elem || !part2Elem || !cursorElem) return;
+
+      const text1 = "مش هدفنا تحفظ القانون وخلاص؛ هدفنا إنك تفهمه وتعرف تستخدمه في أي مسألة.";
+      const text2 = "شرح واضح، تدريب مستمر، وتركيز على أفكار الامتحان.";
+
+      let isTyping = false;
+
+      // Soft pulsating cursor blink
+      setInterval(() => {
+        if (cursorElem) {
+          cursorElem.style.opacity = cursorElem.style.opacity === '0' ? '1' : '0';
+        }
+      }, 480);
+
+      function sleep(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+      }
+
+      async function typeSentence(elem, text, baseSpeed = 30) {
+        elem.textContent = '';
+        for (let i = 0; i < text.length; i++) {
+          const char = text[i];
+          elem.textContent += char;
+
+          // Natural human typing cadence at punctuation
+          if (char === '؛') {
+            await sleep(240);
+          } else if (char === '،') {
+            await sleep(190);
+          } else if (char === '.') {
+            await sleep(340);
+          } else {
+            await sleep(baseSpeed + Math.floor(Math.random() * 16));
+          }
+        }
+      }
+
+      async function runTypewriter() {
+        if (isTyping) return;
+        isTyping = true;
+
+        // Reset
+        part1Elem.textContent = '';
+        if (breakElem) breakElem.innerHTML = '';
+        part2Elem.textContent = '';
+        if (wrapperElem) wrapperElem.style.opacity = '1';
+
+        // Brief natural start delay
+        await sleep(300);
+
+        // 1. Type Part 1
+        await typeSentence(part1Elem, text1, 28);
+
+        // Natural pause between sentences
+        await sleep(350);
+
+        // Add line break
+        if (breakElem) {
+          breakElem.innerHTML = '<br class="my-1.5 hidden sm:inline" /> ';
+        }
+
+        // 2. Type Part 2 (Highlighted in Lime)
+        await typeSentence(part2Elem, text2, 32);
+
+        // Keep displayed for 8.5 seconds so users read it comfortably
+        await sleep(8500);
+
+        // Gentle fade-out and repeat
+        if (wrapperElem) {
+          wrapperElem.style.transition = 'opacity 0.6s ease';
+          wrapperElem.style.opacity = '0';
+          await sleep(650);
+          wrapperElem.style.transition = 'none';
+        }
+
+        isTyping = false;
+        runTypewriter();
+      }
+
+      // Launch typewriter when ready
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', runTypewriter);
+      } else {
+        runTypewriter();
+      }
     })();
   </script>
 </body>
