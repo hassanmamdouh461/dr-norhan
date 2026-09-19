@@ -120,20 +120,16 @@
       border-color: rgba(188, 217, 30, 0.35);
     }
 
-    /* Custom Scrollbar */
-    ::-webkit-scrollbar {
-      width: 10px;
+    /* Hide native side scrollbar (transferred into navbar progress bar) */
+    html, body {
+      scrollbar-width: none; /* Firefox */
+      -ms-overflow-style: none; /* IE & Edge */
     }
-    ::-webkit-scrollbar-track {
-      background: #0A1128;
-    }
-    ::-webkit-scrollbar-thumb {
-      background: #141D3D;
-      border-radius: 5px;
-      border: 1px solid #101EC5;
-    }
-    ::-webkit-scrollbar-thumb:hover {
-      background: #101EC5;
+    html::-webkit-scrollbar,
+    body::-webkit-scrollbar {
+      display: none; /* Chrome, Safari, Opera */
+      width: 0px;
+      height: 0px;
     }
 
     /* ================= SVG PAGE TRANSITION STYLES ================= */
@@ -230,7 +226,7 @@
 
   <!-- ================= NAVBAR (FLOATING ROUNDED ISLAND) ================= -->
   <header class="sticky top-2 sm:top-4 z-40 px-3 sm:px-6 lg:px-8 transition-all duration-300" id="mainHeaderWrapper">
-    <div class="max-w-7xl mx-auto backdrop-blur-xl bg-gravity-dark/85 border border-gravity-border/70 rounded-2xl lg:rounded-full px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between shadow-2xl shadow-black/40 transition-all duration-300 hover:border-gravity-border" id="mainHeader">
+    <div class="max-w-7xl mx-auto backdrop-blur-xl bg-gravity-dark/85 border border-gravity-border/70 rounded-2xl lg:rounded-full px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between shadow-2xl shadow-black/40 transition-all duration-300 hover:border-gravity-border relative overflow-hidden" id="mainHeader">
       
       <!-- Brand Logo -->
       <a href="#hero" class="flex items-center gap-3 group">
@@ -271,6 +267,11 @@
       <button id="mobileMenuBtn" class="lg:hidden w-11 h-11 rounded-full bg-gravity-surface border border-gravity-border flex items-center justify-center text-slate-200 hover:text-gravity-lime">
         <i class="fa-solid fa-bars-staggered text-lg"></i>
       </button>
+
+      <!-- Scroll Progress Bar inside Navbar -->
+      <div class="absolute bottom-0 right-0 left-0 h-[3px] bg-white/5 pointer-events-none overflow-hidden">
+        <div id="navbarProgressBar" class="h-full w-0 bg-gradient-to-l from-gravity-lime via-cyan-400 to-gravity-blue shadow-[0_0_12px_rgba(188,217,30,0.85)] transition-[width] duration-75 ease-out"></div>
+      </div>
 
     </div>
 
@@ -1125,8 +1126,9 @@
       }
     });
 
-    // Header Background Scroll Effect
-    window.addEventListener('scroll', () => {
+    // Header Background Scroll & Progress Bar Effect
+    const navbarProgressBar = document.getElementById('navbarProgressBar');
+    function updateScrollProgress() {
       const header = document.getElementById('mainHeader');
       if (header) {
         if (window.scrollY > 40) {
@@ -1135,7 +1137,17 @@
           header.classList.remove('shadow-lg', 'bg-gravity-dark/95');
         }
       }
-    });
+
+      if (navbarProgressBar) {
+        const docElem = document.documentElement;
+        const totalHeight = docElem.scrollHeight - window.innerHeight;
+        const progress = totalHeight > 0 ? (window.scrollY / totalHeight) * 100 : 0;
+        navbarProgressBar.style.width = Math.min(100, Math.max(0, progress)) + '%';
+      }
+    }
+    window.addEventListener('scroll', updateScrollProgress, { passive: true });
+    window.addEventListener('resize', updateScrollProgress, { passive: true });
+    updateScrollProgress();
 
     // ================= SVG PAGE TRANSITION (Animmaster Effect) =================
     (function initSvgPageTransition() {
