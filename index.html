@@ -34,6 +34,11 @@
       darkMode: 'class',
       theme: {
         extend: {
+          /* xs is not a default Tailwind breakpoint: without it every xs:* class
+             in the markup was silently dropped by the JIT compiler. */
+          screens: {
+            xs: '480px'
+          },
           colors: {
             gravity: {
               blue: '#101EC5',
@@ -176,11 +181,11 @@
     /* ================= SVG PAGE TRANSITION STYLES ================= */
     .svg-page-transition {
       position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%) scale(1.45);
-      width: 100vw;
-      height: 100vh;
+      /* inset:0 tracks the real visual viewport on mobile, unlike 100vh which
+         resolves to the toolbar-hidden height and overflows behind browser UI. */
+      inset: 0;
+      transform: scale(1.45);
+      transform-origin: center center;
       pointer-events: none;
       z-index: 999999;
       visibility: hidden;
@@ -232,10 +237,16 @@
     /* ─── Intro Scribble Overlay (Truus-Clone / Awwwards Effect) ─── */
     .intro-scribble-svg {
       position: fixed;
-      top: -50vh;
-      left: -50vw;
-      width: 200vw;
-      height: 200vh;
+      /* Square 200vmax box centred with negative margins: the source viewBox is
+         nearly square (3222x3114), so a square box keeps the stroke geometry
+         uniform instead of squashing it on tall phones. Negative margins are
+         used instead of translate() because GSAP overwrites the transform. */
+      top: 50%;
+      left: 50%;
+      width: 200vmax;
+      height: 200vmax;
+      margin-top: -100vmax;
+      margin-left: -100vmax;
       z-index: 99998;
       pointer-events: none;
       color: #0A1128;
@@ -259,13 +270,56 @@
       overflow: hidden !important;
       pointer-events: none !important;
     }
+
+    /* ─── Mobile Nav Drawer height: dvh where supported so the drawer never
+       extends behind the browser chrome on phones ─── */
+    #mobileMenu {
+      max-height: calc(100vh - 5.5rem);
+    }
+    @supports (height: 100dvh) {
+      #mobileMenu {
+        max-height: calc(100dvh - 5.5rem);
+      }
+    }
+
+    /* ─── Keep floating controls clear of the home indicator / gesture bar ─── */
+    .safe-floating {
+      bottom: max(1rem, env(safe-area-inset-bottom, 0px));
+      right: max(1rem, env(safe-area-inset-right, 0px));
+    }
+    @media (min-width: 640px) {
+      .safe-floating {
+        bottom: max(1.5rem, env(safe-area-inset-bottom, 0px));
+        right: max(1.5rem, env(safe-area-inset-right, 0px));
+      }
+    }
+
+    /* ─── Accessibility: honour the OS "reduce motion" setting ─── */
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto !important;
+      }
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+        scroll-behavior: auto !important;
+      }
+      .orbital-ring,
+      .animate-float,
+      .animate-float-delayed {
+        animation: none !important;
+      }
+    }
   </style>
 </head>
 <body class="cosmic-grid min-h-screen selection:bg-gravity-lime selection:text-gravity-dark">
 
   <!-- ================= FULLSCREEN INTRO SCRIBBLER (Start Covered) ================= -->
   <div id="introOverlay" class="fixed inset-0 z-[99990] pointer-events-none" aria-hidden="true">
-    <svg id="scribbleSvg" class="intro-scribble-svg" xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 3222 3114" fill="none" preserveAspectRatio="none">
+    <svg id="scribbleSvg" class="intro-scribble-svg" xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 3222 3114" fill="none" preserveAspectRatio="xMidYMid slice">
       <path id="scribblePath"
         d="M299.654 453.865C505.574 319.225 711.494 184.585 836.054 109.945C960.614 35.3048 997.574 24.7448 944.014 110.385C890.454 196.025 745.254 378.185 571.454 634.385C397.654 890.585 199.654 1215.3 110.854 1382.58C22.0544 1549.86 48.4544 1549.86 77.8944 1540.62C107.334 1531.38 139.014 1512.9 367.854 1319.9C596.694 1126.9 1021.73 759.945 1255.21 555.065C1488.69 350.185 1517.73 318.505 1527.41 306.145C1537.09 293.785 1526.53 301.705 1346.85 618.625C1167.17 935.545 818.694 1561.22 635.214 1896.74C451.734 2232.26 443.814 2258.66 447.654 2268.3C451.494 2277.94 467.334 2270.02 511.134 2236.9C554.934 2203.78 626.214 2145.7 966.534 1817.46C1306.85 1489.22 1914.05 892.585 2263.81 557.505C2613.57 222.425 2687.49 166.985 2741.41 129.185C2795.33 91.3848 2827.01 72.9048 2843.33 67.3448C2859.65 61.7848 2859.65 69.7048 2849.09 96.2248C2838.53 122.745 2817.41 167.625 2584.77 544.505C2352.13 921.385 1370.37 2165.43 1139.25 2537.83C908.134 2910.23 902.854 2926.07 902.774 2939.51C902.694 2952.95 907.974 2963.51 1255.21 2613.87C1602.45 2264.23 2829.73 1017.54 2903.53 1071.46C2977.33 1125.38 2176.12 2817.04 2128 3037C2079.88 3256.96 2911.24 2018.56 3172 1793"
         stroke="currentColor"
@@ -291,7 +345,7 @@
 
   <!-- ================= SVG CURVED PAGE TRANSITION OVERLAY (Animmaster Effect) ================= -->
   <div id="svgTransitionOverlay" class="svg-page-transition" aria-hidden="true">
-    <svg viewBox="0 0 2453 2535" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+    <svg viewBox="0 0 2453 2535" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
       <path
         id="svgTransPath1"
         d="M227.549 1818.76C227.549 1818.76 406.016 2207.75 569.049 2130.26C843.431 1999.85 -264.104 1002.3 227.549 876.262C552.918 792.849 773.647 2456.11 1342.05 2130.26C1885.43 1818.76 14.9644 455.772 760.548 137.262C1342.05 -111.152 1663.5 2266.35 2209.55 1972.76C2755.6 1679.18 1536.63 384.467 1826.55 137.262C2013.5 -22.1463 2209.55 381.262 2209.55 381.262"
@@ -374,7 +428,7 @@
     </div>
 
     <!-- Mobile Nav Drawer (Enhanced Scroll & Touch targets) -->
-    <div id="mobileMenu" class="hidden lg:hidden max-w-7xl mx-auto mt-2 bg-gravity-surface/98 backdrop-blur-2xl border border-gravity-border rounded-2xl p-5 transition-all shadow-2xl max-h-[calc(100vh-5.5rem)] overflow-y-auto">
+    <div id="mobileMenu" class="hidden lg:hidden max-w-7xl mx-auto mt-2 bg-gravity-surface/98 backdrop-blur-2xl border border-gravity-border rounded-2xl p-5 transition-all shadow-2xl overflow-y-auto">
       <div class="flex flex-col gap-1 text-base font-semibold">
         <a href="#hero" data-nav-transition="true" class="mobile-nav-link text-white hover:text-gravity-lime py-3 px-3 rounded-xl hover:bg-white/5 font-bold transition-colors">الرئيسية</a>
         <a href="#about" data-nav-transition="true" class="mobile-nav-link text-slate-300 hover:text-gravity-lime py-3 px-3 rounded-xl hover:bg-white/5 transition-colors">عن المنصة</a>
@@ -616,16 +670,34 @@
         </p>
       </div>
 
-      <!-- Grade Cards Grid (Responsive 1-col on mobile, 2-col on tablet, 3-col on desktop) -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 items-stretch">
+      <!-- Grade Cards Grid & Mobile Horizontal Carousel -->
+      <div id="gradesSlider" class="flex sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 items-stretch overflow-x-auto sm:overflow-visible snap-x snap-mandatory books-slider no-scrollbar -mx-4 px-4 sm:mx-0 sm:px-0 pb-3 sm:pb-0">
         
         <!-- Grade 1 Card -->
-        <div class="glass-card rounded-2xl sm:rounded-3xl p-6 sm:p-7 flex flex-col justify-between border-t-4 border-t-blue-500 hover:shadow-2xl transition-all">
+        <div class="glass-card rounded-2xl sm:rounded-3xl p-5 sm:p-7 flex flex-col justify-between border-t-4 border-t-blue-500 hover:shadow-2xl transition-all w-[86vw] max-w-[340px] sm:w-auto shrink-0 sm:shrink snap-start relative overflow-hidden group">
+          
+          <!-- Ambient Glow -->
+          <div class="absolute -top-12 -left-12 w-36 h-36 bg-blue-500/15 rounded-full blur-2xl pointer-events-none"></div>
+
           <div>
-            <div class="flex items-center justify-between mb-4">
-              <span class="px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/30 text-blue-400 text-xs font-bold">المرحلة التأسيسية</span>
-              <span class="text-xs text-slate-400 font-medium">الترم الأول والثاني</span>
+            <!-- Teacher Cutout & Stage Header Badge -->
+            <div class="relative rounded-2xl overflow-hidden mb-5 p-3.5 bg-gradient-to-l from-blue-950/70 via-gravity-surface to-blue-900/40 border border-blue-500/25 flex items-center justify-between">
+              <div class="space-y-1 z-10">
+                <span class="px-2.5 py-0.5 rounded-full bg-blue-500/15 border border-blue-500/30 text-blue-400 text-[11px] font-bold inline-block">
+                  المرحلة التأسيسية
+                </span>
+                <div class="text-white font-black text-sm sm:text-base flex items-center gap-1.5">
+                  <i class="fa-solid fa-atom text-blue-400 text-xs"></i>
+                  <span>شرح م. نــوران</span>
+                </div>
+                <span class="text-slate-400 text-[11px] block font-medium">الترم الأول والثاني</span>
+              </div>
+              <!-- Cutout Image of Teacher -->
+              <div class="relative w-28 h-24 sm:w-32 sm:h-28 shrink-0 overflow-visible flex items-end justify-center">
+                <img src="assets/images/nouran_cutout.png" alt="م. نوران الصناديقي" loading="lazy" class="w-full h-full object-contain filter drop-shadow-[0_8px_16px_rgba(0,0,0,0.65)] transform scale-125 translate-y-1 group-hover:scale-130 transition-transform duration-300" />
+              </div>
             </div>
+
             <h3 class="text-xl sm:text-2xl font-black text-white mb-2">الصف الأول الثانوي</h3>
             <p class="text-slate-300 text-xs sm:text-sm mb-5 leading-relaxed">
               تأسيس شامل للفيزياء: القياس الفيزيائي، صيغ الأبعاد، الحركة الخطية وعجلة الجاذبية وقوانين نيوتن والطاقة.
@@ -649,12 +721,30 @@
         </div>
 
         <!-- Grade 2 Card -->
-        <div class="glass-card rounded-2xl sm:rounded-3xl p-6 sm:p-7 flex flex-col justify-between border-t-4 border-t-gravity-lime hover:shadow-glow-lime transition-all">
+        <div class="glass-card rounded-2xl sm:rounded-3xl p-5 sm:p-7 flex flex-col justify-between border-t-4 border-t-gravity-lime hover:shadow-glow-lime transition-all w-[86vw] max-w-[340px] sm:w-auto shrink-0 sm:shrink snap-start relative overflow-hidden group">
+          
+          <!-- Ambient Glow -->
+          <div class="absolute -top-12 -left-12 w-36 h-36 bg-gravity-lime/15 rounded-full blur-2xl pointer-events-none"></div>
+
           <div>
-            <div class="flex items-center justify-between mb-4">
-              <span class="px-3 py-1 rounded-full bg-gravity-lime/10 border border-gravity-lime/30 text-gravity-lime text-xs font-bold">المرحلة المتقدمة</span>
-              <span class="text-xs text-slate-400 font-medium">الترم الأول والثاني</span>
+            <!-- Teacher Cutout & Stage Header Badge -->
+            <div class="relative rounded-2xl overflow-hidden mb-5 p-3.5 bg-gradient-to-l from-lime-950/70 via-gravity-surface to-lime-900/40 border border-gravity-lime/30 flex items-center justify-between">
+              <div class="space-y-1 z-10">
+                <span class="px-2.5 py-0.5 rounded-full bg-gravity-lime/15 border border-gravity-lime/30 text-gravity-lime text-[11px] font-bold inline-block">
+                  المرحلة المتقدمة
+                </span>
+                <div class="text-white font-black text-sm sm:text-base flex items-center gap-1.5">
+                  <i class="fa-solid fa-bolt text-gravity-lime text-xs"></i>
+                  <span>شرح م. نــوران</span>
+                </div>
+                <span class="text-slate-400 text-[11px] block font-medium">الترم الأول والثاني</span>
+              </div>
+              <!-- Cutout Image of Teacher -->
+              <div class="relative w-28 h-24 sm:w-32 sm:h-28 shrink-0 overflow-visible flex items-end justify-center">
+                <img src="assets/images/nouran_cutout.png" alt="م. نوران الصناديقي" loading="lazy" class="w-full h-full object-contain filter drop-shadow-[0_8px_16px_rgba(0,0,0,0.65)] transform scale-125 translate-y-1 group-hover:scale-130 transition-transform duration-300" />
+              </div>
             </div>
+
             <h3 class="text-xl sm:text-2xl font-black text-white mb-2">الصف الثاني الثانوي</h3>
             <p class="text-slate-300 text-xs sm:text-sm mb-5 leading-relaxed">
               دراسة الحركة الموجية، ظواهر الضوء والانكسار والحيود، وخواص الموائع الساكنة والمتحركة والغازات.
@@ -678,12 +768,30 @@
         </div>
 
         <!-- Grade 3 Card -->
-        <div class="glass-card rounded-2xl sm:rounded-3xl p-6 sm:p-7 flex flex-col justify-between border-t-4 border-t-red-500 hover:shadow-2xl transition-all md:col-span-2 lg:col-span-1 md:max-w-md md:mx-auto lg:max-w-none w-full">
+        <div class="glass-card rounded-2xl sm:rounded-3xl p-5 sm:p-7 flex flex-col justify-between border-t-4 border-t-red-500 hover:shadow-2xl transition-all md:col-span-2 lg:col-span-1 md:max-w-md md:mx-auto lg:max-w-none w-[86vw] max-w-[340px] sm:w-full shrink-0 sm:shrink snap-start relative overflow-hidden group">
+          
+          <!-- Ambient Glow -->
+          <div class="absolute -top-12 -left-12 w-36 h-36 bg-red-500/15 rounded-full blur-2xl pointer-events-none"></div>
+
           <div>
-            <div class="flex items-center justify-between mb-4">
-              <span class="px-3 py-1 rounded-full bg-red-500/10 border border-red-500/30 text-red-400 text-xs font-bold">الشهادة الثانوية العامة</span>
-              <span class="text-xs text-slate-400 font-medium">سنة كاملة</span>
+            <!-- Teacher Cutout & Stage Header Badge -->
+            <div class="relative rounded-2xl overflow-hidden mb-5 p-3.5 bg-gradient-to-l from-red-950/70 via-gravity-surface to-red-900/40 border border-red-500/25 flex items-center justify-between">
+              <div class="space-y-1 z-10">
+                <span class="px-2.5 py-0.5 rounded-full bg-red-500/15 border border-red-500/30 text-red-400 text-[11px] font-bold inline-block">
+                  الشهادة الثانوية العامة
+                </span>
+                <div class="text-white font-black text-sm sm:text-base flex items-center gap-1.5">
+                  <i class="fa-solid fa-crown text-red-400 text-xs"></i>
+                  <span>شرح م. نــوران</span>
+                </div>
+                <span class="text-slate-400 text-[11px] block font-medium">سنة دراسية كاملة</span>
+              </div>
+              <!-- Cutout Image of Teacher -->
+              <div class="relative w-28 h-24 sm:w-32 sm:h-28 shrink-0 overflow-visible flex items-end justify-center">
+                <img src="assets/images/nouran_cutout.png" alt="م. نوران الصناديقي" loading="lazy" class="w-full h-full object-contain filter drop-shadow-[0_8px_16px_rgba(0,0,0,0.65)] transform scale-125 translate-y-1 group-hover:scale-130 transition-transform duration-300" />
+              </div>
             </div>
+
             <h3 class="text-xl sm:text-2xl font-black text-white mb-2">الصف الثالث الثانوي</h3>
             <p class="text-slate-300 text-xs sm:text-sm mb-5 leading-relaxed">
               كورس القمة: التيار الكهربي وقانون أوم وكيرشوف، التأثير المغناطيسي، الحث الكهرومغناطيسي، ومقدمة الفيزياء الحديثة والكم.
@@ -706,6 +814,22 @@
           </a>
         </div>
 
+      </div>
+
+      <!-- Mobile Grades Interactive Pill Selector (The Distinct Difference) -->
+      <div id="gradesSliderPills" class="flex sm:hidden justify-center items-center gap-2 mt-6 px-2">
+        <button onclick="scrollGradesToCard(0)" class="grades-pill px-3 py-1.5 rounded-full text-xs font-bold transition-all duration-300 flex items-center gap-1.5 bg-blue-500 text-white shadow-lg shadow-blue-500/30">
+          <span class="w-1.5 h-1.5 rounded-full bg-white animate-pulse"></span>
+          <span>الأول الثانوي</span>
+        </button>
+        <button onclick="scrollGradesToCard(1)" class="grades-pill px-3 py-1.5 rounded-full text-xs font-bold transition-all duration-300 flex items-center gap-1.5 bg-gravity-surface border border-gravity-border text-slate-400 hover:text-white">
+          <span class="w-1.5 h-1.5 rounded-full bg-transparent"></span>
+          <span>الثاني الثانوي</span>
+        </button>
+        <button onclick="scrollGradesToCard(2)" class="grades-pill px-3 py-1.5 rounded-full text-xs font-bold transition-all duration-300 flex items-center gap-1.5 bg-gravity-surface border border-gravity-border text-slate-400 hover:text-white">
+          <span class="w-1.5 h-1.5 rounded-full bg-transparent"></span>
+          <span>الثالث الثانوي</span>
+        </button>
       </div>
 
     </div>
@@ -1357,6 +1481,66 @@
       booksSliderEl.addEventListener('scroll', () => {
         if (scrollTimeout) cancelAnimationFrame(scrollTimeout);
         scrollTimeout = requestAnimationFrame(updateBooksSliderDots);
+      }, { passive: true });
+    }
+
+    // Grades Mobile Carousel Slider Controller & Interactive Pills
+    function scrollGradesToCard(index) {
+      const slider = document.getElementById('gradesSlider');
+      if (!slider) return;
+      const cards = slider.querySelectorAll('.glass-card');
+      if (cards[index]) {
+        cards[index].scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+      }
+    }
+
+    function updateGradesSliderPills() {
+      const slider = document.getElementById('gradesSlider');
+      const pills = document.querySelectorAll('#gradesSliderPills .grades-pill');
+      if (!slider || !pills.length) return;
+
+      const cards = slider.querySelectorAll('.glass-card');
+      const sliderRect = slider.getBoundingClientRect();
+      const sliderCenter = sliderRect.left + sliderRect.width / 2;
+
+      let closestIndex = 0;
+      let minDistance = Infinity;
+
+      cards.forEach((card, i) => {
+        const cardRect = card.getBoundingClientRect();
+        const cardCenter = cardRect.left + cardRect.width / 2;
+        const distance = Math.abs(sliderCenter - cardCenter);
+        if (distance < minDistance) {
+          minDistance = distance;
+          closestIndex = i;
+        }
+      });
+
+      const activeStyles = [
+        'grades-pill px-3 py-1.5 rounded-full text-xs font-bold transition-all duration-300 flex items-center gap-1.5 bg-blue-500 text-white shadow-lg shadow-blue-500/30',
+        'grades-pill px-3 py-1.5 rounded-full text-xs font-bold transition-all duration-300 flex items-center gap-1.5 bg-gravity-lime text-gravity-dark shadow-glow-lime',
+        'grades-pill px-3 py-1.5 rounded-full text-xs font-bold transition-all duration-300 flex items-center gap-1.5 bg-red-500 text-white shadow-lg shadow-red-500/30'
+      ];
+      const inactiveStyle = 'grades-pill px-3 py-1.5 rounded-full text-xs font-bold transition-all duration-300 flex items-center gap-1.5 bg-gravity-surface border border-gravity-border text-slate-400 hover:text-white';
+
+      pills.forEach((pill, i) => {
+        const dot = pill.querySelector('span:first-child');
+        if (i === closestIndex) {
+          pill.className = activeStyles[i] || activeStyles[0];
+          if (dot) dot.className = (i === 1) ? 'w-1.5 h-1.5 rounded-full bg-gravity-dark animate-pulse' : 'w-1.5 h-1.5 rounded-full bg-white animate-pulse';
+        } else {
+          pill.className = inactiveStyle;
+          if (dot) dot.className = 'w-1.5 h-1.5 rounded-full bg-transparent';
+        }
+      });
+    }
+
+    const gradesSliderEl = document.getElementById('gradesSlider');
+    if (gradesSliderEl) {
+      let scrollTimeoutGrades;
+      gradesSliderEl.addEventListener('scroll', () => {
+        if (scrollTimeoutGrades) cancelAnimationFrame(scrollTimeoutGrades);
+        scrollTimeoutGrades = requestAnimationFrame(updateGradesSliderPills);
       }, { passive: true });
     }
 

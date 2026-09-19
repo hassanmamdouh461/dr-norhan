@@ -26,12 +26,13 @@ if ($apiToken -ne "") {
 npx --yes wrangler pages deploy "$projectRoot\dist" --project-name=dr-norhan --branch=main --commit-dirty=true
 
 Write-Host "==> 3. Syncing with GitHub..." -ForegroundColor Cyan
-git -C "$projectRoot" add index.html CNAME deploy.ps1
+git -C "$projectRoot" add index.html CNAME deploy.ps1 assets/
 git -C "$projectRoot" -c user.name="MAMDOUH" -c user.email="hassanmamdouh461@gmail.com" commit -m "$msg" 2>$null
 git -C "$projectRoot" push origin main
 
 if (Test-Path "D:\dr-norhan") {
     Copy-Item "$projectRoot\index.html" "D:\dr-norhan\index.html" -Force
+    Copy-Item "$projectRoot\assets" "D:\dr-norhan\" -Recurse -Force
     if (Test-Path "$projectRoot\CNAME") {
         Copy-Item "$projectRoot\CNAME" "D:\dr-norhan\CNAME" -Force
     }
